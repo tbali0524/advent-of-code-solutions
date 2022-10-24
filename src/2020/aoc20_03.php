@@ -1,24 +1,22 @@
 <?php
 
 /*
-https://adventofcode.com/2020/day/1
-Part 1: Find the two entries that sum to 2020 and then multiply those two numbers together.
-Part 2: What is the product of the three entries that sum to 2020?
+https://adventofcode.com/2020/day/2
+Part 1: Starting at the top-left corner of your map and following a slope of right 3 and down 1,
+how many trees would you encounter?
+Part 2: What do you get if you multiply together the number of trees encountered on each of the listed slopes?
 */
-
-// p hpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
-// @ phpstan-ignore-next-line
 
 declare(strict_types=1);
 
 // --------------------------------------------------------------------
 const YEAR = 2020;
-const DAY = '01';
-const SOLUTION1 = 988771;
-const SOLUTION2 = 171933104;
+const DAY = '03';
+const SOLUTION1 = 211;
+const SOLUTION2 = 3584591857;
 $startTime = hrtime(true);
 // ----------
-$handle = fopen('input/aoc20_01.txt', 'r');
+$handle = fopen('input/aoc20_03.txt', 'r');
 if ($handle === false) {
     throw new \Exception('Cannot load input file');
 }
@@ -31,36 +29,42 @@ while (true) {
     if (trim($line) == '') {
         continue;
     }
-    $input[] = intval($line);
+    $input[] = trim($line);
 }
 fclose($handle);
 // --------------------------------------------------------------------
 // Part 1
 $ans1 = 0;
-$visited = [];
-foreach ($input as $i) {
-    if (isset($visited[2020 - $i])) {
-        $ans1 = $i * (2020 - $i);
-        break;
+$maxY = count($input);
+$maxX = strlen($input[0]);
+$y = 0;
+$x = 0;
+while ($y < $maxY) {
+    if ($input[$y][$x] == '#') {
+        ++$ans1;
     }
-    $visited[$i] = true;
+    ++$y;
+    $x = ($x + 3) % $maxX;
 }
 // --------------------------------------------------------------------
 // Part 2
-$ans2 = 0;
-$visited = [];
-foreach ($input as $idx => $i) {
-    foreach ($input as $idx2 => $j) {
-        if ($idx != $idx2) {
-            $visited[$i + $j] = $i * $j;
+$ans2 = 1;
+$maxY = count($input);
+$maxX = strlen($input[0]);
+const SLOPES = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]];
+foreach (SLOPES as $dxy) {
+    [$dx, $dy] = $dxy;
+    $y = 0;
+    $x = 0;
+    $count = 0;
+    while ($y < $maxY) {
+        if ($input[$y][$x] == '#') {
+            ++$count;
         }
+        $y += $dy;
+        $x = ($x + $dx) % $maxX;
     }
-}
-foreach ($input as $i) {
-    if (isset($visited[2020 - $i])) {
-        $ans2 = $i * $visited[2020 - $i];
-        break;
-    }
+    $ans2 *= $count;
 }
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
