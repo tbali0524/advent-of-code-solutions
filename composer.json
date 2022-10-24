@@ -1,0 +1,50 @@
+{
+    "name": "tbali0524/advent-of-code-solutions",
+    "description": "Advent Of Code solutions solutions in PHP by TBali",
+    "type": "project",
+    "keywords": [
+        "aoc", "algorithms"
+    ],
+    "homepage": "https://adventofcode.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":     "Balint Toth",
+            "email":    "tbali0524@gmail.com",
+            "homepage": "https://tbali0524.github.io/",
+            "role":     "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "prefer-stable": true,
+    "scripts": {
+        "start": "run_all.bat",
+        "cs"   : "phpcs",
+        "cs-fixer" : "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
+        "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
+        "loc"  : "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
+        "stan" : "phpstan --ansi --verbose",
+        "qa" : [
+            "@cs",
+            "@cs-fixer",
+            "@stan"
+        ],
+        "clean" : [
+            "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
+            "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
+            "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan"
+        ]
+    },
+    "scripts-descriptions": {
+        "start":    "Run all solutions",
+        "cs":       "Check coding style compliance to PSR12 with phpcs",
+        "cs-fixer": "Check coding style compliance to PSR12 plus extra rules with php-cs-fixer (no fix applied)",
+        "cs-fixer-do": "Apply coding style fixes with php-cs-fixer",
+        "loc":      "Get code summary report with phploc",
+        "stan":     "Run static analysis with phpstan",
+        "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan and phpunit, phpDocumentor",
+        "clean":    "Delete generated cache and report files in .tools directory (Windows only)"
+    }
+}

@@ -1,0 +1,11 @@
+parameters:
+    level: 9
+    phpVersion: 80100
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
+    tmpDir: .tools/phpstan
+    paths:
+        - src/
+    excludePaths:
+        - .git
+        - .tools
+        - vendor

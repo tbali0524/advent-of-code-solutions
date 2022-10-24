@@ -1,0 +1,3 @@
+@echo off
+@php src/2020/aoc20_01.php
+REM ...
