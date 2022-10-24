@@ -1,29 +1,26 @@
 <?php
 
 /*
-https://adventofcode.com/2020/day/1
-Part 1: Find the two entries that sum to 2020 and then multiply those two numbers together.
-Part 2: What is the product of the three entries that sum to 2020?
+https://adventofcode.com/2015/day/1
+Part 1: To what floor do the instructions take Santa?
+Part 2: What is the position of the character that causes Santa to first enter the basement?
 */
-
-// p hpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
-// @ phpstan-ignore-next-line
 
 declare(strict_types=1);
 
 // --------------------------------------------------------------------
-const YEAR = 2020;
+const YEAR = 2015;
 const DAY = '01';
-const TITLE = 'Report Repair';
-const SOLUTION1 = 988771;
-const SOLUTION2 = 171933104;
+const TITLE = 'Not Quite Lisp';
+const SOLUTION1 = 74;
+const SOLUTION2 = 1795;
 $startTime = hrtime(true);
 // ----------
-$handle = fopen('input/aoc20_01.txt', 'r');
+$handle = fopen('input/aoc15_01.txt', 'r');
 if ($handle === false) {
     throw new \Exception('Cannot load input file');
 }
-$input = [];
+$input = '';
 while (true) {
     $line = fgets($handle);
     if ($line === false) {
@@ -32,36 +29,23 @@ while (true) {
     if (trim($line) == '') {
         continue;
     }
-    $input[] = intval($line);
+    $input = trim($line);
 }
 fclose($handle);
 // --------------------------------------------------------------------
 // Part 1
-$ans1 = 0;
-$visited = [];
-foreach ($input as $i) {
-    if (isset($visited[2020 - $i])) {
-        $ans1 = $i * (2020 - $i);
-        break;
-    }
-    $visited[$i] = true;
-}
+$ans1 = substr_count($input, '(') - substr_count($input, ')');
 // --------------------------------------------------------------------
 // Part 2
 $ans2 = 0;
-$visited = [];
-foreach ($input as $idx => $i) {
-    foreach ($input as $idx2 => $j) {
-        if ($idx != $idx2) {
-            $visited[$i + $j] = $i * $j;
-        }
+$floor = 0;
+while ($ans2 < strlen($input) and ($floor >= 0)) {
+    if ($input[$ans2] == '(') {
+        ++$floor;
+    } elseif ($input[$ans2] == ')') {
+        --$floor;
     }
-}
-foreach ($input as $i) {
-    if (isset($visited[2020 - $i])) {
-        $ans2 = $i * $visited[2020 - $i];
-        break;
-    }
+    ++$ans2;
 }
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');

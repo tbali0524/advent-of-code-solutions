@@ -3,7 +3,7 @@
 /*
 https://adventofcode.com/2020/day/2
 Part 1: How many passwords are valid according to their policies?
-Part 2: What do you get if you multiply together the number of trees encountered on each of the listed slopes?
+Part 2: How many passwords are valid according to the new interpretation of the policies?
 */
 
 declare(strict_types=1);
@@ -11,6 +11,7 @@ declare(strict_types=1);
 // --------------------------------------------------------------------
 const YEAR = 2020;
 const DAY = '02';
+const TITLE = 'Password Philosophy';
 const SOLUTION1 = 434;
 const SOLUTION2 = 509;
 $startTime = hrtime(true);
@@ -71,7 +72,8 @@ foreach ($input as $line) {
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
 $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
-echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]:', PHP_EOL;
+echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]: ' . TITLE
+    . PHP_EOL;
 echo $ans1, PHP_EOL;
 if ($ans1 != SOLUTION1) {
     echo '*** WRONG ***', PHP_EOL;

@@ -12,6 +12,7 @@ declare(strict_types=1);
 // --------------------------------------------------------------------
 const YEAR = 2020;
 const DAY = '03';
+const TITLE = 'Toboggan Trajectory';
 const SOLUTION1 = 211;
 const SOLUTION2 = 3584591857;
 $startTime = hrtime(true);
@@ -69,7 +70,8 @@ foreach (SLOPES as $dxy) {
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
 $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
-echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]:', PHP_EOL;
+echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]: ' . TITLE
+    . PHP_EOL;
 echo $ans1, PHP_EOL;
 if ($ans1 != SOLUTION1) {
     echo '*** WRONG ***', PHP_EOL;
