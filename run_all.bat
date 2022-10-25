@@ -5,6 +5,10 @@
 @php src/2015/aoc15_04.php
 @php src/2015/aoc15_05.php
 @php src/2015/aoc15_06.php
+@php src/2015/aoc15_07.php
+@php src/2015/aoc15_08.php
+@php src/2015/aoc15_09.php
+@php src/2015/aoc15_10.php
 REM @php src/2015/aoc15_25.php
 
 @php src/2020/aoc20_01.php
