@@ -17,7 +17,7 @@ const SOLUTION1 = 211;
 const SOLUTION2 = 3584591857;
 $startTime = hrtime(true);
 // ----------
-$handle = fopen('input/aoc20_03.txt', 'r');
+$handle = fopen('input/' . YEAR . '/aoc20_03.txt', 'r');
 if ($handle === false) {
     throw new \Exception('Cannot load input file');
 }

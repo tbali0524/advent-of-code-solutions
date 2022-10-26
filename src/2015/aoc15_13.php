@@ -1,27 +1,27 @@
 <?php
 
 /*
-https://adventofcode.com/2015/day/9
-Part 1: What is the distance of the shortest route?
-Part 2: What is the distance of the longest route?
-topics: permutations, Heap's algorithm, Hamiltonian paths
+https://adventofcode.com/2015/day/13
+Part 1: What is the total change in happiness for the optimal seating arrangement of the actual guest list?
+Part 2: What is the total change in happiness for the optimal seating arrangement that actually includes yourself?
+topics: permutations, Heap's algorithm, Hamiltonian circle
 */
 
 // phpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
 
-namespace TBali\Aoc15_09;
+namespace TBali\Aoc15_13;
 
 // --------------------------------------------------------------------
 const YEAR = 2015;
-const DAY = '09';
-const TITLE = 'All in a Single Night';
-const SOLUTION1 = 207;
-const SOLUTION2 = 804;
+const DAY = '13';
+const TITLE = 'Knights of the Dinner Table';
+const SOLUTION1 = 709;
+const SOLUTION2 = 668;
 $startTime = hrtime(true);
 // ----------
-$handle = fopen('input/' . YEAR . '/aoc15_09.txt', 'r');
+$handle = fopen('input/' . YEAR . '/aoc15_13.txt', 'r');
 if ($handle === false) {
     throw new \Exception('Cannot load input file');
 }
@@ -38,9 +38,13 @@ while (true) {
 }
 fclose($handle);
 // --------------------------------------------------------------------
-// Part 1 + 2
+// Part 1
 $g = new Graph($input);
-[$ans1, $ans2] = $g->getMinMaxDistance();
+$ans1 = $g->getMaxHappiness();
+// --------------------------------------------------------------------
+// Part 2
+$g->addZeroNode();
+$ans2 = $g->getMaxHappiness();
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
 $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
@@ -68,23 +72,38 @@ class Graph
     public function __construct(array $input)
     {
         foreach ($input as $line) {
-            $a = explode(' = ', $line);
-            if ((count($a) != 2) or !is_numeric($a[1])) {
+            $a = explode(' ', $line);
+            if (
+                (count($a) != 11)
+                or !is_numeric($a[3])
+                or ($a[1] != 'would')
+                or !str_contains($line, ' happiness units by sitting next to ')
+            ) {
                 throw new \Exception('Invalid input');
             }
-            $b = explode(' to ', $a[0]);
-            if (count($b) != 2) {
-                throw new \Exception('Invalid input');
-            }
-            $id1 = $this->addOrGetNode($b[0]);
-            $id2 = $this->addOrGetNode($b[1]);
+            $id1 = $this->addOrGetNode($a[0]);
+            $id2 = $this->addOrGetNode(substr($a[10], 0, -1));
             if ($id1 == $id2) {
                 throw new \Exception('Invalid input');
             }
-            $this->dist[$id1][$id2] = intval($a[1]);
-            $this->dist[$id2][$id1] = $this->dist[$id1][$id2];
+            if ($a[2] == 'gain') {
+                $sign = 1;
+            } elseif ($a[2] == 'lose') {
+                $sign = -1;
+            }
+            $this->dist[$id1][$id2] = $sign * intval($a[3]);
         }
         $this->v = count($this->nodes);
+    }
+
+    public function addZeroNode(): void
+    {
+        $this->nodes['myself'] = $this->v;
+        for ($i = 0; $i < $this->v; ++$i) {
+            $this->dist[$i][$this->v] = 0;
+            $this->dist[$this->v][$i] = 0;
+        }
+        ++$this->v;
     }
 
     public function addOrGetNode(string $name): int
@@ -99,16 +118,14 @@ class Graph
 
     // generating all permutations vertices (path order), checks minimum total distance
     // based on https://en.wikipedia.org/wiki/Heap%27s_algorithm
-    /** @return int[] */
-    public function getMinMaxDistance(): array
+    public function getMaxHappiness(): int
     {
         $a = range(0, $this->v - 1);
         $c = array_fill(0, $this->v, 0);
-        $min = 0;
+        $max = $this->dist[$a[$this->v - 1]][$a[0]] + $this->dist[$a[0]][$a[$this->v - 1]];
         for ($j = 1; $j < $this->v; ++$j) {
-            $min += $this->dist[$a[$j - 1]][$a[$j]];
+            $max += $this->dist[$a[$j - 1]][$a[$j]] + $this->dist[$a[$j]][$a[$j - 1]];
         }
-        $max = $min;
         $i = 1;
         while ($i < $this->v) {
             if ($c[$i] < $i) {
@@ -121,12 +138,11 @@ class Graph
                     $a[$c[$i]] = $a[$i];
                     $a[$i] = $t;
                 }
-                $path = 0;
+                $circle = $this->dist[$a[$this->v - 1]][$a[0]] + $this->dist[$a[0]][$a[$this->v - 1]];
                 for ($j = 1; $j < $this->v; ++$j) {
-                    $path += $this->dist[$a[$j - 1]][$a[$j]];
+                    $circle += $this->dist[$a[$j - 1]][$a[$j]] + $this->dist[$a[$j]][$a[$j - 1]];
                 }
-                $min = min($min, $path);
-                $max = max($max, $path);
+                $max = max($max, $circle);
                 ++$c[$i];
                 $i = 1;
                 continue;
@@ -134,6 +150,6 @@ class Graph
             $c[$i] = 0;
             ++$i;
         }
-        return [$min, $max];
+        return $max;
     }
 }

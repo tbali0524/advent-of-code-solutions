@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="codingame-solutions">
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="advent-of-code-solutions">
     <description>PHP_CodeSniffer configuration</description>
     <config name="php_version" value="80100"/>
     <arg name="cache" value=".tools/.phpcs.cache"/>
