@@ -90,6 +90,8 @@ class Graph
                 $sign = 1;
             } elseif ($a[2] == 'lose') {
                 $sign = -1;
+            } else {
+                throw new \Exception('Invalid input');
             }
             $this->dist[$id1][$id2] = $sign * intval($a[3]);
         }

@@ -46,7 +46,7 @@ function getNextPassword(string $pw): string
         $i = strlen($pw) - 1;
         while (($i >= 0) and ($pw[$i] == 'z')) {
             $pw[$i] = 'a';
-            $i--;
+            --$i;
         }
         if ($i < 0) {
             throw new \Exception('Password overflow');

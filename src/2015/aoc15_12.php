@@ -36,7 +36,7 @@ while (true) {
 fclose($handle);
 // --------------------------------------------------------------------
 // Part 1
-$a = json_decode($input, true); // true: JSON objects will be returned as associative arrays
+$a = json_decode($input, true) ?? []; // true: JSON objects will be returned as associative arrays
 $count = 0;
 array_walk_recursive($a, function ($x) use (&$count) {
     if (is_numeric($x)) {
@@ -46,7 +46,7 @@ array_walk_recursive($a, function ($x) use (&$count) {
 $ans1 = $count;
 // --------------------------------------------------------------------
 // Part 2
-$a = json_decode($input, false); // JSON objects will be returned as objects.
+$a = json_decode($input, false) ?? []; // JSON objects will be returned as objects.
 $ans2 = sumNonRed($a);
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');

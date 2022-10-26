@@ -15,6 +15,8 @@
 @php src/2015/aoc15_11.php
 @php src/2015/aoc15_12.php
 @php src/2015/aoc15_13.php
+@php src/2015/aoc15_14.php
+@php src/2015/aoc15_15.php
 REM @php src/2015/aoc15_25.php
 
 @echo  .
