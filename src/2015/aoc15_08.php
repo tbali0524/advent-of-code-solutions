@@ -3,9 +3,9 @@
 /*
 https://adventofcode.com/2015/day/8
 Part 1: Disregarding the whitespace in the file, what is the number of characters of code for string literals
-minus the number of characters in memory for the values of the strings in total for the entire file?
+    minus the number of characters in memory for the values of the strings in total for the entire file?
 Part 2: Your task is to find the total number of characters to represent the newly encoded strings
-minus the number of characters of code in each original string literal.
+    minus the number of characters of code in each original string literal.
 */
 
 declare(strict_types=1);

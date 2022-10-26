@@ -10,7 +10,7 @@ Part 2: what is the total score of the highest-scoring cookie you can make with 
 
 declare(strict_types=1);
 
-namespace TBali\Aoc15_14;
+namespace TBali\Aoc15_15;
 
 // --------------------------------------------------------------------
 const YEAR = 2015;
