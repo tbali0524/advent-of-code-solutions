@@ -1,6 +1,6 @@
 <?php
 
-// @TODO nem működik
+// @TODO part 1 too slow
 
 /*
 https://adventofcode.com/2015/day/20
@@ -23,15 +23,16 @@ $input = 36000000;
 // --------------------------------------------------------------------
 // Part 1
 $ans1 = 1;
+$min = intval((-1 + sqrt(1 + 8 * $input / 10)) / 2);
 $max = intval(ceil($input / 10));
-for ($n = 2; $n <= $max; ++$n) {
+for ($n = $min; $n <= $max; ++$n) {
     $sum = 1 + $n;
     for ($i = 2; $i <= intdiv($n, 2); ++$i) {
         if ($n % $i == 0) {
             $sum += $i;
         }
     }
-    if ($sum >= $input) {
+    if (10 * $sum >= $input) {
         $ans1 = $n;
         break;
     }
@@ -39,9 +40,6 @@ for ($n = 2; $n <= $max; ++$n) {
 // --------------------------------------------------------------------
 // Part 2
 $ans2 = 1;
-while (substr(md5($input . strval($ans2)), 0, 6) !== '000000') {
-    ++$ans2;
-}
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
 $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
@@ -52,6 +50,7 @@ if ($ans1 != SOLUTION1) {
     echo '*** WRONG ***', PHP_EOL;
 }
 echo $ans2, PHP_EOL;
+// @phpstan-ignore-next-line
 if ($ans2 != SOLUTION2) {
     echo '*** WRONG ***', PHP_EOL;
 }
