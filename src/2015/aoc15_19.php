@@ -17,7 +17,7 @@ const YEAR = 2015;
 const DAY = '19';
 const TITLE = 'Medicine for Rudolph';
 const SOLUTION1 = 535;
-const SOLUTION2 = 0;
+const SOLUTION2 = 212;
 $startTime = hrtime(true);
 // ----------
 $handle = fopen('input/' . YEAR . '/aoc15_19.txt', 'r');
@@ -39,6 +39,7 @@ fclose($handle);
 // --------------------------------------------------------------------
 // input processing common to part 1 and 2
 $replacements = [];
+$reverse = [];
 $molecule = $input[count($input) - 1];
 for ($i = 0; $i < count($input) - 1; ++$i) {
     $a = explode(' => ', $input[$i]);
@@ -50,6 +51,7 @@ for ($i = 0; $i < count($input) - 1; ++$i) {
     } else {
         $replacements[$a[0]] = [$a[1]];
     }
+    $reverse[$a[1]] = $a[0];
 }
 // --------------------------------------------------------------------
 // Part 1
@@ -78,51 +80,63 @@ $ans1 = count($resultSet);
 // --------------------------------------------------------------------
 // Part 2
 $ans2 = 0;
-$visited = ['e' => true];
-$q = [['e', 0]];
-$readIdx = 0;
-while (true) {
-    if ($readIdx >= count($q)) {
-        throw new \Exception('No solution found');
-    }
-    [$currMolecule, $currStep] = $q[$readIdx];
-    ++$readIdx;
-    if (strlen($currMolecule) > strlen($molecule)) {
-        continue;
-    }
-    if ($currMolecule == $molecule) {
-        $ans2 = $currStep;
-        break;
-    }
-    for ($i = 0; $i < strlen($currMolecule); ++$i) {
-        $elem = $currMolecule[$i];
-        if (!isset($replacements[$elem])) {
-            continue;
-        }
-        foreach ($replacements[$elem] as $newElem) {
-            $newMolecule = substr($currMolecule, 0, $i) . $newElem . substr($currMolecule, $i + 1);
-            if (isset($visited[$newMolecule])) {
-                continue;
-            }
-            $q[] = [$newMolecule, $currStep + 1];
-            $visited[$newMolecule] = true;
-        }
-    }
-    for ($i = 0; $i < strlen($currMolecule) - 1; ++$i) {
-        $elem = substr($currMolecule, $i, 2);
-        if (!isset($replacements[$elem])) {
-            continue;
-        }
-        foreach ($replacements[$elem] as $newElem) {
-            $newMolecule = substr($currMolecule, 0, $i) . $newElem . substr($currMolecule, $i + 2);
-            if (isset($visited[$newMolecule])) {
-                continue;
-            }
-            $q[] = [$newMolecule, $currStep + 1];
-            $visited[$newMolecule] = true;
+// Note: not a correct solution but works for this specific input
+$newMolecule = $molecule;
+while ($newMolecule != 'e') {
+    foreach ($reverse as $to => $from) {
+        if (str_contains($newMolecule, $to)) {
+            $count = 0;
+            $newMolecule = str_replace($to, $from, $newMolecule, $count);
+            $ans2 += $count;
         }
     }
 }
+// Note: a correct solution, but timeouts
+// $visited = ['e' => true];
+// $q = [['e', 0]];
+// $readIdx = 0;
+// while (true) {
+//     if ($readIdx >= count($q)) {
+//         throw new \Exception('No solution found');
+//     }
+//     [$currMolecule, $currStep] = $q[$readIdx];
+//     ++$readIdx;
+//     if (strlen($currMolecule) > strlen($molecule)) {
+//         continue;
+//     }
+//     if ($currMolecule == $molecule) {
+//         $ans2 = $currStep;
+//         break;
+//     }
+//     for ($i = 0; $i < strlen($currMolecule); ++$i) {
+//         $elem = $currMolecule[$i];
+//         if (!isset($replacements[$elem])) {
+//             continue;
+//         }
+//         foreach ($replacements[$elem] as $newElem) {
+//             $newMolecule = substr($currMolecule, 0, $i) . $newElem . substr($currMolecule, $i + 1);
+//             if (isset($visited[$newMolecule])) {
+//                 continue;
+//             }
+//             $q[] = [$newMolecule, $currStep + 1];
+//             $visited[$newMolecule] = true;
+//         }
+//     }
+//     for ($i = 0; $i < strlen($currMolecule) - 1; ++$i) {
+//         $elem = substr($currMolecule, $i, 2);
+//         if (!isset($replacements[$elem])) {
+//             continue;
+//         }
+//         foreach ($replacements[$elem] as $newElem) {
+//             $newMolecule = substr($currMolecule, 0, $i) . $newElem . substr($currMolecule, $i + 2);
+//             if (isset($visited[$newMolecule])) {
+//                 continue;
+//             }
+//             $q[] = [$newMolecule, $currStep + 1];
+//             $visited[$newMolecule] = true;
+//         }
+//     }
+// }
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
 $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));

@@ -20,13 +20,13 @@
 @php src/2015/aoc15_16.php
 @php src/2015/aoc15_17.php
 @php src/2015/aoc15_18.php
-REM @php src/2015/aoc15_19.php
+@php src/2015/aoc15_19.php
 REM @php src/2015/aoc15_20.php
 @php src/2015/aoc15_21.php
-REM @php src/2015/aoc15_22.php
+@php src/2015/aoc15_22.php
 @php src/2015/aoc15_23.php
 REM @php src/2015/aoc15_24.php
-REM @php src/2015/aoc15_25.php
+@php src/2015/aoc15_25.php
 
 @echo  .
 @echo ======= 2016 =======
