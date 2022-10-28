@@ -1,7 +1,5 @@
 <?php
 
-// @TODO Part 2 - solution timeouts and memory overflows.
-
 /*
 https://adventofcode.com/2015/day/19
 Part 1: How many distinct molecules can be created after all the different ways you can do one replacement

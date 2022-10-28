@@ -11,6 +11,8 @@ topics: Conway's Game of Life
 
 declare(strict_types=1);
 
+namespace TBali\Aoc15_18;
+
 // --------------------------------------------------------------------
 const YEAR = 2015;
 const DAY = '18';

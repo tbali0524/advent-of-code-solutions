@@ -10,6 +10,8 @@ Part 2: What is the value in register b after the program is finished executing 
 
 declare(strict_types=1);
 
+namespace TBali\Aoc15_23;
+
 // --------------------------------------------------------------------
 const YEAR = 2015;
 const DAY = '23';
@@ -57,7 +59,7 @@ if ($ans2 != SOLUTION2) {
  * @param string[]           $input
  * @param array<string, int> $registers
  *
- * @return array<string, int>
+ * @return array<string, int> The registers at end of execution
  */
 function execute(array $input, array $registers): array
 {
@@ -99,6 +101,8 @@ function execute(array $input, array $registers): array
                     $pc += $offset - 1;
                 }
                 break;
+            default:
+                throw new \Exception('Invalid instruction');
         }
     }
 }

@@ -10,6 +10,8 @@ Part 2: Santa's password expired again. What's the next one?
 
 declare(strict_types=1);
 
+namespace TBali\Aoc15_11;
+
 // --------------------------------------------------------------------
 const YEAR = 2015;
 const DAY = '11';

@@ -10,6 +10,8 @@ Part 2:
 
 declare(strict_types=1);
 
+namespace TBali\Aoc15_25;
+
 // --------------------------------------------------------------------
 const YEAR = 2015;
 const DAY = '25';

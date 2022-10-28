@@ -1,23 +1,22 @@
 <?php
 
 /*
-https://adventofcode.com/2020/day/3
-Part 1: Starting at the top-left corner of your map and following a slope of right 3 and down 1,
-how many trees would you encounter?
-Part 2: What do you get if you multiply together the number of trees encountered on each of the listed slopes?
+https://adventofcode.com/2020/day/5
+Part 1: What is the highest seat ID on a boarding pass?
+Part 2: What is the ID of your seat?
 */
 
 declare(strict_types=1);
 
 // --------------------------------------------------------------------
 const YEAR = 2020;
-const DAY = '03';
-const TITLE = 'Toboggan Trajectory';
-const SOLUTION1 = 211;
-const SOLUTION2 = 3584591857;
+const DAY = '05';
+const TITLE = 'Binary Boarding';
+const SOLUTION1 = 894;
+const SOLUTION2 = 579;
 $startTime = hrtime(true);
 // ----------
-$handle = fopen('input/' . YEAR . '/aoc20_03.txt', 'r');
+$handle = fopen('input/' . YEAR . '/aoc20_05.txt', 'r');
 if ($handle === false) {
     throw new \Exception('Cannot load input file');
 }
@@ -35,37 +34,23 @@ while (true) {
 fclose($handle);
 // --------------------------------------------------------------------
 // Part 1
-$ans1 = 0;
-$maxY = count($input);
-$maxX = strlen($input[0]);
-$y = 0;
-$x = 0;
-while ($y < $maxY) {
-    if ($input[$y][$x] == '#') {
-        ++$ans1;
-    }
-    ++$y;
-    $x = ($x + 3) % $maxX;
-}
+$ans1 = max(array_map(
+    fn ($x) => bindec(strtr($x, 'FBLR', '0101')),
+    $input
+));
 // --------------------------------------------------------------------
 // Part 2
-$ans2 = 1;
-$maxY = count($input);
-$maxX = strlen($input[0]);
-const SLOPES = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]];
-foreach (SLOPES as $dxy) {
-    [$dx, $dy] = $dxy;
-    $y = 0;
-    $x = 0;
-    $count = 0;
-    while ($y < $maxY) {
-        if ($input[$y][$x] == '#') {
-            ++$count;
-        }
-        $y += $dy;
-        $x = ($x + $dx) % $maxX;
-    }
-    $ans2 *= $count;
+$max = 1 << strlen($input[0] ?? '');
+$seats = array_fill(0, $max, false);
+foreach ($input as $line) {
+    $seats[bindec(strtr($line, 'FBLR', '0101'))] = true;
+}
+$ans2 = 0;
+while (($ans2 < $max) and !$seats[$ans2]) {
+    ++$ans2;
+}
+while (($ans2 < $max) and $seats[$ans2]) {
+    ++$ans2;
 }
 // ----------
 $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');

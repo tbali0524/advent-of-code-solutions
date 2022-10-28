@@ -10,6 +10,8 @@ Part 2: Uh oh - the Accounting-Elves have realized that they double-counted ever
 
 declare(strict_types=1);
 
+namespace TBali\Aoc15_12;
+
 // --------------------------------------------------------------------
 const YEAR = 2015;
 const DAY = '12';

@@ -40,7 +40,6 @@ $ans1 = 0;
 const TOTAL = 150;
 rsort($input);
 $counts = array_fill(0, count($input), 0);
-echo 1 << count($input), PHP_EOL;
 for ($i = 0; $i < (1 << count($input)); ++$i) {
     $n = $i;
     $pos = 0;

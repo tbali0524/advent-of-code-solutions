@@ -1,7 +1,6 @@
 @echo off
 @echo ======= Advent of Code solutions =======
-@echo  .
-@echo ======= 2015 =======
+@echo ======= 2015 ===========================
 @php src/2015/aoc15_01.php
 @php src/2015/aoc15_02.php
 @php src/2015/aoc15_03.php
@@ -28,29 +27,27 @@ REM @php src/2015/aoc15_20.php
 REM @php src/2015/aoc15_24.php
 @php src/2015/aoc15_25.php
 
-@echo  .
-@echo ======= 2016 =======
-@echo ...
+@echo ======= 2016 ===========================
+REM @php src/2016/aoc16_01.php
 
-@echo  .
-@echo ======= 2017 =======
-@echo ...
+@echo ======= 2017 ===========================
+REM @php src/2017/aoc17_01.php
 
-@echo  .
-@echo ======= 2018 =======
-@echo ...
+@echo ======= 2018 ===========================
+REM @php src/2018/aoc18_01.php
 
-@echo  .
-@echo ======= 2019 =======
-@echo ...
+@echo ======= 2019 ===========================
+REM @php src/2019/aoc19_01.php
 
-@echo  .
-@echo ======= 2020 =======
+@echo ======= 2020 ===========================
 @php src/2020/aoc20_01.php
 @php src/2020/aoc20_02.php
 @php src/2020/aoc20_03.php
 REM @php src/2020/aoc20_04.php
+@php src/2020/aoc20_05.php
+@php src/2020/aoc20_06.php
+@php src/2020/aoc20_07.php
+@php src/2020/aoc20_08.php
 
-@echo  .
-@echo ======= 2021 =======
-@echo ...
+@echo ======= 2021 ===========================
+REM @php src/2021/aoc21_01.php
