@@ -6,61 +6,46 @@ Part 1: How many bag colors can eventually contain at least one shiny gold bag?
 Part 2: How many individual bags are required inside your single shiny gold bag?
 */
 
-// phpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
+// phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
 
-namespace TBali\Aoc20_07;
+namespace TBali\Aoc2020;
 
-// --------------------------------------------------------------------
-const YEAR = 2020;
-const DAY = '07';
-const TITLE = 'Handy Haversacks';
-const SOLUTION1 = 115;
-const SOLUTION2 = 1250;
-$startTime = hrtime(true);
-// ----------
-$handle = fopen('input/' . YEAR . '/aoc20_07.txt', 'r');
-if ($handle === false) {
-    throw new \Exception('Cannot load input file');
-}
-$input = [];
-while (true) {
-    $line = fgets($handle);
-    if ($line === false) {
-        break;
+use TBali\Aoc\SolutionBase;
+
+class Aoc2020Day07 extends SolutionBase
+{
+    public const YEAR = 2020;
+    public const DAY = 7;
+    public const TITLE = 'Handy Haversacks';
+    public const SOLUTIONS = [115, 1250];
+    public const EXAMPLE_SOLUTIONS = [[4, 32], [0, 0]];
+
+    /**
+     * @param string[] $input
+     *
+     * @return array{string, string}
+     */
+    public function solve(array $input): array
+    {
+        // ---------- Part 1 + 2
+        $g = new BagRegulations($input);
+        $ans1 = $g->getSumContainerBags('shiny gold');
+        $ans2 = $g->getSumContainedBags('shiny gold');
+        return [strval($ans1), strval($ans2)];
     }
-    if (trim($line) == '') {
-        continue;
-    }
-    $input[] = trim($line);
 }
-fclose($handle);
-// --------------------------------------------------------------------
-// Part 1 + 2
-$g = new BagRegulations($input);
-$ans1 = $g->getSumContainerBags('shiny gold');
-$ans2 = $g->getSumContainedBags('shiny gold');
-// ----------
-$spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-$maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
-echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]: ' . TITLE
-    . PHP_EOL;
-echo $ans1, PHP_EOL;
-if ($ans1 != SOLUTION1) {
-    echo '*** WRONG ***', PHP_EOL;
-}
-echo $ans2, PHP_EOL;
-if ($ans2 != SOLUTION2) {
-    echo '*** WRONG ***', PHP_EOL;
-}
+
 // --------------------------------------------------------------------
 class BagRegulations
 {
     /** @var array<string, array<string, int>> */
-    public array $contains = [];
+    private array $contains = [];
     /** @var array<string, string[]> */
-    public array $containedBy = [];
+    private array $containedBy = [];
+    /** @var array<string, int> */
+    private array $memo = [];
 
     /** @param string[] $input */
     public function __construct(array $input = [])
@@ -111,16 +96,14 @@ class BagRegulations
 
     public function getSumContainedBags(string $bag): int
     {
-        static $memo = [];
-
-        if (isset($memo[$bag])) {
-            return $memo[$bag];
+        if (isset($this->memo[$bag])) {
+            return $this->memo[$bag];
         }
         $ans = 0;
         foreach ($this->contains[$bag] ?? [] as $containedBag => $count) {
             $ans += $count * ($this->getSumContainedBags($containedBag) + 1);
         }
-        $memo[$bag] = $ans;
+        $this->memo[$bag] = $ans;
         return $ans;
     }
 }

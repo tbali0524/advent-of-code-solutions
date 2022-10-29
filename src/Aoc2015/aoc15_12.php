@@ -40,6 +40,7 @@ fclose($handle);
 // Part 1
 $a = json_decode($input, true) ?? []; // true: JSON objects will be returned as associative arrays
 $count = 0;
+// @phpstan-ignore-next-line77
 array_walk_recursive($a, function ($x) use (&$count) {
     if (is_numeric($x)) {
         $count += intval($x);
@@ -72,6 +73,7 @@ function sumNonRed(mixed $a): int
     }
     if (is_object($a)) {
         $isOk = true;
+        // @phpstan-ignore-next-line77
         foreach ($a as $item) {
             if ($item == 'red') {
                 $isOk = false;
@@ -86,6 +88,7 @@ function sumNonRed(mixed $a): int
         return 0;
     }
     $sum = 0;
+    // @phpstan-ignore-next-line77
     foreach ($a as $item) {
         $sum += sumNonRed($item);
     }

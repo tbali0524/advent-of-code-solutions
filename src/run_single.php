@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Advent of Code - CLI runner for a single solution
+ * Advent of Code - CLI runner for a single solution.
  */
 
 declare(strict_types=1);
@@ -33,6 +33,7 @@ if (!file_exists($srcFileName)) {
     exit(2);
 }
 $fullClassName = 'TBali\\Aoc' . $year . '\\' . $className;
+/** @var TBali\Aoc\Solution */
 $solution = new $fullClassName();
 $result = $solution->run();
 exit($result ? 0 : 3);

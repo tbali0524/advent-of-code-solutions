@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Advent of Code - common interface for every solution class, implemented through an abstract base class
+ * Advent of Code - common interface for every solution class, implemented through the abstract class SolutionBase.
  */
 
 declare(strict_types=1);
@@ -10,7 +10,7 @@ namespace TBali\Aoc;
 
 interface Solution
 {
-    // interface constants can be overriden in classes from PHP v8.1
+    // note: interface constants can be overriden in classes only from PHP v8.1
     public const YEAR = 2014;
     public const DAY = 0;
     public const TITLE = '';
@@ -21,20 +21,13 @@ interface Solution
 
     public function run(): bool;
 
-    /** @return string[] */
-    public function readInput(string $fileName): array;
-
     /**
      * @param string[] $input
      *
      * @return array{string, string}
      */
-    public function solve(array $rawInput): array;
+    public function solve(array $input): array;
 
-    /**
-     * @param string[]
-     *
-     * @return int[]
-     */
-    public static function intArray(array $input): array;
+    /** @return string[] */
+    public static function readInput(string $fileName): array;
 }

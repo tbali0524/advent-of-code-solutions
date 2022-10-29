@@ -18,9 +18,7 @@ class Aoc2020Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Report Repair';
     public const SOLUTIONS = [988771, 171933104];
-    public const STRING_INPUT = '';
     public const EXAMPLE_SOLUTIONS = [[514579, 241861950], [0, 0]];
-    public const EXAMPLE_STRING_INPUTS = ['', ''];
 
     /**
      * @param string[] $input
@@ -31,7 +29,7 @@ class Aoc2020Day01 extends SolutionBase
     {
         /** @var int[] */
         $input = array_map('intval', $input);
-        // Part 1
+        // ---------- Part 1
         $ans1 = 0;
         $visited = [];
         foreach ($input as $i) {
@@ -41,7 +39,7 @@ class Aoc2020Day01 extends SolutionBase
             }
             $visited[$i] = true;
         }
-        // Part 2
+        // ---------- Part 2
         $ans2 = 0;
         $visited = [];
         foreach ($input as $idx => $i) {
