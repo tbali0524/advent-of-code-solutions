@@ -18,9 +18,14 @@
     "require": {
         "php": "^8.1"
     },
+    "autoload": {
+        "psr-4": {
+            "TBali\\": "src/"
+        }
+    },
     "prefer-stable": true,
     "scripts": {
-        "start": "run_all.bat",
+        "start": "php src/aoc_run.php",
         "cs"   : "phpcs",
         "cs-fixer" : "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
