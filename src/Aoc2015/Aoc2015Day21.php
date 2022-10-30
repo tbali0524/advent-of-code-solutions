@@ -20,7 +20,6 @@ class Aoc2015Day21 extends SolutionBase
     public const DAY = 21;
     public const TITLE = 'RPG Simulator 20XX';
     public const SOLUTIONS = [111, 188];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
 
     private const PLAYER_HP = 100;
     // cost, damage, armor

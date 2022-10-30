@@ -42,14 +42,17 @@ abstract class SolutionBase implements Solution
             }
             ++$countExamples;
             $answers = $this->solve($input);
+            if (
+                (strval(static::EXAMPLE_SOLUTIONS[$example][0]) == '0')
+                and (strval(static::EXAMPLE_SOLUTIONS[$example][1]) == '0')
+            ) {
+                $isOk = false;
+                $exampleMsg .= self::WARN_TAG . 'Puzzle example #' . ($example + 1)
+                    . ' is missing expected result.' . PHP_EOL;
+                continue;
+            }
             for ($part = 0; $part < 2; ++$part) {
                 if (strval(static::EXAMPLE_SOLUTIONS[$example][$part]) == '0') {
-                    if ($part > 0) {
-                        continue;
-                    }
-                    $isOk = false;
-                    $exampleMsg .= self::WARN_TAG . 'Puzzle example #' . ($example + 1)
-                        . ' is missing expected result.' . PHP_EOL;
                     continue;
                 }
                 if ($answers[$part] != strval(static::EXAMPLE_SOLUTIONS[$example][$part])) {
@@ -80,9 +83,9 @@ abstract class SolutionBase implements Solution
         $answers = $this->solve($input);
         // stats and report
         $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-        $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
-        echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTime . ' sec, memory: '
-            . $maxMemory . ' MB] : ' . static::TITLE . PHP_EOL . $exampleMsg;
+        // $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
+        echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTime . ' sec] : '
+            . static::TITLE . PHP_EOL . $exampleMsg;
         for ($part = 0; $part < 2; ++$part) {
             if (strval(static::SOLUTIONS[$part]) == '0') {
                 echo self::WARN_TAG . $answers[$part] . ' - Puzzle is missing expected result.' . PHP_EOL;

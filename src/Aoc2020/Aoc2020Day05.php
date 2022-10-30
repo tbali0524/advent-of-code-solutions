@@ -18,8 +18,8 @@ class Aoc2020Day05 extends SolutionBase
     public const DAY = 5;
     public const TITLE = 'Binary Boarding';
     public const SOLUTIONS = [894, 579];
-    public const EXAMPLE_SOLUTIONS = [[357, 0], [0, 0]];
-    public const EXAMPLE_STRING_INPUTS = ['FBFBBFFRLR', ''];
+    public const EXAMPLE_SOLUTIONS = [[357, 0], [567, 0]];
+    public const EXAMPLE_STRING_INPUTS = ['FBFBBFFRLR', 'BFFFBBFRRR'];
 
     /**
      * @param string[] $input

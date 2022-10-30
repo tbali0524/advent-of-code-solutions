@@ -18,7 +18,7 @@ class Aoc2015Day12 extends SolutionBase
     public const DAY = 12;
     public const TITLE = 'JSAbacusFramework.io';
     public const SOLUTIONS = [111754, 65402];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[18, 0], [0, 16]];
 
     /**
      * @param string[] $input
@@ -31,7 +31,7 @@ class Aoc2015Day12 extends SolutionBase
         // ---------- Part 1
         $a = json_decode($input, true) ?? []; // true: JSON objects will be returned as associative arrays
         $count = 0;
-        // @phpstan-ignore-next-line77
+        // @phpstan-ignore-next-line
         array_walk_recursive($a, function ($x) use (&$count) {
             if (is_numeric($x)) {
                 $count += intval($x);
@@ -52,7 +52,7 @@ class Aoc2015Day12 extends SolutionBase
         }
         if (is_object($a)) {
             $isOk = true;
-            // @phpstan-ignore-next-line77
+            // @phpstan-ignore-next-line
             foreach ($a as $item) {
                 if ($item == 'red') {
                     $isOk = false;
@@ -67,7 +67,7 @@ class Aoc2015Day12 extends SolutionBase
             return 0;
         }
         $sum = 0;
-        // @phpstan-ignore-next-line77
+        // @phpstan-ignore-next-line
         foreach ($a as $item) {
             $sum += $this->sumNonRed($item);
         }

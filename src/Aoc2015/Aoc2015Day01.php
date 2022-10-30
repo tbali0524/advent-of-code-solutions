@@ -18,8 +18,8 @@ class Aoc2015Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Not Quite Lisp';
     public const SOLUTIONS = [74, 1795];
-    public const EXAMPLE_SOLUTIONS = [[-3, 1], [0, 0]];
-    public const EXAMPLE_STRING_INPUTS = [')())())', ''];
+    public const EXAMPLE_SOLUTIONS = [[-3, 1], [0, 5]];
+    public const EXAMPLE_STRING_INPUTS = [')())())', '()())'];
 
     /**
      * @param string[] $input

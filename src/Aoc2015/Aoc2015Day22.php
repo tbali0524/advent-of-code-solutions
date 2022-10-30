@@ -22,7 +22,6 @@ class Aoc2015Day22 extends SolutionBase
     public const DAY = 22;
     public const TITLE = 'Wizard Simulator 20XX';
     public const SOLUTIONS = [900, 1216];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
 
     /**
      * @param string[] $input

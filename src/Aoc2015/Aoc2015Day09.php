@@ -31,14 +31,14 @@ class Aoc2015Day09 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1 + 2
-        $g = new Day9Graph($input);
+        $g = new CityGraph($input);
         [$ans1, $ans2] = $g->getMinMaxDistance();
         return [strval($ans1), strval($ans2)];
     }
 }
 
 // --------------------------------------------------------------------
-class Day9Graph
+class CityGraph
 {
     public int $v = 0;
     /** @var array<string, int> */

@@ -31,7 +31,7 @@ class Aoc2015Day13 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1
-        $g = new Day13Graph($input);
+        $g = new KnightsTable($input);
         $ans1 = $g->getMaxHappiness();
         // ---------- Part 2
         $g->addZeroNode();
@@ -41,7 +41,7 @@ class Aoc2015Day13 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class Day13Graph
+class KnightsTable
 {
     public int $v = 0;
     /** @var array<string, int> */

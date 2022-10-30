@@ -18,7 +18,6 @@ class Aoc2015Day16 extends SolutionBase
     public const DAY = 16;
     public const TITLE = 'Aunt Sue';
     public const SOLUTIONS = [373, 260];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
 
     private const AUNT_SPEC = [
         'children' => 3,

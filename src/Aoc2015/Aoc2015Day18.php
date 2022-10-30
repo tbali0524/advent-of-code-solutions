@@ -19,16 +19,10 @@ class Aoc2015Day18 extends SolutionBase
     public const DAY = 18;
     public const TITLE = 'Like a GIF For Your Yard';
     public const SOLUTIONS = [814, 924];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[4, 17], [0, 0]];
 
-    private const MAX = 100;
     private const STEPS = 100;
-    private const CORNERS = [
-        [0, 0],
-        [0, self::MAX - 1],
-        [self::MAX - 1, 0],
-        [self::MAX - 1, self::MAX - 1],
-    ];
+    private const EXAMPLE_STEPS = 5;
 
     /**
      * @param string[] $input
@@ -47,18 +41,27 @@ class Aoc2015Day18 extends SolutionBase
     /** @param string[] $input */
     private function simulate(array $input, bool $stuckCorners = false): int
     {
+        $size = count($input);
+        // detect puzzle example as input
+        $maxSteps = ($size == 6 ? self::EXAMPLE_STEPS : self::STEPS);
+        $corners = [
+            [0, 0],
+            [0, $size - 1],
+            [$size - 1, 0],
+            [$size - 1, $size - 1],
+        ];
         $prev = $input;
         if ($stuckCorners) {
-            foreach (self::CORNERS as $xy) {
+            foreach ($corners as $xy) {
                 [$x, $y] = $xy;
                 $prev[$y][$x] = '#';
             }
         }
-        for ($step = 0; $step < self::STEPS; ++$step) {
+        for ($step = 0; $step < $maxSteps; ++$step) {
             $next = $prev;
-            for ($y = 0; $y < self::MAX; ++$y) {
-                for ($x = 0; $x < self::MAX; ++$x) {
-                    if ($stuckCorners and in_array([$x, $y], self::CORNERS, true)) {
+            for ($y = 0; $y < $size; ++$y) {
+                for ($x = 0; $x < $size; ++$x) {
+                    if ($stuckCorners and in_array([$x, $y], $corners, true)) {
                         continue;
                     }
                     $count = 0;
@@ -69,7 +72,7 @@ class Aoc2015Day18 extends SolutionBase
                             }
                             $x1 = $x + $dx;
                             $y1 = $y + $dy;
-                            if (($x1 < 0) or ($x1 >= self::MAX) or ($y1 < 0) or ($y1 >= self::MAX)) {
+                            if (($x1 < 0) or ($x1 >= $size) or ($y1 < 0) or ($y1 >= $size)) {
                                 continue;
                             }
                             if ($prev[$y1][$x1] == '#') {

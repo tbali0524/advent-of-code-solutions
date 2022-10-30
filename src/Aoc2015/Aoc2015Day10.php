@@ -20,11 +20,12 @@ class Aoc2015Day10 extends SolutionBase
     public const TITLE = 'Elves Look, Elves Say';
     public const SOLUTIONS = [360154, 5103798];
     public const STRING_INPUT = '1113122113';
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
-    public const EXAMPLE_STRING_INPUTS = ['', ''];
+    public const EXAMPLE_SOLUTIONS = [[6, 0], [0, 0]];
+    public const EXAMPLE_STRING_INPUTS = ['1', ''];
 
     private const MAX1 = 40;
     private const MAX2 = 50;
+    private const EXAMPLE_MAX = 5;
 
     /**
      * @param string[] $input
@@ -35,9 +36,13 @@ class Aoc2015Day10 extends SolutionBase
     {
         $input = $input[0];
         // ---------- Part 1 + 2
+        $ans_example = 0;
         $ans1 = 0;
         $prev = $input;
         for ($i = 0; $i < self::MAX2; ++$i) {
+            if ($i == self::EXAMPLE_MAX) {
+                $ans_example = strlen($prev);
+            }
             if ($i == self::MAX1) {
                 $ans1 = strlen($prev);
             }
@@ -54,6 +59,10 @@ class Aoc2015Day10 extends SolutionBase
             $prev = $next;
         }
         $ans2 = strlen($next);
+        // detect puzzle example as input
+        if ($input == '1') {
+            return [strval($ans_example), '0'];
+        }
         return [strval($ans1), strval($ans2)];
     }
 }

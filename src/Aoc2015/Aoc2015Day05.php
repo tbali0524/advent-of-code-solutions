@@ -18,7 +18,7 @@ class Aoc2015Day05 extends SolutionBase
     public const DAY = 5;
     public const TITLE = 'Doesn\'t He Have Intern-Elves For This?';
     public const SOLUTIONS = [238, 69];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[2, 0], [0, 2]];
 
     /**
      * @param string[] $input

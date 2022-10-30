@@ -6,7 +6,7 @@ Part 1: After exactly 2503 seconds, what distance has the winning reindeer trave
 Part 2: After exactly 2503 seconds, how many points does the winning reindeer have?
 */
 
-// phpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
+// phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
 
@@ -20,9 +20,10 @@ class Aoc2015Day14 extends SolutionBase
     public const DAY = 14;
     public const TITLE = 'Reindeer Olympic';
     public const SOLUTIONS = [2696, 1084];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[1120, 689], [0, 0]];
 
-    private const MAX = 2503;
+    private const STEPS = 2503;
+    private const EXAMPLE_STEPS = 1000;
 
     /**
      * @param string[] $input
@@ -31,14 +32,16 @@ class Aoc2015Day14 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // detect puzzle example as input
+        $maxSteps = (count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS);
         // ---------- Part 1
-        $ans1 = max(array_map(fn ($line) => (new Reindeer($line))->getDistanceAt(self::MAX), $input));
+        $ans1 = max(array_map(fn ($line) => (new Reindeer($line))->getDistanceAt($maxSteps), $input));
         // ---------- Part 2
         $reindeers = [];
         foreach ($input as $line) {
             $reindeers[] = new Reindeer($line);
         }
-        for ($second = 1; $second <= self::MAX; ++$second) {
+        for ($second = 1; $second <= $maxSteps; ++$second) {
             $max = max(array_map(fn ($x) => $x->getDistanceAt($second), $reindeers));
             array_walk(
                 $reindeers,

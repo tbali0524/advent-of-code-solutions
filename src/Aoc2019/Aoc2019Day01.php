@@ -19,7 +19,7 @@ class Aoc2019Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'The Tyranny of the Rocket Equation';
     public const SOLUTIONS = [3287620, 4928567];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[34241, 51316], [0, 0]];
 
     /**
      * @param string[] $input

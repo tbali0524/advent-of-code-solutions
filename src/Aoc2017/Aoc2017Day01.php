@@ -18,7 +18,8 @@ class Aoc2017Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Inverse Captcha';
     public const SOLUTIONS = [1102, 1076];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[9, 0], [0, 4]];
+    public const EXAMPLE_STRING_INPUTS = ['91212129', '12131415'];
 
     /**
      * @param string[] $input

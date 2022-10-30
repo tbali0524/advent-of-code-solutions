@@ -18,7 +18,7 @@ class Aoc2015Day25 extends SolutionBase
     public const DAY = 25;
     public const TITLE = 'Let It Snow';
     public const SOLUTIONS = [19980801, 0];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[31916031, 0], [27995004, 0]];
 
     /**
      * @param string[] $input

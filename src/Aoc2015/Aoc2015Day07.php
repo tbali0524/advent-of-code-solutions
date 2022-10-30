@@ -6,7 +6,7 @@ Part 1: What signal is ultimately provided to wire a?
 Part 2: What new signal is ultimately provided to wire a?
 */
 
-// phpcs:disable PSR1.Files.SideEffects, PSR1.Classes.ClassDeclaration
+// phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
 
@@ -20,7 +20,7 @@ class Aoc2015Day07 extends SolutionBase
     public const DAY = 7;
     public const TITLE = 'Some Assembly Required';
     public const SOLUTIONS = [956, 40149];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[72, 0], [0, 0]];
 
     /**
      * @param string[] $input
@@ -30,26 +30,26 @@ class Aoc2015Day07 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1
-        $circuit = new Day7Circuit();
+        $circuit = new Circuit();
         foreach ($input as $line) {
-            $gate = new Day7Gate($line);
+            $gate = new Gate($line);
             $circuit->gates[$gate->id] = $gate;
         }
         $ans1 = $circuit->evaluate('a');
         // ---------- Part 2
-        $circuit = new Day7Circuit();
+        $circuit = new Circuit();
         foreach ($input as $line) {
-            $gate = new Day7Gate($line);
+            $gate = new Gate($line);
             $circuit->gates[$gate->id] = $gate;
         }
-        $circuit->gates['b'] = new Day7Gate('956 -> b');
+        $circuit->gates['b'] = new Gate('956 -> b');
         $ans2 = $circuit->evaluate('a');
         return [strval($ans1), strval($ans2)];
     }
 }
 
 // --------------------------------------------------------------------
-class Day7Gate
+class Gate
 {
     public string $id = '';
     public string $operator = '';
@@ -107,9 +107,9 @@ class Day7Gate
 }
 
 // --------------------------------------------------------------------
-class Day7Circuit
+class Circuit
 {
-    /** @var array<string, Day7Gate> */
+    /** @var array<string, Gate> */
     public array $gates = [];
 
     public function evaluate(string $id): int

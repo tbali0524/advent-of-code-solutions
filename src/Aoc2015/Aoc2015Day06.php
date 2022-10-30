@@ -20,7 +20,8 @@ class Aoc2015Day06 extends SolutionBase
     public const DAY = 6;
     public const TITLE = 'Probably a Fire Hazard';
     public const SOLUTIONS = [377891, 14110788];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[1000000, 2000000], [1, 1]];
+    public const EXAMPLE_STRING_INPUTS = ['toggle 0,0 through 999,999', 'turn on 0,0 through 0,0'];
 
     private const MAX = 1000;
 

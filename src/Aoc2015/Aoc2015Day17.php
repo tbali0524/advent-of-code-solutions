@@ -20,9 +20,10 @@ class Aoc2015Day17 extends SolutionBase
     public const DAY = 17;
     public const TITLE = 'No Such Thing as Too Much';
     public const SOLUTIONS = [1304, 18];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[4, 3], [0, 0]];
 
     private const TOTAL = 150;
+    private const EXAMPLE_TOTAL = 25;
 
     /**
      * @param string[] $input
@@ -33,6 +34,8 @@ class Aoc2015Day17 extends SolutionBase
     {
         /** @var int[] */
         $input = array_map('intval', $input);
+        // detect puzzle example as input
+        $total = (count($input) == 5 ? self::EXAMPLE_TOTAL : self::TOTAL);
         // ---------- Part 1 + 2
         $ans1 = 0;
         rsort($input);
@@ -42,7 +45,7 @@ class Aoc2015Day17 extends SolutionBase
             $pos = 0;
             $sum = 0;
             $bits = 0;
-            while (($n > 0) and ($sum < self::TOTAL)) {
+            while (($n > 0) and ($sum < $total)) {
                 if (($n & 1) != 0) {
                     $sum += $input[$pos];
                     ++$bits;
@@ -50,7 +53,7 @@ class Aoc2015Day17 extends SolutionBase
                 ++$pos;
                 $n >>= 1;
             }
-            if (($n == 0) and ($sum == self::TOTAL)) {
+            if (($n == 0) and ($sum == $total)) {
                 ++$ans1;
                 ++$counts[$bits];
             }
