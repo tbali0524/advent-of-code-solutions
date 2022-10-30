@@ -17,7 +17,7 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2015Day20 extends SolutionBase
+final class Aoc2015Day20 extends SolutionBase
 {
     public const YEAR = 2015;
     public const DAY = 20;
@@ -58,9 +58,9 @@ class Aoc2015Day20 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class PrimeFactors
+final class PrimeFactors
 {
-    public int $n;
+    public readonly int $n;
     /** @var array<int, int> */
     public array $factorExp = [];   // baes => exp
 

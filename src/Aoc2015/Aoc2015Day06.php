@@ -14,7 +14,7 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2015Day06 extends SolutionBase
+final class Aoc2015Day06 extends SolutionBase
 {
     public const YEAR = 2015;
     public const DAY = 6;
@@ -102,7 +102,7 @@ class Aoc2015Day06 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class Instruction
+final class Instruction
 {
     public function __construct(
         public readonly string $verb,

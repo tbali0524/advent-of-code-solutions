@@ -14,7 +14,7 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2020Day07 extends SolutionBase
+final class Aoc2020Day07 extends SolutionBase
 {
     public const YEAR = 2020;
     public const DAY = 7;
@@ -38,18 +38,20 @@ class Aoc2020Day07 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class BagRegulations
+final class BagRegulations
 {
     /** @var array<string, array<string, int>> */
-    private array $contains = [];
+    private array $contains;
     /** @var array<string, string[]> */
-    private array $containedBy = [];
+    private array $containedBy;
     /** @var array<string, int> */
     private array $memo = [];
 
     /** @param string[] $input */
     public function __construct(array $input = [])
     {
+        $this->contains = [];
+        $this->containedBy = [];
         foreach ($input as $line) {
             $a = explode(' ', $line);
             if ((count($a) < 7) or ($a[2] != 'bags') or ($a[3] != 'contain')) {

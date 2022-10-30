@@ -12,7 +12,7 @@ namespace TBali\Aoc2017;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2017Day01 extends SolutionBase
+final class Aoc2017Day01 extends SolutionBase
 {
     public const YEAR = 2017;
     public const DAY = 1;

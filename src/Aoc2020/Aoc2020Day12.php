@@ -13,7 +13,7 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2020Day12 extends SolutionBase
+final class Aoc2020Day12 extends SolutionBase
 {
     public const YEAR = 2020;
     public const DAY = 12;
@@ -39,13 +39,14 @@ class Aoc2020Day12 extends SolutionBase
             $command = $line[0];
             $param = intval(substr($line, 1));
             if (isset(self::TURNS[$command])) {
-                $heading = ($heading + 4 + self::TURNS[$command] * intdiv($param, 90)) % 4;
+                $heading = ($heading + self::TURNS[$command] * intdiv($param, 90)) % 4;
+                $heading = ($heading + 4) % 4;
                 continue;
             }
             [$dx, $dy] = (
                 $command == 'F'
                 ? self::DELTAS[$heading]
-                : self::DELTAS[self::DIRECTIONS[$command] ?? [0, 0]]
+                : self::DELTAS[self::DIRECTIONS[$command] ?? 0]
             );
             $x += $dx * $param;
             $y += $dy * $param;
@@ -61,9 +62,9 @@ class Aoc2020Day12 extends SolutionBase
                 $turn = (4 + self::TURNS[$command] * intdiv($param, 90)) % 4;
                 [$wx, $wy] = match ($turn) {
                     0 => [$wx, $wy],
-                    1 => [$wy, -$wx],
-                    2 => [-$wx, -$wy],
-                    3 => [-$wy, $wx],
+                    1, -3 => [$wy, -$wx],
+                    2, -2 => [-$wx, -$wy],
+                    3, -1 => [-$wy, $wx],
                 };
                 continue;
             }

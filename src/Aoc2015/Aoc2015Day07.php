@@ -14,7 +14,7 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2015Day07 extends SolutionBase
+final class Aoc2015Day07 extends SolutionBase
 {
     public const YEAR = 2015;
     public const DAY = 7;
@@ -49,7 +49,7 @@ class Aoc2015Day07 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class Gate
+final class Gate
 {
     public string $id = '';
     public string $operator = '';
@@ -107,7 +107,7 @@ class Gate
 }
 
 // --------------------------------------------------------------------
-class Circuit
+final class Circuit
 {
     /** @var array<string, Gate> */
     public array $gates = [];

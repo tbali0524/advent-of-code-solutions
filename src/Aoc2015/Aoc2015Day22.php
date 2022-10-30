@@ -16,7 +16,7 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2015Day22 extends SolutionBase
+final class Aoc2015Day22 extends SolutionBase
 {
     public const YEAR = 2015;
     public const DAY = 22;
@@ -46,11 +46,11 @@ class Aoc2015Day22 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class WizardGameState
+final class WizardGameState
 {
     public int $enemyHp;
-    public int $enemyDamage;
-    public bool $hardMode;
+    public readonly int $enemyDamage;
+    public readonly bool $hardMode;
 
     public int $hp = self::PLAYER_START_HP;
     public int $mana = self::PLAYER_START_MANA;
@@ -221,7 +221,7 @@ class WizardSimulator
 }
 
 // --------------------------------------------------------------------
-class WizardSimulatorHardMode extends WizardSimulator
+final class WizardSimulatorHardMode extends WizardSimulator
 {
     public function __construct(int $enemyHp, int $enemyDamage)
     {

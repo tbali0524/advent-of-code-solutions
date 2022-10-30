@@ -15,7 +15,7 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2015Day09 extends SolutionBase
+final class Aoc2015Day09 extends SolutionBase
 {
     public const YEAR = 2015;
     public const DAY = 9;
@@ -38,7 +38,7 @@ class Aoc2015Day09 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class CityGraph
+final class CityGraph
 {
     public int $v = 0;
     /** @var array<string, int> */

@@ -58,12 +58,12 @@ class Aoc2015Day14 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-class Reindeer
+final class Reindeer
 {
-    public string $name;
-    public int $speed;
-    public int $flyTime;
-    public int $restTime;
+    public readonly string $name;
+    public readonly int $speed;
+    public readonly int $flyTime;
+    public readonly int $restTime;
     public int $points;
 
     public function __construct(string $line)

@@ -10,16 +10,20 @@ namespace TBali\Aoc;
 
 use TBali\Aoc\SolutionBase as Base;
 
-class Runner
+final class Runner
 {
     public int $year;
     public int $day;
     public bool $isOk;
+    public bool $runAsScripts;
 
     public const MIN_YEAR = 2015;
     public const MAX_YEAR = 2022;
     public const MIN_DAYS = 1;
     public const MAX_DAYS = 25;
+
+    public const SCRIPT_RUN_COMMAND = 'python';
+    public const SCRIPT_EXTENSION = '.py';
 
     public const TO_SKIP = [
         2015 => [20, 24],
@@ -28,11 +32,12 @@ class Runner
     private const ERROR_TAG = Base::ANSI_RED . '[ERROR]' . Base::ANSI_RESET . ' ';
 
     /** @param string[] $args (the PHP $argv of the script) */
-    final public function __construct(array $args)
+    public function __construct(array $args, bool $runAsScripts = false)
     {
-        echo 'AoC v1.0 - batch PHP solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
+        echo 'AoC v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
         [$this->year, $this->day] = $this->processArgs($args);
         $this->isOk = true;
+        $this->runAsScripts = $runAsScripts;
     }
 
     /**
@@ -40,7 +45,7 @@ class Runner
      *
      * @return array{int, int} year and day, -1 if not provided
      */
-    final public function processArgs(array $args): array
+    private function processArgs(array $args): array
     {
         $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL
             . 'Usage:  php src/aoc.php [year] [day]' . PHP_EOL;
@@ -69,16 +74,35 @@ class Runner
         return [$year, $day];
     }
 
-    /** runs a single solution */
-    final public function runSingle(int $year, int $day): void
+    private function getClassName(int $year, int $day): string
     {
-        $className = 'Aoc' . $year . 'Day' . str_pad(strval($day), 2, '0', STR_PAD_LEFT);
-        $srcFileName = 'src/Aoc' . $year . '/' . $className . '.php';
+        return 'Aoc' . $year . 'Day' . str_pad(strval($day), 2, '0', STR_PAD_LEFT);
+    }
+
+    private function getSourceName(int $year, int $day): string
+    {
+        return 'src/Aoc' . $year . '/' . $this->getClassName($year, $day)
+            . ($this->runAsScripts ? self::SCRIPT_EXTENSION : '.php');
+    }
+
+    private function checkFileExists(string $srcFileName): bool
+    {
         if (!file_exists($srcFileName)) {
             echo self::ERROR_TAG . 'Cannot find solution source file: ' . $srcFileName . PHP_EOL;
             $this->isOk = false;
-            return;
+            return false;
         }
+        return true;
+    }
+
+    /** runs a single solution class */
+    public function runSingleAsClass(int $year, int $day): bool
+    {
+        $srcFileName = $this->getSourceName($year, $day);
+        if (!$this->checkFileExists($srcFileName)) {
+            return false;
+        }
+        $className = $this->getClassName($year, $day);
         $fullClassName = 'TBali\\Aoc' . $year . '\\' . $className;
         /** @var Solution */
         $solution = new $fullClassName();
@@ -86,14 +110,40 @@ class Runner
         if (!$success) {
             $this->isOk = false;
         }
+        return $success;
+    }
+
+    /** runs a single solution script */
+    public function runSingleAsScript(int $year, int $day): bool
+    {
+        $srcFileName = $this->getSourceName($year, $day);
+        if (!$this->checkFileExists($srcFileName)) {
+            return false;
+        }
+        $runCommand = self::SCRIPT_RUN_COMMAND . ' ' . $srcFileName;
+        if (PHP_OS_FAMILY == 'Windows') {
+            $runCommand = str_replace('/', '\\', $runCommand);
+        }
+        $execResultCode = 0;
+        $execResult = system($runCommand, $execResultCode);
+        if (($execResult === false) or ($execResultCode != 0)) {
+            $this->isOk = false;
+            echo self::ERROR_TAG . 'Execution failed for ' . $srcFileName . PHP_EOL;
+            return false;
+        }
+        return true;
     }
 
     /** runs all matching solutions based in $this->year, $this->day (-1 meaning 'all') */
-    final public function run(): void
+    public function run(): void
     {
         $startTime = hrtime(true);
         if (($this->year >= 0) and ($this->day >= 0)) {
-            $this->runSingle($this->year, $this->day);
+            if ($this->runAsScripts) {
+                $this->runSingleAsScript($this->year, $this->day);
+            } else {
+                $this->runSingleAsClass($this->year, $this->day);
+            }
             return;
         }
         $countRuns = 0;
@@ -106,19 +156,17 @@ class Runner
                 if (in_array($day, self::TO_SKIP[$year] ?? [])) {
                     continue;
                 }
-                $className = 'Aoc' . $year . 'Day' . str_pad(strval($day), 2, '0', STR_PAD_LEFT);
-                $srcFileName = 'src/Aoc' . $year . '/' . $className . '.php';
+                $srcFileName = $this->getSourceName($year, $day);
                 if (!file_exists($srcFileName)) {
                     continue;
                 }
-                $fullClassName = 'TBali\\Aoc' . $year . '\\' . $className;
-                /** @var Solution */
-                $solution = new $fullClassName();
-                $success = $solution->run();
-                if ($success) {
-                    ++$countRuns;
+                if ($this->runAsScripts) {
+                    $result = $this->runSingleAsScript($year, $day);
                 } else {
-                    $this->isOk = false;
+                    $result = $this->runSingleAsClass($year, $day);
+                }
+                if ($result) {
+                    ++$countRuns;
                 }
             }
         }
