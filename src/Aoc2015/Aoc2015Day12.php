@@ -44,7 +44,6 @@ class Aoc2015Day12 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    // --------------------------------------------------------------------
     private function sumNonRed(mixed $a): int
     {
         if (is_numeric($a)) {

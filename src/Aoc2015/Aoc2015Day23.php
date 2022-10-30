@@ -27,13 +27,12 @@ class Aoc2015Day23 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        // ---------- Part 1
+        // ---------- Part 1 + 2
         $ans1 = $this->execute($input, ['a' => 0, 'b' => 0])['b'] ?? 0;
         $ans2 = $this->execute($input, ['a' => 1, 'b' => 0])['b'] ?? 0;
         return [strval($ans1), strval($ans2)];
     }
 
-    // --------------------------------------------------------------------
     /**
      * @param string[]           $input
      * @param array<string, int> $registers

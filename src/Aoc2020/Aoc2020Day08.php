@@ -48,7 +48,6 @@ class Aoc2020Day08 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    // --------------------------------------------------------------------
     /**
      * @param string[] $input
      *

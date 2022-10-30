@@ -1,0 +1,82 @@
+<?php
+
+/*
+https://adventofcode.com/2020/day/12
+Part 1: What is the Manhattan distance between that location and the ship's starting position?
+Part 2: Almost all of the actions indicate how to move a waypoint which is relative to the ship's position
+    What is the Manhattan distance between that location and the ship's starting position?
+*/
+
+declare(strict_types=1);
+
+namespace TBali\Aoc2020;
+
+use TBali\Aoc\SolutionBase;
+
+class Aoc2020Day12 extends SolutionBase
+{
+    public const YEAR = 2020;
+    public const DAY = 12;
+    public const TITLE = 'Rain Risk';
+    public const SOLUTIONS = [1710, 62045];
+    public const EXAMPLE_SOLUTIONS = [[25, 286], [0, 0]];
+
+    private const DELTAS = [[0, 1], [1, 0], [0, -1], [-1, 0]];
+    private const TURNS = ['R' => 1, 'L' => -1];
+    private const DIRECTIONS = ['N' => 0, 'E' => 1, 'S' => 2, 'W' => 3];
+
+    /**
+     * @param string[] $input
+     *
+     * @return array{string, string}
+     */
+    public function solve(array $input): array
+    {
+        // ---------- Part 1
+        [$x, $y] = [0, 0];
+        $heading = self::DIRECTIONS['E'];
+        foreach ($input as $line) {
+            $command = $line[0];
+            $param = intval(substr($line, 1));
+            if (isset(self::TURNS[$command])) {
+                $heading = ($heading + 4 + self::TURNS[$command] * intdiv($param, 90)) % 4;
+                continue;
+            }
+            [$dx, $dy] = (
+                $command == 'F'
+                ? self::DELTAS[$heading]
+                : self::DELTAS[self::DIRECTIONS[$command] ?? [0, 0]]
+            );
+            $x += $dx * $param;
+            $y += $dy * $param;
+        }
+        $ans1 = abs($x) + abs($y);
+        // ---------- Part 2
+        [$x, $y] = [0, 0];
+        [$wx, $wy] = [10, 1];
+        foreach ($input as $line) {
+            $command = $line[0];
+            $param = intval(substr($line, 1));
+            if (isset(self::TURNS[$command])) {
+                $turn = (4 + self::TURNS[$command] * intdiv($param, 90)) % 4;
+                [$wx, $wy] = match ($turn) {
+                    0 => [$wx, $wy],
+                    1 => [$wy, -$wx],
+                    2 => [-$wx, -$wy],
+                    3 => [-$wy, $wx],
+                };
+                continue;
+            }
+            if ($command == 'F') {
+                $x += $wx * $param;
+                $y += $wy * $param;
+                continue;
+            }
+            [$dx, $dy] =  self::DELTAS[self::DIRECTIONS[$command]];
+            $wx += $dx * $param;
+            $wy += $dy * $param;
+        }
+        $ans2 = abs($x) + abs($y);
+        return [strval($ans1), strval($ans2)];
+    }
+}

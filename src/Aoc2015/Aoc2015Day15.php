@@ -70,7 +70,6 @@ class Aoc2015Day15 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    // --------------------------------------------------------------------
     /**
      * @param string[] $input
      *
