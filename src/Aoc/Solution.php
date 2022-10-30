@@ -14,9 +14,9 @@ interface Solution
     public const YEAR = 2014;
     public const DAY = 0;
     public const TITLE = '';
-    public const SOLUTIONS = [0, 0];
-    public const STRING_INPUT = '';
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const SOLUTIONS = [0, 0]; // note: runner assumes there is no puzzle with 0 as solution
+    public const STRING_INPUT = ''; // optional, for single line input puzzles not having an input file
+    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]]; // optional, 0 meaning no example is given
     public const EXAMPLE_STRING_INPUTS = ['', ''];
 
     public function run(): bool;

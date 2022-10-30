@@ -1,12 +1,14 @@
 <?php
 
 /**
- * Advent of Code - solution runner class.
+ * Advent of Code - class for the CLI runner.
  */
 
 declare(strict_types=1);
 
 namespace TBali\Aoc;
+
+use TBali\Aoc\SolutionBase as Base;
 
 class Runner
 {
@@ -23,10 +25,7 @@ class Runner
         2015 => [20, 24],
     ];
 
-    private const ANSI_RED = "\e[1;37;41m";
-    private const ANSI_GREEN = "\e[1;37;42m";
-    private const ANSI_RESET = "\e[0m";
-    private const ERROR_TAG = self::ANSI_RED . '[ERROR]' . self::ANSI_RESET . ' ';
+    private const ERROR_TAG = Base::ANSI_RED . '[ERROR]' . Base::ANSI_RESET . ' ';
 
     /** @param string[] $args (the PHP $argv of the script) */
     final public function __construct(array $args)
@@ -70,6 +69,7 @@ class Runner
         return [$year, $day];
     }
 
+    /** runs a single solution */
     final public function runSingle(int $year, int $day): void
     {
         $className = 'Aoc' . $year . 'Day' . str_pad(strval($day), 2, '0', STR_PAD_LEFT);
@@ -88,6 +88,7 @@ class Runner
         }
     }
 
+    /** runs all matching solutions based in $this->year, $this->day (-1 meaning 'all') */
     final public function run(): void
     {
         $startTime = hrtime(true);
@@ -126,9 +127,10 @@ class Runner
             echo '======= Total: ' . $countRuns . ' solutions [time: ' . $spentTime . ' sec]' . PHP_EOL;
         }
         if ($this->isOk) {
-            echo PHP_EOL . self::ANSI_GREEN . '[ OK ] All tests passed.' . self::ANSI_RESET . PHP_EOL;
+            echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL . PHP_EOL;
         } else {
-            echo PHP_EOL . self::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . self::ANSI_RESET . PHP_EOL;
+            echo PHP_EOL . Base::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . Base::ANSI_RESET
+                . PHP_EOL . PHP_EOL;
         }
     }
 }

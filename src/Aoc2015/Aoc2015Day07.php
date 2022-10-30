@@ -10,65 +10,46 @@ Part 2: What new signal is ultimately provided to wire a?
 
 declare(strict_types=1);
 
-namespace TBali\Aoc15_07;
+namespace TBali\Aoc2015;
 
-// --------------------------------------------------------------------
-const YEAR = 2015;
-const DAY = '07';
-const TITLE = 'Some Assembly Required';
-const SOLUTION1 = 956;
-const SOLUTION2 = 40149;
-$startTime = hrtime(true);
-// ----------
-$handle = fopen('input/' . YEAR . '/aoc15_07.txt', 'r');
-if ($handle === false) {
-    throw new \Exception('Cannot load input file');
-}
-$input = [];
-while (true) {
-    $line = fgets($handle);
-    if ($line === false) {
-        break;
+use TBali\Aoc\SolutionBase;
+
+class Aoc2015Day07 extends SolutionBase
+{
+    public const YEAR = 2015;
+    public const DAY = 7;
+    public const TITLE = 'Some Assembly Required';
+    public const SOLUTIONS = [956, 40149];
+    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+
+    /**
+     * @param string[] $input
+     *
+     * @return array{string, string}
+     */
+    public function solve(array $input): array
+    {
+        // ---------- Part 1
+        $circuit = new Day7Circuit();
+        foreach ($input as $line) {
+            $gate = new Day7Gate($line);
+            $circuit->gates[$gate->id] = $gate;
+        }
+        $ans1 = $circuit->evaluate('a');
+        // ---------- Part 2
+        $circuit = new Day7Circuit();
+        foreach ($input as $line) {
+            $gate = new Day7Gate($line);
+            $circuit->gates[$gate->id] = $gate;
+        }
+        $circuit->gates['b'] = new Day7Gate('956 -> b');
+        $ans2 = $circuit->evaluate('a');
+        return [strval($ans1), strval($ans2)];
     }
-    if (trim($line) == '') {
-        continue;
-    }
-    $input[] = trim($line);
-}
-fclose($handle);
-// --------------------------------------------------------------------
-// Part 1
-$circuit = new Circuit();
-foreach ($input as $line) {
-    $gate = new Gate($line);
-    $circuit->gates[$gate->id] = $gate;
-}
-$ans1 = $circuit->evaluate('a');
-// --------------------------------------------------------------------
-// Part 2
-$circuit = new Circuit();
-foreach ($input as $line) {
-    $gate = new Gate($line);
-    $circuit->gates[$gate->id] = $gate;
-}
-$circuit->gates['b'] = new Gate('956 -> b');
-$ans2 = $circuit->evaluate('a');
-// ----------
-$spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-$maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
-echo '=== AoC ' . YEAR . ' Day ' . DAY . ' [time: ' . $spentTime . ' sec, memory: ' . $maxMemory . ' MB]: ' . TITLE
-    . PHP_EOL;
-echo $ans1, PHP_EOL;
-if ($ans1 != SOLUTION1) {
-    echo '*** WRONG ***', PHP_EOL;
-}
-echo $ans2, PHP_EOL;
-if ($ans2 != SOLUTION2) {
-    echo '*** WRONG ***', PHP_EOL;
 }
 
 // --------------------------------------------------------------------
-class Gate
+class Day7Gate
 {
     public string $id = '';
     public string $operator = '';
@@ -126,9 +107,9 @@ class Gate
 }
 
 // --------------------------------------------------------------------
-class Circuit
+class Day7Circuit
 {
-    /** @var array<string, Gate> */
+    /** @var array<string, Day7Gate> */
     public array $gates = [];
 
     public function evaluate(string $id): int
