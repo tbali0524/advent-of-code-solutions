@@ -1,1 +1,1 @@
-@php src/aoc_run.php %*
+@php src/aoc.php %*

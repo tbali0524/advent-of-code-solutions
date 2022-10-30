@@ -1,20 +1,20 @@
 <?php
 
 /*
-https://adventofcode.com/2020/day/
+https://adventofcode.com/2015/day/
 Part 1: [This is only an empty template file for new solutions]
 Part 2:
 */
 
 declare(strict_types=1);
 
-namespace TBali\Aoc2020;
+namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
-class Aoc2020Day00 extends SolutionBase
+class Aoc2015Day00 extends SolutionBase
 {
-    public const YEAR = 2020;
+    public const YEAR = 2015;
     public const DAY = 0;
     public const TITLE = '';
     public const SOLUTIONS = [0, 0];

@@ -1,12 +1,12 @@
 <?php
 
-// aoc_run v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali
+// aoc_script_run v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali
 
 declare(strict_types=1);
 
 // --------------------------------------------------------------------
 $startTime = hrtime(true);
-echo 'aoc_run v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL;
+echo 'aoc_script_run v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL;
 const FIRST_YEAR = 2015;
 const LAST_YEAR = 2022;
 const DAYS_PER_YEAR = 25;
@@ -20,7 +20,7 @@ if ($argc > 1) {
     $arg = strtolower($argv[1]);
     $selectedYear = intval($arg);
     if (($argc > 2) or !is_numeric($arg) or ($selectedYear < FIRST_YEAR) or ($selectedYear > LAST_YEAR)) {
-        echo PHP_EOL . 'Usage:  php aoc_run.php [year]' . PHP_EOL;
+        echo PHP_EOL . 'Usage:  php aoc_script_run.php [year]' . PHP_EOL;
         exit(0);
     }
 }

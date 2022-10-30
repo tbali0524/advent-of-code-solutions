@@ -25,7 +25,7 @@
     },
     "prefer-stable": true,
     "scripts": {
-        "start": "php src/aoc_run.php",
+        "start": "php src/aoc.php",
         "cs"   : "phpcs",
         "cs-fixer" : "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
