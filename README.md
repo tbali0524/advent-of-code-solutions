@@ -7,23 +7,21 @@
 
 ## Batch solution runner
 
-Run solutions with :
+Run solutions from the project base directory with:
 
 ```sh
 php src/aoc.php [YEAR] [DAY]
 ```
 
-or
+|Argument|Effect|
+|:--|:--|
+|none|run all solutions|
+|only `YEAR` given|run all solution for that season only|
+|both `YEAR` and `DAY` given|run a specific solution|
 
-```sh
-./aoc.bat [YEAR] [DAY]
-```
+On Windows the shortcut `.\aoc.bat [YEAR] [DAY]` also works.
 
-* No arguments: run all solutions
-* Only YEAR given: run all solution for that season only
-* YEAR and DAY given: run a specific solution
-
-* _Note: Before first run, use `composer install` to setup the class autoloader. There are __NO__ 3rd-party package depencdencies._
+_Note: Before first run, use `composer install` to setup the class autoloader. There are __NO__ 3rd-party package depencdencies._
 
 ## Puzzle inputs
 
@@ -40,3 +38,14 @@ or
 * should implement `solve()` method and override constants in `Solution` interface
 * the `solve()` method must be callable repeatedly with different inputs
 * after successful submit, the puzzle answers shall be recorded in the `SOLUTIONS` class constant (for future test runs.)
+
+## Script runner
+
+Running solutions in standalone scripts is also possible with:
+
+```sh
+php src/aoc_script.php [YEAR] [DAY]
+```
+
+* By default, this runs `Python` scripts, edit the above script for a different interpreter.
+* Sourcefile naming pattern: `src/AocYYYY/Aoc2022Day00.py`

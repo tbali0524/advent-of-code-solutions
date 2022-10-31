@@ -16,14 +16,21 @@ final class Runner
     public int $day;
     public bool $isOk;
     public bool $runAsScripts;
+    public string $scriptLanguage;
 
     public const MIN_YEAR = 2015;
     public const MAX_YEAR = 2022;
     public const MIN_DAYS = 1;
     public const MAX_DAYS = 25;
 
-    public const SCRIPT_RUN_COMMAND = 'python';
-    public const SCRIPT_EXTENSION = '.py';
+    // id => [commmandline, extension]
+    public const LANGUAGES = [
+        'lua' => ['lua', 'lua'],
+        'perl' => ['perl', 'pl'],
+        'php' => ['php', 'php'],
+        'python' => ['python', 'py'],
+        'ruby' => ['ruby', 'rb'],
+    ];
 
     public const TO_SKIP = [
         2015 => [20, 24],
@@ -31,13 +38,24 @@ final class Runner
 
     private const ERROR_TAG = Base::ANSI_RED . '[ERROR]' . Base::ANSI_RESET . ' ';
 
-    /** @param string[] $args (the PHP $argv of the script) */
-    public function __construct(array $args, bool $runAsScripts = false)
+    /**
+     * @param string[] $args the PHP $argv of the invoking script (args are from index 1)
+     */
+    public function __construct(array $args, string $scriptLanguage = '')
     {
         echo 'AoC v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
         [$this->year, $this->day] = $this->processArgs($args);
         $this->isOk = true;
-        $this->runAsScripts = $runAsScripts;
+        if ($scriptLanguage == '') {
+            $this->runAsScripts = false;
+            return;
+        }
+        if (!isset(self::LANGUAGES[$scriptLanguage])) {
+            self::ERROR_TAG . 'Language not supported: ' . $scriptLanguage . PHP_EOL . PHP_EOL;
+            exit(1);
+        }
+        $this->runAsScripts = true;
+        $this->scriptLanguage = $scriptLanguage;
     }
 
     /**
@@ -48,7 +66,7 @@ final class Runner
     private function processArgs(array $args): array
     {
         $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL
-            . 'Usage:  php src/aoc.php [year] [day]' . PHP_EOL;
+            . 'Usage:  php src/aoc.php [year] [day]' . PHP_EOL . PHP_EOL;
         if (count($args) > 3) {
             echo $errorMsg;
             exit(1);
@@ -81,8 +99,8 @@ final class Runner
 
     private function getSourceName(int $year, int $day): string
     {
-        return 'src/Aoc' . $year . '/' . $this->getClassName($year, $day)
-            . ($this->runAsScripts ? self::SCRIPT_EXTENSION : '.php');
+        return 'src/Aoc' . $year . '/' . $this->getClassName($year, $day) . '.'
+            . ($this->runAsScripts ? self::LANGUAGES[$this->scriptLanguage][1] ?? '' : 'php');
     }
 
     private function checkFileExists(string $srcFileName): bool
@@ -98,6 +116,9 @@ final class Runner
     /** runs a single solution class */
     public function runSingleAsClass(int $year, int $day): bool
     {
+        if ($this->runAsScripts) {
+            return false;
+        }
         $srcFileName = $this->getSourceName($year, $day);
         if (!$this->checkFileExists($srcFileName)) {
             return false;
@@ -116,11 +137,14 @@ final class Runner
     /** runs a single solution script */
     public function runSingleAsScript(int $year, int $day): bool
     {
+        if (!$this->runAsScripts) {
+            return false;
+        }
         $srcFileName = $this->getSourceName($year, $day);
         if (!$this->checkFileExists($srcFileName)) {
             return false;
         }
-        $runCommand = self::SCRIPT_RUN_COMMAND . ' ' . $srcFileName;
+        $runCommand = (self::LANGUAGES[$this->scriptLanguage][0] ?? 'php') . ' ' . $srcFileName;
         if (PHP_OS_FAMILY == 'Windows') {
             $runCommand = str_replace('/', '\\', $runCommand);
         }
@@ -146,7 +170,8 @@ final class Runner
             }
             return;
         }
-        $countRuns = 0;
+        $countTotal = 0;
+        $countFails = 0;
         for ($year = self::MIN_YEAR; $year <= self::MAX_YEAR; ++$year) {
             if (($this->year >= 0) and ($year != $this->year)) {
                 continue;
@@ -165,20 +190,28 @@ final class Runner
                 } else {
                     $result = $this->runSingleAsClass($year, $day);
                 }
-                if ($result) {
-                    ++$countRuns;
+                if (!$result) {
+                    ++$countFails;
                 }
+                ++$countTotal;
             }
         }
         $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-        if ($countRuns > 1) {
-            echo '======= Total: ' . $countRuns . ' solutions [time: ' . $spentTime . ' sec]' . PHP_EOL;
+        if ($countTotal > 1) {
+            $failMsg = ($countFails > 0 ? ' (' . $countFails . ' failed)' : '');
+            echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ', [time: ' . $spentTime . ' sec]'
+                . PHP_EOL;
         }
-        if ($this->isOk) {
-            echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL . PHP_EOL;
+        if ($countTotal > 0) {
+            if ($countFails == 0) {
+                echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL;
+            } else {
+                echo PHP_EOL . Base::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . Base::ANSI_RESET
+                    . PHP_EOL;
+            }
         } else {
-            echo PHP_EOL . Base::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . Base::ANSI_RESET
-                . PHP_EOL . PHP_EOL;
+            echo PHP_EOL . Base::WARN_TAG . 'There was nothing to run. ' . PHP_EOL;
         }
+        echo PHP_EOL;
     }
 }

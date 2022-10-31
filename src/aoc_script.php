@@ -10,6 +10,8 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use TBali\Aoc\Runner;
 
-$runner = new Runner($argv, true);
+// possible language arguments: lua, perl, php, python, ruby
+// (the interpreter must be installed and in the path)
+$runner = new Runner($argv, 'python');
 $runner->run();
 exit($runner->isOk ? 0 : 1);

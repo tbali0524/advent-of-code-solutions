@@ -18,7 +18,6 @@ abstract class SolutionBase implements Solution
     public const WARN_TAG = self::ANSI_YELLOW . '[WARN]' . self::ANSI_RESET . ' ';
     public const OK_TAG = self::ANSI_GREEN . '[ OK ]' . self::ANSI_RESET . ' ';
 
-    /** returns true if all tests passed */
     final public function run(): bool
     {
         $startTime = hrtime(true);
@@ -103,7 +102,6 @@ abstract class SolutionBase implements Solution
     }
 
     // --------------------------------------------------------------------
-    /** @return string[] */
     final public static function readInput(string $fileName): array
     {
         $handle = fopen($fileName, 'r');
