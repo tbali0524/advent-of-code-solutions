@@ -34,7 +34,7 @@ interface Solution
      *
      * @param string[] $input
      *
-     * @return array{string, string} The answers for part 1 and Part 2 (as strings)
+     * @return array{string, string} The answers for Part 1 and Part 2 (as strings)
      */
     public function solve(array $input): array;
 
@@ -42,7 +42,7 @@ interface Solution
      * The main runner engine.
      *
      * Implemented in abstract class SolutionBase.
-     * Calls readInput (if needed) and solve() for all examples and for the puzzle itself, outputs results.
+     * Calls readInput (if needed) and solve() for all examples, then for the puzzle itself, outputs results.
      * Returns true if all tests passed.
      */
     public function run(): bool;

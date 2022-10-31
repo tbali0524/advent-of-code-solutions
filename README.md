@@ -21,9 +21,9 @@ php src/aoc.php [LANGUAGE] [YEAR] [DAY]
 | only `YEAR` given              | run all solutions for that season only              |
 | both `YEAR` and `DAY` given    | run a specific solution                             |
 
-On Windows the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
+On Windows, the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
 
-Possible values for `LANGUAGE`: lua, perl, php, python, perl.
+Possible values for `LANGUAGE`: lua, perl, php, python, ruby.
 
 _Note: Before first run, use `composer install` to setup the class autoloader. There are __NO__ 3rd-party package depencdencies._
 

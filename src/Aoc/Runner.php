@@ -25,7 +25,7 @@ final class Runner
     public const MAX_DAYS = 25;
 
     // id => [commmandline, extension]
-    /** @var array<string, array<string, string> */
+    /** @var array<string, array{string, string} */
     public const LANGUAGES = [
         'lua' => ['lua', 'lua'],
         'perl' => ['perl', 'pl'],
@@ -51,7 +51,7 @@ final class Runner
     }
 
     /** @param string[] $args (the PHP $argv of the script) */
-    private function processArgs(array $args)
+    private function processArgs(array $args): void
     {
         $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL . PHP_EOL
             . 'Usage:  php src/aoc.php [language] [year] [day]' . PHP_EOL
