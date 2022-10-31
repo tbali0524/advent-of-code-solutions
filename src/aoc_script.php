@@ -12,6 +12,6 @@ use TBali\Aoc\Runner;
 
 // possible language arguments: lua, perl, php, python, ruby
 // (the interpreter must be installed and in the path)
-$runner = new Runner($argv, 'python');
+$runner = new Runner($argv, 'ruby');
 $runner->run();
 exit($runner->isOk ? 0 : 1);

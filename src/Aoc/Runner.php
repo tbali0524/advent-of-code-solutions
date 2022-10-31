@@ -12,11 +12,12 @@ use TBali\Aoc\SolutionBase as Base;
 
 final class Runner
 {
-    public int $year;
-    public int $day;
-    public bool $isOk;
-    public bool $runAsScripts;
-    public string $scriptLanguage;
+    public int $year = -1;
+    public int $day = -1;
+    public bool $runAsScripts = false;
+    public string $language = '';
+
+    public bool $isOk = true;
 
     public const MIN_YEAR = 2015;
     public const MAX_YEAR = 2022;
@@ -24,6 +25,7 @@ final class Runner
     public const MAX_DAYS = 25;
 
     // id => [commmandline, extension]
+    /** @var array<string, array<string, string> */
     public const LANGUAGES = [
         'lua' => ['lua', 'lua'],
         'perl' => ['perl', 'pl'],
@@ -41,55 +43,62 @@ final class Runner
     /**
      * @param string[] $args the PHP $argv of the invoking script (args are from index 1)
      */
-    public function __construct(array $args, string $scriptLanguage = '')
+    public function __construct(array $args)
     {
         echo 'AoC v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
-        [$this->year, $this->day] = $this->processArgs($args);
+        $this->processArgs($args);
         $this->isOk = true;
-        if ($scriptLanguage == '') {
-            $this->runAsScripts = false;
-            return;
-        }
-        if (!isset(self::LANGUAGES[$scriptLanguage])) {
-            self::ERROR_TAG . 'Language not supported: ' . $scriptLanguage . PHP_EOL . PHP_EOL;
-            exit(1);
-        }
-        $this->runAsScripts = true;
-        $this->scriptLanguage = $scriptLanguage;
     }
 
-    /**
-     * @param string[] $args (the PHP $argv of the script)
-     *
-     * @return array{int, int} year and day, -1 if not provided
-     */
-    private function processArgs(array $args): array
+    /** @param string[] $args (the PHP $argv of the script) */
+    private function processArgs(array $args)
     {
-        $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL
-            . 'Usage:  php src/aoc.php [year] [day]' . PHP_EOL . PHP_EOL;
-        if (count($args) > 3) {
+        $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL . PHP_EOL
+            . 'Usage:  php src/aoc.php [language] [year] [day]' . PHP_EOL
+            . PHP_EOL
+            . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
+            . '| Argument                   | Effect                                              |' . PHP_EOL
+            . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
+            . '| LANGUAGE given             | invoke interpreter with standalone solution scripts |' . PHP_EOL
+            . '| LANGUAGE not given         | invoke class-based PHP solutions                    |' . PHP_EOL
+            . '| none of YEAR and DAY given | run all solutions                                   |' . PHP_EOL
+            . '| only YEAR given            | run all solutions for that season only              |' . PHP_EOL
+            . '| both YEAR and DAY given    | run a specific solution                             |' . PHP_EOL
+            . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
+            . PHP_EOL
+            . 'Possible values for [language]: ' . implode(', ', array_keys(self::LANGUAGES)) . PHP_EOL
+            . PHP_EOL;
+        if (count($args) > 4) {
             echo $errorMsg;
             exit(1);
         }
-        if (count($args) == 3) {
-            $day = intval(strtolower($args[2]));
-            if (($day < self::MIN_DAYS) or ($day > self::MAX_DAYS)) {
+        $this->year = -1;
+        $this->day = -1;
+        $this->runAsScripts = false;
+        $this->language = '';
+        if (count($args) == 1) {
+            return;
+        }
+        $idxYear = 1;
+        if (isset(self::LANGUAGES[strtolower($args[1])])) {
+            $this->runAsScripts = true;
+            $this->language = strtolower($args[1]);
+            $idxYear = 2;
+        }
+        if (count($args) == $idxYear + 2) {
+            $this->day = intval($args[$idxYear + 1]);
+            if (($this->day < self::MIN_DAYS) or ($this->day > self::MAX_DAYS)) {
                 echo $errorMsg;
                 exit(1);
             }
-        } else {
-            $day = -1;
         }
-        if (count($args) >= 2) {
-            $year = intval(strtolower($args[1]));
-            if (($year < self::MIN_YEAR) or ($year > self::MAX_YEAR)) {
+        if (count($args) >= $idxYear + 1) {
+            $this->year = intval(strtolower($args[$idxYear]));
+            if (($this->year < self::MIN_YEAR) or ($this->year > self::MAX_YEAR)) {
                 echo $errorMsg;
                 exit(1);
             }
-        } else {
-            $year = -1;
         }
-        return [$year, $day];
     }
 
     private function getClassName(int $year, int $day): string
@@ -100,7 +109,7 @@ final class Runner
     private function getSourceName(int $year, int $day): string
     {
         return 'src/Aoc' . $year . '/' . $this->getClassName($year, $day) . '.'
-            . ($this->runAsScripts ? self::LANGUAGES[$this->scriptLanguage][1] ?? '' : 'php');
+            . ($this->runAsScripts ? self::LANGUAGES[$this->language][1] ?? '' : 'php');
     }
 
     private function checkFileExists(string $srcFileName): bool
@@ -144,7 +153,7 @@ final class Runner
         if (!$this->checkFileExists($srcFileName)) {
             return false;
         }
-        $runCommand = (self::LANGUAGES[$this->scriptLanguage][0] ?? 'php') . ' ' . $srcFileName;
+        $runCommand = (self::LANGUAGES[$this->language][0] ?? 'php') . ' ' . $srcFileName;
         if (PHP_OS_FAMILY == 'Windows') {
             $runCommand = str_replace('/', '\\', $runCommand);
         }
@@ -158,7 +167,7 @@ final class Runner
         return true;
     }
 
-    /** runs all matching solutions based in $this->year, $this->day (-1 meaning 'all') */
+    /** runs all matching solutions based on $this->year, $this->day (-1 meaning 'all') */
     public function run(): void
     {
         $startTime = hrtime(true);
@@ -197,11 +206,9 @@ final class Runner
             }
         }
         $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-        if ($countTotal > 1) {
-            $failMsg = ($countFails > 0 ? ' (' . $countFails . ' failed)' : '');
-            echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ', [time: ' . $spentTime . ' sec]'
-                . PHP_EOL;
-        }
+        $failMsg = ($countFails > 0 ? ' (' . $countFails . ' failed)' : '');
+        echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ', [time: ' . $spentTime . ' sec]'
+            . PHP_EOL;
         if ($countTotal > 0) {
             if ($countFails == 0) {
                 echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL;
