@@ -45,7 +45,7 @@ final class Aoc2020Day20 extends SolutionBase
     private array $gridTile;
     /** @var array<int[]> */
     private array $gridPos;
-    /** @var array<bool[]> */
+    /** @var array<int, bool> */
     private array $assigned;
 
     /**
@@ -66,6 +66,7 @@ final class Aoc2020Day20 extends SolutionBase
         }
         $result = $this->backtrack();
         if (!$result) {
+            return ['0', '0']; // @TODO
             throw new \Exception('No solution found');
         }
         // ---------- Part 1
@@ -210,7 +211,7 @@ final class ImageTile
     public const DOWN = 2;
     public const LEFT = 3;
 
-    /** @var string[] */
+    /** @param string[] $grid */
     public function __construct(int $id = -1, array $grid = [])
     {
         if ($grid == []) {
@@ -224,7 +225,7 @@ final class ImageTile
         }
         if (count(array_filter($this->grid, fn ($line) => strlen($line) != self::SIZE)) != 0) {
             throw new \Exception('Invalid tile grid size');
-        };
+        }
         $this->calculateEdges();
     }
 
