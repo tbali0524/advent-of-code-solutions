@@ -3,8 +3,8 @@
 /*
 https://adventofcode.com/2020/day/19
 Part 1: How many messages completely match rule 0?
-Part 2:
-Topics: input parsing, generative grammar
+Part 2: After updating rules 8 and 11, how many messages completely match rule 0?
+Topics: input parsing, context-free grammar, CGF with limited loops
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration
@@ -20,14 +20,14 @@ final class Aoc2020Day19 extends SolutionBase
     public const YEAR = 2020;
     public const DAY = 19;
     public const TITLE = 'Monster Message';
-    public const SOLUTIONS = [272, 0];
+    public const SOLUTIONS = [272, 374];
     public const EXAMPLE_SOLUTIONS = [[2, 0], [3, 0]];
 
     /** @var MessageNode[] */
     private array $nodes;
     /** @var string[] */
     private array $messages;
-    /** @var array<int, <array<string, int>> */
+    /** @var array<int, array<string, int>> */
     private array $generates;
 
     /**
@@ -39,31 +39,58 @@ final class Aoc2020Day19 extends SolutionBase
     {
         // ---------- Part 1
         $this->parseInput($input);
+        $maxLen = max(array_map('strlen', $this->messages)) ?: 0;
         $this->generates = [];
-        $allStrings = array_keys($this->getAllGenerated(0));
+        $allStrings = array_keys($this->getAllGenerated(0, $maxLen));
         $ans1 = count(array_filter(
             $this->messages,
             fn ($x) => in_array($x, $allStrings),
         ));
         // ---------- Part 2
-        // detect puzzle example valid for Part 1 only
+        // detect puzzle example #1, valid for Part 1 only
         if (!isset($this->nodes[8])) {
             return [strval($ans1), '0'];
         }
+        // Note: in both the puzzle and in Example #2:
+        //      $this->nodes[0] == MessageNode('0: 8 11')
         $this->nodes[8] = new MessageNode('8: 42 | 42 8');
         $this->nodes[11] = new MessageNode('11: 42 31 | 42 11 31');
         $this->generates = [];
-        $maxLen = max(array_map('strlen', $this->messages));
+        $this->getAllGenerated(42, $maxLen);
+        $this->getAllGenerated(31, $maxLen);
         $ans2 = 0;
-        $allStrings = array_keys($this->getAllGenerated(0, $maxLen));
-        $ans2 = count(array_filter(
-            $this->messages,
-            fn ($x) => in_array($x, $allStrings),
-        ));
+        // @phpstan-ignore-next-line
+        if ((count($this->generates[42] ?? []) == 0) or (count($this->generates[31] ?? []) == 0)) {
+            throw new \Exception('No solution found');
+        }
+        // @phpstan-ignore-next-line
+        $len42 = strlen(array_key_first($this->generates[42]));
+        $len31 = strlen(array_key_first($this->generates[31]));
+        foreach ($this->messages as $message) {
+            $posLeft = 0;
+            $count42 = 0;
+            while (isset($this->generates[42][substr($message, $posLeft, $len42)])) {
+                $posLeft += $len42;
+                ++$count42;
+            }
+            if ($count42 < 2) {
+                continue;
+            }
+            $posRight = strlen($message);
+            $count31 = 0;
+            while (isset($this->generates[31][substr($message, $posRight - $len31, $len31)])) {
+                $posRight -= $len31;
+                ++$count31;
+            }
+            if (($count31 == 0) or ($count42 <= $count31) or ($posLeft != $posRight)) {
+                continue;
+            }
+            ++$ans2;
+        }
         return [strval($ans1), strval($ans2)];
     }
 
-    /** @param array<string, int> */
+    /** @return array<string, int> */
     private function getAllGenerated(int $idxNode, int $maxLen = 0): array
     {
         if (isset($this->generates[$idxNode])) {
@@ -79,27 +106,38 @@ final class Aoc2020Day19 extends SolutionBase
             $candidates = ['' => -1];
             foreach ($subNodeList as $idxSubNode) {
                 if ($idxSubNode == $idxNode) {
-                    foreach ($candidates as $candidate => $value) {
-                        $candidates[$candidates] = strlen($candidate);
+                    foreach ($candidates as $candidate => $loopLocation) {
+                        if ($loopLocation >= 0) {
+                            throw new \Exception('Multiple loops within a rule is not supported');
+                        }
+                        $candidates[$candidate] = strlen($candidate);
                     }
+                    continue;
                 }
-                $subNodeGenerates = $this->getAllGenerated($idxSubNode);    // as keys
+                $subNodeGenerates = $this->getAllGenerated($idxSubNode, $maxLen);    // as keys
                 $newCandidates = [];    // as keys
-                foreach ($candidates as $candidate) {
-                    // if (($maxLen > 0) and (strlen($candidate) >= $maxLen)) {
-                    //     continue;
-                    // }
-                    foreach (array_keys($subNodeGenerates) as $segment) {
+                foreach ($candidates as $candidate => $loopLocation) {
+                    if (($maxLen > 0) and (strlen($candidate) >= $maxLen)) {
+                        continue;
+                    }
+                    foreach ($subNodeGenerates as $segment => $segmentLoopLocation) {
+                        if ($segmentLoopLocation >= 0) {
+                            throw new \Exception('Multiple loops within a single expansion is not supported');
+                        }
                         $newCandidate = $candidate . $segment;
                         if (!isset($newCandidates[$newCandidate])) {
-                            $newCandidates[$newCandidate] = true;
+                            $newCandidates[$newCandidate] = $loopLocation;
                         }
                     }
                 }
-                $candidates = array_keys($newCandidates);
+                $candidates = $newCandidates;
             }
-            foreach ($candidates as $candidate) {
-                $this->generates[$idxNode][$candidate] = true;
+            foreach ($candidates as $candidate => $loopLocation) {
+                if ($loopLocation < 0) {
+                    $this->generates[$idxNode][$candidate] = -1;
+                    continue;
+                }
+                throw new \Exception('Cannot generated all strings in case of a loop');
             }
         }
         return $this->generates[$idxNode];
@@ -148,6 +186,7 @@ final class MessageNode
             $this->match = substr($a[1], 1, -1);
             return;
         }
+        // @phpstan-ignore-next-line
         $this->match = '';
         $b = explode(' | ', $a[1]);
         foreach ($b as $list) {
