@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/11
 Part 1: How many seats end up occupied?
 Part 2: Given the new visibility method and the rule change for occupied seats becoming empty,
     once equilibrium is reached, how many seats end up occupied?
+Topics: Conway's Game of Life, simulation
 */
 
 declare(strict_types=1);

@@ -5,7 +5,7 @@ https://adventofcode.com/2015/day/17
 Part 1: How many different combinations of containers can exactly fit all 150 liters of eggnog?
 Part 2: Find the minimum number of containers that can exactly fit all 150 liters of eggnog.
     How many different ways can you fill that number of containers and still hold exactly 150 litres?
-topics: combinations
+Topics: combinations
 */
 
 declare(strict_types=1);

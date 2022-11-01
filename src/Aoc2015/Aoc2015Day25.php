@@ -1,9 +1,12 @@
 <?php
 
+// @TODO: Part 2
+
 /*
 https://adventofcode.com/2015/day/25
 Part 1: What code do you give the machine?
 Part 2:
+Topics: LCG, linear congruence
 */
 
 declare(strict_types=1);

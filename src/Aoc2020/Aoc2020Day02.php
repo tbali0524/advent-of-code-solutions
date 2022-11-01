@@ -4,6 +4,7 @@
 https://adventofcode.com/2020/day/2
 Part 1: How many passwords are valid according to their policies?
 Part 2: How many passwords are valid according to the new interpretation of the policies?
+Topics: string validation
 */
 
 declare(strict_types=1);

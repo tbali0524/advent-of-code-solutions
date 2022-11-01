@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/7
 Part 1: What signal is ultimately provided to wire a?
 Part 2: What new signal is ultimately provided to wire a?
+Topics: circuit emulation, tree graph
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

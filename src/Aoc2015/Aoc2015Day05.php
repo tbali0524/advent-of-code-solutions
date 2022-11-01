@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/5
 Part 1: How many strings are nice?
 Part 2: How many strings are nice under these new rules?
+Topics: string validation
 */
 
 declare(strict_types=1);

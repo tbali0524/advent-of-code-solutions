@@ -4,7 +4,7 @@
 https://adventofcode.com/2020/day/18
 Part 1: Evaluate the expression on each line of the homework; what is the sum of the resulting values?
 Part 2: What do you get if you add up the results of evaluating the homework problems using these new rules?
-topics: math expression evaluator (non-megative integers only, but with parentheses and precedence)
+Topics: math expression evaluation (non-negative integers only, but with parentheses and precedence)
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

@@ -4,7 +4,7 @@
 https://adventofcode.com/2015/day/13
 Part 1: What is the total change in happiness for the optimal seating arrangement of the actual guest list?
 Part 2: What is the total change in happiness for the optimal seating arrangement that actually includes yourself?
-topics: permutations, Heap's algorithm, Hamiltonian circle
+Topics: permutations, Heap's algorithm, Hamiltonian circle, graph
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

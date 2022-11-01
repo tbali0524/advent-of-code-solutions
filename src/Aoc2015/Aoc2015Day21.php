@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/21
 Part 1: What is the least amount of gold you can spend and still win the fight?
 Part 2: What is the most amount of gold you can spend and still lose the fight?
+Topics: game simulation
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

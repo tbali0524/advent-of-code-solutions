@@ -4,7 +4,7 @@
 https://adventofcode.com/2015/day/18
 Part 1: How many lights are on after 100 steps?
 Part 2: With the four corners always in the on state, how many lights are on after 100 steps?
-topics: Conway's Game of Life
+Topics: Conway's Game of Life, simulation
 */
 
 declare(strict_types=1);

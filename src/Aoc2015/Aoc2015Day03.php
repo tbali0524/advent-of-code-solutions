@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/3
 Part 1: How many houses receive at least one present?
 Part 2: This year, how many houses receive at least one present?
+Topics: walk simulation
 */
 
 declare(strict_types=1);

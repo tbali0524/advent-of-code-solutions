@@ -5,7 +5,7 @@ https://adventofcode.com/2015/day/19
 Part 1: How many distinct molecules can be created after all the different ways you can do one replacement
     on the medicine molecule?
 Part 2: What is the fewest number of steps to go from e to the medicine molecule?
-topics: DFS
+Topics: DFS, graph
 */
 
 declare(strict_types=1);

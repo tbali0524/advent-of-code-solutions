@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/14
 Part 1: What is the sum of all values left in memory after it completes?
 Part 2: Execute the initialization program using an emulator for a version 2 decoder chip.
     What is the sum of all values left in memory after it completes?
+Topics: assembly simulation
 */
 
 declare(strict_types=1);

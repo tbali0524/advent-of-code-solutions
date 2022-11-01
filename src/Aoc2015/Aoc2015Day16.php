@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/16
 Part 1: What is the number of the Sue that got you the gift?
 Part 2: What is the number of the real Aunt Sue?
+Topics: find matching object based on properties
 */
 
 declare(strict_types=1);

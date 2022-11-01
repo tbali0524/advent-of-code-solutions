@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/12
 Part 1: What is the Manhattan distance between that location and the ship's starting position?
 Part 2: Almost all of the actions indicate how to move a waypoint which is relative to the ship's position
     What is the Manhattan distance between that location and the ship's starting position?
+Topics: walk simulation
 */
 
 declare(strict_types=1);

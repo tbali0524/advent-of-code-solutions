@@ -5,7 +5,7 @@ https://adventofcode.com/2015/day/22
 Part 1: What is the least amount of mana you can spend and still win the fight?
 Part 2: At the start of each player turn (before any other effects apply), you lose 1 hit point.
     What is the least amount of mana you can spend and still win the fight?
-topics: DFS, PriorityQueue
+Topics: game simulation, DFS, graph, PriorityQueue
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

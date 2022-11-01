@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/11
 Part 1: Given Santa's current password (your puzzle input), what should his next password be?
 Part 2: Santa's password expired again. What's the next one?
+Topics: string validation
 */
 
 declare(strict_types=1);

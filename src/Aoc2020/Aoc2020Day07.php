@@ -4,6 +4,7 @@
 https://adventofcode.com/2020/day/7
 Part 1: How many bag colors can eventually contain at least one shiny gold bag?
 Part 2: How many individual bags are required inside your single shiny gold bag?
+Topics: input parsing
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

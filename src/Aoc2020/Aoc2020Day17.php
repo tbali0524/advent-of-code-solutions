@@ -5,7 +5,7 @@ https://adventofcode.com/2020/day/17
 Part 1: How many cubes are left in the active state after the sixth cycle?
 Part 2: Simulate six cycles in a 4-dimensional space. How many cubes are left in the active state
     after the sixth cycle?
-topics: Conway's Game of Life
+Topics: Conway's Game of Life, simulation
 */
 
 declare(strict_types=1);

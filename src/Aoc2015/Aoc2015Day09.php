@@ -4,7 +4,7 @@
 https://adventofcode.com/2015/day/9
 Part 1: What is the distance of the shortest route?
 Part 2: What is the distance of the longest route?
-topics: permutations, Heap's algorithm, Hamiltonian paths
+Topics: permutations, Heap's algorithm, Hamiltonian paths, graph
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

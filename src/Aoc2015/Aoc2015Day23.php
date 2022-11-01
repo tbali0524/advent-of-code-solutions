@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/23
 Part 1: What is the value in register b when the program in your puzzle input is finished executing?
 Part 2: What is the value in register b after the program is finished executing if register a starts as 1 instead?
+Topics: assembly simulation
 */
 
 declare(strict_types=1);

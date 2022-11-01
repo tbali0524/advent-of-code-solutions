@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/10
 Part 1: What is the number of 1-jolt differences multiplied by the number of 3-jolt differences?
 Part 2: What is the total number of distinct ways you can arrange the adapters to connect
     the charging outlet to your device?
+Topics: recursion, memoization
 */
 
 declare(strict_types=1);

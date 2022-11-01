@@ -4,6 +4,7 @@
 https://adventofcode.com/2015/day/12
 Part 1: What is the sum of all numbers in the document?
 Part 2: Uh oh - the Accounting-Elves have realized that they double-counted everything red.
+Topics: recursive walk of json object
 */
 
 declare(strict_types=1);

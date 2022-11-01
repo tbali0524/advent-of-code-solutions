@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/16
 Part 1: Consider the validity of the nearby tickets you scanned. What is your ticket scanning error rate?
 Part 2: Once you work out which field is which, look for the six fields on your ticket
     that start with the word departure. What do you get if you multiply those six values together?
+Topics: input parsing, object validation
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration

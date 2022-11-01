@@ -25,7 +25,7 @@ final class Runner
     public const MAX_DAYS = 25;
 
     // id => [commmandline, extension]
-    /** @var array<string, array{string, string} */
+    /** @var array<string, array{string, string}> */
     public const LANGUAGES = [
         'lua' => ['lua', 'lua'],
         'perl' => ['perl', 'pl'],
