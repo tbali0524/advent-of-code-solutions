@@ -18,6 +18,7 @@ final class Runner
     public const MAX_DAYS = 25;
     public const TO_SKIP = [
         2015 => [20, 24],
+        2020 => [20],
     ];
     // id => [commmandline, extension]
     /** @var array<string, array{string, string}> */

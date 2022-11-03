@@ -5,6 +5,7 @@ https://adventofcode.com/2020/day/22
 Part 1: Play the small crab in a game of Combat using the two decks you just dealt. What is the winning player's score?
 Part 2: Defend your honor as Raft Captain by playing the small crab in a game of Recursive Combat
     using the same two decks as before. What is the winning player's score?
+Topics: game simulation, recursion
 */
 
 // phpcs:disable PSR1.Classes.ClassDeclaration
@@ -20,8 +21,8 @@ final class Aoc2020Day22 extends SolutionBase
     public const YEAR = 2020;
     public const DAY = 22;
     public const TITLE = 'Crab Combat';
-    public const SOLUTIONS = [34566, 0];
-    public const EXAMPLE_SOLUTIONS = [[306, 291], [0, 0]];
+    public const SOLUTIONS = [34566, 31854];
+    public const EXAMPLE_SOLUTIONS = [[306, 291], [105, 105]];
 
     /**
      * @param string[] $input
@@ -38,7 +39,7 @@ final class Aoc2020Day22 extends SolutionBase
         $ans1 = $game->getScore($winner);
         // ---------- Part 2
         $game = new SpaceCardRecursiveGame($playersPart2);
-        if ($playersPart2[0]->getCountCards() > 10) {
+        if ($playersPart2[0]->getCountCards() > 1000) {
             return [strval($ans1), strval(0)];
         }
         $winner = $game->battle();
@@ -143,10 +144,14 @@ final class SpaceCardDeck
 // --------------------------------------------------------------------
 class SpaceCardGame
 {
+    /** @var array<string, true> */
+    private array $memo;
+
     /** @param array{SpaceCardDeck, SpaceCardDeck} $players */
     public function __construct(
         protected array $players
     ) {
+        $this->memo = [];
     }
 
     public function getScore(int $idxPlayer): int
@@ -167,6 +172,11 @@ class SpaceCardGame
             if ($this->players[1]->getCountCards() == 0) {
                 return 0;
             }
+            $hash = $this->players[0]->getHash() . '-' . $this->players[1]->getHash();
+            if (isset($this->memo[$hash])) {
+                return 0;
+            }
+            $this->memo[$hash] = true;
             $drawnCards = [
                 $this->players[0]->drawFromTop(),
                 $this->players[1]->drawFromTop(),
@@ -195,29 +205,17 @@ class SpaceCardGame
 // --------------------------------------------------------------------
 class SpaceCardRecursiveGame extends SpaceCardGame
 {
-    /** @var array<string, true> */
-    private array $memo;
-
-    /** @param array{SpaceCardDeck, SpaceCardDeck} $players */
-    public function __construct(
-        protected array $players
-    ) {
-        $this->memo = [];
-    }
-
     /** @param array{int, int} $drawnCards */
     public function getTurnResult(array $drawnCards): int
     {
         [$p0, $p1] = $this->players;
-        $hash = $p0->getHash() . '-' . $p1->getHash();
-        if (isset($this->memo[$hash])) {
-            return 0;
-        }
-        $this->memo[$hash] = true;
-        $countCards0 = $p0->getCountCards();
-        $countCards1 = $p1->getCountCards();
+        $countCards0 = $this->players[0]->getCountCards();
+        $countCards1 = $this->players[1]->getCountCards();
         if (($drawnCards[0] <= $countCards0) and ($drawnCards[1] <= $countCards1)) {
-            $game = new self([$p0->copyDeck($drawnCards[0]), $p1->copyDeck($drawnCards[1])]);
+            $game = new self([
+                $this->players[0]->copyDeck($drawnCards[0]),
+                $this->players[1]->copyDeck($drawnCards[1]),
+            ]);
             return $game->battle();
         }
         if ($drawnCards[0] > $drawnCards[1]) {
