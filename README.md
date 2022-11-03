@@ -23,7 +23,7 @@ php src/aoc.php [LANGUAGE] [YEAR] [DAY]
 
 On Windows, the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
 
-Possible values for `LANGUAGE`: lua, perl, php, python, ruby.
+Possible values for `LANGUAGE`: _lua, perl, php, python, ruby_.
 
 _Note: Before first run, use `composer install` to setup the class autoloader. There are __NO__ 3rd-party package depencdencies._
 

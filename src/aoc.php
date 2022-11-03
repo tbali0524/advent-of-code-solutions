@@ -1,7 +1,8 @@
+#!/usr/bin/env php
 <?php
 
 /**
- * Advent of Code - CLI solution runner - for class-based solutions.
+ * Advent of Code - CLI solution runner.
  */
 
 declare(strict_types=1);

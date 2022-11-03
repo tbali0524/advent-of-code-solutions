@@ -50,7 +50,7 @@
         "cs-fixer-do": "Apply coding style fixes with php-cs-fixer",
         "loc":      "Get code summary report with phploc",
         "stan":     "Run static analysis with phpstan",
-        "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan and phpunit, phpDocumentor",
+        "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan",
         "clean":    "Delete generated cache and report files in .tools directory (Windows only)"
     }
 }

@@ -205,9 +205,9 @@ final class Runner
                 ++$countTotal;
             }
         }
-        $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
+        $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 4, '.', '');
         $failMsg = ($countFails > 0 ? ' (' . $countFails . ' failed)' : '');
-        echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ', [time: ' . $spentTime . ' sec]'
+        echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ' [time: ' . $spentTime . ' sec]'
             . PHP_EOL;
         if ($countTotal > 0) {
             if ($countFails == 0) {
