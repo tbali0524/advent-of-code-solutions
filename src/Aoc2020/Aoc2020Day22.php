@@ -30,21 +30,26 @@ final class Aoc2020Day22 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        [$player1, $player2] = $this->parseInput($input);
+        $players = $this->parseInput($input);
+        $playersPart2 = [clone $players[0], clone $players[1]];
         // ---------- Part 1
-        while ($player1->isInGame() and $player2->isInGame()) {
-            SpaceCardDeck::fight($player1, $player2);
-        }
-        $ans1 = max($player1->score(), $player2->score());
+        $game = new SpaceCardGame($players);
+        $winner = $game->battle();
+        $ans1 = $game->getScore($winner);
         // ---------- Part 2
-        $ans2 = 0;
+        $game = new SpaceCardRecursiveGame($playersPart2);
+        if ($playersPart2[0]->getCountCards() > 10) {
+            return [strval($ans1), strval(0)];
+        }
+        $winner = $game->battle();
+        $ans2 = $game->getScore($winner);
         return [strval($ans1), strval($ans2)];
     }
 
     /**
      * @param string[] $input
      *
-     * @return SpaceCardDeck[]
+     * @return array{SpaceCardDeck, SpaceCardDeck}
      */
     private function parseInput(array $input): array
     {
@@ -58,18 +63,25 @@ final class Aoc2020Day22 extends SolutionBase
             if (!str_starts_with($line, 'Player ') or ($line[strlen($line) - 1] != ':') or (strlen($line) < 9)) {
                 throw new \Exception('Invalid input');
             }
-            $player = intval(substr($line, 7, strlen($line) - 8));
+            $idxPlayer = intval(substr($line, 7, strlen($line) - 8)) - 1; // 0 or 1
+            if (($idxPlayer != 0) and ($idxPlayer != 1)) {
+                throw new \Exception('Invalid input');
+            }
             ++$idxLine;
             $cards = [];
             while (($idxLine < count($input)) and ($input[$idxLine] != '')) {
                 $cards[] = intval($input[$idxLine]);
                 ++$idxLine;
             }
-            $ans[] = new SpaceCardDeck($player, array_reverse($cards));
+            $ans[$idxPlayer] = new SpaceCardDeck($idxPlayer, array_reverse($cards));
             while (($idxLine < count($input)) and ($input[$idxLine] == '')) {
                 ++$idxLine;
             }
         }
+        if (count($ans) != 2) {
+            throw new \Exception('Invalid input');
+        }
+        // @phpstan-ignore-next-line
         return $ans;
     }
 }
@@ -77,14 +89,20 @@ final class Aoc2020Day22 extends SolutionBase
 // --------------------------------------------------------------------
 final class SpaceCardDeck
 {
-    /** @var int[] $cards */
+    /** @param int[] $cards */
     public function __construct(
-        public readonly int $id = 0,
-        public array $cards = []
+        private readonly int $id = 0,
+        /** cards are stored in bottom-to-top order */
+        private array $cards = []
     ) {
     }
 
-    public function score(): int
+    public function getCountCards(): int
+    {
+        return count($this->cards);
+    }
+
+    public function getScore(): int
     {
         $ans = 0;
         foreach ($this->cards as $idx => $value) {
@@ -93,24 +111,121 @@ final class SpaceCardDeck
         return $ans;
     }
 
-    public function isInGame(): bool
+    public function getHash(): string
     {
-        return count($this->cards) > 0;
+        return $this->id . ':' . implode(',', $this->cards);
+        // return md5($this->id . json_encode($this->cards));
     }
 
-    public static function fight(self $a, self $b): void
+    public function drawFromTop(): int
     {
-        $aCard = array_pop($a->cards);
-        $bCard = array_pop($b->cards);
-        if ($aCard < $bCard) {
-            array_unshift($b->cards, $bCard);
-            array_unshift($b->cards, $aCard);
-        } elseif ($aCard > $bCard) {
-            array_unshift($a->cards, $aCard);
-            array_unshift($a->cards, $bCard);
-        } else {
-            array_unshift($a->cards, $aCard);
-            array_unshift($b->cards, $bCard);
+        if (count($this->cards) == 0) {
+            throw new \UnderflowException();
         }
+        return array_pop($this->cards);
+    }
+
+    /** @param int[] $cards */
+    public function addToBottom(array $cards): void
+    {
+        array_unshift($this->cards, ...$cards);
+    }
+
+    public function copyDeck(int $countCards): self
+    {
+        if ($countCards <= 0) {
+            throw new \RangeException();
+        }
+        return new self($this->id, array_slice($this->cards, -$countCards));
+    }
+}
+
+// --------------------------------------------------------------------
+class SpaceCardGame
+{
+    /** @param array{SpaceCardDeck, SpaceCardDeck} $players */
+    public function __construct(
+        protected array $players
+    ) {
+    }
+
+    public function getScore(int $idxPlayer): int
+    {
+        if (($idxPlayer != 0) and ($idxPlayer != 1)) {
+            throw new \RangeException();
+        }
+        return $this->players[$idxPlayer]->getScore();
+    }
+
+    /** returns the id of the winner */
+    public function battle(): int
+    {
+        while (true) {
+            if ($this->players[0]->getCountCards() == 0) {
+                return 1;
+            }
+            if ($this->players[1]->getCountCards() == 0) {
+                return 0;
+            }
+            $drawnCards = [
+                $this->players[0]->drawFromTop(),
+                $this->players[1]->drawFromTop(),
+            ];
+            $winner = $this->getTurnResult($drawnCards);
+            if ($winner < 0) {
+                continue;
+            }
+            $this->players[$winner]->addToBottom([$drawnCards[1 - $winner], $drawnCards[$winner]]);
+        }
+    }
+
+    /** @param array{int, int} $drawnCards */
+    protected function getTurnResult(array $drawnCards): int
+    {
+        if ($drawnCards[0] > $drawnCards[1]) {
+            return 0;
+        }
+        if ($drawnCards[0] < $drawnCards[1]) {
+            return 1;
+        }
+        return -1;
+    }
+}
+
+// --------------------------------------------------------------------
+class SpaceCardRecursiveGame extends SpaceCardGame
+{
+    /** @var array<string, true> */
+    private array $memo;
+
+    /** @param array{SpaceCardDeck, SpaceCardDeck} $players */
+    public function __construct(
+        protected array $players
+    ) {
+        $this->memo = [];
+    }
+
+    /** @param array{int, int} $drawnCards */
+    public function getTurnResult(array $drawnCards): int
+    {
+        [$p0, $p1] = $this->players;
+        $hash = $p0->getHash() . '-' . $p1->getHash();
+        if (isset($this->memo[$hash])) {
+            return 0;
+        }
+        $this->memo[$hash] = true;
+        $countCards0 = $p0->getCountCards();
+        $countCards1 = $p1->getCountCards();
+        if (($drawnCards[0] <= $countCards0) and ($drawnCards[1] <= $countCards1)) {
+            $game = new self([$p0->copyDeck($drawnCards[0]), $p1->copyDeck($drawnCards[1])]);
+            return $game->battle();
+        }
+        if ($drawnCards[0] > $drawnCards[1]) {
+            return 0;
+        }
+        if ($drawnCards[0] < $drawnCards[1]) {
+            return 1;
+        }
+        return -1;
     }
 }

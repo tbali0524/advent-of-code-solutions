@@ -74,7 +74,7 @@ final class Aoc2020Day12 extends SolutionBase
                 $y += $wy * $param;
                 continue;
             }
-            [$dx, $dy] =  self::DELTAS[self::DIRECTIONS[$command]];
+            [$dx, $dy] = self::DELTAS[self::DIRECTIONS[$command]];
             $wx += $dx * $param;
             $wy += $dy * $param;
         }

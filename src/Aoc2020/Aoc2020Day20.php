@@ -67,6 +67,7 @@ final class Aoc2020Day20 extends SolutionBase
         $result = $this->backtrack();
         if (!$result) {
             return ['0', '0']; // @TODO
+            // @phpstan-ignore-next-line
             throw new \Exception('No solution found');
         }
         // ---------- Part 1
@@ -199,17 +200,17 @@ final class Aoc2020Day20 extends SolutionBase
 // --------------------------------------------------------------------
 final class ImageTile
 {
-    public readonly int $id;
-    /** @var string[] */
-    public readonly array $grid;
-    /** @var array<int[]> */
-    public array $edges;
-
     public const SIZE = 10;
     public const UP = 0;
     public const RIGHT = 1;
     public const DOWN = 2;
     public const LEFT = 3;
+
+    public readonly int $id;
+    /** @var string[] */
+    public readonly array $grid;
+    /** @var array<int[]> */
+    public array $edges;
 
     /** @param string[] $grid */
     public function __construct(int $id = -1, array $grid = [])

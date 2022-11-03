@@ -81,15 +81,6 @@ final class PrimeFactors
         }
     }
 
-    private function addFactor(int $p): void
-    {
-        if (isset($this->factorExp[$p])) {
-            ++$this->factorExp[$p];
-        } else {
-            $this->factorExp[$p] = 1;
-        }
-    }
-
     public function sumOfDivisors(): int
     {
         $ans = 1;
@@ -97,5 +88,14 @@ final class PrimeFactors
             $ans *= ($base ** ($exp + 1) - 1) / ($base - 1);
         }
         return intval(round($ans));
+    }
+
+    private function addFactor(int $p): void
+    {
+        if (isset($this->factorExp[$p])) {
+            ++$this->factorExp[$p];
+        } else {
+            $this->factorExp[$p] = 1;
+        }
     }
 }

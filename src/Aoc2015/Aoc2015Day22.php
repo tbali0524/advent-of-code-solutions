@@ -48,15 +48,6 @@ final class Aoc2015Day22 extends SolutionBase
 // --------------------------------------------------------------------
 final class WizardGameState
 {
-    public int $enemyHp;
-    public readonly int $enemyDamage;
-    public readonly bool $hardMode;
-
-    public int $hp = self::PLAYER_START_HP;
-    public int $mana = self::PLAYER_START_MANA;
-    public int $spentMana = 0;
-    public int $armor = 0;
-
     private const PLAYER_START_HP = 50;
     private const PLAYER_START_MANA = 500;
     // note: cannot use enums as array keys, so using an int code instead
@@ -94,6 +85,14 @@ final class WizardGameState
         self::SPELL_RECHARGE => 101,
     ];
 
+    public int $enemyHp;
+    public readonly int $enemyDamage;
+    public readonly bool $hardMode;
+
+    public int $hp = self::PLAYER_START_HP;
+    public int $mana = self::PLAYER_START_MANA;
+    public int $spentMana = 0;
+    public int $armor = 0;
     /** @var int[] */
     public array $timers = [];
 

@@ -80,7 +80,7 @@ final class Aoc2020Day04 extends SolutionBase
         $passport = [];
         foreach ($input as $line) {
             if ($line == '') {
-                $passports[] =  $passport;
+                $passports[] = $passport;
                 $passport = [];
                 continue;
             }
@@ -94,7 +94,7 @@ final class Aoc2020Day04 extends SolutionBase
             }
         }
         if ($passport != []) {
-            $passports[] =  $passport;
+            $passports[] = $passport;
         }
         return $passports;
     }

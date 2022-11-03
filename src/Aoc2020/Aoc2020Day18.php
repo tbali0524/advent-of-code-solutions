@@ -68,51 +68,6 @@ final class Expression
         $this->precedences = $precedences;
     }
 
-    private function skipSpace(int $from): int
-    {
-        while (($from < strlen($this->expr)) and ($this->expr[$from] == ' ')) {
-            ++$from;
-        }
-        return $from;
-    }
-
-    private function getCloseParPos(int $from): int
-    {
-        $depth = 0;
-        $end = $from;
-        while ($end < strlen($this->expr)) {
-            if ($this->expr[$end] == '(') {
-                ++$depth;
-            } elseif ($this->expr[$end] == ')') {
-                --$depth;
-                if ($depth < 0) {
-                    throw new \Exception('Invalid formula');
-                }
-                if ($depth == 0) {
-                    return $end;
-                }
-            }
-            ++$end;
-        }
-        throw new \Exception('Invalid formula');
-    }
-
-    private function simplifyStep(): void
-    {
-        if ((count($this->operands) < 2) or (count($this->operators) < 1)) {
-            throw new \Exception('Invalid formula');
-        }
-        $operand2 = array_pop($this->operands);
-        $operand1 = array_pop($this->operands);
-        $oldOperator = array_pop($this->operators);
-        $newOperand = match ($oldOperator) {
-            '+' => $operand1 + $operand2,
-            '*' => $operand1 * $operand2,
-            default => throw new \Exception('Invalid formula'),
-        };
-        $this->operands[] = $newOperand;
-    }
-
     public function evaluate(): int
     {
         if ($this->expr == '') {
@@ -160,5 +115,50 @@ final class Expression
             throw new \Exception('Invalid formula');
         }
         return intval(array_pop($this->operands));
+    }
+
+    private function skipSpace(int $from): int
+    {
+        while (($from < strlen($this->expr)) and ($this->expr[$from] == ' ')) {
+            ++$from;
+        }
+        return $from;
+    }
+
+    private function getCloseParPos(int $from): int
+    {
+        $depth = 0;
+        $end = $from;
+        while ($end < strlen($this->expr)) {
+            if ($this->expr[$end] == '(') {
+                ++$depth;
+            } elseif ($this->expr[$end] == ')') {
+                --$depth;
+                if ($depth < 0) {
+                    throw new \Exception('Invalid formula');
+                }
+                if ($depth == 0) {
+                    return $end;
+                }
+            }
+            ++$end;
+        }
+        throw new \Exception('Invalid formula');
+    }
+
+    private function simplifyStep(): void
+    {
+        if ((count($this->operands) < 2) or (count($this->operators) < 1)) {
+            throw new \Exception('Invalid formula');
+        }
+        $operand2 = array_pop($this->operands);
+        $operand1 = array_pop($this->operands);
+        $oldOperator = array_pop($this->operators);
+        $newOperand = match ($oldOperator) {
+            '+' => $operand1 + $operand2,
+            '*' => $operand1 * $operand2,
+            default => throw new \Exception('Invalid formula'),
+        };
+        $this->operands[] = $newOperand;
     }
 }

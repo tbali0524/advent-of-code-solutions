@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
 https://adventofcode.com/2020/day/8
 Part 1: Immediately before any instruction is executed a second time, what value is in the accumulator?

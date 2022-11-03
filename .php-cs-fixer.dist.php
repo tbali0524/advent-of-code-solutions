@@ -16,16 +16,15 @@ $finder = PhpCsFixer\Finder::create()
 
 return (new PhpCsFixer\Config())
     ->setRules([
-        '@PhpCsFixer' => true,              // includes @Symfony, @PSR12, @PSR2, @PSR1
+        '@PHP82Migration' => true,
+        '@PHP80Migration:risky' => true,    // this also needs: ->setRiskyAllowed(true)
+        '@PhpCsFixer' => true,              // includes @Symfony, @PER, @PSR12, @PSR2, @PSR1
         // override some @Symfony rules
         'blank_line_before_statement' => false,
         'concat_space' => ['spacing' => 'one'],
         'yoda_style' => false,
-        // override some @PhpCsFixer rules
-        'binary_operator_spaces' => false,
-        'explicit_string_variable' => false,
-        'ordered_class_elements' => false,
     ])
+    ->setRiskyAllowed(true)
     ->setCacheFile(__DIR__ . '/.tools/.php-cs-fixer.cache')
     ->setIndent("    ")
     ->setLineEnding("\n")

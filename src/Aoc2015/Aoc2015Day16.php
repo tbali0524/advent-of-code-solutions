@@ -76,7 +76,7 @@ final class Aoc2015Day16 extends SolutionBase
                 if (!isset(self::AUNT_SPEC[$propName])) {
                     continue;
                 }
-                $comp =  $propValue <=> self::AUNT_SPEC[$propName];
+                $comp = $propValue <=> self::AUNT_SPEC[$propName];
                 if ($comp != self::EXPECTED_COMPARE_RESULT[$propName]) {
                     $isOk = false;
                     break;

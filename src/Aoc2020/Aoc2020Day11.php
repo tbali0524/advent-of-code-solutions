@@ -78,9 +78,9 @@ final class Aoc2020Day11 extends SolutionBase
                             }
                         }
                     }
-                    if (($prev[$y][$x] == 'L') and ($count  == 0)) {
+                    if (($prev[$y][$x] == 'L') and ($count == 0)) {
                         $next[$y][$x] = '#';
-                    } elseif (($prev[$y][$x] == '#') and ($count  >= $leaveThreshold)) {
+                    } elseif (($prev[$y][$x] == '#') and ($count >= $leaveThreshold)) {
                         $next[$y][$x] = 'L';
                     }
                 }

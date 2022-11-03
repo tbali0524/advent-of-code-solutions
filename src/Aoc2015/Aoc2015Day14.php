@@ -45,7 +45,7 @@ final class Aoc2015Day14 extends SolutionBase
             $max = max(array_map(fn ($x) => $x->getDistanceAt($second), $reindeers));
             array_walk(
                 $reindeers,
-                function ($x) use ($second, $max) {
+                function ($x) use ($second, $max): void {
                     if ($x->getDistanceAt($second) == $max) {
                         ++$x->points;
                     }
