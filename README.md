@@ -38,7 +38,7 @@ _Note: Before first run, use `composer install` to setup the class autoloader. T
 * directory pattern:  `src/AocYYYY/`
 * filename pattern: `AocYYYYDayDD.php` (or `.py`, `.rb`, etc. for standalone scripts in other languages)
 * class-based PHP solutions:
-    * for new solution use the template in `src/Aoc/Aoc2022Day00.php`
+    * for a new solution, use the template in `src/Aoc/Aoc2022Day00.php`
     * solution should implement class `AocYYYYDayDD`, extending `BaseSolution`
     * should implement `solve()` method and override constants in `Solution` interface
     * the `solve()` method must be callable repeatedly with different inputs

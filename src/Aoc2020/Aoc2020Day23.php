@@ -1,7 +1,5 @@
 <?php
 
-// @TODO Part 2
-
 /*
 https://adventofcode.com/2020/day/23
 Part 1: Using your labeling, simulate 100 moves. What are the labels on the cups after cup 1?
@@ -9,8 +7,6 @@ Part 2: Determine which two cups will end up immediately clockwise of cup 1.
     What do you get if you multiply their labels together?
 Topics: game simulation
 */
-
-// phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
 
@@ -23,14 +19,14 @@ final class Aoc2020Day23 extends SolutionBase
     public const YEAR = 2020;
     public const DAY = 23;
     public const TITLE = 'Crab Cups';
-    public const SOLUTIONS = [47382659, 0];
+    public const SOLUTIONS = [47382659, 42271866720];
     public const STRING_INPUT = '364297581';
-    public const EXAMPLE_SOLUTIONS = [[67384529, 14924588779], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[67384529, 149245887792], [0, 0]];
     public const EXAMPLE_STRING_INPUTS = ['389125467', ''];
 
     private const MAX_PART1 = 100;
-    private const MAX_PART2 = 10_000_000; // @phpstan-ignore-line
-    private const LEN_PART2 = 1_000_000; // @phpstan-ignore-line
+    private const MAX_PART2 = 10_000_000;
+    private const LEN_PART2 = 1_000_000;
 
     /**
      * @param string[] $input
@@ -71,7 +67,39 @@ final class Aoc2020Day23 extends SolutionBase
         }
         $ans1 = intval(substr($cups . $cups, $idxOne + 1, 8));
         // ---------- Part 2
-        $ans2 = 0;
+        $cups = $input[0] ?? '0';
+        $nextCup = range(1, self::LEN_PART2 + 1);
+        $nextCup[0] = 0; // unused slot
+        for ($i = 0; $i < strlen($cups) - 1; ++$i) {
+            $nextCup[intval($cups[$i])] = intval($cups[$i + 1]);
+        }
+        $nextCup[intval($cups[strlen($cups) - 1])] = strlen($cups) + 1;
+        $nextCup[self::LEN_PART2] = intval($cups[0]);
+        $current = intval($cups[0]);
+        for ($step = 0; $step < self::MAX_PART2; ++$step) {
+            $sliceBegin = $nextCup[$current];
+            $sliceMid = $nextCup[$sliceBegin];
+            $sliceEnd = $nextCup[$sliceMid];
+            $afterSlide = $nextCup[$sliceEnd];
+            $nextCup[$current] = $afterSlide;
+            $dest = $current;
+            while (true) {
+                --$dest;
+                if ($dest == 0) {
+                    $dest = self::LEN_PART2;
+                }
+                if (($dest != $sliceBegin) and ($dest != $sliceMid) and ($dest != $sliceEnd)) {
+                    break;
+                }
+            }
+            $afterDest = $nextCup[$dest];
+            $nextCup[$dest] = $sliceBegin;
+            $nextCup[$sliceEnd] = $afterDest;
+            $current = $nextCup[$current];
+        }
+        $afterOne = $nextCup[1];
+        $secondAfterOne = $nextCup[$afterOne];
+        $ans2 = $afterOne * $secondAfterOne;
         return [strval($ans1), strval($ans2)];
     }
 }

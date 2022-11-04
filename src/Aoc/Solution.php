@@ -15,9 +15,9 @@ namespace TBali\Aoc;
  *
  * - interface constants can be overriden in classes only from PHP v8.1
  * - assumption: there is no puzzle with 0 as solution (0 means the expected result is not yet known)
- * - overriding STRING_INPUT is optional: for single line input puzzles not having an input file
- * - overriding EXAMPLE_SOLUTIONS and EXAMPLE_STRING_INPUTS is optional: if there are example input(s)
- * - partial example can be also used: leave 1st or 2nd number 0 in the EXAMPLE_SOLUTION
+ * - overriding STRING_INPUT is optional: use for single line input puzzles not having an input file
+ * - overriding EXAMPLE_SOLUTIONS and EXAMPLE_STRING_INPUTS is optional: use if there are example input(s)
+ * - partial example can be also used: leave 1st or 2nd number as 0 in the EXAMPLE_SOLUTIONS
  */
 interface Solution
 {

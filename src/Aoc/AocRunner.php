@@ -10,18 +10,23 @@ namespace TBali\Aoc;
 
 use TBali\Aoc\SolutionBase as Base;
 
-final class Runner
+final class AocRunner
 {
     public const MIN_YEAR = 2015;
     public const MAX_YEAR = 2022;
     public const MIN_DAYS = 1;
     public const MAX_DAYS = 25;
+
+    // array<int year, array<int day>>
     public const TO_SKIP = [
-        2015 => [20, 24],
         2020 => [20],
     ];
-    // id => [commmandline, extension]
-    /** @var array<string, array{string, string}> */
+
+    /**
+     * id => [commandline, extension].
+     *
+     * @var array<string, array{string, string}>
+     */
     public const LANGUAGES = [
         'lua' => ['lua', 'lua'],
         'perl' => ['perl', 'pl'],
@@ -58,21 +63,27 @@ final class Runner
             } else {
                 $this->runSingleAsClass($this->year, $this->day);
             }
+            echo PHP_EOL;
             return;
         }
         $countTotal = 0;
         $countFails = 0;
+        $countSkipped = 0;
         for ($year = self::MIN_YEAR; $year <= self::MAX_YEAR; ++$year) {
             if (($this->year >= 0) and ($year != $this->year)) {
                 continue;
             }
             echo '======= ' . $year . ' ===========================' . PHP_EOL;
             for ($day = 1; $day <= self::MAX_DAYS; ++$day) {
-                if (in_array($day, self::TO_SKIP[$year] ?? [])) {
-                    continue;
-                }
                 $srcFileName = $this->getSourceName($year, $day);
                 if (!file_exists($srcFileName)) {
+                    continue;
+                }
+                ++$countTotal;
+                if (in_array($day, self::TO_SKIP[$year] ?? [])) {
+                    echo '=== AoC ' . $year . ' Day ' . $day . PHP_EOL;
+                    echo Base::WARN_TAG . 'Skipped.' . PHP_EOL;
+                    ++$countSkipped;
                     continue;
                 }
                 if ($this->runAsScripts) {
@@ -83,13 +94,23 @@ final class Runner
                 if (!$result) {
                     ++$countFails;
                 }
-                ++$countTotal;
             }
         }
         $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 4, '.', '');
-        $failMsg = ($countFails > 0 ? ' (' . $countFails . ' failed)' : '');
-        echo '======= Total: ' . $countTotal . ' solutions' . $failMsg . ' [time: ' . $spentTime . ' sec]'
-            . PHP_EOL;
+        $totalMsg = $countTotal . ' solution' . ($countTotal > 1 ? 's' : '');
+        $messages = [];
+        if ($countFails > 0) {
+            $messages[] = $countFails . ' failed';
+        }
+        if ($countSkipped > 0) {
+            $messages[] = $countSkipped . ' skipped';
+        }
+        if (($countFails > 0) or ($countSkipped > 0)) {
+            $failSkipMsg = ' (' . implode(', ', $messages) . ')';
+        } else {
+            $failSkipMsg = '';
+        }
+        echo '======= Total: ' . $totalMsg . $failSkipMsg . ' [time: ' . $spentTime . ' sec]' . PHP_EOL;
         if ($countTotal > 0) {
             if ($countFails == 0) {
                 echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL;

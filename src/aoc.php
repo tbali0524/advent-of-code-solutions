@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use TBali\Aoc\Runner;
+use TBali\Aoc\AocRunner;
 
-$runner = new Runner($argv);
+$runner = new AocRunner($argv);
 $runner->run();
 exit($runner->isOk ? 0 : 1);
