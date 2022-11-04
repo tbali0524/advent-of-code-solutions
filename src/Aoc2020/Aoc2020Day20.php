@@ -70,7 +70,6 @@ final class Aoc2020Day20 extends SolutionBase
         $result = $this->backtrack();
         if (!$result) {
             return ['0', '0']; // @TO7DO
-            // @phpstan-ignore-next-line
             throw new \Exception('No solution found');
         }
         // ---------- Part 1

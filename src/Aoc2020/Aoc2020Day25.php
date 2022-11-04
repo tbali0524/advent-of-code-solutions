@@ -3,7 +3,8 @@
 /*
 https://adventofcode.com/2020/day/25
 Part 1: What encryption key is the handshake trying to establish?
-Part 2: asymmetric key encryption
+Part 2:
+Topics: asymmetric key encryption
 */
 
 declare(strict_types=1);
@@ -15,7 +16,7 @@ use TBali\Aoc\SolutionBase;
 final class Aoc2020Day25 extends SolutionBase
 {
     public const YEAR = 2020;
-    public const DAY = 25   ;
+    public const DAY = 25;
     public const TITLE = 'Combo Breaker';
     public const SOLUTIONS = [11707042, 0];
     public const EXAMPLE_SOLUTIONS = [[14897079, 0], [0, 0]];
