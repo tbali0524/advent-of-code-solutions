@@ -29,8 +29,8 @@ final class Aoc2020Day23 extends SolutionBase
     public const EXAMPLE_STRING_INPUTS = ['389125467', ''];
 
     private const MAX_PART1 = 100;
-    private const MAX_PART2 = 10_000_000;
-    private const LEN_PART2 = 1_000_000;
+    private const MAX_PART2 = 10_000_000; // @phpstan-ignore-line
+    private const LEN_PART2 = 1_000_000; // @phpstan-ignore-line
 
     /**
      * @param string[] $input
