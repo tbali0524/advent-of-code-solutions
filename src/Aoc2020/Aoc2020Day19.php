@@ -1,12 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/19
-Part 1: How many messages completely match rule 0?
-Part 2: After updating rules 8 and 11, how many messages completely match rule 0?
-Topics: input parsing, context-free grammar, CGF with limited loops
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -15,6 +8,16 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 19: Monster Message.
+ *
+ * Part 1: How many messages completely match rule 0?
+ * Part 2: After updating rules 8 and 11, how many messages completely match rule 0?
+ *
+ * Topics: input parsing, context-free grammar, CGF with limited loops
+ *
+ * @see https://adventofcode.com/2020/day/19
+ */
 final class Aoc2020Day19 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -25,15 +28,19 @@ final class Aoc2020Day19 extends SolutionBase
 
     /** @var MessageNode[] */
     private array $nodes;
-    /** @var string[] */
+    /** @var array<int, string> */
     private array $messages;
     /** @var array<int, array<string, int>> */
     private array $generates;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -143,7 +150,9 @@ final class Aoc2020Day19 extends SolutionBase
         return $this->generates[$idxNode];
     }
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input
+     */
     private function parseInput(array $input): void
     {
         $this->nodes = [];
@@ -168,7 +177,7 @@ final class MessageNode
 {
     public readonly int $id;
     public readonly string $match;
-    /** @var array<int[]> */
+    /** @var array<array<int, int>> */
     public array $subNodes;
 
     public function __construct(string $line)

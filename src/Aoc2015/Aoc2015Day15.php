@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/15
-Part 1: What is the total score of the highest-scoring cookie you can make?
-Part 2: what is the total score of the highest-scoring cookie you can make with a calorie total of 500?
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 15: Science for Hungry People.
+ *
+ * Part 1: What is the total score of the highest-scoring cookie you can make?
+ * Part 2: What is the total score of the highest-scoring cookie you can make with a calorie total of 500?
+ *
+ * @see https://adventofcode.com/2015/day/15
+ */
 final class Aoc2015Day15 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -23,9 +25,13 @@ final class Aoc2015Day15 extends SolutionBase
     private const TOTAL_QUANTITY = 101; // must be total + 1!!!
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -71,7 +77,7 @@ final class Aoc2015Day15 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input
      *
      * @return array<int, array<string, int>>
      */

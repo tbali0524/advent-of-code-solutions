@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/10
-Part 1: Apply this process 40 times. What is the length of the result?
-Part 2: Apply this process 50 times. What is the length of the new result?
-Topics: Conway's look-and-say sequence, simulation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 10: Elves Look, Elves Say.
+ *
+ * Part 1: Apply this process 40 times. What is the length of the result?
+ * Part 2: Apply this process 50 times. What is the length of the new result?
+ *
+ * Topics: Conway's look-and-say sequence, simulation
+ *
+ * @see https://adventofcode.com/2015/day/10
+ */
 final class Aoc2015Day10 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -28,9 +31,13 @@ final class Aoc2015Day10 extends SolutionBase
     private const EXAMPLE_MAX = 5;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/24
-Part 1: After all of the instructions have been followed, how many tiles are left with the black side up?
-Part 2: After executing this process a total of 100 times, there would be 2208 black tiles facing up.
-Topics: walking simulator on hex grid, Conway's Game of Life
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 24: Lobby Layout.
+ *
+ * Part 1: After all of the instructions have been followed, how many tiles are left with the black side up?
+ * Part 2: After executing this process a total of 100 times, there would be 2208 black tiles facing up.
+ *
+ * Topics: walking simulator on hex grid, Conway's Game of Life
+ *
+ * @see https://adventofcode.com/2020/day/
+ */
 final class Aoc2020Day24 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -27,9 +30,13 @@ final class Aoc2020Day24 extends SolutionBase
     private const MAX_STEPS = 100;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

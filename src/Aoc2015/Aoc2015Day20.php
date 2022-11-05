@@ -1,13 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/20
-Part 1: What is the lowest house number of the house to get at least as many presents as the number
-    in your puzzle input?
-Part 2:
-Topics: prime factorization, sigma function,sum-of-divisors function, OEIS A000203
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -16,6 +8,18 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 20: Infinite Elves and Infinite Houses.
+ *
+ * Part 1: What is the lowest house number of the house to get at least as many presents as the number
+ *         in your puzzle input?
+ * Part 2: With these changes, what is the new lowest house number of the house to get at least as many presents
+ *         as the number in your puzzle input?
+ *
+ * Topics: prime factorization, sigma function,sum-of-divisors function, OEIS A000203
+ *
+ * @see https://adventofcode.com/2015/day/20
+ */
 final class Aoc2015Day20 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -29,9 +33,13 @@ final class Aoc2015Day20 extends SolutionBase
     private const MAX_PART2 = 50;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

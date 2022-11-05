@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/2
-Part 1: How many passwords are valid according to their policies?
-Part 2: How many passwords are valid according to the new interpretation of the policies?
-Topics: string validation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 2: Password Philosophy.
+ *
+ * Part 1: How many passwords are valid according to their policies?
+ * Part 2: How many passwords are valid according to the new interpretation of the policies?
+ *
+ * Topics: string validation
+ *
+ * @see https://adventofcode.com/2020/day/2
+ */
 final class Aoc2020Day02 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -22,9 +25,13 @@ final class Aoc2020Day02 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[2, 1], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

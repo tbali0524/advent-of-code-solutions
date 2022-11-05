@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2022/day/
-Part 1: [This is only an empty template file for new solutions]
-Part 2:
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2022;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 0: .
+ *
+ * Part 1:
+ * Part 2:
+ *
+ * @see https://adventofcode.com/2015/day/
+ */
 final class Aoc2022Day00 extends SolutionBase
 {
     public const YEAR = 2022;
@@ -21,14 +23,18 @@ final class Aoc2022Day00 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
-        /** @var int[] */
-        $input = array_map('intval', $input);
+        /** @var array<int, int> */
+        $data = array_map('intval', $input);
         // ---------- Part 1
         $ans1 = 0;
         // ---------- Part 2

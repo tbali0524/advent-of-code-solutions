@@ -1,13 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/16
-Part 1: Consider the validity of the nearby tickets you scanned. What is your ticket scanning error rate?
-Part 2: Once you work out which field is which, look for the six fields on your ticket
-    that start with the word departure. What do you get if you multiply those six values together?
-Topics: input parsing, object validation
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -16,6 +8,17 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 16: Ticket Translation.
+ *
+ * Part 1: Consider the validity of the nearby tickets you scanned. What is your ticket scanning error rate?
+ * Part 2: Once you work out which field is which, look for the six fields on your ticket
+ *         that start with the word departure. What do you get if you multiply those six values together?
+ *
+ * Topics: input parsing, object validation
+ *
+ * @see https://adventofcode.com/2020/day/16
+ */
 final class Aoc2020Day16 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -26,15 +29,19 @@ final class Aoc2020Day16 extends SolutionBase
 
     /** @var FieldValidator[] */
     private array $validators = [];
-    /** @var int[] */
+    /** @var array<int, int> */
     private array $myTicket = [];
-    /** @var array<int, int[]> */
+    /** @var array<int, array<int, int>> */
     private array $nearbyTickets = [];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -102,7 +109,7 @@ final class Aoc2020Day16 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input
      */
     private function parseInput(array $input): void
     {
@@ -180,7 +187,7 @@ final class FieldValidator
         return ($n >= $this->min1 && $n <= $this->max1) || ($n >= $this->min2 && $n <= $this->max2);
     }
 
-    /** @param int[] $a */
+    /** @param array<int, int> $a */
     public function validateArray(array $a): bool
     {
         foreach ($a as $value) {

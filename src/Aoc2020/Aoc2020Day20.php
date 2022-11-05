@@ -1,14 +1,5 @@
 <?php
 
-// @TODO fix the bug in Part 1
-
-/*
-https://adventofcode.com/2020/day/20
-Part 1: What do you get if you multiply together the IDs of the four corner tiles?
-Part 2:
-Topics: backtracking, rotate and flip transformations
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -17,6 +8,16 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 20 - Jurassic Jigsaw.
+ *
+ * Part 1: What do you get if you multiply together the IDs of the four corner tiles?
+ * Part 2:
+ *
+ * @see https://adventofcode.com/2020/day/20
+ *
+ * @todo fix
+ */
 final class Aoc2020Day20 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -34,24 +35,28 @@ final class Aoc2020Day20 extends SolutionBase
 
     /** @var array<int, ImageTile[]> */
     private array $validRightTiles;
-    /** @var array<int, int[]>> */
+    /** @var array<int, array<int, int>> */
     private array $validRightPos;
     /** @var array<int, ImageTile[]> */
     private array $validDownTiles;
-    /** @var array<int, int[]>> */
+    /** @var array<int, array<int, int>> */
     private array $validDownPos;
 
     /** @var array<ImageTile[]> */
     private array $gridTile;
-    /** @var array<int[]> */
+    /** @var array<array<int, int>> */
     private array $gridPos;
     /** @var array<int, bool> */
     private array $assigned;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -64,7 +69,7 @@ final class Aoc2020Day20 extends SolutionBase
         foreach ($this->tiles as $tile) {
             $this->assigned[$tile->id] = false;
         }
-        return ['0', '0']; // @TODO
+        return ['0', '0'];
         // @phpstan-ignore-next-line
         $result = $this->backtrack();
         if (!$result) {
@@ -108,7 +113,11 @@ final class Aoc2020Day20 extends SolutionBase
         return false;
     }
 
-    /** @return array{ImageTile[], int[]} */
+    /**
+     * @return array<array<int, mixed>>
+     *
+     * @phpstan-return array{ImageTile[], array<int, int>}
+     */
     private function getValidTilesAndPos(int $x, int $y): array
     {
         $validTiles = [];
@@ -158,7 +167,9 @@ final class Aoc2020Day20 extends SolutionBase
         }
     }
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input
+     */
     private function parseInput(array $input): void
     {
         $this->tiles = [];
@@ -208,12 +219,12 @@ final class ImageTile
     public const LEFT = 3;
 
     public readonly int $id;
-    /** @var string[] */
+    /** @var array<int, string> */
     public readonly array $grid;
-    /** @var array<int[]> */
+    /** @var array<array<int, int>> */
     public array $edges;
 
-    /** @param string[] $grid */
+    /** @param array<int, string> $grid */
     public function __construct(int $id = -1, array $grid = [])
     {
         if ($grid == []) {

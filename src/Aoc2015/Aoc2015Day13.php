@@ -1,12 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/13
-Part 1: What is the total change in happiness for the optimal seating arrangement of the actual guest list?
-Part 2: What is the total change in happiness for the optimal seating arrangement that actually includes yourself?
-Topics: permutations, Heap's algorithm, Hamiltonian circle, graph
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -15,6 +8,16 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 13: Knights of the Dinner Table.
+ *
+ * Part 1: What is the total change in happiness for the optimal seating arrangement of the actual guest list?
+ * Part 2: What is the total change in happiness for the optimal seating arrangement that actually includes yourself?
+ *
+ * Topics: permutations, Heap's algorithm, Hamiltonian circle, graph
+ *
+ * @see https://adventofcode.com/2015/day/13
+ */
 final class Aoc2015Day13 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -24,9 +27,13 @@ final class Aoc2015Day13 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[330, 0], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -46,10 +53,12 @@ final class KnightsTable
     public int $v = 0;
     /** @var array<string, int> */
     public array $nodes = [];
-    /** @var array<int, int[]> */
+    /** @var array<int, array<int, int>> */
     public array $dist = [];
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input The lines of the input, without LF
+     */
     public function __construct(array $input)
     {
         foreach ($input as $line) {

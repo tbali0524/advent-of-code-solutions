@@ -1,31 +1,40 @@
 <?php
 
-/**
- * Advent of Code - class for the CLI runner.
- */
-
 declare(strict_types=1);
 
 namespace TBali\Aoc;
 
 use TBali\Aoc\SolutionBase as Base;
 
+/**
+ * Advent of Code solutions batch runner CLI.
+ *
+ * @author Bálint Tóth
+ */
 final class AocRunner
 {
+    /** @var int */
     public const MIN_YEAR = 2015;
+    /** @var int */
     public const MAX_YEAR = 2022;
+    /** @var int */
     public const MIN_DAYS = 1;
+    /** @var int */
     public const MAX_DAYS = 25;
 
-    // array<int year, array<int day>>
+    /**
+     * What puzzles to skip, even if source file exists. [year => [day]].
+     *
+     * @var array<int, array<int, int>>
+     */
     public const TO_SKIP = [
         2020 => [20],
     ];
 
     /**
-     * id => [commandline, extension].
+     * Available script interpreters. [id => [commandline, extension]].
      *
-     * @var array<string, array{string, string}>
+     * @phpstan-var array<string, array{string, string}>
      */
     public const LANGUAGES = [
         'lua' => ['lua', 'lua'],
@@ -35,6 +44,7 @@ final class AocRunner
         'ruby' => ['ruby', 'rb'],
     ];
 
+    /** @var string */
     private const ERROR_TAG = Base::ANSI_RED . '[ERROR]' . Base::ANSI_RESET . ' ';
 
     public int $year = -1;
@@ -44,7 +54,7 @@ final class AocRunner
     public bool $isOk = true;
 
     /**
-     * @param string[] $args the PHP $argv of the invoking script (args are from index 1)
+     * @param array<int, string> $args The PHP $argv of the invoking script (CLI args are from index 1)
      */
     public function __construct(array $args)
     {
@@ -53,7 +63,9 @@ final class AocRunner
         $this->isOk = true;
     }
 
-    /** runs all matching solutions based on $this->year, $this->day (-1 meaning 'all') */
+    /**
+     * Runs all matching solutions based on $this->year, $this->day (-1 meaning 'all').
+     */
     public function run(): void
     {
         $startTime = hrtime(true);
@@ -124,7 +136,9 @@ final class AocRunner
         echo PHP_EOL;
     }
 
-    /** runs a single solution class */
+    /**
+     * Runs a single solution class.
+     */
     public function runSingleAsClass(int $year, int $day): bool
     {
         if ($this->runAsScripts) {
@@ -145,7 +159,9 @@ final class AocRunner
         return $success;
     }
 
-    /** runs a single solution script */
+    /**
+     * Runs a single solution script.
+     */
     public function runSingleAsScript(int $year, int $day): bool
     {
         if (!$this->runAsScripts) {
@@ -169,7 +185,9 @@ final class AocRunner
         return true;
     }
 
-    /** @param string[] $args (the PHP $argv of the script) */
+    /**
+     * @param array<int, string> $args The PHP $argv of the script (CLI args are from index 1)
+     */
     private function processArgs(array $args): void
     {
         $errorMsg = self::ERROR_TAG . 'Invalid command line arguments' . PHP_EOL . PHP_EOL

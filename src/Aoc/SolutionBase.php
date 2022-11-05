@@ -1,23 +1,38 @@
 <?php
 
-/**
- * Advent of Code - common abstract class for every solution class.
- */
-
 declare(strict_types=1);
 
 namespace TBali\Aoc;
 
+/**
+ * Common abstract class that every AoC solution class should extend.
+ *
+ * @author Bálint Tóth
+ */
 abstract class SolutionBase implements Solution
 {
-    public const ANSI_RED = "\e[1;37;41m";
-    public const ANSI_GREEN = "\e[1;37;42m";
-    public const ANSI_YELLOW = "\e[1;37;43m";
-    public const ANSI_RESET = "\e[0m";
-    public const ERROR_TAG = self::ANSI_RED . '[FAIL]' . self::ANSI_RESET . ' ';
-    public const WARN_TAG = self::ANSI_YELLOW . '[WARN]' . self::ANSI_RESET . ' ';
-    public const OK_TAG = self::ANSI_GREEN . '[ OK ]' . self::ANSI_RESET . ' ';
+    /** @var string */
+    final public const ANSI_RED = "\e[1;37;41m";
+    /** @var string */
+    final public const ANSI_GREEN = "\e[1;37;42m";
+    /** @var string */
+    final public const ANSI_YELLOW = "\e[1;37;43m";
+    /** @var string */
+    final public const ANSI_RESET = "\e[0m";
+    /** @var string */
+    final public const ERROR_TAG = self::ANSI_RED . '[FAIL]' . self::ANSI_RESET . ' ';
+    /** @var string */
+    final public const WARN_TAG = self::ANSI_YELLOW . '[WARN]' . self::ANSI_RESET . ' ';
+    /** @var string */
+    final public const OK_TAG = self::ANSI_GREEN . '[ OK ]' . self::ANSI_RESET . ' ';
 
+    /**
+     * The main runner engine.
+     *
+     * Calls readInput() (only if needed) and solve() for all examples, then for the puzzle itself, outputs results.
+     *
+     * @return bool Did all tests pass?
+     */
     final public function run(): bool
     {
         $startTime = hrtime(true);
@@ -101,7 +116,13 @@ abstract class SolutionBase implements Solution
         return $isOk;
     }
 
-    // --------------------------------------------------------------------
+    /**
+     * Read a file into an array of lines (without LF).
+     *
+     * @return array<int, string>
+     *
+     * @phpstan-return non-empty-array<int, string>
+     */
     final public static function readInput(string $fileName): array
     {
         $handle = fopen($fileName, 'r');
@@ -117,6 +138,9 @@ abstract class SolutionBase implements Solution
             $input[] = trim($line);
         }
         fclose($handle);
+        if (count($input) == 0) {
+            throw new \Exception('Input file contains no data.' . $fileName);
+        }
         return $input;
     }
 }

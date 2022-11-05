@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/5
-Part 1: What is the highest seat ID on a boarding pass?
-Part 2: What is the ID of your seat?
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 5: Binary Boarding.
+ *
+ * Part 1: What is the highest seat ID on a boarding pass?
+ * Part 2: What is the ID of your seat?
+ *
+ * @see https://adventofcode.com/2020/day/5
+ */
 final class Aoc2020Day05 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -22,9 +24,13 @@ final class Aoc2020Day05 extends SolutionBase
     public const EXAMPLE_STRING_INPUTS = ['FBFBBFFRLR', 'BFFFBBFRRR'];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

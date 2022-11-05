@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/11
-Part 1: Given Santa's current password (your puzzle input), what should his next password be?
-Part 2: Santa's password expired again. What's the next one?
-Topics: string validation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 11: Corporate Policy.
+ *
+ * Part 1: Given Santa's current password (your puzzle input), what should his next password be?
+ * Part 2: Santa's password expired again. What's the next one?
+ *
+ * Topics: string validation
+ *
+ * @see https://adventofcode.com/2015/day/11
+ */
 final class Aoc2015Day11 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -24,9 +27,13 @@ final class Aoc2015Day11 extends SolutionBase
     public const EXAMPLE_STRING_INPUTS = ['abcdefgh', 'ghijklmn'];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

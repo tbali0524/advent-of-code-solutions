@@ -1,19 +1,22 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/19
-Part 1: How many distinct molecules can be created after all the different ways you can do one replacement
-    on the medicine molecule?
-Part 2: What is the fewest number of steps to go from e to the medicine molecule?
-Topics: DFS, graph
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 19: Medicine for Rudolph.
+ *
+ * Part 1: How many distinct molecules can be created after all the different ways you can do one replacement
+ *         on the medicine molecule?
+ * Part 2: What is the fewest number of steps to go from e to the medicine molecule?
+ *
+ * Topics: DFS, graph
+ *
+ * @see https://adventofcode.com/2015/day/19
+ */
 final class Aoc2015Day19 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -23,9 +26,13 @@ final class Aoc2015Day19 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

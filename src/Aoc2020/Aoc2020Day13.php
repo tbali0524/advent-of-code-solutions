@@ -1,20 +1,23 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/13
-Part 1: What is the ID of the earliest bus you can take to the airport
-    multiplied by the number of minutes you'll need to wait for that bus?
-Part 2: What is the earliest timestamp such that all of the listed bus IDs depart at offsets
-    matching their positions in the list?
-Topics: Chinese Remainder Theorem, Bézout coefficients, GCD, extended Euclidean algorithm
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 13: Shuttle Search.
+ *
+ * Part 1: What is the ID of the earliest bus you can take to the airport
+ *         multiplied by the number of minutes you'll need to wait for that bus?
+ * Part 2: What is the earliest timestamp such that all of the listed bus IDs depart at offsets
+ *         matching their positions in the list?
+ *
+ * Topics: Chinese Remainder Theorem, Bézout coefficients, GCD, extended Euclidean algorithm
+ *
+ * @see https://adventofcode.com/2020/day/13
+ */
 final class Aoc2020Day13 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -24,9 +27,13 @@ final class Aoc2020Day13 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[295, 1068781], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -88,11 +95,13 @@ final class Aoc2020Day13 extends SolutionBase
     }
 
     /**
-     * Extended Euclidean algortihm (not used in this puzzle).
+     * Extended Euclidean algorithm (not used in this puzzle).
      *
-     * Based on https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
+     * @see https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm
      *
-     * @return array{int, int, int} the greates common divisor, and the two Bézout coefficients
+     * @return array<int, int> The greates common divisor, and the two Bézout coefficients
+     *
+     * @phpstan-return array{int, int, int}
      */
     private static function extendedEuclidean(int $a, int $b): array
     {

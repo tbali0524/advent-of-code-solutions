@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/18
-Part 1: How many lights are on after 100 steps?
-Part 2: With the four corners always in the on state, how many lights are on after 100 steps?
-Topics: Conway's Game of Life, simulation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 18: Like a GIF For Your Yard.
+ *
+ * Part 1: How many lights are on after 100 steps?
+ * Part 2: With the four corners always in the on state, how many lights are on after 100 steps?
+ *
+ * Topics: Conway's Game of Life, simulation
+ *
+ * @see https://adventofcode.com/2015/day/18
+ */
 final class Aoc2015Day18 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -25,9 +28,13 @@ final class Aoc2015Day18 extends SolutionBase
     private const EXAMPLE_STEPS = 5;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -37,7 +44,9 @@ final class Aoc2015Day18 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input The lines of the input, without LF
+     */
     private function simulate(array $input, bool $stuckCorners = false): int
     {
         $size = count($input);

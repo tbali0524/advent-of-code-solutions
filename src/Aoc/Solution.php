@@ -2,8 +2,6 @@
 
 /**
  * Advent of Code - common interface for every solution class.
- *
- * To be implemented through extending the abstract class 'SolutionBase'.
  */
 
 declare(strict_types=1);
@@ -13,6 +11,7 @@ namespace TBali\Aoc;
 /**
  * Interface for the SolutionBase abstract class (and thus all the solution classes extending it).
  *
+ * - to be implemented through extending the abstract class 'SolutionBase'
  * - interface constants can be overriden in classes only from PHP v8.1
  * - assumption: there is no puzzle with 0 as solution (0 means the expected result is not yet known)
  * - overriding STRING_INPUT is optional: use for single line input puzzles not having an input file
@@ -21,20 +20,31 @@ namespace TBali\Aoc;
  */
 interface Solution
 {
+    /** @var int */
     public const YEAR = 2014;
+    /** @var int */
     public const DAY = 0;
+    /** @var string */
     public const TITLE = '';
+    /** @var array<int, int|string> */
     public const SOLUTIONS = [0, 0];
+    /** @var string */
     public const STRING_INPUT = '';
+    /** @var array<int, array<int, int|string>> */
     public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    /** @var array<int, string> */
     public const EXAMPLE_STRING_INPUTS = ['', ''];
 
     /**
      * This method must be implemented in the specific solution classes.
      *
-     * @param string[] $input
+     * @param array<int, string> $input The lines of the input, without LF
      *
-     * @return array{string, string} The answers for Part 1 and Part 2 (as strings)
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-param non-empty-array<int, string> $input
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array;
 
@@ -42,15 +52,20 @@ interface Solution
      * The main runner engine.
      *
      * Implemented in abstract class SolutionBase.
-     * Calls readInput (if needed) and solve() for all examples, then for the puzzle itself, outputs results.
-     * Returns true if all tests passed.
+     * Calls readInput() (only if needed) and solve() for all examples, then for the puzzle itself, outputs results.
+     *
+     * @return bool did all tests pass?
      */
     public function run(): bool;
 
     /**
-     * Implemented in abstract class SolutionBase.
+     * Read a file into an array of lines (without LF).
      *
-     * @return string[]
+     * Implemented in the abstract class SolutionBase.
+     *
+     * @return array<int, string>
+     *
+     * @phpstan-return non-empty-array<int, string>
      */
     public static function readInput(string $fileName): array;
 }

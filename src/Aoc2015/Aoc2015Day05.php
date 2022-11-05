@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/5
-Part 1: How many strings are nice?
-Part 2: How many strings are nice under these new rules?
-Topics: string validation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 5: Doesn't He Have Intern-Elves For This?.
+ *
+ * Part 1: How many strings are nice?
+ * Part 2: How many strings are nice under these new rules?
+ *
+ * Topics: string validation
+ *
+ * @see https://adventofcode.com/2015/day/5
+ */
 final class Aoc2015Day05 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -22,9 +25,13 @@ final class Aoc2015Day05 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[2, 0], [0, 2]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

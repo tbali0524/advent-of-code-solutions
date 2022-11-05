@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/4
-Part 1: You must find Santa the lowest positive number that produces such a hash.
-Part 2: Now find one that starts with six zeroes.
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 4: The Ideal Stocking Stuffer.
+ *
+ * Part 1: You must find Santa the lowest positive number that produces such a hash.
+ * Part 2: Now find one that starts with six zeroes.
+ *
+ * @see https://adventofcode.com/2015/day/4
+ */
 final class Aoc2015Day04 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -23,9 +25,13 @@ final class Aoc2015Day04 extends SolutionBase
     public const EXAMPLE_STRING_INPUTS = ['abcdef', 'pqrstuv'];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {

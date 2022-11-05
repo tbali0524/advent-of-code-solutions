@@ -1,13 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/22
-Part 1: Play the small crab in a game of Combat using the two decks you just dealt. What is the winning player's score?
-Part 2: Defend your honor as Raft Captain by playing the small crab in a game of Recursive Combat
-    using the same two decks as before. What is the winning player's score?
-Topics: game simulation, recursion
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -16,6 +8,18 @@ namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 22: Crab Combat.
+ *
+ * Part 1: Play the small crab in a game of Combat using the two decks you just dealt.
+ *         What is the winning player's score?
+ * Part 2: Defend your honor as Raft Captain by playing the small crab in a game of Recursive Combat
+ *         using the same two decks as before. What is the winning player's score?
+ *
+ * Topics: game simulation, recursion
+ *
+ * @see https://adventofcode.com/2020/day/22
+ */
 final class Aoc2020Day22 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -25,9 +29,13 @@ final class Aoc2020Day22 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[306, 291], [105, 105]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -48,9 +56,11 @@ final class Aoc2020Day22 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input
      *
-     * @return array{SpaceCardDeck, SpaceCardDeck}
+     * @return array<int, SpaceCardDeck>
+     *
+     * @phpstan-return array{SpaceCardDeck, SpaceCardDeck}
      */
     private function parseInput(array $input): array
     {
@@ -90,7 +100,7 @@ final class Aoc2020Day22 extends SolutionBase
 // --------------------------------------------------------------------
 final class SpaceCardDeck
 {
-    /** @param int[] $cards */
+    /** @param array<int, int> $cards */
     public function __construct(
         private readonly int $id = 0,
         /** cards are stored in bottom-to-top order */
@@ -126,7 +136,7 @@ final class SpaceCardDeck
         return array_pop($this->cards);
     }
 
-    /** @param int[] $cards */
+    /** @param array<int, int> $cards */
     public function addToBottom(array $cards): void
     {
         array_unshift($this->cards, ...$cards);
@@ -147,7 +157,11 @@ class SpaceCardGame
     /** @var array<string, true> */
     private array $memo;
 
-    /** @param array{SpaceCardDeck, SpaceCardDeck} $players */
+    /**
+     * @param array<int, SpaceCardDeck> $players
+     *
+     * @phpstan-param array{SpaceCardDeck, SpaceCardDeck} $players
+     */
     public function __construct(
         protected array $players
     ) {
@@ -189,7 +203,11 @@ class SpaceCardGame
         }
     }
 
-    /** @param array{int, int} $drawnCards */
+    /**
+     * @param array<int, int> $drawnCards
+     *
+     * @phpstan-param array{int, int} $drawnCards
+     */
     protected function getTurnResult(array $drawnCards): int
     {
         if ($drawnCards[0] > $drawnCards[1]) {
@@ -205,7 +223,11 @@ class SpaceCardGame
 // --------------------------------------------------------------------
 class SpaceCardRecursiveGame extends SpaceCardGame
 {
-    /** @param array{int, int} $drawnCards */
+    /**
+     * @param array<int, int> $drawnCards
+     *
+     * @phpstan-param array{int, int} $drawnCards
+     */
     public function getTurnResult(array $drawnCards): int
     {
         [$p0, $p1] = $this->players;

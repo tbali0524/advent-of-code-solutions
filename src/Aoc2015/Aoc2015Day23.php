@@ -1,18 +1,21 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/23
-Part 1: What is the value in register b when the program in your puzzle input is finished executing?
-Part 2: What is the value in register b after the program is finished executing if register a starts as 1 instead?
-Topics: assembly simulation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 23: Opening the Turing Lock.
+ *
+ * Part 1: What is the value in register b when the program in your puzzle input is finished executing?
+ * Part 2: What is the value in register b after the program is finished executing if register a starts as 1 instead?
+ *
+ * Topics: assembly simulation
+ *
+ * @see https://adventofcode.com/2015/day/23
+ */
 final class Aoc2015Day23 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -22,9 +25,13 @@ final class Aoc2015Day23 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[2, 2], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -35,10 +42,10 @@ final class Aoc2015Day23 extends SolutionBase
     }
 
     /**
-     * @param string[]           $input
-     * @param array<string, int> $registers
+     * @param array<int, string> $input     The lines of the input, without LF
+     * @param array<string, int> $registers The registers at the start of execution
      *
-     * @return array<string, int> The registers at end of execution
+     * @return array<string, int> The registers at the end of execution
      */
     private function execute(array $input, array $registers): array
     {

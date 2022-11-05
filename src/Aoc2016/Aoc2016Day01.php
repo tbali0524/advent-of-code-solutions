@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2016/day/1
-Part 1: How many blocks away is Easter Bunny HQ?
-Part 2: How many blocks away is the first location you visit twice?
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2016;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2016 Day 1: No Time for a Taxicab.
+ *
+ * Part 1: How many blocks away is Easter Bunny HQ?
+ * Part 2: How many blocks away is the first location you visit twice?
+ *
+ * @see https://adventofcode.com/2016/day/1
+ */
 final class Aoc2016Day01 extends SolutionBase
 {
     public const YEAR = 2016;
@@ -25,9 +27,13 @@ final class Aoc2016Day01 extends SolutionBase
     private const TURNS = ['R' => 1, 'L' => -1];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -36,7 +42,7 @@ final class Aoc2016Day01 extends SolutionBase
         $x = 0;
         $y = 0;
         $direction = 0; // N
-        foreach (explode(', ', $input[0]) as $instruction) {
+        foreach (explode(', ', $input[0] ?? '') as $instruction) {
             $turn = self::TURNS[$instruction[0]] ?? 0;
             $move = intval(substr($instruction, 1));
             $direction = ($direction + $turn + 4) % 4;

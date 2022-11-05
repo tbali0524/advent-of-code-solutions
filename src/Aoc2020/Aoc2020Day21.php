@@ -1,19 +1,22 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/21
-Part 1: Determine which ingredients cannot possibly contain any of the allergens in your list.
-    How many times do any of those ingredients appear?
-Part 2: What is your canonical dangerous ingredient list?
-Topics: Bipartite graph, matching
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 21: Allergen Assessment.
+ *
+ * Part 1: Determine which ingredients cannot possibly contain any of the allergens in your list.
+ *         How many times do any of those ingredients appear?
+ * Part 2: What is your canonical dangerous ingredient list?
+ *
+ * Topics: Bipartite graph, matching
+ *
+ * @see https://adventofcode.com/2020/day/21
+ */
 final class Aoc2020Day21 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -24,20 +27,41 @@ final class Aoc2020Day21 extends SolutionBase
 
     /** @var array<string, int> */
     private array $ingredients;
+
     /** @var array<string, int> */
     private array $allergens;
-    /** @var array<array{int[], int[]}> */
-    private array $recipes; // each row is a [list if ingredients id, list of allergens id]
-
-    /** @var array<int, array<int, true>> */
-    private array $canComeFrom;      // [allergen][ingredient => true]
-    /** @var array<int, array<int, true>> */
-    private array $canContain;      // [ingredient][allergen => true]
 
     /**
-     * @param string[] $input
+     * Each row is a [list if ingredients id, list of allergens id].
      *
-     * @return array{string, string}
+     * @var array<array<int, array<int, int>>>
+     *
+     * @phpstan-var array<int, array{array<int, int>, array<int, int>}>
+     */
+    private array $recipes;
+
+    /**
+     * [allergen][ingredient => true].
+     *
+     * @var array<int, array<int, true>>
+     */
+    private array $canComeFrom;
+
+    /**
+     * [ingredient][allergen => true].
+     *
+     * @var array<int, array<int, true>>
+     */
+    private array $canContain;
+
+    /**
+     * Solve both parts of the puzzle for a given input, without IO.
+     *
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -131,7 +155,7 @@ final class Aoc2020Day21 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input
      */
     private function parseInput(array $input): void
     {

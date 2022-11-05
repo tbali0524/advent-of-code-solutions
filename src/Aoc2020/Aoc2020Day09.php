@@ -1,17 +1,19 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/9
-Part 1: What is the first number that does not have this property?
-Part 2: What is the encryption weakness in your XMAS-encrypted list of numbers?
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 9: Encoding Error.
+ *
+ * Part 1: What is the first number that does not have this property?
+ * Part 2: What is the encryption weakness in your XMAS-encrypted list of numbers?
+ *
+ * @see https://adventofcode.com/2020/day/9
+ */
 final class Aoc2020Day09 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -21,13 +23,17 @@ final class Aoc2020Day09 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[127, 62], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
-        /** @var int[] */
+        /** @var array<int, int> */
         $input = array_map('intval', $input);
         $window = 25;
         // detect puzzle example with reduced window size

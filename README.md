@@ -1,4 +1,4 @@
-# Advent Of Code solutions in PHP by TBali
+# Advent of Code solutions in PHP by TBali
 
 ![php-version-81](https://shields.io/badge/php->=8.1-blue)
 

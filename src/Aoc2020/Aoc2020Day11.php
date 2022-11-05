@@ -1,19 +1,22 @@
 <?php
 
-/*
-https://adventofcode.com/2020/day/11
-Part 1: How many seats end up occupied?
-Part 2: Given the new visibility method and the rule change for occupied seats becoming empty,
-    once equilibrium is reached, how many seats end up occupied?
-Topics: Conway's Game of Life, simulation
-*/
-
 declare(strict_types=1);
 
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 11: Seating System.
+ *
+ * Part 1: How many seats end up occupied?
+ * Part 2: Given the new visibility method and the rule change for occupied seats becoming empty,
+ *         once equilibrium is reached, how many seats end up occupied?
+ *
+ * Topics: Conway's Game of Life, simulation
+ *
+ * @see https://adventofcode.com/2020/day/11
+ */
 final class Aoc2020Day11 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -23,9 +26,13 @@ final class Aoc2020Day11 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[37, 26], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -35,7 +42,9 @@ final class Aoc2020Day11 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input The lines of the input, without LF
+     */
     private function simulate(array $input, int $leaveThreshold = 4, bool $neighborOnly = true): int
     {
         if ($input == []) {

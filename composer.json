@@ -30,17 +30,23 @@
         "cs"   : "phpcs",
         "cs-fixer" : "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
+        "doc"  : "phpdoc",
         "loc"  : "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
         "stan" : "phpstan --ansi --verbose",
         "qa" : [
             "@cs",
             "@cs-fixer",
-            "@stan"
+            "@stan",
+            "@doc",
+            "@open-doc"
         ],
+        "open-doc":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
         "clean" : [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
-            "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan"
+            "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan",
+            "if exist .tools\\phpdoc\\               rmdir /S /Q .tools\\phpdoc",
+            "if exist docs\\                        rmdir /S /Q docs"
         ]
     },
     "scripts-descriptions": {
@@ -48,9 +54,11 @@
         "cs":       "Check coding style compliance to PSR12 with phpcs",
         "cs-fixer": "Check coding style compliance to PSR12 plus extra rules with php-cs-fixer (no fix applied)",
         "cs-fixer-do": "Apply coding style fixes with php-cs-fixer",
+        "doc":      "Create documentation with phpDocumentor",
         "loc":      "Get code summary report with phploc",
         "stan":     "Run static analysis with phpstan",
-        "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan",
+        "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpDocumentor",
+        "open-doc":   "Open generated documentation in browser (fixed file path)",
         "clean":    "Delete generated cache and report files in .tools directory (Windows only)"
     }
 }

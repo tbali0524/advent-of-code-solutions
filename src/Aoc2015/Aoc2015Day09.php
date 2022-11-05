@@ -1,12 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/9
-Part 1: What is the distance of the shortest route?
-Part 2: What is the distance of the longest route?
-Topics: permutations, Heap's algorithm, Hamiltonian paths, graph
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -15,6 +8,16 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 9: All in a Single Night.
+ *
+ * Part 1: What is the distance of the shortest route?
+ * Part 2: What is the distance of the longest route?
+ *
+ * Topics: permutations, Heap's algorithm, Hamiltonian paths, graph
+ *
+ * @see https://adventofcode.com/2015/day/9
+ */
 final class Aoc2015Day09 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -24,9 +27,13 @@ final class Aoc2015Day09 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[605, 982], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -43,10 +50,12 @@ final class CityGraph
     public int $v = 0;
     /** @var array<string, int> */
     public array $nodes = [];
-    /** @var array<int, int[]> */
+    /** @var array<int, array<int, int>> */
     public array $dist = [];
 
-    /** @param string[] $input */
+    /**
+     * @param array<int, string> $input The lines of the input, without LF
+     */
     public function __construct(array $input)
     {
         foreach ($input as $line) {
@@ -79,9 +88,13 @@ final class CityGraph
         return $id;
     }
 
-    // generating all permutations vertices (path order), checks minimum total distance
-    // based on https://en.wikipedia.org/wiki/Heap%27s_algorithm
-    /** @return int[] */
+    /**
+     * Generating all permutations vertices (path order), checks minimum total distance.
+     *
+     * @see https://en.wikipedia.org/wiki/Heap%27s_algorithm
+     *
+     * @return array<int, int>
+     */
     public function getMinMaxDistance(): array
     {
         $a = range(0, $this->v - 1);

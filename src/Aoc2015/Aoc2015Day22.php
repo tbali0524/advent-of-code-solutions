@@ -1,13 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/22
-Part 1: What is the least amount of mana you can spend and still win the fight?
-Part 2: At the start of each player turn (before any other effects apply), you lose 1 hit point.
-    What is the least amount of mana you can spend and still win the fight?
-Topics: game simulation, DFS, graph, PriorityQueue
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -16,6 +8,17 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 22: Wizard Simulator 20XX.
+ *
+ * Part 1: What is the least amount of mana you can spend and still win the fight?
+ * Part 2: At the start of each player turn (before any other effects apply), you lose 1 hit point.
+ *         What is the least amount of mana you can spend and still win the fight?
+ *
+ * Topics: game simulation, DFS, graph, PriorityQueue
+ *
+ * @see https://adventofcode.com/2015/day/22
+ */
 final class Aoc2015Day22 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -24,9 +27,13 @@ final class Aoc2015Day22 extends SolutionBase
     public const SOLUTIONS = [900, 1216];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -93,7 +100,7 @@ final class WizardGameState
     public int $mana = self::PLAYER_START_MANA;
     public int $spentMana = 0;
     public int $armor = 0;
-    /** @var int[] */
+    /** @var array<int, int> */
     public array $timers = [];
 
     public function __construct(int $enemyHp, int $enemyDamage, bool $hardMode = false)
@@ -103,7 +110,7 @@ final class WizardGameState
         $this->hardMode = $hardMode;
     }
 
-    /** @return int[] */
+    /** @return array<int, int> */
     public function allValidSpells(): array
     {
         if (($this->enemyHp <= 0) or ($this->hp <= 0)) {

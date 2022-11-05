@@ -1,11 +1,5 @@
 <?php
 
-/*
-https://adventofcode.com/2015/day/6
-Part 1: How many total square feet of wrapping paper should they order?
-Part 2: What is the total brightness of all lights combined after following Santa's instructions?
-*/
-
 // phpcs:disable PSR1.Classes.ClassDeclaration
 
 declare(strict_types=1);
@@ -14,6 +8,14 @@ namespace TBali\Aoc2015;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2015 Day 6: Probably a Fire Hazard.
+ *
+ * Part 1: How many total square feet of wrapping paper should they order?
+ * Part 2: What is the total brightness of all lights combined after following Santa's instructions?
+ *
+ * @see https://adventofcode.com/2015/day/6
+ */
 final class Aoc2015Day06 extends SolutionBase
 {
     public const YEAR = 2015;
@@ -26,9 +28,13 @@ final class Aoc2015Day06 extends SolutionBase
     private const MAX = 1000;
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -71,9 +77,9 @@ final class Aoc2015Day06 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input
      *
-     * @return Instruction[]>
+     * @return array<int, Instruction>
      */
     private function parseInput(array $input): array
     {

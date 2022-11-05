@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 
-/*
-https://adventofcode.com/2020/day/8
-Part 1: Immediately before any instruction is executed a second time, what value is in the accumulator?
-Part 2: What is the value of the accumulator after the program terminates?
-Topics: assembly simulation
-*/
-
 namespace TBali\Aoc2020;
 
 use TBali\Aoc\SolutionBase;
 
+/**
+ * AoC 2020 Day 8: Handheld Halting.
+ *
+ * Part 1: Immediately before any instruction is executed a second time, what value is in the accumulator?
+ * Part 2: What is the value of the accumulator after the program terminates?
+ *
+ * Topics: assembly simulation
+ *
+ * @see https://adventofcode.com/2020/day/8
+ */
 final class Aoc2020Day08 extends SolutionBase
 {
     public const YEAR = 2020;
@@ -22,9 +25,13 @@ final class Aoc2020Day08 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[5, 8], [0, 0]];
 
     /**
-     * @param string[] $input
+     * Solve both parts of the puzzle for a given input, without IO.
      *
-     * @return array{string, string}
+     * @param array<int, string> $input The lines of the input, without LF
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
+     *
+     * @phpstan-return array{string, string}
      */
     public function solve(array $input): array
     {
@@ -52,9 +59,11 @@ final class Aoc2020Day08 extends SolutionBase
     }
 
     /**
-     * @param string[] $input
+     * @param array<int, string> $input The lines of the input, without LF
      *
-     * @return array{bool, int} first item: was there an infinite loop? second item: The accumulator at exit
+     * @return array<mixed> First item: was there an infinite loop? Second item: The accumulator at exit
+     *
+     * @phpstan-return array{bool, int}
      */
     private function execute(array $input): array
     {
