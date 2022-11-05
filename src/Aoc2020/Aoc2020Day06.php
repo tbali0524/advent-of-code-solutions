@@ -48,17 +48,17 @@ final class Aoc2020Day06 extends SolutionBase
         $ans1 = array_sum(array_map(
             // count_chars mode = 3: a string containing all unique characters is returned.
             // @phpstan-ignore-next-line
-            fn ($group) => strlen(count_chars(implode('', $group), 3)),
+            fn (array $group): int => strlen(count_chars(implode('', $group), 3)),
             $processedInput
         ));
         // ---------- Part 2
         $ans2 = array_sum(array_map(
             // count_chars mode = 1: an array with the byte-value as key and the frequency of every byte as value,
             //      only byte-values with a frequency greater than zero are listed.
-            fn ($group) => count(array_filter(
+            fn (array $group): int => count(array_filter(
                 // @phpstan-ignore-next-line
                 count_chars(implode('', $group), 1),
-                fn ($value) => $value == count($group),
+                fn (int $value): bool => $value == count($group),
             )),
             $processedInput
         ));

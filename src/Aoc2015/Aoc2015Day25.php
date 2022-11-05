@@ -10,13 +10,11 @@ use TBali\Aoc\SolutionBase;
  * AoC 2015 Day 25: Let It Snow.
  *
  * Part 1: What code do you give the machine?
- * Part 2:
+ * Part 2: N/A
  *
  * Topics: LCG, linear congruence
  *
  * @see https://adventofcode.com/2015/day/25
- *
- * @todo Part 2
  */
 final class Aoc2015Day25 extends SolutionBase
 {
@@ -46,9 +44,8 @@ final class Aoc2015Day25 extends SolutionBase
         $column = intval(substr($a[18], 0, -1));
         $n = $row + $column - 2;
         $n = intdiv($n * ($n + 1), 2) + $column - 1;
-        // ---------- Part 1
+        // ---------- Part 1 + 2
         $ans1 = $this->getPassword(20151125, $n);
-        // ---------- Part 2
         $ans2 = 0;
         return [strval($ans1), strval($ans2)];
     }

@@ -39,7 +39,7 @@ final class Aoc2015Day15 extends SolutionBase
         $ans1 = 0;
         $ans2 = 0;
         $ingredients = $this->parseInput($input);
-        $powers = array_map(fn ($x) => self::TOTAL_QUANTITY ** $x, range(0, count($ingredients)));
+        $powers = array_map(fn (int $x): int => self::TOTAL_QUANTITY ** $x, range(0, count($ingredients)));
         for ($code = 0; $code < $powers[count($ingredients) - 1]; ++$code) {
             $quantities = [];
             $remaining_quantity = self::TOTAL_QUANTITY - 1;

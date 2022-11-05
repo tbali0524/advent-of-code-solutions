@@ -55,7 +55,10 @@ final class Aoc2015Day06 extends SolutionBase
                 }
             }
         }
-        $ans1 = array_sum(array_map(fn ($row) => count(array_filter($row, fn ($x) => $x)), $grid));
+        $ans1 = array_sum(array_map(
+            fn (array $row): int => count(array_filter($row, fn (bool $x): bool => $x)),
+            $grid
+        ));
         // ---------- Part 2
         $ans2 = 0;
         $grid = array_fill(0, self::MAX, array_fill(0, self::MAX, 0));
@@ -72,7 +75,7 @@ final class Aoc2015Day06 extends SolutionBase
                 }
             }
         }
-        $ans2 = array_sum(array_map(fn ($row) => array_sum($row), $grid));
+        $ans2 = array_sum(array_map(fn (array $row): int => array_sum($row), $grid));
         return [strval($ans1), strval($ans2)];
     }
 

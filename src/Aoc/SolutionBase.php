@@ -101,6 +101,9 @@ abstract class SolutionBase implements Solution
         echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTime . ' sec] : '
             . static::TITLE . PHP_EOL . $exampleMsg;
         for ($part = 0; $part < 2; ++$part) {
+            if ((static::DAY == 25) and ($part == 1)) {
+                continue;
+            }
             if (strval(static::SOLUTIONS[$part]) == '0') {
                 echo self::WARN_TAG . $answers[$part] . ' - Puzzle is missing expected result.' . PHP_EOL;
                 continue;

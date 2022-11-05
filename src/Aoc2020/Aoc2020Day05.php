@@ -36,14 +36,14 @@ final class Aoc2020Day05 extends SolutionBase
     {
         // ---------- Part 1
         $ans1 = max(array_map(
-            fn ($x) => bindec(strtr($x, 'FBLR', '0101')),
+            fn (string $x): int => intval(bindec(strtr($x, 'FBLR', '0101'))),
             $input
         ));
         // ---------- Part 2
         $max = 1 << strlen($input[0] ?? '');
         $seats = array_fill(0, $max, false);
         foreach ($input as $line) {
-            $seats[bindec(strtr($line, 'FBLR', '0101'))] = true;
+            $seats[intval(bindec(strtr($line, 'FBLR', '0101')))] = true;
         }
         $ans2 = 0;
         while (($ans2 < $max) and !$seats[$ans2]) {

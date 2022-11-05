@@ -236,7 +236,7 @@ final class ImageTile
         if (count($grid) != self::SIZE) {
             throw new \Exception('Invalid tile grid size');
         }
-        if (count(array_filter($this->grid, fn ($line) => strlen($line) != self::SIZE)) != 0) {
+        if (count(array_filter($this->grid, fn (string $line): bool => strlen($line) != self::SIZE)) != 0) {
             throw new \Exception('Invalid tile grid size');
         }
         $this->calculateEdges();

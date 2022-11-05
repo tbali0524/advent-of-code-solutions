@@ -51,8 +51,14 @@ final class Aoc2020Day18 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1 + 2
-        $ans1 = array_sum(array_map(fn ($x) => (new Expression($x, self::PRECEDENCES_PART1))->evaluate(), $input));
-        $ans2 = array_sum(array_map(fn ($x) => (new Expression($x, self::PRECEDENCES_PART2))->evaluate(), $input));
+        $ans1 = array_sum(array_map(
+            fn (string $x): int => (new Expression($x, self::PRECEDENCES_PART1))->evaluate(),
+            $input
+        ));
+        $ans2 = array_sum(array_map(
+            fn (string $x): int => (new Expression($x, self::PRECEDENCES_PART2))->evaluate(),
+            $input
+        ));
         return [strval($ans1), strval($ans2)];
     }
 }

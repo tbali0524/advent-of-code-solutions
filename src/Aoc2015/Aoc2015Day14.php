@@ -41,14 +41,14 @@ final class Aoc2015Day14 extends SolutionBase
         // detect puzzle example as input
         $maxSteps = (count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS);
         // ---------- Part 1
-        $ans1 = max(array_map(fn ($line) => (new Reindeer($line))->getDistanceAt($maxSteps), $input));
+        $ans1 = max(array_map(fn (string $line): int => (new Reindeer($line))->getDistanceAt($maxSteps), $input));
         // ---------- Part 2
         $reindeers = [];
         foreach ($input as $line) {
             $reindeers[] = new Reindeer($line);
         }
         for ($second = 1; $second <= $maxSteps; ++$second) {
-            $max = max(array_map(fn ($x) => $x->getDistanceAt($second), $reindeers));
+            $max = max(array_map(fn (Reindeer $x): int => $x->getDistanceAt($second), $reindeers));
             array_walk(
                 $reindeers,
                 function ($x) use ($second, $max): void {
@@ -58,7 +58,7 @@ final class Aoc2015Day14 extends SolutionBase
                 }
             );
         }
-        $ans2 = max(array_map(fn ($x) => $x->points, $reindeers));
+        $ans2 = max(array_map(fn (Reindeer $x): int => $x->points, $reindeers));
         return [strval($ans1), strval($ans2)];
     }
 }

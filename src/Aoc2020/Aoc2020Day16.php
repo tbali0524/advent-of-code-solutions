@@ -72,7 +72,7 @@ final class Aoc2020Day16 extends SolutionBase
         $posValidFields = [];
         for ($idxPos = 0; $idxPos < count($this->myTicket); ++$idxPos) {
             $valuesAtPos = array_map(
-                fn ($ticket) => $ticket[$idxPos],
+                fn (array $ticket): int => $ticket[$idxPos],
                 $validTickets
             );
             $posValidFields[$idxPos] = [];
@@ -87,7 +87,7 @@ final class Aoc2020Day16 extends SolutionBase
             if (count($posValidFields) == 0) {
                 break;
             }
-            uasort($posValidFields, fn ($a, $b) => count($a) <=> count($b));
+            uasort($posValidFields, fn (array $a, array $b): int => count($a) <=> count($b));
             $idxPos = array_key_first($posValidFields);
             if (count($posValidFields[$idxPos]) != 1) {
                 throw new \Exception('No solution found');

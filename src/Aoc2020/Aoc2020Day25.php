@@ -10,13 +10,11 @@ use TBali\Aoc\SolutionBase;
  * AoC 2020 Day 25: Combo Breaker.
  *
  * Part 1: What encryption key is the handshake trying to establish?
- * Part 2:
+ * Part 2: N/A
  *
  * Topics: asymmetric key encryption
  *
  * @see https://adventofcode.com/2020/day/25
- *
- * @todo Part 2
  */
 final class Aoc2020Day25 extends SolutionBase
 {
@@ -45,7 +43,7 @@ final class Aoc2020Day25 extends SolutionBase
         }
         $cardPublicKey = intval($input[0]);
         $doorPublicKey = intval($input[1]);
-        // ---------- Part 1
+        // ---------- Part 1 + 2
         $value = 1;
         $cardLoopSize = 0;
         while (true) {
@@ -60,7 +58,6 @@ final class Aoc2020Day25 extends SolutionBase
             $value = ($value * $doorPublicKey) % self::MODULUS;
         }
         $ans1 = $value;
-        // ---------- Part 2
         $ans2 = 0;
         return [strval($ans1), strval($ans2)];
     }

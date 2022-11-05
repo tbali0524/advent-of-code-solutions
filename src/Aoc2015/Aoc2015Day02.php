@@ -35,13 +35,13 @@ final class Aoc2015Day02 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<array<int, int>> */
-        $input = array_map(
-            fn ($line) => array_map('intval', explode('x', $line)),
+        $boxes = array_map(
+            fn (string $line): array => array_map('intval', explode('x', $line)),
             $input
         );
         // ---------- Part 1
         $ans1 = 0;
-        foreach ($input as $box) {
+        foreach ($boxes as $box) {
             if (count($box) != 3) {
                 throw new \Exception('Invalid input');
             }
@@ -53,7 +53,7 @@ final class Aoc2015Day02 extends SolutionBase
         }
         // ---------- Part 2
         $ans2 = 0;
-        foreach ($input as $box) {
+        foreach ($boxes as $box) {
             if (count($box) != 3) {
                 throw new \Exception('Invalid input');
             }
