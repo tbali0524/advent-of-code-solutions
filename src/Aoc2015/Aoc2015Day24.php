@@ -14,7 +14,7 @@ use TBali\Aoc\SolutionBase;
  *
  * @see https://adventofcode.com/2015/day/24
  *
- * @todo Part 2
+ * @todo Part 1, 2
  */
 final class Aoc2015Day24 extends SolutionBase
 {
