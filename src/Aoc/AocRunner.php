@@ -37,11 +37,18 @@ final class AocRunner
      * @phpstan-var array<string, array{string, string}>
      */
     public const LANGUAGES = [
+        'dart' => ['dart', 'dart'],
+        'f#' => ['dotnet fsi', 'fsx'],
+        'go' => ['go run', 'go'],
+        'groovy' => ['groovy', 'groovy'],
+        'java' => ['java', 'java'],
+        'javascript' => ['node', 'js'],
         'lua' => ['lua', 'lua'],
         'perl' => ['perl', 'pl'],
         'php' => ['php', 'php'],
         'python' => ['python', 'py'],
         'ruby' => ['ruby', 'rb'],
+        'scala' => ['scala', 'scala'],
     ];
 
     /** @var string */
@@ -50,6 +57,7 @@ final class AocRunner
     public int $year = -1;
     public int $day = -1;
     public bool $runAsScripts = false;
+    public bool $runAllLanguages = false;
     public string $language = '';
     public bool $isOk = true;
 
@@ -58,7 +66,7 @@ final class AocRunner
      */
     public function __construct(array $args)
     {
-        echo 'AoC v1.0 - batch solution runner for Advent of Code, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
+        echo 'Advent of Code - batch solution runner, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
         $this->processArgs($args);
         $this->isOk = true;
     }
@@ -69,7 +77,7 @@ final class AocRunner
     public function run(): void
     {
         $startTime = hrtime(true);
-        if (($this->year >= 0) and ($this->day >= 0)) {
+        if (($this->year >= 0) and ($this->day >= 0) and !$this->runAllLanguages) {
             if ($this->runAsScripts) {
                 $this->runSingleAsScript($this->year, $this->day);
             } else {
@@ -78,33 +86,52 @@ final class AocRunner
             echo PHP_EOL;
             return;
         }
+        if ($this->runAllLanguages) {
+            $languages = array_keys(self::LANGUAGES);
+        } else {
+            $languages = [$this->language];
+        }
         $countTotal = 0;
         $countFails = 0;
         $countSkipped = 0;
-        for ($year = self::MIN_YEAR; $year <= self::MAX_YEAR; ++$year) {
-            if (($this->year >= 0) and ($year != $this->year)) {
-                continue;
-            }
-            echo '======= ' . $year . ' ===========================' . PHP_EOL;
-            for ($day = 1; $day <= self::MAX_DAYS; ++$day) {
-                $srcFileName = $this->getSourceName($year, $day);
-                if (!file_exists($srcFileName)) {
+        $lastLanguage = '';
+        foreach ($languages as $language) {
+            $this->language = $language;
+            $lastYear = -1;
+            for ($year = self::MIN_YEAR; $year <= self::MAX_YEAR; ++$year) {
+                if (($this->year >= 0) and ($year != $this->year)) {
                     continue;
                 }
-                ++$countTotal;
-                if (in_array($day, self::TO_SKIP[$year] ?? [])) {
-                    echo '=== AoC ' . $year . ' Day ' . $day . PHP_EOL;
-                    echo Base::WARN_TAG . 'Skipped.' . PHP_EOL;
-                    ++$countSkipped;
-                    continue;
-                }
-                if ($this->runAsScripts) {
-                    $result = $this->runSingleAsScript($year, $day);
-                } else {
-                    $result = $this->runSingleAsClass($year, $day);
-                }
-                if (!$result) {
-                    ++$countFails;
+                for ($day = 1; $day <= self::MAX_DAYS; ++$day) {
+                    $srcFileName = $this->getSourceName($year, $day);
+                    if (!file_exists($srcFileName)) {
+                        continue;
+                    }
+                    ++$countTotal;
+                    if ($this->runAllLanguages and ($language != $lastLanguage)) {
+                        echo '---------- ' . $language . ' solutions ' . str_repeat('-', 18 - strlen($language))
+                            . PHP_EOL;
+                        $lastLanguage = $language;
+                    }
+                    if ($year != $lastYear) {
+                        echo '======= ' . $year . ' ===========================' . PHP_EOL;
+                        $lastYear = $year;
+                    }
+                    // @phpstan-ignore-next-line
+                    if (isset(self::TO_SKIP[$year]) and in_array($day, self::TO_SKIP[$year])) {
+                        echo '=== AoC ' . $year . ' Day ' . $day . PHP_EOL;
+                        echo Base::WARN_TAG . 'Skipped.' . PHP_EOL;
+                        ++$countSkipped;
+                        continue;
+                    }
+                    if ($this->runAsScripts) {
+                        $result = $this->runSingleAsScript($year, $day);
+                    } else {
+                        $result = $this->runSingleAsClass($year, $day);
+                    }
+                    if (!$result) {
+                        ++$countFails;
+                    }
                 }
             }
         }
@@ -114,9 +141,11 @@ final class AocRunner
         if ($countFails > 0) {
             $messages[] = $countFails . ' failed';
         }
+        // @phpstan-ignore-next-line
         if ($countSkipped > 0) {
             $messages[] = $countSkipped . ' skipped';
         }
+        // @phpstan-ignore-next-line
         if (($countFails > 0) or ($countSkipped > 0)) {
             $failSkipMsg = ' (' . implode(', ', $messages) . ')';
         } else {
@@ -197,6 +226,7 @@ final class AocRunner
             . '| Argument                   | Effect                                              |' . PHP_EOL
             . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
             . '| LANGUAGE given             | invoke interpreter with standalone solution scripts |' . PHP_EOL
+            . '| LANGUAGE=all given         | invoke standalone solution scripts in all languages |' . PHP_EOL
             . '| LANGUAGE not given         | invoke class-based PHP solutions                    |' . PHP_EOL
             . '| none of YEAR and DAY given | run all solutions                                   |' . PHP_EOL
             . '| only YEAR given            | run all solutions for that season only              |' . PHP_EOL
@@ -217,7 +247,11 @@ final class AocRunner
             return;
         }
         $idxYear = 1;
-        if (isset(self::LANGUAGES[strtolower($args[1])])) {
+        if (strtolower($args[1]) == 'all') {
+            $this->runAsScripts = true;
+            $this->runAllLanguages = true;
+            $idxYear = 2;
+        } elseif (isset(self::LANGUAGES[strtolower($args[1])])) {
             $this->runAsScripts = true;
             $this->language = strtolower($args[1]);
             $idxYear = 2;
@@ -245,8 +279,11 @@ final class AocRunner
 
     private function getSourceName(int $year, int $day): string
     {
-        return 'src/Aoc' . $year . '/' . $this->getClassName($year, $day) . '.'
-            . ($this->runAsScripts ? self::LANGUAGES[$this->language][1] ?? '' : 'php');
+        return 'src/'
+        . ($this->runAsScripts ? 'other/' : '')
+        . 'Aoc' . $year . '/' . $this->getClassName($year, $day)
+        . (($this->runAsScripts && ($this->language == 'php')) ? 'scr' : '')
+        . '.' . ($this->runAsScripts ? self::LANGUAGES[$this->language][1] ?? '' : 'php');
     }
 
     private function checkFileExists(string $srcFileName): bool
