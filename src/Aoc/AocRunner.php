@@ -28,7 +28,7 @@ final class AocRunner
      * @var array<int, array<int, int>>
      */
     public const TO_SKIP = [
-        2020 => [20],
+        // 2026 => [],
     ];
 
     /**

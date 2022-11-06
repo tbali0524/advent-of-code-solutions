@@ -12,21 +12,24 @@ use TBali\Aoc\SolutionBase;
  * AoC 2020 Day 20 - Jurassic Jigsaw.
  *
  * Part 1: What do you get if you multiply together the IDs of the four corner tiles?
- * Part 2:
+ * Part 2: How many # are not part of a sea monster?
  *
  * @see https://adventofcode.com/2020/day/20
- *
- * @todo Part 1 works for example, but too slow for puzzle input
  */
 final class Aoc2020Day20 extends SolutionBase
 {
     public const YEAR = 2020;
     public const DAY = 20;
     public const TITLE = 'Jurassic Jigsaw';
-    public const SOLUTIONS = [0, 0];
-    public const EXAMPLE_SOLUTIONS = [[20899048083289, 0], [0, 0]];
+    public const SOLUTIONS = [17250897231301, 1576];
+    public const EXAMPLE_SOLUTIONS = [[20899048083289, 273], [0, 0]];
 
-    private const DEBUG = true;
+    public const DEBUG = false;
+    private const MONSTER = [
+        '                  # ',
+        '#    ##    ##    ###',
+        ' #  #  #  #  #  #   ',
+    ];
 
     private ImageTile $emptyTile;
 
@@ -43,9 +46,10 @@ final class Aoc2020Day20 extends SolutionBase
     private array $validDownTiles;
     /** @var array<int, array<int, int>> */
     private array $validDownPos;
-
-    /** @var array<int, int> */
-    private array $edgeOccurences;
+    /** @var array<int, bool> */
+    private array $isCornerTile;
+    /** @var array<int, bool> */
+    private array $isBorderTile;
 
     /** @var array<ImageTile[]> */
     private array $gridTile;
@@ -67,58 +71,96 @@ final class Aoc2020Day20 extends SolutionBase
     {
         $this->parseInput($input);
         $this->emptyTile = new ImageTile();
+        // ---------- Part 1
+        $this->searchCornerAndBorderTiles();
+        if (count($this->isCornerTile) == 0) {
+            throw new \Exception('No solution found');
+        }
+        $ans1 = array_product(array_keys($this->isCornerTile));
+        // ---------- Part 2
         $this->calculateNeighbors();
-        $this->assigned = [];
-        foreach ($this->tiles as $tile) {
-            $this->assigned[$tile->id] = false;
-        }
-        $this->gridTile = array_fill(0, $this->maxY, array_fill(0, $this->maxX, $this->emptyTile));
-        $this->gridPos = array_fill(0, $this->maxY, array_fill(0, $this->maxX, 0));
-        if (count($this->tiles) > 10) {
-            // return ['0', '0'];
-        }
-        if (self::DEBUG and (count($this->tiles) < 1000)) {
-            echo '--- Empty tiles:', PHP_EOL;
-            $this->printGrid();
-            $seqTiles = array_values($this->tiles);
-            for ($y = 0; $y < $this->maxY; ++$y) {
-                for ($x = 0; $x < $this->maxX; ++$x) {
-                    $this->gridTile[$y][$x] = $seqTiles[$y * $this->maxX + $x];
-                }
-            }
-            echo '--- Tileset in initial positions:', PHP_EOL;
-            $this->printGrid();
-            for ($y = 0; $y < $this->maxY; ++$y) {
-                for ($x = 0; $x < $this->maxX; ++$x) {
-                    $this->gridTile[$y][$x] = $seqTiles[0];
-                    $this->gridPos[$y][$x] = ($y * $this->maxX + $x) % 16;
-                }
-            }
-            echo PHP_EOL;
-            echo '--- First tile rotated and flipped:', PHP_EOL;
-            $this->printGrid();
-            echo PHP_EOL;
+        $topLeft = $this->tiles[array_key_first($this->isCornerTile)] ?? $this->emptyTile;
+        $result = false;
+        for ($i = 0; $i < count($topLeft->edges); ++$i) {
             $this->gridTile = array_fill(0, $this->maxY, array_fill(0, $this->maxX, $this->emptyTile));
             $this->gridPos = array_fill(0, $this->maxY, array_fill(0, $this->maxX, 0));
+            $this->assigned = [];
+            foreach ($this->tiles as $tile) {
+                $this->assigned[$tile->id] = false;
+            }
+            $this->gridTile[0][0] = $topLeft;
+            $this->gridPos[0][0] = $i;
+            $this->assigned[$topLeft->id] = true;
+            $result = $this->backtrack(0, 0);
+            if ($result) {
+                break;
+            }
         }
-        $result = $this->backtrack();
         if (!$result) {
             throw new \Exception('No solution found');
         }
-        if (self::DEBUG and (count($this->tiles) < 1000)) {
-            echo '--- Part 1 solution:', PHP_EOL;
-            $this->printGrid();
+        // @phpstan-ignore-next-line
+        if (self::DEBUG) {
+            echo '--- Reconstructed tiles:', PHP_EOL;
+            $this->printDebugImage();
         }
-        // ---------- Part 1
-        $ans1 = $this->gridTile[0][0]->id
-            * $this->gridTile[0][$this->maxX - 1]->id
-            * $this->gridTile[$this->maxY - 1][$this->maxX - 1]->id
-            * $this->gridTile[$this->maxY - 1][0]->id;
-        // ---------- Part 2
-        $ans2 = 0;
+        $image = Image::fromGridTile($this->gridTile, $this->gridPos);
+        $monster = Image::fromStrings(self::MONSTER);
+        $ans2 = $image->findMonsters($monster);
         return [strval($ans1), strval($ans2)];
     }
 
+    /**
+     * Gets list of valid tiles and orientations, based on a partially filled grid.
+     *
+     * Input: `tiles`.
+     * Output: `isCornerTile, isBorderTile`.
+     */
+    private function searchCornerAndBorderTiles(): void
+    {
+        $this->isCornerTile = [];
+        $this->isBorderTile = [];
+        $edgeOccurences = [];
+        foreach ($this->tiles as $tile) {
+            for ($i = 0; $i < 4; ++$i) {
+                $pos = $tile->edges[0][$i];
+                $edgeOccurences[$pos] = ($edgeOccurences[$pos] ?? 0) + 1;
+                $pos = ImageTile::mirror($pos);
+                $edgeOccurences[$pos] = ($edgeOccurences[$pos] ?? 0) + 1;
+            }
+        }
+        foreach ($this->tiles as $tile) {
+            $count = 0;
+            for ($i = 0; $i < 4; ++$i) {
+                $pos = $tile->edges[0][$i];
+                if ($edgeOccurences[$pos] % 2 == 1) {
+                    ++$count;
+                }
+                $pos = ImageTile::mirror($pos);
+                if ($edgeOccurences[$pos] % 2 == 1) {
+                    ++$count;
+                }
+            }
+            if ($count > 2) {
+                $this->isCornerTile[$tile->id] = true;
+            } elseif ($count == 2) {
+                $this->isBorderTile[$tile->id] = true;
+            }
+        }
+    }
+
+    /**
+     * Reconstructs the remainder of the image (recursive function).
+     *
+     * Input: `tiles, maxX, maxY,`
+     *        `validRightTiles, validRightPos, validDownTiles, validDownPos, isCornerTile, isBorderTile`.
+     * Output: `gridTile, gridPos`.
+     * Also using `assigned` (must be prefilled with false befire first run).
+     * Params x,y is the coordinate of the previously filled tile.
+     * Top left corner must be pre-filled, otherwise too slow.
+     *
+     * @return bool The current partially filled grid led to a solution
+     */
     private function backtrack(int $x = -1, int $y = 0): bool
     {
         ++$x;
@@ -129,12 +171,6 @@ final class Aoc2020Day20 extends SolutionBase
                 return true;
             }
         }
-        if (self::DEBUG and (count($this->tiles) < 1000)) {
-            if ($y > 5) {
-                echo '--- Partial solution:', PHP_EOL;
-                $this->printGrid();
-            }
-        }
         [$validTiles, $validPos] = $this->getValidTilesAndPos($x, $y);
         foreach ($validTiles as $idx => $tile) {
             if ($this->assigned[$tile->id] ?? false) {
@@ -143,6 +179,20 @@ final class Aoc2020Day20 extends SolutionBase
             if ($y < $this->maxY - 1) {
                 $downEdge = $tile->edges[$validPos[$idx]][ImageTile::DOWN];
                 if (count($this->validDownTiles[$downEdge]) == 0) {
+                    continue;
+                }
+            }
+            if (
+                (($x == 0) and ($y == 0))
+                or (($x == $this->maxX - 1) and ($y == 0))
+                or (($x == 0) and ($y == $this->maxY - 1))
+                or (($x == $this->maxX - 1) and ($y == $this->maxY - 1))
+            ) {
+                if (!($this->isCornerTile[$tile->id] ?? false)) {
+                    continue;
+                }
+            } elseif (($x == 0) or ($x == $this->maxX - 1) or ($y == 0) or ($y == $this->maxY - 1)) {
+                if (!($this->isBorderTile[$tile->id] ?? false)) {
                     continue;
                 }
             }
@@ -159,6 +209,10 @@ final class Aoc2020Day20 extends SolutionBase
     }
 
     /**
+     * Gets list of valid tiles and orientations, based on a partially filled grid.
+     *
+     * Utility function used by backtrack. The grid must be filled above and left of the current grid.
+     *
      * @return array<array<int, mixed>>
      *
      * @phpstan-return array{ImageTile[], array<int, int>}
@@ -196,6 +250,12 @@ final class Aoc2020Day20 extends SolutionBase
         return [$validTiles, $validPos];
     }
 
+    /**
+     * Creates lists of tiles that can be below, and right to each edge.
+     *
+     * Input: `tiles`.
+     * Output: `validRightTiles, validRightPos, validDownTiles, validDownPos`.
+     */
     private function calculateNeighbors(): void
     {
         $this->validRightTiles = [];
@@ -212,28 +272,12 @@ final class Aoc2020Day20 extends SolutionBase
         }
     }
 
-    private function getTopLeftTile(): void
-    {
-        $this->edgeOccurences = [];
-        foreach ($this->tiles as $tile) {
-            foreach ($tile->edges as $pos => $edges) {
-                for ($i = 0; $i < 4; ++$i) {
-                    $this->edgeOccurences[$edges[$i]] = ($this->edgeOccurences[$edges[$i]] ?? 0) + 1;
-                }
-            }
-        }
-        foreach ($this->tiles as $tile) {
-            // TODO:
-        }
-    }
-
-
-    private function printGrid(): void
+    private function printDebugImage(): void
     {
         $s = array_fill(0, $this->maxY * (ImageTile::SIZE + 1), str_repeat(' ', $this->maxX * (ImageTile::SIZE + 1)));
         for ($y = 0; $y < $this->maxY; ++$y) {
             for ($x = 0; $x < $this->maxX; ++$x) {
-                $printedTile = $this->gridTile[$y][$x]->print($this->gridPos[$y][$x]);
+                $printedTile = $this->gridTile[$y][$x]->getDebugImage($this->gridPos[$y][$x]);
                 foreach ($printedTile as $idx => $line) {
                     $s[$y * (ImageTile::SIZE + 1) + $idx] = ImageTile::overlay(
                         $s[$y * (ImageTile::SIZE + 1) + $idx],
@@ -249,6 +293,10 @@ final class Aoc2020Day20 extends SolutionBase
     }
 
     /**
+     * Creates tiles based on raw input.
+     *
+     * Output: `tiles, maxX, maxY`.
+     *
      * @param array<int, string> $input
      */
     private function parseInput(array $input): void
@@ -300,12 +348,22 @@ final class ImageTile
     public const LEFT = 3;
 
     public readonly int $id;
+
     /** @var array<int, string> */
     public readonly array $grid;
-    /** @var array<array<int, int>> */
+
+    /**
+     * 16 possible orientations, 4 edge in each (in UP,RIGHT,DOWN,LEFT order).
+     *
+     * Order of orientations: (normal, +3x rotated, flipX, +3x rotate, flipY, +3x rotated, flipXY, +3x rotated)
+     *
+     * @var array<array<int, int>>
+     */
     public array $edges;
 
-    /** @param array<int, string> $grid */
+    /**
+     * @param array<int, string> $grid
+     */
     public function __construct(int $id = -1, array $grid = [])
     {
         if ($grid == []) {
@@ -323,8 +381,90 @@ final class ImageTile
         $this->calculateEdges();
     }
 
-    /** @return array<int, string> */
-    public function print(int $pos): array
+    /**
+     * @return array<int, string>
+     */
+    public function getInnerImage(): array
+    {
+        $ans = [];
+        for ($y = 1; $y < self::SIZE - 1; ++$y) {
+            $ans[] = substr($this->grid[$y], 1, -1);
+        }
+        return $ans;
+    }
+
+    /**
+     * @param array<int, string> $image
+     *
+     * @return array<int, string>
+     */
+    public static function orientImage(array $image, int $pos = 0): array
+    {
+        $ans = match (intdiv($pos, 4)) {
+            0 => $image,
+            1 => self::flipX($image),
+            2 => self::flipY($image),
+            3 => self::flipY(self::flipX($image)),
+            default => $image,
+        };
+        for ($i = 0; $i < $pos % 4; ++$i) {
+            $ans = self::rotateRight($ans);
+        }
+        return $ans;
+    }
+
+    /**
+     * @param array<int, string> $image
+     *
+     * @return array<int, string>
+     */
+    public static function rotateRight(array $image): array
+    {
+        $maxY = count($image);
+        $maxX = strlen($image[0] ?? '');
+        $ans = array_fill(0, $maxY, str_repeat(' ', $maxX));
+        for ($y = 0; $y < $maxY; ++$y) {
+            for ($x = 0; $x < $maxX; ++$x) {
+                $ans[$x][$maxY - 1 - $y] = $image[$y][$x] ?? ' ';
+            }
+        }
+        return $ans;
+    }
+
+    /**
+     * @param array<int, string> $image
+     *
+     * @return array<int, string>
+     */
+    public static function flipX(array $image): array
+    {
+        $maxY = count($image);
+        $ans = [];
+        for ($y = 0; $y < $maxY; ++$y) {
+            $ans[$y] = strrev($image[$y]);
+        }
+        return $ans;
+    }
+
+    /**
+     * @param array<int, string> $image
+     *
+     * @return array<int, string>
+     */
+    public static function flipY(array $image): array
+    {
+        $maxY = count($image);
+        $ans = [];
+        for ($y = 0; $y < $maxY; ++$y) {
+            $ans[$y] = $image[$maxY - 1 - $y];
+        }
+        return $ans;
+    }
+
+    /**
+     * @return array<int, string>
+     */
+    public function getDebugImage(int $pos): array
     {
         $s = array_fill(0, self::SIZE, str_repeat(' ', self::SIZE));
         if ($this->id < 0) {
@@ -363,6 +503,21 @@ final class ImageTile
         return substr($base, 0, $from) . $msg . substr($base, $from + strlen($msg));
     }
 
+    public static function mirror(int $edge): int
+    {
+        $ans = 0;
+        for ($i = self::SIZE - 1; $i >= 0; --$i) {
+            $ans |= ($edge & 1) << $i;
+            $edge >>= 1;
+        }
+        return $ans;
+    }
+
+    /**
+     * Helper function for the constructor.
+     *
+     * Output: `edges`.
+     */
     private function calculateEdges(): void
     {
         $edgeStrings = [
@@ -403,6 +558,11 @@ final class ImageTile
         $this->rotateLast();
     }
 
+    /**
+     * Helper function for the calculateEdges().
+     *
+     * Adds more 3 more orientations to the edges list.
+     */
     private function rotateLast(): void
     {
         $idx = count($this->edges) - 1;
@@ -428,14 +588,147 @@ final class ImageTile
             self::mirror($this->edges[$idx][0]),
         ];
     }
+}
 
-    private static function mirror(int $edge): int
+// --------------------------------------------------------------------
+final class Image
+{
+    public readonly int $maxX;
+    public readonly int $maxY;
+    /** @var array<int, string> */
+    public array $grid;
+
+    public function __construct(int $maxX, int $maxY)
+    {
+        $this->maxX = $maxX;
+        $this->maxY = $maxY;
+        $this->grid = array_fill(0, $this->maxY, str_repeat(' ', $this->maxX));
+    }
+
+    /**
+     * @param array<int, string> $image
+     */
+    public static function fromStrings(array $image): self
+    {
+        $maxY = count($image);
+        $maxX = strlen($image[0] ?? '');
+        $img = new self($maxX, $maxY);
+        $img->grid = $image;
+        return $img;
+    }
+
+    /**
+     * @param array<ImageTile[]>     $gridTile
+     * @param array<array<int, int>> $gridPos
+     */
+    public static function fromGridTile(array $gridTile, array $gridPos): self
+    {
+        if ($gridTile == []) {
+            throw new \Exception('Impossible');
+        }
+        $maxY = count($gridTile) * (ImageTile::SIZE - 2);
+        $maxX = count($gridTile[0]) * (ImageTile::SIZE - 2);
+        $img = new self($maxX, $maxY);
+        for ($y = 0; $y < count($gridTile); ++$y) {
+            for ($x = 0; $x < count($gridTile[0]); ++$x) {
+                $orientedGrid = ImageTile::orientImage($gridTile[$y][$x]->getInnerImage(), $gridPos[$y][$x]);
+                foreach ($orientedGrid as $idx => $line) {
+                    $img->grid[$y * (ImageTile::SIZE - 2) + $idx] = ImageTile::overlay(
+                        $img->grid[$y * (ImageTile::SIZE - 2) + $idx],
+                        $x * (ImageTile::SIZE - 2),
+                        $line
+                    );
+                }
+            }
+        }
+        return $img;
+    }
+
+    public function findMonsters(Image $monsterImage): int
+    {
+        $needle = new SearchPattern($monsterImage);
+        $best = 0;
+        $bestImg = new Image(0, 0);
+        for ($pos = 0; $pos < 16; ++$pos) {
+            $haystack = self::fromStrings(ImageTile::orientImage($this->grid, $pos));
+            $result = $haystack->findIfOriented($needle);
+            if ($result > $best) {
+                $best = $result;
+                $bestImg = $haystack;
+            }
+        }
+        $total = array_sum(array_map(
+            fn (string $line): int => substr_count($line, '#'),
+            $this->grid,
+        ));
+        // @phpstan-ignore-next-line
+        if (Aoc2020Day20::DEBUG) {
+            echo '--- Image with proper orientation:', PHP_EOL;
+            $bestImg->printImage();
+        }
+        return $total - $best;
+    }
+
+    public function printImage(): void
+    {
+        foreach ($this->grid as $line) {
+            echo $line, PHP_EOL;
+        }
+        echo PHP_EOL;
+    }
+
+    private function findIfOriented(SearchPattern $monster): int
     {
         $ans = 0;
-        for ($i = self::SIZE - 1; $i >= 0; --$i) {
-            $ans |= ($edge & 1) << $i;
-            $edge >>= 1;
+        for ($y = 0; $y < $this->maxY - $monster->maxY + 1; ++$y) {
+            for ($x = 0; $x < $this->maxX - $monster->maxX + 1; ++$x) {
+                $isOk = true;
+                foreach ($monster->points as $p) {
+                    if ($this->grid[$y + $p->y][$x + $p->x] != '#') {
+                        $isOk = false;
+                        break;
+                    }
+                }
+                if (!$isOk) {
+                    continue;
+                }
+                $ans += count($monster->points);
+            }
         }
         return $ans;
+    }
+}
+
+// --------------------------------------------------------------------
+final class Point
+{
+    public function __construct(
+        public readonly int $x,
+        public readonly int $y,
+    ) {
+    }
+}
+
+// --------------------------------------------------------------------
+final class SearchPattern
+{
+    public readonly int $maxX;
+    public readonly int $maxY;
+    /** @var array<int, Point> */
+    public readonly array $points;
+
+    public function __construct(Image $image)
+    {
+        $this->maxX = $image->maxX;
+        $this->maxY = $image->maxY;
+        $points = [];
+        for ($y = 0; $y < $image->maxY; ++$y) {
+            for ($x = 0; $x < $image->maxX; ++$x) {
+                if ($image->grid[$y][$x] == '#') {
+                    $points[] = new Point($x, $y);
+                }
+            }
+        }
+        $this->points = $points;
     }
 }
