@@ -16,7 +16,7 @@ use TBali\Aoc\SolutionBase;
  *
  * @see https://adventofcode.com/2020/day/20
  *
- * @todo fix
+ * @todo Part 1 works for example, but too slow for puzzle input
  */
 final class Aoc2020Day20 extends SolutionBase
 {
@@ -25,6 +25,8 @@ final class Aoc2020Day20 extends SolutionBase
     public const TITLE = 'Jurassic Jigsaw';
     public const SOLUTIONS = [0, 0];
     public const EXAMPLE_SOLUTIONS = [[20899048083289, 0], [0, 0]];
+
+    private const DEBUG = true;
 
     private ImageTile $emptyTile;
 
@@ -41,6 +43,9 @@ final class Aoc2020Day20 extends SolutionBase
     private array $validDownTiles;
     /** @var array<int, array<int, int>> */
     private array $validDownPos;
+
+    /** @var array<int, int> */
+    private array $edgeOccurences;
 
     /** @var array<ImageTile[]> */
     private array $gridTile;
@@ -63,24 +68,52 @@ final class Aoc2020Day20 extends SolutionBase
         $this->parseInput($input);
         $this->emptyTile = new ImageTile();
         $this->calculateNeighbors();
-        $this->gridTile = array_fill(0, ImageTile::SIZE, array_fill(0, ImageTile::SIZE, $this->emptyTile));
-        $this->gridPos = array_fill(0, ImageTile::SIZE, array_fill(0, ImageTile::SIZE, 0));
         $this->assigned = [];
         foreach ($this->tiles as $tile) {
             $this->assigned[$tile->id] = false;
         }
-        return ['0', '0'];
-        // @phpstan-ignore-next-line
+        $this->gridTile = array_fill(0, $this->maxY, array_fill(0, $this->maxX, $this->emptyTile));
+        $this->gridPos = array_fill(0, $this->maxY, array_fill(0, $this->maxX, 0));
+        if (count($this->tiles) > 10) {
+            // return ['0', '0'];
+        }
+        if (self::DEBUG and (count($this->tiles) < 1000)) {
+            echo '--- Empty tiles:', PHP_EOL;
+            $this->printGrid();
+            $seqTiles = array_values($this->tiles);
+            for ($y = 0; $y < $this->maxY; ++$y) {
+                for ($x = 0; $x < $this->maxX; ++$x) {
+                    $this->gridTile[$y][$x] = $seqTiles[$y * $this->maxX + $x];
+                }
+            }
+            echo '--- Tileset in initial positions:', PHP_EOL;
+            $this->printGrid();
+            for ($y = 0; $y < $this->maxY; ++$y) {
+                for ($x = 0; $x < $this->maxX; ++$x) {
+                    $this->gridTile[$y][$x] = $seqTiles[0];
+                    $this->gridPos[$y][$x] = ($y * $this->maxX + $x) % 16;
+                }
+            }
+            echo PHP_EOL;
+            echo '--- First tile rotated and flipped:', PHP_EOL;
+            $this->printGrid();
+            echo PHP_EOL;
+            $this->gridTile = array_fill(0, $this->maxY, array_fill(0, $this->maxX, $this->emptyTile));
+            $this->gridPos = array_fill(0, $this->maxY, array_fill(0, $this->maxX, 0));
+        }
         $result = $this->backtrack();
         if (!$result) {
-            return ['0', '0']; // @TO7DO
             throw new \Exception('No solution found');
+        }
+        if (self::DEBUG and (count($this->tiles) < 1000)) {
+            echo '--- Part 1 solution:', PHP_EOL;
+            $this->printGrid();
         }
         // ---------- Part 1
         $ans1 = $this->gridTile[0][0]->id
-            * $this->gridTile[0][ImageTile::SIZE - 1]->id
-            * $this->gridTile[ImageTile::SIZE - 1][ImageTile::SIZE - 1]->id
-            * $this->gridTile[ImageTile::SIZE - 1][0]->id;
+            * $this->gridTile[0][$this->maxX - 1]->id
+            * $this->gridTile[$this->maxY - 1][$this->maxX - 1]->id
+            * $this->gridTile[$this->maxY - 1][0]->id;
         // ---------- Part 2
         $ans2 = 0;
         return [strval($ans1), strval($ans2)];
@@ -89,17 +122,29 @@ final class Aoc2020Day20 extends SolutionBase
     private function backtrack(int $x = -1, int $y = 0): bool
     {
         ++$x;
-        if ($x == ImageTile::SIZE) {
+        if ($x == $this->maxX) {
             $x = 0;
             ++$y;
-            if ($y == ImageTile::SIZE) {
+            if ($y == $this->maxY) {
                 return true;
+            }
+        }
+        if (self::DEBUG and (count($this->tiles) < 1000)) {
+            if ($y > 5) {
+                echo '--- Partial solution:', PHP_EOL;
+                $this->printGrid();
             }
         }
         [$validTiles, $validPos] = $this->getValidTilesAndPos($x, $y);
         foreach ($validTiles as $idx => $tile) {
             if ($this->assigned[$tile->id] ?? false) {
                 continue;
+            }
+            if ($y < $this->maxY - 1) {
+                $downEdge = $tile->edges[$validPos[$idx]][ImageTile::DOWN];
+                if (count($this->validDownTiles[$downEdge]) == 0) {
+                    continue;
+                }
             }
             $this->gridTile[$y][$x] = $tile;
             $this->gridPos[$y][$x] = $validPos[$idx];
@@ -167,6 +212,42 @@ final class Aoc2020Day20 extends SolutionBase
         }
     }
 
+    private function getTopLeftTile(): void
+    {
+        $this->edgeOccurences = [];
+        foreach ($this->tiles as $tile) {
+            foreach ($tile->edges as $pos => $edges) {
+                for ($i = 0; $i < 4; ++$i) {
+                    $this->edgeOccurences[$edges[$i]] = ($this->edgeOccurences[$edges[$i]] ?? 0) + 1;
+                }
+            }
+        }
+        foreach ($this->tiles as $tile) {
+            // TODO:
+        }
+    }
+
+
+    private function printGrid(): void
+    {
+        $s = array_fill(0, $this->maxY * (ImageTile::SIZE + 1), str_repeat(' ', $this->maxX * (ImageTile::SIZE + 1)));
+        for ($y = 0; $y < $this->maxY; ++$y) {
+            for ($x = 0; $x < $this->maxX; ++$x) {
+                $printedTile = $this->gridTile[$y][$x]->print($this->gridPos[$y][$x]);
+                foreach ($printedTile as $idx => $line) {
+                    $s[$y * (ImageTile::SIZE + 1) + $idx] = ImageTile::overlay(
+                        $s[$y * (ImageTile::SIZE + 1) + $idx],
+                        $x * (ImageTile::SIZE + 1),
+                        $line
+                    );
+                }
+            }
+        }
+        foreach ($s as $line) {
+            echo $line, PHP_EOL;
+        }
+    }
+
     /**
      * @param array<int, string> $input
      */
@@ -229,7 +310,7 @@ final class ImageTile
     {
         if ($grid == []) {
             $id = -1;
-            $grid = array_fill(0, ImageTile::SIZE, str_repeat('.', ImageTile::SIZE));
+            $grid = array_fill(0, self::SIZE, str_repeat('.', self::SIZE));
         }
         $this->id = $id;
         $this->grid = $grid;
@@ -240,6 +321,46 @@ final class ImageTile
             throw new \Exception('Invalid tile grid size');
         }
         $this->calculateEdges();
+    }
+
+    /** @return array<int, string> */
+    public function print(int $pos): array
+    {
+        $s = array_fill(0, self::SIZE, str_repeat(' ', self::SIZE));
+        if ($this->id < 0) {
+            $s[0] = '+' . str_repeat('-', self::SIZE - 2) . '+';
+            for ($i = 1; $i < self::SIZE - 1; ++$i) {
+                $s[$i][self::SIZE - 1] = '|';
+                $s[$i][0] = '|';
+            }
+            $s[self::SIZE - 1] = $s[0];
+            $s[2] = self::overlay($s[2], 2, '(EMPTY)');
+            return $s;
+        }
+        $s[0] = strtr(str_pad(decbin($this->edges[$pos][self::UP]), self::SIZE, '0', STR_PAD_LEFT), '01', '.#');
+        $s[self::SIZE - 1] = strtr(
+            str_pad(decbin($this->edges[$pos][self::DOWN]), self::SIZE, '0', STR_PAD_LEFT),
+            '01',
+            '.#'
+        );
+        $right = strtr(str_pad(decbin($this->edges[$pos][self::RIGHT]), self::SIZE, '0', STR_PAD_LEFT), '01', '.#');
+        $left = strtr(str_pad(decbin($this->edges[$pos][self::LEFT]), self::SIZE, '0', STR_PAD_LEFT), '01', '.#');
+        for ($i = 0; $i < self::SIZE; ++$i) {
+            $s[$i][self::SIZE - 1] = $right[$i];
+            $s[$i][0] = $left[$i];
+        }
+        $s[2] = self::overlay($s[2], 2, '# ' . strval($this->id));
+        $s[3] = self::overlay($s[3], 2, 'P:' . strval($pos));
+        $s[4] = self::overlay($s[4], 2, '^ ' . strval($this->edges[$pos][self::UP]));
+        $s[5] = self::overlay($s[5], 2, '> ' . strval($this->edges[$pos][self::RIGHT]));
+        $s[6] = self::overlay($s[6], 2, '< ' . strval($this->edges[$pos][self::LEFT]));
+        $s[7] = self::overlay($s[7], 2, 'v ' . strval($this->edges[$pos][self::DOWN]));
+        return $s;
+    }
+
+    public static function overlay(string $base, int $from, string $msg): string
+    {
+        return substr($base, 0, $from) . $msg . substr($base, $from + strlen($msg));
     }
 
     private function calculateEdges(): void
