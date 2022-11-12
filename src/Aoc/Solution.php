@@ -66,6 +66,8 @@ interface Solution
      * @return array<int, string>
      *
      * @phpstan-return non-empty-array<int, string>
+     *
+     * @throws \Exception
      */
     public static function readInput(string $fileName): array;
 }

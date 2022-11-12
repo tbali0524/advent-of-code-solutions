@@ -7,6 +7,8 @@
 
 declare(strict_types=1);
 
+namespace TBali;
+
 require __DIR__ . '/../vendor/autoload.php';
 
 use TBali\Aoc\AocRunner;

@@ -11,21 +11,6 @@ namespace TBali\Aoc;
  */
 abstract class SolutionBase implements Solution
 {
-    /** @var string */
-    final public const ANSI_RED = "\e[1;37;41m";
-    /** @var string */
-    final public const ANSI_GREEN = "\e[1;37;42m";
-    /** @var string */
-    final public const ANSI_YELLOW = "\e[1;37;43m";
-    /** @var string */
-    final public const ANSI_RESET = "\e[0m";
-    /** @var string */
-    final public const ERROR_TAG = self::ANSI_RED . '[FAIL]' . self::ANSI_RESET . ' ';
-    /** @var string */
-    final public const WARN_TAG = self::ANSI_YELLOW . '[WARN]' . self::ANSI_RESET . ' ';
-    /** @var string */
-    final public const OK_TAG = self::ANSI_GREEN . '[ OK ]' . self::ANSI_RESET . ' ';
-
     /**
      * The main runner engine.
      *
@@ -61,7 +46,7 @@ abstract class SolutionBase implements Solution
                 and (strval(static::EXAMPLE_SOLUTIONS[$example][1]) == '0')
             ) {
                 $isOk = false;
-                $exampleMsg .= self::WARN_TAG . 'Puzzle example #' . ($example + 1)
+                $exampleMsg .= Tags::WARN_TAG . 'Puzzle example #' . ($example + 1)
                     . ' is missing expected result.' . PHP_EOL;
                 continue;
             }
@@ -71,14 +56,14 @@ abstract class SolutionBase implements Solution
                 }
                 if ($answers[$part] != strval(static::EXAMPLE_SOLUTIONS[$example][$part])) {
                     $isOk = false;
-                    $exampleMsg .= self::ERROR_TAG . 'Puzzle example #' . ($example + 1) . ' part ' . ($part + 1)
+                    $exampleMsg .= Tags::ERROR_TAG . 'Puzzle example #' . ($example + 1) . ' part ' . ($part + 1)
                         . ' result: ' . $answers[$part] . ' not matching expected solution: '
                         . static::EXAMPLE_SOLUTIONS[$example][$part] . PHP_EOL;
                 }
             }
         }
         if ($isOk and ($countExamples > 0)) {
-            $exampleMsg = self::OK_TAG . 'Puzzle example' . ($countExamples > 1 ? 's' : '') . ' passed.'
+            $exampleMsg = Tags::OK_TAG . 'Puzzle example' . ($countExamples > 1 ? 's' : '') . ' passed.'
                 . PHP_EOL;
         }
         // run the solution
@@ -87,7 +72,7 @@ abstract class SolutionBase implements Solution
             $fileName = $baseFileName . '.txt';
             if (!file_exists($fileName)) {
                 echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' : ' . static::TITLE . PHP_EOL . $exampleMsg;
-                echo self::ERROR_TAG . 'Cannot find input file: ' . $fileName . PHP_EOL;
+                echo Tags::ERROR_TAG . 'Cannot find input file: ' . $fileName . PHP_EOL;
                 return false;
             }
             $input = static::readInput($fileName);
@@ -96,8 +81,8 @@ abstract class SolutionBase implements Solution
         }
         $answers = $this->solve($input);
         // stats and report
-        $spentTime = number_format((hrtime(true) - $startTime) / 1000_000_000, 4, '.', '');
-        // $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1000_000));
+        $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 3, '.', '');
+        // $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1_000_000));
         echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTime . ' sec] : '
             . static::TITLE . PHP_EOL . $exampleMsg;
         for ($part = 0; $part < 2; ++$part) {
@@ -105,16 +90,16 @@ abstract class SolutionBase implements Solution
                 continue;
             }
             if (strval(static::SOLUTIONS[$part]) == '0') {
-                echo self::WARN_TAG . $answers[$part] . ' - Puzzle is missing expected result.' . PHP_EOL;
+                echo Tags::WARN_TAG . $answers[$part] . ' - Puzzle is missing expected result.' . PHP_EOL;
                 continue;
             }
             if ($answers[$part] != strval(static::SOLUTIONS[$part])) {
                 $isOk = false;
-                echo self::ERROR_TAG . $answers[$part] . ' not matching expected solution: '
+                echo Tags::ERROR_TAG . $answers[$part] . ' not matching expected solution: '
                     . static::SOLUTIONS[$part] . PHP_EOL;
                 continue;
             }
-            echo self::OK_TAG . $answers[$part] . PHP_EOL;
+            echo Tags::OK_TAG . $answers[$part] . PHP_EOL;
         }
         return $isOk;
     }
@@ -125,6 +110,8 @@ abstract class SolutionBase implements Solution
      * @return array<int, string>
      *
      * @phpstan-return non-empty-array<int, string>
+     *
+     * @throws \Exception
      */
     final public static function readInput(string $fileName): array
     {

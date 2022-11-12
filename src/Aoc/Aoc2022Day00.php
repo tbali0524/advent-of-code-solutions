@@ -7,12 +7,12 @@ namespace TBali\Aoc2022;
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2015 Day 0: .
+ * AoC 2022 Day 0: .
  *
  * Part 1:
  * Part 2:
  *
- * @see https://adventofcode.com/2015/day/
+ * @see https://adventofcode.com/2022/day/
  */
 final class Aoc2022Day00 extends SolutionBase
 {

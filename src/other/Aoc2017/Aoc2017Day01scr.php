@@ -4,6 +4,8 @@
 
 declare(strict_types=1);
 
+namespace TBali\ScriptSolutions;
+
 const YEAR = 2017;
 const DAY = 1;
 const TITLE = 'Inverse Captcha';

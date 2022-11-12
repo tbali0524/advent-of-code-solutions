@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace TBali\Aoc;
 
-use TBali\Aoc\SolutionBase as Base;
-
 /**
  * Advent of Code solutions batch runner CLI.
  *
@@ -28,7 +26,7 @@ final class AocRunner
      * @var array<int, array<int, int>>
      */
     public const TO_SKIP = [
-        // 2026 => [],
+        // 2022 => [],
     ];
 
     /**
@@ -52,7 +50,7 @@ final class AocRunner
     ];
 
     /** @var string */
-    private const ERROR_TAG = Base::ANSI_RED . '[ERROR]' . Base::ANSI_RESET . ' ';
+    private const ERROR_TAG = Tags::ANSI_RED . '[ERROR]' . Tags::ANSI_RESET . ' ';
 
     public int $year = -1;
     public int $day = -1;
@@ -120,7 +118,7 @@ final class AocRunner
                     // @phpstan-ignore-next-line
                     if (isset(self::TO_SKIP[$year]) and in_array($day, self::TO_SKIP[$year])) {
                         echo '=== AoC ' . $year . ' Day ' . $day . PHP_EOL;
-                        echo Base::WARN_TAG . 'Skipped.' . PHP_EOL;
+                        echo Tags::WARN_TAG . 'Skipped.' . PHP_EOL;
                         ++$countSkipped;
                         continue;
                     }
@@ -132,10 +130,11 @@ final class AocRunner
                     if (!$result) {
                         ++$countFails;
                     }
+                    gc_collect_cycles();
                 }
             }
         }
-        $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 4, '.', '');
+        $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 3, '.', '');
         $totalMsg = $countTotal . ' solution' . ($countTotal > 1 ? 's' : '');
         $messages = [];
         if ($countFails > 0) {
@@ -151,16 +150,19 @@ final class AocRunner
         } else {
             $failSkipMsg = '';
         }
-        echo '======= Total: ' . $totalMsg . $failSkipMsg . ' [time: ' . $spentTime . ' sec]' . PHP_EOL;
+        $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1_000_000));
+        $maxMemMsg = ($this->runAsScripts ? '' : '; max memory: ' . $maxMemory . ' MB');
+        echo '======= Total: ' . $totalMsg . $failSkipMsg . ' [time: ' . $spentTime . ' sec'
+            . $maxMemMsg . ']' . PHP_EOL;
         if ($countTotal > 0) {
             if ($countFails == 0) {
-                echo PHP_EOL . Base::ANSI_GREEN . '[ OK ] All tests passed. ' . Base::ANSI_RESET . PHP_EOL;
+                echo PHP_EOL . Tags::ANSI_GREEN . '[ OK ] All tests passed. ' . Tags::ANSI_RESET . PHP_EOL;
             } else {
-                echo PHP_EOL . Base::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . Base::ANSI_RESET
+                echo PHP_EOL . Tags::ANSI_RED . '[ERROR] There were some unsuccessful tests. ' . Tags::ANSI_RESET
                     . PHP_EOL;
             }
         } else {
-            echo PHP_EOL . Base::WARN_TAG . 'There was nothing to run. ' . PHP_EOL;
+            echo PHP_EOL . Tags::WARN_TAG . 'There was nothing to run. ' . PHP_EOL;
         }
         echo PHP_EOL;
     }
