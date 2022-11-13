@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: After you swipe your card, if the screen did work, how many pixels should be lit?
  * Part 2: After you swipe your card, what code is the screen trying to display?
  *
+ * Topics: simulation
+ *
  * @see https://adventofcode.com/2016/day/8
  */
 final class Aoc2016Day08 extends SolutionBase
