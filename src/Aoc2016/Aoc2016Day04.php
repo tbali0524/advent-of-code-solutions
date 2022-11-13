@@ -34,6 +34,10 @@ final class Aoc2016Day04 extends SolutionBase
     public function solve(array $input): array
     {
         // example for Part 2: $input = ['qzmt-zixmtkozy-ivhz-343[zimth]'];
+        $origNames = [];
+        $names = [];
+        $ids = [];
+        $checksums = [];
         foreach ($input as $line) {
             $origNames[] = substr($line, 0, -11);
             $names[] = str_replace('-', '', substr($line, 0, -11));

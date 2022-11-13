@@ -43,10 +43,11 @@ final class Aoc2016Day06 extends SolutionBase
             }
             // mode = 1: return an array with the byte-value as key and the frequency of every byte as value,
             //           but only byte-values with a frequency greater than zero are listed.
+            /** @var array<int, int> */
             $freq = count_chars($s, 1);
             arsort($freq);
-            $ans1 .= chr(array_key_first($freq));
-            $ans2 .= chr(array_key_last($freq));
+            $ans1 .= chr(array_key_first($freq) ?? 0);
+            $ans2 .= chr(array_key_last($freq) ?? 0);
         }
         return [$ans1, $ans2];
     }
