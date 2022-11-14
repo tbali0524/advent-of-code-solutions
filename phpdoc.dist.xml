@@ -15,6 +15,7 @@
             <source dsn=".">
                 <path>src</path>
             </source>
+            <default-package-name>AdventOfCode</default-package-name>
         </api>
     </version>
 </phpdocumentor>
