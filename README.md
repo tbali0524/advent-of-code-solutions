@@ -5,6 +5,14 @@
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
 
+## Installation
+
+The solutions are using only the standard php library, they have __NO__ 3rd-party package dependencies. However, [Composer](https://getcomposer.org/) is used for its class autoloader:
+
+```sh
+composer install
+```
+
 ## Batch solution runner
 
 Run solutions from the project base directory with:
@@ -26,28 +34,45 @@ On Windows, the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
 
 Possible values for `LANGUAGE`: _dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scala_.
 
-_Note: Before first run, use `composer install` to setup the class autoloader. There are __NO__ 3rd-party package depencdencies._
+## Puzzle input
+
+* Directory pattern: `input/YYYY/`
+* Filename pattern: `aocYY_DD.txt`
+* Optional additional example input can be in `aocYY_DDex1.txt` and `aocYY_DDex2.txt`.
+* Alternatively, a single string input can be given as the `STRING_INPUT` constant in the solution class.
 
 ## Class-based PHP solutions
 
 * Directory pattern: `src/AocYYYY/`
-* Filename pattern: `AocYYYYDayDD.php`, with the day id padded to 2 digits.
-* For a new solution use the template in `src/Aoc/Aoc2022Day00.php`.
+* Filename pattern: `AocYYYYDayDD.php`, with the day `id` padded with zero to 2 digits.
+* For a new solution, use the template in `src/Aoc/Aoc2022Day00.php`.
 * Solution should implement class `AocYYYYDayDD`, extending `BaseSolution`.
-* It should implement `solve()` method and override constants in `Solution` interface.
+* It should implement the `solve()` method and override the constants in the [Solution](src/Aoc/Solution.php) interface.
 * The `solve()` method must be callable repeatedly with different inputs.
-* After successful submit, the puzzle answers shall be recorded in the `SOLUTIONS` class constant (for future test runs).
-
-## Puzzle inputs
-
-* Directory pattern: `input/YYYY/`
-* Filename pattern: `aocYY_DD.txt`
-* Optional additional example inputs are in `aocYY_DDex1.txt` and `aocYY_DDex2.txt`
-* Otherwise Single input can be given as the `STRING_INPUT` constant in the solution class.
+* After successful submit, the puzzle answers shall be recorded in the `SOLUTIONS` class constant (for future regression tests).
 
 ## Standalone script-based solutions
 
 * Directory pattern: `src/other/AocYYYY/`
-* Filename pattern: `AocYYYYDayDD.ext`, with the day id padded to 4 digits.
-    * (For `PHP` only: the pattern is `AocYYYYDayDDscr.php` to avoid having the same name as the class-based solution.)
+* Filename pattern: `AocYYYYDayDD.ext`, with the day `id` padded with zero to 2 digits.
+    * (For `PHP` only: the pattern is `AocYYYYDayDDscr.php` to avoid having the same source filename as the class-based solution.)
 * The script shall read the input file (if needed), print the problem ID and the solution.
+
+## Custom Composer scripts
+
+The following helper commands are defined in [composer.json](composer.json):
+
+|Command    |Description |
+|:----------|:-----------|
+|start      |Run all solutions|
+|cs         |Check coding style compliance to `PSR12` with [phpcs](https://github.com/squizlabs/PHP_CodeSniffer)|
+|cs-fixer   |Check coding style compliance to `PSR12` plus extra rules with [php-cs-fixer](https://cs.symfony.com/) (no fix applied)|
+|cs-fixer-do|Apply coding style fixes with _php-cs-fixer_|
+|doc        |Create documentation with [phpDocumentor](https://www.phpdoc.org/)|
+|loc        |Get code summary report with [phploc](https://github.com/sebastianbergmann/phploc)|
+|stan       |Run static analysis with [phpstan](https://phpstan.org/)|
+|qa         |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpDocumentor_|
+|open-doc   |Open generated documentation in browser _(fixed file path)_|
+|clean      |Delete generated cache and report files in `.tools` directory _(Windows only)_|
+
+Note: The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.

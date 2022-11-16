@@ -72,7 +72,7 @@ final class Aoc2016Day24 extends SolutionBase
                 if ($ans1 < 0) {
                     $ans1 = $step;
                 }
-                if (($ans2 < 0) and ($x == $startX) and ($y == $startY)) {
+                if (($x == $startX) and ($y == $startY)) {
                     $ans2 = $step;
                     break;
                 }
