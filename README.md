@@ -24,7 +24,7 @@ php src/aoc.php [LANGUAGE] [YEAR] [DAY]
 | Argument                       | Effect                                              |
 |:-------------------------------|:----------------------------------------------------|
 | `LANGUAGE` given               | invoke interpreter with standalone solution scripts |
-| `LANGUAGE`=`all` given         | invoke standalone solution scripts in all languages |
+| `all` given as the `LANGUAGE`  | invoke standalone solution scripts in all languages |
 | `LANGUAGE` not given           | invoke class-based PHP solutions                    |
 | none of `YEAR` and `DAY` given | run all solutions                                   |
 | only `YEAR` given              | run all solutions for that season only              |
@@ -32,7 +32,7 @@ php src/aoc.php [LANGUAGE] [YEAR] [DAY]
 
 On Windows, the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
 
-Possible values for `LANGUAGE`: _dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scala_.
+Possible values for `LANGUAGE`: _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scala_.
 
 ## Puzzle input
 

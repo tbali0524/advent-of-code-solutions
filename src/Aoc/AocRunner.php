@@ -228,14 +228,15 @@ final class AocRunner
             . '| Argument                   | Effect                                              |' . PHP_EOL
             . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
             . '| LANGUAGE given             | invoke interpreter with standalone solution scripts |' . PHP_EOL
-            . '| LANGUAGE=all given         | invoke standalone solution scripts in all languages |' . PHP_EOL
+            . '| \'all\' given as LANGUAGE    | invoke standalone solution scripts in all languages |' . PHP_EOL
             . '| LANGUAGE not given         | invoke class-based PHP solutions                    |' . PHP_EOL
             . '| none of YEAR and DAY given | run all solutions                                   |' . PHP_EOL
             . '| only YEAR given            | run all solutions for that season only              |' . PHP_EOL
             . '| both YEAR and DAY given    | run a specific solution                             |' . PHP_EOL
             . '+----------------------------+-----------------------------------------------------+' . PHP_EOL
             . PHP_EOL
-            . 'Possible values for [language]: ' . implode(', ', array_keys(self::LANGUAGES)) . PHP_EOL
+            . 'Possible values for [language]:' . PHP_EOL
+                . '  all, ' . implode(', ', array_keys(self::LANGUAGES)) . PHP_EOL
             . PHP_EOL;
         if (count($args) > 4) {
             echo $errorMsg;

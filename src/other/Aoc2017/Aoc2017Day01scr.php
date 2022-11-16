@@ -4,7 +4,7 @@
 
 declare(strict_types=1);
 
-namespace TBali\ScriptSolutions;
+namespace TBali\AocScriptSolutions;
 
 const YEAR = 2017;
 const DAY = 1;
