@@ -7,7 +7,8 @@
 
 ## Installation
 
-The solutions are using only the standard php library, they have __NO__ 3rd-party package dependencies. However, [Composer](https://getcomposer.org/) is used for its class autoloader:
+The solutions are using only the standard php library, they have NO 3rd-party package dependencies.
+However, [Composer](https://getcomposer.org/) is used for its class autoloader:
 
 ```sh
 composer install
@@ -32,7 +33,8 @@ php src/aoc.php [LANGUAGE] [YEAR] [DAY]
 
 On Windows, the shortcut `.\aoc.bat [LANGUAGE] [YEAR] [DAY]` also works.
 
-Possible values for `LANGUAGE`: _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scala_.
+Possible values for `LANGUAGE`:
+_all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scala_.
 
 ## Puzzle input
 
