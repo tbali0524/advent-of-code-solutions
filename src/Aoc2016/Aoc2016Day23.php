@@ -13,17 +13,16 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Anyway, what value should actually be sent to the safe?
  *
  * Topics: assembly simulation
+ * Note: Part 2 solutions based on reddit posts.
  *
  * @see https://adventofcode.com/2016/day/23
- *
- * @todo Part 2 timeouts
  */
 final class Aoc2016Day23 extends SolutionBase
 {
     public const YEAR = 2016;
     public const DAY = 23;
     public const TITLE = 'Safe Cracking';
-    public const SOLUTIONS = [13685, 0];
+    public const SOLUTIONS = [13685, 479010245];
     public const EXAMPLE_SOLUTIONS = [[3, 0], [0, 0]];
 
     private const TOGGLE_MAP = [
@@ -47,7 +46,20 @@ final class Aoc2016Day23 extends SolutionBase
     {
         // ---------- Part 1 + 2
         $ans1 = $this->execute($input, ['a' => 7, 'b' => 0, 'c' => 0, 'd' => 0])['a'] ?? 0;
-        $ans2 = $this->execute($input, ['a' => 12, 'b' => 0, 'c' => 0, 'd' => 0])['a'] ?? 0;
+        if (count($input) == 7) {
+            return [strval($ans1), '0'];
+        }
+        // solution #1: the input code calculates 'a! + p1 * p2', where p1, p2 are hardcoded constants
+        $ans2 = array_product(range(1, 12)) + 95 * 91;
+        // solution #2: replace source lines 5..10 with optimized instructions calculating 'a += b * d'
+        $optimized = $input;
+        $optimized[4] = 'mul b d';
+        $optimized[5] = 'add d a';
+        $optimized[6] = 'cpy 0 c';
+        $optimized[7] = 'cpy 0 d';
+        $optimized[8] = 'nop';
+        $optimized[9] = 'nop';
+        $ans2 = $this->execute($optimized, ['a' => 12, 'b' => 0, 'c' => 0, 'd' => 0])['a'] ?? 0;
         return [strval($ans1), strval($ans2)];
     }
 
@@ -103,6 +115,21 @@ final class Aoc2016Day23 extends SolutionBase
                     }
                     $instr = substr($input[$idxInst], 0, 3);
                     $input[$idxInst] = (self::TOGGLE_MAP[$instr] ?? $instr) . substr($input[$idxInst], 3);
+                    break;
+                    // extra instructions for multiplication optimization
+                case 'add':
+                    if ((count($a) != 3) or !isset($registers[$a[2]])) {
+                        break;
+                    }
+                    $registers[$a[2]] += $registers[$a[1]] ?? intval($a[1]);
+                    break;
+                case 'mul':
+                    if ((count($a) != 3) or !isset($registers[$a[2]])) {
+                        break;
+                    }
+                    $registers[$a[2]] *= $registers[$a[1]] ?? intval($a[1]);
+                    break;
+                case 'nop':
                     break;
                 default:
                     throw new \Exception('Invalid instruction');

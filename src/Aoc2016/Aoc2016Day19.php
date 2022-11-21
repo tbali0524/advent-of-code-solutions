@@ -7,20 +7,24 @@ namespace TBali\Aoc2016;
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2016 Day 0: .
+ * AoC 2016 Day 19: An Elephant Named Joseph.
  *
- * Part 1:
+ * Part 1: With the number of Elves given in your puzzle input, which Elf gets all the presents?
  * Part 2:
  *
- * @see https://adventofcode.com/2016/day/
+ * @todo solve
+ *
+ * @see https://adventofcode.com/2016/day/19
  */
-final class Aoc2016Day00 extends SolutionBase
+final class Aoc2016Day19 extends SolutionBase
 {
     public const YEAR = 2016;
-    public const DAY = 0;
-    public const TITLE = '';
+    public const DAY = 19;
+    public const TITLE = 'An Elephant Named Joseph';
     public const SOLUTIONS = [0, 0];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const STRING_INPUT = '3017957';
+    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]]; // Part 1: 3
+    public const EXAMPLE_STRING_INPUTS = ['5', ''];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -33,8 +37,7 @@ final class Aoc2016Day00 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        /** @var array<int, int> */
-        $data = array_map('intval', $input);
+        $n = intval($input[0]);
         // ---------- Part 1
         $ans1 = 0;
         // ---------- Part 2

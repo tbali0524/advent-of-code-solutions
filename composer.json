@@ -1,6 +1,6 @@
 {
     "name": "tbali0524/advent-of-code-solutions",
-    "description": "Advent Of Code solutions solutions in PHP by TBali",
+    "description": "Advent of Code solutions solutions in PHP by TBali",
     "type": "project",
     "keywords": [
         "aoc", "algorithms"
@@ -58,7 +58,7 @@
         "loc":      "Get code summary report with phploc",
         "stan":     "Run static analysis with phpstan",
         "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpDocumentor",
-        "open-doc":   "Open generated documentation in browser (fixed file path)",
+        "open-doc": "Open generated documentation in browser (fixed file path)",
         "clean":    "Delete generated cache and report files in .tools directory (Windows only)"
     }
 }
