@@ -4,6 +4,7 @@
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
+* [Puzzle list](puzzles.md)
 
 ## Installation
 

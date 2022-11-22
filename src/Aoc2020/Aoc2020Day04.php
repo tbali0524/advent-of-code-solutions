@@ -13,7 +13,7 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Count the number of valid passports - those that have all required fields and valid values.
  *         Continue to treat cid as optional. In your batch file, how many passports are valid?
  *
- * Topics: Input parsing, object validation
+ * Topics: input parsing, object validation
  *
  * @see https://adventofcode.com/2020/day/4
  */

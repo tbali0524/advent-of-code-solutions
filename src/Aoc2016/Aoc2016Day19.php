@@ -10,9 +10,10 @@ use TBali\Aoc\SolutionBase;
  * AoC 2016 Day 19: An Elephant Named Joseph.
  *
  * Part 1: With the number of Elves given in your puzzle input, which Elf gets all the presents?
- * Part 2:
+ * Part 2: With the number of Elves given in your puzzle input, which Elf now gets all the presents?
  *
- * @todo solve
+ * Topics: Josephus problem, OEIS A006257
+ * Note: solutions based on reddit posts.
  *
  * @see https://adventofcode.com/2016/day/19
  */
@@ -21,9 +22,9 @@ final class Aoc2016Day19 extends SolutionBase
     public const YEAR = 2016;
     public const DAY = 19;
     public const TITLE = 'An Elephant Named Joseph';
-    public const SOLUTIONS = [0, 0];
+    public const SOLUTIONS = [1841611, 1423634];
     public const STRING_INPUT = '3017957';
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]]; // Part 1: 3
+    public const EXAMPLE_SOLUTIONS = [[3, 2], [0, 0]];
     public const EXAMPLE_STRING_INPUTS = ['5', ''];
 
     /**
@@ -37,11 +38,36 @@ final class Aoc2016Day19 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Part 1 + 2
         $n = intval($input[0]);
-        // ---------- Part 1
-        $ans1 = 0;
-        // ---------- Part 2
-        $ans2 = 0;
+        $ans1 = $this->josephus2($n);
+        $ans2 = $this->solvePart2($n);
         return [strval($ans1), strval($ans2)];
+    }
+
+    /**
+     * @see https://en.wikipedia.org/wiki/Josephus_problem#k=2
+     */
+    private function josephus2(int $n): int
+    {
+        // ---------- Part 1
+        for ($i = 63; $i > 0; --$i) {
+            if (($n & (1 << $i)) != 0) {
+                break;
+            }
+        }
+        return ~(1 << ($i + 1)) & (($n << 1) | 1);
+    }
+
+    private function solvePart2(int $n): int
+    {
+        $w = 1;
+        for ($i = 1; $i < $n; ++$i) {
+            $w = $w % $i + 1;
+            if ($w > intdiv($i + 1, 2)) {
+                ++$w;
+            }
+        }
+        return $w;
     }
 }

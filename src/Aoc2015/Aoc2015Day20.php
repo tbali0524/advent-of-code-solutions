@@ -16,7 +16,7 @@ use TBali\Aoc\SolutionBase;
  * Part 2: With these changes, what is the new lowest house number of the house to get at least as many presents
  *         as the number in your puzzle input?
  *
- * Topics: prime factorization, sigma function,sum-of-divisors function, OEIS A000203
+ * Topics: prime factorization, sigma function, sum-of-divisors function, OEIS A000203
  *
  * @see https://adventofcode.com/2015/day/20
  */

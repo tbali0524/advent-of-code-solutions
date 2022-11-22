@@ -14,7 +14,7 @@ use TBali\Aoc\SolutionBase;
  * Part 1: How many messages completely match rule 0?
  * Part 2: After updating rules 8 and 11, how many messages completely match rule 0?
  *
- * Topics: input parsing, context-free grammar, CGF with limited loops
+ * Topics: input parsing, context-free grammar, CFG with limited loops
  *
  * @see https://adventofcode.com/2020/day/19
  */

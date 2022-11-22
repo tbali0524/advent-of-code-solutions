@@ -15,7 +15,7 @@ use TBali\Aoc\SolutionBase;
  * Part 2: What is the minimum number of steps required to bring all of the objects,
  *         including these four new ones, to the fourth floor?
  *
- * Topics: BFS
+ * Topics: BFS, Beam Search
  *
  * @see https://adventofcode.com/2016/day/11
  */
@@ -24,8 +24,11 @@ final class Aoc2016Day11 extends SolutionBase
     public const YEAR = 2016;
     public const DAY = 11;
     public const TITLE = 'Radioisotope Thermoelectric Generators';
-    public const SOLUTIONS = [31, 0];
+    public const SOLUTIONS = [31, 55];
     public const EXAMPLE_SOLUTIONS = [[9, 0], [0, 0]];
+
+    /** Smaller beam width is faster, but might miss the solution. 35k works, it takes ~145 sec */
+    private const BEAM_WIDTH = 35_000;
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -40,7 +43,8 @@ final class Aoc2016Day11 extends SolutionBase
     {
         // ---------- Part 1
         $startState = House::fromInput($input);
-        $ans1 = $this->solvePart($startState);
+        // $ans1 = $this->solveBFS($startState);
+        $ans1 = $this->solveBeamSearch($startState);
         // detect example input
         if ($startState->countElements == 2) {
             return [strval($ans1), '0'];
@@ -51,11 +55,12 @@ final class Aoc2016Day11 extends SolutionBase
             . 'an elerium generator, an elerium-compatible microchip, '
             . 'a dilithium generator and a dilithium-compatible microchip.';
         $startState = House::fromInput($input);
-        $ans2 = 0; // $this->solvePart($startState);
+        $ans2 = $this->solveBeamSearch($startState);
         return [strval($ans1), strval($ans2)];
     }
 
-    private function solvePart(House $startState): int
+    /** Not used, too slow for Part 2 */
+    private function solveBFS(House $startState): int
     {
         $visited = [$startState->hash() => true];
         $q = [$startState];
@@ -77,6 +82,32 @@ final class Aoc2016Day11 extends SolutionBase
             }
         }
     }
+
+    private function solveBeamSearch(House $startState): int
+    {
+        $houses = [$startState];
+        while (true) {
+            $allNextHouses = [];
+            $visited = [];
+            foreach ($houses as $house) {
+                if ($house->isWinning()) {
+                    return $house->countMoves;
+                }
+                $nextHouses = $house->allMoves();
+                foreach ($nextHouses as $nextHouse) {
+                    $hash = $nextHouse->hash();
+                    if (isset($visited[$hash])) {
+                        continue;
+                    }
+                    $allNextHouses[] = $nextHouse;
+                    $visited[$hash] = true;
+                }
+            }
+            // echo $startState->countElements . ': #' . $allNextHouses[0]->countMoves, PHP_EOL;
+            usort($allNextHouses, fn (House $a, House $b): int => $b->score <=> $a->score);
+            $houses = array_slice($allNextHouses, 0, self::BEAM_WIDTH);
+        }
+    }
 }
 
 // --------------------------------------------------------------------
@@ -88,6 +119,7 @@ final class House
     public int $countFloors = 4;    // assumption in hash function: max 16 (4 bits)
     public int $countElements = 0;  // count of chip - generator pairs
     public int $elevator = 0;
+    public int $score = PHP_INT_MAX;
 
     /**
      * Current position of each chips (index 0) and generators (index 1).
@@ -107,6 +139,11 @@ final class House
             }
         }
         return $h;
+    }
+
+    public function score(): void
+    {
+        $this->score = $this->elevator + array_sum($this->items[0]) + array_sum($this->items[1]);
     }
 
     public function isWinning(): bool
@@ -162,6 +199,7 @@ final class House
                 $house1->elevator = $newFloor;
                 $house1->items[$item1 & 1][$item1 >> 1] = $newFloor;
                 if ($house1->isValid()) {
+                    $house1->score();
                     $houses[] = $house1;
                 }
                 for ($item2 = $item1 + 1; $item2 < 2 * $this->countElements; ++$item2) {
@@ -171,6 +209,7 @@ final class House
                     $house2 = clone $house1;
                     $house2->items[$item2 & 1][$item2 >> 1] = $newFloor;
                     if ($house2->isValid()) {
+                        $house2->score();
                         $houses[] = $house2;
                     }
                 }
