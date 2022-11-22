@@ -51,7 +51,6 @@ final class Aoc2016Day21 extends SolutionBase
         for ($i = count($input) - 1; $i >= 0; --$i) {
             $ans2 = $this->execute($ans2, $input[$i], true);
         }
-        echo '------------' . $ans2;
         return [$ans1, $ans2];
     }
 
