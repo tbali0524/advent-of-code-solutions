@@ -77,7 +77,7 @@ The following helper commands are defined in [composer.json](composer.json):
 |stan         |Run static analysis with [phpstan](https://phpstan.org/)|
 |qa           |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
-|open-metrics |Open generated metrics report in browser _(fixed file path)_|
+|open-metrics |Open generated code metrics report in browser _(fixed file path)_|
 |clean        |Delete generated cache and report files in `.tools` directory _(Windows only)_|
 
 Note: The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.

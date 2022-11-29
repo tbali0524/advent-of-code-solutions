@@ -4,10 +4,11 @@
         "."
     ],
     "excludes" : [
-        "input",
-        "docs",
-        ".tools",
-        ".vscode"
+        ".tools/",
+        ".vscode/",
+        "input/",
+        "docs/",
+        "vendor/"
     ],
     "report" : {
         "html" : "/.tools/phpmetrics/"
