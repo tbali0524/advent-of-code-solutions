@@ -67,10 +67,10 @@
 |  +  |2016| 24|Air Duct Spelunking                       |BFS
 |  +  |2016| 25|Clock Signal                              |assembly simulation
 |  +  |2017|  1|Inverse Captcha                           |
-|     |2017|  2|Corruption Checksum                       |
-|     |2017|  3|Spiral Memory                             |
-|     |2017|  4|High-Entropy Passphrases                  |
-|     |2017|  5|A Maze of Twisty Trampolines, All Alike   |
+|  +  |2017|  2|Corruption Checksum                       |
+|  +  |2017|  3|Spiral Memory                             |
+|  +  |2017|  4|High-Entropy Passphrases                  |
+|  +  |2017|  5|A Maze of Twisty Trampolines, All Alike   |
 |     |2017|  6|Memory Reallocation                       |
 |     |2017|  7|Recursive Circus                          |
 |     |2017|  8|I Heard You Like Registers                |

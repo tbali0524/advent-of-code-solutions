@@ -32,20 +32,25 @@
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
         "doc"  : "phpdoc",
         "loc"  : "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
+        "metrics"  : "phpmetrics --config=.phpmetrics.json",
         "stan" : "phpstan --ansi --verbose",
         "qa" : [
             "@cs",
             "@cs-fixer",
             "@stan",
             "@doc",
-            "@open-doc"
+            "@open-doc",
+            "@metrics",
+            "@open-metrics"
         ],
         "open-doc":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
+        "open-metrics":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
         "clean" : [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
             "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan",
             "if exist .tools\\phpdoc\\               rmdir /S /Q .tools\\phpdoc",
+            "if exist .tools\\phpmetrics\\           rmdir /S /Q .tools\\phpmetrics",
             "if exist docs\\                        rmdir /S /Q docs"
         ]
     },
@@ -59,6 +64,7 @@
         "stan":     "Run static analysis with phpstan",
         "qa":       "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpDocumentor",
         "open-doc": "Open generated documentation in browser (fixed file path)",
+        "open-metrics": "Open generated metrics report in browser (fixed file path)",
         "clean":    "Delete generated cache and report files in .tools directory (Windows only)"
     }
 }

@@ -1,0 +1,20 @@
+{
+    "composer" : true,
+    "includes": [
+        "."
+    ],
+    "excludes" : [
+        "input",
+        "docs",
+        ".tools",
+        ".vscode"
+    ],
+    "report" : {
+        "html" : "/.tools/phpmetrics/"
+    },
+    "plugins" : {
+        "git" : {
+            "binary" : "git"
+        }
+    }
+}
