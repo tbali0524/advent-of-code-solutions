@@ -4,7 +4,7 @@
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
-* [Puzzle list](puzzles.md)
+* [Puzzle list](puzzles.md) with topics and completion status.
 
 ## Installation
 
@@ -14,6 +14,8 @@ However, [Composer](https://getcomposer.org/) is used for its class autoloader:
 ```sh
 composer install
 ```
+
+Note: Some solutions require more memory than what a default PHP installation provides, so it is recommended to set `memory_limit = -1` in `php.ini`.
 
 ## Batch solution runner
 
