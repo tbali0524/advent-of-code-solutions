@@ -192,4 +192,5 @@
 |     |2021| 24|Arithmetic Logic Unit                     |
 |     |2021| 25|Sea Cucumber                              |
 |  +  |2022|  1|Calorie Counting                          |
-| N/A |2022|  2|???                                       |
+|  +  |2022|  2|Rock Paper Scissors                       |
+| N/A |2022|  3|???                                       |
