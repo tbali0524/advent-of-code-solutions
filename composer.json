@@ -25,6 +25,9 @@
         }
     },
     "prefer-stable": true,
+    "config": {
+        "process-timeout": 600
+    },
     "scripts": {
         "start":        "php src/aoc.php",
         "cs"   :        "phpcs",

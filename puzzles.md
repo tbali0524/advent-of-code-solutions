@@ -193,4 +193,5 @@
 |     |2021| 25|Sea Cucumber                              |
 |  +  |2022|  1|Calorie Counting                          |
 |  +  |2022|  2|Rock Paper Scissors                       |
-| N/A |2022|  3|???                                       |
+|  +  |2022|  2|Rucksack Reorganization                   |
+| N/A |2022|  4|???                                       |

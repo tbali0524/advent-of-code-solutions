@@ -73,7 +73,6 @@ final class Aoc2020Day12 extends SolutionBase
                     1, -3 => [$wy, -$wx],
                     2, -2 => [-$wx, -$wy],
                     3, -1 => [-$wy, $wx],
-                    default =>[0, 0],
                 };
                 continue;
             }
