@@ -11,6 +11,8 @@ namespace TBali\Aoc;
  */
 abstract class SolutionBase implements Solution
 {
+    private const SLOW_THRESHOLD = 10.0;
+
     /**
      * The main runner engine.
      *
@@ -81,9 +83,13 @@ abstract class SolutionBase implements Solution
         }
         $answers = $this->solve($input);
         // stats and report
-        $spentTime = number_format((hrtime(true) - $startTime) / 1_000_000_000, 3, '.', '');
+        $spentTime = (hrtime(true) - $startTime) / 1_000_000_000;
+        $spentTimeMsg = number_format($spentTime, 3, '.', '');
+        if ($spentTime >= self::SLOW_THRESHOLD) {
+            $spentTimeMsg = Tags::ANSI_YELLOW . $spentTimeMsg . Tags::ANSI_RESET;
+        }
         // $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1_000_000));
-        echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTime . ' sec] : '
+        echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTimeMsg . ' sec] : '
             . static::TITLE . PHP_EOL . $exampleMsg;
         for ($part = 0; $part < 2; ++$part) {
             if ((static::DAY == 25) and ($part == 1)) {
