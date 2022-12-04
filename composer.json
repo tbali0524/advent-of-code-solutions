@@ -40,11 +40,17 @@
         "qa" : [
             "@cs",
             "@cs-fixer",
+            "@stan"
+        ],
+        "qa-full" : [
+            "@cs",
+            "@cs-fixer",
             "@stan",
             "@doc",
             "@open-doc",
             "@metrics",
-            "@open-metrics"
+            "@open-metrics",
+            "@start"
         ],
         "open-doc":     "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
         "open-metrics": "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
@@ -66,7 +72,8 @@
         "loc":          "Get code summary report with phploc",
         "metrics":      "Create code metrics report with phpmetrics",
         "stan":         "Run static analysis with phpstan",
-        "qa":           "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor",
+        "qa":           "Run code quality checks: phpcs, php-cs-fixer, phpstan",
+        "qa-full":      "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor and a test run",
         "open-doc":     "Open generated documentation in browser (fixed file path)",
         "open-metrics": "Open generated code metrics report in browser (fixed file path)",
         "clean":        "Delete generated cache and report files in .tools directory (Windows only)"

@@ -194,4 +194,5 @@
 |  +  |2022|  1|Calorie Counting                          |
 |  +  |2022|  2|Rock Paper Scissors                       |
 |  +  |2022|  2|Rucksack Reorganization                   |
-| N/A |2022|  4|???                                       |
+|  +  |2022|  4|Camp Cleanup                              |
+| N/A |2022|  5|???                                       |
