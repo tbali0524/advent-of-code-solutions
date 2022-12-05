@@ -131,7 +131,7 @@ abstract class SolutionBase implements Solution
             if ($line === false) {
                 break;
             }
-            $input[] = trim($line);
+            $input[] = rtrim($line);
         }
         fclose($handle);
         if (count($input) == 0) {
