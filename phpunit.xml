@@ -1,0 +1,42 @@
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    bootstrap="vendor/autoload.php"
+    colors="true"
+    cacheResultFile=".tools/.phpunit.result.cache"
+    beStrictAboutTestsThatDoNotTestAnything="true"
+    beStrictAboutTodoAnnotatedTests="true"
+>
+    <testsuites>
+        <testsuite name="aoctest">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <coverage
+        cacheDirectory=".tools/.phpunit.coverage.cache/"
+        includeUncoveredFiles="true"
+        processUncoveredFiles="true"
+        pathCoverage="false"
+        ignoreDeprecatedCodeUnits="true"
+        disableCodeCoverageIgnore="true"
+    >
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>src/other</directory>
+            <file>src/aoc.php</file>
+            <file>src/run_class.php</file>
+        </exclude>
+        <report>
+            <html outputDirectory=".tools/phpunit-coverage" lowUpperBound="50" highLowerBound="90"/>
+            <text
+                outputFile="php://stdout"
+                showUncoveredFiles="true"
+                showOnlySummary="true"
+            />
+        </report>
+    </coverage>
+    <php>
+        <server name="APP_ENV" value="testing" />
+    </php>
+</phpunit>

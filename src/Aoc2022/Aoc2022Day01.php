@@ -33,6 +33,7 @@ final class Aoc2022Day01 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
         $calories = [[]];
         $idxElf = 0;
         foreach ($input as $line) {

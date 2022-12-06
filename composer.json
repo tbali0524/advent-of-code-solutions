@@ -30,6 +30,7 @@
     },
     "scripts": {
         "start":        "php src/aoc.php",
+        "test" :        "call phpunitc.bat --colors=always",
         "cs"   :        "phpcs",
         "cs-fixer" :    "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
@@ -50,13 +51,18 @@
             "@open-doc",
             "@metrics",
             "@open-metrics",
+            "@test",
+            "@open-cover",
             "@start"
         ],
+        "open-cover":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpunit-coverage/index.html",
         "open-doc":     "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
         "open-metrics": "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
         "clean" : [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
+            "if exist .tools\\.phpunit.coverage.cache\\ rmdir /S /Q .tools\\.phpunit.coverage.cache",
+            "if exist .tools\\phpunit-coverage\\     rmdir /S /Q .tools\\phpunit-coverage",
             "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan",
             "if exist .tools\\phpmetrics\\           rmdir /S /Q .tools\\phpmetrics",
             "if exist .tools\\phpdoc\\               rmdir /S /Q .tools\\phpdoc",
@@ -64,7 +70,8 @@
         ]
     },
     "scripts-descriptions": {
-        "start":        "Run all solutions",
+        "start":        "Run all solutions with AocRunner",
+        "test":         "Run all solutions with phpunit",
         "cs":           "Check coding style compliance to PSR12 with phpcs",
         "cs-fixer":     "Check coding style compliance to PSR12 plus extra rules with php-cs-fixer (no fix applied)",
         "cs-fixer-do":  "Apply coding style fixes with php-cs-fixer",
@@ -76,6 +83,6 @@
         "qa-full":      "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor and a test run",
         "open-doc":     "Open generated documentation in browser (fixed file path)",
         "open-metrics": "Open generated code metrics report in browser (fixed file path)",
-        "clean":        "Delete generated cache and report files in .tools directory (Windows only)"
+        "clean":        "Delete generated cache and report files in .tools/ and docs/ directories (Windows only)"
     }
 }

@@ -45,9 +45,6 @@ final class Aoc2022Day05 extends SolutionBase
         // ---------- Part 1
         $stacks = $this->startStacks;
         foreach ($this->instructions as $instr) {
-            if (strlen($stacks[$instr->from]) < $instr->qty) {
-                throw new \Exception('Invalid input');
-            }
             $stacks[$instr->to] .= strrev(substr($stacks[$instr->from], -$instr->qty));
             $stacks[$instr->from] = substr($stacks[$instr->from], 0, -$instr->qty);
         }
@@ -56,7 +53,6 @@ final class Aoc2022Day05 extends SolutionBase
             $ans1 .= $stack[strlen($stack) - 1] ?? '';
         }
         // ---------- Part 2
-        $ans2 = '0';
         $stacks = $this->startStacks;
         foreach ($this->instructions as $instr) {
             $stacks[$instr->to] .= substr($stacks[$instr->from], -$instr->qty);
