@@ -25,9 +25,8 @@ abstract class SolutionBase implements Solution
         $startTime = hrtime(true);
         // memory_reset_peak_usage(); // requires PHP v8.2
         $isOk = true;
-        $baseFileName = 'input/' . static::YEAR . '/aoc'
-            . str_pad(strval(static::YEAR % 100), 2, '0', STR_PAD_LEFT)
-            . '_' . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT);
+        $baseFileName = 'input/' . static::YEAR . '/Aoc' . static::YEAR . 'Day'
+            . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT);
         // run examples, if there is any
         $exampleMsg = '';
         $countExamples = 0;

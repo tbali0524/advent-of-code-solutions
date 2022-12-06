@@ -5,8 +5,8 @@ parameters:
     tmpDir: .tools/phpstan
     paths:
         - src/
+        # - tests/
     excludePaths:
         - .git
         - .tools
         - vendor
-        - src/2015/aoc15_12.php

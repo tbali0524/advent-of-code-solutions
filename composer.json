@@ -24,13 +24,18 @@
             "TBali\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "TBali\\Tests\\": "tests/"
+        }
+    },
     "prefer-stable": true,
     "config": {
-        "process-timeout": 600
+        "process-timeout": 900
     },
     "scripts": {
         "start":        "php src/aoc.php",
-        "test" :        "call phpunitc.bat --colors=always",
+        "test" :        "call phpunitc.bat --colors=always --testdox",
         "cs"   :        "phpcs",
         "cs-fixer" :    "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",

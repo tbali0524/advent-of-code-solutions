@@ -7,8 +7,29 @@
     beStrictAboutTodoAnnotatedTests="true"
 >
     <testsuites>
-        <testsuite name="aoctest">
-            <directory suffix="Test.php">./tests</directory>
+        <testsuite name="Aoc2015">
+            <file>tests/Aoc2015Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2016">
+            <file>tests/Aoc2016Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2017">
+            <file>tests/Aoc2017Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2018">
+            <file>tests/Aoc2018Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2019">
+            <file>tests/Aoc2019Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2020">
+            <file>tests/Aoc2020Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2021">
+            <file>tests/Aoc2021Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2022">
+            <file>tests/Aoc2022Test.php</file>
         </testsuite>
     </testsuites>
     <coverage

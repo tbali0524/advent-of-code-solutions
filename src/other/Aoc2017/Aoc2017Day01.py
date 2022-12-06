@@ -12,7 +12,7 @@ for i in range(len(line)):
     if line[i] == line[(i + 1) % len(line)]:
         ans1 += int(line[i])
 print(ans1)
-#/ ---------- Part 2
+# ---------- Part 2
 line = '12131415'
 ans2 = 0
 for i in range(len(line)):

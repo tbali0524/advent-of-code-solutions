@@ -14,7 +14,7 @@ for i in 0..line.length do
     end
 end
 puts ans1
-#/ ---------- Part 2
+# ---------- Part 2
 line = '12131415'
 ans2 = 0
 for i in 0..line.length do
