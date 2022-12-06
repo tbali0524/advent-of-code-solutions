@@ -8,13 +8,13 @@ use PHPUnit\Framework\TestCase;
 use TBali\Aoc2015\Aoc2015Day01;
 use TBali\Aoc2015\Aoc2015Day02;
 use TBali\Aoc2015\Aoc2015Day03;
-// use TBali\Aoc2015\Aoc2015Day04;
+use TBali\Aoc2015\Aoc2015Day04;
 use TBali\Aoc2015\Aoc2015Day05;
 use TBali\Aoc2015\Aoc2015Day06;
 use TBali\Aoc2015\Aoc2015Day07;
 use TBali\Aoc2015\Aoc2015Day08;
 use TBali\Aoc2015\Aoc2015Day09;
-// use TBali\Aoc2015\Aoc2015Day10;
+use TBali\Aoc2015\Aoc2015Day10;
 use TBali\Aoc2015\Aoc2015Day11;
 use TBali\Aoc2015\Aoc2015Day12;
 use TBali\Aoc2015\Aoc2015Day13;
@@ -40,6 +40,8 @@ use TBali\Aoc2015\Aoc2015Day25;
  */
 final class Aoc2015Test extends TestCase
 {
+    // --------------------------------------------------------------------
+
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day01
      */
@@ -68,6 +70,7 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day01
+     * @covers \TBali\Aoc\SolutionBase
      */
     public function testDay01(): void
     {
@@ -168,46 +171,48 @@ final class Aoc2015Test extends TestCase
     }
 
     // --------------------------------------------------------------------
-    // Day 04 tests are too slow, so disabled
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day04
-    //  */
-    // public function testDay04Example1(): void
-    // {
-    //     $solver = new Aoc2015Day04();
-    //     $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     // $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day04
+     */
+    public function testDay04Example1(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day04();
+        $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day04
-    //  */
-    // public function testDay04Example2(): void
-    // {
-    //     $solver = new Aoc2015Day04();
-    //     $input = [$solver::EXAMPLE_STRING_INPUTS[1]];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     // $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day04
+     */
+    public function testDay04Example2(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day04();
+        $input = [$solver::EXAMPLE_STRING_INPUTS[1]];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day04
-    //  */
-    // public function testDay04(): void
-    // {
-    //     $solver = new Aoc2015Day04();
-    //     $input = [$solver::STRING_INPUT];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day04
+     */
+    public function testDay04(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day04();
+        $input = [$solver::STRING_INPUT];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -258,18 +263,20 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day06
-    //  */
-    // public function testDay06Example1(): void
-    // {
-    //     $solver = new Aoc2015Day06();
-    //     $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day06
+     * @covers \TBali\Aoc2015\Instruction
+     */
+    public function testDay06Example1(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day06();
+        $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day06
@@ -285,21 +292,22 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day06
-    //  * @covers \TBali\Aoc2015\Instruction
-    //  */
-    // public function testDay06(): void
-    // {
-    //     $solver = new Aoc2015Day06();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day06
+     * @covers \TBali\Aoc2015\Instruction
+     */
+    public function testDay06(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day06();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -406,31 +414,33 @@ final class Aoc2015Test extends TestCase
     // --------------------------------------------------------------------
     // Day 10 tests are too slow, so disabled
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day10
-    //  */
-    // public function testDay10Example1(): void
-    // {
-    //     $solver = new Aoc2015Day10();
-    //     $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     // $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day10
+     */
+    public function testDay10Example1(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day10();
+        $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day10
-    //  */
-    // public function testDay10(): void
-    // {
-    //     $solver = new Aoc2015Day10();
-    //     $input = [$solver::STRING_INPUT];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day10
+     */
+    public function testDay10(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day10();
+        $input = [$solver::STRING_INPUT];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -447,18 +457,19 @@ final class Aoc2015Test extends TestCase
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day11
-    //  */
-    // public function testDay11(): void
-    // {
-    //     $solver = new Aoc2015Day11();
-    //     $input = [$solver::STRING_INPUT];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day11
+     */
+    public function testDay11(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day11();
+        $input = [$solver::STRING_INPUT];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -592,20 +603,21 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day15
-    //  */
-    // public function testDay15(): void
-    // {
-    //     $solver = new Aoc2015Day15();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day15
+     */
+    public function testDay15(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day15();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -673,20 +685,21 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day18
-    //  */
-    // public function testDay18(): void
-    // {
-    //     $solver = new Aoc2015Day18();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day18
+     */
+    public function testDay18(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day18();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -733,18 +746,19 @@ final class Aoc2015Test extends TestCase
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day20
-    //  */
-    // public function testDay20(): void
-    // {
-    //     $solver = new Aoc2015Day20();
-    //     $input = [$solver::STRING_INPUT];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day20
+     */
+    public function testDay20(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day20();
+        $input = [$solver::STRING_INPUT];
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 
@@ -880,18 +894,21 @@ final class Aoc2015Test extends TestCase
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // /**
-    //  * @covers \TBali\Aoc2015\Aoc2015Day25
-    //  */
-    // public function testDay25(): void
-    // {
-    //     $solver = new Aoc2015Day25();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     // $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day25
+     */
+    public function testDay25(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2015Day25();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
 }

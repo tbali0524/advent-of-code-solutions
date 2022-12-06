@@ -59,7 +59,11 @@ final class Aoc2016Day11 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
-    /** Not used, too slow for Part 2 */
+    /**
+     * Not used, too slow for Part 2.
+     *
+     * @codeCoverageIgnore
+     */
     private function solveBFS(House $startState): int
     {
         $visited = [$startState->hash() => true];

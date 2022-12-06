@@ -122,6 +122,9 @@ final class Display
         return array_sum(array_map(fn (string $row): int => substr_count($row, self::LED_ON), $this->grid));
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function show(): void
     {
         foreach ($this->grid as $row) {

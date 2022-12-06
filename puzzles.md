@@ -195,4 +195,6 @@
 |  +  |2022|  2|Rock Paper Scissors                       |
 |  +  |2022|  2|Rucksack Reorganization                   |
 |  +  |2022|  4|Camp Cleanup                              |
-| N/A |2022|  5|???                                       |
+|  +  |2022|  5|Supply Stacks                             |
+|  +  |2022|  6|Tuning Trouble                            |
+| N/A |2022|  7|???                                       |

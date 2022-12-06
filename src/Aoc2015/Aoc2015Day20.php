@@ -80,7 +80,13 @@ final class Aoc2015Day20 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-// not used in the puzzle (would be too slow)
+/**
+ * Prime Factorization.
+ *
+ * Not used in this puzzle (would be too slow).
+ *
+ * @codeCoverageIgnore
+ */
 final class PrimeFactors
 {
     public readonly int $n;

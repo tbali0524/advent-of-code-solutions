@@ -16,6 +16,8 @@ use TBali\Aoc2018\Aoc2018Day01;
  */
 final class Aoc2018Test extends TestCase
 {
+    // --------------------------------------------------------------------
+
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day01
      */

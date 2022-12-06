@@ -69,7 +69,8 @@ The following helper commands are defined in [composer.json](composer.json):
 
 |Command      |Description |
 |:------------|:-----------|
-|start        |Run all solutions|
+|start        |Run all solutions with AocRunner|
+|test         |Run solutions and create test coverage report with [phpunit](https://www.phpunit.de/)|
 |cs           |Check coding style compliance to `PSR12` with [phpcs](https://github.com/squizlabs/PHP_CodeSniffer)|
 |cs-fixer     |Check coding style compliance to `PSR12` plus extra rules with [php-cs-fixer](https://cs.symfony.com/) (no fix applied)|
 |cs-fixer-do  |Apply coding style fixes with _php-cs-fixer_|
@@ -78,9 +79,10 @@ The following helper commands are defined in [composer.json](composer.json):
 |metrics      |Generate code metrics report with [phpmetrics](https://phpmetrics.github.io/website/)|
 |stan         |Run static analysis with [phpstan](https://phpstan.org/)|
 |qa           |Run code quality checks: _phpcs, php-cs-fixer, phpstan_|
-|qa-full      |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor and a test run_|
+|qa-full      |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor, phpunit, and run all solutions_|
+|open-cover   |Open generated coverage report in browser _(fixed file path)_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|
-|clean        |Delete generated cache and report files in `.tools` directory _(Windows only)_|
+|clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
 Note: The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.

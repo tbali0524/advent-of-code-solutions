@@ -90,6 +90,9 @@ final class Aoc2016Day22 extends SolutionBase
         return [strval($ans1), strval($ans2)];
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     private function printGrid(): void
     {
         $maxX = max(array_map(fn (Node $node): int => $node->x, $this->nodes)) + 1;

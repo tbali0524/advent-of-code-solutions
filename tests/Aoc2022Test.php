@@ -16,9 +16,10 @@ use TBali\Aoc2022\Aoc2022Day01;
  */
 final class Aoc2022Test extends TestCase
 {
+    // --------------------------------------------------------------------
+
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day01
-     * @covers \TBali\Aoc\SolutionBase
      */
     public function testDay01Example1(): void
     {
@@ -34,7 +35,6 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day01
-     * @covers \TBali\Aoc\SolutionBase
      */
     public function testDay01(): void
     {
