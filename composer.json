@@ -66,6 +66,7 @@
         "clean" : [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
+            "if exist .tools\\.phpunit.result.cache  del .tools\\.phpunit.result.cache",
             "if exist .tools\\.phpunit.coverage.cache\\ rmdir /S /Q .tools\\.phpunit.coverage.cache",
             "if exist .tools\\phpunit-coverage\\     rmdir /S /Q .tools\\phpunit-coverage",
             "if exist .tools\\phpstan\\              rmdir /S /Q .tools\\phpstan",
@@ -86,6 +87,7 @@
         "stan":         "Run static analysis with phpstan",
         "qa":           "Run code quality checks: phpcs, php-cs-fixer, phpstan",
         "qa-full":      "Run code quality checks: phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor and a test run",
+        "open-cover":   "Open generated test coverage report in browser (fixed file path)",
         "open-doc":     "Open generated documentation in browser (fixed file path)",
         "open-metrics": "Open generated code metrics report in browser (fixed file path)",
         "clean":        "Delete generated cache and report files in .tools/ and docs/ directories (Windows only)"

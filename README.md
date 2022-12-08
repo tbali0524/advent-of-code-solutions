@@ -80,7 +80,7 @@ The following helper commands are defined in [composer.json](composer.json):
 |stan         |Run static analysis with [phpstan](https://phpstan.org/)|
 |qa           |Run code quality checks: _phpcs, php-cs-fixer, phpstan_|
 |qa-full      |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor, phpunit, and run all solutions_|
-|open-cover   |Open generated coverage report in browser _(fixed file path)_|
+|open-cover   |Open generated test coverage report in browser _(fixed file path)_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
