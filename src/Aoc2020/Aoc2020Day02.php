@@ -57,9 +57,6 @@ final class Aoc2020Day02 extends SolutionBase
         foreach ($input as $line) {
             $a = explode(' ', $line);
             $a0 = explode('-', $a[0]);
-            if ((count($a) != 3) or (count($a0) != 2)) {
-                throw new \Exception('Invalid input');
-            }
             $pos1 = intval($a0[0]);
             $pos2 = intval($a0[1]);
             $letter = $a[1][0];

@@ -133,7 +133,7 @@ final class Aoc2016Day21 extends SolutionBase
                     $pos2 = false;
                 }
                 if ($pos2 === false) {
-                    throw new \Exception('Only strings of 5 or 8 lenggth supported');
+                    throw new \Exception('Only strings of 5 or 8 length supported');
                 }
                 $by = $pos2 - $pos1;
             } else {

@@ -272,6 +272,9 @@ final class Aoc2020Day20 extends SolutionBase
         }
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     private function printDebugImage(): void
     {
         $s = array_fill(0, $this->maxY * (ImageTile::SIZE + 1), str_repeat(' ', $this->maxX * (ImageTile::SIZE + 1)));
@@ -463,6 +466,8 @@ final class ImageTile
 
     /**
      * @return array<int, string>
+     *
+     * @codeCoverageIgnore
      */
     public function getDebugImage(int $pos): array
     {

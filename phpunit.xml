@@ -38,7 +38,7 @@
         processUncoveredFiles="true"
         pathCoverage="false"
         ignoreDeprecatedCodeUnits="true"
-        disableCodeCoverageIgnore="true"
+        disableCodeCoverageIgnore="false"
     >
         <include>
             <directory suffix=".php">src</directory>

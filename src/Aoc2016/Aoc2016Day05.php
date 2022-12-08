@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Given the actual Door ID and this new method, what is the password?
  *
  * @see https://adventofcode.com/2016/day/5
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2016Day05 extends SolutionBase
 {

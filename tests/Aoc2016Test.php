@@ -152,6 +152,7 @@ final class Aoc2016Test extends TestCase
     }
 
     // --------------------------------------------------------------------
+    // Day 05 tests are too slow, so disabled
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day05
@@ -296,6 +297,84 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rext 1x1 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rect 1x1 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput3(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rect 1x1x1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput4(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rotate row y=0 by 1 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput5(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rotate row y=0=1 by 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day08
+     * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
+     */
+    public function testDay08InvalidInput6(): void
+    {
+        $solver = new Aoc2016Day08();
+        $input = ['rotate row z=0 by 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -343,6 +422,28 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day09
+     */
+    public function testDay09InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day09();
+        $input = ['A(1)B'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day09
+     */
+    public function testDay09InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day09();
+        $input = ['A(1x2x3)B'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -375,6 +476,42 @@ final class Aoc2016Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day10
+     * @covers \TBali\Aoc2016\Bot
+     */
+    public function testDay10InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day10();
+        $input = ['value 2 goes to bot 1 a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day10
+     * @covers \TBali\Aoc2016\Bot
+     */
+    public function testDay10InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day10();
+        $input = ['bot 1 gives low to bot 2 and high to bot 3 a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day10
+     * @covers \TBali\Aoc2016\Bot
+     */
+    public function testDay10InvalidInput3(): void
+    {
+        $solver = new Aoc2016Day10();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -412,6 +549,39 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day11
+     */
+    public function testDay11InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day11();
+        $input = ['The first floorA contains a A generator, a A-compatible microchip and a B generator.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day11
+     */
+    public function testDay11InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day11();
+        $input = ['The first floor contains the A generator and a A-compatible microchip.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day11
+     */
+    public function testDay11InvalidInput3(): void
+    {
+        $solver = new Aoc2016Day11();
+        $input = ['The first floor contains the A item and a A-compatible microchip.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -445,6 +615,61 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day12
+     */
+    public function testDay12InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day12();
+        $input = ['div'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day12
+     */
+    public function testDay12InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day12();
+        $input = ['cpy a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day12
+     */
+    public function testDay12InvalidInput3(): void
+    {
+        $solver = new Aoc2016Day12();
+        $input = ['inc a 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day12
+     */
+    public function testDay12InvalidInput4(): void
+    {
+        $solver = new Aoc2016Day12();
+        $input = ['dec'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day12
+     */
+    public function testDay12InvalidInput5(): void
+    {
+        $solver = new Aoc2016Day12();
+        $input = ['jnz'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -474,6 +699,7 @@ final class Aoc2016Test extends TestCase
     }
 
     // --------------------------------------------------------------------
+    // Day 14 tests are too slow, so disabled
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day14
@@ -533,6 +759,17 @@ final class Aoc2016Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day15
+     */
+    public function testDay15InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day15();
+        $input = ['Disc #1 has 2 positions; at time=0, it is at position 1 a.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -732,6 +969,105 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['swap position 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['swap position 0 with position 1000'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput3(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['swap letter 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput4(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['swap letter z with letter a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput5(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['rotate left 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput6(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['rotate right 2 steps a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput7(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['rotate based on position of letter'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput8(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['rotate based on position of letter z'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day21
+     */
+    public function testDay21InvalidInput9(): void
+    {
+        $solver = new Aoc2016Day21();
+        $input = ['reverse positions 1 through 2 a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -798,6 +1134,28 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day23
+     */
+    public function testDay23InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day23();
+        $input = ['div'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day23
+     */
+    public function testDay23InvalidInput2(): void
+    {
+        $solver = new Aoc2016Day23();
+        $input = ['tgl a 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -832,6 +1190,7 @@ final class Aoc2016Test extends TestCase
     }
 
     // --------------------------------------------------------------------
+    // Day 25 tests are too slow, so disabled
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day25

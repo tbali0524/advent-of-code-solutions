@@ -16,6 +16,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: game simulation
  *
  * @see https://adventofcode.com/2020/day/23
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2020Day23 extends SolutionBase
 {

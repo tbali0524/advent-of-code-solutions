@@ -151,6 +151,28 @@ final class Aoc2022Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day04
+     */
+    public function testDay04InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day04();
+        $input = ['1-1 2-2'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day04
+     */
+    public function testDay04InvalidInput2(): void
+    {
+        $solver = new Aoc2022Day04();
+        $input = ['1-1,2'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -183,6 +205,17 @@ final class Aoc2022Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day05
+     */
+    public function testDay05InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day05();
+        $input = ['', 'move 1 from 1 to 2'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -266,6 +299,58 @@ final class Aoc2022Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day07
+     * @covers \TBali\Aoc2022\Directory
+     * @covers \TBali\Aoc2022\File
+     */
+    public function testDay07InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day07();
+        $input = ['ls'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day07
+     * @covers \TBali\Aoc2022\Directory
+     * @covers \TBali\Aoc2022\File
+     */
+    public function testDay07InvalidInput2(): void
+    {
+        $solver = new Aoc2022Day07();
+        $input = ['$ cd a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day07
+     * @covers \TBali\Aoc2022\Directory
+     * @covers \TBali\Aoc2022\File
+     */
+    public function testDay07InvalidInput3(): void
+    {
+        $solver = new Aoc2022Day07();
+        $input = ['$ ls', '1 a.txt b'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day07
+     * @covers \TBali\Aoc2022\Directory
+     * @covers \TBali\Aoc2022\File
+     */
+    public function testDay07InvalidInput4(): void
+    {
+        $solver = new Aoc2022Day07();
+        $input = ['$ pws'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------

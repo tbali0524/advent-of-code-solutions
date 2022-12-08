@@ -38,7 +38,7 @@ final class Aoc2020Day08 extends SolutionBase
         // ---------- Part 1
         [$wasInfLoop, $ans1] = $this->execute($input);
         if (!$wasInfLoop) {
-            throw new \Exception('Part 1 supposed to contain an inifinite loop');
+            throw new \Exception('Part 1 supposed to contain an infinite loop');
         }
         // ---------- Part 2
         $ans2 = 0;

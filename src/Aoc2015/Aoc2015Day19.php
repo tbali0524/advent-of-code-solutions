@@ -37,6 +37,9 @@ final class Aoc2015Day19 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- input processing
+        if (count($input) < 3) {
+            throw new \Exception('Invalid input');
+        }
         $replacements = [];
         $reverse = [];
         $molecule = $input[count($input) - 1];

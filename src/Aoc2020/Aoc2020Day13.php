@@ -102,6 +102,8 @@ final class Aoc2020Day13 extends SolutionBase
      * @return array<int, int> The greates common divisor, and the two Bézout coefficients
      *
      * @phpstan-return array{int, int, int}
+     *
+     * @codeCoverageIgnore
      */
     private static function extendedEuclidean(int $a, int $b): array
     {

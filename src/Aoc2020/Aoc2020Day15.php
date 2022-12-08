@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Given your starting numbers, what will be the 30000000th number spoken?
  *
  * @see https://adventofcode.com/2020/day/15
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2020Day15 extends SolutionBase
 {

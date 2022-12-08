@@ -182,6 +182,7 @@ final class Aoc2015Test extends TestCase
     }
 
     // --------------------------------------------------------------------
+    // Day 04 tests are too slow, so disabled
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day04
@@ -320,6 +321,28 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day06
+     */
+    public function testDay06InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day06();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day06
+     */
+    public function testDay06InvalidInput2(): void
+    {
+        $solver = new Aoc2015Day06();
+        $input = ['toggle 0,0'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -354,6 +377,45 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day07
+     * @covers \TBali\Aoc2015\Circuit
+     * @covers \TBali\Aoc2015\Gate
+     */
+    public function testDay07InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day07();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day07
+     * @covers \TBali\Aoc2015\Circuit
+     * @covers \TBali\Aoc2015\Gate
+     */
+    public function testDay07InvalidInput2(): void
+    {
+        $solver = new Aoc2015Day07();
+        $input = ['AND a -> b'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day07
+     * @covers \TBali\Aoc2015\Circuit
+     * @covers \TBali\Aoc2015\Gate
+     */
+    public function testDay07InvalidInput3(): void
+    {
+        $solver = new Aoc2015Day07();
+        $input = ['a AND b AND c -> d'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -420,6 +482,54 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day09
+     * @covers \TBali\Aoc2015\CityGraph
+     */
+    public function testDay09InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day09();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day09
+     * @covers \TBali\Aoc2015\CityGraph
+     */
+    public function testDay09InvalidInput2(): void
+    {
+        $solver = new Aoc2015Day09();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day09
+     * @covers \TBali\Aoc2015\CityGraph
+     */
+    public function testDay09InvalidInput3(): void
+    {
+        $solver = new Aoc2015Day09();
+        $input = ['a = 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day09
+     * @covers \TBali\Aoc2015\CityGraph
+     */
+    public function testDay09InvalidInput4(): void
+    {
+        $solver = new Aoc2015Day09();
+        $input = ['a to a = 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -553,6 +663,7 @@ final class Aoc2015Test extends TestCase
      */
     public function testDay13(): void
     {
+        $this->markTestSkipped();
         $solver = new Aoc2015Day13();
         $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
             . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
@@ -561,6 +672,42 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day13
+     * @covers \TBali\Aoc2015\KnightsTable
+     */
+    public function testDay13InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day13();
+        $input = ['A would gain 1 happiness units by sitting next to B a.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day13
+     * @covers \TBali\Aoc2015\KnightsTable
+     */
+    public function testDay13InvalidInput2(): void
+    {
+        $solver = new Aoc2015Day13();
+        $input = ['A would gain 1 happiness units by sitting next to A.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day13
+     * @covers \TBali\Aoc2015\KnightsTable
+     */
+    public function testDay13InvalidInput3(): void
+    {
+        $solver = new Aoc2015Day13();
+        $input = ['A would get 1 happiness units by sitting next to B.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -597,6 +744,18 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day14
+     * @covers \TBali\Aoc2015\Reindeer
+     */
+    public function testDay14InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day14();
+        $input = ['A can fly 1 km/s for 1 seconds, but then must rest for 1 seconds a.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -630,6 +789,17 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day15
+     */
+    public function testDay15InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day15();
+        $input = ['A: capacity 2, durability 0, flavor -2, texture 0, calories 3 a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -645,6 +815,17 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day16
+     */
+    public function testDay16InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day16();
+        $input = ['A 1: a: 2, b: 3, c: 0 a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -669,6 +850,7 @@ final class Aoc2015Test extends TestCase
      */
     public function testDay17(): void
     {
+        $this->markTestSkipped();
         $solver = new Aoc2015Day17();
         $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
             . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
@@ -727,6 +909,28 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day19
+     */
+    public function testDay19InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day19();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day19
+     */
+    public function testDay19InvalidInput2(): void
+    {
+        $solver = new Aoc2015Day19();
+        $input = ['a', '', 'a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -789,6 +993,18 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day21
+     * @covers \TBali\Aoc2015\Character
+     */
+    public function testDay21InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day21();
+        $input = ['Hit Points 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -807,6 +1023,20 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day22
+     * @covers \TBali\Aoc2015\WizardGameState
+     * @covers \TBali\Aoc2015\WizardSimulator
+     * @covers \TBali\Aoc2015\WizardSimulatorHardMode
+     */
+    public function testDay22InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day22();
+        $input = ['Hit Points 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -839,6 +1069,17 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day23
+     */
+    public function testDay23InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day23();
+        $input = ['div a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -919,6 +1160,17 @@ final class Aoc2015Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day25
+     */
+    public function testDay25InvalidInput1(): void
+    {
+        $solver = new Aoc2015Day25();
+        $input = ['To continue, please consult the code grid in the manual.  Enter the code at row 1, column 1 a.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------

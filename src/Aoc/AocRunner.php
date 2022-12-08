@@ -8,6 +8,8 @@ namespace TBali\Aoc;
  * Advent of Code solutions batch runner CLI.
  *
  * @author Bálint Tóth
+ *
+ * @codeCoverageIgnore
  */
 final class AocRunner
 {

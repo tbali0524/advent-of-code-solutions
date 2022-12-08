@@ -104,6 +104,17 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day02
+     */
+    public function testDay02InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day02();
+        $input = ['1-1 a:'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -292,6 +303,42 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day07
+     * @covers \TBali\Aoc2020\BagRegulations
+     */
+    public function testDay07InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day07();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day07
+     * @covers \TBali\Aoc2020\BagRegulations
+     */
+    public function testDay07InvalidInput2(): void
+    {
+        $solver = new Aoc2020Day07();
+        $input = ['dim red bags contain 2 bright gold bags, 5 striped fuchsia.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day07
+     * @covers \TBali\Aoc2020\BagRegulations
+     */
+    public function testDay07InvalidInput3(): void
+    {
+        $solver = new Aoc2020Day07();
+        $input = ['dim red bags contain 2 bright gold boxes, 5 striped fuchsia bags.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -354,6 +401,17 @@ final class Aoc2020Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day09
+     */
+    public function testDay09InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day09();
+        $input = ['1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -500,6 +558,17 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day13
+     */
+    public function testDay13InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day13();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -545,6 +614,17 @@ final class Aoc2020Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day14
+     */
+    public function testDay14InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day14();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -964,6 +1044,17 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day24
+     */
+    public function testDay24InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day24();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -994,6 +1085,17 @@ final class Aoc2020Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day25
+     */
+    public function testDay25InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day25();
+        $input = ['1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
