@@ -197,4 +197,5 @@
 |  +  |2022|  4|Camp Cleanup                              |
 |  +  |2022|  5|Supply Stacks                             |
 |  +  |2022|  6|Tuning Trouble                            |
-| N/A |2022|  7|???                                       |
+|  +  |2022|  7|No Space Left On Device                   |
+| N/A |2022|  8|???                                       |

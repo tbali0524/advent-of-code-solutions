@@ -41,16 +41,16 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 
 ## Puzzle input
 
-* Directory pattern: `input/YYYY/`
-* Filename pattern: `aocYY_DD.txt`
-* Optional additional example input can be in `aocYY_DDex1.txt` and `aocYY_DDex2.txt`.
+* Directory pattern: `input/YYYY/`, where `YYYY` is the year.
+* Filename pattern: `AocYYYYDayDD.txt`, where `DD` is the day padded to 2 digits with zero.
+* Optional additional example input can be in `AocYYYYDayDDex1.txt` and `AocYYYYDayDDex2.txt`.
 * Alternatively, a single string input can be given as the `STRING_INPUT` constant in the solution class.
 
 ## Class-based PHP solutions
 
-* Directory pattern: `src/AocYYYY/`
-* Filename pattern: `AocYYYYDayDD.php`, with the day `id` padded with zero to 2 digits.
-* For a new solution, use the template in `src/Aoc/Aoc2022Day00.php`.
+* Directory pattern: `src/AocYYYY/`.
+* Filename pattern: `AocYYYYDayDD.php`.
+* For a new solution, use the template in `src/Aoc2022/Aoc2022Day00.php`.
 * Solution should implement class `AocYYYYDayDD`, extending `BaseSolution`.
 * It should implement the `solve()` method and override the constants in the [Solution](src/Aoc/Solution.php) interface.
 * The `solve()` method must be callable repeatedly with different inputs.
@@ -58,8 +58,8 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 
 ## Standalone script-based solutions
 
-* Directory pattern: `src/other/AocYYYY/`
-* Filename pattern: `AocYYYYDayDD.ext`, with the day `id` padded with zero to 2 digits.
+* Directory pattern: `src/other/AocYYYY/`.
+* Filename pattern: `AocYYYYDayDD.ext`.
     * (For `PHP` only: the pattern is `AocYYYYDayDDscr.php` to avoid having the same source filename as the class-based solution.)
 * The script shall read the input file (if needed), print the problem ID and the solution.
 

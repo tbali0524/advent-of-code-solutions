@@ -264,8 +264,8 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day08
-     * @covers \TBali\Aoc2016\Instruction
      * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
      */
     public function testDay08Example1(): void
     {
@@ -281,8 +281,8 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day08
-     * @covers \TBali\Aoc2016\Instruction
      * @covers \TBali\Aoc2016\Display
+     * @covers \TBali\Aoc2016\Instruction
      */
     public function testDay08(): void
     {

@@ -54,9 +54,6 @@ final class Aoc2015Day02 extends SolutionBase
         // ---------- Part 2
         $ans2 = 0;
         foreach ($boxes as $box) {
-            if (count($box) != 3) {
-                throw new \Exception('Invalid input');
-            }
             sort($box);
             $ans2 += 2 * ($box[0] + $box[1]) + array_product($box);
         }

@@ -127,6 +127,17 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day02
+     */
+    public function testDay02InvalidInput(): void
+    {
+        $solver = new Aoc2015Day02();
+        $input = ['2x3x4x5'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
