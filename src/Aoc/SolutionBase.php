@@ -11,7 +11,8 @@ namespace TBali\Aoc;
  */
 abstract class SolutionBase implements Solution
 {
-    private const SLOW_THRESHOLD = 10.0;
+    private const SLOW_THRESHOLD = 10.0;   // seconds
+    private const MEMORY_THRESHOLD = 1024; // megabytes
 
     /**
      * The main runner engine.
@@ -24,8 +25,11 @@ abstract class SolutionBase implements Solution
      */
     final public function run(): bool
     {
+        if (version_compare(phpversion(), '8.2.0', '>=')) {
+            gc_collect_cycles();
+            memory_reset_peak_usage();
+        }
         $startTime = hrtime(true);
-        // memory_reset_peak_usage(); // requires PHP v8.2
         $isOk = true;
         $baseFileName = 'input/' . static::YEAR . '/Aoc' . static::YEAR . 'Day'
             . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT);
@@ -74,7 +78,8 @@ abstract class SolutionBase implements Solution
         if (static::STRING_INPUT == '') {
             $fileName = $baseFileName . '.txt';
             if (!file_exists($fileName)) {
-                echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' : ' . static::TITLE . PHP_EOL . $exampleMsg;
+                echo '=== AoC ' . static::YEAR . ' Day ' . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT)
+                    . ' : ' . static::TITLE . PHP_EOL . $exampleMsg;
                 echo Tags::ERROR_TAG . 'Cannot find input file: ' . $fileName . PHP_EOL;
                 return false;
             }
@@ -89,8 +94,19 @@ abstract class SolutionBase implements Solution
         if ($spentTime >= self::SLOW_THRESHOLD) {
             $spentTimeMsg = Tags::ANSI_YELLOW . $spentTimeMsg . Tags::ANSI_RESET;
         }
-        // $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1_000_000));
-        echo '=== AoC ' . static::YEAR . ' Day ' . static::DAY . ' [time: ' . $spentTimeMsg . ' sec] : '
+        $maxMemoryMsg = '';
+        $padTitle = 0;
+        if (version_compare(phpversion(), '8.2.0', '>=')) {
+            $maxMemory = ceil(memory_get_peak_usage() / 1024 / 1024);
+            $maxMemoryMsg = strval($maxMemory);
+            $padTitle = 4 - strlen($maxMemoryMsg);
+            if ($maxMemory >= self::MEMORY_THRESHOLD) {
+                $maxMemoryMsg = Tags::ANSI_YELLOW . $maxMemoryMsg . Tags::ANSI_RESET;
+            }
+            $maxMemoryMsg = '; memory: ' . $maxMemoryMsg . ' Mbytes';
+        }
+        echo '=== AoC ' . static::YEAR . ' Day ' . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT)
+            . ' [time: ' . $spentTimeMsg . ' sec' . $maxMemoryMsg . ']' . str_repeat(' ', $padTitle) . ' '
             . static::TITLE . PHP_EOL . $exampleMsg;
         for ($part = 0; $part < 2; ++$part) {
             if ((static::DAY == 25) and ($part == 1)) {

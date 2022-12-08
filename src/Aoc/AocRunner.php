@@ -77,6 +77,7 @@ final class AocRunner
     public function run(): void
     {
         $startTime = hrtime(true);
+        $maxMemory = 0;
         if (($this->year >= 0) and ($this->day >= 0) and !$this->runAllLanguages) {
             if ($this->runAsScripts) {
                 $this->runSingleAsScript($this->year, $this->day);
@@ -109,17 +110,17 @@ final class AocRunner
                     }
                     ++$countTotal;
                     if ($this->runAllLanguages and ($language != $lastLanguage)) {
-                        echo '---------- ' . $language . ' solutions ' . str_repeat('-', 18 - strlen($language))
+                        echo '-------------- ' . $language . ' solutions ' . str_repeat('-', 36 - strlen($language))
                             . PHP_EOL;
                         $lastLanguage = $language;
                     }
                     if ($year != $lastYear) {
-                        echo '======= ' . $year . ' ===========================' . PHP_EOL;
+                        echo '======= ' . $year . ' ' . str_repeat('=', 45) . PHP_EOL;
                         $lastYear = $year;
                     }
                     // @ phpstan-ignore-next-line
                     if (isset(self::TO_SKIP[$year]) and in_array($day, self::TO_SKIP[$year])) {
-                        echo '=== AoC ' . $year . ' Day ' . $day . PHP_EOL;
+                        echo '=== AoC ' . $year . ' Day ' . str_pad(strval($day), 2, '0', STR_PAD_LEFT) . PHP_EOL;
                         echo Tags::WARN_TAG . 'Skipped.' . PHP_EOL;
                         ++$countSkipped;
                         continue;
@@ -128,11 +129,11 @@ final class AocRunner
                         $result = $this->runSingleAsScript($year, $day);
                     } else {
                         $result = $this->runSingleAsClass($year, $day);
+                        $maxMemory = max($maxMemory, ceil(memory_get_peak_usage() / 1024 / 1024));
                     }
                     if (!$result) {
                         ++$countFails;
                     }
-                    gc_collect_cycles();
                 }
             }
         }
@@ -152,7 +153,6 @@ final class AocRunner
         } else {
             $failSkipMsg = '';
         }
-        $maxMemory = strval(ceil(memory_get_peak_usage(true) / 1_000_000));
         $maxMemMsg = ($this->runAsScripts ? '' : '; max memory: ' . $maxMemory . ' MB');
         echo '======= Total: ' . $totalMsg . $failSkipMsg . ' [time: ' . $spentTime . ' sec'
             . $maxMemMsg . ']' . PHP_EOL;
