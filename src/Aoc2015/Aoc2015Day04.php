@@ -13,8 +13,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Now find one that starts with six zeroes.
  *
  * @see https://adventofcode.com/2015/day/4
- *
- * @codeCoverageIgnore
  */
 final class Aoc2015Day04 extends SolutionBase
 {
