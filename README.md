@@ -86,3 +86,9 @@ The following helper commands are defined in [composer.json](composer.json):
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
 Note: The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.
+
+Note: `php-cs-fixer` currently does not fully support `php v8.2`, but the error message can be overriden by an environment variable. For example in `Powershell`:
+
+```powershell
+$Env:PHP_CS_FIXER_IGNORE_ENV=1
+```
