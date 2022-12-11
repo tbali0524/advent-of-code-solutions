@@ -68,7 +68,9 @@ final class Aoc2020Day19 extends SolutionBase
         $ans2 = 0;
         // @phpstan-ignore-next-line
         if ((count($this->generates[42] ?? []) == 0) or (count($this->generates[31] ?? []) == 0)) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('No solution found');
+            // @codeCoverageIgnoreEnd
         }
         // @phpstan-ignore-next-line
         $len42 = strlen(array_key_first($this->generates[42]));

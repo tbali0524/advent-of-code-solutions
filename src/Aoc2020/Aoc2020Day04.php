@@ -63,7 +63,9 @@ final class Aoc2020Day04 extends SolutionBase
                     'ecl' => in_array($v, ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']),
                     'pid' => strlen($v) == 9 && ctype_digit($v),
                     'cid' => true,
+                    // @codeCoverageIgnoreStart
                     default => false,
+                    // @codeCoverageIgnoreEnd
                 };
                 if (!$isOk) {
                     break;

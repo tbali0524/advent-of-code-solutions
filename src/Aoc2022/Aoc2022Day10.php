@@ -28,6 +28,7 @@ final class Aoc2022Day10 extends SolutionBase
     private const CYCLE_MODULO = 40;
     private const CYCLE_REMAINDER = 20;
     private const SHOW_SCREEN = false;
+    private const SCREEN_MAX_Y = 20;
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -44,7 +45,7 @@ final class Aoc2022Day10 extends SolutionBase
         $ans1 = 0;
         $x = 1;
         $cycle = 1;
-        $screen = array_fill(0, 6, str_repeat(' ', self::CYCLE_MODULO));
+        $screen = array_fill(0, self::SCREEN_MAX_Y, str_repeat(' ', self::CYCLE_MODULO));
         foreach ($input as $line) {
             if ($cycle % self::CYCLE_MODULO == self::CYCLE_REMAINDER) {
                 $ans1 += $cycle * $x;
@@ -80,7 +81,9 @@ final class Aoc2022Day10 extends SolutionBase
         $screenX = ($cycle - 1) % self::CYCLE_MODULO;
         if (abs($x - $screenX) <= 1) {
             $screenY = intdiv($cycle - 1, self::CYCLE_MODULO);
-            $screen[$screenY][$screenX] = '#';
+            if ($screenY < self::SCREEN_MAX_Y) {
+                $screen[$screenY][$screenX] = '#';
+            }
         }
         // @phpstan-ignore-next-line
         if (self::SHOW_SCREEN) {

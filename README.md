@@ -1,10 +1,10 @@
 # Advent of Code solutions in PHP by TBali
 
-![php-version-82](https://shields.io/badge/php->=8.2-blue)
+![php-version-82](https://shields.io/badge/php-8.2-blue) ![188 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-188-yellow)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
-* [Puzzle list](puzzles.md) with topics and completion status.
+* [Puzzle list](puzzles.md) with topics and my completion status
 
 ## Installation
 
@@ -85,10 +85,20 @@ The following helper commands are defined in [composer.json](composer.json):
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
-Note: The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.
+__Note:__ The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`.
 
-Note: `php-cs-fixer` currently does not fully support `php v8.2`, but the error message can be overriden by an environment variable. For example in `Powershell`:
+### Workaround
+
+`php-cs-fixer` currently does not fully support `php v8.2`, but the error message can be overriden by an environment variable.
+
+* in `PowerShell`:
 
 ```powershell
 $Env:PHP_CS_FIXER_IGNORE_ENV=1
+```
+
+* in `bash`:
+
+```sh
+PHP_CS_FIXER_IGNORE_ENV=1
 ```

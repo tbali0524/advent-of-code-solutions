@@ -115,13 +115,17 @@ final class Aoc2020Day21 extends SolutionBase
                 }
             }
             if ($best != 1) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             $idIngred = array_key_first($this->canComeFrom[$idBestAllerg]);
             $nameIngred = array_search($idIngred, $this->ingredients);
             $nameAllerg = array_search($idBestAllerg, $this->allergens);
             if (($nameIngred === false) or ($nameAllerg === false)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             $pairs[$nameIngred] = $nameAllerg;
             unset($remainingAllergs[$idBestAllerg]);

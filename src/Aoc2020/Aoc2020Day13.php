@@ -42,7 +42,7 @@ final class Aoc2020Day13 extends SolutionBase
         }
         $time = intval($input[0]);
         // ---------- Part 1
-        $buses = $input = array_map(
+        $buses = array_map(
             'intval',
             array_filter(
                 explode(',', $input[1]),

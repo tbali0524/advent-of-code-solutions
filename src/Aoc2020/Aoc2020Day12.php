@@ -69,7 +69,9 @@ final class Aoc2020Day12 extends SolutionBase
             if (isset(self::TURNS[$command])) {
                 $turn = (4 + self::TURNS[$command] * intdiv($param, 90)) % 4;
                 [$wx, $wy] = match ($turn) {
+                    // @codeCoverageIgnoreStart
                     0 => [$wx, $wy],
+                    // @codeCoverageIgnoreEnd
                     1, -3 => [$wy, -$wx],
                     2, -2 => [-$wx, -$wy],
                     3, -1 => [-$wy, $wx],

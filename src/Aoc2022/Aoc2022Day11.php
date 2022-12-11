@@ -134,7 +134,6 @@ final class Aoc2022Day11 extends SolutionBase
                 or ($m->trueTarget >= $countMonkeys)
                 or ($m->falseTarget < 0)
                 or ($m->falseTarget >= $countMonkeys)
-                or ($m->falseTarget < 0)
             ) {
                 throw new \Exception('Invalid input');
             }

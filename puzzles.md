@@ -12,7 +12,7 @@
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
 |[2021](#2021)| |
 |[2022](#2022)|![11 days](https://img.shields.io/badge/days%20completed-11-yellow)|
-|__Total__|![188 stars](https://img.shields.io/badge/stars%20⭐-188-green)|
+|__Total__|![188 stars](https://img.shields.io/badge/stars%20⭐-188-yellow)|
 
 ## Puzzles
 

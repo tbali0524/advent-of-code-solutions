@@ -74,7 +74,9 @@ final class Aoc2020Day20 extends SolutionBase
         // ---------- Part 1
         $this->searchCornerAndBorderTiles();
         if (count($this->isCornerTile) == 0) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('No solution found');
+            // @codeCoverageIgnoreEnd
         }
         $ans1 = array_product(array_keys($this->isCornerTile));
         // ---------- Part 2
@@ -97,12 +99,16 @@ final class Aoc2020Day20 extends SolutionBase
             }
         }
         if (!$result) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('No solution found');
+            // @codeCoverageIgnoreEnd
         }
         // @phpstan-ignore-next-line
         if (self::DEBUG) {
+            // @codeCoverageIgnoreStart
             echo '--- Reconstructed tiles:', PHP_EOL;
             $this->printDebugImage();
+            // @codeCoverageIgnoreEnd
         }
         $image = Image::fromGridTile($this->gridTile, $this->gridPos);
         $monster = Image::fromStrings(self::MONSTER);
@@ -668,8 +674,10 @@ final class Image
         ));
         // @phpstan-ignore-next-line
         if (Aoc2020Day20::DEBUG) {
+            // @codeCoverageIgnoreStart
             echo '--- Image with proper orientation:', PHP_EOL;
             $bestImg->printImage();
+            // @codeCoverageIgnoreEnd
         }
         return $total - $best;
     }

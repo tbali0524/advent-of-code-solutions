@@ -90,7 +90,9 @@ final class Aoc2020Day16 extends SolutionBase
             uasort($posValidFields, fn (array $a, array $b): int => count($a) <=> count($b));
             $idxPos = array_key_first($posValidFields);
             if (count($posValidFields[$idxPos]) != 1) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             $idxField = array_key_first($posValidFields[$idxPos]);
             $posToFieldMap[$idxPos] = $idxField;
