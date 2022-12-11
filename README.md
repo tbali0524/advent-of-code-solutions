@@ -5,6 +5,7 @@
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
 * [Puzzle list](puzzles.md) with topics and my completion status
+* Link to this repo on [GitHub](https://github.com/tbali0524/advent-of-code-solutions)
 
 ## Installation
 

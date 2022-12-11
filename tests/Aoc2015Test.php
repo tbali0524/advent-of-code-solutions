@@ -84,6 +84,31 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day01
+     * @covers \TBali\Aoc\SolutionBase
+     */
+    public function testDay01InvalidInputFile1(): void
+    {
+        $solver = new Aoc2015Day01();
+        $baseFileName = 'input/2014/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $this->expectException(\Exception::class);
+        $input = $solver->readInput($baseFileName . '.txt');
+    }
+
+    /**
+     * @covers \TBali\Aoc2015\Aoc2015Day01
+     * @covers \TBali\Aoc\SolutionBase
+     */
+    public function testDay01InvalidInputFile2(): void
+    {
+        $solver = new Aoc2015Day01();
+        $baseFileName = 'tests/empty-input';
+        $this->expectException(\Exception::class);
+        $input = $solver->readInput($baseFileName . '.txt');
+    }
+
     // --------------------------------------------------------------------
 
     /**

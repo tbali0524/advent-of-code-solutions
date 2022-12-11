@@ -138,9 +138,14 @@ abstract class SolutionBase implements Solution
      */
     final public static function readInput(string $fileName): array
     {
+        if (!file_exists($fileName)) {
+            throw new \Exception('Cannot open input file: ' . $fileName);
+        }
         $handle = fopen($fileName, 'r');
         if ($handle === false) {
-            throw new \Exception('Cannot load input file: ' . $fileName);
+            // @codeCoverageIgnoreStart
+            throw new \Exception('Cannot open input file: ' . $fileName);
+            // @codeCoverageIgnoreEnd
         }
         $input = [];
         while (true) {
