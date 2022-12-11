@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Starting again from the initial state in your puzzle input, what is the level of monkey business
  *         after 10000 rounds?
  *
+ * Topics: game simulation
+ *
  * @see https://adventofcode.com/2022/day/11
  */
 final class Aoc2022Day11 extends SolutionBase

@@ -2,18 +2,21 @@
 
 ## Seasons
 
-|Done?|Year|
-|:---:|----|
-|  +  |2015|
-|  +  |2016|
-|part.|2017|
-|     |2018|
-|     |2019|
-|  +  |2020|
-|     |2021|
-|part.|2022|
+|Year         |Status|
+|-------------|:-----|
+|[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
+|[2017](#2017)|![5 days](https://img.shields.io/badge/days%20completed-5-yellow)|
+|[2018](#2018)| |
+|[2019](#2019)| |
+|[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
+|[2021](#2021)| |
+|[2022](#2022)|![11 days](https://img.shields.io/badge/days%20completed-11-yellow)|
+|__Total__|![188 stars](https://img.shields.io/badge/stars%20⭐-188-green)|
 
 ## Puzzles
+
+### 2015
 
 |Done?|Year|Day| Title                                    | Topics   |
 |:---:|----|--:|:-----------------------------------------|:---------|
@@ -42,6 +45,11 @@
 |  +  |2015| 23|Opening the Turing Lock                   |assembly simulation
 |  +  |2015| 24|It Hangs in the Balance                   |
 |  +  |2015| 25|Let It Snow                               |LCG, linear congruence
+
+### 2016
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2016|  1|No Time for a Taxicab                     |
 |  +  |2016|  2|Bathroom Security                         |walk simulation
 |  +  |2016|  3|Squares With Three Sides                  |
@@ -67,6 +75,11 @@
 |  +  |2016| 23|Safe Cracking                             |assembly simulation
 |  +  |2016| 24|Air Duct Spelunking                       |BFS
 |  +  |2016| 25|Clock Signal                              |assembly simulation
+
+### 2017
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2017|  1|Inverse Captcha                           |
 |  +  |2017|  2|Corruption Checksum                       |
 |  +  |2017|  3|Spiral Memory                             |
@@ -92,6 +105,11 @@
 |     |2017| 23|Coprocessor Conflagration                 |
 |     |2017| 24|Electromagnetic Moat                      |
 |     |2017| 25|The Halting Problem                       |
+
+### 2018
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2018|  1|Chronal Calibration                       |
 |     |2018|  2|Inventory Management System               |
 |     |2018|  3|No Matter How You Slice It                |
@@ -117,6 +135,11 @@
 |     |2018| 23|Experimental Emergency Teleportation      |
 |     |2018| 24|Immune System Simulator 20XX              |
 |     |2018| 25|Four-Dimensional Adventure                |
+
+### 2019
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2019|  1|The Tyranny of the Rocket Equation        |
 |     |2019|  2|1202 Program Alarm                        |
 |     |2019|  3|Crossed Wires                             |
@@ -142,6 +165,11 @@
 |     |2019| 23|Category Six                              |
 |     |2019| 24|Planet of Discord                         |
 |     |2019| 25|Cryostasis                                |
+
+### 2020
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2020|  1|Report Repair                             |
 |  +  |2020|  2|Password Philosophy                       |string validation
 |  +  |2020|  3|Toboggan Trajectory                       |
@@ -167,6 +195,11 @@
 |  +  |2020| 23|Crab Cups                                 |game simulation
 |  +  |2020| 24|Lobby Layout                              |walking simulator on hex grid, Conway's Game of Life
 |  +  |2020| 25|Combo Breaker                             |asymmetric key encryption
+
+### 2021
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2021|  1|Sonar Sweep                               |
 |     |2021|  2|Dive!                                     |
 |     |2021|  3|Binary Diagnostic                         |
@@ -192,6 +225,11 @@
 |     |2021| 23|Amphipod                                  |
 |     |2021| 24|Arithmetic Logic Unit                     |
 |     |2021| 25|Sea Cucumber                              |
+
+### 2022
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2022|  1|Calorie Counting                          |
 |  +  |2022|  2|Rock Paper Scissors                       |
 |  +  |2022|  2|Rucksack Reorganization                   |
