@@ -15,6 +15,7 @@ use TBali\Aoc2022\Aoc2022Day07;
 use TBali\Aoc2022\Aoc2022Day08;
 use TBali\Aoc2022\Aoc2022Day09;
 use TBali\Aoc2022\Aoc2022Day10;
+use TBali\Aoc2022\Aoc2022Day11;
 
 /**
  * Unit tests for Advent of Code season 2022.
@@ -464,6 +465,49 @@ final class Aoc2022Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day11
+     */
+    public function testDay11Example1(): void
+    {
+        $solver = new Aoc2022Day11();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day11
+     */
+    public function testDay11(): void
+    {
+        $solver = new Aoc2022Day11();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day11
+     */
+    public function testDay11InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day11();
+        $input = ['Monkey 0:'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
