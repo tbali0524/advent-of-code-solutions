@@ -1,0 +1,3499 @@
+Monkey 0:
+  Starting items: 153, 314, 513, 952, 1240, 1896, 3089, 4277, 4396, 4881, 5059, 5534, 5649, 5889, 6208, 6433, 6714, 7434, 7737, 8839, 8933, 9512, 9609, 9640, 9789
+  Operation: new = old + 49
+  Test: divisible by 341
+    If true: throw to monkey 166
+    If false: throw to monkey 2
+
+Monkey 1:
+  Starting items: 533, 633, 797, 808, 1225, 2201, 2726, 3618, 4289, 4716, 6434, 6524, 6559, 7046, 7713, 8533, 8549, 8638
+  Operation: new = old * 36413268
+  Test: divisible by 31
+    If true: throw to monkey 164
+    If false: throw to monkey 4
+
+Monkey 2:
+  Starting items: 119, 1050, 1274, 1469, 1477, 1978, 2743, 3159, 5008, 5236, 5413, 5472, 5634, 6585, 6809, 7991, 8077
+  Operation: new = old * 275147713
+  Test: divisible by 775
+    If true: throw to monkey 282
+    If false: throw to monkey 4
+
+Monkey 3:
+  Starting items: 2, 2129, 2534, 2645, 2745, 3015, 3919, 4456, 4536, 5142, 5144, 5145, 6341, 6517, 7075, 7550, 7795, 8185, 9048, 9263, 9354, 9405
+  Operation: new = old * old
+  Test: divisible by 70
+    If true: throw to monkey 357
+    If false: throw to monkey 7
+
+Monkey 4:
+  Starting items: 171, 1075, 1341, 2133, 2361, 3484, 4124, 4181, 4958, 5291, 5361, 5516, 6000, 6046, 6068, 6148, 6674
+  Operation: new = old * 776962792
+  Test: divisible by 124
+    If true: throw to monkey 313
+    If false: throw to monkey 5
+
+Monkey 5:
+  Starting items: 811, 826, 996, 1326, 2646, 3020, 3232, 3236, 3278, 4475, 5116, 5949, 6942, 8223, 8435, 8664, 8976, 9463, 9472, 9881
+  Operation: new = old * 468884568
+  Test: divisible by 403
+    If true: throw to monkey 59
+    If false: throw to monkey 6
+
+Monkey 6:
+  Starting items: 33, 250, 320, 3943, 4013, 4569, 5192, 6135, 6494, 7319, 7637, 7941, 8280, 8506, 9084, 9183, 9725
+  Operation: new = old * 782966708
+  Test: divisible by 10
+    If true: throw to monkey 234
+    If false: throw to monkey 7
+
+Monkey 7:
+  Starting items: 228, 432, 2126, 2180, 2380, 3049, 3332, 4063, 4409, 4590, 4887, 5197, 5290, 5558, 6096, 6571, 8351, 8430, 8712, 8912
+  Operation: new = old * 246095773
+  Test: divisible by 13
+    If true: throw to monkey 499
+    If false: throw to monkey 10
+
+Monkey 8:
+  Starting items: 24, 1073, 1619, 1814, 1835, 2291, 2379, 2928, 3413, 4209, 4732, 4834, 5155, 5410, 6071, 6404, 6689, 7501, 7897, 8231, 9090, 9197, 9732
+  Operation: new = old * old
+  Test: divisible by 52
+    If true: throw to monkey 274
+    If false: throw to monkey 9
+
+Monkey 9:
+  Starting items: 690, 1763, 2297, 2406, 2730, 2881, 2995, 3150, 3477, 3490, 4176, 5038, 5043, 5418, 5675, 6118, 6713, 6825, 6828, 6939, 7370, 8500, 9132, 9250, 9501, 9588
+  Operation: new = old * 595240752
+  Test: divisible by 143
+    If true: throw to monkey 425
+    If false: throw to monkey 10
+
+Monkey 10:
+  Starting items: 802, 873, 1411, 1640, 1829, 2667, 3621, 3646, 3675, 3995, 4224, 4474, 5442, 6442, 6544, 6757, 6818, 7424, 7491, 7996, 8109, 8629, 8692, 9130, 9278, 9483, 9893
+  Operation: new = old * 98303969
+  Test: divisible by 26
+    If true: throw to monkey 263
+    If false: throw to monkey 13
+
+Monkey 11:
+  Starting items: 710, 1259, 1332, 1600, 2581, 2937, 3051, 4130, 6397, 6631, 7053, 7602, 8516
+  Operation: new = old * 547813428
+  Test: divisible by 22
+    If true: throw to monkey 92
+    If false: throw to monkey 13
+
+Monkey 12:
+  Starting items: 73, 1238, 1364, 1549, 1812, 2691, 3993, 5079, 5345, 6239, 6734, 6795, 6863, 7107, 7189, 7229, 8401, 8747, 8878, 9121, 9490, 9696, 9958
+  Operation: new = old * old
+  Test: divisible by 806
+    If true: throw to monkey 50
+    If false: throw to monkey 34
+
+Monkey 13:
+  Starting items: 71, 194, 890, 1485, 3167, 4080, 4325, 4471, 5000, 5395, 6196, 6530, 7490, 8541, 8952, 9154, 9372
+  Operation: new = old * 968737979
+  Test: divisible by 62
+    If true: throw to monkey 295
+    If false: throw to monkey 14
+
+Monkey 14:
+  Starting items: 77, 1244, 1741, 2316, 3163, 3847, 4312, 4380, 5336, 5497, 5688, 5988, 6474, 7356, 7673, 8388, 8443, 8737, 9172, 9550
+  Operation: new = old * 497658617
+  Test: divisible by 385
+    If true: throw to monkey 408
+    If false: throw to monkey 15
+
+Monkey 15:
+  Starting items: 356, 1938, 2407, 3863, 6293, 6487, 9643, 9975
+  Operation: new = old * old
+  Test: divisible by 175
+    If true: throw to monkey 106
+    If false: throw to monkey 16
+
+Monkey 16:
+  Starting items: 20, 233, 364, 604, 613, 822, 993, 1226, 1237, 1467, 1479, 2227, 3322, 3992, 4053, 4238, 4352, 4747, 4778, 4817, 6250, 7704, 8415, 8497, 9854
+  Operation: new = old * 594185232
+  Test: divisible by 5
+    If true: throw to monkey 172
+    If false: throw to monkey 17
+
+Monkey 17:
+  Starting items: 182, 253, 402, 1484, 2013, 2577, 2808, 2843, 3005, 5030, 5033, 5471, 5837, 6242, 6528, 6604, 7225, 8059, 8504, 8539, 8723, 9178
+  Operation: new = old + 72
+  Test: divisible by 286
+    If true: throw to monkey 161
+    If false: throw to monkey 18
+
+Monkey 18:
+  Starting items: 302, 640, 844, 1172, 1530, 2025, 2513, 2640, 2721, 3944, 3986, 5111, 5586, 6262, 6411, 6912, 7227, 7892, 8441, 8476, 8754, 9052, 9243, 9314, 9613, 9636, 9781
+  Operation: new = old * old
+  Test: divisible by 4433
+    If true: throw to monkey 73
+    If false: throw to monkey 20
+
+Monkey 19:
+  Starting items: 133, 269, 685, 777, 1012, 2454, 3210, 4395, 4998, 5411, 5788, 6483, 6627, 6846, 7211, 7214, 8027, 8520
+  Operation: new = old * 877061696
+  Test: divisible by 31
+    If true: throw to monkey 417
+    If false: throw to monkey 26
+
+Monkey 20:
+  Starting items: 425, 589, 719, 1171, 1209, 1701, 2436, 3140, 3208, 3445, 3690, 3704, 5827, 5924, 6043, 6436, 6445, 7236, 7249, 7699, 7786, 7933, 8196, 8300, 8628, 8857, 9418, 9429, 9647
+  Operation: new = old + 85
+  Test: divisible by 22
+    If true: throw to monkey 5
+    If false: throw to monkey 21
+
+Monkey 21:
+  Starting items: 1080, 1090, 1427, 1464, 1509, 1989, 2424, 3359, 3582, 3922, 4186, 4598, 4751, 6325, 6847, 6999, 7361, 8159, 8446, 8994, 9060, 9202, 9234
+  Operation: new = old + 66
+  Test: divisible by 65
+    If true: throw to monkey 248
+    If false: throw to monkey 23
+
+Monkey 22:
+  Starting items: 249, 1496, 2788, 3137, 3578, 3881, 3975, 4500, 4588, 4699, 4942, 6668, 7170, 7480, 7698, 9307
+  Operation: new = old * 407856491
+  Test: divisible by 5
+    If true: throw to monkey 11
+    If false: throw to monkey 23
+
+Monkey 23:
+  Starting items: 225, 884, 1133, 1135, 1323, 2976, 3628, 3639, 4085, 4216, 4343, 4415, 5107, 5140, 6016, 6468, 7483, 9016, 9477, 9575, 9740
+  Operation: new = old + 99
+  Test: divisible by 2
+    If true: throw to monkey 190
+    If false: throw to monkey 24
+
+Monkey 24:
+  Starting items: 347, 1139, 1264, 1819, 1823, 1982, 2600, 3676, 6965, 7238, 7362, 8136, 8409, 8427, 8632, 8773, 9264
+  Operation: new = old * 937754169
+  Test: divisible by 65
+    If true: throw to monkey 163
+    If false: throw to monkey 25
+
+Monkey 25:
+  Starting items: 210, 681, 1933, 1945, 2098, 2163, 2337, 3362, 3385, 3446, 3668, 3889, 4362, 5152, 5627, 5987, 6379, 6432, 7001, 9508, 9589
+  Operation: new = old * old
+  Test: divisible by 35
+    If true: throw to monkey 170
+    If false: throw to monkey 38
+
+Monkey 26:
+  Starting items: 120, 372, 1532, 1609, 2123, 3144, 3860, 3869, 3974, 4012, 5553, 6053, 6192, 6381, 8122, 9629
+  Operation: new = old * 126797921
+  Test: divisible by 2
+    If true: throw to monkey 268
+    If false: throw to monkey 27
+
+Monkey 27:
+  Starting items: 510, 1204, 1314, 1686, 1747, 2425, 2560, 2911, 3022, 3366, 3535, 3904, 4052, 4482, 4490, 5288, 5310, 5343, 5791, 5804, 6132, 6359, 6933, 7481, 8420, 8453, 9074, 9163, 9830
+  Operation: new = old * 444389074
+  Test: divisible by 52
+    If true: throw to monkey 403
+    If false: throw to monkey 28
+
+Monkey 28:
+  Starting items: 1, 424, 842, 1031, 1277, 2400, 2434, 2660, 3853, 3873, 4263, 4673, 5985, 6317, 6396, 6413, 6695, 6733, 6915, 7279, 8291, 8757, 9315, 9755
+  Operation: new = old + old
+  Test: divisible by 455
+    If true: throw to monkey 65
+    If false: throw to monkey 29
+
+Monkey 29:
+  Starting items: 259, 543, 1654, 1828, 2515, 2837, 2842, 2875, 3623, 3916, 4187, 5160, 5328, 6263, 6353, 6787, 6899, 8069, 8434, 8465, 9259, 9374, 9596, 9945
+  Operation: new = old * 392567112
+  Test: divisible by 7
+    If true: throw to monkey 20
+    If false: throw to monkey 30
+
+Monkey 30:
+  Starting items: 482, 752, 1664, 2669, 3136, 3719, 3812, 4160, 4689, 5329, 6629, 6974, 7096, 7646, 8640, 8935
+  Operation: new = old + 38
+  Test: divisible by 7
+    If true: throw to monkey 212
+    If false: throw to monkey 31
+
+Monkey 31:
+  Starting items: 280, 622, 1011, 1507, 1576, 1681, 1953, 2878, 2951, 3050, 3557, 3892, 4117, 4770, 5190, 5944, 7028, 7085, 7267, 7658, 7710, 7728, 8051, 8318, 8561, 8882, 8896, 9072, 9305
+  Operation: new = old * 195096895
+  Test: divisible by 31
+    If true: throw to monkey 317
+    If false: throw to monkey 32
+
+Monkey 32:
+  Starting items: 468, 545, 770, 790, 1223, 1730, 1894, 2014, 2209, 5173, 5403, 5778, 6415, 6458, 7961, 7979, 8146, 8483, 9000, 9139, 9222, 9434, 9574, 9992
+  Operation: new = old * 454410597
+  Test: divisible by 31
+    If true: throw to monkey 498
+    If false: throw to monkey 33
+
+Monkey 33:
+  Starting items: 353, 586, 793, 1071, 1166, 1649, 1850, 2873, 3657, 3706, 3950, 5383, 5662, 5843, 5873, 6054, 7397, 7796, 8665, 8908, 9959
+  Operation: new = old * 61903214
+  Test: divisible by 25
+    If true: throw to monkey 100
+    If false: throw to monkey 34
+
+Monkey 34:
+  Starting items: 113, 334, 417, 539, 691, 787, 1832, 1873, 2154, 2166, 2237, 2269, 3553, 3567, 4627, 4690, 5588, 5780, 6315, 7026, 7112, 7247, 7475, 8213, 8557, 8659, 9712
+  Operation: new = old * 265995743
+  Test: divisible by 31
+    If true: throw to monkey 406
+    If false: throw to monkey 42
+
+Monkey 35:
+  Starting items: 825, 1199, 2469, 2552, 2757, 3426, 3585, 4086, 4270, 4448, 4480, 4739, 4933, 6154, 6705, 7596, 8017, 8507, 8850
+  Operation: new = old * old
+  Test: divisible by 26
+    If true: throw to monkey 278
+    If false: throw to monkey 36
+
+Monkey 36:
+  Starting items: 1196, 1625, 2533, 2589, 3729, 4911, 4921, 5781, 5904, 7449, 8312, 8462, 9638
+  Operation: new = old * 445557904
+  Test: divisible by 155
+    If true: throw to monkey 414
+    If false: throw to monkey 37
+
+Monkey 37:
+  Starting items: 57, 165, 308, 421, 738, 1283, 1605, 1865, 1956, 1962, 2063, 3898, 5470, 5990, 6490, 6577, 7090, 7487, 9096, 9249, 9573
+  Operation: new = old * 16320463
+  Test: divisible by 455
+    If true: throw to monkey 439
+    If false: throw to monkey 38
+
+Monkey 38:
+  Starting items: 30, 173, 846, 1130, 2040, 2642, 3323, 3355, 4087, 4509, 4809, 6029, 6372, 6679, 7190, 7237, 7453, 8598, 9577
+  Operation: new = old * 555047130
+  Test: divisible by 5
+    If true: throw to monkey 492
+    If false: throw to monkey 39
+
+Monkey 39:
+  Starting items: 650, 906, 1281, 1637, 2678, 3817, 4016, 4645, 4847, 7601, 9271
+  Operation: new = old * 227915823
+  Test: divisible by 14
+    If true: throw to monkey 228
+    If false: throw to monkey 41
+
+Monkey 40:
+  Starting items: 164, 267, 2077, 2112, 2630, 2791, 3283, 3525, 3765, 4232, 4392, 4571, 5090, 5331, 5907, 5916, 5922, 6364, 9071, 9639, 9843
+  Operation: new = old + 42
+  Test: divisible by 434
+    If true: throw to monkey 259
+    If false: throw to monkey 41
+
+Monkey 41:
+  Starting items: 39, 360, 1843, 2724, 3609, 4449, 5896, 6425, 7388, 9175, 9334, 9503
+  Operation: new = old * 50327751
+  Test: divisible by 13
+    If true: throw to monkey 461
+    If false: throw to monkey 44
+
+Monkey 42:
+  Starting items: 714, 750, 820, 863, 1315, 1415, 1650, 1652, 1793, 2444, 3552, 4220, 4660, 4843, 5315, 6302, 7301, 7523, 7884, 7921, 8358, 8627, 9631, 9782, 9904
+  Operation: new = old * 301379076
+  Test: divisible by 13
+    If true: throw to monkey 455
+    If false: throw to monkey 43
+
+Monkey 43:
+  Starting items: 129, 749, 1175, 1908, 1979, 2251, 2343, 3466, 4403, 4972, 6232, 6532, 6655, 7411, 8295, 8387, 8530, 8915, 8948, 9799, 9933, 9963
+  Operation: new = old * 837352817
+  Test: divisible by 31
+    If true: throw to monkey 101
+    If false: throw to monkey 44
+
+Monkey 44:
+  Starting items: 110, 229, 465, 474, 647, 1042, 1282, 1827, 2295, 3811, 4128, 4559, 5293, 5687, 6551, 6579, 6877, 7195, 7197, 9097, 9135, 9345, 9925
+  Operation: new = old + old
+  Test: divisible by 7
+    If true: throw to monkey 345
+    If false: throw to monkey 46
+
+Monkey 45:
+  Starting items: 76, 476, 623, 1132, 2401, 2427, 2707, 3218, 3257, 3328, 3969, 4082, 4427, 4538, 4916, 6511, 6582, 6834, 7206, 7287, 7331, 9104, 9254
+  Operation: new = old + 69
+  Test: divisible by 13
+    If true: throw to monkey 383
+    If false: throw to monkey 46
+
+Monkey 46:
+  Starting items: 0, 434, 496, 516, 1151, 1335, 1840, 2432, 2465, 2538, 3957, 4254, 4256, 4606, 5201, 6142, 6807, 6833, 6896, 7010, 7168, 7240, 7409, 7496, 8515, 9039, 9470
+  Operation: new = old * 376267184
+  Test: divisible by 2015
+    If true: throw to monkey 333
+    If false: throw to monkey 47
+
+Monkey 47:
+  Starting items: 603, 1081, 1249, 1261, 2548, 2673, 3264, 4426, 4557, 4565, 5377, 5861, 6805, 7246, 8081, 8319, 8559, 9218, 9759, 9848, 9916
+  Operation: new = old + 2
+  Test: divisible by 22
+    If true: throw to monkey 480
+    If false: throw to monkey 49
+
+Monkey 48:
+  Starting items: 146, 285, 693, 741, 947, 1163, 2031, 2041, 3212, 3833, 3841, 3948, 4742, 5934, 5984, 6158, 6929, 7008, 7254, 7326, 7513, 7828, 7947, 9478
+  Operation: new = old * 252661534
+  Test: divisible by 10
+    If true: throw to monkey 85
+    If false: throw to monkey 50
+
+Monkey 49:
+  Starting items: 492, 590, 1520, 3339, 3410, 4917, 5623, 5863, 5940, 5958, 6285, 6389, 6557, 6771, 7266, 7272, 8015, 8135, 8218, 8474, 8601, 9294, 9685, 9936
+  Operation: new = old * 963965417
+  Test: divisible by 182
+    If true: throw to monkey 132
+    If false: throw to monkey 50
+
+Monkey 50:
+  Starting items: 925, 969, 2314, 3369, 4497, 5686, 5886, 6962, 7823, 8215, 8342, 9034
+  Operation: new = old * 948370316
+  Test: divisible by 217
+    If true: throw to monkey 348
+    If false: throw to monkey 52
+
+Monkey 51:
+  Starting items: 1269, 1589, 1902, 2569, 2714, 2828, 2918, 4093, 4787, 4875, 5093, 6079, 6578, 6842, 7975, 8170, 8466, 8820, 8898, 9256, 9895
+  Operation: new = old * 276472924
+  Test: divisible by 5
+    If true: throw to monkey 448
+    If false: throw to monkey 96
+
+Monkey 52:
+  Starting items: 577, 2326, 2462, 3633, 3924, 4491, 4667, 4768, 4935, 5262, 5391, 5901, 6062, 6614, 7305, 8625, 8781, 9036, 9411
+  Operation: new = old * 798973991
+  Test: divisible by 155
+    If true: throw to monkey 412
+    If false: throw to monkey 53
+
+Monkey 53:
+  Starting items: 109, 145, 504, 628, 1026, 2038, 2926, 5018, 5106, 5606, 5879, 6080, 6212, 6343, 6405, 6453, 6704, 7687, 7909, 8375, 8804, 9273, 9316, 9536
+  Operation: new = old * old
+  Test: divisible by 55
+    If true: throw to monkey 437
+    If false: throw to monkey 56
+
+Monkey 54:
+  Starting items: 531, 1318, 1743, 2359, 2957, 2975, 3512, 3748, 4305, 4507, 4938, 5267, 5789, 6356, 8373, 8544, 8653
+  Operation: new = old * 119870577
+  Test: divisible by 2
+    If true: throw to monkey 182
+    If false: throw to monkey 55
+
+Monkey 55:
+  Starting items: 400, 470, 717, 854, 1346, 1854, 2030, 2205, 2588, 3036, 3499, 4290, 4705, 5610, 6039, 6213, 6438, 6660, 7051, 7783, 8165, 8352, 8394, 9147, 9344, 9860
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 160
+    If false: throw to monkey 56
+
+Monkey 56:
+  Starting items: 460, 2125, 2350, 2654, 2759, 2934, 3094, 3402, 3802, 4200, 4680, 5648, 6117, 6451, 6495, 6505, 6975, 7533, 8102, 9099, 9622, 9765
+  Operation: new = old * 871891932
+  Test: divisible by 65
+    If true: throw to monkey 63
+    If false: throw to monkey 60
+
+Monkey 57:
+  Starting items: 96, 261, 960, 1327, 1882, 3472, 4920, 5066, 5419, 5435, 5531, 5729, 6139, 6173, 7162, 7390, 8200, 8224, 8836, 9291, 9926
+  Operation: new = old * 995253045
+  Test: divisible by 143
+    If true: throw to monkey 118
+    If false: throw to monkey 62
+
+Monkey 58:
+  Starting items: 1254, 1878, 2339, 2595, 2910, 3331, 3358, 3723, 3730, 3759, 3905, 4175, 4298, 6159, 6168, 8178, 8211, 8241, 9012
+  Operation: new = old * 309828573
+  Test: divisible by 65
+    If true: throw to monkey 151
+    If false: throw to monkey 61
+
+Monkey 59:
+  Starting items: 935, 1921, 2053, 3549, 4622, 4882, 5449, 5784, 6812, 7268, 7394, 7837, 9082, 9571
+  Operation: new = old * 621306102
+  Test: divisible by 182
+    If true: throw to monkey 279
+    If false: throw to monkey 60
+
+Monkey 60:
+  Starting items: 1234, 1412, 2606, 3048, 3591, 3708, 3823, 5398, 5698, 6230, 6339, 6556, 6862, 7383, 7630, 8175, 8381, 8512, 8873, 9067, 9274
+  Operation: new = old + 76
+  Test: divisible by 2
+    If true: throw to monkey 321
+    If false: throw to monkey 62
+
+Monkey 61:
+  Starting items: 1064, 1669, 3030, 3161, 3207, 4873, 5264, 6221, 6580, 6859, 7257, 7693, 8333, 8396, 8397, 8592, 8593, 9941
+  Operation: new = old + 75
+  Test: divisible by 5
+    If true: throw to monkey 223
+    If false: throw to monkey 62
+
+Monkey 62:
+  Starting items: 298, 1118, 1143, 1802, 1973, 2629, 2779, 3563, 3594, 3886, 4878, 5572, 5795, 9824, 9946
+  Operation: new = old + 53
+  Test: divisible by 11
+    If true: throw to monkey 142
+    If false: throw to monkey 63
+
+Monkey 63:
+  Starting items: 673, 1482, 2078, 2755, 2810, 3286, 3403, 3495, 4237, 4573, 5602, 6424, 6670, 6672, 6888, 7152, 7577, 9722, 9996
+  Operation: new = old * 9901005
+  Test: divisible by 31
+    If true: throw to monkey 211
+    If false: throw to monkey 64
+
+Monkey 64:
+  Starting items: 1414, 1419, 1761, 3308, 4464, 5285, 5755, 5869, 5932, 6017, 6177, 6346, 6484, 7004, 7960, 8797, 8884, 9142, 9167
+  Operation: new = old * 455574633
+  Test: divisible by 7
+    If true: throw to monkey 23
+    If false: throw to monkey 65
+
+Monkey 65:
+  Starting items: 1006, 1621, 1949, 3300, 3971, 5468, 5745, 6410, 6426, 7606
+  Operation: new = old + 11
+  Test: divisible by 169
+    If true: throw to monkey 445
+    If false: throw to monkey 66
+
+Monkey 66:
+  Starting items: 1851, 1966, 2006, 2182, 4301, 5191, 5466, 5521, 6613, 6996, 7153, 7461, 8127, 9658, 9710, 9817
+  Operation: new = old * 874093514
+  Test: divisible by 65
+    If true: throw to monkey 115
+    If false: throw to monkey 67
+
+Monkey 67:
+  Starting items: 175, 932, 1058, 2236, 2321, 2447, 3597, 4253, 4487, 4649, 5421, 5460, 6342, 7091, 7219, 7832, 7857, 9228, 9288, 9837
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 208
+    If false: throw to monkey 70
+
+Monkey 68:
+  Starting items: 632, 2135, 2601, 3615, 4359, 4398, 4643, 4864, 5635, 5685, 6467, 7751, 7971, 8323, 8752, 9079, 9229, 9738, 9758, 9884
+  Operation: new = old * 448248889
+  Test: divisible by 13
+    If true: throw to monkey 202
+    If false: throw to monkey 70
+
+Monkey 69:
+  Starting items: 520, 1313, 2284, 2320, 3219, 3299, 3540, 4583, 4785, 4869, 5252, 5542, 5669, 6121, 6706, 7617, 8324, 8950, 9458
+  Operation: new = old * old
+  Test: divisible by 52
+    If true: throw to monkey 57
+    If false: throw to monkey 70
+
+Monkey 70:
+  Starting items: 338, 616, 809, 831, 874, 973, 1266, 1548, 2551, 2639, 2924, 4159, 5198, 5266, 6131, 7696, 8045, 8060, 8091, 8113, 8380, 8503, 8514, 9593
+  Operation: new = old * 157722257
+  Test: divisible by 403
+    If true: throw to monkey 310
+    If false: throw to monkey 72
+
+Monkey 71:
+  Starting items: 9, 900, 1125, 1191, 2051, 2132, 2347, 3115, 3139, 3918, 4010, 4265, 4870, 5386, 5702, 5966, 6037, 6418, 7787, 8028, 8299, 8780, 9209, 9398, 9421
+  Operation: new = old * 952680224
+  Test: divisible by 310
+    If true: throw to monkey 265
+    If false: throw to monkey 72
+
+Monkey 72:
+  Starting items: 918, 1045, 1881, 1919, 2501, 2858, 3059, 3268, 3421, 3705, 3998, 4042, 4596, 5041, 5937, 6873, 7230, 7692, 9311, 9798
+  Operation: new = old + 42
+  Test: divisible by 4805
+    If true: throw to monkey 261
+    If false: throw to monkey 73
+
+Monkey 73:
+  Starting items: 80, 219, 278, 328, 528, 1991, 2220, 2390, 2750, 3803, 4668, 4838, 5098, 6041, 7106, 7797, 7903, 9520
+  Operation: new = old * old
+  Test: divisible by 403
+    If true: throw to monkey 355
+    If false: throw to monkey 75
+
+Monkey 74:
+  Starting items: 552, 706, 715, 1109, 1676, 2652, 3879, 3903, 4191, 4273, 5200, 5651, 6902, 8449, 8622
+  Operation: new = old * 530342436
+  Test: divisible by 1183
+    If true: throw to monkey 469
+    If false: throw to monkey 76
+
+Monkey 75:
+  Starting items: 272, 1593, 1638, 2682, 2784, 2969, 3132, 3753, 3822, 4131, 4408, 5587, 6264, 6462, 9560
+  Operation: new = old * 541001070
+  Test: divisible by 2015
+    If true: throw to monkey 158
+    If false: throw to monkey 76
+
+Monkey 76:
+  Starting items: 81, 2290, 3158, 3434, 3482, 4534, 4744, 4860, 4988, 5089, 5125, 8822, 8946
+  Operation: new = old * old
+  Test: divisible by 961
+    If true: throw to monkey 126
+    If false: throw to monkey 88
+
+Monkey 77:
+  Starting items: 116, 445, 1325, 1958, 2458, 2476, 2792, 3778, 3834, 4292, 4519, 4953, 4964, 5487, 5582, 5763, 5819, 6569, 6607, 6900, 7497, 7568, 7801, 8448, 8962, 9476
+  Operation: new = old * old
+  Test: divisible by 5239
+    If true: throw to monkey 465
+    If false: throw to monkey 78
+
+Monkey 78:
+  Starting items: 1413, 1807, 2656, 3105, 3590, 4568, 4661, 4769, 5086, 5164, 5499, 6998, 7187, 8944, 9457
+  Operation: new = old * old
+  Test: divisible by 806
+    If true: throw to monkey 470
+    If false: throw to monkey 79
+
+Monkey 79:
+  Starting items: 765, 851, 1078, 1089, 1396, 1555, 1559, 1658, 2340, 2821, 2880, 3010, 3172, 5305, 5715, 6143, 7558, 7717, 9569
+  Operation: new = old + 27
+  Test: divisible by 455
+    If true: throw to monkey 429
+    If false: throw to monkey 80
+
+Monkey 80:
+  Starting items: 1514, 1817, 2420, 2659, 3407, 4072, 4306, 4853, 5239, 5283, 5369, 6066, 6755, 7350, 7508, 7753, 7755, 8171, 8378, 9659
+  Operation: new = old * 958147245
+  Test: divisible by 35
+    If true: throw to monkey 350
+    If false: throw to monkey 81
+
+Monkey 81:
+  Starting items: 287, 561, 564, 637, 1678, 1756, 2032, 3418, 4129, 4157, 4371, 4391, 5203, 5306, 6772, 6943, 8064, 8277, 8310, 8587, 8707, 8870, 9020, 9257, 9419, 9705
+  Operation: new = old + 68
+  Test: divisible by 10
+    If true: throw to monkey 299
+    If false: throw to monkey 82
+
+Monkey 82:
+  Starting items: 436, 1324, 1611, 1656, 2142, 2889, 3177, 3653, 4214, 4424, 4735, 5128, 5247, 5429, 6246, 6297, 6769, 8973, 9279, 9993
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 266
+    If false: throw to monkey 83
+
+Monkey 83:
+  Starting items: 283, 383, 869, 1096, 1165, 1584, 1788, 2194, 2276, 2540, 3042, 3066, 3245, 4287, 4463, 4793, 4978, 5154, 5867, 6860, 7173, 7534, 7963, 9285, 9686, 9739
+  Operation: new = old + 38
+  Test: divisible by 2
+    If true: throw to monkey 267
+    If false: throw to monkey 84
+
+Monkey 84:
+  Starting items: 43, 478, 611, 1359, 1390, 1801, 2016, 2072, 2141, 2282, 2554, 3409, 4412, 4440, 5917, 6075, 6113, 6869, 7203, 8335, 9022, 9455, 9567
+  Operation: new = old * old
+  Test: divisible by 25
+    If true: throw to monkey 10
+    If false: throw to monkey 85
+
+Monkey 85:
+  Starting items: 169, 477, 830, 1219, 4350, 4721, 4815, 5678, 5766, 5880, 5883, 6572, 7056, 7099, 7829, 8360, 8977, 8997
+  Operation: new = old * 226397757
+  Test: divisible by 11
+    If true: throw to monkey 82
+    If false: throw to monkey 86
+
+Monkey 86:
+  Starting items: 97, 967, 1367, 1535, 1857, 2042, 2301, 2457, 2572, 2628, 2786, 3825, 3865, 4777, 5072, 5915, 6084, 6756, 7177, 7341, 8070, 8405, 8424, 8565, 9003, 9986
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 239
+    If false: throw to monkey 87
+
+Monkey 87:
+  Starting items: 537, 1156, 1646, 1855, 2521, 3980, 5335, 6369, 7518, 7798, 7973, 8010, 8354, 8534, 9899, 9909, 9915
+  Operation: new = old * 878534345
+  Test: divisible by 2
+    If true: throw to monkey 157
+    If false: throw to monkey 88
+
+Monkey 88:
+  Starting items: 818, 1229, 1780, 1783, 3845, 4119, 4555, 5928, 6366, 6737, 7368, 8012, 8039, 8392, 8642, 9944, 9970
+  Operation: new = old * 539772387
+  Test: divisible by 715
+    If true: throw to monkey 24
+    If false: throw to monkey 90
+
+Monkey 89:
+  Starting items: 680, 930, 1272, 2385, 2695, 2931, 4719, 4828, 5416, 5794, 6617, 6658, 6884, 7336, 8268, 9318, 9473, 9752
+  Operation: new = old * 801021988
+  Test: divisible by 403
+    If true: throw to monkey 370
+    If false: throw to monkey 90
+
+Monkey 90:
+  Starting items: 216, 936, 2383, 2489, 4406, 4584, 4750, 6218, 6450, 7344, 7404, 7447, 7495, 7651, 7816, 8395, 9247, 9319, 9793
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 111
+    If false: throw to monkey 91
+
+Monkey 91:
+  Starting items: 556, 1251, 2738, 2905, 3184, 3837, 4097, 4225, 6307, 8031, 8416, 8608, 9955
+  Operation: new = old * 833348631
+  Test: divisible by 13
+    If true: throw to monkey 364
+    If false: throw to monkey 92
+
+Monkey 92:
+  Starting items: 487, 2156, 2734, 3261, 3524, 4351, 4366, 5047, 5286, 6775, 6914, 7655, 8186, 8831, 9408, 9786
+  Operation: new = old * 27787695
+  Test: divisible by 5
+    If true: throw to monkey 378
+    If false: throw to monkey 93
+
+Monkey 93:
+  Starting items: 56, 262, 501, 977, 1830, 1907, 2050, 2852, 2996, 3118, 3216, 4150, 4432, 4528, 4640, 4724, 5004, 5743, 5846, 6272, 6421, 6701, 6761, 7270, 7706, 8035, 8085, 8696, 9321, 9337, 9648
+  Operation: new = old * 832282665
+  Test: divisible by 1001
+    If true: throw to monkey 435
+    If false: throw to monkey 94
+
+Monkey 94:
+  Starting items: 38, 776, 1806, 2173, 2216, 2264, 2285, 2705, 2799, 3635, 4889, 4902, 5237, 5532, 5979, 6081, 6624, 6835, 6994, 7429, 7520, 7749, 8376, 8610, 8927
+  Operation: new = old * 48348668
+  Test: divisible by 11
+    If true: throw to monkey 320
+    If false: throw to monkey 96
+
+Monkey 95:
+  Starting items: 176, 1060, 1425, 1952, 2498, 2851, 3377, 3673, 4361, 4841, 5549, 7196, 8675, 8875, 9129, 9362, 9768
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 21
+    If false: throw to monkey 96
+
+Monkey 96:
+  Starting items: 902, 1222, 1307, 1586, 1794, 2169, 2632, 2758, 2820, 3214, 3906, 5224, 5228, 7442, 8123, 8716, 8809, 9289, 9410
+  Operation: new = old * old
+  Test: divisible by 26
+    If true: throw to monkey 178
+    If false: throw to monkey 97
+
+Monkey 97:
+  Starting items: 1043, 1104, 2033, 2933, 3352, 3511, 3684, 4628, 5213, 5560, 6699, 6746, 7286, 7735, 8018, 8305, 8954, 8992, 9086, 9816, 9918
+  Operation: new = old * 514954129
+  Test: divisible by 403
+    If true: throw to monkey 83
+    If false: throw to monkey 98
+
+Monkey 98:
+  Starting items: 656, 881, 940, 1162, 2846, 2872, 3586, 3682, 3768, 6022, 6236, 7019, 7256, 8852, 8905, 9924
+  Operation: new = old * 322234142
+  Test: divisible by 26
+    If true: throw to monkey 427
+    If false: throw to monkey 100
+
+Monkey 99:
+  Starting items: 377, 1242, 1750, 1839, 3088, 3697, 5219, 5233, 5263, 6050, 6649, 7911, 8404, 8639, 9010, 9626
+  Operation: new = old * 626960870
+  Test: divisible by 7
+    If true: throw to monkey 221
+    If false: throw to monkey 101
+
+Monkey 100:
+  Starting items: 407, 610, 989, 1659, 2071, 3448, 4177, 4638, 4842, 4871, 5872, 6576, 6936, 6947, 7315, 7847, 7895, 8745, 9336, 9757
+  Operation: new = old * 53208722
+  Test: divisible by 31
+    If true: throw to monkey 169
+    If false: throw to monkey 102
+
+Monkey 101:
+  Starting items: 137, 472, 814, 1311, 1355, 1522, 2199, 2214, 2389, 2593, 2620, 4167, 4494, 4567, 5399, 7271, 7510, 9145
+  Operation: new = old * 546017081
+  Test: divisible by 130
+    If true: throw to monkey 262
+    If false: throw to monkey 102
+
+Monkey 102:
+  Starting items: 506, 1438, 2574, 2836, 3901, 4182, 4707, 5351, 5691, 6779, 7349, 8160, 8735, 8959, 9383
+  Operation: new = old * 66155305
+  Test: divisible by 2821
+    If true: throw to monkey 394
+    If false: throw to monkey 103
+
+Monkey 103:
+  Starting items: 921, 1182, 1448, 2509, 3381, 3850, 3897, 4018, 4636, 5015, 5209, 5375, 5681, 6748, 7143, 7334, 8034, 8789, 8987, 9431, 9890
+  Operation: new = old + 94
+  Test: divisible by 31
+    If true: throw to monkey 342
+    If false: throw to monkey 105
+
+Monkey 104:
+  Starting items: 648, 742, 1441, 2070, 3061, 3293, 4199, 4320, 4789, 4932, 5208, 5912, 7436, 7445, 7740, 7938, 7994, 8088, 8793, 8958
+  Operation: new = old + 69
+  Test: divisible by 682
+    If true: throw to monkey 116
+    If false: throw to monkey 106
+
+Monkey 105:
+  Starting items: 380, 1351, 1515, 1772, 2115, 2649, 2895, 4098, 4162, 4342, 4454, 4537, 6644, 6989, 7005, 7504, 8826, 9169, 9645, 9950
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 305
+    If false: throw to monkey 106
+
+Monkey 106:
+  Starting items: 273, 340, 1657, 2001, 2900, 3515, 3744, 4142, 6886, 7819, 7869, 7957, 8284, 9008
+  Operation: new = old * old
+  Test: divisible by 182
+    If true: throw to monkey 240
+    If false: throw to monkey 113
+
+Monkey 107:
+  Starting items: 471, 503, 529, 1049, 1288, 1377, 1384, 1833, 1980, 2687, 2771, 3068, 7103, 7948, 8189, 9507, 9616
+  Operation: new = old * 451428568
+  Test: divisible by 62
+    If true: throw to monkey 198
+    If false: throw to monkey 108
+
+Monkey 108:
+  Starting items: 265, 455, 859, 1434, 1631, 1983, 2089, 2215, 2473, 2879, 2954, 3062, 3100, 4812, 4825, 4897, 5776, 5802, 6110, 6287, 6621, 8149, 8239, 9219
+  Operation: new = old * 157503650
+  Test: divisible by 91
+    If true: throw to monkey 398
+    If false: throw to monkey 109
+
+Monkey 109:
+  Starting items: 1436, 3374, 4020, 4511, 5135, 6056, 6820, 7118, 7221, 7405, 7671, 8478, 8819, 8979, 9677, 9791
+  Operation: new = old * old
+  Test: divisible by 110
+    If true: throw to monkey 308
+    If false: throw to monkey 111
+
+Monkey 110:
+  Starting items: 581, 627, 941, 1213, 1856, 2862, 2946, 3319, 3664, 5727, 5885, 7335, 7676, 9379, 9541, 9720
+  Operation: new = old + 71
+  Test: divisible by 26
+    If true: throw to monkey 32
+    If false: throw to monkey 111
+
+Monkey 111:
+  Starting items: 25, 198, 456, 1102, 1598, 1972, 2009, 2584, 2912, 3786, 3851, 4326, 4549, 4898, 6363, 7061, 7742, 8542
+  Operation: new = old * 254649391
+  Test: divisible by 682
+    If true: throw to monkey 277
+    If false: throw to monkey 115
+
+Monkey 112:
+  Starting items: 311, 427, 475, 919, 1180, 2959, 3073, 3794, 4192, 4533, 5260, 5815, 5964, 6010, 6521, 7836, 7950, 8535, 8777, 9510, 9877, 9885
+  Operation: new = old * 649358071
+  Test: divisible by 5
+    If true: throw to monkey 275
+    If false: throw to monkey 113
+
+Monkey 113:
+  Starting items: 187, 951, 1370, 1524, 1585, 1776, 2293, 2402, 2446, 3874, 4600, 4904, 5242, 5557, 6984, 7373, 7762, 7842, 7853, 9140, 9258, 9502
+  Operation: new = old * old
+  Test: divisible by 455
+    If true: throw to monkey 238
+    If false: throw to monkey 122
+
+Monkey 114:
+  Starting items: 448, 827, 879, 1620, 3435, 3458, 4417, 4515, 5834, 5955, 6254, 6280, 6428, 6910, 7182, 7467, 7499, 7864, 7890, 8103, 8552, 8765, 8811, 9660
+  Operation: new = old * old
+  Test: divisible by 26
+    If true: throw to monkey 426
+    If false: throw to monkey 115
+
+Monkey 115:
+  Starting items: 1111, 1869, 1898, 1971, 2114, 2575, 2943, 3277, 3763, 3771, 3965, 4334, 6141, 6261, 8548
+  Operation: new = old * 576575468
+  Test: divisible by 13
+    If true: throw to monkey 442
+    If false: throw to monkey 116
+
+Monkey 116:
+  Starting items: 104, 948, 1144, 2815, 4481, 4708, 4868, 5334, 6126, 6321, 6563, 6640, 7002, 7037, 7161, 7575, 7987, 9045
+  Operation: new = old * 369065792
+  Test: divisible by 91
+    If true: throw to monkey 415
+    If false: throw to monkey 121
+
+Monkey 117:
+  Starting items: 155, 240, 1525, 3769, 3947, 3966, 4170, 4467, 4541, 5229, 7235, 7250, 7634, 8115, 8337, 8670, 8787, 9205
+  Operation: new = old * 817985458
+  Test: divisible by 11
+    If true: throw to monkey 249
+    If false: throw to monkey 118
+
+Monkey 118:
+  Starting items: 122, 601, 1046, 2739, 3604, 4589, 4625, 5099, 5137, 6386, 7578, 7623, 8038, 8499, 8965, 8986, 9267, 9690
+  Operation: new = old * old
+  Test: divisible by 65
+    If true: throw to monkey 301
+    If false: throw to monkey 119
+
+Monkey 119:
+  Starting items: 567, 747, 2429, 2565, 2701, 3053, 3102, 3797, 4005, 4653, 4655, 4987, 5359, 5427, 6543, 7020, 7042, 7788, 8134, 8252, 8759, 9144, 9342, 9380, 9953
+  Operation: new = old * 530457823
+  Test: divisible by 403
+    If true: throw to monkey 353
+    If false: throw to monkey 120
+
+Monkey 120:
+  Starting items: 1684, 1744, 1762, 2172, 3065, 3546, 6634, 6881, 6916, 7011, 7205, 7517
+  Operation: new = old * 615720110
+  Test: divisible by 806
+    If true: throw to monkey 34
+    If false: throw to monkey 122
+
+Monkey 121:
+  Starting items: 676, 796, 1707, 1922, 2870, 4791, 5207, 5378, 5538, 6038, 6508, 6727, 6823, 6875, 7086, 7115, 7502, 8519, 9103, 9148
+  Operation: new = old + 65
+  Test: divisible by 715
+    If true: throw to monkey 495
+    If false: throw to monkey 122
+
+Monkey 122:
+  Starting items: 447, 511, 649, 806, 838, 910, 997, 1923, 2137, 2212, 2824, 3852, 4100, 4677, 4946, 5302, 5764, 6319, 6744, 6804, 7641, 7831, 7967, 8367, 9050, 9775
+  Operation: new = old * 591246918
+  Test: divisible by 10
+    If true: throw to monkey 311
+    If false: throw to monkey 125
+
+Monkey 123:
+  Starting items: 976, 1181, 1305, 1456, 2415, 2744, 3003, 5119, 5281, 6981, 7095, 8050, 9094, 9930
+  Operation: new = old * 222745136
+  Test: divisible by 5
+    If true: throw to monkey 361
+    If false: throw to monkey 124
+
+Monkey 124:
+  Starting items: 168, 378, 1538, 1928, 2079, 2676, 3002, 3198, 3274, 3306, 3430, 3468, 3818, 4088, 4416, 5234, 6615, 6991, 8469, 8802, 9378, 9794
+  Operation: new = old * old
+  Test: divisible by 4
+    If true: throw to monkey 344
+    If false: throw to monkey 126
+
+Monkey 125:
+  Starting items: 702, 2680, 3029, 3375, 3686, 3700, 3792, 4336, 4922, 5432, 5859, 6107, 6144, 6273, 7806, 7995, 8365, 8704, 8761, 8766, 8796, 9943
+  Operation: new = old * old
+  Test: divisible by 682
+    If true: throw to monkey 458
+    If false: throw to monkey 126
+
+Monkey 126:
+  Starting items: 213, 696, 876, 1164, 2085, 2200, 3037, 3242, 3532, 4077, 4341, 5168, 5212, 5261, 5814, 5913, 6758, 7597, 8961, 9203, 9442
+  Operation: new = old * 465157799
+  Test: divisible by 2
+    If true: throw to monkey 124
+    If false: throw to monkey 127
+
+Monkey 127:
+  Starting items: 675, 1159, 1499, 2046, 2073, 4294, 4335, 4484, 5712, 5905, 6252, 7009, 7181, 7433, 7722, 8517, 8748, 9960
+  Operation: new = old * 250927224
+  Test: divisible by 310
+    If true: throw to monkey 53
+    If false: throw to monkey 128
+
+Monkey 128:
+  Starting items: 292, 371, 1198, 1660, 1662, 1805, 2047, 2059, 2067, 3383, 3550, 4982, 5081, 5350, 5512, 5835, 6871, 7572, 7888, 8098, 8437, 9580
+  Operation: new = old * old
+  Test: divisible by 62
+    If true: throw to monkey 26
+    If false: throw to monkey 133
+
+Monkey 129:
+  Starting items: 27, 131, 584, 722, 878, 1583, 1861, 2768, 2796, 2965, 3197, 3241, 3336, 3411, 5123, 5182, 5481, 5570, 5876, 6063, 6601, 6906, 7343, 7805, 7870, 8399, 8736, 8981, 9363, 9764
+  Operation: new = old * 130864926
+  Test: divisible by 5
+    If true: throw to monkey 384
+    If false: throw to monkey 130
+
+Monkey 130:
+  Starting items: 369, 608, 2113, 2802, 2950, 3589, 4685, 4811, 5376, 6507, 6728, 7824, 8758, 9092
+  Operation: new = old + 73
+  Test: divisible by 7
+    If true: throw to monkey 38
+    If false: throw to monkey 136
+
+Monkey 131:
+  Starting items: 2234, 2956, 3648, 3806, 4540, 6682, 6741, 7050, 7338, 7395, 7474, 8138, 8297, 8753, 9068, 9412, 9668, 9730, 9814
+  Operation: new = old * 934652789
+  Test: divisible by 62
+    If true: throw to monkey 22
+    If false: throw to monkey 132
+
+Monkey 132:
+  Starting items: 55, 486, 636, 937, 1608, 1622, 2162, 2275, 3713, 4221, 4383, 5969, 7329, 7414, 8991, 9160, 9161
+  Operation: new = old * 381868486
+  Test: divisible by 110
+    If true: throw to monkey 453
+    If false: throw to monkey 133
+
+Monkey 133:
+  Starting items: 1003, 1674, 2305, 2510, 2709, 3267, 4121, 4582, 4595, 4980, 5498, 5854, 6830, 6979, 7192, 7666, 7761, 8144, 8488, 8865, 9293, 9400
+  Operation: new = old * 48635878
+  Test: divisible by 2387
+    If true: throw to monkey 373
+    If false: throw to monkey 134
+
+Monkey 134:
+  Starting items: 1227, 1278, 4151, 4896, 5002, 5134, 5849, 5953, 7166, 8068, 8161, 8846, 8930, 9388, 9392, 9726
+  Operation: new = old + 13
+  Test: divisible by 341
+    If true: throw to monkey 130
+    If false: throw to monkey 135
+
+Monkey 135:
+  Starting items: 625, 905, 1328, 2514, 2940, 3307, 3503, 3558, 3672, 4033, 4767, 4968, 5356, 5486, 7353, 7403, 7516, 7570, 7587, 7656, 8036, 8047, 8660, 8794, 9168, 9727, 9912
+  Operation: new = old + 23
+  Test: divisible by 5
+    If true: throw to monkey 251
+    If false: throw to monkey 136
+
+Monkey 136:
+  Starting items: 162, 659, 1897, 1955, 5088, 5752, 6360, 6513, 6623, 7068, 8119, 8194, 8244, 8255, 8589, 8856, 9176, 9281, 9804
+  Operation: new = old * old
+  Test: divisible by 143
+    If true: throw to monkey 484
+    If false: throw to monkey 137
+
+Monkey 137:
+  Starting items: 512, 1360, 1821, 2196, 2277, 2348, 2594, 3071, 3436, 3595, 3927, 4845, 6247, 6290, 7618, 7794, 7862, 7883, 8985, 9112, 9879, 9947
+  Operation: new = old + 22
+  Test: divisible by 182
+    If true: throw to monkey 213
+    If false: throw to monkey 138
+
+Monkey 138:
+  Starting items: 147, 864, 886, 1127, 1248, 1500, 2549, 3081, 4111, 4455, 5457, 5605, 5622, 6686, 7686, 8075, 8152, 8267, 9579, 9719
+  Operation: new = old * 682896610
+  Test: divisible by 385
+    If true: throw to monkey 324
+    If false: throw to monkey 139
+
+Monkey 139:
+  Starting items: 220, 297, 1016, 2219, 2271, 2322, 2338, 2496, 2904, 3542, 4040, 4623, 4763, 4835, 4886, 4950, 5447, 6052, 6089, 6203, 6811, 7263, 7306, 7790, 8854, 9545
+  Operation: new = old * 334845331
+  Test: divisible by 110
+    If true: throw to monkey 271
+    If false: throw to monkey 140
+
+Monkey 140:
+  Starting items: 1121, 1917, 1995, 2034, 2099, 2128, 2611, 2894, 3432, 4316, 4560, 4795, 5412, 5965, 6119, 6394, 7044, 7536, 8259, 8508, 8525, 8967, 9870, 9978
+  Operation: new = old + 62
+  Test: divisible by 7
+    If true: throw to monkey 343
+    If false: throw to monkey 142
+
+Monkey 141:
+  Starting items: 395, 530, 795, 909, 1385, 1552, 1722, 1948, 2263, 2568, 2722, 2754, 2869, 3114, 3666, 3824, 5307, 5864, 8257, 9324, 9969
+  Operation: new = old * 433185866
+  Test: divisible by 7
+    If true: throw to monkey 409
+    If false: throw to monkey 143
+
+Monkey 142:
+  Starting items: 143, 263, 484, 1616, 1992, 4544, 4556, 4779, 4892, 5508, 5948, 6149, 6371, 6819, 7119, 7678, 7970, 8131, 8242, 8341, 8450, 8576, 8590, 9041, 9599, 9921
+  Operation: new = old * 617022287
+  Test: divisible by 31
+    If true: throw to monkey 312
+    If false: throw to monkey 144
+
+Monkey 143:
+  Starting items: 92, 94, 386, 716, 2249, 2915, 4101, 4554, 4961, 6460, 7657, 7886, 8429, 9451
+  Operation: new = old * old
+  Test: divisible by 10
+    If true: throw to monkey 314
+    If false: throw to monkey 147
+
+Monkey 144:
+  Starting items: 1067, 1700, 1758, 2191, 3046, 3695, 4115, 4973, 4997, 5503, 5982, 6378, 7079, 7142, 7988, 8345, 8650, 9328, 9358, 9855
+  Operation: new = old * 598847437
+  Test: divisible by 50
+    If true: throw to monkey 177
+    If false: throw to monkey 146
+
+Monkey 145:
+  Starting items: 726, 1207, 2327, 2783, 2886, 4710, 4731, 5084, 5304, 6337, 7058, 7117, 7419, 7444, 8372, 8402, 8989
+  Operation: new = old + 82
+  Test: divisible by 10
+    If true: throw to monkey 230
+    If false: throw to monkey 146
+
+Monkey 146:
+  Starting items: 103, 396, 437, 694, 1768, 2235, 2270, 2303, 2865, 3016, 3388, 3486, 3554, 3762, 3982, 4099, 4581, 4602, 4765, 4894, 4994, 6034, 6625, 6700, 6997, 7680, 8279, 9066, 9093, 9576
+  Operation: new = old * old
+  Test: divisible by 154
+    If true: throw to monkey 84
+    If false: throw to monkey 150
+
+Monkey 147:
+  Starting items: 1340, 1706, 2225, 3584, 3820, 4076, 4169, 4985, 4992, 5055, 5231, 5250, 5847, 6051, 6837, 6907, 7524, 7792, 8156, 8361, 8467, 8674, 9193, 9236, 9260, 9621, 9667
+  Operation: new = old * 593904599
+  Test: divisible by 13
+    If true: throw to monkey 493
+    If false: throw to monkey 148
+
+Monkey 148:
+  Starting items: 485, 2206, 2312, 2539, 3093, 3127, 3577, 3643, 3798, 3960, 4429, 4989, 5330, 6006, 6106, 6663, 6992, 7352, 8177, 8281, 8685, 8996, 9232, 9401
+  Operation: new = old + old
+  Test: divisible by 5
+    If true: throw to monkey 452
+    If false: throw to monkey 149
+
+Monkey 149:
+  Starting items: 279, 782, 894, 1558, 1796, 2222, 2782, 3848, 3890, 4796, 5023, 5320, 5741, 6238, 7040, 7308, 7309, 7384, 7746, 7906, 8926, 9875
+  Operation: new = old + 70
+  Test: divisible by 4
+    If true: throw to monkey 399
+    If false: throw to monkey 175
+
+Monkey 150:
+  Starting items: 196, 597, 759, 1961, 2244, 2388, 3732, 3781, 4372, 5514, 5779, 5850, 6020, 6045, 6449, 6603, 7346, 7745, 8623, 8823, 9120, 9482, 9967
+  Operation: new = old * old
+  Test: divisible by 1705
+    If true: throw to monkey 205
+    If false: throw to monkey 163
+
+Monkey 151:
+  Starting items: 780, 801, 853, 882, 955, 1013, 1513, 1627, 1876, 1940, 2176, 2226, 2929, 2947, 3220, 3866, 4045, 5259, 5384, 6331, 8334, 8687, 8827, 9652
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 167
+    If false: throw to monkey 152
+
+Monkey 152:
+  Starting items: 207, 536, 609, 754, 832, 1200, 1287, 1366, 1811, 1942, 2202, 2541, 3741, 3815, 4317, 4698, 5042, 5058, 6097, 6610, 7077, 7151, 7215, 7391, 7479, 7632, 7714, 7908, 8418, 9080, 9188, 9557, 9966
+  Operation: new = old * old
+  Test: divisible by 20
+    If true: throw to monkey 14
+    If false: throw to monkey 153
+
+Monkey 153:
+  Starting items: 774, 2613, 2795, 3587, 4945, 5408, 6130, 7598, 7760, 8477, 8711, 8941, 9214, 9819
+  Operation: new = old * 470884472
+  Test: divisible by 10
+    If true: throw to monkey 200
+    If false: throw to monkey 154
+
+Monkey 154:
+  Starting items: 91, 151, 812, 862, 1512, 1968, 2177, 2719, 2770, 2917, 3112, 3933, 6581, 6722, 6765, 7006, 7548, 9665
+  Operation: new = old + 65
+  Test: divisible by 55
+    If true: throw to monkey 70
+    If false: throw to monkey 157
+
+Monkey 155:
+  Starting items: 1122, 1243, 1528, 1579, 1809, 2203, 3297, 3330, 3441, 3509, 3757, 4379, 5118, 6185, 6980, 7116, 7412, 7590, 8112, 8414, 8582, 9095, 9449, 9672
+  Operation: new = old * 247914158
+  Test: divisible by 130
+    If true: throw to monkey 436
+    If false: throw to monkey 156
+
+Monkey 156:
+  Starting items: 362, 1389, 2143, 2835, 3498, 3821, 3843, 4006, 4041, 4068, 4354, 5456, 5591, 6162, 6228, 6231, 6352, 6608, 8168, 8269, 8306, 8570, 8924, 9708, 9905
+  Operation: new = old * 565032596
+  Test: divisible by 62
+    If true: throw to monkey 42
+    If false: throw to monkey 197
+
+Monkey 157:
+  Starting items: 651, 1145, 1275, 1292, 1463, 2062, 3253, 4433, 5818, 5839, 5962, 6070, 6514, 6793, 7184, 7364, 9436, 9439, 9489
+  Operation: new = old * 138694461
+  Test: divisible by 31
+    If true: throw to monkey 490
+    If false: throw to monkey 158
+
+Monkey 158:
+  Starting items: 50, 132, 956, 1232, 1319, 1913, 2365, 2599, 2970, 3249, 3990, 4681, 4718, 5650, 6296, 6536, 7016, 7620, 8037, 8903, 9552
+  Operation: new = old + 89
+  Test: divisible by 10
+    If true: throw to monkey 374
+    If false: throw to monkey 159
+
+Monkey 159:
+  Starting items: 154, 944, 1019, 1271, 1595, 1787, 2612, 3840, 3970, 3987, 4011, 4489, 4912, 5035, 5491, 5893, 6351, 6575, 8174, 8294, 9695
+  Operation: new = old + 38
+  Test: divisible by 28
+    If true: throw to monkey 416
+    If false: throw to monkey 165
+
+Monkey 160:
+  Starting items: 42, 63, 114, 342, 1358, 1473, 1950, 2985, 4353, 5341, 5631, 6198, 6850, 7134, 7316, 8073, 8292, 8332, 8455, 8940, 8999, 9844
+  Operation: new = old * old
+  Test: divisible by 806
+    If true: throw to monkey 214
+    If false: throw to monkey 163
+
+Monkey 161:
+  Starting items: 731, 764, 1916, 2279, 2370, 2563, 3045, 3583, 4039, 4148, 4852, 5115, 5813, 7139, 8083, 9340, 9863, 9990
+  Operation: new = old * 604988822
+  Test: divisible by 143
+    If true: throw to monkey 58
+    If false: throw to monkey 162
+
+Monkey 162:
+  Starting items: 730, 1668, 1728, 3471, 3600, 4001, 4143, 4658, 5114, 5324, 5370, 6802, 7242, 7274, 7505, 7506, 7811, 7856, 8491, 9603, 9807, 9858
+  Operation: new = old + 76
+  Test: divisible by 310
+    If true: throw to monkey 369
+    If false: throw to monkey 164
+
+Monkey 163:
+  Starting items: 605, 1279, 1920, 2311, 2811, 3080, 3861, 4755, 4903, 5397, 5644, 5875, 6060, 6167, 7171, 7459, 7486, 7774, 8315, 8545, 8661, 8844, 8855, 8862, 9101, 9403, 9527, 9868
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 298
+    If false: throw to monkey 167
+
+Monkey 164:
+  Starting items: 399, 2181, 2342, 2466, 3608, 3938, 6387, 6470, 6535, 6892, 6941, 7104, 7500, 8195, 8932, 9007
+  Operation: new = old + 88
+  Test: divisible by 130
+    If true: throw to monkey 121
+    If false: throw to monkey 165
+
+Monkey 165:
+  Starting items: 398, 821, 1177, 1777, 2966, 3683, 3826, 4610, 5138, 5323, 5671, 6291, 6301, 6504, 7846, 8181, 8356, 8526, 8951, 9713, 9717, 9777
+  Operation: new = old * old
+  Test: divisible by 434
+    If true: throw to monkey 120
+    If false: throw to monkey 169
+
+Monkey 166:
+  Starting items: 321, 2362, 2404, 2431, 2982, 3058, 3097, 3479, 4683, 4711, 6677, 6762, 6868, 7354, 7525, 7644, 7898, 8426, 8600, 8741, 9241, 9397, 9871
+  Operation: new = old * 489770137
+  Test: divisible by 10
+    If true: throw to monkey 3
+    If false: throw to monkey 167
+
+Monkey 167:
+  Starting items: 547, 1007, 1352, 1567, 1754, 2345, 2650, 2710, 3438, 3864, 4745, 5364, 5440, 6541, 6849, 7273, 7546, 7781, 8966, 9295, 9393, 9424
+  Operation: new = old * 286355106
+  Test: divisible by 65
+    If true: throw to monkey 283
+    If false: throw to monkey 168
+
+Monkey 168:
+  Starting items: 677, 1416, 1565, 2666, 3382, 3414, 3492, 3638, 3799, 4585, 4746, 5853, 6125, 6448, 6477, 7400, 7850
+  Operation: new = old * 902531942
+  Test: divisible by 65
+    If true: throw to monkey 362
+    If false: throw to monkey 169
+
+Monkey 169:
+  Starting items: 772, 1140, 2019, 2090, 2647, 2853, 3956, 4431, 5946, 6312, 6355, 7299, 8032, 8067, 9186, 9753
+  Operation: new = old * 761087284
+  Test: divisible by 143
+    If true: throw to monkey 328
+    If false: throw to monkey 170
+
+Monkey 170:
+  Starting items: 316, 644, 865, 980, 1149, 1417, 1445, 2696, 5865, 6074, 7705, 7959, 9366, 9453
+  Operation: new = old * 592899064
+  Test: divisible by 22
+    If true: throw to monkey 128
+    If false: throw to monkey 171
+
+Monkey 171:
+  Starting items: 41, 300, 1035, 1886, 2780, 4067, 4137, 4930, 6335, 9303
+  Operation: new = old * 58907410
+  Test: divisible by 35
+    If true: throw to monkey 327
+    If false: throw to monkey 176
+
+Monkey 172:
+  Starting items: 99, 1273, 1634, 2094, 2319, 2395, 3356, 5037, 5536, 5881, 6455, 6854, 7047, 8317, 9608
+  Operation: new = old * 832675518
+  Test: divisible by 11
+    If true: throw to monkey 387
+    If false: throw to monkey 173
+
+Monkey 173:
+  Starting items: 502, 1310, 1320, 1541, 1831, 2027, 2274, 2530, 2532, 2723, 2990, 3004, 3040, 3117, 4164, 4669, 4738, 5053, 6248, 6648, 6715, 6783, 6829, 7183, 7209, 7669, 9452, 9592, 9666
+  Operation: new = old + 21
+  Test: divisible by 325
+    If true: throw to monkey 358
+    If false: throw to monkey 174
+
+Monkey 174:
+  Starting items: 352, 525, 1068, 1495, 1554, 2147, 2433, 3718, 4758, 4761, 5593, 6898, 7511, 7809, 7976, 8044, 8348, 9447, 9461, 9559, 9788
+  Operation: new = old + 84
+  Test: divisible by 2821
+    If true: throw to monkey 307
+    If false: throw to monkey 175
+
+Monkey 175:
+  Starting items: 245, 1848, 1870, 2518, 4318, 4381, 4616, 4914, 5032, 5909, 6861, 7194, 7339, 7423, 8470
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 352
+    If false: throw to monkey 179
+
+Monkey 176:
+  Starting items: 192, 596, 981, 985, 1270, 1998, 2590, 2621, 3465, 3645, 4038, 4246, 4328, 4798, 4846, 6209, 6784, 6817, 7121, 7385, 7621, 7697, 7763, 8062, 8243, 9153, 9301, 9564, 9674
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 189
+    If false: throw to monkey 201
+
+Monkey 177:
+  Starting items: 204, 1221, 1380, 1381, 2397, 2537, 2664, 2814, 3039, 4501, 5017, 5258, 5505, 5739, 5803, 6146, 6852, 7223, 7549, 7729, 8767, 8990, 9158, 9528
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 47
+    If false: throw to monkey 178
+
+Monkey 178:
+  Starting items: 725, 2986, 3478, 3968, 4756, 4766, 5703, 6095, 6329, 7137, 7563, 8479, 8808, 8998
+  Operation: new = old * old
+  Test: divisible by 403
+    If true: throw to monkey 236
+    If false: throw to monkey 179
+
+Monkey 179:
+  Starting items: 124, 1033, 1241, 1665, 2266, 2488, 2832, 2839, 3424, 3529, 3616, 3658, 3796, 3913, 4036, 4089, 4094, 4436, 6202, 7186, 7998, 8679, 9064, 9835
+  Operation: new = old * 130816151
+  Test: divisible by 13
+    If true: throw to monkey 88
+    If false: throw to monkey 182
+
+Monkey 180:
+  Starting items: 1401, 1863, 1970, 2096, 2146, 2591, 4107, 4639, 4663, 5149, 5736, 6738, 7312, 8104, 8344, 9546
+  Operation: new = old * old
+  Test: divisible by 403
+    If true: throw to monkey 430
+    If false: throw to monkey 184
+
+Monkey 181:
+  Starting items: 343, 558, 670, 959, 1291, 1353, 1379, 1601, 2105, 2550, 2892, 3031, 3223, 3483, 3882, 4928, 5475, 5887, 7712, 7849, 7889, 8942, 9155, 9252, 9373
+  Operation: new = old + 44
+  Test: divisible by 31
+    If true: throw to monkey 191
+    If false: throw to monkey 182
+
+Monkey 182:
+  Starting items: 144, 346, 458, 514, 591, 662, 1034, 1561, 2467, 2524, 2864, 3087, 3110, 3518, 4446, 4572, 5243, 5362, 7485, 7559, 7605, 7726, 8005, 8458, 9198, 9356
+  Operation: new = old * 208613734
+  Test: divisible by 31
+    If true: throw to monkey 129
+    If false: throw to monkey 185
+
+Monkey 183:
+  Starting items: 325, 1348, 2916, 3203, 3263, 3504, 3513, 3883, 4470, 4647, 4874, 5122, 5592, 5851, 6816, 7672, 8033, 8057, 8760, 9370
+  Operation: new = old * 149113851
+  Test: divisible by 5
+    If true: throw to monkey 486
+    If false: throw to monkey 185
+
+Monkey 184:
+  Starting items: 3, 125, 186, 2766, 2897, 3327, 3599, 4819, 4934, 5131, 6083, 6721, 7191, 7380, 7818, 7966, 8411, 8599, 8717, 9150, 9679, 9688, 9994
+  Operation: new = old * 651699462
+  Test: divisible by 55
+    If true: throw to monkey 9
+    If false: throw to monkey 185
+
+Monkey 185:
+  Starting items: 466, 614, 775, 1568, 2993, 3363, 3678, 3795, 3849, 4575, 4579, 4947, 5652, 5920, 7038, 7815, 8074, 8090, 8444, 8901, 8947, 9355, 9376
+  Operation: new = old * 774960336
+  Test: divisible by 806
+    If true: throw to monkey 391
+    If false: throw to monkey 186
+
+Monkey 186:
+  Starting items: 301, 698, 1095, 1618, 1764, 2618, 3295, 4784, 5372, 6005, 6249, 6348, 6988, 7035, 7738, 8285, 8389, 8835, 9004, 9382, 9444, 9861
+  Operation: new = old + 45
+  Test: divisible by 434
+    If true: throw to monkey 326
+    If false: throw to monkey 187
+
+Monkey 187:
+  Starting items: 238, 1115, 1168, 1354, 1903, 1934, 1943, 3349, 3431, 3887, 4804, 5680, 5732, 6076, 6278, 6361, 6659, 6864, 6978, 7317, 7974, 8321, 9233, 9522
+  Operation: new = old + 78
+  Test: divisible by 806
+    If true: throw to monkey 153
+    If false: throw to monkey 188
+
+Monkey 188:
+  Starting items: 619, 968, 975, 1015, 1736, 2253, 2416, 3493, 3538, 4251, 4337, 4701, 5665, 5902, 6073, 6920, 7146, 7659, 8574, 9634
+  Operation: new = old * 607389180
+  Test: divisible by 65
+    If true: throw to monkey 103
+    If false: throw to monkey 189
+
+Monkey 189:
+  Starting items: 1771, 2571, 2977, 4486, 4659, 6867, 8145, 8363, 8454, 8666, 8969, 9731, 9825
+  Operation: new = old * old
+  Test: divisible by 182
+    If true: throw to monkey 244
+    If false: throw to monkey 190
+
+Monkey 190:
+  Starting items: 440, 450, 1575, 1789, 2151, 3926, 3940, 3988, 4612, 5357, 5657, 5933, 6030, 6950, 9089, 9505
+  Operation: new = old + 77
+  Test: divisible by 11
+    If true: throw to monkey 411
+    If false: throw to monkey 191
+
+Monkey 191:
+  Starting items: 130, 235, 922, 1197, 1312, 1723, 2003, 2325, 2715, 3660, 4737, 5019, 5694, 5710, 6026, 7128, 7381, 7545, 8214, 9586
+  Operation: new = old * 134902820
+  Test: divisible by 310
+    If true: throw to monkey 389
+    If false: throw to monkey 193
+
+Monkey 192:
+  Starting items: 998, 1489, 1936, 2480, 2974, 3041, 3337, 3634, 4281, 5120, 5823, 6298, 6723, 6840, 7023, 7426, 8233, 8459, 8566, 9131, 9332, 9812, 9908
+  Operation: new = old * 151048901
+  Test: divisible by 1001
+    If true: throw to monkey 16
+    If false: throw to monkey 193
+
+Monkey 193:
+  Starting items: 385, 652, 1670, 2829, 4913, 5176, 5898, 6205, 6211, 7685, 9728, 9829, 9873, 9902
+  Operation: new = old * 259679122
+  Test: divisible by 13
+    If true: throw to monkey 276
+    If false: throw to monkey 201
+
+Monkey 194:
+  Starting items: 230, 1428, 1826, 2849, 3252, 3642, 4240, 5663, 5738, 5866, 7276, 7303, 7337
+  Operation: new = old * 756857108
+  Test: divisible by 385
+    If true: throw to monkey 319
+    If false: throw to monkey 195
+
+Monkey 195:
+  Starting items: 323, 943, 2497, 2582, 2960, 3009, 3487, 3984, 4028, 4208, 4944, 4966, 5074, 6385, 7650, 7956, 8543, 8770, 9389, 9763
+  Operation: new = old * old
+  Test: divisible by 62
+    If true: throw to monkey 447
+    If false: throw to monkey 205
+
+Monkey 196:
+  Starting items: 2160, 2631, 2711, 3632, 3641, 5666, 5811, 6584, 6712, 7408, 8222, 8703, 8801, 9009
+  Operation: new = old * 996209927
+  Test: divisible by 2
+    If true: throw to monkey 28
+    If false: throw to monkey 200
+
+Monkey 197:
+  Starting items: 243, 916, 2023, 3521, 3555, 6431, 7843
+  Operation: new = old + 4
+  Test: divisible by 175
+    If true: throw to monkey 77
+    If false: throw to monkey 199
+
+Monkey 198:
+  Starting items: 223, 946, 1000, 1055, 1534, 2324, 3221, 4104, 5415, 5711, 5824, 5952, 7007, 7844, 8024, 8350, 8734, 9809
+  Operation: new = old * 98443288
+  Test: divisible by 31
+    If true: throw to monkey 66
+    If false: throw to monkey 199
+
+Monkey 199:
+  Starting items: 7, 1023, 2109, 2421, 2708, 3290, 3780, 4055, 5205, 5699, 5871, 6265, 7048, 7224, 7265, 8406, 9069, 9590
+  Operation: new = old * old
+  Test: divisible by 50
+    If true: throw to monkey 287
+    If false: throw to monkey 200
+
+Monkey 200:
+  Starting items: 184, 898, 2069, 2294, 3190, 3271, 3404, 4271, 4674, 5143, 5227, 5762, 7000, 7269, 7565, 8025, 8686, 9056
+  Operation: new = old + 99
+  Test: divisible by 4
+    If true: throw to monkey 494
+    If false: throw to monkey 205
+
+Monkey 201:
+  Starting items: 205, 645, 1094, 3610, 3612, 3934, 4393, 7367, 7747, 7826, 8084, 8221, 8569, 8775, 9023, 9539
+  Operation: new = old * 997931433
+  Test: divisible by 110
+    If true: throw to monkey 143
+    If false: throw to monkey 202
+
+Monkey 202:
+  Starting items: 414, 2055, 2272, 4172, 5316, 6124, 6169, 6647, 6953, 7261, 7324, 7586, 8955, 9526, 9927
+  Operation: new = old * old
+  Test: divisible by 1705
+    If true: throw to monkey 105
+    If false: throw to monkey 203
+
+Monkey 203:
+  Starting items: 178, 507, 672, 1233, 1883, 1964, 2287, 2486, 2767, 2827, 3724, 4908, 5113, 5337, 5618, 5908, 6388, 6824, 7584, 8615, 9026, 9518, 9548
+  Operation: new = old * old
+  Test: divisible by 217
+    If true: throw to monkey 125
+    If false: throw to monkey 204
+
+Monkey 204:
+  Starting items: 658, 1293, 2884, 3021, 3814, 4222, 4516, 5300, 6023, 6502, 6690, 7377, 7521, 7878, 8116, 8364, 8419, 9754, 9802
+  Operation: new = old + 65
+  Test: divisible by 130
+    If true: throw to monkey 217
+    If false: throw to monkey 205
+
+Monkey 205:
+  Starting items: 315, 1399, 1746, 2124, 2240, 3531, 3654, 3750, 4071, 4194, 4472, 5284, 5573, 6189, 6398, 7896, 7917, 8308, 8347, 8536, 8538, 9570
+  Operation: new = old + 81
+  Test: divisible by 403
+    If true: throw to monkey 25
+    If false: throw to monkey 206
+
+Monkey 206:
+  Starting items: 390, 860, 1988, 3313, 3315, 3605, 4783, 5189, 5790, 6327, 6561, 7105, 8158, 8771, 9547
+  Operation: new = old * 238793268
+  Test: divisible by 2
+    If true: throw to monkey 113
+    If false: throw to monkey 208
+
+Monkey 207:
+  Starting items: 93, 888, 2817, 3054, 3709, 5065, 7178, 8937
+  Operation: new = old * 293211206
+  Test: divisible by 155
+    If true: throw to monkey 294
+    If false: throw to monkey 208
+
+Monkey 208:
+  Starting items: 664, 2161, 2211, 2344, 3696, 4198, 4437, 4552, 5003, 5279, 5658, 6808, 6928, 6951, 7034, 7160, 7401, 7437, 8710, 9384, 9563, 9655
+  Operation: new = old * 997081504
+  Test: divisible by 7
+    If true: throw to monkey 405
+    If false: throw to monkey 209
+
+Monkey 209:
+  Starting items: 454, 761, 1179, 1475, 1478, 2512, 2874, 3052, 3370, 3396, 4694, 5978, 5993, 6593, 6596, 8080, 8191, 8887, 9627, 9716
+  Operation: new = old * 492564795
+  Test: divisible by 26
+    If true: throw to monkey 150
+    If false: throw to monkey 221
+
+Monkey 210:
+  Starting items: 508, 607, 723, 1047, 1408, 1543, 3178, 3437, 3689, 4884, 5325, 5543, 5548, 6324, 7320, 8964, 9042, 9497
+  Operation: new = old * old
+  Test: divisible by 62
+    If true: throw to monkey 62
+    If false: throw to monkey 212
+
+Monkey 211:
+  Starting items: 277, 344, 541, 970, 2252, 2278, 2381, 3303, 4803, 6049, 6129, 6376, 8021, 9697
+  Operation: new = old * 109408552
+  Test: divisible by 4433
+    If true: throw to monkey 489
+    If false: throw to monkey 212
+
+Monkey 212:
+  Starting items: 189, 920, 992, 1208, 1373, 2773, 2781, 3033, 3347, 3439, 3455, 3659, 4829, 5380, 5401, 5437, 5438, 5599, 5625, 6088, 6466, 6600, 6955, 7041, 8338, 8355, 8560, 9190, 9568
+  Operation: new = old * old
+  Test: divisible by 10
+    If true: throw to monkey 273
+    If false: throw to monkey 213
+
+Monkey 213:
+  Starting items: 268, 1716, 3522, 3876, 4863, 5044, 5096, 5539, 5989, 6240, 6533, 6539, 6760, 6957, 7158, 7314, 8431, 8909, 8953, 9194, 9327
+  Operation: new = old * 657559282
+  Test: divisible by 31
+    If true: throw to monkey 281
+    If false: throw to monkey 214
+
+Monkey 214:
+  Starting items: 46, 318, 1645, 1687, 2315, 2354, 3614, 3710, 3773, 4641, 4885, 6013, 6259, 9191, 9778, 9920
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 98
+    If false: throw to monkey 215
+
+Monkey 215:
+  Starting items: 668, 2116, 2535, 2576, 2776, 3096, 3770, 5716, 6326, 6964, 7321, 7777, 8140, 8142, 8197, 8438, 8621, 9276
+  Operation: new = old * 988309824
+  Test: divisible by 62
+    If true: throw to monkey 193
+    If false: throw to monkey 217
+
+Monkey 216:
+  Starting items: 264, 950, 1005, 1440, 1639, 1731, 1778, 2138, 2158, 2310, 2369, 2737, 2942, 3181, 3519, 3726, 3884, 6101, 6195, 6657, 7245, 7723, 7754, 7874, 7989, 8225, 8881, 8891, 9348, 9441, 9565
+  Operation: new = old + 27
+  Test: divisible by 130
+    If true: throw to monkey 97
+    If false: throw to monkey 217
+
+Monkey 217:
+  Starting items: 102, 405, 1474, 2545, 3145, 3459, 3514, 4824, 4899, 5446, 5448, 5659, 6015, 6373, 6693, 6874, 7022, 7366, 7556, 7708, 7718, 8673, 8975, 9287, 9413
+  Operation: new = old * 8494337
+  Test: divisible by 31
+    If true: throw to monkey 376
+    If false: throw to monkey 218
+
+Monkey 218:
+  Starting items: 1084, 1862, 2256, 2803, 3106, 3454, 4508, 5104, 5725, 5768, 6546, 7199, 8147, 8167, 8246, 9018, 9021, 9818, 9901
+  Operation: new = old + 92
+  Test: divisible by 2
+    If true: throw to monkey 149
+    If false: throw to monkey 219
+
+Monkey 219:
+  Starting items: 12, 51, 307, 966, 1847, 2520, 2720, 3067, 3941, 4027, 4826, 5014, 5443, 5798, 6199, 6313, 6417, 6594, 6983, 7953, 8108, 9013, 9162, 9349
+  Operation: new = old + 18
+  Test: divisible by 403
+    If true: throw to monkey 19
+    If false: throw to monkey 221
+
+Monkey 220:
+  Starting items: 86, 762, 1194, 1301, 1447, 1661, 1849, 2100, 2110, 2507, 3064, 3398, 3462, 3541, 4062, 4114, 4692, 4954, 6153, 6498, 6870, 7045, 7810, 8668, 9594
+  Operation: new = old * 112695162
+  Test: divisible by 286
+    If true: throw to monkey 235
+    If false: throw to monkey 221
+
+Monkey 221:
+  Starting items: 288, 893, 957, 962, 1028, 1544, 1557, 3309, 3314, 3361, 4315, 4578, 5071, 5994, 6064, 6437, 6457, 6461, 6777, 7627, 8763, 9842
+  Operation: new = old + 64
+  Test: divisible by 65
+    If true: throw to monkey 280
+    If false: throw to monkey 222
+
+Monkey 222:
+  Starting items: 140, 1061, 1066, 1383, 1918, 2555, 2694, 3734, 3747, 4126, 4332, 5596, 6492, 6637, 6990, 7065, 7176, 7629, 7907, 8893, 9306, 9515, 9691, 9760, 9940
+  Operation: new = old + 96
+  Test: divisible by 310
+    If true: throw to monkey 323
+    If false: throw to monkey 223
+
+Monkey 223:
+  Starting items: 748, 1056, 1193, 1452, 2506, 2816, 3175, 3449, 3617, 4428, 5158, 6522, 7330, 7456
+  Operation: new = old * 806523420
+  Test: divisible by 31
+    If true: throw to monkey 60
+    If false: throw to monkey 245
+
+Monkey 224:
+  Starting items: 65, 699, 1748, 2850, 3225, 4611, 5045, 5147, 5583, 6963, 8265, 8963, 9822
+  Operation: new = old * 28697787
+  Test: divisible by 403
+    If true: throw to monkey 419
+    If false: throw to monkey 225
+
+Monkey 225:
+  Starting items: 158, 170, 732, 1782, 2382, 2962, 5458, 5520, 5594, 6473, 6768, 6801, 7259, 9032, 9141, 9500, 9826
+  Operation: new = old * 160309736
+  Test: divisible by 1085
+    If true: throw to monkey 440
+    If false: throw to monkey 226
+
+Monkey 226:
+  Starting items: 355, 392, 439, 666, 1393, 1769, 2028, 2740, 4700, 4807, 4816, 5379, 5404, 5453, 5910, 6489, 6560, 6568, 6688, 7624, 8019, 8672, 9787, 9914
+  Operation: new = old * 997843968
+  Test: divisible by 2
+    If true: throw to monkey 180
+    If false: throw to monkey 227
+
+Monkey 227:
+  Starting items: 246, 1092, 2088, 2323, 2826, 3714, 4043, 4275, 4891, 5439, 6299, 6747, 7867
+  Operation: new = old * 372232191
+  Test: divisible by 806
+    If true: throw to monkey 418
+    If false: throw to monkey 228
+
+Monkey 228:
+  Starting items: 31, 82, 642, 728, 1030, 1342, 1760, 1836, 2257, 2451, 2543, 2617, 3012, 5347, 5464, 5473, 6710, 7208, 8212, 8472, 8584, 8714, 9063
+  Operation: new = old * 484608245
+  Test: divisible by 2
+    If true: throw to monkey 139
+    If false: throw to monkey 231
+
+Monkey 229:
+  Starting items: 270, 464, 1160, 1356, 1550, 2823, 3243, 3523, 4633, 5265, 7210, 8198
+  Operation: new = old * 784076502
+  Test: divisible by 961
+    If true: throw to monkey 446
+    If false: throw to monkey 231
+
+Monkey 230:
+  Starting items: 221, 654, 718, 1459, 2139, 2528, 2651, 4034, 4279, 5013, 5327, 5417, 5858, 6320, 6566, 6619, 7036, 7288, 7969, 8768, 9137
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 140
+    If false: throw to monkey 231
+
+Monkey 231:
+  Starting items: 247, 358, 441, 1253, 1268, 1604, 3351, 3400, 3862, 4245, 4503, 4531, 5007, 5660, 5894, 6127, 6691, 7477, 8117, 8199, 8320, 9849
+  Operation: new = old * 927632204
+  Test: divisible by 110
+    If true: throw to monkey 154
+    If false: throw to monkey 232
+
+Monkey 232:
+  Starting items: 1206, 1695, 3195, 4244, 5087, 5166, 5454, 6574, 6923, 7129, 7537, 7674, 8270, 9537, 9973
+  Operation: new = old + 73
+  Test: divisible by 182
+    If true: throw to monkey 127
+    If false: throw to monkey 235
+
+Monkey 233:
+  Starting items: 413, 923, 1996, 2262, 2364, 3415, 3624, 4285, 4465, 4601, 4749, 4856, 5067, 6024, 7138, 7954, 9514, 9968
+  Operation: new = old * 725667519
+  Test: divisible by 11
+    If true: throw to monkey 231
+    If false: throw to monkey 234
+
+Monkey 234:
+  Starting items: 5, 1137, 1376, 2012, 2265, 2531, 2616, 3104, 3326, 4730, 4879, 5103, 5117, 5636, 5936, 6044, 6175, 7052, 7410, 8505, 9164, 9325, 9361
+  Operation: new = old + 58
+  Test: divisible by 143
+    If true: throw to monkey 473
+    If false: throw to monkey 436
+
+Monkey 235:
+  Starting items: 231, 701, 783, 1018, 1286, 1289, 2346, 2536, 2876, 2973, 3967, 4672, 5577, 5661, 6675, 6918, 7855, 8148, 8527, 9181, 9533, 9618, 9733
+  Operation: new = old + 82
+  Test: divisible by 35
+    If true: throw to monkey 152
+    If false: throw to monkey 236
+
+Monkey 236:
+  Starting items: 106, 322, 406, 679, 1647, 1679, 1710, 1889, 2306, 2626, 3280, 3625, 3829, 3870, 4084, 4979, 5273, 5963, 6831, 7081, 7741, 9118, 9456, 9834
+  Operation: new = old * 410162575
+  Test: divisible by 2
+    If true: throw to monkey 241
+    If false: throw to monkey 237
+
+Monkey 237:
+  Starting items: 397, 849, 1216, 1449, 1540, 1893, 1987, 2557, 2936, 4530, 4775, 5452, 5714, 6004, 6931, 7951, 8489, 8919, 9017, 9128, 9923, 9974
+  Operation: new = old * 261219181
+  Test: divisible by 110
+    If true: throw to monkey 368
+    If false: throw to monkey 243
+
+Monkey 238:
+  Starting items: 257, 911, 1010, 1205, 1361, 1682, 1786, 1984, 2661, 2830, 3091, 3443, 3955, 5303, 5719, 6237, 7076, 7778, 8052, 8234, 9484
+  Operation: new = old * 894462432
+  Test: divisible by 286
+    If true: throw to monkey 30
+    If false: throw to monkey 240
+
+Monkey 239:
+  Starting items: 1757, 2157, 2706, 2920, 4173, 4377, 5526, 6422, 6843, 7304, 7770, 8076, 9215, 9542, 9553, 9917
+  Operation: new = old + 44
+  Test: divisible by 91
+    If true: throw to monkey 43
+    If false: throw to monkey 240
+
+Monkey 240:
+  Starting items: 22, 291, 309, 327, 824, 1395, 1511, 2772, 3166, 4003, 4411, 5165, 5870, 6109, 6286, 7003, 8371, 8983, 9225, 9333, 9572
+  Operation: new = old + 80
+  Test: divisible by 50
+    If true: throw to monkey 96
+    If false: throw to monkey 244
+
+Monkey 241:
+  Starting items: 19, 904, 1258, 1692, 3674, 4400, 4492, 4580, 5510, 5709, 5945, 6934, 7130, 7851, 9492
+  Operation: new = old * 714379565
+  Test: divisible by 22
+    If true: throw to monkey 15
+    If false: throw to monkey 242
+
+Monkey 242:
+  Starting items: 10, 573, 1675, 1690, 2893, 3098, 3265, 3428, 3888, 3964, 4258, 5611, 6586, 7059, 7156, 7662, 8412, 8603, 8705, 8902, 9054
+  Operation: new = old + 38
+  Test: divisible by 31
+    If true: throw to monkey 434
+    If false: throw to monkey 243
+
+Monkey 243:
+  Starting items: 282, 638, 661, 1890, 1926, 1947, 2018, 2789, 2939, 4103, 5195, 5608, 5939, 6188, 6641, 6763, 8041, 8163, 8368, 8644, 8769, 9110, 9876
+  Operation: new = old * 795787372
+  Test: divisible by 50
+    If true: throw to monkey 482
+    If false: throw to monkey 244
+
+Monkey 244:
+  Starting items: 161, 964, 1009, 1941, 2267, 3063, 3488, 3962, 4369, 4715, 5852, 6798, 7611, 7881, 8647, 9335
+  Operation: new = old + 6
+  Test: divisible by 25
+    If true: throw to monkey 93
+    If false: throw to monkey 246
+
+Monkey 245:
+  Starting items: 354, 735, 744, 1403, 1453, 1471, 1702, 1725, 3038, 3667, 3909, 4197, 4547, 4553, 4682, 5151, 5271, 5467, 5517, 6409, 6905, 6948, 7775, 8403, 8677
+  Operation: new = old + 99
+  Test: divisible by 52
+    If true: throw to monkey 243
+    If false: throw to monkey 246
+
+Monkey 246:
+  Starting items: 655, 1820, 1975, 2167, 2997, 3069, 4523, 5700, 6592, 6781, 6927, 7464, 7603, 7628, 8468, 8501, 8697, 8739, 8792, 9381
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 325
+    If false: throw to monkey 247
+
+Monkey 247:
+  Starting items: 540, 1343, 1951, 2413, 2519, 2702, 4234, 4850, 7136, 7691, 8567, 9656, 9981
+  Operation: new = old * old
+  Test: divisible by 169
+    If true: throw to monkey 226
+    If false: throw to monkey 250
+
+Monkey 248:
+  Starting items: 98, 306, 1386, 1572, 1651, 2097, 2662, 3233, 3804, 5031, 6340, 6482, 7084, 7535, 7593, 7682, 8048, 8847
+  Operation: new = old * 349311656
+  Test: divisible by 91
+    If true: throw to monkey 48
+    If false: throw to monkey 249
+
+Monkey 249:
+  Starting items: 2727, 3023, 3060, 3573, 3601, 4060, 4399, 4539, 4831, 5141, 7109, 7297, 7625, 7893, 7930, 8071, 8272, 8463, 8698
+  Operation: new = old + 22
+  Test: divisible by 217
+    If true: throw to monkey 291
+    If false: throw to monkey 250
+
+Monkey 250:
+  Starting items: 8, 481, 626, 639, 1062, 1375, 1491, 1810, 1872, 2336, 3311, 3526, 3819, 5110, 5148, 5282, 5899, 5956, 6279, 6791, 6949, 8078, 8151, 8346, 8818, 8888, 9102, 9174, 9800, 9906, 9935
+  Operation: new = old * 723189927
+  Test: divisible by 31
+    If true: throw to monkey 224
+    If false: throw to monkey 261
+
+Monkey 251:
+  Starting items: 295, 963, 1257, 1999, 2774, 3760, 3787, 4058, 4924, 5121, 5428, 5474, 5744, 6197, 7296, 8607, 9038, 9399, 9506, 9650
+  Operation: new = old * 746766177
+  Test: divisible by 31
+    If true: throw to monkey 232
+    If false: throw to monkey 253
+
+Monkey 252:
+  Starting items: 606, 709, 861, 899, 912, 953, 1685, 2217, 2331, 2561, 2902, 3171, 3406, 3579, 3921, 4180, 4250, 4348, 4386, 5957, 6374, 6599, 6717, 6903, 7131, 8733, 9426, 9694
+  Operation: new = old * old
+  Test: divisible by 62
+    If true: throw to monkey 290
+    If false: throw to monkey 255
+
+Monkey 253:
+  Starting items: 848, 990, 1117, 1203, 1719, 2095, 2242, 3593, 3808, 4008, 4029, 4171, 4210, 4329, 4781, 5312, 6306, 7769, 8008, 8020, 8182, 8537, 8778, 9015, 9210, 9635, 9670
+  Operation: new = old * 772333888
+  Test: divisible by 455
+    If true: throw to monkey 286
+    If false: throw to monkey 271
+
+Monkey 254:
+  Starting items: 1185, 2008, 2625, 2665, 2668, 3316, 3630, 3749, 4697, 5485, 5492, 5708, 6565, 6642, 6754, 7064, 7285, 7675, 7756, 8169, 9308
+  Operation: new = old * 48879276
+  Test: divisible by 310
+    If true: throw to monkey 475
+    If false: throw to monkey 255
+
+Monkey 255:
+  Starting items: 11, 142, 703, 1333, 1398, 1460, 1986, 2134, 3284, 3365, 3417, 4543, 4919, 5078, 6270, 7043, 8626, 8694, 9159, 9227, 9360, 9792
+  Operation: new = old * old
+  Test: divisible by 155
+    If true: throw to monkey 380
+    If false: throw to monkey 259
+
+Monkey 256:
+  Starting items: 294, 2971, 3506, 3575, 3958, 4249, 4382, 4757, 6184, 6229, 6303, 7031, 8370, 8731, 9059, 9521, 9889
+  Operation: new = old * 317673969
+  Test: divisible by 91
+    If true: throw to monkey 155
+    If false: throw to monkey 257
+
+Monkey 257:
+  Starting items: 350, 488, 1322, 1391, 2753, 2994, 3008, 3092, 3893, 4269, 4652, 5826, 5975, 5992, 6048, 6367, 6650, 7294, 7360, 8579, 9610
+  Operation: new = old + 15
+  Test: divisible by 403
+    If true: throw to monkey 329
+    If false: throw to monkey 258
+
+Monkey 258:
+  Starting items: 418, 1309, 2106, 2185, 3251, 3393, 3394, 3427, 3731, 5326, 8130, 8398, 8853, 9002, 9504, 9772
+  Operation: new = old * 839635442
+  Test: divisible by 130
+    If true: throw to monkey 471
+    If false: throw to monkey 259
+
+Monkey 259:
+  Starting items: 500, 553, 3237, 3460, 3606, 4505, 4532, 4650, 5275, 5277, 5603, 6855, 7193, 7295, 7333, 7576, 8485, 9549, 9673
+  Operation: new = old * 639685390
+  Test: divisible by 5
+    If true: throw to monkey 196
+    If false: throw to monkey 260
+
+Monkey 260:
+  Starting items: 15, 711, 889, 913, 1594, 2007, 3588, 4450, 4476, 4915, 5204, 5332, 5748, 5758, 7402
+  Operation: new = old + 88
+  Test: divisible by 50
+    If true: throw to monkey 6
+    If false: throw to monkey 262
+
+Monkey 261:
+  Starting items: 211, 576, 1174, 2452, 3408, 4822, 5101, 6258, 6276, 6516, 7310, 7458, 7887, 8129, 8907, 9126, 9432, 9664
+  Operation: new = old + 57
+  Test: divisible by 5
+    If true: throw to monkey 197
+    If false: throw to monkey 262
+
+Monkey 262:
+  Starting items: 332, 566, 931, 2657, 2935, 3928, 4308, 4854, 6646, 6697, 6729, 7768, 7905, 8390, 8433, 8492, 8513, 8764
+  Operation: new = old + 15
+  Test: divisible by 2015
+    If true: throw to monkey 138
+    If false: throw to monkey 267
+
+Monkey 263:
+  Starting items: 467, 1432, 1457, 2045, 2247, 2332, 2448, 2450, 3086, 3464, 3767, 3999, 4037, 4389, 4728, 4801, 5533, 6403, 6472, 6938, 7100, 7147, 7175, 7232, 7564, 8001, 8663, 8744, 8825, 9073, 9201, 9237, 9435, 9543, 9900
+  Operation: new = old * 415616375
+  Test: divisible by 55
+    If true: throw to monkey 110
+    If false: throw to monkey 264
+
+Monkey 264:
+  Starting items: 1074, 1178, 2229, 2459, 3736, 5387, 5550, 5683, 6416, 6667, 7282, 7425, 7541, 8040, 8150, 9027, 9109, 9813
+  Operation: new = old * 703747559
+  Test: divisible by 806
+    If true: throw to monkey 269
+    If false: throw to monkey 265
+
+Monkey 265:
+  Starting items: 550, 1735, 1816, 2082, 2511, 3282, 3784, 3791, 4046, 4498, 4717, 4814, 5360, 6067, 6515, 6956, 7528, 7965, 8553, 8945, 9297
+  Operation: new = old + 68
+  Test: divisible by 310
+    If true: throw to monkey 91
+    If false: throw to monkey 267
+
+Monkey 266:
+  Starting items: 393, 866, 1418, 2231, 2442, 2763, 2833, 3179, 3254, 4156, 4202, 4805, 5202, 5821, 7283, 7813, 8391, 9797
+  Operation: new = old + 29
+  Test: divisible by 403
+    If true: throw to monkey 71
+    If false: throw to monkey 267
+
+Monkey 267:
+  Starting items: 200, 433, 745, 1053, 1201, 1910, 1957, 2699, 3333, 3912, 3935, 4247, 4764, 5564, 5639, 6224, 6294, 6626, 7155, 7448, 8326, 8422, 9085, 9182, 9352, 9369
+  Operation: new = old + 64
+  Test: divisible by 5239
+    If true: throw to monkey 449
+    If false: throw to monkey 271
+
+Monkey 268:
+  Starting items: 17, 88, 324, 1211, 1517, 2221, 3470, 3793, 4495, 4603, 4666, 5073, 6193, 7689, 7814, 8828, 8837, 9806
+  Operation: new = old * 594196586
+  Test: divisible by 341
+    If true: throw to monkey 422
+    If false: throw to monkey 269
+
+Monkey 269:
+  Starting items: 1597, 1885, 2186, 2860, 2927, 3193, 3386, 3391, 4026, 4836, 5287, 6553, 6636, 6848, 7159, 7670, 7835, 8118, 9474, 9513, 9661
+  Operation: new = old + old
+  Test: divisible by 434
+    If true: throw to monkey 336
+    If false: throw to monkey 270
+
+Monkey 270:
+  Starting items: 58, 212, 266, 2254, 2945, 3017, 4241, 4599, 4951, 5747, 5786, 6155, 7029, 7560, 7750, 8232, 8635, 8691, 8783, 9245, 9275
+  Operation: new = old * 418996935
+  Test: divisible by 403
+    If true: throw to monkey 467
+    If false: throw to monkey 284
+
+Monkey 271:
+  Starting items: 1663, 1697, 2195, 2484, 3380, 4613, 4634, 5490, 5493, 5540, 6267, 8609, 8732, 9223
+  Operation: new = old * 565951134
+  Test: divisible by 26
+    If true: throw to monkey 407
+    If false: throw to monkey 272
+
+Monkey 272:
+  Starting items: 479, 490, 1462, 1694, 2353, 2403, 2483, 4255, 4278, 4311, 4345, 4621, 4642, 4657, 5215, 5509, 5950, 6114, 6497, 6890, 7092, 7773, 7880, 9423
+  Operation: new = old * old
+  Test: divisible by 2015
+    If true: throw to monkey 159
+    If false: throw to monkey 273
+
+Monkey 273:
+  Starting items: 480, 1188, 1247, 1400, 1490, 1617, 3467, 3489, 5009, 5133, 5672, 5697, 5704, 5742, 5836, 6275, 6702, 6826, 8830
+  Operation: new = old * 803034044
+  Test: divisible by 10571
+    If true: throw to monkey 438
+    If false: throw to monkey 274
+
+Monkey 274:
+  Starting items: 188, 800, 1726, 3474, 3505, 3698, 4048, 4188, 5077, 6654, 7201, 7389, 7943, 8813, 9499, 9597
+  Operation: new = old * 285906438
+  Test: divisible by 91
+    If true: throw to monkey 468
+    If false: throw to monkey 276
+
+Monkey 275:
+  Starting items: 687, 813, 1877, 2479, 2840, 3900, 3911, 5580, 5809, 5976, 6687, 7255, 7557, 7868, 8240, 8529, 8782
+  Operation: new = old * 673125813
+  Test: divisible by 217
+    If true: throw to monkey 123
+    If false: throw to monkey 277
+
+Monkey 276:
+  Starting items: 363, 374, 1263, 1834, 2189, 2500, 2867, 3215, 3239, 3343, 3895, 3925, 4009, 4133, 6007, 6151, 7509, 7532, 7645, 8357, 8597
+  Operation: new = old * 762296083
+  Test: divisible by 10
+    If true: throw to monkey 134
+    If false: throw to monkey 277
+
+Monkey 277:
+  Starting items: 788, 823, 1388, 1523, 2228, 2494, 3270, 4367, 4695, 5179, 5832, 5997, 6219, 7820, 8475, 8715
+  Operation: new = old * 936162721
+  Test: divisible by 13
+    If true: throw to monkey 250
+    If false: throw to monkey 278
+
+Monkey 278:
+  Starting items: 1032, 1714, 1929, 2107, 2930, 3142, 3429, 4090, 4092, 4496, 4963, 5006, 5187, 5246, 5268, 5272, 5668, 5897, 6012, 6503, 6960, 7049, 7332, 7382, 7473, 7885, 9255, 9702
+  Operation: new = old * 416726387
+  Test: divisible by 5
+    If true: throw to monkey 316
+    If false: throw to monkey 279
+
+Monkey 279:
+  Starting items: 1021, 1599, 2224, 3416, 3572, 4910, 5024, 5169, 5547, 5632, 6529, 6653, 6841, 6889, 7392, 7439, 7681, 7899, 7972, 8693, 8832, 9057, 9820, 9859
+  Operation: new = old * old
+  Test: divisible by 7
+    If true: throw to monkey 183
+    If false: throw to monkey 280
+
+Monkey 280:
+  Starting items: 150, 868, 1224, 4147, 4620, 4743, 4959, 6661, 7946, 8699, 8756, 8843
+  Operation: new = old + 88
+  Test: divisible by 341
+    If true: throw to monkey 245
+    If false: throw to monkey 281
+
+Monkey 281:
+  Starting items: 148, 984, 1437, 1551, 1749, 2092, 2410, 2871, 3202, 4174, 5469, 6245, 6885, 7431, 7845, 8649, 9669, 9707
+  Operation: new = old * 971917813
+  Test: divisible by 13
+    If true: throw to monkey 35
+    If false: throw to monkey 285
+
+Monkey 282:
+  Starting items: 1624, 1717, 1766, 1915, 2698, 3205, 4096, 4152, 4388, 4713, 5230, 5575, 7387, 7871, 7983, 8042, 8058, 8141, 8314, 8684, 8815
+  Operation: new = old * 992280207
+  Test: divisible by 2015
+    If true: throw to monkey 441
+    If false: throw to monkey 285
+
+Monkey 283:
+  Starting items: 244, 357, 1539, 1691, 1721, 1752, 2155, 2210, 3746, 4144, 4228, 4956, 4970, 5348, 5600, 7032, 7466, 7515, 8863, 9204, 9206
+  Operation: new = old * old
+  Test: divisible by 4
+    If true: throw to monkey 64
+    If false: throw to monkey 285
+
+Monkey 284:
+  Starting items: 18, 126, 1371, 1935, 2056, 2608, 2818, 2907, 4397, 4499, 4776, 4975, 5180, 5406, 6090, 6662, 7202, 7639, 7667, 7721, 8899
+  Operation: new = old * 175235297
+  Test: divisible by 13
+    If true: throw to monkey 392
+    If false: throw to monkey 292
+
+Monkey 285:
+  Starting items: 60, 201, 442, 974, 1098, 2165, 3613, 3920, 4459, 4740, 5515, 5817, 6300, 6597, 6645, 7132, 9235, 9253, 9402, 9611
+  Operation: new = old * old
+  Test: divisible by 65
+    If true: throw to monkey 165
+    If false: throw to monkey 286
+
+Monkey 286:
+  Starting items: 239, 563, 669, 2188, 3213, 3310, 4703, 5130, 5426, 8053, 8709, 9653
+  Operation: new = old * 763999299
+  Test: divisible by 403
+    If true: throw to monkey 13
+    If false: throw to monkey 287
+
+Monkey 287:
+  Starting items: 329, 368, 574, 1157, 1265, 2074, 2334, 2607, 2741, 2987, 3743, 4120, 4675, 5676, 6164, 7108, 7241, 7583, 8551
+  Operation: new = old * 986883179
+  Test: divisible by 845
+    If true: throw to monkey 171
+    If false: throw to monkey 288
+
+Monkey 288:
+  Starting items: 376, 789, 1430, 1497, 1738, 1963, 2725, 2804, 2961, 3230, 3384, 3907, 4178, 5226, 5733, 7172, 7213, 7443, 8254, 8616
+  Operation: new = old * 202792025
+  Test: divisible by 65
+    If true: throw to monkey 349
+    If false: throw to monkey 289
+
+Monkey 289:
+  Starting items: 319, 751, 971, 2268, 2386, 2482, 3238, 3508, 3875, 5112, 5537, 5637, 5689, 6770, 8029, 8303, 8895, 9386
+  Operation: new = old + 29
+  Test: divisible by 28
+    If true: throw to monkey 61
+    If false: throw to monkey 291
+
+Monkey 290:
+  Starting items: 2728, 3129, 6542, 6671, 6970, 7484, 9698
+  Operation: new = old + 63
+  Test: divisible by 10
+    If true: throw to monkey 367
+    If false: throw to monkey 294
+
+Monkey 291:
+  Starting items: 90, 1099, 2481, 2579, 3564, 3951, 5601, 6408, 6456, 6946, 7233, 7416, 7904, 7993, 8202, 8287
+  Operation: new = old * 465170670
+  Test: divisible by 341
+    If true: throw to monkey 1
+    If false: throw to monkey 295
+
+Monkey 292:
+  Starting items: 159, 515, 1152, 1230, 1368, 1795, 1960, 2360, 4050, 4213, 4338, 4960, 5565, 5793, 6061, 6446, 6476, 6694, 6937, 7111, 8093, 8153, 8235, 8421, 8800, 9136, 9309, 9480, 9928
+  Operation: new = old * 298031832
+  Test: divisible by 275
+    If true: throw to monkey 397
+    If false: throw to monkey 293
+
+Monkey 293:
+  Starting items: 36, 929, 1076, 1155, 1336, 3433, 3816, 4139, 4927, 5609, 5773, 5828, 6345, 7427, 8100, 8861, 9035, 9494
+  Operation: new = old * old
+  Test: divisible by 11
+    If true: throw to monkey 104
+    If false: throw to monkey 294
+
+Monkey 294:
+  Starting items: 986, 1932, 2183, 2522, 2547, 2609, 2888, 3119, 3192, 3908, 4081, 4217, 4618, 5049, 5245, 5525, 5751, 7633, 7877, 8238, 8897, 9196, 9911, 9931
+  Operation: new = old * 609112415
+  Test: divisible by 11
+    If true: throw to monkey 52
+    If false: throw to monkey 296
+
+Monkey 295:
+  Starting items: 408, 810, 1770, 1853, 2449, 2644, 2903, 4002, 5612, 5726, 6140, 6790, 6922, 7494, 7772, 7834, 8120, 8719, 9331, 9523, 9562
+  Operation: new = old * 316719438
+  Test: divisible by 403
+    If true: throw to monkey 390
+    If false: throw to monkey 296
+
+Monkey 296:
+  Starting items: 224, 1813, 2409, 3457, 3923, 4473, 4626, 4821, 5156, 5238, 5407, 5459, 6011, 6027, 6098, 6407, 6638, 7766, 7791, 8016, 8143, 9535, 9769
+  Operation: new = old * 367608882
+  Test: divisible by 403
+    If true: throw to monkey 36
+    If false: throw to monkey 297
+
+Monkey 297:
+  Starting items: 903, 1051, 2356, 2470, 2566, 2822, 2955, 3072, 4385, 4421, 4962, 5216, 5730, 6115, 7039, 7440, 7493, 8633, 8922, 9346, 9450, 9534, 9779, 9866
+  Operation: new = old * 970081010
+  Test: divisible by 52
+    If true: throw to monkey 462
+    If false: throw to monkey 299
+
+Monkey 298:
+  Starting items: 657, 1577, 1671, 2004, 2232, 2747, 3973, 4233, 4513, 5629, 7275, 8009, 8105, 8540, 8742, 8806, 8845, 8879
+  Operation: new = old + old
+  Test: divisible by 26
+    If true: throw to monkey 181
+    If false: throw to monkey 299
+
+Monkey 299:
+  Starting items: 729, 858, 1022, 1321, 1580, 2317, 2335, 2855, 3752, 3953, 4923, 4976, 5276, 5567, 6145, 6383, 6402, 6891, 7074, 7371, 7418, 7507, 7581, 8002, 9773
+  Operation: new = old + 97
+  Test: divisible by 169
+    If true: throw to monkey 477
+    If false: throw to monkey 301
+
+Monkey 300:
+  Starting items: 629, 1146, 1372, 2670, 2932, 3209, 3782, 4502, 4587, 5235, 5363, 5513, 5848, 5911, 6065, 6087, 6311, 6797, 7526, 7858, 8086, 8282, 9248, 9357, 9851
+  Operation: new = old * 315353046
+  Test: divisible by 341
+    If true: throw to monkey 90
+    If false: throw to monkey 302
+
+Monkey 301:
+  Starting items: 582, 883, 1357, 1444, 1709, 2171, 2831, 3138, 3378, 4722, 5214, 5367, 5770, 6133, 7125, 7652, 7683, 8220, 9350, 9415, 9979
+  Operation: new = old * 316696541
+  Test: divisible by 2
+    If true: throw to monkey 382
+    If false: throw to monkey 310
+
+Monkey 302:
+  Starting items: 290, 384, 856, 1365, 3556, 5673, 5838, 6332, 7325, 7476, 8217, 9623
+  Operation: new = old * 135801065
+  Test: divisible by 31
+    If true: throw to monkey 229
+    If false: throw to monkey 303
+
+Monkey 303:
+  Starting items: 375, 891, 2241, 2578, 2672, 3101, 3354, 3656, 3764, 4833, 6726, 7089, 7822, 8006, 8327, 8722, 8799, 8840, 9468, 9972
+  Operation: new = old + 55
+  Test: divisible by 182
+    If true: throw to monkey 337
+    If false: throw to monkey 304
+
+Monkey 304:
+  Starting items: 202, 303, 549, 682, 1556, 1667, 2567, 3266, 3450, 3800, 4257, 4339, 4525, 4617, 5289, 6735, 6796, 7386, 7958, 8107, 8645, 8762, 9443, 9934
+  Operation: new = old + 39
+  Test: divisible by 434
+    If true: throw to monkey 351
+    If false: throw to monkey 307
+
+Monkey 305:
+  Starting items: 339, 850, 2288, 2328, 3111, 3405, 4023, 4031, 4420, 4423, 4630, 4840, 5075, 5972, 6587, 7540, 7592, 7648, 8550, 8676, 9322, 9601, 9907
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 175
+    If false: throw to monkey 306
+
+Monkey 306:
+  Starting items: 768, 2357, 2485, 2845, 3026, 3134, 3199, 3603, 3857, 4990, 5194, 6288, 6865, 7013, 7579, 7599, 8522, 9216, 9224
+  Operation: new = old * old
+  Test: divisible by 130
+    If true: throw to monkey 40
+    If false: throw to monkey 307
+
+Monkey 307:
+  Starting items: 206, 1108, 1231, 1892, 2087, 2460, 3517, 3896, 5394, 5479, 5624, 5774, 6336, 6588, 6740, 6856, 7141, 7782, 9005, 9385, 9723, 9903
+  Operation: new = old * old
+  Test: divisible by 4
+    If true: throw to monkey 119
+    If false: throw to monkey 308
+
+Monkey 308:
+  Starting items: 1734, 2103, 2906, 3981, 4376, 4604, 5717, 6478, 6520, 6789, 7054, 7070, 7298, 7668, 7789, 8564, 8776, 8834, 9783
+  Operation: new = old * 657092783
+  Test: divisible by 1859
+    If true: throw to monkey 252
+    If false: throw to monkey 309
+
+Monkey 309:
+  Starting items: 111, 366, 1138, 1378, 2052, 3373, 3420, 3463, 3711, 4810, 4880, 5890, 7413, 8591, 9046, 9585, 9662, 9741, 9988, 9997
+  Operation: new = old * 89096549
+  Test: divisible by 403
+    If true: throw to monkey 141
+    If false: throw to monkey 318
+
+Monkey 310:
+  Starting items: 2243, 3269, 3485, 4272, 5318, 5431, 6003, 6214, 6225, 6419, 7799, 7854, 9821
+  Operation: new = old * 83738444
+  Test: divisible by 35
+    If true: throw to monkey 444
+    If false: throw to monkey 311
+
+Monkey 311:
+  Starting items: 401, 987, 1169, 4374, 4526, 5800, 5986, 6800, 7552, 8066, 8289, 8637, 9014, 9122, 9313, 9632
+  Operation: new = old * 895904516
+  Test: divisible by 5
+    If true: throw to monkey 49
+    If false: throw to monkey 312
+
+Monkey 312:
+  Starting items: 241, 381, 631, 917, 3324, 3671, 4075, 5001, 5178, 5295, 5477, 7369, 7399, 7574, 7734, 7830, 7838, 8043, 9187
+  Operation: new = old * 616173353
+  Test: divisible by 31
+    If true: throw to monkey 433
+    If false: throw to monkey 313
+
+Monkey 313:
+  Starting items: 128, 275, 2149, 2391, 2952, 3288, 3637, 3831, 3942, 3961, 4141, 4451, 4948, 5255, 5340, 5777, 6150, 6204, 6222, 6256, 6878, 8275, 8493, 9001
+  Operation: new = old + 4
+  Test: divisible by 110
+    If true: throw to monkey 428
+    If false: throw to monkey 317
+
+Monkey 314:
+  Starting items: 740, 1844, 2378, 2848, 3032, 3688, 4145, 4360, 4799, 5822, 6330, 7088, 7135, 7357, 8805, 9347
+  Operation: new = old * 705074558
+  Test: divisible by 5
+    If true: throw to monkey 332
+    If false: throw to monkey 317
+
+Monkey 315:
+  Starting items: 592, 819, 1070, 1147, 1451, 1798, 2299, 2546, 3859, 4015, 5319, 5807, 7018, 7635, 7940, 9310, 9338
+  Operation: new = old * 91316263
+  Test: divisible by 7
+    If true: throw to monkey 72
+    If false: throw to monkey 316
+
+Monkey 316:
+  Starting items: 222, 554, 1183, 1295, 1296, 1410, 1939, 2152, 2564, 3186, 3262, 3809, 4439, 4794, 5095, 5434, 5919, 7901, 8056, 9375, 9524
+  Operation: new = old + 98
+  Test: divisible by 22
+    If true: throw to monkey 237
+    If false: throw to monkey 319
+
+Monkey 317:
+  Starting items: 1753, 2984, 3978, 4223, 4615, 4670, 4861, 4931, 4965, 5157, 5161, 5544, 6036, 6111, 6753, 7422, 7924, 7925, 9700
+  Operation: new = old * 998052224
+  Test: divisible by 4433
+    If true: throw to monkey 33
+    If false: throw to monkey 318
+
+Monkey 318:
+  Starting items: 85, 767, 961, 1901, 2153, 3754, 5188, 5494, 6055, 6091, 6105, 6358, 6643, 8445, 8523, 8611, 8889, 9678, 9896
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 207
+    If false: throw to monkey 321
+
+Monkey 319:
+  Starting items: 845, 1334, 1392, 1531, 2187, 2477, 2525, 3444, 3533, 4007, 6518, 6866, 7217, 7323, 9296, 9701
+  Operation: new = old * 431509238
+  Test: divisible by 35
+    If true: throw to monkey 388
+    If false: throw to monkey 320
+
+Monkey 320:
+  Starting items: 365, 1141, 2801, 2819, 3250, 3368, 3716, 4025, 4551, 5076, 5783, 7342, 7793, 7919, 8484, 8643
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 257
+    If false: throw to monkey 323
+
+Monkey 321:
+  Starting items: 197, 1124, 1487, 2145, 2542, 2794, 3649, 3663, 3720, 4153, 4390, 4419, 4888, 6872, 7072, 7701, 8866
+  Operation: new = old * old
+  Test: divisible by 11
+    If true: throw to monkey 75
+    If false: throw to monkey 322
+
+Monkey 322:
+  Starting items: 469, 1123, 1167, 1426, 1693, 2468, 2624, 2999, 3196, 4259, 4347, 6305, 6454, 7212, 7478, 7852, 7926, 8155, 8176, 8688, 8803, 9055, 9646, 9983
+  Operation: new = old * 708548148
+  Test: divisible by 35
+    If true: throw to monkey 330
+    If false: throw to monkey 336
+
+Monkey 323:
+  Starting items: 641, 1606, 1713, 1815, 1874, 2492, 2760, 2778, 2812, 2882, 2938, 3124, 3298, 3559, 4402, 4550, 4802, 4849, 5584, 5674, 6666, 7642
+  Operation: new = old * 935984638
+  Test: divisible by 169
+    If true: throw to monkey 260
+    If false: throw to monkey 324
+
+Monkey 324:
+  Starting items: 419, 491, 1308, 2066, 2503, 2619, 2671, 3694, 4109, 4629, 4806, 4859, 4905, 5664, 7848, 8173, 8322, 9030, 9785
+  Operation: new = old * 713251547
+  Test: divisible by 26
+    If true: throw to monkey 459
+    If false: throw to monkey 335
+
+Monkey 325:
+  Starting items: 388, 499, 1148, 1632, 2131, 3164, 3496, 3756, 4570, 4709, 5028, 7185, 7512, 8229, 8585, 8713
+  Operation: new = old + 81
+  Test: divisible by 22
+    If true: throw to monkey 481
+    If false: throw to monkey 326
+
+Monkey 326:
+  Starting items: 208, 570, 1101, 1423, 1899, 2491, 2686, 2761, 2885, 3360, 3871, 4014, 4132, 4925, 5653, 6463, 6683, 7839, 7952, 8013
+  Operation: new = old * 536540987
+  Test: divisible by 91
+    If true: throw to monkey 144
+    If false: throw to monkey 327
+
+Monkey 327:
+  Starting items: 551, 585, 1732, 2068, 4054, 4201, 5039, 5589, 5724, 5892, 5999, 6128, 6370, 7069, 7101, 7220, 7488, 7990, 8571, 8671, 8798, 8817, 8910, 9578, 9607, 9620, 9831, 9839
+  Operation: new = old + 72
+  Test: divisible by 806
+    If true: throw to monkey 431
+    If false: throw to monkey 328
+
+Monkey 328:
+  Starting items: 348, 493, 572, 1100, 1300, 2150, 2286, 3154, 3758, 4808, 4940, 4949, 5132, 5159, 6547, 6678, 6832, 7057, 7514, 7531, 8339, 8729, 8874, 9364, 9584
+  Operation: new = old + 4
+  Test: divisible by 11
+    If true: throw to monkey 356
+    If false: throw to monkey 332
+
+Monkey 329:
+  Starting items: 35, 833, 1304, 1591, 2120, 3669, 4215, 4321, 4704, 5321, 5461, 5640, 5943, 6025, 6439, 6971, 8510, 8588, 9081, 9454, 9614
+  Operation: new = old * 190781660
+  Test: divisible by 217
+    If true: throw to monkey 423
+    If false: throw to monkey 330
+
+Monkey 330:
+  Starting items: 156, 785, 1635, 2825, 3121, 3244, 4168, 4195, 4283, 6443, 6500, 7244, 7613, 7694, 7724, 8137, 8183, 8374, 8689, 9657
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 463
+    If false: throw to monkey 342
+
+Monkey 331:
+  Starting items: 579, 707, 1212, 1904, 4110, 4782, 5511, 6281, 6377, 6550, 8620, 8824, 8995, 9185, 9430
+  Operation: new = old * 329421142
+  Test: divisible by 13
+    If true: throw to monkey 27
+    If false: throw to monkey 332
+
+Monkey 332:
+  Starting items: 66, 135, 1402, 1673, 2806, 3453, 3891, 4106, 4384, 5400, 5655, 6147, 7169, 7239, 7359, 8494, 8630, 8982, 9151, 9704, 9745
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 94
+    If false: throw to monkey 333
+
+Monkey 333:
+  Starting items: 1128, 1429, 1680, 2021, 2238, 4021, 4407, 4877, 5535, 6751, 7529, 7902, 8695, 8751, 9078, 9268, 9286, 9811
+  Operation: new = old * 65517533
+  Test: divisible by 4
+    If true: throw to monkey 359
+    If false: throw to monkey 334
+
+Monkey 334:
+  Starting items: 370, 1615, 2179, 3491, 3679, 3721, 4331, 4524, 4759, 4786, 5016, 5129, 5954, 6347, 6810, 7027, 7968, 8502, 8821, 9320, 9531, 9956
+  Operation: new = old + 66
+  Test: divisible by 1859
+    If true: throw to monkey 185
+    If false: throw to monkey 337
+
+Monkey 335:
+  Starting items: 179, 557, 766, 779, 1424, 2208, 3043, 3702, 3835, 3949, 4438, 4651, 5365, 6393, 6545, 7351, 9304, 9445, 9841
+  Operation: new = old * 845464862
+  Test: divisible by 11
+    If true: throw to monkey 466
+    If false: throw to monkey 339
+
+Monkey 336:
+  Starting items: 193, 683, 896, 1184, 1564, 1569, 1954, 3592, 3777, 3997, 5718, 5931, 6271, 6685, 6813, 7407, 8251, 8304, 9396
+  Operation: new = old + 24
+  Test: divisible by 31
+    If true: throw to monkey 122
+    If false: throw to monkey 337
+
+Monkey 337:
+  Starting items: 422, 538, 3662, 3677, 3725, 4818, 4862, 5670, 5951, 6295, 7198, 7328
+  Operation: new = old * old
+  Test: divisible by 65
+    If true: throw to monkey 256
+    If false: throw to monkey 338
+
+Monkey 338:
+  Starting items: 1063, 1228, 1742, 1944, 2296, 2733, 3397, 3442, 3972, 4999, 5888, 5918, 6002, 6180, 6669, 6719, 6940, 7393, 7638, 8003, 9028, 9554, 9651, 9706, 9951
+  Operation: new = old + 40
+  Test: divisible by 13
+    If true: throw to monkey 7
+    If false: throw to monkey 340
+
+Monkey 339:
+  Starting items: 361, 387, 428, 599, 1350, 2834, 2978, 5092, 5938, 5967, 6138, 6630, 7284, 7776, 8022, 8400, 8481, 8978, 9846
+  Operation: new = old * 239854759
+  Test: divisible by 11
+    If true: throw to monkey 460
+    If false: throw to monkey 343
+
+Monkey 340:
+  Starting items: 630, 784, 2024, 2144, 2998, 3231, 3305, 3807, 5136, 5590, 6191, 6210, 6598, 6895, 7122, 7743, 8110, 8263, 9171, 9784
+  Operation: new = old * 160718217
+  Test: divisible by 130
+    If true: throw to monkey 86
+    If false: throw to monkey 341
+
+Monkey 341:
+  Starting items: 435, 875, 1103, 1800, 2313, 3169, 3636, 4387, 5139, 6611, 7165, 7167, 8904, 9043, 9604, 9729
+  Operation: new = old * 196572993
+  Test: divisible by 7
+    If true: throw to monkey 340
+    If false: throw to monkey 343
+
+Monkey 342:
+  Starting items: 199, 1116, 1421, 2785, 2809, 2841, 3095, 3945, 4832, 5903, 6014, 6635, 7379, 8316, 8509, 8886, 8906, 9280, 9630
+  Operation: new = old * 679597231
+  Test: divisible by 55
+    If true: throw to monkey 478
+    If false: throw to monkey 343
+
+Monkey 343:
+  Starting items: 100, 108, 260, 1048, 1537, 1573, 2330, 2556, 4073, 4207, 4375, 4837, 4895, 5060, 5929, 5961, 6227, 6274, 7865, 7977, 8226, 8260, 9283, 9420, 9671
+  Operation: new = old * 821463661
+  Test: divisible by 455
+    If true: throw to monkey 472
+    If false: throw to monkey 345
+
+Monkey 344:
+  Starting items: 578, 743, 1993, 2192, 2648, 3162, 3745, 4243, 6766, 8618, 8646, 9625, 9801
+  Operation: new = old + 40
+  Test: divisible by 143
+    If true: throw to monkey 4
+    If false: throw to monkey 347
+
+Monkey 345:
+  Starting items: 101, 518, 794, 1294, 2118, 2250, 2255, 2474, 3019, 3248, 3321, 4138, 4453, 4851, 4900, 5005, 5760, 5977, 6235, 6774, 6822, 6959, 7519, 8612, 9460
+  Operation: new = old * 585341145
+  Test: divisible by 403
+    If true: throw to monkey 491
+    If false: throw to monkey 346
+
+Monkey 346:
+  Starting items: 559, 871, 1136, 1799, 2375, 2426, 2643, 3619, 3733, 3742, 4545, 5322, 6479, 7619, 7758, 8785, 9025, 9230, 9743
+  Operation: new = old + old
+  Test: divisible by 26
+    If true: throw to monkey 41
+    If false: throw to monkey 347
+
+Monkey 347:
+  Starting items: 403, 1458, 1613, 1946, 2430, 2493, 3174, 4608, 5185, 5210, 5425, 5507, 6260, 6995, 7163, 7262, 7376, 7612, 8095, 8393, 8440, 9892, 9987
+  Operation: new = old * old
+  Test: divisible by 4433
+    If true: throw to monkey 204
+    If false: throw to monkey 348
+
+Monkey 348:
+  Starting items: 21, 72, 105, 296, 1803, 2735, 5935, 6616, 7665, 8126, 8511, 8636, 8968
+  Operation: new = old * 750203265
+  Test: divisible by 35
+    If true: throw to monkey 474
+    If false: throw to monkey 349
+
+Monkey 349:
+  Starting items: 942, 1091, 1134, 1488, 2866, 3456, 3576, 3789, 4460, 4542, 4823, 5402, 6187, 6732, 7066, 7406, 7435, 7767, 7860, 9323, 9532, 9649
+  Operation: new = old * 546788455
+  Test: divisible by 455
+    If true: throw to monkey 288
+    If false: throw to monkey 358
+
+Monkey 350:
+  Starting items: 83, 299, 526, 568, 663, 2376, 2777, 3291, 3598, 3627, 3979, 4231, 4780, 5064, 5124, 5409, 6058, 6628, 6985, 7222, 7347, 7551, 7609, 7695, 7821, 8617, 8911, 9485, 9699, 9774
+  Operation: new = old * 741109748
+  Test: divisible by 2
+    If true: throw to monkey 146
+    If false: throw to monkey 352
+
+Monkey 351:
+  Starting items: 89, 643, 1002, 1990, 2000, 2246, 2373, 3246, 3830, 4239, 4890, 5433, 5462, 5619, 6100, 6157, 6838, 6925, 7872, 8230, 8383, 8631, 8727, 9302, 9464
+  Operation: new = old * 670662248
+  Test: divisible by 2
+    If true: throw to monkey 45
+    If false: throw to monkey 354
+
+Monkey 352:
+  Starting items: 781, 1256, 1546, 2633, 3107, 3182, 4605, 5080, 5183, 5368, 6136, 6954, 8210, 8227, 8264, 8461, 8774, 8864, 9479, 9605
+  Operation: new = old * 939079465
+  Test: divisible by 11
+    If true: throw to monkey 187
+    If false: throw to monkey 353
+
+Monkey 353:
+  Starting items: 177, 367, 443, 1317, 1698, 1887, 1967, 2967, 3055, 3083, 3148, 4051, 4676, 4687, 5063, 5767, 5868, 6665, 7322, 7684, 8573, 8581, 9265, 9587
+  Operation: new = old * 121713873
+  Test: divisible by 4
+    If true: throw to monkey 225
+    If false: throw to monkey 354
+
+Monkey 354:
+  Starting items: 59, 180, 281, 560, 979, 1974, 2363, 3028, 3075, 3661, 4693, 4754, 5292, 5339, 6368, 6620, 8417, 8568, 8657, 9493, 9949
+  Operation: new = old * old
+  Test: divisible by 25
+    If true: throw to monkey 371
+    If false: throw to monkey 355
+
+Monkey 355:
+  Starting items: 149, 412, 583, 769, 1623, 2054, 2159, 2302, 2439, 3194, 3399, 3685, 3929, 4022, 4044, 4876, 5317, 5877, 6384, 6435
+  Operation: new = old + 89
+  Test: divisible by 806
+    If true: throw to monkey 413
+    If false: throw to monkey 358
+
+Monkey 356:
+  Starting items: 258, 335, 1037, 1097, 1176, 1502, 1563, 1755, 2168, 2260, 2289, 2292, 4405, 5172, 5942, 6108, 7228, 7859, 8046, 8290, 8428, 8447, 9199, 9317
+  Operation: new = old + 53
+  Test: divisible by 20
+    If true: throw to monkey 303
+    If false: throw to monkey 357
+
+Monkey 357:
+  Starting items: 84, 336, 892, 1059, 1093, 2022, 2207, 2586, 2901, 3109, 3569, 3727, 5816, 6021, 6354, 7258, 7438, 7731, 7914, 8128, 8340, 9394, 9404
+  Operation: new = old * 783548559
+  Test: divisible by 806
+    If true: throw to monkey 18
+    If false: throw to monkey 358
+
+Monkey 358:
+  Starting items: 914, 2374, 2516, 2559, 2854, 3289, 4122, 4462, 5436, 6163, 7200, 7375, 7398, 9226, 9329, 9937
+  Operation: new = old + 76
+  Test: divisible by 2
+    If true: throw to monkey 131
+    If false: throw to monkey 361
+
+Monkey 359:
+  Starting items: 215, 523, 713, 791, 2437, 2438, 2443, 3176, 4969, 6509, 6558, 6827, 8082, 8193, 8293, 9262, 9351, 9619
+  Operation: new = old * 226858159
+  Test: divisible by 4
+    If true: throw to monkey 385
+    If false: throw to monkey 360
+
+Monkey 360:
+  Starting items: 251, 1235, 1255, 1267, 1516, 1630, 1981, 2729, 3103, 4447, 6112, 6201, 7660, 8204, 8457, 8578, 8849, 9088, 9919, 9998
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 117
+    If false: throw to monkey 361
+
+Monkey 361:
+  Starting items: 26, 954, 1454, 1486, 1493, 3007, 3285, 3565, 4260, 4307, 5220, 5254, 5701, 6399, 6696, 7014, 7679, 8528, 9011, 9107
+  Operation: new = old * 571863810
+  Test: divisible by 26
+    If true: throw to monkey 264
+    If false: throw to monkey 363
+
+Monkey 362:
+  Starting items: 562, 1483, 2245, 3116, 3469, 3500, 3783, 4300, 5163, 5354, 5797, 5981, 7417, 8099, 8740, 9353, 9525
+  Operation: new = old * 822459396
+  Test: divisible by 35
+    If true: throw to monkey 184
+    If false: throw to monkey 364
+
+Monkey 363:
+  Starting items: 78, 214, 671, 828, 1029, 1173, 2981, 3130, 4252, 4506, 4664, 6277, 8271, 8473, 8700, 9114, 9446
+  Operation: new = old * old
+  Test: divisible by 35
+    If true: throw to monkey 300
+    If false: throw to monkey 369
+
+Monkey 364:
+  Starting items: 52, 2002, 2861, 2963, 3543, 3899, 3932, 4297, 4457, 4477, 5298, 6839, 7313, 7569, 8162, 8442, 8885, 9976
+  Operation: new = old * 116934584
+  Test: divisible by 775
+    If true: throw to monkey 194
+    If false: throw to monkey 369
+
+Monkey 365:
+  Starting items: 53, 248, 612, 1187, 1775, 3035, 3681, 4607, 5706, 5895, 8302, 8496, 9737
+  Operation: new = old * old
+  Test: divisible by 10571
+    If true: throw to monkey 39
+    If false: throw to monkey 366
+
+Monkey 366:
+  Starting items: 118, 174, 312, 457, 1937, 2061, 3539, 4108, 4510, 4521, 4535, 5628, 5782, 6059, 6362, 7936, 8329, 8547, 8877, 9977
+  Operation: new = old + 68
+  Test: divisible by 143
+    If true: throw to monkey 335
+    If false: throw to monkey 367
+
+Monkey 367:
+  Starting items: 232, 817, 847, 1039, 1435, 2258, 3939, 6656, 8139, 8247, 9845, 9999
+  Operation: new = old * old
+  Test: divisible by 65
+    If true: throw to monkey 272
+    If false: throw to monkey 368
+
+Monkey 368:
+  Starting items: 227, 877, 1246, 3229, 3551, 4135, 5249, 6427, 6523, 7024, 7083, 7465, 7640, 7827, 8920, 9416, 9581, 9780
+  Operation: new = old * 478188887
+  Test: divisible by 1922
+    If true: throw to monkey 206
+    If false: throw to monkey 369
+
+Monkey 369:
+  Starting items: 446, 1461, 2634, 2925, 3189, 4000, 4522, 4644, 5757, 5862, 6104, 6116, 6170, 7812, 7863, 9566, 9583
+  Operation: new = old + 36
+  Test: divisible by 143
+    If true: throw to monkey 54
+    If false: throw to monkey 376
+
+Monkey 370:
+  Starting items: 1142, 1790, 3056, 4267, 4310, 4624, 4872, 5313, 5352, 5693, 6501, 6909, 6932, 7327, 7876
+  Operation: new = old * 597788693
+  Test: divisible by 403
+    If true: throw to monkey 496
+    If false: throw to monkey 371
+
+Monkey 371:
+  Starting items: 351, 449, 462, 983, 1642, 2764, 3135, 3877, 4488, 4797, 4848, 5545, 5574, 5585, 5613, 7098, 7365, 7455, 7553, 7595, 7928, 8807, 9368
+  Operation: new = old * old
+  Test: divisible by 338
+    If true: throw to monkey 174
+    If false: throw to monkey 372
+
+Monkey 372:
+  Starting items: 4, 705, 757, 2140, 2508, 3994, 4074, 4893, 5153, 7300, 7920, 8423, 9939
+  Operation: new = old * old
+  Test: divisible by 50
+    If true: throw to monkey 331
+    If false: throw to monkey 373
+
+Monkey 373:
+  Starting items: 505, 1745, 2020, 3715, 4333, 4726, 5083, 5705, 5884, 6178, 6284, 6510, 6606, 6876, 6894, 7421, 7894, 7931, 7992, 8124, 8681, 9051, 9231, 9440, 9624, 9703
+  Operation: new = old + 6
+  Test: divisible by 130
+    If true: throw to monkey 253
+    If false: throw to monkey 374
+
+Monkey 374:
+  Starting items: 337, 803, 934, 1518, 1648, 1704, 1880, 2080, 2800, 3302, 3570, 4248, 4266, 5445, 5995, 6289, 7144, 8004, 8563, 8708, 9852
+  Operation: new = old * 375058973
+  Test: divisible by 2
+    If true: throw to monkey 424
+    If false: throw to monkey 375
+
+Monkey 375:
+  Starting items: 522, 1126, 1860, 3528, 4203, 4772, 4827, 5571, 5785, 6092, 6243, 6464, 6475, 8656, 9339, 9980
+  Operation: new = old + 74
+  Test: divisible by 715
+    If true: throw to monkey 396
+    If false: throw to monkey 376
+
+Monkey 376:
+  Starting items: 1347, 1655, 2127, 2333, 4079, 4293, 4355, 4413, 6651, 7420, 7725, 7752, 8586, 9282
+  Operation: new = old * old
+  Test: divisible by 35
+    If true: throw to monkey 135
+    If false: throw to monkey 377
+
+Monkey 377:
+  Starting items: 444, 495, 887, 978, 2197, 2412, 3644, 3692, 4435, 4527, 4648, 4773, 5109, 5170, 5211, 6375, 6465, 6471, 7543, 8325, 8532, 8755, 8970, 9633
+  Operation: new = old + 15
+  Test: divisible by 169
+    If true: throw to monkey 404
+    If false: throw to monkey 388
+
+Monkey 378:
+  Starting items: 527, 839, 928, 1014, 1505, 3126, 3461, 4469, 4597, 5108, 5441, 7179, 8408, 9173
+  Operation: new = old + 76
+  Test: divisible by 14
+    If true: throw to monkey 76
+    If false: throw to monkey 383
+
+Monkey 379:
+  Starting items: 121, 746, 1666, 2130, 2989, 3318, 3580, 4066, 4127, 4926, 4929, 4991, 5020, 5926, 5947, 6390, 6786, 7441, 8000, 8072, 8256, 8261, 8487, 8655, 9544, 9790, 9929
+  Operation: new = old * 754052852
+  Test: divisible by 2387
+    If true: throw to monkey 363
+    If false: throw to monkey 382
+
+Monkey 380:
+  Starting items: 792, 815, 1057, 1859, 2490, 2596, 2856, 3013, 4212, 5358, 5518, 5759, 5787, 7482, 7527, 7984, 8187, 8602, 9312, 9850
+  Operation: new = old * 923992725
+  Test: divisible by 310
+    If true: throw to monkey 203
+    If false: throw to monkey 381
+
+Monkey 381:
+  Starting items: 163, 391, 1476, 1705, 1727, 1842, 2248, 2751, 3699, 3790, 4146, 4205, 4296, 4918, 5506, 5734, 6103, 7082, 7913, 8366, 8858, 8914
+  Operation: new = old * 999978603
+  Test: divisible by 5
+    If true: throw to monkey 186
+    If false: throw to monkey 382
+
+Monkey 382:
+  Starting items: 44, 69, 234, 411, 1008, 1054, 1303, 1494, 2058, 2341, 2797, 3149, 3279, 3827, 3914, 3915, 4112, 4971, 5381, 5844, 6447, 6961, 7932, 9692
+  Operation: new = old * 55102121
+  Test: divisible by 5239
+    If true: throw to monkey 55
+    If false: throw to monkey 383
+
+Monkey 383:
+  Starting items: 580, 739, 1696, 2461, 3070, 3622, 4049, 4562, 4654, 5344, 6216, 6234, 6749, 7281, 7428, 7580, 8133, 8562, 8682, 9040, 9942
+  Operation: new = old * 27111799
+  Test: divisible by 13
+    If true: throw to monkey 421
+    If false: throw to monkey 384
+
+Monkey 384:
+  Starting items: 965, 1298, 2693, 2944, 3607, 3631, 4425, 5240, 5297, 5808, 6077, 6420, 6698, 7462, 7703, 8482, 8925, 9808, 9865
+  Operation: new = old + old
+  Test: divisible by 182
+    If true: throw to monkey 69
+    If false: throw to monkey 385
+
+Monkey 385:
+  Starting items: 1190, 1362, 1672, 1994, 2076, 2553, 2909, 2913, 3294, 3335, 4206, 5061, 5735, 6401, 6673, 7073, 8328, 8654, 8701, 9284, 9422
+  Operation: new = old * 738374712
+  Test: divisible by 434
+    If true: throw to monkey 315
+    If false: throw to monkey 386
+
+Monkey 386:
+  Starting items: 138, 1374, 1529, 1773, 2418, 2689, 4125, 5162, 6156, 6323, 7631, 8276, 8725, 8867, 9242, 9427, 9878
+  Operation: new = old * 793673231
+  Test: divisible by 11
+    If true: throw to monkey 393
+    If false: throw to monkey 391
+
+Monkey 387:
+  Starting items: 724, 786, 938, 1195, 1603, 1607, 1959, 2366, 3516, 3640, 3902, 4262, 4284, 6032, 6444, 6618, 6720, 6739, 7127, 7643, 7937, 8054, 8065, 8407, 8872, 8928, 9200, 9409
+  Operation: new = old * old
+  Test: divisible by 70
+    If true: throw to monkey 102
+    If false: throw to monkey 388
+
+Monkey 388:
+  Starting items: 293, 1189, 1338, 2703, 2752, 3832, 4943, 5373, 6165, 6730, 6952, 7311, 9891
+  Operation: new = old * old
+  Test: divisible by 13
+    If true: throw to monkey 145
+    If false: throw to monkey 394
+
+Monkey 389:
+  Starting items: 349, 982, 1406, 1720, 1791, 2603, 2992, 3014, 3340, 3476, 3772, 3854, 4564, 5218, 5465, 5484, 6033, 7025, 7649, 7962, 8061, 9437, 9680, 9795
+  Operation: new = old * 136355827
+  Test: divisible by 338
+    If true: throw to monkey 443
+    If false: throw to monkey 393
+
+Monkey 390:
+  Starting items: 181, 620, 678, 1527, 1858, 2368, 3011, 4035, 5546, 6182, 6549, 6590, 7430, 8451, 9475, 9615
+  Operation: new = old * 527503957
+  Test: divisible by 4
+    If true: throw to monkey 354
+    If false: throw to monkey 392
+
+Monkey 391:
+  Starting items: 1751, 1925, 1931, 2408, 2526, 3281, 4189, 4466, 5392, 5502, 5598, 5856, 6583, 6785, 7503, 7779, 7929, 8410, 8555, 8606, 8880, 9049, 9298
+  Operation: new = old + 23
+  Test: divisible by 1085
+    If true: throw to monkey 56
+    If false: throw to monkey 392
+
+Monkey 392:
+  Starting items: 326, 1105, 1503, 1688, 1733, 1906, 2868, 3153, 3996, 4458, 4696, 4723, 5385, 6040, 6047, 6562, 7080, 7234, 8106, 9212, 9487, 9641
+  Operation: new = old * 744859514
+  Test: divisible by 10
+    If true: throw to monkey 297
+    If false: throw to monkey 393
+
+Monkey 393:
+  Starting items: 226, 571, 600, 945, 1220, 1689, 1824, 1864, 2091, 2863, 3304, 3348, 3930, 4733, 5040, 5222, 5333, 5667, 6879, 8702, 9143, 9272, 9529
+  Operation: new = old + 31
+  Test: divisible by 11
+    If true: throw to monkey 29
+    If false: throw to monkey 394
+
+Monkey 394:
+  Starting items: 737, 867, 1086, 1612, 1977, 3108, 3131, 3419, 3844, 3937, 4504, 5561, 6028, 6244, 6459, 6780, 8079, 8087, 8253, 9108, 9179, 9749, 9982
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 451
+    If false: throw to monkey 395
+
+Monkey 395:
+  Starting items: 453, 1113, 1369, 2394, 2674, 3222, 3338, 3447, 3537, 5150, 5476, 5679, 5771, 7157, 7471, 8730, 9019, 9602, 9687, 9734, 9882, 9922, 9954
+  Operation: new = old * old
+  Test: divisible by 12493
+    If true: throw to monkey 487
+    If false: throw to monkey 397
+
+Monkey 396:
+  Starting items: 333, 688, 799, 834, 1017, 1186, 1841, 2049, 2463, 2605, 2638, 2838, 2988, 3422, 3740, 5396, 5614, 5921, 6207, 7030, 7866, 7934, 8838, 8938, 9058, 9062, 9984
+  Operation: new = old * 830301361
+  Test: divisible by 5
+    If true: throw to monkey 296
+    If false: throw to monkey 399
+
+Monkey 397:
+  Starting items: 542, 695, 1455, 1501, 1562, 1845, 2010, 2983, 3079, 3188, 3652, 3775, 4646, 5175, 5541, 6172, 6570, 7012, 8425, 9124, 9591, 9675, 9766
+  Operation: new = old + old
+  Test: divisible by 310
+    If true: throw to monkey 338
+    If false: throw to monkey 398
+
+Monkey 398:
+  Starting items: 160, 209, 1065, 1729, 2307, 2769, 3425, 3544, 3626, 4184, 4363, 5026, 5796, 6718, 6926, 7207, 7292, 7626, 8096, 8166, 8988, 9125, 9469, 9744, 9767
+  Operation: new = old + 15
+  Test: divisible by 11
+    If true: throw to monkey 168
+    If false: throw to monkey 399
+
+Monkey 399:
+  Starting items: 524, 674, 829, 2419, 3568, 3611, 3954, 4479, 5914, 6440, 7460, 7582, 7677, 8791, 8923
+  Operation: new = old + 77
+  Test: divisible by 13
+    If true: throw to monkey 95
+    If false: throw to monkey 401
+
+Monkey 400:
+  Starting items: 700, 1394, 3650, 3687, 5048, 5251, 7833, 8209, 8680, 8883, 9654
+  Operation: new = old + 27
+  Test: divisible by 44
+    If true: throw to monkey 402
+    If false: throw to monkey 401
+
+Monkey 401:
+  Starting items: 841, 1628, 2641, 3412, 3497, 4064, 4163, 4370, 4691, 4788, 5223, 5983, 6469, 7078, 7094, 7253, 8413, 8784, 8788, 8917, 9106, 9157, 9238, 9367
+  Operation: new = old + 27
+  Test: divisible by 20
+    If true: throw to monkey 258
+    If false: throw to monkey 404
+
+Monkey 402:
+  Starting items: 1302, 1911, 2300, 2602, 4268, 5054, 5615, 6086, 6309, 6799, 7841, 7916, 8594, 8683, 8749
+  Operation: new = old * old
+  Test: divisible by 4433
+    If true: throw to monkey 450
+    If false: throw to monkey 405
+
+Monkey 403:
+  Starting items: 123, 885, 1405, 2230, 2798, 3001, 3739, 4056, 4430, 4548, 4702, 5010, 5311, 5829, 5968, 6094, 6304, 6349, 7071, 8063, 9037, 9721, 9847
+  Operation: new = old * 861136442
+  Test: divisible by 11
+    If true: throw to monkey 80
+    If false: throw to monkey 407
+
+Monkey 404:
+  Starting items: 117, 459, 634, 1284, 1504, 2193, 2883, 3670, 4057, 4069, 4593, 4952, 5810, 5996, 8558, 9006, 9087, 9152, 9962
+  Operation: new = old * 686743901
+  Test: divisible by 1705
+    If true: throw to monkey 192
+    If false: throw to monkey 405
+
+Monkey 405:
+  Starting items: 284, 305, 416, 1250, 3561, 4493, 5193, 5422, 6266, 6292, 6622, 7120, 7154, 7997, 8786, 9709
+  Operation: new = old * 944972010
+  Test: divisible by 31
+    If true: throw to monkey 112
+    If false: throw to monkey 406
+
+Monkey 406:
+  Starting items: 195, 404, 1468, 1480, 1574, 2175, 2700, 2756, 3376, 5656, 6567, 7307, 8790, 9751, 9827, 9985
+  Operation: new = old * 828857941
+  Test: divisible by 715
+    If true: throw to monkey 44
+    If false: throw to monkey 408
+
+Monkey 407:
+  Starting items: 190, 203, 331, 972, 1052, 1506, 1997, 2908, 3076, 4118, 4566, 4936, 5389, 6206, 7216, 7278, 7469, 7748, 7915, 7939, 8154, 9770
+  Operation: new = old * 714261669
+  Test: divisible by 10571
+    If true: throw to monkey 218
+    If false: throw to monkey 413
+
+Monkey 408:
+  Starting items: 736, 1280, 1382, 1470, 3018, 4452, 4995, 5027, 6042, 6282, 6632, 6652, 6987, 7785, 8089, 8667, 9465, 9555, 9747
+  Operation: new = old + 10
+  Test: divisible by 2015
+    If true: throw to monkey 67
+    If false: throw to monkey 409
+
+Monkey 409:
+  Starting items: 660, 771, 4211, 4665, 5489, 6057, 7062, 7840, 9326, 9595, 9642, 9932
+  Operation: new = old * 991525893
+  Test: divisible by 715
+    If true: throw to monkey 162
+    If false: throw to monkey 411
+
+Monkey 410:
+  Starting items: 218, 236, 379, 1450, 2405, 2592, 3566, 3651, 3774, 4441, 4865, 4909, 5414, 5563, 6085, 6160, 6174, 7021, 7113, 8101, 8121, 8301, 8377, 8720, 8779, 8812, 9269, 9872
+  Operation: new = old * 552112620
+  Test: divisible by 182
+    If true: throw to monkey 108
+    If false: throw to monkey 411
+
+Monkey 411:
+  Starting items: 727, 805, 843, 2035, 2111, 2573, 3123, 3204, 4154, 5068, 5082, 5519, 6380, 6496, 6534, 6745, 6803, 7218, 7807, 8201, 8369, 8810, 9299
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 365
+    If false: throw to monkey 412
+
+Monkey 412:
+  Starting items: 79, 107, 1363, 1879, 2423, 3147, 3155, 3235, 3977, 4394, 5720, 5831, 6602, 6924, 7415, 7654, 7711, 8892, 9684, 9965
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 432
+    If false: throw to monkey 413
+
+Monkey 413:
+  Starting items: 3481, 4276, 4993, 5056, 5256, 5842, 5900, 5906, 6269, 6589, 7457, 7727, 8011, 8180, 8956, 9693
+  Operation: new = old + 19
+  Test: divisible by 6727
+    If true: throw to monkey 306
+    If false: throw to monkey 414
+
+Monkey 414:
+  Starting items: 112, 274, 1404, 2174, 2308, 3258, 3272, 5496, 6190, 6967, 7015, 7348, 8750, 8993, 9146, 9207
+  Operation: new = old + 78
+  Test: divisible by 62
+    If true: throw to monkey 270
+    If false: throw to monkey 415
+
+Monkey 415:
+  Starting items: 565, 804, 857, 1082, 2048, 2392, 2748, 2958, 3133, 4070, 4485, 4752, 5455, 5695, 6391, 6639, 6836, 6969, 7126, 7607, 7616, 8382, 8921, 8943, 9862, 9864
+  Operation: new = old + 64
+  Test: divisible by 310
+    If true: throw to monkey 199
+    If false: throw to monkey 416
+
+Monkey 416:
+  Starting items: 852, 927, 994, 999, 1083, 1481, 1553, 1867, 2148, 2614, 2731, 4323, 4444, 5244, 5616, 5959, 6993, 7017, 7248, 7600, 7604, 7715, 8706, 8721, 9024
+  Operation: new = old * 118458292
+  Test: divisible by 26
+    If true: throw to monkey 219
+    If false: throw to monkey 433
+
+Monkey 417:
+  Starting items: 646, 1422, 1582, 1592, 1739, 1895, 2233, 3160, 3255, 3312, 3701, 4586, 5034, 5556, 5566, 5772, 5792, 5874, 6711, 7986, 9266, 9495, 9750
+  Operation: new = old * 68990348
+  Test: divisible by 2821
+    If true: throw to monkey 247
+    If false: throw to monkey 418
+
+Monkey 418:
+  Starting items: 667, 697, 840, 1153, 1218, 1297, 2057, 2899, 2991, 4591, 5366, 5483, 5559, 7802, 8531, 9033, 9127, 9995
+  Operation: new = old * 821074494
+  Test: divisible by 217
+    If true: throw to monkey 454
+    If false: throw to monkey 423
+
+Monkey 419:
+  Starting items: 242, 546, 2213, 2627, 2692, 2968, 2972, 3946, 4226, 4291, 4727, 4939, 6072, 6958, 7114, 7702, 8336, 8595, 8613, 8916, 8972, 9663, 9742
+  Operation: new = old + 7
+  Test: divisible by 50
+    If true: throw to monkey 0
+    If false: throw to monkey 420
+
+Monkey 420:
+  Starting items: 95, 1110, 1521, 1683, 2919, 3025, 3034, 3473, 3785, 4204, 4235, 4322, 4478, 5221, 5579, 5806, 6794, 7252, 7585, 8273, 9047
+  Operation: new = old + 88
+  Test: divisible by 403
+    If true: throw to monkey 284
+    If false: throw to monkey 421
+
+Monkey 421:
+  Starting items: 1387, 1866, 2039, 2358, 2396, 2440, 3044, 3224, 3301, 3680, 4327, 4741, 5721, 6725, 6782, 6930, 7226, 8266, 8486, 8518, 8521, 8577, 9165
+  Operation: new = old + 85
+  Test: divisible by 13
+    If true: throw to monkey 339
+    If false: throw to monkey 423
+
+Monkey 422:
+  Starting items: 40, 289, 330, 569, 704, 926, 1072, 1079, 1566, 1711, 2036, 2101, 2198, 2387, 2949, 3084, 3256, 3560, 3828, 5206, 5309, 5523, 5529, 5641, 5753, 7720, 8205, 8313, 9746, 9888
+  Operation: new = old * old
+  Test: divisible by 806
+    If true: throw to monkey 346
+    If false: throw to monkey 424
+
+Monkey 423:
+  Starting items: 16, 157, 517, 1797, 2104, 3894, 4302, 5522, 6486, 6851, 7140, 7825, 8055, 8604, 8648, 8876, 9100, 9735
+  Operation: new = old * 652406083
+  Test: divisible by 682
+    If true: throw to monkey 209
+    If false: throw to monkey 424
+
+Monkey 424:
+  Starting items: 191, 494, 1629, 2690, 3125, 3151, 3838, 5554, 5692, 5845, 6350, 6506, 7277, 7450, 9365, 9481
+  Operation: new = old * old
+  Test: divisible by 28
+    If true: throw to monkey 375
+    If false: throw to monkey 425
+
+Monkey 425:
+  Starting items: 2065, 2713, 4113, 4219, 5696, 5927, 7148, 7562, 8049, 8931, 9530
+  Operation: new = old + 67
+  Test: divisible by 286
+    If true: throw to monkey 242
+    If false: throw to monkey 426
+
+Monkey 426:
+  Starting items: 14, 587, 594, 2355, 2635, 3180, 3260, 3510, 3868, 4185, 4378, 4686, 4753, 4866, 5196, 5388, 5737, 5754, 6215, 6314, 6480, 7180, 9170, 9471, 9676
+  Operation: new = old * 208393276
+  Test: divisible by 403
+    If true: throw to monkey 341
+    If false: throw to monkey 442
+
+Monkey 427:
+  Starting items: 373, 907, 1077, 1641, 3842, 4313, 6194, 6338, 6966, 7719, 7765, 8379, 9119, 9718
+  Operation: new = old * 64626093
+  Test: divisible by 806
+    If true: throw to monkey 322
+    If false: throw to monkey 428
+
+Monkey 428:
+  Starting items: 1001, 1397, 2029, 2318, 2655, 3173, 3596, 3707, 3991, 4520, 4977, 5478, 7463, 7615, 7730, 8248, 8286, 9180, 9756, 9857, 9952
+  Operation: new = old * 424661582
+  Test: divisible by 13
+    If true: throw to monkey 81
+    If false: throw to monkey 429
+
+Monkey 429:
+  Starting items: 166, 1433, 1466, 2487, 3917, 4679, 5241, 5568, 5677, 5775, 5923, 6412, 6976, 7492, 7622, 8307, 8384
+  Operation: new = old * 770938390
+  Test: divisible by 31
+    If true: throw to monkey 133
+    If false: throw to monkey 431
+
+Monkey 430:
+  Starting items: 87, 588, 1112, 1344, 2083, 2517, 2583, 3602, 5501, 6120, 6485, 6858, 6944, 7345, 7690, 8208, 8900, 9511, 9898, 9910
+  Operation: new = old * old
+  Test: divisible by 55
+    If true: throw to monkey 216
+    If false: throw to monkey 431
+
+Monkey 431:
+  Starting items: 134, 255, 686, 1420, 1765, 2005, 2044, 2718, 2807, 3275, 3801, 3880, 4078, 4414, 4678, 7264, 7289, 7372, 7780, 8023, 8651, 8816, 9270, 9277, 9498
+  Operation: new = old * old
+  Test: divisible by 10
+    If true: throw to monkey 114
+    If false: throw to monkey 433
+
+Monkey 432:
+  Starting items: 721, 1285, 1331, 1759, 2941, 3047, 3548, 5127, 5569, 5830, 6759, 7554, 7918, 9244, 9644, 9761, 9867, 9938
+  Operation: new = old * 390023245
+  Test: divisible by 715
+    If true: throw to monkey 372
+    If false: throw to monkey 440
+
+Monkey 433:
+  Starting items: 47, 1036, 1533, 2478, 3371, 3691, 4032, 6009, 7468, 7614, 8311, 8871, 9208, 9683
+  Operation: new = old * 317562551
+  Test: divisible by 4433
+    If true: throw to monkey 147
+    If false: throw to monkey 434
+
+Monkey 434:
+  Starting items: 237, 895, 1202, 1767, 1808, 2456, 3751, 3788, 4309, 4443, 5051, 5805, 6333, 6406, 7093, 7732, 7744, 8662, 9044, 9133, 9886
+  Operation: new = old + 59
+  Test: divisible by 20
+    If true: throw to monkey 318
+    If false: throw to monkey 436
+
+Monkey 435:
+  Starting items: 1041, 1699, 2685, 2732, 3395, 3959, 4830, 5578, 6538, 7123, 7522, 7561, 7800, 7808, 7955, 8480, 8669, 8724, 9390
+  Operation: new = old * 817459895
+  Test: divisible by 31
+    If true: throw to monkey 254
+    If false: throw to monkey 436
+
+Monkey 436:
+  Starting items: 389, 2218, 3006, 3099, 3156, 3738, 4314, 4760, 5973, 6591, 6736, 6814, 9516, 9682
+  Operation: new = old * 314099965
+  Test: divisible by 22
+    If true: throw to monkey 289
+    If false: throw to monkey 437
+
+Monkey 437:
+  Starting items: 1792, 2136, 3389, 4019, 4303, 5420, 5423, 5750, 6537, 6633, 6707, 7204, 8868, 9029, 9061, 9192
+  Operation: new = old + 32
+  Test: divisible by 35
+    If true: throw to monkey 497
+    If false: throw to monkey 438
+
+Monkey 438:
+  Starting items: 256, 415, 451, 461, 473, 924, 1040, 1508, 2043, 2681, 3703, 3776, 3878, 5097, 5643, 5731, 6452, 6526, 6857, 7446, 8274
+  Operation: new = old * 989411415
+  Test: divisible by 325
+    If true: throw to monkey 31
+    If false: throw to monkey 439
+
+Monkey 439:
+  Starting items: 692, 3217, 4024, 4105, 4264, 4844, 5642, 5980, 7982, 9251, 9292, 9509, 9540
+  Operation: new = old * 387041092
+  Test: divisible by 143
+    If true: throw to monkey 215
+    If false: throw to monkey 440
+
+Monkey 440:
+  Starting items: 141, 185, 1161, 1215, 1602, 2499, 2762, 2765, 2914, 3000, 3170, 3273, 3562, 4030, 4166, 4365, 5094, 5626, 6176, 6977, 8007, 8743, 9407
+  Operation: new = old * old
+  Test: divisible by 2
+    If true: throw to monkey 395
+    If false: throw to monkey 441
+
+Monkey 441:
+  Starting items: 310, 534, 1542, 1912, 2011, 2422, 3122, 4236, 4304, 4986, 5217, 5722, 6423, 6982, 7709, 8228, 8250, 8624, 9075, 9220, 9856
+  Operation: new = old * old
+  Test: divisible by 11
+    If true: throw to monkey 360
+    If false: throw to monkey 442
+
+Monkey 442:
+  Starting items: 23, 61, 1407, 1875, 1905, 2495, 3329, 3392, 4155, 4358, 5184, 5338, 6692, 6921, 7472, 7817, 8524, 8554, 8575, 9838
+  Operation: new = old * 95548142
+  Test: divisible by 55
+    If true: throw to monkey 210
+    If false: throw to monkey 444
+
+Monkey 443:
+  Starting items: 689, 2372, 2414, 2435, 2717, 5504, 5707, 5723, 6093, 6972, 7251, 8216, 8980, 9076, 9115, 9517
+  Operation: new = old * 561662941
+  Test: divisible by 806
+    If true: throw to monkey 109
+    If false: throw to monkey 444
+
+Monkey 444:
+  Starting items: 2108, 2329, 2562, 2570, 2623, 3805, 4218, 5353, 5713, 6883, 7355, 7610, 8746, 8772, 9433, 9448
+  Operation: new = old + 84
+  Test: divisible by 154
+    If true: throw to monkey 188
+    If false: throw to monkey 445
+
+Monkey 445:
+  Starting items: 4165, 5647, 6318, 6493, 6612, 6750, 7688, 7736, 7923, 8132, 8738, 9628
+  Operation: new = old * 426880291
+  Test: divisible by 31
+    If true: throw to monkey 488
+    If false: throw to monkey 447
+
+Monkey 446:
+  Starting items: 74, 254, 509, 2204, 2273, 2529, 3191, 3520, 3976, 4229, 4576, 5820, 6099, 6664, 6904, 6919, 7280, 7539, 7861, 8219, 8258, 8343, 8842, 9065, 9828, 9869
+  Operation: new = old * 621026600
+  Test: divisible by 310
+    If true: throw to monkey 302
+    If false: throw to monkey 447
+
+Monkey 447:
+  Starting items: 167, 498, 758, 1038, 1239, 2636, 3292, 3480, 4404, 4483, 4981, 5126, 5308, 5349, 5530, 5769, 6742, 6792, 6917, 7033, 7060, 7318, 7647, 8283, 9053, 9496
+  Operation: new = old * old
+  Test: divisible by 310
+    If true: throw to monkey 285
+    If false: throw to monkey 448
+
+Monkey 448:
+  Starting items: 1106, 3364, 3735, 4061, 4906, 5011, 5146, 5746, 5855, 5891, 8949, 9083, 9519, 9836
+  Operation: new = old + 68
+  Test: divisible by 31
+    If true: throw to monkey 148
+    If false: throw to monkey 450
+
+Monkey 449:
+  Starting items: 653, 712, 837, 1299, 1329, 1610, 2398, 2921, 5451, 6069, 6220, 9948, 9964
+  Operation: new = old + 58
+  Test: divisible by 13
+    If true: throw to monkey 381
+    If false: throw to monkey 450
+
+Monkey 450:
+  Starting items: 532, 1217, 1252, 1712, 2441, 2504, 3247, 4102, 4574, 5524, 7739, 7759, 8092, 8094, 8869, 9105
+  Operation: new = old * 837513748
+  Test: divisible by 22
+    If true: throw to monkey 386
+    If false: throw to monkey 457
+
+Monkey 451:
+  Starting items: 183, 1119, 1965, 2411, 2610, 2688, 2964, 3074, 3200, 4149, 4656, 5046, 5052, 5801, 7087, 7374
+  Operation: new = old * 667748825
+  Test: divisible by 31
+    If true: throw to monkey 176
+    If false: throw to monkey 452
+
+Monkey 452:
+  Starting items: 34, 48, 54, 359, 618, 1025, 1626, 2017, 2075, 2164, 2190, 2527, 2704, 4330, 4546, 5552, 8188, 8190, 8833, 9123, 9538
+  Operation: new = old * 95827702
+  Test: divisible by 130
+    If true: throw to monkey 293
+    If false: throw to monkey 453
+
+Monkey 453:
+  Starting items: 593, 915, 1891, 1930, 2081, 3141, 3536, 4227, 4619, 5604, 5728, 5825, 7097, 7470, 9438
+  Operation: new = old + 17
+  Test: divisible by 31
+    If true: throw to monkey 255
+    If false: throw to monkey 454
+
+Monkey 454:
+  Starting items: 2178, 2280, 2351, 2716, 2923, 3082, 3143, 3234, 4373, 4442, 4561, 4609, 5070, 5551, 5562, 5617, 5630, 5941, 5998, 6481, 6548, 7102, 7291, 7922, 7981, 8814, 9166, 9261, 9582
+  Operation: new = old * 255307856
+  Test: divisible by 20
+    If true: throw to monkey 309
+    If false: throw to monkey 462
+
+Monkey 455:
+  Starting items: 313, 317, 1044, 2558, 2637, 2736, 3325, 3423, 4771, 4996, 5102, 5390, 6008, 6328, 7067, 7124, 8298, 9116, 9177
+  Operation: new = old * 300406663
+  Test: divisible by 155
+    If true: throw to monkey 8
+    If false: throw to monkey 456
+
+Monkey 456:
+  Starting items: 489, 1446, 1536, 1837, 2587, 2615, 2787, 2896, 3475, 3545, 4230, 4514, 4820, 5463, 5878, 6018, 6031, 6257, 6392, 7530, 7589, 7985, 8546, 9077, 9894
+  Operation: new = old * 404109720
+  Test: divisible by 31
+    If true: throw to monkey 46
+    If false: throw to monkey 457
+
+Monkey 457:
+  Starting items: 1150, 1214, 1571, 2184, 2877, 4299, 5100, 6764, 7594, 7910, 8296, 8890, 9428
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 485
+    If false: throw to monkey 462
+
+Monkey 458:
+  Starting items: 1578, 2349, 3128, 3317, 3985, 4047, 4083, 4091, 4140, 4196, 4286, 4344, 4688, 4706, 4734, 4839, 6241, 6255, 6778, 6973, 7664, 8203, 8288, 8829, 9330, 9558, 9832
+  Operation: new = old * 66129044
+  Test: divisible by 275
+    If true: throw to monkey 220
+    If false: throw to monkey 459
+
+Monkey 459:
+  Starting items: 70, 431, 2393, 2887, 3027, 5105, 5225, 5430, 7293, 7716, 7875, 8690, 8860, 8913, 9486, 9897
+  Operation: new = old * 577121768
+  Test: divisible by 31
+    If true: throw to monkey 483
+    If false: throw to monkey 463
+
+Monkey 460:
+  Starting items: 438, 595, 1129, 1570, 1581, 4356, 4967, 5057, 6183, 6512, 6882, 6913, 7363, 7454, 7571, 8580, 8960, 9406, 9551
+  Operation: new = old * 113835949
+  Test: divisible by 169
+    If true: throw to monkey 74
+    If false: throw to monkey 462
+
+Monkey 461:
+  Starting items: 37, 555, 755, 1614, 1636, 1724, 1888, 2223, 2417, 2679, 3120, 4288, 4357, 4577, 4901, 5199, 5860, 6152, 6499, 7063, 7538, 7555, 7661, 7764, 8278, 9810, 9913
+  Operation: new = old * old
+  Test: divisible by 2387
+    If true: throw to monkey 222
+    If false: throw to monkey 464
+
+Monkey 462:
+  Starting items: 394, 1170, 1633, 1653, 2121, 3451, 4280, 4712, 4720, 4883, 5991, 6709, 6776, 6788, 7110, 7145, 8206, 9184, 9213
+  Operation: new = old * 223099809
+  Test: divisible by 155
+    If true: throw to monkey 420
+    If false: throw to monkey 463
+
+Monkey 463:
+  Starting items: 382, 1431, 1526, 1708, 1779, 1914, 2472, 2813, 3910, 4410, 4518, 4748, 5299, 5342, 6945, 7942, 8349, 8605, 9300, 9491
+  Operation: new = old * 557264319
+  Test: divisible by 217
+    If true: throw to monkey 201
+    If false: throw to monkey 464
+
+Monkey 464:
+  Starting items: 760, 991, 1120, 1245, 1260, 1545, 1846, 3077, 3165, 3211, 4762, 4974, 5314, 5576, 5638, 7452, 8460, 9240, 9246, 9776
+  Operation: new = old * old
+  Test: divisible by 26
+    If true: throw to monkey 2
+    If false: throw to monkey 466
+
+Monkey 465:
+  Starting items: 958, 1236, 1330, 1587, 1774, 2502, 3856, 4065, 4123, 4529, 4592, 4937, 5085, 5186, 5382, 5646, 6815, 7663, 7757, 7935, 7945, 7964, 8556, 8936, 9989
+  Operation: new = old * 284421407
+  Test: divisible by 2015
+    If true: throw to monkey 87
+    If false: throw to monkey 466
+
+Monkey 466:
+  Starting items: 420, 933, 1784, 2064, 3152, 3240, 3387, 3867, 4941, 5740, 6334, 6527, 6703, 7900
+  Operation: new = old + 76
+  Test: divisible by 682
+    If true: throw to monkey 173
+    If false: throw to monkey 467
+
+Monkey 467:
+  Starting items: 734, 756, 870, 1069, 1316, 1510, 1900, 2622, 3320, 3581, 3813, 4017, 4242, 4261, 4512, 4671, 6223, 6554, 6555, 7803, 8172, 8957, 9290, 9466, 9488, 9724, 9840, 9957
+  Operation: new = old * 214728625
+  Test: divisible by 5
+    If true: throw to monkey 68
+    If false: throw to monkey 468
+
+Monkey 468:
+  Starting items: 988, 1547, 2259, 2505, 2523, 3201, 3502, 3712, 4179, 5036, 5346, 5633, 5684, 5840, 6134, 6161, 6179, 6880, 8157, 9796
+  Operation: new = old * 784154148
+  Test: divisible by 2821
+    If true: throw to monkey 227
+    If false: throw to monkey 469
+
+Monkey 469:
+  Starting items: 6, 75, 1131, 2298, 2464, 3846, 3885, 3936, 4161, 4594, 5021, 5495, 5761, 6429, 6845, 6968, 7396, 7784, 8236, 8851, 9189, 9612, 9748
+  Operation: new = old * 411608270
+  Test: divisible by 5239
+    If true: throw to monkey 334
+    If false: throw to monkey 470
+
+Monkey 470:
+  Starting items: 286, 409, 544, 1087, 1192, 1560, 2119, 2170, 2604, 3057, 3259, 4158, 5500, 5749, 6233, 7573, 8125, 8192, 8353, 8652, 8718, 8859, 9880
+  Operation: new = old * old
+  Test: divisible by 110
+    If true: throw to monkey 401
+    If false: throw to monkey 472
+
+Monkey 471:
+  Starting items: 29, 835, 1107, 1154, 1158, 1643, 2037, 2384, 2475, 2742, 3501, 4349, 5069, 5248, 5620, 6251, 6519, 6525, 6676, 6716, 6821, 7544, 8262, 8841, 9556, 9598
+  Operation: new = old * old
+  Test: divisible by 35
+    If true: throw to monkey 37
+    If false: throw to monkey 472
+
+Monkey 472:
+  Starting items: 172, 271, 519, 1349, 1825, 2453, 4324, 4340, 4422, 4632, 4855, 5480, 5756, 5799, 6253, 6767, 6887, 7547, 7567, 7999, 9221, 9459
+  Operation: new = old * 914105913
+  Test: divisible by 182
+    If true: throw to monkey 410
+    If false: throw to monkey 473
+
+Monkey 473:
+  Starting items: 28, 665, 897, 1276, 1590, 2712, 2805, 4955, 6310, 6901, 8894, 9561
+  Operation: new = old + 21
+  Test: divisible by 341
+    If true: throw to monkey 464
+    If false: throw to monkey 474
+
+Monkey 474:
+  Starting items: 720, 1781, 2677, 2844, 3185, 4134, 5025, 5177, 5374, 5682, 6186, 6531, 6573, 7891, 9091
+  Operation: new = old * 436121639
+  Test: divisible by 13
+    If true: throw to monkey 99
+    If false: throw to monkey 475
+
+Monkey 475:
+  Starting items: 45, 49, 217, 1677, 1871, 2093, 2367, 2663, 2697, 2847, 3085, 3367, 3620, 3766, 3839, 4136, 4183, 4984, 5581, 6684, 6844, 7636, 7944, 8439, 8498, 9211, 9762
+  Operation: new = old * 14335301
+  Test: divisible by 10
+    If true: throw to monkey 137
+    If false: throw to monkey 479
+
+Monkey 476:
+  Starting items: 708, 816, 939, 1114, 1492, 1644, 1924, 2683, 3494, 3530, 3534, 4059, 4364, 4790, 6430, 6752, 9600, 9805
+  Operation: new = old + 58
+  Test: divisible by 310
+    If true: throw to monkey 377
+    If false: throw to monkey 480
+
+Monkey 477:
+  Starting items: 430, 1465, 3717, 3755, 4346, 4445, 4517, 5555, 5971, 6226, 6308, 8114, 8495, 8641, 9391, 9617, 9681
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 233
+    If false: throw to monkey 482
+
+Monkey 478:
+  Starting items: 152, 1262, 1443, 1822, 2304, 2598, 2675, 2979, 3090, 3655, 3952, 4563, 4858, 5444, 5607, 6605, 6773, 8614, 8728, 9117, 9195, 9371
+  Operation: new = old * 904861843
+  Test: divisible by 403
+    If true: throw to monkey 12
+    If false: throw to monkey 480
+
+Monkey 479:
+  Starting items: 635, 2597, 3334, 3345, 3547, 3693, 4282, 5050, 5280, 6181, 6681, 6893, 6935, 7164, 7927, 8359, 8795, 8971, 9606, 9991
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 457
+    If false: throw to monkey 480
+
+Monkey 480:
+  Starting items: 68, 252, 621, 1442, 1969, 1976, 3737, 5181, 5355, 6137, 6357, 7591, 7771, 8572, 9138, 9156, 9971
+  Operation: new = old * 184466765
+  Test: divisible by 682
+    If true: throw to monkey 17
+    If false: throw to monkey 481
+
+Monkey 481:
+  Starting items: 136, 139, 423, 483, 1004, 2239, 2261, 2775, 2790, 2859, 3146, 3206, 3227, 3287, 4558, 4813, 4957, 5930, 6078, 6082, 8490, 9031, 9395, 9803, 9815, 9883
+  Operation: new = old * 53772327
+  Test: divisible by 310
+    If true: throw to monkey 366
+    If false: throw to monkey 482
+
+Monkey 482:
+  Starting items: 602, 1439, 1804, 1985, 2102, 3296, 3346, 3353, 3872, 4714, 5029, 5296, 6322, 6344, 6908, 7133, 8362, 9070, 9387
+  Operation: new = old * old
+  Test: divisible by 31
+    If true: throw to monkey 476
+    If false: throw to monkey 484
+
+Monkey 483:
+  Starting items: 32, 341, 1472, 1498, 2445, 2585, 2898, 3342, 3357, 3722, 4729, 5253, 6019, 6268, 6491, 7700, 8014, 8452, 8974, 9343, 9771, 9874
+  Operation: new = old + 77
+  Test: divisible by 1001
+    If true: throw to monkey 107
+    If false: throw to monkey 485
+
+Monkey 484:
+  Starting items: 2283, 2371, 2684, 3157, 3344, 3372, 3647, 3728, 3855, 4274, 4319, 4614, 4637, 5270, 5274, 6001, 7055, 7653, 8164, 8385, 8678, 9637
+  Operation: new = old * 808886469
+  Test: divisible by 5239
+    If true: throw to monkey 400
+    If false: throw to monkey 485
+
+Monkey 485:
+  Starting items: 535, 548, 1337, 1339, 3779, 4116, 4774, 5269, 5393, 5528, 5654, 5857, 6595, 8929, 8939
+  Operation: new = old + 85
+  Test: divisible by 2
+    If true: throw to monkey 246
+    If false: throw to monkey 488
+
+Monkey 486:
+  Starting items: 13, 624, 1088, 1290, 1740, 1838, 2399, 2746, 3113, 3390, 5062, 5171, 5812, 6200, 6316, 6414, 7243, 8456
+  Operation: new = old + 26
+  Test: divisible by 143
+    If true: throw to monkey 79
+    If false: throw to monkey 487
+
+Monkey 487:
+  Starting items: 304, 598, 617, 763, 1596, 2122, 2544, 2580, 2980, 3078, 4095, 4857, 6035, 6122, 6488, 7290, 7340, 7588, 7707, 7733, 7978, 7980, 8097, 8111, 8331, 8471, 8583, 9113, 9715
+  Operation: new = old + 0
+  Test: divisible by 143
+    If true: throw to monkey 456
+    If false: throw to monkey 489
+
+Monkey 488:
+  Starting items: 1210, 2281, 2428, 2749, 3379, 4792, 5012, 5091, 5301, 5405, 5974, 6123, 6680, 7302, 7489, 7542, 7608, 9414
+  Operation: new = old * 273224176
+  Test: divisible by 10
+    If true: throw to monkey 78
+    If false: throw to monkey 496
+
+Monkey 489:
+  Starting items: 1306, 1703, 2309, 2653, 4368, 4635, 4684, 5960, 6283, 6382, 7378
+  Operation: new = old * 665416795
+  Test: divisible by 2
+    If true: throw to monkey 179
+    If false: throw to monkey 490
+
+Monkey 490:
+  Starting items: 115, 426, 429, 497, 2948, 3226, 3507, 3931, 3963, 4662, 5232, 5595, 6171, 6441, 7451, 7949, 8436, 8848, 9689, 9833
+  Operation: new = old + 50
+  Test: divisible by 65
+    If true: throw to monkey 379
+    If false: throw to monkey 492
+
+Monkey 491:
+  Starting items: 62, 855, 1588, 1718, 1785, 1909, 2658, 2857, 3024, 3183, 3571, 4004, 4190, 4631, 5488, 6911, 7358, 7804, 9149, 9377, 9467
+  Operation: new = old * 320585493
+  Test: divisible by 310
+    If true: throw to monkey 195
+    If false: throw to monkey 494
+
+Monkey 492:
+  Starting items: 807, 880, 1715, 1737, 2471, 2953, 3836, 4434, 4736, 5424, 5482, 5527, 5645, 6724, 7150, 7882, 8619, 8918, 8934, 9134, 9359, 9736
+  Operation: new = old * 958324505
+  Test: divisible by 31
+    If true: throw to monkey 136
+    If false: throw to monkey 493
+
+Monkey 493:
+  Starting items: 1024, 1085, 3629, 3761, 3810, 3858, 3983, 3989, 4401, 5841, 5925, 5970, 6540, 7231, 7498, 7879, 8179, 8386, 9111, 9217, 9425
+  Operation: new = old * 910217797
+  Test: divisible by 775
+    If true: throw to monkey 479
+    If false: throw to monkey 494
+
+Monkey 494:
+  Starting items: 64, 452, 798, 949, 2015, 2084, 3168, 3350, 3440, 4468, 4983, 5022, 5167, 5174, 5690, 6743, 6986, 7260, 7566, 7912
+  Operation: new = old * 986659007
+  Test: divisible by 403
+    If true: throw to monkey 292
+    If false: throw to monkey 497
+
+Monkey 495:
+  Starting items: 575, 733, 836, 995, 1927, 2060, 2793, 3665, 4295, 4725, 4907, 5833, 6217, 6365, 6400, 6806, 8432, 8634
+  Operation: new = old * 783953950
+  Test: divisible by 35
+    If true: throw to monkey 347
+    If false: throw to monkey 496
+
+Monkey 496:
+  Starting items: 127, 684, 872, 1519, 1868, 1884, 2117, 2352, 2890, 2922, 4193, 5257, 5765, 6395, 6552, 6853, 8207, 9462, 9711, 9853
+  Operation: new = old * old
+  Test: divisible by 77
+    If true: throw to monkey 51
+    If false: throw to monkey 499
+
+Monkey 497:
+  Starting items: 345, 615, 1027, 1409, 1852, 2377, 2891, 3341, 3527, 4418, 5371, 6102, 6564, 7174, 7188, 8464, 9239, 9417, 9823
+  Operation: new = old * old
+  Test: divisible by 5
+    If true: throw to monkey 304
+    If false: throw to monkey 498
+
+Monkey 498:
+  Starting items: 276, 410, 521, 778, 901, 908, 1020, 1818, 2026, 2086, 3228, 3276, 3452, 4461, 5278, 5294, 5450, 5621, 5882, 6166, 6609, 6708, 6897, 7149, 7432, 7873, 8026, 8184, 8237, 8249, 8658, 8726, 9098, 9341, 9714, 9887, 9961
+  Operation: new = old + 67
+  Test: divisible by 403
+    If true: throw to monkey 156
+    If false: throw to monkey 499
+
+Monkey 499:
+  Starting items: 67, 463, 753, 773, 1345, 2455, 3187, 3401, 3574, 4800, 4867, 5597, 6731, 8030, 8245, 8309, 8330, 8596, 8984
+  Operation: new = old * 598669514
+  Test: divisible by 11
+    If true: throw to monkey 89
+    If false: throw to monkey 0

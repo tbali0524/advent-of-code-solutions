@@ -46,6 +46,8 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 * Filename pattern: `AocYYYYDayDD.txt`, where `DD` is the day padded to 2 digits with zero.
 * Optional additional example input can be in `AocYYYYDayDDex1.txt` and `AocYYYYDayDDex2.txt`.
 * Alternatively, a single string input can be given as the `STRING_INPUT` constant in the solution class.
+* Additionally, some extra large input can be given in `AocYYYYDayDDlarge1.txt`, `AocYYYYDayDDelarge2.txt`, ...
+    * These will be run ONLY if the `LARGE_SOLUTIONS` constant array is overriden in the solution class.
 
 ## Class-based PHP solutions
 

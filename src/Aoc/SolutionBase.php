@@ -73,6 +73,40 @@ abstract class SolutionBase implements Solution
             $exampleMsg = Tags::OK_TAG . 'Puzzle example' . ($countExamples > 1 ? 's' : '') . ' passed.'
                 . PHP_EOL;
         }
+        // run for large inputs, if there is any
+        $largeMsg = '';
+        $countLarge = 0;
+        for ($large = 0; $large < count(static::LARGE_SOLUTIONS); ++$large) {
+            $fileName = $baseFileName . 'large' . strval($large + 1) . '.txt';
+            if (!file_exists($fileName)) {
+                continue;
+            }
+            $input = static::readInput($fileName);
+            ++$countLarge;
+            $answers = $this->solve($input);
+            for ($part = 0; $part < 2; ++$part) {
+                if (strval(static::LARGE_SOLUTIONS[$large][$part]) == '0') {
+                    $largeMsg .= Tags::WARN_TAG . 'Large input #' . ($large + 1) . ' part ' . ($part + 1)
+                        . ' result: ' . $answers[$part] . PHP_EOL;
+                    continue;
+                }
+                if ($answers[$part] != strval(static::LARGE_SOLUTIONS[$large][$part])) {
+                    $isOk = false;
+                    $largeMsg .= Tags::ERROR_TAG . 'Result for large input #' . ($large + 1) . ' part ' . ($part + 1)
+                        . ' result: ' . $answers[$part] . ' not matching expected solution: '
+                        . static::LARGE_SOLUTIONS[$large][$part] . PHP_EOL;
+                }
+            }
+            if (!$isOk) {
+                break;
+            }
+            if (
+                (strval(static::LARGE_SOLUTIONS[$large][0]) != '0')
+                and (strval(static::LARGE_SOLUTIONS[$large][1]) != '0')
+            ) {
+                $largeMsg .= Tags::OK_TAG . 'Puzzle for large input #' . ($large + 1) . ' passed.' . PHP_EOL;
+            }
+        }
         // run the solution
         $fileName = $baseFileName . '.txt';
         if (static::STRING_INPUT == '') {
@@ -107,7 +141,7 @@ abstract class SolutionBase implements Solution
         }
         echo '=== AoC ' . static::YEAR . ' Day ' . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT)
             . ' [time: ' . $spentTimeMsg . ' sec' . $maxMemoryMsg . ']' . str_repeat(' ', $padTitle) . ' '
-            . static::TITLE . PHP_EOL . $exampleMsg;
+            . static::TITLE . PHP_EOL . $exampleMsg . $largeMsg;
         for ($part = 0; $part < 2; ++$part) {
             if ((static::DAY == 25) and ($part == 1)) {
                 continue;

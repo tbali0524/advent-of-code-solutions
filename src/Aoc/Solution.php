@@ -34,6 +34,8 @@ interface Solution
     public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
     /** @var array<int, string> */
     public const EXAMPLE_STRING_INPUTS = ['', ''];
+    /** @var array<int, array<int, int|string>> */
+    public const LARGE_SOLUTIONS = [];
 
     /**
      * This method must be implemented in the specific solution classes.

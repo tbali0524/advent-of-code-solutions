@@ -24,6 +24,8 @@ final class Aoc2022Day09 extends SolutionBase
     public const TITLE = 'Rope Bridge';
     public const SOLUTIONS = [6090, 2566];
     public const EXAMPLE_SOLUTIONS = [[13, 1], [0, 36]];
+    // large input #1 takes ~2 mins, so skipped
+    // public const LARGE_SOLUTIONS = [[16877673, 14108518]];
 
     private const LEN = 10;
 

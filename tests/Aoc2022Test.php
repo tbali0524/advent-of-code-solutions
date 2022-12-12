@@ -556,5 +556,16 @@ final class Aoc2022Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day12
+     */
+    public function testDay12InvalidInput2(): void
+    {
+        $solver = new Aoc2022Day12();
+        $input = ['SabyE'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 }

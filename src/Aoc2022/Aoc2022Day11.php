@@ -26,6 +26,9 @@ final class Aoc2022Day11 extends SolutionBase
     public const TITLE = 'Monkey in the Middle';
     public const SOLUTIONS = [121450, 28244037010];
     public const EXAMPLE_SOLUTIONS = [[10605, 2713310158], [0, 0]];
+    public const LARGE_SOLUTIONS = [[2683200, 865971689472]];
+    // large input #2 takes ~2 mins, so skipped
+    // public const LARGE_SOLUTIONS = [[2683200, 865971689472], [1299238165, 8550016450757301]];
 
     private const MAX_TURNS_PART1 = 20;
     private const MAX_TURNS_PART2 = 10_000;
@@ -57,10 +60,15 @@ final class Aoc2022Day11 extends SolutionBase
             fn (Monkey $m): Monkey => clone $m,
             $startMonkeys
         );
-        $worryModulo = array_product(array_map(
+        /** @var array<int, int> */
+        $testOperands = array_map(
             fn (Monkey $m): int => $m->testOperand,
             $startMonkeys
-        ));
+        );
+        $worryModulo = $testOperands[0];
+        for ($i = 1; $i < count($testOperands); ++$i) {
+            $worryModulo = self::lcm($worryModulo, $testOperands[$i]);
+        }
         for ($i = 0; $i < $countTurns; ++$i) {
             foreach ($monkeys as $monkey) {
                 $monkey->countInspections += count($monkey->items);
@@ -140,6 +148,33 @@ final class Aoc2022Day11 extends SolutionBase
             $monkeys[] = $m;
         }
         return $monkeys;
+    }
+
+    /**
+     * Greatest common divisor.
+     *
+     * @see https://en.wikipedia.org/wiki/Greatest_common_divisor
+     */
+    private static function gcd(int $a, int $b): int
+    {
+        $a1 = max($a, $b);
+        $b1 = min($a, $b);
+        while ($b1 != 0) {
+            $t = $b1;
+            $b1 = $a1 % $b1;
+            $a1 = $t;
+        }
+        return $a1;
+    }
+
+    /**
+     * Least common multiple.
+     *
+     * @see https://en.wikipedia.org/wiki/Least_common_multiple
+     */
+    private static function lcm(int $a, int $b): int
+    {
+        return abs($a) * intdiv(abs($b), self::gcd($a, $b));
     }
 }
 

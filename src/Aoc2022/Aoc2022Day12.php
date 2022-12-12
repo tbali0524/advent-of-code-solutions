@@ -25,6 +25,9 @@ final class Aoc2022Day12 extends SolutionBase
     public const TITLE = 'Hill Climbing Algorithm';
     public const SOLUTIONS = [412, 402];
     public const EXAMPLE_SOLUTIONS = [[31, 29], [0, 0]];
+    // large input #2 takes ~0.5 mins, so skipped
+    // public const LARGE_SOLUTIONS = [[1299999, 1200001]];
+    // public const LARGE_SOLUTIONS = [[1299999, 1200001], [12999999, 12000001]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -61,58 +64,27 @@ final class Aoc2022Day12 extends SolutionBase
         if (($startY < 0) or ($targetY < 0)) {
             throw new \Exception('Invalid input');
         }
-        // ---------- Part 1
-        $ans1 = 0;
-        $q = [[$startX, $startY, 0]];
-        $visited = [$startX . ' ' . $startY => true];
-        $readIdx = 0;
-        while (true) {
-            if ($readIdx >= count($q)) {
-                // @codeCoverageIgnoreStart
-                throw new \Exception('No solution found');
-                // @codeCoverageIgnoreEnd
-            }
-            [$x, $y, $step] = $q[$readIdx];
-            ++$readIdx;
-            if (($x == $targetX) and ($y == $targetY)) {
-                $ans1 = $step;
-                break;
-            }
-            $z = ord($input[$y][$x]);
-            foreach ([[-1, 0], [0, -1], [1, 0], [0, 1]] as [$dx, $dy]) {
-                $x1 = $x + $dx;
-                $y1 = $y + $dy;
-                if (($x1 < 0) or ($x1 >= $maxX) or ($y1 < 0) or ($y1 >= $maxY)) {
-                    continue;
-                }
-                $z1 = ord($input[$y1][$x1]);
-                if ($z1 - $z > 1) {
-                    continue;
-                }
-                $hash = $x1 . ' ' . $y1;
-                if (isset($visited[$hash])) {
-                    continue;
-                }
-                $q[] = [$x1, $y1, $step + 1];
-                $visited[$hash] = true;
-            }
-        }
-        // ---------- Part 2
-        $ans2 = 0;
+        // ---------- Part 1 + 2
+        $ans1 = -1;
+        $ans2 = -1;
         $q = [[$targetX, $targetY, 0]];
-        $visited = [$targetX . ' ' . $targetY => true];
+        $hash = ($targetX | ($targetY << 32));
+        $visited = [$hash => true];
         $readIdx = 0;
         while (true) {
             if ($readIdx >= count($q)) {
-                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
-                // @codeCoverageIgnoreEnd
             }
             [$x, $y, $step] = $q[$readIdx];
             ++$readIdx;
+            if (($ans1 < 0) and ($x == $startX) and ($y == $startY)) {
+                $ans1 = $step;
+            }
             $z = ord($input[$y][$x]);
-            if ($z == ord('a')) {
+            if (($ans2 < 0) and ($z == ord('a'))) {
                 $ans2 = $step;
+            }
+            if (($ans1 >= 0) and ($ans2 >= 0)) {
                 break;
             }
             foreach ([[-1, 0], [0, -1], [1, 0], [0, 1]] as [$dx, $dy]) {
@@ -125,7 +97,7 @@ final class Aoc2022Day12 extends SolutionBase
                 if ($z - $z1 > 1) {
                     continue;
                 }
-                $hash = $x1 . ' ' . $y1;
+                $hash = $x1 | ($y1 << 32);
                 if (isset($visited[$hash])) {
                     continue;
                 }
