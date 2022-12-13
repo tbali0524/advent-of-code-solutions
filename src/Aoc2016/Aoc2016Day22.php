@@ -22,7 +22,7 @@ final class Aoc2016Day22 extends SolutionBase
     public const DAY = 22;
     public const TITLE = 'Grid Computing';
     public const SOLUTIONS = [1034, 261];
-    public const EXAMPLE_SOLUTIONS = [[7, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[7, 0]];
 
     /** @var array<int, Node> */
     private array $nodes = [];

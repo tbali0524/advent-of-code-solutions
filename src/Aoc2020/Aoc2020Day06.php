@@ -21,7 +21,7 @@ final class Aoc2020Day06 extends SolutionBase
     public const DAY = 6;
     public const TITLE = 'Custom Customs';
     public const SOLUTIONS = [6291, 3052];
-    public const EXAMPLE_SOLUTIONS = [[11, 6], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[11, 6]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

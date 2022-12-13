@@ -25,7 +25,7 @@ final class Aoc2022Day11 extends SolutionBase
     public const DAY = 11;
     public const TITLE = 'Monkey in the Middle';
     public const SOLUTIONS = [121450, 28244037010];
-    public const EXAMPLE_SOLUTIONS = [[10605, 2713310158], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[10605, 2713310158]];
     public const LARGE_SOLUTIONS = [[2683200, 865971689472]];
     // large input #2 takes ~2 mins, so skipped
     // public const LARGE_SOLUTIONS = [[2683200, 865971689472], [1299238165, 8550016450757301]];

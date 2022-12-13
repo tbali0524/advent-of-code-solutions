@@ -22,7 +22,7 @@ final class Aoc2015Day18 extends SolutionBase
     public const DAY = 18;
     public const TITLE = 'Like a GIF For Your Yard';
     public const SOLUTIONS = [814, 924];
-    public const EXAMPLE_SOLUTIONS = [[4, 17], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[4, 17]];
 
     private const STEPS = 100;
     private const EXAMPLE_STEPS = 5;

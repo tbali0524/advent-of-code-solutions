@@ -21,7 +21,7 @@ final class Aoc2022Day02 extends SolutionBase
     public const DAY = 2;
     public const TITLE = 'Rock Paper Scissors';
     public const SOLUTIONS = [12156, 10835];
-    public const EXAMPLE_SOLUTIONS = [[15, 12], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[15, 12]];
 
     private const SHAPE_POINT = ['X' => 1, 'Y' => 2, 'Z' => 3];
     private const OUTCOME = [

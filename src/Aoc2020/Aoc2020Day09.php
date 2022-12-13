@@ -20,7 +20,7 @@ final class Aoc2020Day09 extends SolutionBase
     public const DAY = 9;
     public const TITLE = 'Encoding Error';
     public const SOLUTIONS = [466456641, 55732936];
-    public const EXAMPLE_SOLUTIONS = [[127, 62], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[127, 62]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

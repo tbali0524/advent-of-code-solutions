@@ -21,7 +21,7 @@ final class Aoc2020Day03 extends SolutionBase
     public const DAY = 3;
     public const TITLE = 'Toboggan Trajectory';
     public const SOLUTIONS = [211, 3584591857];
-    public const EXAMPLE_SOLUTIONS = [[7, 336], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[7, 336]];
 
     private const SLOPES = [[1, 1], [3, 1], [5, 1], [7, 1], [1, 2]];
 

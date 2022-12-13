@@ -53,6 +53,8 @@ final class Aoc2022Day06 extends SolutionBase
                 return $i;
             }
         }
+        // @codeCoverageIgnoreStart
         throw new \Exception('No solution found');
+        // @codeCoverageIgnoreEnd
     }
 }

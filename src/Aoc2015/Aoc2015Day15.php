@@ -20,7 +20,7 @@ final class Aoc2015Day15 extends SolutionBase
     public const DAY = 15;
     public const TITLE = 'Science for Hungry People';
     public const SOLUTIONS = [21367368, 1766400];
-    public const EXAMPLE_SOLUTIONS = [[62842880, 57600000], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[62842880, 57600000]];
 
     private const TOTAL_QUANTITY = 101; // must be total + 1!!!
 

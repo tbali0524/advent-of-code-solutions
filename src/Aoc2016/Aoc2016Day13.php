@@ -24,7 +24,7 @@ final class Aoc2016Day13 extends SolutionBase
     public const TITLE = 'A Maze of Twisty Little Cubicles';
     public const SOLUTIONS = [92, 124];
     public const STRING_INPUT = '1350';
-    public const EXAMPLE_SOLUTIONS = [[11, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[11, 0]];
     public const EXAMPLE_STRING_INPUTS = ['10', ''];
 
     private const MAX_STEPS = 50;
@@ -59,7 +59,9 @@ final class Aoc2016Day13 extends SolutionBase
         $readIdx = 0;
         while (true) {
             if ($readIdx >= count($q)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             [$x, $y, $step] = $q[$readIdx];
             if (($step > self::MAX_STEPS) and ($ans2 < 0)) {

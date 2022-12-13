@@ -24,7 +24,7 @@ final class Aoc2022Day12 extends SolutionBase
     public const DAY = 12;
     public const TITLE = 'Hill Climbing Algorithm';
     public const SOLUTIONS = [412, 402];
-    public const EXAMPLE_SOLUTIONS = [[31, 29], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[31, 29]];
     // large input #2 takes ~0.5 mins, so skipped
     // public const LARGE_SOLUTIONS = [[1299999, 1200001]];
     // public const LARGE_SOLUTIONS = [[1299999, 1200001], [12999999, 12000001]];

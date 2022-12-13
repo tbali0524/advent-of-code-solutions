@@ -23,7 +23,7 @@ final class Aoc2020Day21 extends SolutionBase
     public const DAY = 21;
     public const TITLE = 'Allergen Assessment';
     public const SOLUTIONS = [2380, 'ktpbgdn,pnpfjb,ndfb,rdhljms,xzfj,bfgcms,fkcmf,hdqkqhh'];
-    public const EXAMPLE_SOLUTIONS = [[5, 'mxmxvkd,sqjhc,fvjkl'], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[5, 'mxmxvkd,sqjhc,fvjkl']];
 
     /** @var array<string, int> */
     private array $ingredients;

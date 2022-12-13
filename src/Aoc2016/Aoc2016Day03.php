@@ -20,7 +20,7 @@ final class Aoc2016Day03 extends SolutionBase
     public const DAY = 3;
     public const TITLE = 'Squares With Three Sides';
     public const SOLUTIONS = [982, 1826];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

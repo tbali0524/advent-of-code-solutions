@@ -24,7 +24,7 @@ final class Aoc2022Day07 extends SolutionBase
     public const DAY = 7;
     public const TITLE = 'No Space Left On Device';
     public const SOLUTIONS = [1390824, 7490863];
-    public const EXAMPLE_SOLUTIONS = [[95437, 24933642], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[95437, 24933642]];
 
     private const DIR_LIMIT = 100_000;
     private const TOTAL_SPACE = 70_000_000;

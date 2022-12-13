@@ -24,7 +24,7 @@ final class Aoc2015Day13 extends SolutionBase
     public const DAY = 13;
     public const TITLE = 'Knights of the Dinner Table';
     public const SOLUTIONS = [709, 668];
-    public const EXAMPLE_SOLUTIONS = [[330, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[330, 0]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

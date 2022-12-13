@@ -23,7 +23,7 @@ final class Aoc2015Day17 extends SolutionBase
     public const DAY = 17;
     public const TITLE = 'No Such Thing as Too Much';
     public const SOLUTIONS = [1304, 18];
-    public const EXAMPLE_SOLUTIONS = [[4, 3], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[4, 3]];
 
     private const TOTAL = 150;
     private const EXAMPLE_TOTAL = 25;

@@ -23,7 +23,7 @@ final class Aoc2016Day15 extends SolutionBase
     public const DAY = 15;
     public const TITLE = 'Timing is Everything';
     public const SOLUTIONS = [317371, 2080951];
-    public const EXAMPLE_SOLUTIONS = [[5, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[5, 0]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

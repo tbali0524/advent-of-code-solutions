@@ -20,7 +20,7 @@ final class Aoc2015Day24 extends SolutionBase
     public const DAY = 24;
     public const TITLE = 'It Hangs in the Balance';
     public const SOLUTIONS = [10439961859, 72050269];
-    public const EXAMPLE_SOLUTIONS = [[99, 44], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[99, 44]];
 
     /** @var array<int, int> */
     private array $weights;

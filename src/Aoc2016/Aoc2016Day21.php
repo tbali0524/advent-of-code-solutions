@@ -20,7 +20,7 @@ final class Aoc2016Day21 extends SolutionBase
     public const DAY = 21;
     public const TITLE = 'Scrambled Letters and Hash';
     public const SOLUTIONS = ['bfheacgd', 'gcehdbfa'];
-    public const EXAMPLE_SOLUTIONS = [['decab', 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [['decab', 0]];
 
     private const CLEARTEXT_EXAMPLE = 'abcde';
     private const CLEARTEXT_PART1 = 'abcdefgh';

@@ -20,7 +20,7 @@ final class Aoc2022Day04 extends SolutionBase
     public const DAY = 4;
     public const TITLE = 'Camp Cleanup';
     public const SOLUTIONS = [530, 903];
-    public const EXAMPLE_SOLUTIONS = [[2, 4], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[2, 4]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

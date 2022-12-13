@@ -24,7 +24,7 @@ final class Aoc2020Day07 extends SolutionBase
     public const DAY = 7;
     public const TITLE = 'Handy Haversacks';
     public const SOLUTIONS = [115, 1250];
-    public const EXAMPLE_SOLUTIONS = [[4, 32], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[4, 32]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

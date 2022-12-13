@@ -26,7 +26,7 @@ final class Aoc2020Day23 extends SolutionBase
     public const TITLE = 'Crab Cups';
     public const SOLUTIONS = [47382659, 42271866720];
     public const STRING_INPUT = '364297581';
-    public const EXAMPLE_SOLUTIONS = [[67384529, 149245887792], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[67384529, 149245887792]];
     public const EXAMPLE_STRING_INPUTS = ['389125467', ''];
 
     private const MAX_PART1 = 100;

@@ -23,7 +23,7 @@ final class Aoc2020Day12 extends SolutionBase
     public const DAY = 12;
     public const TITLE = 'Rain Risk';
     public const SOLUTIONS = [1710, 62045];
-    public const EXAMPLE_SOLUTIONS = [[25, 286], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[25, 286]];
 
     private const DELTAS = [[0, 1], [1, 0], [0, -1], [-1, 0]];
     private const TURNS = ['R' => 1, 'L' => -1];

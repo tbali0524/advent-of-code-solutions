@@ -20,7 +20,7 @@ final class Aoc2018Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Chronal Calibration';
     public const SOLUTIONS = [590, 83445];
-    public const EXAMPLE_SOLUTIONS = [[3, 2], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[3, 2]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

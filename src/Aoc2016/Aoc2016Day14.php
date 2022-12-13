@@ -24,7 +24,7 @@ final class Aoc2016Day14 extends SolutionBase
     public const TITLE = 'One-Time Pad';
     public const SOLUTIONS = [25427, 22045];
     public const STRING_INPUT = 'yjdafjpo';
-    public const EXAMPLE_SOLUTIONS = [[22728, 22551], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[22728, 22551]];
     public const EXAMPLE_STRING_INPUTS = ['abc', ''];
 
     private const MAX_DISTANCE = 1000;

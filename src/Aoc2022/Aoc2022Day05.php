@@ -23,7 +23,7 @@ final class Aoc2022Day05 extends SolutionBase
     public const DAY = 5;
     public const TITLE = 'Supply Stacks';
     public const SOLUTIONS = ['NTWZZWHFV', 'BRZGFVBTJ'];
-    public const EXAMPLE_SOLUTIONS = [['CMZ', 'MCD'], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [['CMZ', 'MCD']];
 
     /** @var array<int, string> */
     private array $startStacks = [];

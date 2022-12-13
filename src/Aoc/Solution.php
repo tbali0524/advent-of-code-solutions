@@ -31,9 +31,9 @@ interface Solution
     /** @var string */
     public const STRING_INPUT = '';
     /** @var array<int, array<int, int|string>> */
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [];
     /** @var array<int, string> */
-    public const EXAMPLE_STRING_INPUTS = ['', ''];
+    public const EXAMPLE_STRING_INPUTS = [''];
     /** @var array<int, array<int, int|string>> */
     public const LARGE_SOLUTIONS = [];
 

@@ -24,7 +24,7 @@ final class Aoc2020Day13 extends SolutionBase
     public const DAY = 13;
     public const TITLE = 'Shuttle Search';
     public const SOLUTIONS = [261, 807435693182510];
-    public const EXAMPLE_SOLUTIONS = [[295, 1068781], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[295, 1068781]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

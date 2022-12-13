@@ -23,7 +23,7 @@ final class Aoc2020Day11 extends SolutionBase
     public const DAY = 11;
     public const TITLE = 'Seating System';
     public const SOLUTIONS = [2263, 2002];
-    public const EXAMPLE_SOLUTIONS = [[37, 26], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[37, 26]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

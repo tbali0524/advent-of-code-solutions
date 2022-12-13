@@ -20,7 +20,7 @@ final class Aoc2022Day08 extends SolutionBase
     public const DAY = 8;
     public const TITLE = 'Treetop Tree House';
     public const SOLUTIONS = [1796, 288120];
-    public const EXAMPLE_SOLUTIONS = [[21, 8], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[21, 8]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

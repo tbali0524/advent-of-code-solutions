@@ -17,6 +17,7 @@ use TBali\Aoc2022\Aoc2022Day09;
 use TBali\Aoc2022\Aoc2022Day10;
 use TBali\Aoc2022\Aoc2022Day11;
 use TBali\Aoc2022\Aoc2022Day12;
+use TBali\Aoc2022\Aoc2022Day13;
 
 /**
  * Unit tests for Advent of Code season 2022.
@@ -571,6 +572,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day13
+     * @covers \TBali\Aoc2022\Item
      */
     public function testDay13Example1(): void
     {
@@ -586,6 +588,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day13
+     * @covers \TBali\Aoc2022\Item
      */
     public function testDay13(): void
     {
@@ -601,6 +604,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day13
+     * @covers \TBali\Aoc2022\Item
      */
     public function testDay13InvalidInput1(): void
     {
@@ -612,6 +616,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day13
+     * @covers \TBali\Aoc2022\Item
      */
     public function testDay13InvalidInput2(): void
     {

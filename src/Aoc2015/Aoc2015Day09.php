@@ -24,7 +24,7 @@ final class Aoc2015Day09 extends SolutionBase
     public const DAY = 9;
     public const TITLE = 'All in a Single Night';
     public const SOLUTIONS = [207, 804];
-    public const EXAMPLE_SOLUTIONS = [[605, 982], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[605, 982]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

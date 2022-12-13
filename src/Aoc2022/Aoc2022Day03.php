@@ -22,7 +22,7 @@ final class Aoc2022Day03 extends SolutionBase
     public const DAY = 3;
     public const TITLE = 'Rucksack Reorganization';
     public const SOLUTIONS = [7766, 2415];
-    public const EXAMPLE_SOLUTIONS = [[157, 70], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[157, 70]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

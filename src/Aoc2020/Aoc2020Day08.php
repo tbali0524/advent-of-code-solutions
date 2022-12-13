@@ -22,7 +22,7 @@ final class Aoc2020Day08 extends SolutionBase
     public const DAY = 8;
     public const TITLE = 'Handheld Halting';
     public const SOLUTIONS = [1749, 515];
-    public const EXAMPLE_SOLUTIONS = [[5, 8], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[5, 8]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

@@ -22,7 +22,7 @@ final class Aoc2015Day08 extends SolutionBase
     public const DAY = 8;
     public const TITLE = 'Matchsticks';
     public const SOLUTIONS = [1371, 2117];
-    public const EXAMPLE_SOLUTIONS = [[12, 19], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[12, 19]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

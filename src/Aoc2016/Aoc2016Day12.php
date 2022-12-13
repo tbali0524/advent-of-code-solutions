@@ -22,7 +22,7 @@ final class Aoc2016Day12 extends SolutionBase
     public const DAY = 12;
     public const TITLE = 'Leonardo\'s Monorail';
     public const SOLUTIONS = [318007, 9227661];
-    public const EXAMPLE_SOLUTIONS = [[42, 42], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[42, 42]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

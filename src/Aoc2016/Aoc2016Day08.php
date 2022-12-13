@@ -24,7 +24,7 @@ final class Aoc2016Day08 extends SolutionBase
     public const DAY = 8;
     public const TITLE = 'Two-Factor Authentication';
     public const SOLUTIONS = [110, 'ZJHRKCPLYJ'];
-    public const EXAMPLE_SOLUTIONS = [[6, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[6, 0]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

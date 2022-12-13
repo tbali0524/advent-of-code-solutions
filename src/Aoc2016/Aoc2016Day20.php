@@ -21,7 +21,7 @@ final class Aoc2016Day20 extends SolutionBase
     public const DAY = 20;
     public const TITLE = 'Firewall Rules';
     public const SOLUTIONS = [19449262, 119];
-    public const EXAMPLE_SOLUTIONS = [[3, self::MAX - 7], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[3, self::MAX - 7]];
 
     private const MAX = 4294967295;
 

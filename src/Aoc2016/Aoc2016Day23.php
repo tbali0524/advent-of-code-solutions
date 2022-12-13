@@ -23,7 +23,7 @@ final class Aoc2016Day23 extends SolutionBase
     public const DAY = 23;
     public const TITLE = 'Safe Cracking';
     public const SOLUTIONS = [13685, 479010245];
-    public const EXAMPLE_SOLUTIONS = [[3, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[3, 0]];
 
     private const TOGGLE_MAP = [
         'inc' => 'dec',

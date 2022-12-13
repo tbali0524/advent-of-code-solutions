@@ -207,7 +207,9 @@ class WizardSimulator
         $this->q->insert($this->startState, 0);
         while (true) {
             if ($this->q->isEmpty()) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             $currentState = $this->q->extract();
             if (!$currentState instanceof WizardGameState) {

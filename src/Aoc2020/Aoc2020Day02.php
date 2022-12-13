@@ -22,7 +22,7 @@ final class Aoc2020Day02 extends SolutionBase
     public const DAY = 2;
     public const TITLE = 'Password Philosophy';
     public const SOLUTIONS = [434, 509];
-    public const EXAMPLE_SOLUTIONS = [[2, 1], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[2, 1]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

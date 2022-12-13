@@ -25,7 +25,7 @@ final class Aoc2020Day17 extends SolutionBase
     public const DAY = 17;
     public const TITLE = 'Conway Cubes';
     public const SOLUTIONS = [388, 2280];
-    public const EXAMPLE_SOLUTIONS = [[112, 848], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[112, 848]];
 
     private const MAX_STEPS = 6;
 

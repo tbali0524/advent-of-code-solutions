@@ -23,7 +23,7 @@ final class Aoc2016Day05 extends SolutionBase
     public const TITLE = 'How About a Nice Game of Chess?';
     public const SOLUTIONS = ['c6697b55', '8c35d1ab'];
     public const STRING_INPUT = 'ffykfhsq';
-    public const EXAMPLE_SOLUTIONS = [['18f47a30', '05ace8e3'], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [['18f47a30', '05ace8e3']];
     public const EXAMPLE_STRING_INPUTS = ['abc', ''];
 
     private const LEN = 8;

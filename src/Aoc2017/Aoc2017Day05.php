@@ -20,7 +20,7 @@ final class Aoc2017Day05 extends SolutionBase
     public const DAY = 5;
     public const TITLE = 'A Maze of Twisty Trampolines, All Alike';
     public const SOLUTIONS = [396086, 28675390];
-    public const EXAMPLE_SOLUTIONS = [[5, 10], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[5, 10]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

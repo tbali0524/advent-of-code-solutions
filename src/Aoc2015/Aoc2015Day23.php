@@ -22,7 +22,7 @@ final class Aoc2015Day23 extends SolutionBase
     public const DAY = 23;
     public const TITLE = 'Opening the Turing Lock';
     public const SOLUTIONS = [170, 247];
-    public const EXAMPLE_SOLUTIONS = [[2, 2], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[2, 2]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

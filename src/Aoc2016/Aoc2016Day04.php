@@ -20,7 +20,7 @@ final class Aoc2016Day04 extends SolutionBase
     public const DAY = 4;
     public const TITLE = 'Security Through Obscurity';
     public const SOLUTIONS = [137896, 501];
-    public const EXAMPLE_SOLUTIONS = [[1514, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[1514, 0]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

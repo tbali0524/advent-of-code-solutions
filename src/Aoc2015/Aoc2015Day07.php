@@ -24,7 +24,7 @@ final class Aoc2015Day07 extends SolutionBase
     public const DAY = 7;
     public const TITLE = 'Some Assembly Required';
     public const SOLUTIONS = [956, 40149];
-    public const EXAMPLE_SOLUTIONS = [[72, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[72, 0]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

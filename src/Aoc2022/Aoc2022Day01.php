@@ -20,7 +20,7 @@ final class Aoc2022Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Calorie Counting';
     public const SOLUTIONS = [72070, 211805];
-    public const EXAMPLE_SOLUTIONS = [[24000, 45000], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[24000, 45000]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

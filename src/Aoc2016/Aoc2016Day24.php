@@ -23,7 +23,7 @@ final class Aoc2016Day24 extends SolutionBase
     public const DAY = 24;
     public const TITLE = 'Air Duct Spelunking';
     public const SOLUTIONS = [502, 724];
-    public const EXAMPLE_SOLUTIONS = [[14, 20], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[14, 20]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

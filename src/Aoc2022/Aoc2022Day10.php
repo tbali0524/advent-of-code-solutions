@@ -23,7 +23,7 @@ final class Aoc2022Day10 extends SolutionBase
     public const DAY = 10;
     public const TITLE = 'Cathode-Ray Tube';
     public const SOLUTIONS = [15220, 'RFZEKBFA'];
-    public const EXAMPLE_SOLUTIONS = [[13140, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[13140, 0]];
 
     private const CYCLE_MODULO = 40;
     private const CYCLE_REMAINDER = 20;

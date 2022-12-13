@@ -22,7 +22,7 @@ final class Aoc2020Day24 extends SolutionBase
     public const DAY = 24;
     public const TITLE = 'Lobby Layout';
     public const SOLUTIONS = [391, 3876];
-    public const EXAMPLE_SOLUTIONS = [[10, 2208], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[10, 2208]];
 
     private const MOVES = ['nw' => 0, 'ne' => 1, 'w' => 2, 'e' => 3, 'sw' => 4, 'se' => 5];
     private const EVEN_NB = [[-1, -1], [0, -1], [-1, 0], [1, 0], [-1, 1], [0, 1]];

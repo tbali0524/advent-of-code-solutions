@@ -25,7 +25,7 @@ final class Aoc2015Day10 extends SolutionBase
     public const TITLE = 'Elves Look, Elves Say';
     public const SOLUTIONS = [360154, 5103798];
     public const STRING_INPUT = '1113122113';
-    public const EXAMPLE_SOLUTIONS = [[6, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[6, 0]];
     public const EXAMPLE_STRING_INPUTS = ['1', ''];
 
     private const MAX1 = 40;

@@ -20,7 +20,7 @@ final class Aoc2021Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Sonar Sweep';
     public const SOLUTIONS = [1477, 1523];
-    public const EXAMPLE_SOLUTIONS = [[7, 5], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[7, 5]];
 
     private const WINDOW = 3;
 

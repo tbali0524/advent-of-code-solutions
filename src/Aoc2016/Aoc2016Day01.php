@@ -20,7 +20,7 @@ final class Aoc2016Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'No Time for a Taxicab';
     public const SOLUTIONS = [262, 131];
-    public const EXAMPLE_SOLUTIONS = [[8, 4], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[8, 4]];
     public const EXAMPLE_STRING_INPUTS = ['R8, R4, R4, R8', ''];
 
     private const DELTAS = [[0, 1], [1, 0], [0, -1], [-1, 0]];

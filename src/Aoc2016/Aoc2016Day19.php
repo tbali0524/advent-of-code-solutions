@@ -24,7 +24,7 @@ final class Aoc2016Day19 extends SolutionBase
     public const TITLE = 'An Elephant Named Joseph';
     public const SOLUTIONS = [1841611, 1423634];
     public const STRING_INPUT = '3017957';
-    public const EXAMPLE_SOLUTIONS = [[3, 2], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[3, 2]];
     public const EXAMPLE_STRING_INPUTS = ['5', ''];
 
     /**

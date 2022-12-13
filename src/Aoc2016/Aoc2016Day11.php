@@ -25,7 +25,7 @@ final class Aoc2016Day11 extends SolutionBase
     public const DAY = 11;
     public const TITLE = 'Radioisotope Thermoelectric Generators';
     public const SOLUTIONS = [31, 55];
-    public const EXAMPLE_SOLUTIONS = [[9, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[9, 0]];
 
     /** Smaller beam width is faster, but might miss the solution. 35k works, it takes ~145 sec */
     private const BEAM_WIDTH = 35_000;

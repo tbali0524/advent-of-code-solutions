@@ -21,7 +21,7 @@ final class Aoc2016Day16 extends SolutionBase
     public const TITLE = 'Dragon Checksum';
     public const SOLUTIONS = ['00100111000101111', '11101110011100110'];
     public const STRING_INPUT = '01111010110010011';
-    public const EXAMPLE_SOLUTIONS = [['01100', 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [['01100', 0]];
     public const EXAMPLE_STRING_INPUTS = ['10000', ''];
 
     private const EXAMPLE_LEN = 20;

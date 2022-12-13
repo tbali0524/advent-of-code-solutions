@@ -20,7 +20,7 @@ final class Aoc2020Day01 extends SolutionBase
     public const DAY = 1;
     public const TITLE = 'Report Repair';
     public const SOLUTIONS = [988771, 171933104];
-    public const EXAMPLE_SOLUTIONS = [[514579, 241861950], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[514579, 241861950]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

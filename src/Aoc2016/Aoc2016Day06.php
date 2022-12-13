@@ -20,7 +20,7 @@ final class Aoc2016Day06 extends SolutionBase
     public const DAY = 6;
     public const TITLE = 'Signals and Noise';
     public const SOLUTIONS = ['cyxeoccr', 'batwpask'];
-    public const EXAMPLE_SOLUTIONS = [['easter', 'advent'], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [['easter', 'advent']];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

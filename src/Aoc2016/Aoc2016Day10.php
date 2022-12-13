@@ -25,7 +25,7 @@ final class Aoc2016Day10 extends SolutionBase
     public const DAY = 10;
     public const TITLE = 'Balance Bot';
     public const SOLUTIONS = [181, 12567];
-    public const EXAMPLE_SOLUTIONS = [[2, 30], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[2, 30]];
 
     /** @var array<int, Bot> */
     private array $bots;

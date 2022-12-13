@@ -25,7 +25,7 @@ final class Aoc2022Day13 extends SolutionBase
     public const DAY = 13;
     public const TITLE = 'Distress Signal';
     public const SOLUTIONS = [5825, 24477];
-    public const EXAMPLE_SOLUTIONS = [[13, 140], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[13, 140]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

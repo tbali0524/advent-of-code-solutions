@@ -22,7 +22,7 @@ final class Aoc2020Day25 extends SolutionBase
     public const DAY = 25;
     public const TITLE = 'Combo Breaker';
     public const SOLUTIONS = [11707042, 0];
-    public const EXAMPLE_SOLUTIONS = [[14897079, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[14897079, 0]];
 
     private const SUBJECT_NUMBER = 7;
     private const MODULUS = 20201227;

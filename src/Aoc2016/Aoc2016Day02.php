@@ -22,7 +22,7 @@ final class Aoc2016Day02 extends SolutionBase
     public const DAY = 2;
     public const TITLE = 'Bathroom Security';
     public const SOLUTIONS = [24862, '46C91'];
-    public const EXAMPLE_SOLUTIONS = [[1985, '5DB3'], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[1985, '5DB3']];
 
     private const DELTAS = ['U' => [0, -1], 'R' => [1, 0], 'D' => [0, 1], 'L' => [-1, 0]];
     private const KEYS_PART2 = [

@@ -36,8 +36,8 @@ abstract class SolutionBase implements Solution
         // run examples, if there is any
         $exampleMsg = '';
         $countExamples = 0;
-        for ($example = 0; $example < 2; ++$example) {
-            if (static::EXAMPLE_STRING_INPUTS[$example] === '') {
+        for ($example = 0; $example < count(static::EXAMPLE_SOLUTIONS); ++$example) {
+            if ((static::EXAMPLE_STRING_INPUTS[$example] ?? '') === '') {
                 $fileName = $baseFileName . 'ex' . strval($example + 1) . '.txt';
                 if (!file_exists($fileName)) {
                     continue;

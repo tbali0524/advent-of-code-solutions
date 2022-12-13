@@ -23,7 +23,7 @@ final class Aoc2015Day19 extends SolutionBase
     public const DAY = 19;
     public const TITLE = 'Medicine for Rudolph';
     public const SOLUTIONS = [535, 212];
-    public const EXAMPLE_SOLUTIONS = [[0, 0], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

@@ -22,7 +22,7 @@ final class Aoc2020Day20 extends SolutionBase
     public const DAY = 20;
     public const TITLE = 'Jurassic Jigsaw';
     public const SOLUTIONS = [17250897231301, 1576];
-    public const EXAMPLE_SOLUTIONS = [[20899048083289, 273], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[20899048083289, 273]];
 
     public const DEBUG = false;
     private const MONSTER = [

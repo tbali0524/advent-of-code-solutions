@@ -22,7 +22,7 @@ final class Aoc2015Day14 extends SolutionBase
     public const DAY = 14;
     public const TITLE = 'Reindeer Olympic';
     public const SOLUTIONS = [2696, 1084];
-    public const EXAMPLE_SOLUTIONS = [[1120, 689], [0, 0]];
+    public const EXAMPLE_SOLUTIONS = [[1120, 689]];
 
     private const STEPS = 2503;
     private const EXAMPLE_STEPS = 1000;
