@@ -11,8 +11,8 @@
 |[2019](#2019)| |
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
 |[2021](#2021)| |
-|[2022](#2022)|![12 days](https://img.shields.io/badge/days%20completed-12-yellow)|
-|__Total__|![190 stars](https://img.shields.io/badge/stars%20⭐-190-yellow)|
+|[2022](#2022)|![13 days](https://img.shields.io/badge/days%20completed-13-yellow)|
+|__Total__|![192 stars](https://img.shields.io/badge/stars%20⭐-192-yellow)|
 
 ## Puzzles
 
@@ -242,7 +242,7 @@
 |  +  |2022| 10|Cathode-Ray Tube                          |assembly simulation
 |  +  |2022| 11|Monkey in the Middle                      |game simulation
 |  +  |2022| 12|Hill Climbing Algorithm                   |BFS
-|     |2022| 13|???                                       |
+|  +  |2022| 13|Distress Signal                           |parsing of recursive list, custom compare
 |     |2022| 14|???                                       |
 |     |2022| 15|???                                       |
 |     |2022| 16|???                                       |
