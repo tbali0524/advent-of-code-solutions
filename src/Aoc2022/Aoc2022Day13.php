@@ -16,8 +16,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Organize all of the packets into the correct order. What is the decoder key for the distress signal?
  *
  * @see https://adventofcode.com/2022/day/13
- *
- * @todo Part2
  */
 final class Aoc2022Day13 extends SolutionBase
 {

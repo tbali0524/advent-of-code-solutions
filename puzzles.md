@@ -243,8 +243,8 @@
 |  +  |2022| 11|Monkey in the Middle                      |game simulation
 |  +  |2022| 12|Hill Climbing Algorithm                   |BFS
 |  +  |2022| 13|Distress Signal                           |parsing of recursive list, custom compare
-|     |2022| 14|???                                       |
-|     |2022| 15|???                                       |
+|  +  |2022| 14|Regolith Reservoir                        |
+|  1  |2022| 15|Beacon Exclusion Zone                     |
 |     |2022| 16|???                                       |
 |     |2022| 17|???                                       |
 |     |2022| 18|???                                       |
