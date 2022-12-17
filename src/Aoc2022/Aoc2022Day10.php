@@ -87,10 +87,12 @@ final class Aoc2022Day10 extends SolutionBase
         }
         // @phpstan-ignore-next-line
         if (self::SHOW_SCREEN) {
+            // @codeCoverageIgnoreStart
             foreach ($screen as $row) {
                 echo $row, PHP_EOL;
             }
             echo PHP_EOL;
+            // @codeCoverageIgnoreEnd
         }
         $ans2 = 0;
         if ($ans1 == self::SOLUTIONS[0]) {
