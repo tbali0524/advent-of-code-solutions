@@ -34,6 +34,8 @@ use TBali\Aoc2020\Aoc2020Day25;
 /**
  * Unit tests for Advent of Code season 2020.
  *
+ * Instead of using this file with phpunit, it is a better way to run the solutions by using AoCRunner.
+ *
  * @internal
  *
  * @coversNothing

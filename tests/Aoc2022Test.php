@@ -22,11 +22,20 @@ use TBali\Aoc2022\Aoc2022Day14;
 use TBali\Aoc2022\Aoc2022Day15;
 use TBali\Aoc2022\Aoc2022Day16;
 use TBali\Aoc2022\Aoc2022Day17;
+use TBali\Aoc2022\Aoc2022Day18;
+
+// use TBali\Aoc2022\Aoc2022Day19;
+// use TBali\Aoc2022\Aoc2022Day20;
+// use TBali\Aoc2022\Aoc2022Day21;
+// use TBali\Aoc2022\Aoc2022Day22;
+// use TBali\Aoc2022\Aoc2022Day23;
+// use TBali\Aoc2022\Aoc2022Day24;
+// use TBali\Aoc2022\Aoc2022Day25;
 
 /**
  * Unit tests for Advent of Code season 2022.
  *
- * Instead of using this file with phpunit, it is a better way to run the solutions to use AoCRunner.
+ * Instead of using this file with phpunit, it is a better way to run the solutions by using AoCRunner.
  *
  * @internal
  *
@@ -679,6 +688,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day15
+     * @covers \TBali\Aoc2022\Rect
      * @covers \TBali\Aoc2022\Sensor
      */
     public function testDay15Example1(): void
@@ -690,12 +700,12 @@ final class Aoc2022Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
-        // @todo uncomment when ready
+        $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day15
+     * @covers \TBali\Aoc2022\Rect
      * @covers \TBali\Aoc2022\Sensor
      */
     public function testDay15(): void
@@ -713,6 +723,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day15
+     * @covers \TBali\Aoc2022\Rect
      * @covers \TBali\Aoc2022\Sensor
      */
     public function testDay15InvalidInput1(): void
@@ -725,6 +736,7 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day15
+     * @covers \TBali\Aoc2022\Rect
      * @covers \TBali\Aoc2022\Sensor
      */
     public function testDay15InvalidInput2(): void
@@ -793,14 +805,14 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day17
-     * @covers \TBali\Aoc2022\Pit
-     * @covers \TBali\Aoc2022\MemoPit
-     * @covers \TBali\Aoc2022\Rock
-     * @covers \TBali\Aoc2022\HorizontalRock
      * @covers \TBali\Aoc2022\CrossRock
+     * @covers \TBali\Aoc2022\HorizontalRock
      * @covers \TBali\Aoc2022\LRock
-     * @covers \TBali\Aoc2022\VerticalRock
+     * @covers \TBali\Aoc2022\MemoPit
+     * @covers \TBali\Aoc2022\Pit
+     * @covers \TBali\Aoc2022\Rock
      * @covers \TBali\Aoc2022\SquareRock
+     * @covers \TBali\Aoc2022\VerticalRock
      */
     public function testDay17Example1(): void
     {
@@ -814,8 +826,8 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day17
-     * @covers \TBali\Aoc2022\Pit
      * @covers \TBali\Aoc2022\MemoPit
+     * @covers \TBali\Aoc2022\Pit
      */
     public function testDay17(): void
     {
@@ -831,13 +843,71 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day17
-     * @covers \TBali\Aoc2022\Pit
      * @covers \TBali\Aoc2022\MemoPit
+     * @covers \TBali\Aoc2022\Pit
      */
     public function testDay17InvalidInput1(): void
     {
         $solver = new Aoc2022Day17();
         $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day18
+     */
+    public function testDay18Example1(): void
+    {
+        $solver = new Aoc2022Day18();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day18
+     */
+    public function testDay18Example2(): void
+    {
+        $solver = new Aoc2022Day18();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day18
+     */
+    public function testDay18(): void
+    {
+        $solver = new Aoc2022Day18();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day18
+     */
+    public function testDay18InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day18();
+        $input = ['1,1'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

@@ -34,7 +34,7 @@ use TBali\Aoc2015\Aoc2015Day25;
 /**
  * Unit tests for Advent of Code season 2015.
  *
- * Instead of using this file with phpunit, it is a better way to run the solutions to use AoCRunner.
+ * Instead of using this file with phpunit, it is a better way to run the solutions by using AoCRunner.
  *
  * @internal
  *
