@@ -749,57 +749,65 @@ final class Aoc2022Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2022\Aoc2022Day16
-    //  */
-    // public function testDay16Example1(): void
-    // {
-    //     $solver = new Aoc2022Day16();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day16
+     * @covers \TBali\Aoc2022\ValveState
+     */
+    public function testDay16Example1(): void
+    {
+        $solver = new Aoc2022Day16();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2022\Aoc2022Day16
-    //  */
-    // public function testDay16(): void
-    // {
-    //     $solver = new Aoc2022Day16();
-    //     $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-    //         . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-    //     $input = $solver->readInput($baseFileName . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day16
+     * @covers \TBali\Aoc2022\ValveState
+     */
+    public function testDay16(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2022Day16();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2022\Aoc2022Day16
-    //  */
-    // public function testDay16InvalidInput1(): void
-    // {
-    //     $solver = new Aoc2022Day16();
-    //     $input = ['a'];
-    //     $this->expectException(\Exception::class);
-    //     [$ans1, $ans2] = $solver->solve($input);
-    // }
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day16
+     * @covers \TBali\Aoc2022\ValveState
+     */
+    public function testDay16InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day16();
+        $input = ['Valve AA has flow rate=0; tunnels lead to'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2022\Aoc2022Day16
-    //  */
-    // public function testDay16InvalidInput2(): void
-    // {
-    //     $solver = new Aoc2022Day16();
-    //     $input = ['Valve AA has flow rate=0; tunnels lead to valves '];
-    //     $this->expectException(\Exception::class);
-    //     [$ans1, $ans2] = $solver->solve($input);
-    // }
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day16
+     * @covers \TBali\Aoc2022\ValveState
+     */
+    public function testDay16InvalidInput2(): void
+    {
+        $solver = new Aoc2022Day16();
+        $input = [
+            'Valve BB has flow rate=1; tunnel leads to valve CC',
+            'Valve CC has flow rate=2; tunnel leads to valve BB',
+        ];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
     // --------------------------------------------------------------------
 

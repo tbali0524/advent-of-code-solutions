@@ -132,6 +132,9 @@ final class Blueprint
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class MineState
 {
     public Blueprint $b;
