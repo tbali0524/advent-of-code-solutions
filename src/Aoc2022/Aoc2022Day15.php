@@ -142,11 +142,11 @@ final class Aoc2022Day15 extends SolutionBase
 // --------------------------------------------------------------------
 final class Sensor
 {
-    public int $x;
-    public int $y;
-    public int $beaconX;
-    public int $beaconY;
-    public int $distance;
+    public int $x = 0;
+    public int $y = 0;
+    public int $beaconX = 0;
+    public int $beaconY = 0;
+    public int $distance = 0;
 
     /**
      * @codeCoverageIgnore
@@ -159,23 +159,18 @@ final class Sensor
 
     public static function fromString(string $s): self
     {
-        if (
-            !str_starts_with($s, 'Sensor at ')
-            or !str_contains($s, ': closest beacon is at x=')
-        ) {
-            throw new \Exception('Invalid input');
-        }
-        $a = explode(': closest beacon is at x=', substr($s, 12));
-        $b = explode(', y=', $a[0]);
-        $c = explode(', y=', $a[1] ?? '');
-        if ((count($a) != 2) or (count($b) != 2) or (count($c) != 2)) {
-            throw new \Exception('Invalid input');
-        }
         $sensor = new self();
-        $sensor->x = intval($b[0]);
-        $sensor->y = intval($b[1]);
-        $sensor->beaconX = intval($c[0]);
-        $sensor->beaconY = intval($c[1]);
+        $count = sscanf(
+            $s,
+            'Sensor at x=%d, y=%d: closest beacon is at x=%d, y=%d',
+            $sensor->x,
+            $sensor->y,
+            $sensor->beaconX,
+            $sensor->beaconY,
+        );
+        if ($count != 4) {
+            throw new \Exception('Invalid input');
+        }
         $sensor->distance = abs($sensor->x - $sensor->beaconX) + abs($sensor->y - $sensor->beaconY);
         return $sensor;
     }

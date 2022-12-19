@@ -769,7 +769,7 @@ final class Aoc2016Test extends TestCase
     public function testDay15InvalidInput1(): void
     {
         $solver = new Aoc2016Day15();
-        $input = ['Disc #1 has 2 positions; at time=0, it is at position 1 a.'];
+        $input = ['Disc #1 has 2 positions; at time=0, it is at position'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

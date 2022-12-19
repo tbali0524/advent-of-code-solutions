@@ -248,7 +248,7 @@
 |     |2022| 16|Proboscidea Volcanium                     |
 |  +  |2022| 17|Pyroclastic Flow                          |Tetris simulation, cycle detection
 |  +  |2022| 18|Boiling Boulders                          |flood fill
-|     |2022| 19|???                                       |
+|  +  |2022| 19|Not Enough Minerals                       |
 |     |2022| 20|???                                       |
 |     |2022| 21|???                                       |
 |     |2022| 22|???                                       |

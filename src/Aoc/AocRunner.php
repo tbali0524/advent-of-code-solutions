@@ -29,6 +29,7 @@ final class AocRunner
      */
     public const TO_SKIP = [
         2016 => [5, 11, 14],
+        2022 => [19],
     ];
 
     /**
