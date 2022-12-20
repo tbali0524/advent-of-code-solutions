@@ -24,8 +24,8 @@ use TBali\Aoc2022\Aoc2022Day16;
 use TBali\Aoc2022\Aoc2022Day17;
 use TBali\Aoc2022\Aoc2022Day18;
 use TBali\Aoc2022\Aoc2022Day19;
+use TBali\Aoc2022\Aoc2022Day20;
 
-// use TBali\Aoc2022\Aoc2022Day20;
 // use TBali\Aoc2022\Aoc2022Day21;
 // use TBali\Aoc2022\Aoc2022Day22;
 // use TBali\Aoc2022\Aoc2022Day23;
@@ -967,6 +967,53 @@ final class Aoc2022Test extends TestCase
     {
         $solver = new Aoc2022Day19();
         $input = ['Blueprint 1: Each ore robot costs 1 ore. Each clay robot costs 1 ore.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day20
+     * @covers \TBali\Aoc2022\ListItem
+     */
+    public function testDay20Example1(): void
+    {
+        $solver = new Aoc2022Day20();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day20
+     * @covers \TBali\Aoc2022\ListItem
+     */
+    public function testDay20(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2022Day20();
+        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
+            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
+        $input = $solver->readInput($baseFileName . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day20
+     * @covers \TBali\Aoc2022\ListItem
+     */
+    public function testDay20InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day20();
+        $input = ['1'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

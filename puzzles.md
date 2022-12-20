@@ -11,8 +11,8 @@
 |[2019](#2019)| |
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
 |[2021](#2021)| |
-|[2022](#2022)|![19 days](https://img.shields.io/badge/days%20completed-19-yellow)|
-|__Total__|![204 stars](https://img.shields.io/badge/stars%20⭐-204-yellow)|
+|[2022](#2022)|![20 days](https://img.shields.io/badge/days%20completed-20-yellow)|
+|__Total__|![206 stars](https://img.shields.io/badge/stars%20⭐-206-yellow)|
 
 ## Puzzles
 
@@ -245,11 +245,11 @@
 |  +  |2022| 13|Distress Signal                           |parsing of recursive list, custom compare
 |  +  |2022| 14|Regolith Reservoir                        |
 |  +  |2022| 15|Beacon Exclusion Zone                     |rectangle difference
-|  +  |2022| 16|Proboscidea Volcanium                     |
+|  +  |2022| 16|Proboscidea Volcanium                     |beam search
 |  +  |2022| 17|Pyroclastic Flow                          |Tetris simulation, cycle detection
 |  +  |2022| 18|Boiling Boulders                          |flood fill
-|  +  |2022| 19|Not Enough Minerals                       |
-|     |2022| 20|???                                       |
+|  +  |2022| 19|Not Enough Minerals                       |beam search
+|  +  |2022| 20|Grove Positioning System                  |circular linked list
 |     |2022| 21|???                                       |
 |     |2022| 22|???                                       |
 |     |2022| 23|???                                       |
