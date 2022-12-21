@@ -1,6 +1,6 @@
 # Advent of Code solutions in PHP by TBali
 
-![php-version-82](https://shields.io/badge/php-8.2-blue) ![206 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-206-green)
+![php-version-82](https://shields.io/badge/php-8.2-blue) ![208 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-208-green)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
@@ -45,8 +45,8 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 * Directory pattern: `input/YYYY/`, where `YYYY` is the year.
 * Filename pattern: `AocYYYYDayDD.txt`, where `DD` is the day padded to 2 digits with zero.
 * Optional additional example input can be in `AocYYYYDayDDex1.txt` and `AocYYYYDayDDex2.txt`.
-* Alternatively, a single string input can be given as the `STRING_INPUT` constant in the solution class.
-* Additionally, some extra large input can be given in `AocYYYYDayDDlarge1.txt`, `AocYYYYDayDDelarge2.txt`, ...
+* Alternatively, a single string input can be given in the `STRING_INPUT` or `EXAMPLE_STRING_INPUTS` constants in the solution class.
+* Additionally, some extra large input can be given in `AocYYYYDayDDlarge1.txt`, `AocYYYYDayDDlarge2.txt`, ...
     * These will be run ONLY if the `LARGE_SOLUTIONS` constant array is overriden in the solution class.
 
 ## Class-based PHP solutions
