@@ -11,8 +11,8 @@
 |[2019](#2019)| |
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
 |[2021](#2021)| |
-|[2022](#2022)|![21 days](https://img.shields.io/badge/days%20completed-21-yellow)|
-|__Total__|![208 stars](https://img.shields.io/badge/stars%20⭐-208-yellow)|
+|[2022](#2022)|![22 days](https://img.shields.io/badge/days%20completed-22-green)|
+|__Total__|![210 stars](https://img.shields.io/badge/stars%20⭐-210-yellow)|
 
 ## Puzzles
 
@@ -251,7 +251,7 @@
 |  +  |2022| 19|Not Enough Minerals                       |beam search
 |  +  |2022| 20|Grove Positioning System                  |circular linked list
 |  +  |2022| 21|Monkey Math                               |tree graph, math expression evaluation
-|     |2022| 22|???                                       |
+|  +  |2022| 22|Monkey Map                                |walking simulation, cube geometry
 |     |2022| 23|???                                       |
 |     |2022| 24|???                                       |
 |     |2022| 25|???                                       |
