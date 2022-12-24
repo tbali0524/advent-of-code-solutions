@@ -16,7 +16,7 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Just determine the largest number of geodes you could open using each of the first three blueprints.
  *         What do you get if you multiply these numbers together?
  *
- * Topics: Beam search
+ * Topics: beam search
  *
  * @see https://adventofcode.com/2022/day/19
  *

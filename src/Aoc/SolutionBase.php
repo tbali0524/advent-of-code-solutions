@@ -195,4 +195,13 @@ abstract class SolutionBase implements Solution
         }
         return $input;
     }
+
+    /**
+     * The filename of the input file with relative path but without the extension.
+     */
+    final public function inputBaseFileName(): string
+    {
+        return 'input/' . static::YEAR . '/Aoc' . static::YEAR . 'Day'
+            . str_pad(strval(static::DAY), 2, '0', STR_PAD_LEFT);
+    }
 }

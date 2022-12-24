@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: Work out the steps to release the most pressure in 30 minutes. What is the most pressure you can release?
  * Part 2: With you and an elephant working together for 26 minutes, what is the most pressure you could release?
  *
+ * Topics: beam search
+ *
  * @see https://adventofcode.com/2022/day/16
  *
  * @todo The real solutions for the example input are not found by the beam search, even with a huge beam width.

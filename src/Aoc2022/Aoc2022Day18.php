@@ -12,6 +12,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the surface area of your scanned lava droplet?
  * Part 2: What is the exterior surface area of your scanned lava droplet?
  *
+ * Topics: flood fill
+ *
  * @see https://adventofcode.com/2022/day/18
  */
 final class Aoc2022Day18 extends SolutionBase

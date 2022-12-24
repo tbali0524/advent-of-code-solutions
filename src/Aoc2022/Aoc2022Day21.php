@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What number will the monkey named root yell?
  * Part 2: What number do you yell to pass root's equality test?
  *
+ * Topics: tree graph, math expression evaluation
+ *
  * @see https://adventofcode.com/2022/day/21
  */
 final class Aoc2022Day21 extends SolutionBase
@@ -39,12 +41,10 @@ final class Aoc2022Day21 extends SolutionBase
         $mb = new \TBali\Aoc2022\MonkeyBusiness();
         $mb->parseInput($input);
         $ans1 = $mb->eval(MathMonkey::ROOT);
-        echo $ans1 . PHP_EOL;
         // ---------- Part 2
         $mb = new \TBali\Aoc2022\MonkeyBusiness();
         $mb->parseInput($input);
         $ans2 = $mb->solvePart2();
-        echo $ans2 . PHP_EOL;
         return [strval($ans1), strval($ans2)];
     }
 }

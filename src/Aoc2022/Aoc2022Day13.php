@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  *         What is the sum of the indices of those pairs?
  * Part 2: Organize all of the packets into the correct order. What is the decoder key for the distress signal?
  *
+ * Topics: parsing of recursive list, custom compare
+ *
  * @see https://adventofcode.com/2022/day/13
  */
 final class Aoc2022Day13 extends SolutionBase

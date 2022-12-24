@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: In the row where y=2000000, how many positions cannot contain a beacon?
  * Part 2: Find the only possible position for the distress beacon. What is its tuning frequency?
  *
+ * Topics: rectangle difference
+ *
  * @see https://adventofcode.com/2022/day/15
  */
 final class Aoc2022Day15 extends SolutionBase

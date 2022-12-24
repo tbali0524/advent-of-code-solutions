@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  *         How many empty ground tiles does that rectangle contain?
  * Part 2: Figure out where the Elves need to go. What is the number of the first round where no Elf moves?
  *
+ * Topics: walking simulation
+ *
  * @see https://adventofcode.com/2022/day/23
  */
 final class Aoc2022Day23 extends SolutionBase

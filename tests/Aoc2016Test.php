@@ -63,9 +63,7 @@ final class Aoc2016Test extends TestCase
     public function testDay01(): void
     {
         $solver = new Aoc2016Day01();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -80,9 +78,7 @@ final class Aoc2016Test extends TestCase
     public function testDay02Example1(): void
     {
         $solver = new Aoc2016Day02();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -95,9 +91,7 @@ final class Aoc2016Test extends TestCase
     public function testDay02(): void
     {
         $solver = new Aoc2016Day02();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -112,9 +106,7 @@ final class Aoc2016Test extends TestCase
     public function testDay03(): void
     {
         $solver = new Aoc2016Day03();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -129,9 +121,7 @@ final class Aoc2016Test extends TestCase
     public function testDay04Example1(): void
     {
         $solver = new Aoc2016Day04();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -144,9 +134,7 @@ final class Aoc2016Test extends TestCase
     public function testDay04(): void
     {
         $solver = new Aoc2016Day04();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -192,9 +180,7 @@ final class Aoc2016Test extends TestCase
     public function testDay06Example1(): void
     {
         $solver = new Aoc2016Day06();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -207,9 +193,7 @@ final class Aoc2016Test extends TestCase
     public function testDay06(): void
     {
         $solver = new Aoc2016Day06();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -224,9 +208,7 @@ final class Aoc2016Test extends TestCase
     public function testDay07Example1(): void
     {
         $solver = new Aoc2016Day07();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -239,9 +221,7 @@ final class Aoc2016Test extends TestCase
     public function testDay07Example2(): void
     {
         $solver = new Aoc2016Day07();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex2.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         // $this->assertEquals(strval($expected1), $ans1);
@@ -254,9 +234,7 @@ final class Aoc2016Test extends TestCase
     public function testDay07(): void
     {
         $solver = new Aoc2016Day07();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -273,9 +251,7 @@ final class Aoc2016Test extends TestCase
     public function testDay08Example1(): void
     {
         $solver = new Aoc2016Day08();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -290,9 +266,7 @@ final class Aoc2016Test extends TestCase
     public function testDay08(): void
     {
         $solver = new Aoc2016Day08();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -385,9 +359,7 @@ final class Aoc2016Test extends TestCase
     public function testDay09Example1(): void
     {
         $solver = new Aoc2016Day09();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -400,9 +372,7 @@ final class Aoc2016Test extends TestCase
     public function testDay09Example2(): void
     {
         $solver = new Aoc2016Day09();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex2.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         // $this->assertEquals(strval($expected1), $ans1);
@@ -415,9 +385,7 @@ final class Aoc2016Test extends TestCase
     public function testDay09(): void
     {
         $solver = new Aoc2016Day09();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -455,9 +423,7 @@ final class Aoc2016Test extends TestCase
     public function testDay10Example1(): void
     {
         $solver = new Aoc2016Day10();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -471,9 +437,7 @@ final class Aoc2016Test extends TestCase
     public function testDay10(): void
     {
         $solver = new Aoc2016Day10();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -525,9 +489,7 @@ final class Aoc2016Test extends TestCase
     public function testDay11Example1(): void
     {
         $solver = new Aoc2016Day11();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -542,9 +504,7 @@ final class Aoc2016Test extends TestCase
     {
         $this->markTestSkipped();
         $solver = new Aoc2016Day11();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -592,9 +552,7 @@ final class Aoc2016Test extends TestCase
     public function testDay12Example1(): void
     {
         $solver = new Aoc2016Day12();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -608,9 +566,7 @@ final class Aoc2016Test extends TestCase
     {
         $this->markTestSkipped();
         $solver = new Aoc2016Day12();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -739,9 +695,7 @@ final class Aoc2016Test extends TestCase
     public function testDay15Example1(): void
     {
         $solver = new Aoc2016Day15();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -754,9 +708,7 @@ final class Aoc2016Test extends TestCase
     public function testDay15(): void
     {
         $solver = new Aoc2016Day15();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -839,9 +791,7 @@ final class Aoc2016Test extends TestCase
     public function testDay18Example1(): void
     {
         $solver = new Aoc2016Day18();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -854,9 +804,7 @@ final class Aoc2016Test extends TestCase
     public function testDay18Example2(): void
     {
         $solver = new Aoc2016Day18();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex2.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         $this->assertEquals(strval($expected1), $ans1);
@@ -870,9 +818,7 @@ final class Aoc2016Test extends TestCase
     {
         $this->markTestSkipped();
         $solver = new Aoc2016Day18();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -915,9 +861,7 @@ final class Aoc2016Test extends TestCase
     public function testDay20Example1(): void
     {
         $solver = new Aoc2016Day20();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -930,9 +874,7 @@ final class Aoc2016Test extends TestCase
     public function testDay20(): void
     {
         $solver = new Aoc2016Day20();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -947,9 +889,7 @@ final class Aoc2016Test extends TestCase
     public function testDay21Example1(): void
     {
         $solver = new Aoc2016Day21();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -962,9 +902,7 @@ final class Aoc2016Test extends TestCase
     public function testDay21(): void
     {
         $solver = new Aoc2016Day21();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -1079,9 +1017,7 @@ final class Aoc2016Test extends TestCase
     public function testDay22Example1(): void
     {
         $solver = new Aoc2016Day22();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -1095,9 +1031,7 @@ final class Aoc2016Test extends TestCase
     public function testDay22(): void
     {
         $solver = new Aoc2016Day22();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -1112,9 +1046,7 @@ final class Aoc2016Test extends TestCase
     public function testDay23Example1(): void
     {
         $solver = new Aoc2016Day23();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -1127,9 +1059,7 @@ final class Aoc2016Test extends TestCase
     public function testDay23(): void
     {
         $solver = new Aoc2016Day23();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -1166,9 +1096,7 @@ final class Aoc2016Test extends TestCase
     public function testDay24Example1(): void
     {
         $solver = new Aoc2016Day24();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . 'ex1.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
@@ -1182,9 +1110,7 @@ final class Aoc2016Test extends TestCase
     {
         $this->markTestSkipped();
         $solver = new Aoc2016Day24();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
@@ -1201,9 +1127,7 @@ final class Aoc2016Test extends TestCase
     {
         $this->markTestSkipped();
         $solver = new Aoc2016Day25();
-        $baseFileName = 'input/' . $solver::YEAR . '/Aoc' . $solver::YEAR . 'Day'
-            . str_pad(strval($solver::DAY), 2, '0', STR_PAD_LEFT);
-        $input = $solver->readInput($baseFileName . '.txt');
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);

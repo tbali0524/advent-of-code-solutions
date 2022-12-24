@@ -25,11 +25,13 @@ final class AocRunner
     /**
      * What puzzles to skip, even if source file exists. [year => [day]].
      *
+     * These solutions are quite slow, over 10s.
+     *
      * @var array<int, array<int, int>>
      */
     public const TO_SKIP = [
         2016 => [5, 11, 14],
-        2022 => [19],
+        2022 => [19, 24],
     ];
 
     /**
