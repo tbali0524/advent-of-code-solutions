@@ -29,8 +29,7 @@ use TBali\Aoc2022\Aoc2022Day21;
 use TBali\Aoc2022\Aoc2022Day22;
 use TBali\Aoc2022\Aoc2022Day23;
 use TBali\Aoc2022\Aoc2022Day24;
-
-// use TBali\Aoc2022\Aoc2022Day25;
+use TBali\Aoc2022\Aoc2022Day25;
 
 /**
  * Unit tests for Advent of Code season 2022.
@@ -1135,6 +1134,45 @@ final class Aoc2022Test extends TestCase
     {
         $solver = new Aoc2022Day24();
         $input = ['#'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day25
+     */
+    public function testDay25Example1(): void
+    {
+        $solver = new Aoc2022Day25();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day25
+     */
+    public function testDay25(): void
+    {
+        $solver = new Aoc2022Day25();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2022\Aoc2022Day25
+     */
+    public function testDay25InvalidInput1(): void
+    {
+        $solver = new Aoc2022Day25();
+        $input = ['3'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

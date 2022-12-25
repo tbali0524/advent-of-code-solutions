@@ -5,14 +5,14 @@
 |Year         |Status|
 |-------------|:-----|
 |[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
-|[2017](#2017)|![5 days](https://img.shields.io/badge/days%20completed-5-red)|
-|[2018](#2018)| |
-|[2019](#2019)| |
-|[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)
-|[2021](#2021)| |
-|[2022](#2022)|![24 days](https://img.shields.io/badge/days%20completed-24-green)|
-|__Total__|![214 stars](https://img.shields.io/badge/stars%20⭐-214-yellow)|
+|[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2017](#2017)|![10 stars](https://img.shields.io/badge/stars%20⭐-10-red)|
+|[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
+|__Total__|![216 stars](https://img.shields.io/badge/stars%20⭐-216-yellow)|
 
 ## Puzzles
 
@@ -254,4 +254,4 @@
 |  +  |2022| 22|Monkey Map                                |walking simulation, cube geometry
 |  +  |2022| 23|Unstable Diffusion                        |walking simulation
 |  +  |2022| 24|Blizzard Basin                            |BFS
-|     |2022| 25|???                                       |
+|  +  |2022| 25|Full of Hot Air                           |balanced 5-ary numbers
