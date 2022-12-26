@@ -1,10 +1,11 @@
 # Advent of Code solutions in PHP by TBali
 
-![php-version-82](https://shields.io/badge/php-8.2-blue) ![216 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-216-green)
+![php-version-82](https://shields.io/badge/php-8.2-blue) ![222 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-222-green)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
 * [Puzzle list](puzzles.md) with topics and my completion status
+* Some [memes](memes.md) from AoC subreddit
 * Link to this repo on [GitHub](https://github.com/tbali0524/advent-of-code-solutions)
 
 ## Installation

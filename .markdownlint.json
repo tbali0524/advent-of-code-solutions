@@ -1,5 +1,6 @@
 {
     "default" : true,
-    "MD007" : { "indent" : 4 },
-    "MD013" : false
+    "ul-indent" : { "indent" : 4 },
+    "line-length" : false,
+    "no-alt-text" : false
 }
