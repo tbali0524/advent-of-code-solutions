@@ -40,7 +40,7 @@ final class Aoc2015Day17 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', $input);
+        $input = array_map(intval(...), $input);
         // detect puzzle example as input
         $total = (count($input) == 5 ? self::EXAMPLE_TOTAL : self::TOTAL);
         // ---------- Part 1 + 2

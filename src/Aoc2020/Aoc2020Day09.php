@@ -34,7 +34,7 @@ final class Aoc2020Day09 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', $input);
+        $input = array_map(intval(...), $input);
         $window = 25;
         // detect puzzle example with reduced window size
         if (count($input) <= 20) {

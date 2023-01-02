@@ -35,7 +35,7 @@ final class Aoc2017Day02 extends SolutionBase
     {
         /** @var array<int, array<int, int>> */
         $data = array_map(
-            fn (string $s): array => array_map('intval', explode("\t", $s)),
+            fn (string $s): array => array_map(intval(...), explode("\t", $s)),
             $input
         );
         // ---------- Part 1

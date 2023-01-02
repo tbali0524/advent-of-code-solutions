@@ -36,7 +36,7 @@ final class Aoc2015Day02 extends SolutionBase
     {
         /** @var array<array<int, int>> */
         $boxes = array_map(
-            fn (string $line): array => array_map('intval', explode('x', $line)),
+            fn (string $line): array => array_map(intval(...), explode('x', $line)),
             $input
         );
         // ---------- Part 1

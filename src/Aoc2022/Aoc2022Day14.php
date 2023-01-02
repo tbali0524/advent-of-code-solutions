@@ -39,9 +39,9 @@ final class Aoc2022Day14 extends SolutionBase
         $maxY = 0;
         foreach ($input as $line) {
             $points = explode(' -> ', $line);
-            [$prevX, $prevY] = array_map('intval', explode(',', $points[0]));
+            [$prevX, $prevY] = array_map(intval(...), explode(',', $points[0]));
             for ($i = 1; $i < count($points); ++$i) {
-                [$nextX, $nextY] = array_map('intval', explode(',', $points[$i]));
+                [$nextX, $nextY] = array_map(intval(...), explode(',', $points[$i]));
                 if (($nextX == $prevX) and ($nextY > $prevY)) {
                     [$dx, $dy] = [0, 1];
                 } elseif (($nextX == $prevX) and ($nextY < $prevY)) {

@@ -35,7 +35,7 @@ final class Aoc2017Day06 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $data = array_map('intval', explode("\t", $input[0] ?? ''));
+        $data = array_map(intval(...), explode("\t", $input[0] ?? ''));
         // ---------- Part 1 + 2
         $ans1 = 0;
         $ans2 = 0;

@@ -41,7 +41,7 @@ final class Aoc2020Day15 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', explode(',', $input[0]));
+        $input = array_map(intval(...), explode(',', $input[0]));
         // ---------- Part 1 + 2
         $memo = array_flip($input);
         $prev = $input[count($input) - 1];

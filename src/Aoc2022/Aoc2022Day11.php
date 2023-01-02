@@ -123,7 +123,7 @@ final class Aoc2022Day11 extends SolutionBase
             }
             $m = new Monkey();
             $m->id = intval(substr($input[$i * 7], 7, -1));
-            $m->items = array_map('intval', explode(', ', substr($input[$i * 7 + 1], 18)));
+            $m->items = array_map(intval(...), explode(', ', substr($input[$i * 7 + 1], 18)));
             if (substr($input[$i * 7 + 2], 25) == 'old') {
                 $m->operator = '^';
                 $m->operand = 2;

@@ -40,7 +40,7 @@ final class Aoc2020Day10 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', $input);
+        $input = array_map(intval(...), $input);
         // ---------- Part 1
         $a = $input;
         $a[] = max($input) + 3;

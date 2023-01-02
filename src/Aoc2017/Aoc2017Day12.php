@@ -39,7 +39,7 @@ final class Aoc2017Day12 extends SolutionBase
         $adjList = array_fill(0, count($input), []);
         foreach ($input as $line) {
             $a = explode(' <-> ', $line);
-            $adjList[intval($a[0])] = array_map('intval', explode(', ', $a[1] ?? ''));
+            $adjList[intval($a[0])] = array_map(intval(...), explode(', ', $a[1] ?? ''));
         }
         // ---------- Part 1 + 2
         $visited = [];

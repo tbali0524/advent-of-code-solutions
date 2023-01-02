@@ -43,7 +43,7 @@ final class Aoc2022Day20 extends SolutionBase
     {
         // ---------- Parse input
         /** @var array<int, int> */
-        $data = array_map('intval', $input);
+        $data = array_map(intval(...), $input);
         // ---------- Part 1
         $listItems = $this->createList($data);
         $zeroItem = $this->getZeroItem($listItems);

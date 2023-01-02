@@ -155,14 +155,14 @@ final class Aoc2020Day16 extends SolutionBase
         ) {
             throw new \Exception('Invalid input');
         }
-        $this->myTicket = array_map('intval', explode(',', $input[$idxLine + 1]));
+        $this->myTicket = array_map(intval(...), explode(',', $input[$idxLine + 1]));
         if (count($this->myTicket) != count($this->validators)) {
             throw new \Exception('Invalid input');
         }
         $this->nearbyTickets = [];
         $idxLine += 4;
         while ($idxLine < count($input)) {
-            $ticket = array_map('intval', explode(',', $input[$idxLine]));
+            $ticket = array_map(intval(...), explode(',', $input[$idxLine]));
             if (count($ticket) != count($this->validators)) {
                 throw new \Exception('Invalid input');
             }

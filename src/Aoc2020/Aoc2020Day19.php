@@ -46,7 +46,7 @@ final class Aoc2020Day19 extends SolutionBase
     {
         // ---------- Part 1
         $this->parseInput($input);
-        $maxLen = max(array_map('strlen', $this->messages)) ?: 0;
+        $maxLen = max(array_map(strlen(...), $this->messages)) ?: 0;
         $this->generates = [];
         $allStrings = array_keys($this->getAllGenerated(0, $maxLen));
         $ans1 = count(array_filter(
@@ -201,7 +201,7 @@ final class MessageNode
         $this->match = '';
         $b = explode(' | ', $a[1]);
         foreach ($b as $list) {
-            $this->subNodes[] = array_map('intval', explode(' ', $list));
+            $this->subNodes[] = array_map(intval(...), explode(' ', $list));
         }
     }
 }

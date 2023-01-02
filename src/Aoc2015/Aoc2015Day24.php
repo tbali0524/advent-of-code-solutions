@@ -44,7 +44,7 @@ final class Aoc2015Day24 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        $this->weights = array_map('intval', $input);
+        $this->weights = array_map(intval(...), $input);
         // ---------- Part 1 + 2
         rsort($this->weights);
         $this->totalRemaining = [];

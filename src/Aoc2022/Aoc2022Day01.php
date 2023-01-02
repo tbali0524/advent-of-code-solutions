@@ -44,7 +44,7 @@ final class Aoc2022Day01 extends SolutionBase
             $calories[$idxElf][] = intval($line);
         }
         // ---------- Part 1 + 2
-        $cals = array_map('array_sum', $calories);
+        $cals = array_map(array_sum(...), $calories);
         $ans1 = max($cals);
         rsort($cals);
         $ans2 = ($cals[0] ?? 0) + ($cals[1] ?? 0) + ($cals[2] ?? 0);

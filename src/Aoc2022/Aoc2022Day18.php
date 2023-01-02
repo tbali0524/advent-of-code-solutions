@@ -48,7 +48,7 @@ final class Aoc2022Day18 extends SolutionBase
     {
         // ---------- Parse input
         $cubes = array_map(
-            fn (string $s): array => array_map('intval', explode(',', $s)),
+            fn (string $s): array => array_map(intval(...), explode(',', $s)),
             $input
         );
         $this->grid = [];

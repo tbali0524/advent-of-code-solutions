@@ -36,7 +36,7 @@ final class Aoc2021Day01 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', $input);
+        $input = array_map(intval(...), $input);
         // ---------- Part 1
         $ans1 = 0;
         for ($i = 1; $i < count($input); ++$i) {

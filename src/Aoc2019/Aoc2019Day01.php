@@ -35,7 +35,7 @@ final class Aoc2019Day01 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $input = array_map('intval', $input);
+        $input = array_map(intval(...), $input);
         // ---------- Part 1
         $ans1 = array_sum(array_map(
             fn (int $x): int => intdiv($x, 3) - 2,

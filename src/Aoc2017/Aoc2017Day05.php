@@ -35,7 +35,7 @@ final class Aoc2017Day05 extends SolutionBase
     {
         // ---------- Part 1
         /** @var array<int, int> */
-        $data = array_map('intval', $input);
+        $data = array_map(intval(...), $input);
         $pc = 0;
         $ans1 = 0;
         while (true) {
@@ -49,7 +49,7 @@ final class Aoc2017Day05 extends SolutionBase
         }
         // ---------- Part 2
         /** @var array<int, int> */
-        $data = array_map('intval', $input);
+        $data = array_map(intval(...), $input);
         $pc = 0;
         $ans2 = 0;
         while (true) {

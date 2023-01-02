@@ -41,7 +41,7 @@ final class Aoc2017Day10 extends SolutionBase
     public function solve(array $input): array
     {
         /** @var array<int, int> */
-        $data = array_map('intval', explode(',', $input[0] ?? ''));
+        $data = array_map(intval(...), explode(',', $input[0] ?? ''));
         // ---------- Part 1
         $listSize = count($data) == 4 ? self::LIST_SIZE_EXAMPLE1_PART1 : self::LIST_SIZE_INPUT;
         $list = range(0, $listSize - 1);
@@ -64,7 +64,7 @@ final class Aoc2017Day10 extends SolutionBase
         $ans1 = ($list[0] ?? 0) * ($list[1] ?? 0);
         // ---------- Part 2
         /** @var array<int, int> */
-        $data = array_map('ord', str_split($input[0] ?? ''));
+        $data = array_map(ord(...), str_split($input[0] ?? ''));
         $data = array_merge($data, [17, 31, 73, 47, 23]);
         $listSize = self::LIST_SIZE_INPUT;
         $list = range(0, $listSize - 1);
