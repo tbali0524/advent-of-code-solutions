@@ -105,7 +105,9 @@ final class Aoc2017Day07 extends SolutionBase
             if (count($sameResults[$first]) > count($sameResults[$last])) {
                 return $first - $last + $this->weights[$sameResults[$last][0]];
             }
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         return 0;
     }

@@ -78,7 +78,9 @@ final class Aoc2017Day03 extends SolutionBase
                     [$dx, $dy] = [1, 0];
                 }
             } else {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Impossible');
+                // @codeCoverageIgnoreEnd
             }
         }
         return [strval($ans1), strval($ans2)];

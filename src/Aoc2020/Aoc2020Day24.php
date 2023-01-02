@@ -12,7 +12,7 @@ use TBali\Aoc\SolutionBase;
  * Part 1: After all of the instructions have been followed, how many tiles are left with the black side up?
  * Part 2: After executing this process a total of 100 times, there would be 2208 black tiles facing up.
  *
- * Topics: walking simulator on hex grid, Conway's Game of Life
+ * Topics: walking simulation on hex grid, Conway's Game of Life
  *
  * @see https://adventofcode.com/2020/day/24
  */

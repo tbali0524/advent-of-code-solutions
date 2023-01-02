@@ -6,13 +6,13 @@
 |-------------|:-----|
 |[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2017](#2017)|![16 stars](https://img.shields.io/badge/stars%20⭐-16-red)|
+|[2017](#2017)|![24 stars](https://img.shields.io/badge/stars%20⭐-24-red)|
 |[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![222 stars](https://img.shields.io/badge/stars%20⭐-216-yellow)|
+|__Total__|![230 stars](https://img.shields.io/badge/stars%20⭐-230-yellow)|
 
 ## Puzzles
 
@@ -88,10 +88,10 @@
 |  +  |2017|  6|Memory Reallocation                       |
 |  +  |2017|  7|Recursive Circus                          |tree graph, recursion
 |  +  |2017|  8|I Heard You Like Registers                |assembly simulation
-|     |2017|  9|Stream Processing                         |
-|     |2017| 10|Knot Hash                                 |
-|     |2017| 11|Hex Ed                                    |
-|     |2017| 12|Digital Plumber                           |
+|  +  |2017|  9|Stream Processing                         |parsing, state machine
+|  +  |2017| 10|Knot Hash                                 |
+|  +  |2017| 11|Hex Ed                                    |walking simulation on hex grid
+|  +  |2017| 12|Digital Plumber                           |graph, BFS, components
 |     |2017| 13|Packet Scanners                           |
 |     |2017| 14|Disk Defragmentation                      |
 |     |2017| 15|Dueling Generators                        |
@@ -193,7 +193,7 @@
 |  +  |2020| 21|Allergen Assessment                       |Bipartite graph, matching
 |  +  |2020| 22|Crab Combat                               |game simulation, recursion
 |  +  |2020| 23|Crab Cups                                 |game simulation
-|  +  |2020| 24|Lobby Layout                              |walking simulator on hex grid, Conway's Game of Life
+|  +  |2020| 24|Lobby Layout                              |walking simulation on hex grid, Conway's Game of Life
 |  +  |2020| 25|Combo Breaker                             |asymmetric key encryption
 
 ### 2021
