@@ -6,13 +6,13 @@
 |-------------|:-----|
 |[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2017](#2017)|![24 stars](https://img.shields.io/badge/stars%20⭐-24-red)|
+|[2017](#2017)|![41 stars](https://img.shields.io/badge/stars%20⭐-41-yellow)|
 |[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![230 stars](https://img.shields.io/badge/stars%20⭐-230-yellow)|
+|__Total__|![247 stars](https://img.shields.io/badge/stars%20⭐-247-yellow)|
 
 ## Puzzles
 
@@ -92,17 +92,17 @@
 |  +  |2017| 10|Knot Hash                                 |
 |  +  |2017| 11|Hex Ed                                    |walking simulation on hex grid
 |  +  |2017| 12|Digital Plumber                           |graph, BFS, components
-|     |2017| 13|Packet Scanners                           |
-|     |2017| 14|Disk Defragmentation                      |
-|     |2017| 15|Dueling Generators                        |
-|     |2017| 16|Permutation Promenade                     |
-|     |2017| 17|Spinlock                                  |
-|     |2017| 18|Duet                                      |
-|     |2017| 19|A Series of Tubes                         |
-|     |2017| 20|Particle Swarm                            |
+|  +  |2017| 13|Packet Scanners                           |
+|  +  |2017| 14|Disk Defragmentation                      |flood fill
+|  +  |2017| 15|Dueling Generators                        |
+|  +  |2017| 16|Permutation Promenade                     |simulation, cycle detection
+|  +  |2017| 17|Spinlock                                  |circular linked list
+|  +  |2017| 18|Duet                                      |assembly simulation, coroutines
+|  +  |2017| 19|A Series of Tubes                         |walking simulation
+|  +  |2017| 20|Particle Swarm                            |simulation
 |     |2017| 21|Fractal Art                               |
 |     |2017| 22|Sporifica Virus                           |
-|     |2017| 23|Coprocessor Conflagration                 |
+| p1  |2017| 23|Coprocessor Conflagration                 |assembly simulation
 |     |2017| 24|Electromagnetic Moat                      |
 |     |2017| 25|The Halting Problem                       |
 
