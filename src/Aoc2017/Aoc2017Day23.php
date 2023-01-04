@@ -24,8 +24,7 @@ final class Aoc2017Day23 extends SolutionBase
     public const YEAR = 2017;
     public const DAY = 23;
     public const TITLE = 'Coprocessor Conflagration';
-    public const SOLUTIONS = [8281, 0];
-    public const EXAMPLE_SOLUTIONS = [];
+    public const SOLUTIONS = [8281, 911];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -43,8 +42,44 @@ final class Aoc2017Day23 extends SolutionBase
         $proc->execute();
         $ans1 = $proc->totalMuls;
         // ---------- Part 2
+        if (count($input) != 32) {
+            // @codeCoverageIgnoreStart
+            return [strval($ans1), '0'];
+            // @codeCoverageIgnoreEnd
+        }
         $ans2 = 0;
+        $startB = intval(substr($input[0] ?? '', 6));
+        $mulB = intval(substr($input[4] ?? '', 6));
+        $subB = intval(substr($input[5] ?? '', 6));
+        $subC = intval(substr($input[7] ?? '', 6));
+        $step = -intval(substr($input[30] ?? '', 6));
+        $from = $startB * $mulB - $subB;
+        $to = $from - $subC;
+        for ($n = $from; $n <= $to; $n += $step) {
+            if (!self::isPrime($n)) {
+                ++$ans2;
+            }
+        }
         return [strval($ans1), strval($ans2)];
+    }
+
+    /**
+     * Primality test (with optimization, but without memoization).
+     */
+    private static function isPrime(int $n): bool
+    {
+        if ($n == 2 || $n == 3) {
+            return true;
+        }
+        if ($n <= 1 || $n % 2 == 0 || $n % 3 == 0) {
+            return false;
+        }
+        for ($i = 5; $i * $i <= $n; $i += 6) {
+            if ($n % $i == 0 || $n % ($i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 

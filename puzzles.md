@@ -6,13 +6,13 @@
 |-------------|:-----|
 |[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2017](#2017)|![41 stars](https://img.shields.io/badge/stars%20⭐-41-yellow)|
+|[2017](#2017)|![47 stars](https://img.shields.io/badge/stars%20⭐-47-yellow)|
 |[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![247 stars](https://img.shields.io/badge/stars%20⭐-247-yellow)|
+|__Total__|![253 stars](https://img.shields.io/badge/stars%20⭐-253-yellow)|
 
 ## Puzzles
 
@@ -101,10 +101,12 @@
 |  +  |2017| 19|A Series of Tubes                         |walking simulation
 |  +  |2017| 20|Particle Swarm                            |simulation
 |     |2017| 21|Fractal Art                               |
-|     |2017| 22|Sporifica Virus                           |
-| p1  |2017| 23|Coprocessor Conflagration                 |assembly simulation
-|     |2017| 24|Electromagnetic Moat                      |
-|     |2017| 25|The Halting Problem                       |
+|  +  |2017| 22|Sporifica Virus                           |walking simulation
+|  +  |2017| 23|Coprocessor Conflagration                 |assembly simulation
+|  +  |2017| 24|Electromagnetic Moat                      |BFS
+|  +  |2017| 25|The Halting Problem                       |Turing machine
+
+Hint from subreddit was used for: Day 23 Part 2.
 
 ### 2018
 
@@ -196,6 +198,8 @@
 |  +  |2020| 24|Lobby Layout                              |walking simulation on hex grid, Conway's Game of Life
 |  +  |2020| 25|Combo Breaker                             |asymmetric key encryption
 
+Hint from subreddit was used for: Day 23.
+
 ### 2021
 
 |Done?|Year|Day| Title                                    | Topics   |
@@ -255,3 +259,5 @@
 |  +  |2022| 23|Unstable Diffusion                        |walking simulation
 |  +  |2022| 24|Blizzard Basin                            |BFS
 |  +  |2022| 25|Full of Hot Air                           |balanced 5-ary numbers
+
+No hint from subreddit was used in this season.

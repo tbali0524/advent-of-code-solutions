@@ -25,12 +25,11 @@ use TBali\Aoc2017\Aoc2017Day17;
 use TBali\Aoc2017\Aoc2017Day18;
 use TBali\Aoc2017\Aoc2017Day19;
 use TBali\Aoc2017\Aoc2017Day20;
-// use TBali\Aoc2017\Aoc2017Day21;
-// use TBali\Aoc2017\Aoc2017Day22;
+use TBali\Aoc2017\Aoc2017Day21;
+use TBali\Aoc2017\Aoc2017Day22;
 use TBali\Aoc2017\Aoc2017Day23;
-
-// use TBali\Aoc2017\Aoc2017Day24;
-// use TBali\Aoc2017\Aoc2017Day25;
+use TBali\Aoc2017\Aoc2017Day24;
+use TBali\Aoc2017\Aoc2017Day25;
 
 /**
  * Unit tests for Advent of Code season 2017.
@@ -923,6 +922,66 @@ final class Aoc2017Test extends TestCase
     // --------------------------------------------------------------------
 
     /**
+     * @covers \TBali\Aoc2017\Aoc2017Day21
+     */
+    public function testDay21Example1(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2017Day21();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        // $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day21
+     */
+    public function testDay21(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2017Day21();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        // $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day22
+     */
+    public function testDay22Example1(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2017Day22();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day22
+     */
+    public function testDay22(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2017Day22();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
      * @covers \TBali\Aoc2017\Aoc2017Day23
      * @covers \TBali\Aoc2017\CoProcessor
      */
@@ -933,7 +992,7 @@ final class Aoc2017Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
@@ -956,6 +1015,85 @@ final class Aoc2017Test extends TestCase
     {
         $solver = new Aoc2017Day23();
         $input = ['add a 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day24
+     */
+    public function testDay24Example1(): void
+    {
+        $solver = new Aoc2017Day24();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day24
+     */
+    public function testDay24(): void
+    {
+        $solver = new Aoc2017Day24();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day24
+     */
+    public function testDay24InvalidInput1(): void
+    {
+        $solver = new Aoc2017Day24();
+        $input = ['0'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day25
+     */
+    public function testDay25Example1(): void
+    {
+        $solver = new Aoc2017Day25();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day25
+     */
+    public function testDay25(): void
+    {
+        $this->markTestSkipped();
+        $solver = new Aoc2017Day25();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        // $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2017\Aoc2017Day25
+     */
+    public function testDay25InvalidInput1(): void
+    {
+        $solver = new Aoc2017Day25();
+        $input = ['a'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
