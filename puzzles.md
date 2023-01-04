@@ -6,13 +6,13 @@
 |-------------|:-----|
 |[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2017](#2017)|![47 stars](https://img.shields.io/badge/stars%20⭐-47-yellow)|
+|[2017](#2017)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![253 stars](https://img.shields.io/badge/stars%20⭐-253-yellow)|
+|__Total__|![256 stars](https://img.shields.io/badge/stars%20⭐-256-yellow)|
 
 ## Puzzles
 
@@ -100,7 +100,7 @@
 |  +  |2017| 18|Duet                                      |assembly simulation, coroutines
 |  +  |2017| 19|A Series of Tubes                         |walking simulation
 |  +  |2017| 20|Particle Swarm                            |simulation
-|     |2017| 21|Fractal Art                               |
+|  +  |2017| 21|Fractal Art                               |image transformation
 |  +  |2017| 22|Sporifica Virus                           |walking simulation
 |  +  |2017| 23|Coprocessor Conflagration                 |assembly simulation
 |  +  |2017| 24|Electromagnetic Moat                      |BFS
@@ -191,7 +191,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2020| 17|Conway Cubes                              |Conway's Game of Life, simulation
 |  +  |2020| 18|Operation Order                           |math expression evaluation
 |  +  |2020| 19|Monster Messages                          |input parsing, context-free grammar, CFG with limited loops
-|  +  |2020| 20|Jurassic Jigsaw                           |
+|  +  |2020| 20|Jurassic Jigsaw                           |image transformation, image matching
 |  +  |2020| 21|Allergen Assessment                       |Bipartite graph, matching
 |  +  |2020| 22|Crab Combat                               |game simulation, recursion
 |  +  |2020| 23|Crab Cups                                 |game simulation

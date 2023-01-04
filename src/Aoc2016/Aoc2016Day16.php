@@ -46,9 +46,11 @@ final class Aoc2016Day16 extends SolutionBase
         if ($len1 != self::PART1_LEN) {
             return [$ans1, '0'];
         }
+        // @codeCoverageIgnoreStart
         $len2 = self::PART2_LEN;
         $ans2 = $this->solvePart($data, $len2);
         return [$ans1, $ans2];
+        // @codeCoverageIgnoreEnd
     }
 
     private function solvePart(string $data, int $len): string

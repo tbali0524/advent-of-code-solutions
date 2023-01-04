@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What do you get if you multiply together the IDs of the four corner tiles?
  * Part 2: How many # are not part of a sea monster?
  *
+ * Topics: image transformation, image matching
+ *
  * @see https://adventofcode.com/2020/day/20
  */
 final class Aoc2020Day20 extends SolutionBase
@@ -682,6 +684,9 @@ final class Image
         return $total - $best;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function printImage(): void
     {
         foreach ($this->grid as $line) {

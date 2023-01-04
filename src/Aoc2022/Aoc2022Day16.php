@@ -119,6 +119,8 @@ final class Aoc2022Day16 extends SolutionBase
 
     /**
      * Generates next state after waiting 1 turn.
+     *
+     * @codeCoverageIgnore
      */
     public function wait(ValveState $state): ValveState
     {

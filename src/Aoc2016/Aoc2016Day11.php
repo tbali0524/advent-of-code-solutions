@@ -50,6 +50,7 @@ final class Aoc2016Day11 extends SolutionBase
             return [strval($ans1), '0'];
         }
         // ---------- Part 2
+        // @codeCoverageIgnoreStart
         $input[0] = 'The first floor contains a thulium generator, a thulium-compatible microchip, '
             . 'a plutonium generator, a strontium generator, '
             . 'an elerium generator, an elerium-compatible microchip, '
@@ -57,6 +58,7 @@ final class Aoc2016Day11 extends SolutionBase
         $startState = House::fromInput($input);
         $ans2 = $this->solveBeamSearch($startState);
         return [strval($ans1), strval($ans2)];
+        // @codeCoverageIgnoreEnd
     }
 
     /**
