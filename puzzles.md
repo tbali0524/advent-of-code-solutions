@@ -4,15 +4,15 @@
 
 |Year         |Status|
 |-------------|:-----|
-|[2015](#2015)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2016](#2016)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2017](#2017)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
-|[2019](#2019)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
-|[2020](#2020)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![2 stars](https://img.shields.io/badge/stars%20⭐-2-red)|
-|[2022](#2022)|![50 stars](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![256 stars](https://img.shields.io/badge/stars%20⭐-256-yellow)|
+|[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-256-yellow)|
 
 ## Puzzles
 

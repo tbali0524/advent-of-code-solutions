@@ -1,6 +1,8 @@
 # Advent of Code solutions in PHP by TBali
 
-![php-version-82](https://shields.io/badge/php-8.2-blue) ![256 total AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-256-green)
+![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-256-green)
+![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
