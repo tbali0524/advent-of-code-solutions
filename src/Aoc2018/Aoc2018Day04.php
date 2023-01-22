@@ -9,20 +9,20 @@ use TBali\Aoc\SolutionBase;
 /**
  * AoC 2018 Day 4: Repose Record.
  *
- * Part 1: What is the ID of the guard you chose multiplied by the minute you chose?
- * Part 2:
+ * Part 1: Strategy 1: Find the guard that has the most minutes asleep.
+ *         What is the ID of the guard you chose multiplied by the minute you chose?
+ * Part 2: Strategy 2: Of all guards, which guard is most frequently asleep on the same minute?
+ *         What is the ID of the guard you chose multiplied by the minute you chose?
  *
  * @see https://adventofcode.com/2018/day/4
- *
- * @todo complete
  */
 final class Aoc2018Day04 extends SolutionBase
 {
     public const YEAR = 2018;
     public const DAY = 4;
     public const TITLE = 'Repose Record';
-    public const SOLUTIONS = [0, 0];
-    public const EXAMPLE_SOLUTIONS = [[240, 0]];
+    public const SOLUTIONS = [19830, 43695];
+    public const EXAMPLE_SOLUTIONS = [[240, 4455]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -35,12 +35,53 @@ final class Aoc2018Day04 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        /** @var array<int, int> */
-        $data = array_map(intval(...), $input);
-        // ---------- Part 1
-        $ans1 = 0;
+        // ---------- Part 1 + 2
+        sort($input);
+        $guard = -1;
+        $totalSleeps = [];
+        $countSleepingAt = [];
+        $lastFall = -1;
+        foreach ($input as $line) {
+            $action = $line[19];
+            if ($action == 'G') {
+                $guard = intval(explode(' ', substr($line, 26))[0]);
+                continue;
+            }
+            $day = intval(substr($line, 9, 2));
+            $min = intval(substr($line, 15, 2));
+            if ($action == 'f') {
+                $lastFall = $min;
+                continue;
+            }
+            if (($action != 'w') or ($lastFall < 0) or ($guard < 0)) {
+                throw new \Exception('Invalid input');
+            }
+            $totalSleeps[$guard] = ($totalSleeps[$guard] ?? 0) + $min - $lastFall;
+            for ($t = $lastFall; $t < $min; ++$t) {
+                $countSleepingAt[$guard][$t] = ($countSleepingAt[$guard][$t] ?? 0) + 1;
+            }
+            $lastFall = -1;
+        }
+        arsort($totalSleeps);
+        $bestGuard = array_key_first($totalSleeps);
+        arsort($countSleepingAt[$bestGuard]);
+        $bestMin = array_key_first($countSleepingAt[$bestGuard]);
+        $ans1 = $bestGuard * $bestMin;
         // ---------- Part 2
-        $ans2 = 0;
+        $bestGuard = 0;
+        $bestCount = 0;
+        $bestMin = 0;
+        foreach ($countSleepingAt as $guard => $counts) {
+            arsort($counts);
+            $min = array_key_first($counts);
+            $count = $counts[$min];
+            if ($count > $bestCount) {
+                $bestCount = $count;
+                $bestMin = $min;
+                $bestGuard = $guard;
+            }
+        }
+        $ans2 = $bestGuard * $bestMin;
         return [strval($ans1), strval($ans2)];
     }
 }

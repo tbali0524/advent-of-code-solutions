@@ -10,19 +10,21 @@ use TBali\Aoc\SolutionBase;
  * AoC 2018 Day 6: Chronal Coordinates.
  *
  * Part 1: What is the size of the largest area that isn't infinite?
- * Part 2:
+ * Part 2: What is the size of the region containing all locations which have a total distance
+ *         to all given coordinates of less than 10000?
  *
  * @see https://adventofcode.com/2018/day/6
- *
- * @todo complete
  */
 final class Aoc2018Day06 extends SolutionBase
 {
     public const YEAR = 2018;
     public const DAY = 6;
     public const TITLE = 'Chronal Coordinates';
-    public const SOLUTIONS = [0, 0];
-    public const EXAMPLE_SOLUTIONS = [[17, 0]];
+    public const SOLUTIONS = [3006, 42998];
+    public const EXAMPLE_SOLUTIONS = [[17, 16]];
+
+    private const DIST_THRESHOLD_EXAMPLE = 32;
+    private const DIST_THRESHOLD_PART2 = 10_000;
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -35,12 +37,49 @@ final class Aoc2018Day06 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        /** @var array<int, int> */
-        $data = array_map(intval(...), $input);
-        // ---------- Part 1
+        // ---------- Parse input
+        $points = array_map(
+            fn (string $line): array => array_map(intval(...), explode(', ', $line)),
+            $input
+        );
+        // ---------- Part 1 + 2
+        $threshold = count($input) == 6 ? self::DIST_THRESHOLD_EXAMPLE : self::DIST_THRESHOLD_PART2;
+        $minX = intval(min(array_map(fn (array $p): int => $p[0], $points)));
+        $maxX = intval(max(array_map(fn (array $p): int => $p[0], $points)));
+        $minY = intval(min(array_map(fn (array $p): int => $p[1], $points)));
+        $maxY = intval(max(array_map(fn (array $p): int => $p[1], $points)));
         $ans1 = 0;
-        // ---------- Part 2
         $ans2 = 0;
+        $areas = array_fill(0, count($input), 0);
+        $isInfinite = [];
+        for ($y = $minY; $y <= $maxY; ++$y) {
+            for ($x = $minX; $x <= $maxX; ++$x) {
+                $dists = array_map(
+                    fn (array $p): int => abs($p[0] - $x) + abs($p[1] - $y),
+                    $points,
+                );
+                $totalDist = intval(array_sum($dists));
+                if ($totalDist < $threshold) {
+                    ++$ans2;
+                }
+                asort($dists);
+                $bestP = array_key_first($dists);
+                $bestDist = $dists[$bestP];
+                if (array_count_values($dists)[$bestDist] != 1) {
+                    continue;
+                }
+                ++$areas[$bestP];
+                if (($y == $minY) or ($y == $maxY) or ($x == $minX) or ($x == $maxX)) {
+                    $isInfinite[$bestP] = true;
+                }
+            }
+        }
+        $finiteAreas = array_filter(
+            $areas,
+            fn ($idx) => !isset($isInfinite[$idx]),
+            ARRAY_FILTER_USE_KEY,
+        );
+        $ans1 = intval(max($finiteAreas));
         return [strval($ans1), strval($ans2)];
     }
 }

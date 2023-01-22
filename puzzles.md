@@ -7,12 +7,12 @@
 |[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-14-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-256-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-268-yellow)|
 
 ## Puzzles
 
@@ -113,12 +113,12 @@ Hint from subreddit was used for: Day 23 Part 2.
 |Done?|Year|Day| Title                                    | Topics   |
 |:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2018|  1|Chronal Calibration                       |
-|     |2018|  2|Inventory Management System               |
-|     |2018|  3|No Matter How You Slice It                |
-|     |2018|  4|Repose Record                             |
-|     |2018|  5|Alchemical Reduction                      |
-|     |2018|  6|Chronal Coordinates                       |
-|     |2018|  7|The Sum of Its Parts                      |
+|  +  |2018|  2|Inventory Management System               |
+|  +  |2018|  3|No Matter How You Slice It                |
+|  +  |2018|  4|Repose Record                             |
+|  +  |2018|  5|Alchemical Reduction                      |
+|  +  |2018|  6|Chronal Coordinates                       |
+|  +  |2018|  7|The Sum of Its Parts                      |Job scheduling
 |     |2018|  8|Memory Maneuver                           |
 |     |2018|  9|Marble Mania                              |
 |     |2018| 10|The Stars Align                           |
