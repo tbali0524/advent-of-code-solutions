@@ -42,6 +42,9 @@ final class Aoc2018Day04 extends SolutionBase
         $countSleepingAt = [];
         $lastFall = -1;
         foreach ($input as $line) {
+            if (strlen($line) < 27) {
+                throw new \Exception('Invalid input');
+            }
             $action = $line[19];
             if ($action == 'G') {
                 $guard = intval(explode(' ', substr($line, 26))[0]);
