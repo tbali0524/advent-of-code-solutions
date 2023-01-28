@@ -759,13 +759,12 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay16Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day16();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
-        $this->assertEquals(strval($expected2), $ans2);
+        // $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
@@ -773,13 +772,23 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay16(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day16();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day16
+     */
+    public function testDay16InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day16();
+        $input = ['Before: [0, 0, 0, 0]'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -819,13 +828,12 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay18Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day18();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
-        $this->assertEquals(strval($expected2), $ans2);
+        // $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
@@ -833,7 +841,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay18(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day18();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -849,13 +856,12 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay19Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day19();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
-        $this->assertEquals(strval($expected2), $ans2);
+        // $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
@@ -863,13 +869,23 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay19(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day19();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day19
+     */
+    public function testDay19InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day19();
+        $input = ['#ip:'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -1071,7 +1087,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay25Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1085,7 +1100,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay25Example2(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1099,7 +1113,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay25Example3(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex3.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1113,7 +1126,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay25Example4(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex4.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1127,7 +1139,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay25(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
