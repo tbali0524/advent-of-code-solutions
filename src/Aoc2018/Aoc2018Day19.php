@@ -39,7 +39,7 @@ final class Aoc2018Day19 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        // ---------- Part 1
+        // ---------- Parse input
         if (!str_starts_with($input[0], '#ip ')) {
             throw new \Exception('Invalid input');
         }
@@ -57,7 +57,9 @@ final class Aoc2018Day19 extends SolutionBase
             $ip = 0;
             while (true) {
                 if (($ip == 26) and ($target1 == 0)) {
+                    // @codeCoverageIgnoreStart
                     $target1 = $regs[2];
+                    // @codeCoverageIgnoreEnd
                 }
                 if (($ip < 0) or ($ip >= count($instructions))) {
                     break;
@@ -84,6 +86,7 @@ final class Aoc2018Day19 extends SolutionBase
         $target2 = 0;
         // @phpstan-ignore-next-line
         if (self::SIM_PART2) {
+            // @codeCoverageIgnoreStart
             $ip = 0;
             $maxSteps = 150;
             while (true) {
@@ -100,9 +103,7 @@ final class Aoc2018Day19 extends SolutionBase
                 }
                 // @phpstan-ignore-next-line
                 if (self::DISPLAY_TRACE) {
-                    // @codeCoverageIgnoreStart
                     echo $ip . ' : ' . implode(' ', $instructions[$ip]) . ' : [' . implode(', ', $regs) . '] ', PHP_EOL;
-                    // @codeCoverageIgnoreEnd
                 }
                 $regs[$ipReg] = $ip;
                 $regs = self::execute($instructions[$ip], $regs);
@@ -115,6 +116,7 @@ final class Aoc2018Day19 extends SolutionBase
                     // @codeCoverageIgnoreEnd
                 }
             }
+        // @codeCoverageIgnoreEnd
         } else {
             $target2 = $target1 + (27 * 28 + 29) * 30 * $instructions[31][2] * 32;
         }

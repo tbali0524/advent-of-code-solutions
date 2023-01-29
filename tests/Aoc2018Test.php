@@ -602,6 +602,18 @@ final class Aoc2018Test extends TestCase
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day13
+     * @covers \TBali\Aoc2018\Cart
+     */
+    public function testDay13InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day13();
+        $input = ['/-\\', '\\-/'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -981,7 +993,6 @@ final class Aoc2018Test extends TestCase
      */
     public function testDay21(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day21();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

@@ -7,12 +7,12 @@
 |[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-34-yellow)|
+|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-36-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-288-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-290-yellow)|
 
 ## Puzzles
 
@@ -132,7 +132,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2018| 18|Settlers of The North Pole                |Conway's Game of Life, simulation, cycle detection
 |  +  |2018| 19|Go With The Flow                          |assembly simulation, reverse engineering
 |     |2018| 20|A Regular Map                             |
-|     |2018| 21|Chronal Conversion                        |
+|  +  |2018| 21|Chronal Conversion                        |assembly simulation, reverse engineering
 |     |2018| 22|Mode Maze                                 |
 |     |2018| 23|Experimental Emergency Teleportation      |
 |     |2018| 24|Immune System Simulator 20XX              |
