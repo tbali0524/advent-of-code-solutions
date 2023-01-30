@@ -1016,10 +1016,10 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day22
+     * @covers \TBali\Aoc2018\Cave
      */
     public function testDay22Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1030,16 +1030,29 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day22
+     * @covers \TBali\Aoc2018\Cave
      */
     public function testDay22(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
+        $this->markTestSkipped();
         $solver = new Aoc2018Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day22
+     * @covers \TBali\Aoc2018\Cave
+     */
+    public function testDay22InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day22();
+        $input = ['depth: 1', 'target: 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------

@@ -22,6 +22,7 @@ return (new PhpCsFixer\Config())
         // override some @Symfony rules
         'blank_line_before_statement' => false,
         'concat_space' => ['spacing' => 'one'],
+        'phpdoc_to_comment' => false,
         'yoda_style' => false,
     ])
     ->setRiskyAllowed(true)

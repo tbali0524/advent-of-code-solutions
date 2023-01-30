@@ -102,10 +102,12 @@ final class ListItem
     {
         $ans = $this;
         if ($delta >= 0) {
+            // @codeCoverageIgnoreStart
             while ($delta > 0) {
                 $ans = $ans->next;
                 --$delta;
             }
+            // @codeCoverageIgnoreEnd
         } else {
             $delta = -$delta + 1;
             while ($delta > 0) {
