@@ -111,12 +111,10 @@ final class Aoc2018Day19 extends SolutionBase
                 ++$ip;
                 --$maxSteps;
                 if ($maxSteps == 0) {
-                    // @codeCoverageIgnoreStart
                     break;
-                    // @codeCoverageIgnoreEnd
                 }
             }
-        // @codeCoverageIgnoreEnd
+            // @codeCoverageIgnoreEnd
         } else {
             $target2 = $target1 + (27 * 28 + 29) * 30 * $instructions[31][2] * 32;
         }

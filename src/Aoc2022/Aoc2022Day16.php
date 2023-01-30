@@ -26,7 +26,7 @@ final class Aoc2022Day16 extends SolutionBase
     public const DAY = 16;
     public const TITLE = 'Proboscidea Volcanium';
     public const SOLUTIONS = [1871, 2416];
-    // public const EXAMPLE_SOLUTIONS = [[1651, 1707]]; // the real excepcted solutions for the  example input
+    // public const EXAMPLE_SOLUTIONS = [[1651, 1707]]; // the real expected solutions for the example input
     public const EXAMPLE_SOLUTIONS = [[1646, 1706]];
 
     private const MAX_MINUTES_PART1 = 30;

@@ -1001,6 +1001,17 @@ final class Aoc2018Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day21
+     */
+    public function testDay21InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day21();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -1035,6 +1046,7 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day23
+     * @covers \TBali\Aoc2018\Nanobot
      */
     public function testDay23Example1(): void
     {
@@ -1049,6 +1061,7 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day23
+     * @covers \TBali\Aoc2018\Nanobot
      */
     public function testDay23(): void
     {
@@ -1065,10 +1078,10 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day24
+     * @covers \TBali\Aoc2018\ArmyGroup
      */
     public function testDay24Example1(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
         $solver = new Aoc2018Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1079,16 +1092,41 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day24
+     * @covers \TBali\Aoc2018\ArmyGroup
      */
     public function testDay24(): void
     {
-        $this->markTestSkipped(); // @todo remove if completed
+        $this->markTestSkipped();
         $solver = new Aoc2018Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day24
+     * @covers \TBali\Aoc2018\ArmyGroup
+     */
+    public function testDay24InvalidInput1(): void
+    {
+        $solver = new Aoc2018Day24();
+        $input = ['2 units each with 3 hit points with an attack that does 4 fire damage at initiativ'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day24
+     * @covers \TBali\Aoc2018\ArmyGroup
+     */
+    public function testDay24InvalidInput2(): void
+    {
+        $solver = new Aoc2018Day24();
+        $input = ['2 units each with 3 hit points (s to a, b) with an attack that does 4 fire damage at initiative 5'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
