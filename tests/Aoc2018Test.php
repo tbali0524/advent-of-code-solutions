@@ -598,8 +598,7 @@ final class Aoc2018Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
-        // @todo uncomment if ready
-        // $this->assertEquals(strval($expected2), $ans2);
+        $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**

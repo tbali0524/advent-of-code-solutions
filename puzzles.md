@@ -7,12 +7,12 @@
 |[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-41-yellow)|
+|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-42-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-295-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-296-yellow)|
 
 ## Puzzles
 
@@ -124,7 +124,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2018| 10|The Stars Align                           |simulation
 |  +  |2018| 11|Chronal Charge                            |dynamic programming, sum of rectangle grid
 |  +  |2018| 12|Subterranean Sustainability               |simulation, cycle detection
-| (1) |2018| 13|Mine Cart Madness                         |walk simulation
+|  +  |2018| 13|Mine Cart Madness                         |walk simulation
 |  +  |2018| 14|Chocolate Charts                          |
 |     |2018| 15|Beverage Bandits                          |
 |  +  |2018| 16|Chronal Classification                    |assembly simulation, matching in bipartite graph

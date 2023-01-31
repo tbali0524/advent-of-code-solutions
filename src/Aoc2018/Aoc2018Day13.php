@@ -17,15 +17,13 @@ use TBali\Aoc\SolutionBase;
  * Topics: walk simulation
  *
  * @see https://adventofcode.com/2018/day/13
- *
- * @todo part 2 fails
  */
 final class Aoc2018Day13 extends SolutionBase
 {
     public const YEAR = 2018;
     public const DAY = 13;
     public const TITLE = 'Mine Cart Madness';
-    public const SOLUTIONS = ['111,13', 0];
+    public const SOLUTIONS = ['111,13', '16,73'];
     public const EXAMPLE_SOLUTIONS = [['7,3', '0'], ['0', '6,4']];
 
     private const NORTH = 0; // must be increasing in clockwise order
@@ -89,11 +87,14 @@ final class Aoc2018Day13 extends SolutionBase
             throw new \Exception('Invalid input');
         }
         // ---------- Part 1 + 2
-        echo '---', PHP_EOL;
         $ans1 = '';
         $ans2 = '';
         $remainingCarts = count($carts);
         while (true) {
+            uasort($carts, function (Cart $a, Cart $b): int {
+                $result = $a->y <=> $b->y;
+                return $result != 0 ? $result : $a->x <=> $b->x;
+            });
             foreach ($carts as $cart) {
                 if ($cart->crashed) {
                     continue;
@@ -115,7 +116,6 @@ final class Aoc2018Day13 extends SolutionBase
                     if ($remainingCarts == count($carts)) {
                         $ans1 = $hash;
                     }
-                    echo "CRASH at {$hash} : {$cart->id} and {$carts[$occupied[$hash]]->id}", PHP_EOL;
                     $cart->crashed = true;
                     $carts[$occupied[$hash]]->crashed = true;
                     unset($occupied[$hash]);

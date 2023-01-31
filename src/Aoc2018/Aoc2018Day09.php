@@ -107,7 +107,7 @@ final class ListItem
                 $ans = $ans->next;
                 --$delta;
             }
-            // @codeCoverageIgnoreEnd
+        // @codeCoverageIgnoreEnd
         } else {
             $delta = -$delta + 1;
             while ($delta > 0) {
