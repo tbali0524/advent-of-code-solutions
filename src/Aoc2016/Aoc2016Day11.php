@@ -72,7 +72,9 @@ final class Aoc2016Day11 extends SolutionBase
         $q = [$startState];
         while (true) {
             if (count($q) == 0) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             $current = array_shift($q);
             if ($current->isWinning()) {

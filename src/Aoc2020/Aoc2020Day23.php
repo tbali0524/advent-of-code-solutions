@@ -66,13 +66,17 @@ final class Aoc2020Day23 extends SolutionBase
             $idxCurrent = 0;
             $idxDest = strpos($cups, strval($dest));
             if ($idxDest === false) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Impossible');
+                // @codeCoverageIgnoreEnd
             }
             $cups = substr($cups, 0, $idxDest + 1) . $slice . substr($cups, $idxDest + 1);
         }
         $idxOne = strpos($cups, '1');
         if ($idxOne === false) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Impossible');
+            // @codeCoverageIgnoreEnd
         }
         $ans1 = intval(substr($cups . $cups, $idxOne + 1, 8));
         // ---------- Part 2

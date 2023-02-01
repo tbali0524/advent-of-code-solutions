@@ -637,7 +637,9 @@ final class Image
     public static function fromGridTile(array $gridTile, array $gridPos): self
     {
         if ($gridTile == []) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Impossible');
+            // @codeCoverageIgnoreEnd
         }
         $maxY = count($gridTile) * (ImageTile::SIZE - 2);
         $maxX = count($gridTile[0]) * (ImageTile::SIZE - 2);

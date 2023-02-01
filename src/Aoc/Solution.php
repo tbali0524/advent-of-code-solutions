@@ -44,7 +44,7 @@ interface Solution
      *
      * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
      *
-     * @phpstan-param non-empty-array<int, string> $input
+     * @phpstan-param non-empty-list<string> $input
      *
      * @phpstan-return array{string, string}
      */
@@ -67,7 +67,7 @@ interface Solution
      *
      * @return array<int, string>
      *
-     * @phpstan-return non-empty-array<int, string>
+     * @phpstan-return non-empty-list<string>
      *
      * @throws \Exception
      */

@@ -1,3 +1,8 @@
+# PHPStan configuration file.
+#
+# minimum version: ^1.9.0
+#
+# @see https://phpstan.org/config-reference
 parameters:
     level: 9
     phpVersion: 80200

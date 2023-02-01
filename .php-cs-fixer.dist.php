@@ -1,7 +1,12 @@
 <?php
 
-// php-cs-fixer configuration
-//   rulesets: https://cs.symfony.com/doc/ruleSets/index.html
+/**
+ * php-cs-fixer configuration file.
+ *
+ * minimum version: ^3.14.0
+ *
+ * @see https://cs.symfony.com/doc/config.html
+ */
 
 declare(strict_types=1);
 

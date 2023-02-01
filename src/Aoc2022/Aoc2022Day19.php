@@ -179,7 +179,9 @@ final class MineState
                 $newObsidian -= $this->b->geodeRobotObsidianCost;
                 break;
             default:
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Impossible');
+                // @codeCoverageIgnoreEnd
         }
         if (($newOre < 0) or ($newClay < 0) or ($newObsidian < 0)) {
             return $this;

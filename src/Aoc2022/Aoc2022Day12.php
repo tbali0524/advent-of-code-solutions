@@ -73,7 +73,9 @@ final class Aoc2022Day12 extends SolutionBase
         $readIdx = 0;
         while (true) {
             if ($readIdx >= count($q)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             [$x, $y, $step] = $q[$readIdx];
             ++$readIdx;

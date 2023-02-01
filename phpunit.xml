@@ -1,3 +1,10 @@
+<!--
+PHPUnit configuration file.
+
+minimum version: ^9.5.0
+
+@see https://phpunit.readthedocs.io/en/9.5/configuration.html
+-->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     bootstrap="vendor/autoload.php"

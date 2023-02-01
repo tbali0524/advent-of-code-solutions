@@ -75,7 +75,9 @@ final class Aoc2020Day09 extends SolutionBase
                 $sum += $input[$to];
             }
             if ($to >= count($input)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             if ($sum == $ans1) {
                 break;

@@ -166,7 +166,7 @@ abstract class SolutionBase implements Solution
      *
      * @return array<int, string>
      *
-     * @phpstan-return non-empty-array<int, string>
+     * @phpstan-return non-empty-list<string>
      *
      * @throws \Exception
      */

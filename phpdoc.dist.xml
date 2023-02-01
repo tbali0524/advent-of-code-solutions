@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!--
+PHPDocumentor configuration file.
+
+minimum version: ^3.2
+
+@see https://docs.phpdoc.org/guide/references/configuration.html
+-->
 <phpdocumentor
         configVersion="3"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
