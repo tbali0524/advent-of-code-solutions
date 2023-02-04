@@ -70,8 +70,8 @@ abstract class SolutionBase implements Solution
             }
         }
         if ($isOk and ($countExamples > 0)) {
-            $exampleMsg = Tags::OK_TAG . 'Puzzle example' . ($countExamples > 1 ? 's' : '') . ' passed.'
-                . PHP_EOL;
+            $exampleMsg = Tags::OK_TAG . 'Puzzle example' . ($countExamples < 2 ? '' : 's (' . $countExamples . ')')
+                . ' passed.' . PHP_EOL;
         }
         // run for large inputs, if there is any
         $largeMsg = '';

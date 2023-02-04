@@ -1,7 +1,7 @@
 # Advent of Code solutions in PHP by TBali
 
 ![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-298-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-300-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -47,7 +47,7 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 
 * Directory pattern: `input/YYYY/`, where `YYYY` is the year.
 * Filename pattern: `AocYYYYDayDD.txt`, where `DD` is the day padded to 2 digits with zero.
-* Optional additional example input can be in `AocYYYYDayDDex1.txt` and `AocYYYYDayDDex2.txt`.
+* Optional additional example input can be in `AocYYYYDayDDex1.txt`, `AocYYYYDayDDex2.txt`, etc.
 * Alternatively, a single string input can be given in the `STRING_INPUT` or `EXAMPLE_STRING_INPUTS` constants in the solution class.
 * Additionally, some extra large input can be given in `AocYYYYDayDDlarge1.txt`, `AocYYYYDayDDlarge2.txt`, ...
     * These will be run ONLY if the `LARGE_SOLUTIONS` constant array is overriden in the solution class.
@@ -57,7 +57,7 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 * Directory pattern: `src/AocYYYY/`.
 * Filename pattern: `AocYYYYDayDD.php`.
 * For a new solution, use the template in `src/Aoc2022/Aoc2022Day00.php`.
-* Solution should implement class `AocYYYYDayDD`, extending `BaseSolution`.
+* Solution should implement class `AocYYYYDayDD`, extending `SolutionBase`.
 * It should implement the `solve()` method and override the constants in the [Solution](src/Aoc/Solution.php) interface.
 * The `solve()` method must be callable repeatedly with different inputs.
 * After successful submit, the puzzle answers shall be recorded in the `SOLUTIONS` class constant (for future regression tests).
