@@ -1,7 +1,7 @@
 # Advent of Code solutions in PHP by TBali
 
 ![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-300-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-302-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -108,3 +108,5 @@ $Env:PHP_CS_FIXER_IGNORE_ENV=1
 ```sh
 PHP_CS_FIXER_IGNORE_ENV=1
 ```
+
+`phpunit` v10.0 throws warnings. Use v9.5 until the issue is solved.

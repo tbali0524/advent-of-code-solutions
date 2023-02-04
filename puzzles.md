@@ -7,12 +7,12 @@
 |[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-46-yellow)|
+|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-300-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-302-yellow)|
 
 ## Puzzles
 
@@ -128,7 +128,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2018| 14|Chocolate Charts                          |
 |  +  |2018| 15|Beverage Bandits                          |game simulation
 |  +  |2018| 16|Chronal Classification                    |assembly simulation, matching in bipartite graph
-|     |2018| 17|Reservoir Research                        |
+|  +  |2018| 17|Reservoir Research                        |simulation
 |  +  |2018| 18|Settlers of The North Pole                |Conway's Game of Life, simulation, cycle detection
 |  +  |2018| 19|Go With The Flow                          |assembly simulation, reverse engineering
 |  +  |2018| 20|A Regular Map                             |BFS, string parsing
