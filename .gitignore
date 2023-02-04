@@ -1,9 +1,9 @@
-# Config: exclude these directories from the git repo.
+# git config file: exclude these directories from the git repo.
 
 # php package dependencies directory, here used only by Composer:
 /vendor/
 # output directory for phpDocumentor:
 /docs/
 
-# .tools/* is excluded via a separate .gitignore file
-# .vscode/ is not excluded for convenience
+# /.tools/* is excluded via a separate .gitignore file
+# /.vscode/ is not excluded for convenience

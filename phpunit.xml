@@ -2,6 +2,7 @@
 PHPUnit configuration file.
 
 minimum version: ^9.5.0
+version ^10.0 throws warnings
 
 @see https://phpunit.readthedocs.io/en/9.5/configuration.html
 -->
