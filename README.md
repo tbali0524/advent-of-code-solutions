@@ -108,5 +108,3 @@ $Env:PHP_CS_FIXER_IGNORE_ENV=1
 ```sh
 PHP_CS_FIXER_IGNORE_ENV=1
 ```
-
-`phpunit` v10.0 throws warnings. Use v9.5 until the issue is solved.

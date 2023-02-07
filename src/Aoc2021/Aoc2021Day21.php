@@ -16,6 +16,8 @@ use TBali\Aoc\SolutionBase;
  * @see https://adventofcode.com/2021/day/21
  *
  * @todo complete
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2021Day21 extends SolutionBase
 {

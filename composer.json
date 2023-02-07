@@ -35,7 +35,7 @@
     },
     "scripts": {
         "start":        "php src/aoc.php",
-        "test" :        "call phpunitc.bat --colors=always --testdox",
+        "test" :        "call phpunitc.bat --colors=always",
         "cs"   :        "phpcs",
         "cs-fixer" :    "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
         "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
