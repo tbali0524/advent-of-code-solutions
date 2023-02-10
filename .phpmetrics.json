@@ -1,5 +1,5 @@
 {
-    "composer" : true,
+    "composer" : false,
     "includes": [
         "src/"
     ],
@@ -11,6 +11,9 @@
     "plugins" : {
         "git" : {
             "binary" : "git"
+        },
+        "junit" : {
+            "file" : "/.tools/phpunit-junit.xml"
         }
     }
 }

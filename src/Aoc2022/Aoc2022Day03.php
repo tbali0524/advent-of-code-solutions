@@ -61,7 +61,9 @@ final class Aoc2022Day03 extends SolutionBase
             arsort($letters);
             $c = array_key_first($letters);
             if ($letters[$c] != (1 << $groupSize) - 1) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $ans2 += $this->getPriority($c);
         }

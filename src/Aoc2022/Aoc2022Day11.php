@@ -119,7 +119,9 @@ final class Aoc2022Day11 extends SolutionBase
                 or !str_starts_with($input[$i * 7 + 5], '    If false: throw to monkey ')
                 or (($i != $countMonkeys - 1) and ($input[$i * 7 + 6] != ''))
             ) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $m = new Monkey();
             $m->id = intval(substr($input[$i * 7], 7, -1));
@@ -143,7 +145,9 @@ final class Aoc2022Day11 extends SolutionBase
                 or ($m->falseTarget < 0)
                 or ($m->falseTarget >= $countMonkeys)
             ) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $monkeys[] = $m;
         }

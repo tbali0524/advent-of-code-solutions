@@ -81,7 +81,9 @@ final class Aoc2022Day13 extends SolutionBase
         }
         for ($i = 0; $i < $countPairs; ++$i) {
             if (($i != $countPairs - 1) and ($input[$i * 3 + 2] != '')) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $pairs[] = [Item::fromString($input[$i * 3]), Item::fromString($input[$i * 3 + 1])];
         }

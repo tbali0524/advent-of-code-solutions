@@ -38,7 +38,9 @@ final class Aoc2020Day08 extends SolutionBase
         // ---------- Part 1
         [$wasInfLoop, $ans1] = $this->execute($input);
         if (!$wasInfLoop) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Part 1 supposed to contain an infinite loop');
+            // @codeCoverageIgnoreEnd
         }
         // ---------- Part 2
         $ans2 = 0;

@@ -71,7 +71,9 @@ final class Aoc2017Day25 extends SolutionBase
                 or !str_starts_with($input[10 * $i + 11], '    - Continue with state ')
                 or (strlen($input[10 * $i + 11]) != 28)
             ) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $state = $input[10 * $i + 3][9];
             $states[$state] =

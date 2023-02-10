@@ -184,7 +184,9 @@ final class Aoc2018Day20 extends SolutionBase
         while (true) {
             ++$pos;
             if (($parLevel < 0) or ($pos >= strlen($this->regex))) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             if (($parLevel == 0) and ($this->regex[$pos] == ')')) {
                 return $pos + 1;

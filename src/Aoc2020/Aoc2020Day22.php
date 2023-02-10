@@ -72,11 +72,15 @@ final class Aoc2020Day22 extends SolutionBase
         while ($idxLine < count($input)) {
             $line = $input[$idxLine];
             if (!str_starts_with($line, 'Player ') or ($line[strlen($line) - 1] != ':') or (strlen($line) < 9)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $idxPlayer = intval(substr($line, 7, strlen($line) - 8)) - 1; // 0 or 1
             if (($idxPlayer != 0) and ($idxPlayer != 1)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             ++$idxLine;
             $cards = [];
@@ -90,7 +94,9 @@ final class Aoc2020Day22 extends SolutionBase
             }
         }
         if (count($ans) != 2) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         // @phpstan-ignore-next-line
         return $ans;

@@ -51,7 +51,9 @@ final class Aoc2020Day14 extends SolutionBase
                 continue;
             }
             if (substr($a[0], 0, 4) != 'mem[') {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $loc = intval(substr($a[0], 4, -1));
             $value = intval($a[1]);
@@ -73,7 +75,9 @@ final class Aoc2020Day14 extends SolutionBase
         foreach ($input as $line) {
             $a = explode(' = ', $line);
             if (count($a) != 2) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             if ($a[0] == 'mask') {
                 $mask = $a[1];
@@ -84,7 +88,9 @@ final class Aoc2020Day14 extends SolutionBase
                 continue;
             }
             if (substr($a[0], 0, 4) != 'mem[') {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $loc = intval(substr($a[0], 4, -1));
             $value = intval($a[1]);

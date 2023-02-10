@@ -130,12 +130,16 @@ final class Aoc2020Day16 extends SolutionBase
             }
             $b = explode(' or ', $a[1]);
             if (count($b) != 2) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $c = explode('-', $b[0]);
             $d = explode('-', $b[1]);
             if ((count($c) != 2) or (count($d) != 2)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $this->validators[] = new FieldValidator(
                 name: $a[0],
@@ -153,18 +157,24 @@ final class Aoc2020Day16 extends SolutionBase
             or ($input[$idxLine + 2] != '')
             or ($input[$idxLine + 3] != 'nearby tickets:')
         ) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $this->myTicket = array_map(intval(...), explode(',', $input[$idxLine + 1]));
         if (count($this->myTicket) != count($this->validators)) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $this->nearbyTickets = [];
         $idxLine += 4;
         while ($idxLine < count($input)) {
             $ticket = array_map(intval(...), explode(',', $input[$idxLine]));
             if (count($ticket) != count($this->validators)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $this->nearbyTickets[] = $ticket;
             ++$idxLine;

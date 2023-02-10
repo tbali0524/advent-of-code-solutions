@@ -449,10 +449,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day11
+     *
+     * @group large
      */
     public function testDay11(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day11();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -595,10 +596,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day15
+     *
+     * @group large
      */
     public function testDay15Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day15();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -609,10 +611,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day15
+     *
+     * @group large
      */
     public function testDay15Example2(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day15();
         $input = [$solver::EXAMPLE_STRING_INPUTS[1]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -623,10 +626,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day15
+     *
+     * @group large
      */
     public function testDay15(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day15();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -679,14 +683,27 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day14
+     * @covers \TBali\Aoc2020\FieldValidator
+     */
+    public function testDay16InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day14();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day17
+     *
+     * @group medium
      */
     public function testDay17Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day17();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -697,10 +714,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day17
+     *
+     * @group large
      */
     public function testDay17(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day17();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -786,10 +804,11 @@ final class Aoc2020Test extends TestCase
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day19
      * @covers \TBali\Aoc2020\MessageNode
+     *
+     * @group large
      */
     public function testDay19(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day19();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -901,10 +920,11 @@ final class Aoc2020Test extends TestCase
      * @covers \TBali\Aoc2020\SpaceCardDeck
      * @covers \TBali\Aoc2020\SpaceCardGame
      * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
+     *
+     * @group large
      */
     public function testDay22(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -913,14 +933,29 @@ final class Aoc2020Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2020\Aoc2020Day22
+     * @covers \TBali\Aoc2020\SpaceCardDeck
+     * @covers \TBali\Aoc2020\SpaceCardGame
+     * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
+     */
+    public function testDay22InvalidInput1(): void
+    {
+        $solver = new Aoc2020Day22();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day23
+     *
+     * @group large
      */
     public function testDay23Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day23();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -931,10 +966,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day23
+     *
+     * @group large
      */
     public function testDay23(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day23();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -947,6 +983,8 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day24
+     *
+     * @group medium
      */
     public function testDay24Example1(): void
     {
@@ -960,10 +998,11 @@ final class Aoc2020Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2020\Aoc2020Day24
+     *
+     * @group large
      */
     public function testDay24(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2020Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

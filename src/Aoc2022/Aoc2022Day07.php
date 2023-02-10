@@ -69,7 +69,9 @@ final class Aoc2022Day07 extends SolutionBase
                     $workdir = $root;
                 } elseif ($a[2] == '..') {
                     if (is_null($workdir->parent)) {
+                        // @codeCoverageIgnoreStart
                         throw new \Exception('Invalid input');
+                        // @codeCoverageIgnoreEnd
                     }
                     $workdir = $workdir->parent;
                 } else {
@@ -95,7 +97,9 @@ final class Aoc2022Day07 extends SolutionBase
                     }
                     if ($b[0] == 'dir') {
                         if (isset($workdir->subdirs[$b[1]])) {
+                            // @codeCoverageIgnoreStart
                             throw new \Exception('Invalid input');
+                            // @codeCoverageIgnoreEnd
                         }
                         $workdir->subdirs[$b[1]] = new Directory($b[1], $workdir);
                     } else {

@@ -144,7 +144,9 @@ final class Aoc2022Day24 extends SolutionBase
         $this->maxY = count($input);
         $this->maxX = strlen($input[0] ?? '');
         if (($this->maxY == 0) or ($this->maxX == 0)) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $this->startY = 0;
         $this->targetY = $this->maxY - 1;
@@ -158,7 +160,9 @@ final class Aoc2022Day24 extends SolutionBase
         $this->blizzards = [];
         foreach ($this->grid as $y => $row) {
             if (strlen($row) != $this->maxX) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             for ($x = 0; $x < $this->maxX; ++$x) {
                 $dir = $row[$x];

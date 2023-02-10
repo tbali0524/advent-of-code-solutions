@@ -52,9 +52,11 @@ final class Aoc2016Day18 extends SolutionBase
         if ($maxRow1 != self::PART1_MAX_ROW) {
             return [strval($ans1), '0'];
         }
+        // @codeCoverageIgnoreStart
         $maxRow2 = self::PART2_MAX_ROW;
         $ans2 = $this->solvePart($row, $maxRow2);
         return [strval($ans1), strval($ans2)];
+        // @codeCoverageIgnoreEnd
     }
 
     private function solvePart(string $row, int $maxRow): int

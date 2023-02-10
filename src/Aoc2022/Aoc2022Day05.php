@@ -95,7 +95,9 @@ final class Aoc2022Day05 extends SolutionBase
                 or !str_contains($input[$i], ' from ')
                 or !str_contains($input[$i], ' to ')
             ) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $a = explode(' from ', $input[$i]);
             $b = explode(' ', $a[0]);
@@ -104,7 +106,9 @@ final class Aoc2022Day05 extends SolutionBase
             $from = intval($c[0]);
             $to = intval($c[1]);
             if (($from < 1) or ($from > $countStacks) or ($to < 1) or ($to > $countStacks) or ($from == $to)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $this->instructions[] = new Instruction($qty, $from - 1, $to - 1);
         }

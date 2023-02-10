@@ -169,7 +169,9 @@ final class Aoc2020Day21 extends SolutionBase
         foreach ($input as $line) {
             $a = explode(' (contains ', $line);
             if (count($a) != 2) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $idIngreds = [];
             foreach (explode(' ', $a[0]) as $name) {

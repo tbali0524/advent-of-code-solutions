@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2:
  *
  * @see https://adventofcode.com/2022/day/
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2022Day00 extends SolutionBase
 {

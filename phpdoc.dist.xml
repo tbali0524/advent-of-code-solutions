@@ -7,10 +7,10 @@ minimum version: ^3.2
 @see https://docs.phpdoc.org/guide/references/configuration.html
 -->
 <phpdocumentor
-        configVersion="3"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="https://www.phpdoc.org"
-        xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
+    configVersion="3"
+    xmlns="https://www.phpdoc.org"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
 >
     <title>Advent of Code solutions by TBali</title>
     <paths>

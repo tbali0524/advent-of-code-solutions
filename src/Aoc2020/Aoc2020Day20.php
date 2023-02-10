@@ -325,14 +325,20 @@ final class Aoc2020Day20 extends SolutionBase
                 or !str_starts_with($line, 'Tile ')
                 or ($line[strlen($line) - 1] != ':')
             ) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $id = intval(substr($line, 5, -1));
             if (isset($this->tiles[$id])) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             if ($idxLine + ImageTile::SIZE >= count($input)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $grid = [];
             for ($i = 1; $i <= ImageTile::SIZE; ++$i) {
@@ -344,7 +350,9 @@ final class Aoc2020Day20 extends SolutionBase
         $this->maxX = intval(sqrt(count($this->tiles)));
         $this->maxY = $this->maxX;
         if ($this->maxX * $this->maxY != count($this->tiles)) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
     }
 }
@@ -384,10 +392,14 @@ final class ImageTile
         $this->id = $id;
         $this->grid = $grid;
         if (count($grid) != self::SIZE) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid tile grid size');
+            // @codeCoverageIgnoreEnd
         }
         if (count(array_filter($this->grid, fn (string $line): bool => strlen($line) != self::SIZE)) != 0) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid tile grid size');
+            // @codeCoverageIgnoreEnd
         }
         $this->calculateEdges();
     }
@@ -580,7 +592,9 @@ final class ImageTile
     {
         $idx = count($this->edges) - 1;
         if ($idx < 0) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid rotate() call');
+            // @codeCoverageIgnoreEnd
         }
         $this->edges[] = [
             self::mirror($this->edges[$idx][3]),

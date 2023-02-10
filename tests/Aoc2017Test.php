@@ -223,10 +223,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day05
+     *
+     * @group large
      */
     public function testDay05(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day05();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -577,6 +578,8 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day13
+     *
+     * @group large
      */
     public function testDay13(): void
     {
@@ -603,10 +606,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day14
+     *
+     * @group large
      */
     public function testDay14Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day14();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -617,10 +621,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day14
+     *
+     * @group large
      */
     public function testDay14(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day14();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -633,10 +638,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day15
+     *
+     * @group large
      */
     public function testDay15Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day15();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -647,10 +653,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day15
+     *
+     * @group large
      */
     public function testDay15(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day15();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -687,6 +694,8 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day16
+     *
+     * @group medium
      */
     public function testDay16(): void
     {
@@ -728,10 +737,11 @@ final class Aoc2017Test extends TestCase
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day17
      * @covers \TBali\Aoc2017\ListItem
+     *
+     * @group large
      */
     public function testDay17(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day17();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -773,6 +783,8 @@ final class Aoc2017Test extends TestCase
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day18
      * @covers \TBali\Aoc2017\Thread
+     *
+     * @group medium
      */
     public function testDay18(): void
     {
@@ -936,10 +948,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day21
+     *
+     * @group large
      */
     public function testDay21(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day21();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -963,10 +976,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day22
+     *
+     * @group large
      */
     public function testDay22Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -977,10 +991,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day22
+     *
+     * @group large
      */
     public function testDay22(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1046,6 +1061,8 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day24
+     *
+     * @group large
      */
     public function testDay24(): void
     {
@@ -1085,10 +1102,11 @@ final class Aoc2017Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2017\Aoc2017Day25
+     *
+     * @group large
      */
     public function testDay25(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2017Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

@@ -417,7 +417,9 @@ final class Aoc2022Day22 extends SolutionBase
             }
             $this->rowTo[$y] = $x;
             if ($this->rowTo[$y] - $this->rowFrom[$y] < 0) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
         }
         for ($x = 0; $x < $this->maxX; ++$x) {
@@ -432,11 +434,15 @@ final class Aoc2022Day22 extends SolutionBase
             }
             $this->columnTo[$x] = $y;
             if ($this->columnTo[$x] - $this->columnFrom[$x] < 0) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
         }
         if (!isset($this->rowFrom[0]) or !isset($this->rowTo[0])) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $this->startFacing = self::RIGHT;
         $this->startY = 0;
@@ -445,7 +451,9 @@ final class Aoc2022Day22 extends SolutionBase
             ++$this->startX;
         }
         if ($this->startX > $this->rowTo[0]) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $posFrom = 0;
         while ($posFrom < strlen($instr)) {
@@ -454,14 +462,18 @@ final class Aoc2022Day22 extends SolutionBase
                 ++$posTo;
             }
             if ($posTo == $posFrom) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $this->moveBys[] = intval(substr($instr, $posFrom, $posTo - $posFrom));
             $this->turnTos[] = ($posTo < strlen($instr) ? $instr[$posTo] : ' ');
             $posFrom = $posTo + 1;
         }
         if (count($this->moveBys) == 0) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
     }
 }

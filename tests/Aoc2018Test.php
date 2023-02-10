@@ -220,6 +220,8 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day05
+     *
+     * @group large
      */
     public function testDay05(): void
     {
@@ -248,10 +250,11 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day06
+     *
+     * @group large
      */
     public function testDay06(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day06();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -407,10 +410,11 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day09
      * @covers \TBali\Aoc2018\ListItem
+     *
+     * @group large
      */
     public function testDay09(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day09();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -440,6 +444,8 @@ final class Aoc2018Test extends TestCase
      * @covers \TBali\Aoc2018\Aoc2018Day10
      * @covers \TBali\Aoc2018\MovingPoint
      * @covers \TBali\Aoc2018\Swarm
+     *
+     * @group large
      */
     public function testDay10(): void
     {
@@ -468,10 +474,11 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day11
+     *
+     * @group large
      */
     public function testDay11Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day11();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -482,10 +489,11 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day11
+     *
+     * @group large
      */
     public function testDay11Example2(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day11();
         $input = [$solver::EXAMPLE_STRING_INPUTS[1]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -496,6 +504,8 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day11
+     *
+     * @group large
      */
     public function testDay11(): void
     {
@@ -590,6 +600,8 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day13
      * @covers \TBali\Aoc2018\Cart
+     *
+     * @group medium
      */
     public function testDay13(): void
     {
@@ -721,10 +733,11 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day14
+     *
+     * @group large
      */
     public function testDay14(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day14();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -808,6 +821,8 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day15
      * @covers \TBali\Aoc2018\Creature
+     *
+     * @group medium
      */
     public function testDay15Example6(): void
     {
@@ -822,10 +837,11 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day15
      * @covers \TBali\Aoc2018\Creature
+     *
+     * @group large
      */
     public function testDay15(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day15();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -963,6 +979,8 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day18
+     *
+     * @group large
      */
     public function testDay18(): void
     {
@@ -991,6 +1009,8 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day19
+     *
+     * @group medium
      */
     public function testDay19(): void
     {
@@ -1082,10 +1102,11 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day20
+     *
+     * @group large
      */
     public function testDay20(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day20();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1172,10 +1193,11 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day22
      * @covers \TBali\Aoc2018\Cave
+     *
+     * @group large
      */
     public function testDay22(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day22();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1245,6 +1267,8 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day24
      * @covers \TBali\Aoc2018\ArmyGroup
+     *
+     * @group medium
      */
     public function testDay24Example1(): void
     {
@@ -1259,10 +1283,11 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day24
      * @covers \TBali\Aoc2018\ArmyGroup
+     *
+     * @group large
      */
     public function testDay24(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2018Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1351,6 +1376,8 @@ final class Aoc2018Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day25
+     *
+     * @group large
      */
     public function testDay25(): void
     {

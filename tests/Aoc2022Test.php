@@ -456,10 +456,11 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day11
+     *
+     * @group medium
      */
     public function testDay11(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day11();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -600,10 +601,11 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day14
+     *
+     * @group large
      */
     public function testDay14(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day14();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -644,10 +646,11 @@ final class Aoc2022Test extends TestCase
      * @covers \TBali\Aoc2022\Aoc2022Day15
      * @covers \TBali\Aoc2022\Rect
      * @covers \TBali\Aoc2022\Sensor
+     *
+     * @group large
      */
     public function testDay15(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day15();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -687,6 +690,8 @@ final class Aoc2022Test extends TestCase
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day16
      * @covers \TBali\Aoc2022\ValveState
+     *
+     * @group medium
      */
     public function testDay16Example1(): void
     {
@@ -701,10 +706,11 @@ final class Aoc2022Test extends TestCase
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day16
      * @covers \TBali\Aoc2022\ValveState
+     *
+     * @group medium
      */
     public function testDay16(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day16();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -849,10 +855,11 @@ final class Aoc2022Test extends TestCase
      * @covers \TBali\Aoc2022\Aoc2022Day19
      * @covers \TBali\Aoc2022\Blueprint
      * @covers \TBali\Aoc2022\MineState
+     *
+     * @group large
      */
     public function testDay19Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day19();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -865,10 +872,11 @@ final class Aoc2022Test extends TestCase
      * @covers \TBali\Aoc2022\Aoc2022Day19
      * @covers \TBali\Aoc2022\Blueprint
      * @covers \TBali\Aoc2022\MineState
+     *
+     * @group large
      */
     public function testDay19(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day19();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -909,10 +917,11 @@ final class Aoc2022Test extends TestCase
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day20
      * @covers \TBali\Aoc2022\ListItem
+     *
+     * @group large
      */
     public function testDay20(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day20();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1058,10 +1067,11 @@ final class Aoc2022Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day23
+     *
+     * @group large
      */
     public function testDay23(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2022Day23();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1114,10 +1124,12 @@ final class Aoc2022Test extends TestCase
     /**
      * @covers \TBali\Aoc2022\Aoc2022Day24
      * @covers \TBali\Aoc2022\Blizzard
+     *
+     * @group large
      */
     public function testDay24(): void
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped(); // very slow with xdebug coverage
         $solver = new Aoc2022Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

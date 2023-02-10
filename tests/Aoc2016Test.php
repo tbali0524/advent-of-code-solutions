@@ -141,15 +141,13 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // --------------------------------------------------------------------
-    // Day 05 tests are too slow, so disabled
-
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day05
+     *
+     * @group large
      */
     public function testDay05Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day05();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -160,10 +158,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day05
+     *
+     * @group large
      */
     public function testDay05(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day05();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -499,10 +498,12 @@ final class Aoc2016Test extends TestCase
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day11
      * @covers \TBali\Aoc2016\House
+     *
+     * @group large
      */
     public function testDay11(): void
     {
-        $this->markTestSkipped();
+        $this->markTestSkipped(); // very slow with xdebug coverage
         $solver = new Aoc2016Day11();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -561,10 +562,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day12
+     *
+     * @group large
      */
     public function testDay12(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day12();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -656,15 +658,13 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // --------------------------------------------------------------------
-    // Day 14 tests are too slow, so disabled
-
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day14
+     *
+     * @group large
      */
     public function testDay14Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day14();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -675,10 +675,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day14
+     *
+     * @group large
      */
     public function testDay14(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day14();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -743,10 +744,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day16
+     *
+     * @group large
      */
     public function testDay16(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day16();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -813,10 +815,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day18
+     *
+     * @group large
      */
     public function testDay18(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day18();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -842,6 +845,8 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day19
+     *
+     * @group medium
      */
     public function testDay19(): void
     {
@@ -870,6 +875,8 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day20
+     *
+     * @group medium
      */
     public function testDay20(): void
     {
@@ -1027,6 +1034,8 @@ final class Aoc2016Test extends TestCase
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day22
      * @covers \TBali\Aoc2016\Node
+     *
+     * @group medium
      */
     public function testDay22(): void
     {
@@ -1036,6 +1045,18 @@ final class Aoc2016Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day22
+     * @covers \TBali\Aoc2016\Node
+     */
+    public function testDay22InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day22();
+        $input = ['', '', 'a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -1105,10 +1126,11 @@ final class Aoc2016Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day24
+     *
+     * @group large
      */
     public function testDay24(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -1117,15 +1139,26 @@ final class Aoc2016Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2016\Aoc2016Day24
+     */
+    public function testDay24InvalidInput1(): void
+    {
+        $solver = new Aoc2016Day24();
+        $input = ['#'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
-    // Day 25 tests are too slow, so disabled
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day25
+     *
+     * @group large
      */
     public function testDay25(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2016Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

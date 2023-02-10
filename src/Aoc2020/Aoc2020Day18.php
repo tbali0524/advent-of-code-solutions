@@ -84,7 +84,9 @@ final class Expression
     public function evaluate(): int
     {
         if ($this->expr == '') {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid formula');
+            // @codeCoverageIgnoreEnd
         }
         $start = 0;
         while (true) {
@@ -105,7 +107,9 @@ final class Expression
                 }
                 $this->operands[] = intval(substr($this->expr, $start, $end - $start));
             } else {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid formula');
+                // @codeCoverageIgnoreEnd
             }
             $start = $this->skipSpace($end);
             if ($start == strlen($this->expr)) {
@@ -125,7 +129,9 @@ final class Expression
             $this->simplifyStep();
         }
         if (count($this->operands) != 1) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid formula');
+            // @codeCoverageIgnoreEnd
         }
         return intval(array_pop($this->operands));
     }
@@ -148,7 +154,9 @@ final class Expression
             } elseif ($this->expr[$end] == ')') {
                 --$depth;
                 if ($depth < 0) {
+                    // @codeCoverageIgnoreStart
                     throw new \Exception('Invalid formula');
+                    // @codeCoverageIgnoreEnd
                 }
                 if ($depth == 0) {
                     return $end;
@@ -156,13 +164,17 @@ final class Expression
             }
             ++$end;
         }
+        // @codeCoverageIgnoreStart
         throw new \Exception('Invalid formula');
+        // @codeCoverageIgnoreEnd
     }
 
     private function simplifyStep(): void
     {
         if ((count($this->operands) < 2) or (count($this->operators) < 1)) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid formula');
+            // @codeCoverageIgnoreEnd
         }
         $operand2 = array_pop($this->operands);
         $operand1 = array_pop($this->operands);

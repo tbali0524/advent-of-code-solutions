@@ -199,15 +199,13 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // --------------------------------------------------------------------
-    // Day 04 tests are too slow, so disabled
-
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day04
+     *
+     * @group large
      */
     public function testDay04Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day04();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -218,10 +216,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day04
+     *
+     * @group large
      */
     public function testDay04Example2(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day04();
         $input = [$solver::EXAMPLE_STRING_INPUTS[1]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -232,10 +231,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day04
+     *
+     * @group medium
      */
     public function testDay04(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day04();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -290,10 +290,11 @@ final class Aoc2015Test extends TestCase
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day06
      * @covers \TBali\Aoc2015\Instruction
+     *
+     * @group large
      */
     public function testDay06Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day06();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -305,6 +306,8 @@ final class Aoc2015Test extends TestCase
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day06
      * @covers \TBali\Aoc2015\Instruction
+     *
+     * @group medium
      */
     public function testDay06Example2(): void
     {
@@ -319,10 +322,11 @@ final class Aoc2015Test extends TestCase
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day06
      * @covers \TBali\Aoc2015\Instruction
+     *
+     * @group large
      */
     public function testDay06(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day06();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -530,15 +534,13 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    // --------------------------------------------------------------------
-    // Day 10 tests are too slow, so disabled
-
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day10
+     *
+     * @group large
      */
     public function testDay10Example1(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day10();
         $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
         [$ans1, $ans2] = $solver->solve($input);
@@ -549,10 +551,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day10
+     *
+     * @group large
      */
     public function testDay10(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day10();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -578,10 +581,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day11
+     *
+     * @group large
      */
     public function testDay11(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day11();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -650,10 +654,11 @@ final class Aoc2015Test extends TestCase
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day13
      * @covers \TBali\Aoc2015\KnightsTable
+     *
+     * @group large
      */
     public function testDay13(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day13();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -757,10 +762,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day15
+     *
+     * @group large
      */
     public function testDay15(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day15();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -823,10 +829,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day17
+     *
+     * @group large
      */
     public function testDay17(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day17();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -852,10 +859,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day18
+     *
+     * @group large
      */
     public function testDay18(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day18();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
@@ -931,10 +939,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day20
+     *
+     * @group large
      */
     public function testDay20(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day20();
         $input = [$solver::STRING_INPUT];
         [$ans1, $ans2] = $solver->solve($input);
@@ -978,6 +987,8 @@ final class Aoc2015Test extends TestCase
      * @covers \TBali\Aoc2015\WizardGameState
      * @covers \TBali\Aoc2015\WizardSimulator
      * @covers \TBali\Aoc2015\WizardSimulatorHardMode
+     *
+     * @group large
      */
     public function testDay22(): void
     {
@@ -1059,6 +1070,8 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day24
+     *
+     * @group large
      */
     public function testDay24(): void
     {
@@ -1100,10 +1113,11 @@ final class Aoc2015Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day25
+     *
+     * @group large
      */
     public function testDay25(): void
     {
-        $this->markTestSkipped();
         $solver = new Aoc2015Day25();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

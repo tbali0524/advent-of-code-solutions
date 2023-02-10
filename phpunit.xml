@@ -11,58 +11,75 @@ minimum version: ^10.0.5
     xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
-    testdox="true"
     colors="true"
+    beStrictAboutChangesToGlobalState="true"
+    beStrictAboutCoverageMetadata="false"
+    beStrictAboutOutputDuringTests="true"
     beStrictAboutTestsThatDoNotTestAnything="true"
     displayDetailsOnIncompleteTests="true"
-    displayDetailsOnSkippedTests="false"
+    displayDetailsOnSkippedTests="true"
     displayDetailsOnTestsThatTriggerDeprecations="true"
     displayDetailsOnTestsThatTriggerErrors="true"
     displayDetailsOnTestsThatTriggerNotices="true"
     displayDetailsOnTestsThatTriggerWarnings="true"
+    executionOrder="depends,defects"
+    failOnRisky="true"
+    failOnWarning="true"
     requireCoverageMetadata="true"
+    testdox="true"
 >
-  <testsuites>
-    <testsuite name="Aoc2015">
-      <file>tests/Aoc2015Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2016">
-      <file>tests/Aoc2016Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2017">
-      <file>tests/Aoc2017Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2018">
-      <file>tests/Aoc2018Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2019">
-      <file>tests/Aoc2019Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2020">
-      <file>tests/Aoc2020Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2021">
-      <file>tests/Aoc2021Test.php</file>
-    </testsuite>
-    <testsuite name="Aoc2022">
-      <file>tests/Aoc2022Test.php</file>
-    </testsuite>
-  </testsuites>
-  <coverage includeUncoveredFiles="true" pathCoverage="false" ignoreDeprecatedCodeUnits="true" disableCodeCoverageIgnore="false">
-    <include>
-      <directory suffix=".php">src</directory>
-    </include>
-    <exclude>
-      <directory>src/other</directory>
-      <file>src/aoc.php</file>
-      <file>src/run_class.php</file>
-    </exclude>
-    <report>
-      <html outputDirectory=".tools/phpunit-coverage" lowUpperBound="50" highLowerBound="90"/>
-      <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="true"/>
-    </report>
-  </coverage>
-  <php>
-    <server name="APP_ENV" value="testing"/>
-  </php>
+    <testsuites>
+        <testsuite name="Aoc2015">
+            <file>tests/Aoc2015Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2016">
+            <file>tests/Aoc2016Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2017">
+            <file>tests/Aoc2017Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2018">
+            <file>tests/Aoc2018Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2019">
+            <file>tests/Aoc2019Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2020">
+            <file>tests/Aoc2020Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2021">
+            <file>tests/Aoc2021Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2022">
+            <file>tests/Aoc2022Test.php</file>
+        </testsuite>
+    </testsuites>
+    <coverage
+        disableCodeCoverageIgnore="false"
+        ignoreDeprecatedCodeUnits="true"
+        includeUncoveredFiles="true"
+        pathCoverage="false"
+    >
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>src/other</directory>
+            <file>src/aoc.php</file>
+            <file>src/run_class.php</file>
+        </exclude>
+        <report>
+            <html outputDirectory=".tools/phpunit-coverage" lowUpperBound="50" highLowerBound="90" />
+            <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="true" />
+        </report>
+    </coverage>
+    <logging>
+        <junit outputFile=".tools/phpunit-junit.xml" />
+    </logging>
+    <groups>
+        <exclude>
+          <group>medium</group>
+          <group>large</group>
+        </exclude>
+    </groups>
 </phpunit>

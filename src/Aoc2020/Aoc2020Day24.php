@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: walking simulation on hex grid, Conway's Game of Life
  *
  * @see https://adventofcode.com/2020/day/24
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2020Day24 extends SolutionBase
 {

@@ -69,14 +69,18 @@ final class MathMonkey
         $m->name = substr($s, 0, 4);
         if (strlen($s) == 17) {
             if (($s[4] . $s[5] . $s[10] . $s[12]) != ':   ') {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $m->operand1 = substr($s, 6, 4);
             $m->operand2 = substr($s, 13, 4);
             $m->operator = $s[11];
         } elseif (strlen($s) > 6) {
             if (($s[4] . $s[5]) != ': ') {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $m->value = intval(substr($s, 6));
             $m->isKnown = true;

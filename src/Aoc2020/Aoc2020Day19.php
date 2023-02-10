@@ -117,7 +117,9 @@ final class Aoc2020Day19 extends SolutionBase
                 if ($idxSubNode == $idxNode) {
                     foreach ($candidates as $candidate => $loopLocation) {
                         if ($loopLocation >= 0) {
+                            // @codeCoverageIgnoreStart
                             throw new \Exception('Multiple loops within a rule is not supported');
+                            // @codeCoverageIgnoreEnd
                         }
                         $candidates[$candidate] = strlen($candidate);
                     }
@@ -131,7 +133,9 @@ final class Aoc2020Day19 extends SolutionBase
                     }
                     foreach ($subNodeGenerates as $segment => $segmentLoopLocation) {
                         if ($segmentLoopLocation >= 0) {
+                            // @codeCoverageIgnoreStart
                             throw new \Exception('Multiple loops within a single expansion is not supported');
+                            // @codeCoverageIgnoreEnd
                         }
                         $newCandidate = $candidate . $segment;
                         if (!isset($newCandidates[$newCandidate])) {
@@ -146,7 +150,9 @@ final class Aoc2020Day19 extends SolutionBase
                     $this->generates[$idxNode][$candidate] = -1;
                     continue;
                 }
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Cannot generated all strings in case of a loop');
+                // @codeCoverageIgnoreEnd
             }
         }
         return $this->generates[$idxNode];
@@ -186,13 +192,17 @@ final class MessageNode
     {
         $a = explode(': ', $line);
         if (count($a) != 2) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         $this->id = intval($a[0]);
         $this->subNodes = [];
         if ($a[1][0] == '"') {
             if (strlen($a[1]) < 3) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $this->match = substr($a[1], 1, -1);
             return;

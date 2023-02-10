@@ -71,22 +71,24 @@ final class Aoc2018Day19 extends SolutionBase
             }
             $ans1 = $regs[0];
         } else {
+            // @codeCoverageIgnoreStart
             $target1 = ($instructions[17][2] ** 2) * 19 * $instructions[20][2]
                 + ($instructions[21][2] * 22 + $instructions[23][2]);
             // the assembly code in puzzle input calculates the sum of divisors for $target
             $ans1 = self::sumDivisors($target1);
+            // @codeCoverageIgnoreEnd
         }
         // early exit for example input
         if (count($instructions) == 7) {
             return [strval($ans1), '0'];
         }
         // ---------- Part 2
+        // @codeCoverageIgnoreStart
         $regs = array_fill(0, 6, 0);
         $regs[0] = 1;
         $target2 = 0;
         // @phpstan-ignore-next-line
         if (self::SIM_PART2) {
-            // @codeCoverageIgnoreStart
             $ip = 0;
             $maxSteps = 150;
             while (true) {
@@ -114,12 +116,12 @@ final class Aoc2018Day19 extends SolutionBase
                     break;
                 }
             }
-        // @codeCoverageIgnoreEnd
         } else {
             $target2 = $target1 + (27 * 28 + 29) * 30 * $instructions[31][2] * 32;
         }
         $ans2 = self::sumDivisors($target2);
         return [strval($ans1), strval($ans2)];
+        // @codeCoverageIgnoreEnd
     }
 
     /**

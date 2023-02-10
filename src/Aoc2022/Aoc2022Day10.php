@@ -72,7 +72,9 @@ final class Aoc2022Day10 extends SolutionBase
                 $operand = intval(substr($line, 5));
                 $x += $operand;
             } else {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
         }
         if ($cycle % self::CYCLE_MODULO == self::CYCLE_REMAINDER) {
