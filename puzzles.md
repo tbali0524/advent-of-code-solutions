@@ -8,11 +8,11 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-18-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-302-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-318-yellow)|
 
 ## Puzzles
 
@@ -143,14 +143,14 @@ Hint from subreddit was used for: Day 23 Part 2.
 |Done?|Year|Day| Title                                    | Topics   |
 |:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2019|  1|The Tyranny of the Rocket Equation        |
-|     |2019|  2|1202 Program Alarm                        |
-|     |2019|  3|Crossed Wires                             |
-|     |2019|  4|Secure Container                          |
-|     |2019|  5|Sunny with a Chance of Asteroids          |
-|     |2019|  6|Universal Orbit Map                       |
-|     |2019|  7|Amplification Circuit                     |
-|     |2019|  8|Space Image Format                        |
-|     |2019|  9|Sensor Boost                              |
+|  +  |2019|  2|1202 Program Alarm                        |assembly simulation
+|  +  |2019|  3|Crossed Wires                             |walking simulation
+|  +  |2019|  4|Secure Container                          |
+|  +  |2019|  5|Sunny with a Chance of Asteroids          |assembly simulation
+|  +  |2019|  6|Universal Orbit Map                       |tree graph
+|  +  |2019|  7|Amplification Circuit                     |assembly simulation, permutations, Heap's algorithm
+|  +  |2019|  8|Space Image Format                        |
+|  +  |2019|  9|Sensor Boost                              |assembly simulation
 |     |2019| 10|Monitoring Station                        |
 |     |2019| 11|Space Police                              |
 |     |2019| 12|The N-Body Problem                        |

@@ -22,7 +22,6 @@ minimum version: ^10.0.5
     displayDetailsOnTestsThatTriggerErrors="true"
     displayDetailsOnTestsThatTriggerNotices="true"
     displayDetailsOnTestsThatTriggerWarnings="true"
-    executionOrder="depends,defects"
     failOnRisky="true"
     failOnWarning="true"
     requireCoverageMetadata="true"
