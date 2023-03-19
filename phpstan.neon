@@ -1,6 +1,6 @@
 # PHPStan configuration file.
 #
-# minimum version: ^1.9.0
+# minimum version: ^1.10.0
 #
 # @see https://phpstan.org/config-reference
 parameters:
@@ -15,3 +15,6 @@ parameters:
         - .git
         - .tools
         - vendor
+    ignoreErrors:
+        - '#^Static method TBali[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) is unused.$#'
+        - '#^Method TBali[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) is unused.$#'

@@ -70,91 +70,104 @@ final class Aoc2021Test extends TestCase
         $this->assertEquals(strval($expected2), $ans2);
     }
 
-    // // --------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day02
-    //  */
-    // public function testDay02Example1(): void
-    // {
-    //     $solver = new Aoc2021Day02();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day02
+     */
+    public function testDay02Example1(): void
+    {
+        $solver = new Aoc2021Day02();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day02
-    //  */
-    // public function testDay02(): void
-    // {
-    //     $solver = new Aoc2021Day02();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day02
+     */
+    public function testDay02(): void
+    {
+        $solver = new Aoc2021Day02();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day02
+     */
+    public function testDay02InvalidInput1(): void
+    {
+        $solver = new Aoc2021Day02();
+        $input = ['forward'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day03
-    //  */
-    // public function testDay03Example1(): void
-    // {
-    //     $solver = new Aoc2021Day03();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day03
-    //  */
-    // public function testDay03(): void
-    // {
-    //     $solver = new Aoc2021Day03();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day03
+     */
+    public function testDay03Example1(): void
+    {
+        $solver = new Aoc2021Day03();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day03
+     */
+    public function testDay03(): void
+    {
+        $solver = new Aoc2021Day03();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day04
-    //  */
-    // public function testDay04Example1(): void
-    // {
-    //     $solver = new Aoc2021Day04();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day04
-    //  */
-    // public function testDay04(): void
-    // {
-    //     $solver = new Aoc2021Day04();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day04
+     * @covers \TBali\Aoc2021\Bingo
+     */
+    public function testDay04Example1(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day04
+     * @covers \TBali\Aoc2021\Bingo
+     */
+    public function testDay04(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2021\Aoc2021Day05

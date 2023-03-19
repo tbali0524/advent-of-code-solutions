@@ -8,11 +8,11 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-18-yellow)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-22-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-2-red)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-8-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-318-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-328-yellow)|
 
 ## Puzzles
 
@@ -151,9 +151,9 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2019|  7|Amplification Circuit                     |assembly simulation, permutations, Heap's algorithm
 |  +  |2019|  8|Space Image Format                        |
 |  +  |2019|  9|Sensor Boost                              |assembly simulation
-|     |2019| 10|Monitoring Station                        |
-|     |2019| 11|Space Police                              |
-|     |2019| 12|The N-Body Problem                        |
+|  +  |2019| 10|Monitoring Station                        |
+|     |2019| 11|Space Police                              |assembly simulation
+|  +  |2019| 12|The N-Body Problem                        |simulation
 |     |2019| 13|Care Package                              |
 |     |2019| 14|Space Stoichiometry                       |
 |     |2019| 15|Oxygen System                             |
@@ -205,9 +205,9 @@ Hint from subreddit was used for: Day 23.
 |Done?|Year|Day| Title                                    | Topics   |
 |:---:|----|--:|:-----------------------------------------|:---------|
 |  +  |2021|  1|Sonar Sweep                               |
-|     |2021|  2|Dive!                                     |
-|     |2021|  3|Binary Diagnostic                         |
-|     |2021|  4|Giant Squid                               |
+|  +  |2021|  2|Dive!                                     |walking simulation
+|  +  |2021|  3|Binary Diagnostic                         |
+|  +  |2021|  4|Giant Squid                               |Bingo simulation
 |     |2021|  5|Hydrothermal Venture                      |
 |     |2021|  6|Lanternfish                               |
 |     |2021|  7|The Treachery of Whales                   |

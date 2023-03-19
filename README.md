@@ -1,7 +1,7 @@
 # Advent of Code solutions in PHP by TBali
 
 ![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-318-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-328-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -92,19 +92,3 @@ The following helper commands are defined in [composer.json](composer.json):
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
 __Note:__ The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
-
-### Workaround
-
-`php-cs-fixer` currently does not fully support `php v8.2`, but the error message can be overriden by an environment variable.
-
-* in `PowerShell`:
-
-```powershell
-$Env:PHP_CS_FIXER_IGNORE_ENV=1
-```
-
-* in `bash`:
-
-```sh
-PHP_CS_FIXER_IGNORE_ENV=1
-```
