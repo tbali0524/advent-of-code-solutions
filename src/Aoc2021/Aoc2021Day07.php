@@ -10,21 +10,18 @@ use TBali\Aoc\SolutionBase;
  * AoC 2021 Day 7: The Treachery of Whales.
  *
  * Part 1: How much fuel must they spend to align to that position?
- * Part 2:
+ * Part 2: Determine the horizontal position that the crabs can align to using the least fuel possible
+ *         so they can make you an escape route!How much fuel must they spend to align to that position?
  *
  * @see https://adventofcode.com/2021/day/7
- *
- * @todo complete
- *
- * @codeCoverageIgnore
  */
 final class Aoc2021Day07 extends SolutionBase
 {
     public const YEAR = 2021;
     public const DAY = 7;
     public const TITLE = 'The Treachery of Whales';
-    public const SOLUTIONS = [0, 0];
-    public const EXAMPLE_SOLUTIONS = [[37, 0]];
+    public const SOLUTIONS = [335330, 92439766];
+    public const EXAMPLE_SOLUTIONS = [[37, 168]];
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -37,10 +34,24 @@ final class Aoc2021Day07 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
+        /** @var array<int, int> */
+        $data = array_map(intval(...), explode(',', $input[0]));
         // ---------- Part 1
-        $ans1 = 0;
+        sort($data);
+        $key = intdiv(count($data) - 1, 2);
+        $median = $data[$key];
+        $ans1 = array_sum(array_map(fn (int $x): int => abs($x - $median), $data));
         // ---------- Part 2
-        $ans2 = 0;
+        $ans2 = PHP_INT_MAX;
+        $min = intval(min($data));
+        $max = intval(max($data));
+        for ($i = $min; $i <= $max; ++$i) {
+            $fuel = array_sum(array_map(fn (int $x): int => intdiv(abs($x - $i) * (abs($x - $i) + 1), 2), $data));
+            if ($fuel < $ans2) {
+                $ans2 = $fuel;
+            }
+        }
         return [strval($ans1), strval($ans2)];
     }
 }

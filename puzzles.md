@@ -10,9 +10,9 @@
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-22-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-8-red)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-18-red)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-328-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-338-yellow)|
 
 ## Puzzles
 
@@ -208,11 +208,11 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021|  2|Dive!                                     |walking simulation
 |  +  |2021|  3|Binary Diagnostic                         |
 |  +  |2021|  4|Giant Squid                               |Bingo simulation
-|     |2021|  5|Hydrothermal Venture                      |
-|     |2021|  6|Lanternfish                               |
-|     |2021|  7|The Treachery of Whales                   |
-|     |2021|  8|Seven Segment Search                      |
-|     |2021|  9|Smoke Basin                               |
+|  +  |2021|  5|Hydrothermal Venture                      |
+|  +  |2021|  6|Lanternfish                               |simulation
+|  +  |2021|  7|The Treachery of Whales                   |
+|  +  |2021|  8|Seven Segment Search                      |
+|  +  |2021|  9|Smoke Basin                               |
 |     |2021| 10|Syntax Scoring                            |
 |     |2021| 11|Dumbo Octopus                             |
 |     |2021| 12|Passage Pathing                           |

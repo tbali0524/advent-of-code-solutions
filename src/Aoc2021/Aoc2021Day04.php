@@ -113,7 +113,7 @@ final class Bingo
                 throw new \Exception('Invalid input');
             }
             for ($x = 0; $x < self::SIZE; ++$x) {
-                $number = intval(trim(substr($lines[$y] ?? '', 3 * $x, 2)));
+                $number = intval(trim(substr($lines[$y], 3 * $x, 2)));
                 if (($this->board[$number] ?? 0) != -1) {
                     throw new \Exception('Invalid input');
                 }
