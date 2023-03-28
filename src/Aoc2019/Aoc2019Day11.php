@@ -12,6 +12,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: How many panels does it paint at least once?
  * Part 2:
  *
+ * Topics: assembly simulation
+ *
  * @see https://adventofcode.com/2019/day/11
  *
  * @todo complete

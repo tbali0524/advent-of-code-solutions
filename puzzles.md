@@ -10,9 +10,9 @@
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-22-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-18-red)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-30-yellow)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-338-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-350-yellow)|
 
 ## Puzzles
 
@@ -148,7 +148,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2019|  4|Secure Container                          |
 |  +  |2019|  5|Sunny with a Chance of Asteroids          |assembly simulation
 |  +  |2019|  6|Universal Orbit Map                       |tree graph
-|  +  |2019|  7|Amplification Circuit                     |assembly simulation, permutations, Heap's algorithm
+|  +  |2019|  7|Amplification Circuit                     |concurrent simulation, permutations, Heap's algorithm
 |  +  |2019|  8|Space Image Format                        |
 |  +  |2019|  9|Sensor Boost                              |assembly simulation
 |  +  |2019| 10|Monitoring Station                        |
@@ -213,13 +213,13 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021|  7|The Treachery of Whales                   |
 |  +  |2021|  8|Seven Segment Search                      |
 |  +  |2021|  9|Smoke Basin                               |
-|     |2021| 10|Syntax Scoring                            |
-|     |2021| 11|Dumbo Octopus                             |
-|     |2021| 12|Passage Pathing                           |
-|     |2021| 13|Transparent Origami                       |
-|     |2021| 14|Extended Polymerization                   |
-|     |2021| 15|Chiton                                    |
-|     |2021| 16|Packet Decoder                            |
+|  +  |2021| 10|Syntax Scoring                            |
+|  +  |2021| 11|Dumbo Octopus                             |simulation
+|  +  |2021| 12|Passage Pathing                           |DFS
+|  +  |2021| 13|Transparent Origami                       |
+|  +  |2021| 14|Extended Polymerization                   |
+|     |2021| 15|Chiton                                    |Dijkstra
+|  +  |2021| 16|Packet Decoder                            |Parsing
 |     |2021| 17|Trick Shot                                |
 |     |2021| 18|Snailfish                                 |
 |     |2021| 19|Beacon Scanner                            |

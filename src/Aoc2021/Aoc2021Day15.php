@@ -12,6 +12,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the lowest total risk of any path from the top left to the bottom right?
  * Part 2:
  *
+ * Topics: Dijkstra
+ *
  * @see https://adventofcode.com/2021/day/15
  *
  * @todo complete

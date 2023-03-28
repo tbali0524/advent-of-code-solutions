@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What will your final score be if you choose that board?
  * Part 2: Once it wins, what would its final score be?
  *
+ * Topics: Bingo simulation
+ *
  * @see https://adventofcode.com/2021/day/4
  */
 final class Aoc2021Day04 extends SolutionBase

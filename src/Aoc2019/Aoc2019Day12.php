@@ -14,6 +14,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the total energy in the system after simulating the moons given in your scan for 1000 steps?
  * Part 2: How many steps does it take to reach the first state that exactly matches a previous state?
  *
+ * Topics: simulation
+ *
  * @see https://adventofcode.com/2019/day/12
  */
 final class Aoc2019Day12 extends SolutionBase

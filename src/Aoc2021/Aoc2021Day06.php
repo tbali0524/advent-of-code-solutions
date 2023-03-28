@@ -12,6 +12,8 @@ use TBali\Aoc\SolutionBase;
  * Part 1: How many lanternfish would there be after 80 days?
  * Part 2: How many lanternfish would there be after 256 days?
  *
+ * Topics: simulation
+ *
  * @see https://adventofcode.com/2021/day/6
  */
 final class Aoc2021Day06 extends SolutionBase
