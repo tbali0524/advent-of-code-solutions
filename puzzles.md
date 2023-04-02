@@ -10,9 +10,9 @@
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-22-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-30-yellow)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-37-yellow)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-350-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-357-yellow)|
 
 ## Puzzles
 
@@ -220,15 +220,15 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021| 14|Extended Polymerization                   |
 |     |2021| 15|Chiton                                    |Dijkstra
 |  +  |2021| 16|Packet Decoder                            |Parsing
-|     |2021| 17|Trick Shot                                |
+|  +  |2021| 17|Trick Shot                                |simulation
 |     |2021| 18|Snailfish                                 |
 |     |2021| 19|Beacon Scanner                            |
-|     |2021| 20|Trench Map                                |
-|     |2021| 21|Dirac Dice                                |
+|  +  |2021| 20|Trench Map                                |Conway's Game of Life, simulation
+|  +  |2021| 21|Dirac Dice                                |
 |     |2021| 22|Reactor Reboot                            |
 |     |2021| 23|Amphipod                                  |
 |     |2021| 24|Arithmetic Logic Unit                     |
-|     |2021| 25|Sea Cucumber                              |
+|  +  |2021| 25|Sea Cucumber                              |
 
 ### 2022
 
