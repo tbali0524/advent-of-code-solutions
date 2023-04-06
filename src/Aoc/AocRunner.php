@@ -33,7 +33,7 @@ final class AocRunner
         2016 => [5, 11, 14],
         2018 => [23],
         2019 => [11, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],
-        2021 => [11, 15, 18, 19, 22, 23],
+        2021 => [11, 18, 19, 22, 23],
         2022 => [19, 24],
     ];
 
@@ -72,7 +72,7 @@ final class AocRunner
      */
     public function __construct(array $args)
     {
-        echo 'Advent of Code - batch solution runner, (c) 2022 by TBali' . PHP_EOL . PHP_EOL;
+        echo 'Advent of Code - batch solution runner, (c) 2023 by TBali' . PHP_EOL . PHP_EOL;
         $this->processArgs($args);
         $this->isOk = true;
     }

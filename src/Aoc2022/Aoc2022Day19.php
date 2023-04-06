@@ -99,6 +99,9 @@ final class Aoc2022Day19 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class Blueprint
 {
     public int $id = 0;

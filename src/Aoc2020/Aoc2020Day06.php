@@ -35,7 +35,7 @@ final class Aoc2020Day06 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Process input
-        /** @var array<int, int> */
+        /** @var array<int, array<int, int>> */
         $processedInput = [[]];
         foreach ($input as $line) {
             if (trim($line) == '') {

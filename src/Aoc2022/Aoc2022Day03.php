@@ -75,7 +75,6 @@ final class Aoc2022Day03 extends SolutionBase
         return
             $s >= 'a' && $s <= 'z'
             ? ord($s) - ord('a') + 1
-            : ord($s) - ord('A') + 27
-        ;
+            : ord($s) - ord('A') + 27;
     }
 }

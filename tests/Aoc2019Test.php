@@ -472,6 +472,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day09
      * @covers \TBali\Aoc2019\BoostSimulator
+     *
+     * @group medium
      */
     public function testDay09(): void
     {
