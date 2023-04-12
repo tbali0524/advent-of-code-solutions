@@ -58,10 +58,10 @@ final class Aoc2018Day09 extends SolutionBase
             }
             $player = ($player + 1) % $countPlayers;
             if ($marble == $lastMarble) {
-                $ans1 = intval(max($scores));
+                $ans1 = intval(max($scores ?: [0]));
             }
         }
-        $ans2 = intval(max($scores));
+        $ans2 = intval(max($scores ?: [0]));
         return [strval($ans1), strval($ans2)];
     }
 }

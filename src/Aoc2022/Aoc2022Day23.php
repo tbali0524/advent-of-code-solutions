@@ -103,8 +103,8 @@ final class Aoc2022Day23 extends SolutionBase
             if (($ans1 < 0) and ($turn == self::MAX_TURNS_PART1)) {
                 $xs = array_map(fn (array $e): int => $e[0], $newElves);
                 $ys = array_map(fn (array $e): int => $e[1], $newElves);
-                $ans1 = (intval(max($xs)) - intval(min($xs)) + 1) * (intval(max($ys)) - intval(min($ys)) + 1)
-                    - count($elves);
+                $ans1 = (intval(max($xs ?: [0])) - intval(min($xs ?: [0])) + 1)
+                    * (intval(max($ys ?: [0])) - intval(min($ys ?: [0])) + 1) - count($elves);
             }
             if (($ans2 < 0) and ($elves === $newElves)) {
                 $ans2 = $turn;

@@ -96,7 +96,7 @@ final class Aoc2020Day09 extends SolutionBase
             }
         }
         $slice = array_slice($input, $from, $to - $from + 1);
-        $ans2 = min($slice) + max($slice);
+        $ans2 = min($slice ?: [0]) + max($slice ?: [0]);
         return [strval($ans1), strval($ans2)];
     }
 }

@@ -668,7 +668,7 @@ final class Aoc2019Test extends TestCase
      * @covers \TBali\Aoc2019\Aoc2019Day12
      * @covers \TBali\Aoc2019\Moon
      *
-     * @group medium
+     * @group large
      */
     public function testDay12(): void
     {

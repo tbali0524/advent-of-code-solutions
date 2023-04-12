@@ -43,7 +43,7 @@ final class Aoc2020Day10 extends SolutionBase
         $input = array_map(intval(...), $input);
         // ---------- Part 1
         $a = $input;
-        $a[] = max($input) + 3;
+        $a[] = max($input ?: [0]) + 3;
         $a[] = 0;
         sort($a);
         $counts = [0, 0, 0, 0];

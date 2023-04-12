@@ -178,8 +178,8 @@ final class Packet
         return match ($this->typeId) {
             0 => intval(array_sum($values)),
             1 => intval(array_product($values)),
-            2 => intval(min($values)),
-            3 => intval(max($values)),
+            2 => intval(min($values ?: [0])),
+            3 => intval(max($values ?: [0])),
             self::TYPE_ID_LITERAL => $this->value,
             5 => count($this->subPackets) == 2
                     ? ($values[0] > $values[1] ? 1 : 0)

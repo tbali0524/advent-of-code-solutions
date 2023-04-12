@@ -76,8 +76,8 @@ final class Aoc2022Day18 extends SolutionBase
                 fn (array $a): int => $a[$i],
                 $cubes
             );
-            $this->minCoords[$i] = intval(min($coords));
-            $this->maxCoords[$i] = intval(max($coords));
+            $this->minCoords[$i] = intval(min($coords ?: [0]));
+            $this->maxCoords[$i] = intval(max($coords ?: [0]));
         }
         $this->external = [];
         $this->floodFill($this->minCoords[0] - 1, $this->minCoords[1] - 1, $this->minCoords[2] - 1);

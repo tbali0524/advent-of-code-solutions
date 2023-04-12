@@ -39,7 +39,7 @@ final class Aoc2017Day02 extends SolutionBase
             $input
         );
         // ---------- Part 1
-        $ans1 = array_sum(array_map(fn (array $a): int => max($a) - min($a), $data));
+        $ans1 = array_sum(array_map(fn (array $a): int => max($a ?: [0]) - min($a ?: [0]), $data));
         // ---------- Part 2
         $ans2 = 0;
         foreach ($data as $row) {

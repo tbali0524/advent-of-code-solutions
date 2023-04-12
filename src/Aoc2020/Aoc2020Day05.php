@@ -38,7 +38,7 @@ final class Aoc2020Day05 extends SolutionBase
         $ans1 = max(array_map(
             fn (string $x): int => intval(bindec(strtr($x, 'FBLR', '0101'))),
             $input
-        ));
+        ) ?: [0]);
         // ---------- Part 2
         $max = 1 << strlen($input[0] ?? '');
         $seats = array_fill(0, $max, false);

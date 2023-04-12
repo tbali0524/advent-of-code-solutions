@@ -95,8 +95,8 @@ final class Aoc2016Day22 extends SolutionBase
      */
     private function printGrid(): void
     {
-        $maxX = max(array_map(fn (Node $node): int => $node->x, $this->nodes)) + 1;
-        $maxY = max(array_map(fn (Node $node): int => $node->y, $this->nodes)) + 1;
+        $maxX = max(array_map(fn (Node $node): int => $node->x, $this->nodes) ?: [0]) + 1;
+        $maxY = max(array_map(fn (Node $node): int => $node->y, $this->nodes) ?: [0]) + 1;
         $s = array_fill(0, $maxY, str_repeat(' ', $maxX));
         foreach ($this->nodes as $node) {
             if ($node->size > 100) {

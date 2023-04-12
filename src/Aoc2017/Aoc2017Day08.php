@@ -68,7 +68,7 @@ final class Aoc2017Day08 extends SolutionBase
                 $ans2 = $regs[$a[0]];
             }
         }
-        $ans1 = intval(max($regs));
+        $ans1 = intval(max($regs ?: [0]));
         return [strval($ans1), strval($ans2)];
     }
 }

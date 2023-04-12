@@ -52,8 +52,8 @@ final class Aoc2016Day10 extends SolutionBase
                 break;
             }
             $bot = current($activeBots);
-            $low = intval(min($bot->values));
-            $high = intval(max($bot->values));
+            $low = intval(min($bot->values ?: [0]));
+            $high = intval(max($bot->values ?: [0]));
             // detect example input
             if ((count($input) == 6) and ($low == 2) and ($high == 5)) {
                 $ans1 = $bot->id;

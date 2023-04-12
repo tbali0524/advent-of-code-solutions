@@ -44,10 +44,10 @@ final class Aoc2018Day06 extends SolutionBase
         );
         // ---------- Part 1 + 2
         $threshold = count($input) == 6 ? self::DIST_THRESHOLD_EXAMPLE : self::DIST_THRESHOLD_PART2;
-        $minX = intval(min(array_map(fn (array $p): int => $p[0], $points)));
-        $maxX = intval(max(array_map(fn (array $p): int => $p[0], $points)));
-        $minY = intval(min(array_map(fn (array $p): int => $p[1], $points)));
-        $maxY = intval(max(array_map(fn (array $p): int => $p[1], $points)));
+        $minX = intval(min(array_map(fn (array $p): int => $p[0], $points) ?: [0]));
+        $maxX = intval(max(array_map(fn (array $p): int => $p[0], $points) ?: [0]));
+        $minY = intval(min(array_map(fn (array $p): int => $p[1], $points) ?: [0]));
+        $maxY = intval(max(array_map(fn (array $p): int => $p[1], $points) ?: [0]));
         $ans1 = 0;
         $ans2 = 0;
         $areas = array_fill(0, count($input), 0);
@@ -79,7 +79,7 @@ final class Aoc2018Day06 extends SolutionBase
             fn ($idx) => !isset($isInfinite[$idx]),
             ARRAY_FILTER_USE_KEY,
         );
-        $ans1 = intval(max($finiteAreas));
+        $ans1 = intval(max($finiteAreas ?: [0]));
         return [strval($ans1), strval($ans2)];
     }
 }

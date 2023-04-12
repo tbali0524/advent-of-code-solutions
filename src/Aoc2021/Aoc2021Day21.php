@@ -86,7 +86,7 @@ final class Aoc2021Day21 extends SolutionBase
         // ---------- Part 2
         $this->memo = [];
         $countWins = $this->countWins($startPositions);
-        $ans2 = intval(max($countWins));
+        $ans2 = intval(max($countWins ?: [0]));
         return [strval($ans1), strval($ans2)];
     }
 

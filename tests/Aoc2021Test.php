@@ -252,7 +252,7 @@ final class Aoc2021Test extends TestCase
     /**
      * @covers \TBali\Aoc2021\Aoc2021Day07
      *
-     * @group medium
+     * @group large
      */
     public function testDay07(): void
     {
@@ -944,7 +944,7 @@ final class Aoc2021Test extends TestCase
     /**
      * @covers \TBali\Aoc2021\Aoc2021Day20
      *
-     * @group medium
+     * @group large
      */
     public function testDay20(): void
     {
@@ -1116,7 +1116,7 @@ final class Aoc2021Test extends TestCase
     /**
      * @covers \TBali\Aoc2021\Aoc2021Day24
      *
-     * @group medium
+     * @group large
      */
     public function testDay24(): void
     {
@@ -1146,7 +1146,7 @@ final class Aoc2021Test extends TestCase
     /**
      * @covers \TBali\Aoc2021\Aoc2021Day25
      *
-     * @group medium
+     * @group large
      */
     public function testDay25(): void
     {

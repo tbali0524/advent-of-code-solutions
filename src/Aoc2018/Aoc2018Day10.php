@@ -103,10 +103,10 @@ final class Swarm
         $this->points = array_map(fn ($s) => MovingPoint::fromString($s), $input);
         $xs = array_map(fn ($p) => $p->x, $this->points);
         $ys = array_map(fn ($p) => $p->y, $this->points);
-        $this->minX = intval(min($xs));
-        $this->maxX = intval(max($xs));
-        $this->minY = intval(min($ys));
-        $this->maxY = intval(max($ys));
+        $this->minX = intval(min($xs ?: [0]));
+        $this->maxX = intval(max($xs ?: [0]));
+        $this->minY = intval(min($ys ?: [0]));
+        $this->maxY = intval(max($ys ?: [0]));
         $this->area = ($this->maxY - $this->minY + 1) * ($this->maxX - $this->minX + 1);
     }
 
@@ -145,10 +145,10 @@ final class Swarm
         }
         $xs = array_map(fn ($p) => $p->x, $this->points);
         $ys = array_map(fn ($p) => $p->y, $this->points);
-        $this->minX = intval(min($xs));
-        $this->maxX = intval(max($xs));
-        $this->minY = intval(min($ys));
-        $this->maxY = intval(max($ys));
+        $this->minX = intval(min($xs ?: [0]));
+        $this->maxX = intval(max($xs ?: [0]));
+        $this->minY = intval(min($ys ?: [0]));
+        $this->maxY = intval(max($ys ?: [0]));
         $this->area = ($this->maxY - $this->minY + 1) * ($this->maxX - $this->minX + 1);
     }
 

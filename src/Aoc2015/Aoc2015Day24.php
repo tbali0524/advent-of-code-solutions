@@ -64,11 +64,11 @@ final class Aoc2015Day24 extends SolutionBase
         $this->grpSum = 0;
         $this->candidates = [];
         $this->findCandidates();
-        $minCount = min(array_map(fn (array $a): int => count($a), $this->candidates));
+        $minCount = min(array_map(fn (array $a): int => count($a), $this->candidates) ?: [0]);
         return intval(min(array_map(
             fn (array $a): int => intval(array_product($a)),
             array_filter($this->candidates, fn (array $a): bool => count($a) == $minCount)
-        )));
+        ) ?: [0]));
     }
 
     private function findCandidates(int $idx = -1): void
