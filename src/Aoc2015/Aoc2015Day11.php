@@ -54,9 +54,7 @@ final class Aoc2015Day11 extends SolutionBase
                 --$i;
             }
             if ($i < 0) {
-                // @codeCoverageIgnoreStart
                 throw new \Exception('Password overflow');
-                // @codeCoverageIgnoreEnd
             }
             $pw[$i] = chr(ord($pw[$i]) + 1);
             $isOk = false;

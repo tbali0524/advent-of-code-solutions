@@ -10,7 +10,7 @@ minimum version: ^3.2
     configVersion="3"
     xmlns="https://www.phpdoc.org"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://docs.phpdoc.org/latest/phpdoc.xsd"
+    xsi:schemaLocation="https://www.phpdoc.org https://docs.phpdoc.org/latest/phpdoc.xsd"
 >
     <title>Advent of Code solutions by TBali</title>
     <paths>

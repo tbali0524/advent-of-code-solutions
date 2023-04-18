@@ -15,8 +15,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: What is the total brightness of all lights combined after following Santa's instructions?
  *
  * @see https://adventofcode.com/2015/day/6
- *
- * @codeCoverageIgnore
  */
 final class Aoc2015Day06 extends SolutionBase
 {
@@ -113,9 +111,6 @@ final class Aoc2015Day06 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class Instruction
 {
     public function __construct(

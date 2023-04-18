@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
+use PHPUnit\Framework\Attributes\RequiresPhp;
+use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
 use TBali\Aoc2015\Aoc2015Day01;
 use TBali\Aoc2015\Aoc2015Day02;
@@ -40,10 +44,20 @@ use TBali\Aoc2015\Aoc2015Day25;
  *
  * @coversNothing
  */
+#[RequiresPhp('^8.2')]
+#[RequiresPhpunit('^10.1')]
+#[IgnoreClassForCodeCoverage(Aoc2015Day04::class)]
+#[IgnoreClassForCodeCoverage(Aoc2015Day06::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\Instruction::class)]
+#[IgnoreClassForCodeCoverage(Aoc2015Day10::class)]
+#[IgnoreClassForCodeCoverage(Aoc2015Day20::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\PrimeFactors::class)]
+#[IgnoreClassForCodeCoverage(Aoc2015Day22::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardGameState::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardSimulator::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardSimulatorHardMode::class)]
 final class Aoc2015Test extends TestCase
 {
-    // --------------------------------------------------------------------
-
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day01
      */
@@ -198,6 +212,8 @@ final class Aoc2015Test extends TestCase
         $this->assertEquals(strval($expected1), $ans1);
         $this->assertEquals(strval($expected2), $ans2);
     }
+
+    // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day04
@@ -533,6 +549,8 @@ final class Aoc2015Test extends TestCase
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
+
+    // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2015\Aoc2015Day10
@@ -1136,6 +1154,4 @@ final class Aoc2015Test extends TestCase
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
-
-    // --------------------------------------------------------------------
 }

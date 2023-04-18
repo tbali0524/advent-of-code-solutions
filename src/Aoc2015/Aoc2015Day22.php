@@ -18,8 +18,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: game simulation, DFS, graph, PriorityQueue
  *
  * @see https://adventofcode.com/2015/day/22
- *
- * @codeCoverageIgnore
  */
 final class Aoc2015Day22 extends SolutionBase
 {
@@ -55,9 +53,6 @@ final class Aoc2015Day22 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class WizardGameState
 {
     private const PLAYER_START_HP = 50;
@@ -195,9 +190,6 @@ final class WizardGameState
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 class WizardSimulator
 {
     public WizardGameState $startState;
@@ -215,9 +207,7 @@ class WizardSimulator
         $this->q->insert($this->startState, 0);
         while (true) {
             if ($this->q->isEmpty()) {
-                // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');
-                // @codeCoverageIgnoreEnd
             }
             $currentState = $this->q->extract();
             if (!$currentState instanceof WizardGameState) {
@@ -237,9 +227,6 @@ class WizardSimulator
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class WizardSimulatorHardMode extends WizardSimulator
 {
     public function __construct(int $enemyHp, int $enemyDamage)

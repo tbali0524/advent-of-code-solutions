@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
+use PHPUnit\Framework\Attributes\RequiresPhp;
+use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
 use TBali\Aoc2020\Aoc2020Day01;
 use TBali\Aoc2020\Aoc2020Day02;
@@ -40,6 +42,8 @@ use TBali\Aoc2020\Aoc2020Day25;
  *
  * @coversNothing
  */
+#[RequiresPhp('^8.2')]
+#[RequiresPhpunit('^10.1')]
 final class Aoc2020Test extends TestCase
 {
     // --------------------------------------------------------------------

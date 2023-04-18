@@ -84,8 +84,6 @@ final class Aoc2015Day20 extends SolutionBase
  * Prime Factorization.
  *
  * Not used in this puzzle (would be too slow).
- *
- * @codeCoverageIgnore
  */
 final class PrimeFactors
 {

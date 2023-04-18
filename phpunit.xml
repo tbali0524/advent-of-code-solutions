@@ -2,13 +2,13 @@
 <!--
 PHPUnit configuration file.
 
-minimum version: ^10.0.5
+minimum version: ^10.1.1
 
-@see https://phpunit.readthedocs.io/en/10.0/configuration.html
+@see https://phpunit.readthedocs.io/en/10.1/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.1/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
     colors="true"
@@ -24,9 +24,24 @@ minimum version: ^10.0.5
     displayDetailsOnTestsThatTriggerWarnings="true"
     failOnRisky="true"
     failOnWarning="true"
+    enforceTimeLimit="false"
+    defaultTimeLimit="5"
+    timeoutForSmallTests="5"
+    timeoutForMediumTests="60"
+    timeoutForLargeTests="600"
     requireCoverageMetadata="true"
     testdox="true"
 >
+    <source>
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+        <exclude>
+            <directory>src/other</directory>
+            <file>src/aoc.php</file>
+            <file>src/run_class.php</file>
+        </exclude>
+    </source>
     <testsuites>
         <testsuite name="Aoc2015">
             <file>tests/Aoc2015Test.php</file>
@@ -57,16 +72,7 @@ minimum version: ^10.0.5
         disableCodeCoverageIgnore="false"
         ignoreDeprecatedCodeUnits="true"
         includeUncoveredFiles="true"
-        pathCoverage="false"
-    >
-        <include>
-            <directory suffix=".php">src</directory>
-        </include>
-        <exclude>
-            <directory>src/other</directory>
-            <file>src/aoc.php</file>
-            <file>src/run_class.php</file>
-        </exclude>
+        pathCoverage="false">
         <report>
             <html outputDirectory=".tools/phpunit-coverage" lowUpperBound="50" highLowerBound="90" />
             <text outputFile="php://stdout" showUncoveredFiles="true" showOnlySummary="true" />
@@ -77,8 +83,8 @@ minimum version: ^10.0.5
     </logging>
     <groups>
         <exclude>
-          <group>medium</group>
-          <group>large</group>
+            <group>medium</group>
+            <group>large</group>
         </exclude>
     </groups>
 </phpunit>
