@@ -1,6 +1,7 @@
 # Advent of Code solutions in PHP by TBali
 
 ![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
+![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
 ![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-363-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
