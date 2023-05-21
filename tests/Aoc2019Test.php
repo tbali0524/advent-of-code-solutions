@@ -612,31 +612,43 @@ final class Aoc2019Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2019\Aoc2019Day11
-    //  */
-    // public function testDay11Example1(): void
-    // {
-    //     $solver = new Aoc2019Day11();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day11
+     * @covers \TBali\Aoc2019\HullPaintSimulator
+     */
+    public function testDay11(): void
+    {
+        $solver = new Aoc2019Day11();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2019\Aoc2019Day11
-    //  */
-    // public function testDay11(): void
-    // {
-    //     $solver = new Aoc2019Day11();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day11
+     * @covers \TBali\Aoc2019\HullPaintSimulator
+     */
+    public function testDay11InvalidInput1(): void
+    {
+        $solver = new Aoc2019Day11();
+        $input = ['1,1,1,3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day11
+     * @covers \TBali\Aoc2019\HullPaintSimulator
+     */
+    public function testDay11InvalidInput2(): void
+    {
+        $solver = new Aoc2019Day11();
+        $input = ['1,1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
     // --------------------------------------------------------------------
 
@@ -698,33 +710,47 @@ final class Aoc2019Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2019\Aoc2019Day13
-    //  */
-    // public function testDay13Example1(): void
-    // {
-    //     $solver = new Aoc2019Day13();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day13
+     * @covers \TBali\Aoc2019\ArcadeSimulator
+     *
+     * @group medium
+     */
+    public function testDay13(): void
+    {
+        $solver = new Aoc2019Day13();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        $this->assertEquals(strval($expected1), $ans1);
+        $this->assertEquals(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2019\Aoc2019Day13
-    //  */
-    // public function testDay13(): void
-    // {
-    //     $solver = new Aoc2019Day13();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day13
+     * @covers \TBali\Aoc2019\ArcadeSimulator
+     */
+    public function testDay13InvalidInput1(): void
+    {
+        $solver = new Aoc2019Day13();
+        $input = ['1,1,1,3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day13
+     * @covers \TBali\Aoc2019\ArcadeSimulator
+     */
+    public function testDay13InvalidInput2(): void
+    {
+        $solver = new Aoc2019Day13();
+        $input = ['1,1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2019\Aoc2019Day14

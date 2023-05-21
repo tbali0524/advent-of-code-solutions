@@ -12,7 +12,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: "8.2"
           tools: phpcs:3.7, php-cs-fixer:3.16, phpstan:1.10
           coverage: none
         env:
@@ -39,12 +39,15 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'
+          php-version: "8.2"
           extensions: mbstring, bcmath, xdebug
           tools: phpunit:10.1
           coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup problem matchers for PHPUnit
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install composer dependencies
         run: composer install --no-progress --prefer-dist --no-dev
