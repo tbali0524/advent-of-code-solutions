@@ -1,9 +1,10 @@
 {
     "name": "tbali0524/advent-of-code-solutions",
-    "description": "Advent of Code solutions solutions in PHP by TBali",
+    "description": "Advent of Code solutions in PHP by TBali",
     "type": "project",
     "keywords": [
-        "aoc", "algorithms"
+        "aoc",
+        "algorithms"
     ],
     "homepage": "https://adventofcode.com/",
     "license": "MIT",
@@ -16,8 +17,8 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "ext-ctype": "*"
+        "php":          "^8.2",
+        "ext-ctype":    "*"
     },
     "autoload": {
         "psr-4": {
@@ -35,20 +36,20 @@
     },
     "scripts": {
         "start":        "php src/aoc.php",
-        "test" :        "phpunitc --colors=always",
-        "cs"   :        "phpcs",
+        "test":         "phpunitc --colors=always",
+        "cs":           "phpcs",
         "cs-fixer" :    "php-cs-fixer fix --dry-run --show-progress=dots --ansi --diff -vv",
-        "cs-fixer-do" : "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
-        "doc"  :        "phpdoc",
-        "loc"  :        "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
-        "metrics"  :    "phpmetrics --config=.phpmetrics.json",
-        "stan" :        "phpstan --ansi --verbose",
-        "qa" : [
+        "cs-fixer-do":  "php-cs-fixer fix --show-progress=dots --ansi --diff -vv",
+        "doc":          "phpdoc",
+        "loc":          "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
+        "metrics":      "phpmetrics --config=.phpmetrics.json",
+        "stan":         "phpstan --ansi --verbose",
+        "qa": [
             "@cs",
             "@cs-fixer",
             "@stan"
         ],
-        "qa-full" : [
+        "qa-full": [
             "@cs",
             "@cs-fixer",
             "@stan",
@@ -63,7 +64,7 @@
         "open-cover":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpunit-coverage/index.html",
         "open-doc":     "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
         "open-metrics": "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
-        "clean" : [
+        "clean": [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",
             "if exist .tools\\phpunit-junit.xml     del .tools\\phpunit-junit.xml",

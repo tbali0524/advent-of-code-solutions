@@ -1,6 +1,6 @@
 # PHPStan configuration file.
 #
-# minimum version: ^1.10.13
+# minimum version: ^1.10.25
 #
 # @see https://phpstan.org/config-reference
 parameters:

@@ -60,9 +60,9 @@ final class Aoc2020Day14 extends SolutionBase
             $maskedValue = 0;
             for ($i = 0; $i < self::BIT_SIZE; ++$i) {
                 match ($mask[$i]) {
-                    '0' => 0,
-                    '1' => $maskedValue |= (1 << (self::BIT_SIZE - 1 - $i)),
-                    'X' => $maskedValue |= ($value & (1 << (self::BIT_SIZE - 1 - $i))),
+                    '0' => 0, // @phpstan-ignore-line
+                    '1' => $maskedValue |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore-line
+                    'X' => $maskedValue |= ($value & (1 << (self::BIT_SIZE - 1 - $i))), // @phpstan-ignore-line
                     default => throw new \Exception('Invalid mask'),
                 };
             }
@@ -98,9 +98,9 @@ final class Aoc2020Day14 extends SolutionBase
             $floatingBits = [];
             for ($i = 0; $i < self::BIT_SIZE; ++$i) {
                 match ($mask[$i]) {
-                    '0' => $maskedLoc |= ($loc & (1 << (self::BIT_SIZE - 1 - $i))),
-                    '1' => $maskedLoc |= (1 << (self::BIT_SIZE - 1 - $i)),
-                    'X' => $floatingBits[] = self::BIT_SIZE - 1 - $i,
+                    '0' => $maskedLoc |= ($loc & (1 << (self::BIT_SIZE - 1 - $i))), // @phpstan-ignore-line
+                    '1' => $maskedLoc |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore-line
+                    'X' => $floatingBits[] = self::BIT_SIZE - 1 - $i, // @phpstan-ignore-line
                     default => throw new \Exception('Invalid mask'),
                 };
             }

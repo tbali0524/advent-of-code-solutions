@@ -207,7 +207,6 @@ final class MessageNode
             $this->match = substr($a[1], 1, -1);
             return;
         }
-        // @phpstan-ignore-next-line
         $this->match = '';
         $b = explode(' | ', $a[1]);
         foreach ($b as $list) {
