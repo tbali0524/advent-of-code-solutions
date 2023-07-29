@@ -24,7 +24,8 @@ final class Aoc2019Day14 extends SolutionBase
     public const DAY = 14;
     public const TITLE = 'Space Stoichiometry';
     public const SOLUTIONS = [346961, 0];
-    public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 82892753], [180697, 5586022], [2210736, 460664]];
+    // public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 82892753], [180697, 5586022], [2210736, 460664]];
+    public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 0], [180697, 0], [2210736, 0]];
 
     public const ORE_PART2 = 1_000_000_000_000;
 

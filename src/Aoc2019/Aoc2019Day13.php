@@ -14,9 +14,11 @@ use TBali\Aoc\SolutionBase;
  * Part 1: How many block tiles are on the screen when the game exits?
  * Part 2: Beat the game by breaking all the blocks. What is your score after the last block is broken?
  *
+ * Topics: assembly simulation, game simulation
+ *
  * @see https://adventofcode.com/2019/day/13
  *
- * Topics: assembly simulation, game simulation
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day13 extends SolutionBase
 {
@@ -79,6 +81,7 @@ final class Aoc2019Day13 extends SolutionBase
         }
         // @phpstan-ignore-next-line
         if (self::SHOW_ARCADE) {
+            // @codeCoverageIgnoreStart
             for ($y = 0; $y <= $maxY; ++$y) {
                 $s = '';
                 for ($x = 0; $x <= $maxX; ++$x) {
@@ -86,6 +89,7 @@ final class Aoc2019Day13 extends SolutionBase
                 }
                 echo $s, PHP_EOL;
             }
+            // @codeCoverageIgnoreEnd
         }
         return $ans;
     }
@@ -132,6 +136,7 @@ final class Aoc2019Day13 extends SolutionBase
             $startOutput = count($robot->outputs);
             // @phpstan-ignore-next-line
             if (self::SHOW_ARCADE) {
+                // @codeCoverageIgnoreStart
                 echo '-----------', PHP_EOL, PHP_EOL;
                 for ($y = 0; $y <= $maxY; ++$y) {
                     $s = '';
@@ -140,6 +145,7 @@ final class Aoc2019Day13 extends SolutionBase
                     }
                     echo $s, PHP_EOL;
                 }
+                // @codeCoverageIgnoreEnd
             }
             if ($robot->halted) {
                 break;

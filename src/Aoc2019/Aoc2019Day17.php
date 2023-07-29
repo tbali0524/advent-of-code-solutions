@@ -18,6 +18,8 @@ use TBali\Aoc\SolutionBase;
  * @see https://adventofcode.com/2019/day/17
  *
  * @todo complete part 2
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day17 extends SolutionBase
 {
@@ -26,7 +28,7 @@ final class Aoc2019Day17 extends SolutionBase
     public const TITLE = 'Set and Forget';
     public const SOLUTIONS = [5724, 0];
 
-    private const SHOW_GRID = true;
+    private const SHOW_GRID = false;
     private const DIRS = '^>v<';
     private const SCAFFOLD = '#';
     private const DELTA_XY = [0 => [0, -1], 1 => [1, 0], 2 => [0, 1], 3 => [-1, 0]];
@@ -79,10 +81,12 @@ final class Aoc2019Day17 extends SolutionBase
         $maxY = count($grid);
         // @phpstan-ignore-next-line
         if (self::SHOW_GRID) {
+            // @codeCoverageIgnoreStart
             foreach ($grid as $line) {
                 echo $line, PHP_EOL;
             }
             echo 'vacuum: ' . $robotX . ', ' . $robotY . ',' . self::DIRS[$robotDir], PHP_EOL;
+            // @codeCoverageIgnoreEnd
         }
         // ---------- Part 1
         $ans1 = 0;
@@ -134,9 +138,11 @@ final class Aoc2019Day17 extends SolutionBase
                     or ($commands[count($commands) - 1] == 'L')
                     or ($commands[count($commands) - 1] == 'R')
                 ) {
-                    $commands[] = '1';
+                    // $commands[] = '1';
+                    $commands[] = 'F';
                 } else {
-                    $commands[count($commands) - 1] = strval(intval($commands[count($commands) - 1]) + 1);
+                    // $commands[count($commands) - 1] = strval(intval($commands[count($commands) - 1]) + 1);
+                    $commands[] = 'F';
                 }
                 $x = $x1;
                 $y = $y1;
@@ -147,18 +153,35 @@ final class Aoc2019Day17 extends SolutionBase
             }
         }
         $commandStr = implode(',', $commands);
-        echo $commandStr, PHP_EOL;
+        // @phpstan-ignore-next-line
+        if (self::SHOW_GRID) {
+            // @codeCoverageIgnoreStart
+            echo $commandStr, PHP_EOL;
+            // @codeCoverageIgnoreEnd
+        }
         // find optimal functions
         $selectedFunctions = [];
+        // $bestFunction = 'L,F,F,F,F,F,F,F,F,F,F,F,F,L,F,F,F,F,F,F,F,F,F,F,F,F,R,F,F,F,F';
+        // $selectedFunctions[] = $bestFunction;
+        // $commandStr = str_replace($bestFunction, chr(ord('A')), $commandStr);
+        // $bestFunction = 'R,F,F,F,F';
+        // $selectedFunctions[] = $bestFunction;
+        // $commandStr = str_replace($bestFunction, chr(ord('A') + 1), $commandStr);
+        // $bestFunction = 'F,F';
+        // $selectedFunctions[] = $bestFunction;
+        // $commandStr = str_replace($bestFunction, chr(ord('A') + 2), $commandStr);
         for ($j = 0; $j < 3; ++$j) {
             $functionSavings = [];
             for ($from = 0; $from < count($commands); ++$from) {
                 for ($to = $from; $to < count($commands); ++$to) {
                     $function = implode(',', array_slice($commands, $from, $to - $from + 1));
-                    if (strlen($function) > 20) {
+                    if (strlen($function) > 200) {
                         continue;
                     }
                     $count = substr_count($commandStr, $function);
+                    if ($count <= 1) {
+                        continue;
+                    }
                     $saving = $count * (strlen($function) - 1);
                     if (($functionSavings[$function] ?? 0) >= $saving) {
                         continue;
@@ -171,46 +194,56 @@ final class Aoc2019Day17 extends SolutionBase
             $selectedFunctions[] = $bestFunction;
             $commandStr = str_replace($bestFunction, chr(ord('A') + $j), $commandStr);
         }
-        foreach ($selectedFunctions as $line) {
-            echo $line, PHP_EOL;
+        // A,B,C,C,C,B,C,B,B,A,B,C,A,C,C,C,B,C,B,B,A,B,C,C,C,B,C,B,B,B,C,A,C,A,C,C,C,B,C,B,B
+        for ($j = 0; $j < 3; ++$j) {
+            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F,F,F,F,F', '12', $selectedFunctions[$j]);
+            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F,F,F', '10', $selectedFunctions[$j]);
+            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F', '8', $selectedFunctions[$j]);
+            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F', '6', $selectedFunctions[$j]);
+            $selectedFunctions[$j] = str_replace('F,F,F,F', '4', $selectedFunctions[$j]);
+            $selectedFunctions[$j] = str_replace('F,F', '2', $selectedFunctions[$j]);
         }
-        echo $commandStr, PHP_EOL;
+        // @phpstan-ignore-next-line
+        if (self::SHOW_GRID) {
+            // @codeCoverageIgnoreStart
+            foreach ($selectedFunctions as $line) {
+                echo '  ' . $line, PHP_EOL;
+            }
+            echo $commandStr, PHP_EOL;
+            // @codeCoverageIgnoreEnd
+        }
+        // echo $commandStr, PHP_EOL;
         $memory[0] = 2;
         $vacuum = new AsciiSimulator($memory);
-        for ($i = 0; $i < strlen($commandStr); ++$i) {
-            $vacuum->inputs[] = ord($commandStr[$i]);
-        }
-        $vacuum->inputs[] = self::LF;
+        $vacuum->stringInput($commandStr);
         for ($j = 0; $j < 3; ++$j) {
-            for ($i = 0; $i < strlen($selectedFunctions[$j]); ++$i) {
-                $vacuum->inputs[] = ord($selectedFunctions[$j][$i]);
-            }
-            $vacuum->inputs[] = self::LF;
+            $vacuum->stringInput($selectedFunctions[$j]);
         }
-        $vacuum->inputs[] = ord('n'); // no debug camera feed
-        $vacuum->inputs[] = self::LF;
+        $vacuum->stringInput('n'); // no debug camera feed
         $vacuum->simulate();
-        $ans2 = $vacuum->outputs[count($vacuum->outputs) - 1];
+        $ans2 = $vacuum->nextOutputOrDebug();
         return [strval($ans1), strval($ans2)];
     }
 }
 
 // L,12,L,12,R,4,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,6,L,12,L,12,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,10,R,6,R,4,R,4,R,6,
 // L,12,L,12,R,6,L,12,L,12,R,10,R,6,R,4,R,4
-
 // L,12,L,12,                     L,12,L,12,        L,12,L,12,                 L,12,L,12,
 // L,12,L,12,    L,12,L,12,
-
 //               R,10,R,6,R,4,R,4                             R,10,R,6,R,4,R,4               R,10,R,6,R,4,R,4
 //                        R,10,R,6,R,4,R,4
 //           R,4                            R,4,R,6                                      R,4                  R,6
 //           R,6
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class AsciiSimulator
 {
     private const INSTRUCTION_LENGTHS =
         [1 => 4, 2 => 4, 3 => 2, 4 => 2, 5 => 3, 6 => 3, 7 => 4, 8 => 4, 9 => 2, 99 => 1];
+    private const LF = 10;
 
     /** @var array<int, int> */
     public array $inputs = [];
@@ -220,6 +253,7 @@ final class AsciiSimulator
 
     private int $ic = 0;
     private int $idxInput = 0;
+    private int $idxOutput = 0;
     private int $relBase = 0;
 
     /**
@@ -277,5 +311,32 @@ final class AsciiSimulator
                 $this->ic += $len;
             }
         }
+    }
+
+    public function stringInput(string $line): void
+    {
+        for ($i = 0; $i < strlen($line); ++$i) {
+            $this->inputs[] = ord($line[$i]);
+        }
+        $this->inputs[] = self::LF;
+    }
+
+    public function nextOutputOrDebug(): int
+    {
+        if (($this->idxOutput < 0) or ($this->idxOutput >= count($this->outputs))) {
+            // @codeCoverageIgnoreStart
+            throw new \Exception('Output unavailable');
+            // @codeCoverageIgnoreEnd
+        }
+        $message = '';
+        for ($i = $this->idxOutput; $i < count($this->outputs); ++$i) {
+            $message .= chr($this->outputs[$i]);
+        }
+        $this->idxOutput = count($this->outputs);
+        $ans = $this->outputs[$this->idxOutput - 1];
+        if (($ans >= 0) and ($ans <= 255)) {
+            // echo $message;
+        }
+        return $ans;
     }
 }

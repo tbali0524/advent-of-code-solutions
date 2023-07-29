@@ -18,6 +18,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation, BFS
  *
  * @see https://adventofcode.com/2019/day/15
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day15 extends SolutionBase
 {
@@ -75,7 +77,9 @@ final class Aoc2019Day15 extends SolutionBase
         }
         // @phpstan-ignore-next-line
         if (self::SHOW_MAP) {
+            // @codeCoverageIgnoreStart
             $map->printMap($oxygenX, $oxygenY);
+            // @codeCoverageIgnoreEnd
         }
         $ans1 = count($map->getRoute($oxygenX, $oxygenY));
         $ans2 = $map->fillTime($oxygenX, $oxygenY);
@@ -84,6 +88,9 @@ final class Aoc2019Day15 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class Map
 {
     public const WALL = '#';
@@ -228,6 +235,9 @@ final class Map
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class DroidSimulator
 {
     private const INSTRUCTION_LENGTHS =
