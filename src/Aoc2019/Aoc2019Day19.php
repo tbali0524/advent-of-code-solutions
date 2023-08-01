@@ -12,7 +12,8 @@ use TBali\Aoc\SolutionBase;
  * AoC 2019 Day 19: Tractor Beam.
  *
  * Part 1: How many points are affected by the tractor beam in the 50x50 area closest to the emitter?
- * Part 2:
+ * Part 2: What value do you get if you take that point's X coordinate, multiply it by 10000,
+ *         then add the point's Y coordinate?
  *
  * Topics: assembly simulation
  *
