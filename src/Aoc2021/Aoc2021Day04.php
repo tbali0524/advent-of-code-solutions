@@ -101,7 +101,7 @@ final class Bingo
     private int $markedMask = 0;
 
     /**
-     * @param array<int, string> $lines the initial board as a list of 5 strings exaxctly 14 chars long
+     * @param array<int, string> $lines the initial board as a list of 5 strings exactly 14 chars long
      */
     public function __construct(int $id, array $lines)
     {
