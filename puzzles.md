@@ -10,9 +10,9 @@
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-41-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-44-yellow)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-45-yellow)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-383-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-384-yellow)|
 
 ## Puzzles
 
@@ -226,7 +226,7 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021| 20|Trench Map                                |Conway's Game of Life, simulation
 |  +  |2021| 21|Dirac Dice                                |
 |  +  |2021| 22|Reactor Reboot                            |
-| (1) |2021| 23|Amphipod                                  |Dijkstra, priority queue
+|  +  |2021| 23|Amphipod                                  |Dijkstra, priority queue
 |  +  |2021| 24|Arithmetic Logic Unit                     |assembly reverse engineering
 |  +  |2021| 25|Sea Cucumber                              |
 

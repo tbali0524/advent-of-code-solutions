@@ -1103,8 +1103,7 @@ final class Aoc2021Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         $this->assertEquals(strval($expected1), $ans1);
-        // todo uncomment when ready
-        // $this->assertEquals(strval($expected2), $ans2);
+        $this->assertEquals(strval($expected2), $ans2);
     }
 
     /**
@@ -1121,8 +1120,7 @@ final class Aoc2021Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         $this->assertEquals(strval($expected1), $ans1);
-        // todo uncomment when ready
-        // $this->assertEquals(strval($expected2), $ans2);
+        $this->assertEquals(strval($expected2), $ans2);
     }
 
     // --------------------------------------------------------------------
