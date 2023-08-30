@@ -61,7 +61,7 @@ final class Aoc2016Day16 extends SolutionBase
         $data = substr($data, 0, $len);
         while (strlen($data) % 2 == 0) {
             $data = implode('', array_map(
-                fn (string $x): string => ['00' => '1', '11' => '1', '01' => '0', '10' => '0'][$x] ?? '',
+                static fn (string $x): string => ['00' => '1', '11' => '1', '01' => '0', '10' => '0'][$x] ?? '',
                 str_split($data, 2)
             ));
         }

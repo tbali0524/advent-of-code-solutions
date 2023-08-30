@@ -40,7 +40,7 @@ final class Aoc2020Day04 extends SolutionBase
         // ---------- Part 1
         $ans1 = count(array_filter(
             $passports,
-            fn (array $x): bool => count($x) >= 7 + (isset($x['cid']) ? 1 : 0)
+            static fn (array $x): bool => count($x) >= 7 + (isset($x['cid']) ? 1 : 0)
         ));
         // ---------- Part 2
         $ans2 = 0;

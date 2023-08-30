@@ -72,10 +72,10 @@ final class Aoc2016Day20 extends SolutionBase
                 }
             }
             $ranges = array_merge($ranges, $toAdd);
-            usort($ranges, fn (array $a, array $b): int => $a[0] <=> $b[0]);
+            usort($ranges, static fn (array $a, array $b): int => $a[0] <=> $b[0]);
         }
         $ans1 = $ranges[0][0];
-        $ans2 = array_sum(array_map(fn (array $a): int => $a[1] - $a[0] + 1, $ranges));
+        $ans2 = array_sum(array_map(static fn (array $a): int => $a[1] - $a[0] + 1, $ranges));
         return [strval($ans1), strval($ans2)];
     }
 }

@@ -146,7 +146,7 @@ final class Directory
 
     public function updateTotalSize(): void
     {
-        $this->totalSize = array_sum(array_map(fn (File $x): int => $x->size, $this->files));
+        $this->totalSize = array_sum(array_map(static fn (File $x): int => $x->size, $this->files));
         foreach ($this->subdirs as $dir) {
             $dir->updateTotalSize();
             $this->totalSize += $dir->totalSize;

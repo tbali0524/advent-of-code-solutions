@@ -60,8 +60,8 @@ final class Aoc2021Day05 extends SolutionBase
                 $y += $dy;
             }
         }
-        $ans1 = count(array_filter($visitedPart1, fn (int $x): bool => $x > 1));
-        $ans2 = count(array_filter($visitedPart2, fn (int $x): bool => $x > 1));
+        $ans1 = count(array_filter($visitedPart1, static fn (int $x): bool => $x > 1));
+        $ans2 = count(array_filter($visitedPart2, static fn (int $x): bool => $x > 1));
         return [strval($ans1), strval($ans2)];
     }
 }

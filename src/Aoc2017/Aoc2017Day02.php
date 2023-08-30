@@ -35,11 +35,11 @@ final class Aoc2017Day02 extends SolutionBase
     {
         /** @var array<int, array<int, int>> */
         $data = array_map(
-            fn (string $s): array => array_map(intval(...), explode("\t", $s)),
+            static fn (string $s): array => array_map(intval(...), explode("\t", $s)),
             $input
         );
         // ---------- Part 1
-        $ans1 = array_sum(array_map(fn (array $a): int => max($a ?: [0]) - min($a ?: [0]), $data));
+        $ans1 = array_sum(array_map(static fn (array $a): int => max($a ?: [0]) - min($a ?: [0]), $data));
         // ---------- Part 2
         $ans2 = 0;
         foreach ($data as $row) {

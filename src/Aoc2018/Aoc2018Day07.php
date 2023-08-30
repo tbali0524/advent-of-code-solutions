@@ -59,7 +59,7 @@ final class Aoc2018Day07 extends SolutionBase
         while (true) {
             $possibleSteps = array_filter(
                 $steps,
-                fn ($step) => count($remainingBefores[$step] ?? []) == 0 && !str_contains($ans1, $step),
+                static fn ($step) => count($remainingBefores[$step] ?? []) == 0 && !str_contains($ans1, $step),
             );
             sort($possibleSteps);
             $selectedStep = $possibleSteps[0];
@@ -92,7 +92,7 @@ final class Aoc2018Day07 extends SolutionBase
             $t = array_shift($times);
             $finishingSteps = array_keys(array_filter(
                 $stepsCompleteAt,
-                fn ($x) => $x == $t,
+                static fn ($x) => $x == $t,
             ));
             foreach ($finishingSteps as $stepComplete) {
                 foreach ($steps as $step) {
@@ -105,14 +105,14 @@ final class Aoc2018Day07 extends SolutionBase
             }
             $availableWorkers = array_keys(array_filter(
                 $workersIdleAt,
-                fn ($x) => $x <= $t,
+                static fn ($x) => $x <= $t,
             ));
             if (count($availableWorkers) == 0) {
                 continue;
             }
             $possibleSteps = array_values(array_filter(
                 $steps,
-                fn ($step) => count($remainingBefores[$step] ?? []) == 0
+                static fn ($step) => count($remainingBefores[$step] ?? []) == 0
                     && !str_contains($completed, $step)
                     && $stepsCompleteAt[$step] == -1,
             ));

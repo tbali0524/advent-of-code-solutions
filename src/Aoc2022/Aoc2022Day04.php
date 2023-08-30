@@ -34,7 +34,7 @@ final class Aoc2022Day04 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Parse input
-        $data = array_map(function (string $line): array {
+        $data = array_map(static function (string $line): array {
             $a = explode(',', $line);
             if (count($a) != 2) {
                 throw new \Exception('Invalid input');
@@ -49,12 +49,12 @@ final class Aoc2022Day04 extends SolutionBase
         // ---------- Part 1
         $ans1 = count(array_filter(
             $data,
-            fn (array $a): bool => ($a[0] <= $a[2] && $a[3] <= $a[1]) || ($a[2] <= $a[0] && $a[1] <= $a[3])
+            static fn (array $a): bool => ($a[0] <= $a[2] && $a[3] <= $a[1]) || ($a[2] <= $a[0] && $a[1] <= $a[3])
         ));
         // ---------- Part 2
         $ans2 = count(array_filter(
             $data,
-            fn (array $a): bool => !(($a[1] < $a[2]) || ($a[3] < $a[0]))
+            static fn (array $a): bool => !(($a[1] < $a[2]) || ($a[3] < $a[0]))
         ));
         return [strval($ans1), strval($ans2)];
     }

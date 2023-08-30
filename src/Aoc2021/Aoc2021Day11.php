@@ -52,7 +52,7 @@ final class Aoc2021Day11 extends SolutionBase
         $step = 0;
         while (true) {
             ++$step;
-            $energies = array_map(fn (int $x) => $x + 1, $energies);
+            $energies = array_map(static fn (int $x) => $x + 1, $energies);
             $flashQueue = array_keys($energies, 10, true);
             $readIdx = 0;
             $flashed = [];

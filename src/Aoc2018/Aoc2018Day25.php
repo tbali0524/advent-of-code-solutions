@@ -37,7 +37,7 @@ final class Aoc2018Day25 extends SolutionBase
     {
         // ---------- Parse input
         $points = array_map(
-            fn ($line) => array_map(intval(...), explode(',', $line)),
+            static fn ($line) => array_map(intval(...), explode(',', $line)),
             $input,
         );
         // ---------- Part 1

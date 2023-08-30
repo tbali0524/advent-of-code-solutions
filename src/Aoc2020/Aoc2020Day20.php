@@ -687,7 +687,7 @@ final class Image
             }
         }
         $total = array_sum(array_map(
-            fn (string $line): int => substr_count($line, '#'),
+            static fn (string $line): int => substr_count($line, '#'),
             $this->grid,
         ));
         // @phpstan-ignore-next-line

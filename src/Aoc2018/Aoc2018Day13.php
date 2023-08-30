@@ -91,7 +91,7 @@ final class Aoc2018Day13 extends SolutionBase
         $ans2 = '';
         $remainingCarts = count($carts);
         while (true) {
-            uasort($carts, function (Cart $a, Cart $b): int {
+            uasort($carts, static function (Cart $a, Cart $b): int {
                 $result = $a->y <=> $b->y;
                 return $result != 0 ? $result : $a->x <=> $b->x;
             });
@@ -129,7 +129,7 @@ final class Aoc2018Day13 extends SolutionBase
                 break;
             }
             if ($remainingCarts == 1) {
-                $cart = array_values(array_filter($carts, fn (Cart $cart) => !$cart->crashed))[0];
+                $cart = array_values(array_filter($carts, static fn (Cart $cart) => !$cart->crashed))[0];
                 $ans2 = $cart->x . ',' . $cart->y;
                 break;
             }

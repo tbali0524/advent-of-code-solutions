@@ -55,7 +55,7 @@ final class Aoc2021Day03 extends SolutionBase
                 break;
             }
             $target = $this->mostCommonBit($numbers, $countBits, $pos);
-            $numbers = array_filter($numbers, fn (int $x): bool => (($x >> $pos) & 1) == $target);
+            $numbers = array_filter($numbers, static fn (int $x): bool => (($x >> $pos) & 1) == $target);
         }
         if (count($numbers) != 1) {
             throw new \Exception('Invalid input');
@@ -72,7 +72,7 @@ final class Aoc2021Day03 extends SolutionBase
                 break;
             }
             $target = 1 - $this->mostCommonBit($numbers, $countBits, $pos);
-            $numbers = array_filter($numbers, fn (int $x): bool => (($x >> $pos) & 1) == $target);
+            $numbers = array_filter($numbers, static fn (int $x): bool => (($x >> $pos) & 1) == $target);
         }
         if (count($numbers) != 1) {
             throw new \Exception('Invalid input');

@@ -46,7 +46,7 @@ final class Aoc2020Day13 extends SolutionBase
             intval(...),
             array_filter(
                 explode(',', $input[1]),
-                fn (string $x): bool => $x != 'x'
+                static fn (string $x): bool => $x != 'x'
             )
         );
         if (count($buses) == 0) {
@@ -55,7 +55,7 @@ final class Aoc2020Day13 extends SolutionBase
         $idToWait = array_combine(
             $buses,
             array_map(
-                fn (int $x): int => ($x - ($time % $x)) % $x,
+                static fn (int $x): int => ($x - ($time % $x)) % $x,
                 $buses
             )
         );

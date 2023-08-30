@@ -36,7 +36,7 @@ final class Aoc2020Day05 extends SolutionBase
     {
         // ---------- Part 1
         $ans1 = max(array_map(
-            fn (string $x): int => intval(bindec(strtr($x, 'FBLR', '0101'))),
+            static fn (string $x): int => intval(bindec(strtr($x, 'FBLR', '0101'))),
             $input
         ) ?: [0]);
         // ---------- Part 2

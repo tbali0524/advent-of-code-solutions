@@ -51,7 +51,7 @@ final class Aoc2020Day19 extends SolutionBase
         $allStrings = array_keys($this->getAllGenerated(0, $maxLen));
         $ans1 = count(array_filter(
             $this->messages,
-            fn (string $x): bool => in_array($x, $allStrings),
+            static fn (string $x): bool => in_array($x, $allStrings),
         ));
         // ---------- Part 2
         // detect puzzle example #1, valid for Part 1 only

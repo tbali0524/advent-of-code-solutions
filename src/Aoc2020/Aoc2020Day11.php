@@ -99,6 +99,6 @@ final class Aoc2020Day11 extends SolutionBase
             }
             $prev = $next;
         }
-        return array_sum(array_map(fn (string $row): int => substr_count($row, '#'), $next));
+        return array_sum(array_map(static fn (string $row): int => substr_count($row, '#'), $next));
     }
 }

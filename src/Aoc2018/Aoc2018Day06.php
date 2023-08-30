@@ -39,15 +39,15 @@ final class Aoc2018Day06 extends SolutionBase
     {
         // ---------- Parse input
         $points = array_map(
-            fn (string $line): array => array_map(intval(...), explode(', ', $line)),
+            static fn (string $line): array => array_map(intval(...), explode(', ', $line)),
             $input
         );
         // ---------- Part 1 + 2
         $threshold = count($input) == 6 ? self::DIST_THRESHOLD_EXAMPLE : self::DIST_THRESHOLD_PART2;
-        $minX = intval(min(array_map(fn (array $p): int => $p[0], $points) ?: [0]));
-        $maxX = intval(max(array_map(fn (array $p): int => $p[0], $points) ?: [0]));
-        $minY = intval(min(array_map(fn (array $p): int => $p[1], $points) ?: [0]));
-        $maxY = intval(max(array_map(fn (array $p): int => $p[1], $points) ?: [0]));
+        $minX = intval(min(array_map(static fn (array $p): int => $p[0], $points) ?: [0]));
+        $maxX = intval(max(array_map(static fn (array $p): int => $p[0], $points) ?: [0]));
+        $minY = intval(min(array_map(static fn (array $p): int => $p[1], $points) ?: [0]));
+        $maxY = intval(max(array_map(static fn (array $p): int => $p[1], $points) ?: [0]));
         $ans1 = 0;
         $ans2 = 0;
         $areas = array_fill(0, count($input), 0);
@@ -55,7 +55,7 @@ final class Aoc2018Day06 extends SolutionBase
         for ($y = $minY; $y <= $maxY; ++$y) {
             for ($x = $minX; $x <= $maxX; ++$x) {
                 $dists = array_map(
-                    fn (array $p): int => abs($p[0] - $x) + abs($p[1] - $y),
+                    static fn (array $p): int => abs($p[0] - $x) + abs($p[1] - $y),
                     $points,
                 );
                 $totalDist = intval(array_sum($dists));
@@ -76,7 +76,7 @@ final class Aoc2018Day06 extends SolutionBase
         }
         $finiteAreas = array_filter(
             $areas,
-            fn ($idx) => !isset($isInfinite[$idx]),
+            static fn ($idx) => !isset($isInfinite[$idx]),
             ARRAY_FILTER_USE_KEY,
         );
         $ans1 = intval(max($finiteAreas ?: [0]));

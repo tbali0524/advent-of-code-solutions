@@ -47,7 +47,7 @@ final class Aoc2016Day10 extends SolutionBase
         // ---------- Part 1 + 2
         $ans1 = 0;
         while (true) {
-            $activeBots = array_filter($this->bots, fn (Bot $bot): bool => count($bot->values) == 2);
+            $activeBots = array_filter($this->bots, static fn (Bot $bot): bool => count($bot->values) == 2);
             if (count($activeBots) == 0) {
                 break;
             }

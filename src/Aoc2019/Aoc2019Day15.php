@@ -216,8 +216,14 @@ final class Map
     {
         $minY = intval(min(array_keys($this->grid) ?: [0]));
         $maxY = intval(max(array_keys($this->grid) ?: [0]));
-        $minX = intval(min(array_map(fn (array $a): int => intval(min(array_keys($a) ?: [0])), $this->grid) ?: [0]));
-        $maxX = intval(max(array_map(fn (array $a): int => intval(max(array_keys($a) ?: [0])), $this->grid) ?: [0]));
+        $minX = intval(min(array_map(
+            static fn (array $a): int => intval(min(array_keys($a) ?: [0])),
+            $this->grid
+        ) ?: [0]));
+        $maxX = intval(max(array_map(
+            static fn (array $a): int => intval(max(array_keys($a) ?: [0])),
+            $this->grid
+        ) ?: [0]));
         for ($y = $minY; $y <= $maxY; ++$y) {
             $s = '';
             for ($x = $minX; $x <= $maxX; ++$x) {

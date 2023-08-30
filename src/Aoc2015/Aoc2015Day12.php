@@ -40,7 +40,7 @@ final class Aoc2015Day12 extends SolutionBase
         $a = json_decode($input, true) ?? []; // true: JSON objects will be returned as associative arrays
         $count = 0;
         // @phpstan-ignore-next-line
-        array_walk_recursive($a, function ($x) use (&$count): void {
+        array_walk_recursive($a, static function ($x) use (&$count): void {
             if (is_numeric($x)) {
                 $count += intval($x);
             }

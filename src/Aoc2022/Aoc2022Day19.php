@@ -91,7 +91,7 @@ final class Aoc2022Day19 extends SolutionBase
                     $visited[$hash] = true;
                 }
             }
-            usort($allNextStates, fn (MineState $a, MineState $b): int => $b->score <=> $a->score);
+            usort($allNextStates, static fn (MineState $a, MineState $b): int => $b->score <=> $a->score);
             $states = array_slice($allNextStates, 0, self::BEAM_WIDTH);
         }
         return $states[0]->geode;

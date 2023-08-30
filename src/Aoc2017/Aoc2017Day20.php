@@ -41,12 +41,12 @@ final class Aoc2017Day20 extends SolutionBase
     {
         /** @var array<int, Particle> */
         $particles = array_map(
-            fn (int $id, string $line): Particle => Particle::fromString($id, $line),
+            static fn (int $id, string $line): Particle => Particle::fromString($id, $line),
             range(0, count($input) - 1),
             $input
         );
         // ---------- Part 1
-        usort($particles, function (Particle $particle1, Particle $particle2): int {
+        usort($particles, static function (Particle $particle1, Particle $particle2): int {
             $ans = $particle1->a->manhattan() <=> $particle2->a->manhattan();
             if ($ans != 0) {
                 return $ans;
@@ -61,7 +61,10 @@ final class Aoc2017Day20 extends SolutionBase
         // ---------- Part 2
         $ans2 = count($particles);
         $lastColTurn = 0;
-        usort($particles, fn (Particle $particle1, Particle $particle2): int => $particle1->id <=> $particle2->id);
+        usort(
+            $particles,
+            static fn (Particle $particle1, Particle $particle2): int => $particle1->id <=> $particle2->id
+        );
         $t = 0;
         while (true) {
             foreach ($particles as $particle) {

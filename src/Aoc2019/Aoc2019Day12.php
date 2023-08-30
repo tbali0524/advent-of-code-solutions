@@ -40,7 +40,7 @@ final class Aoc2019Day12 extends SolutionBase
         // ---------- Parse input
         /** @var array<int, Moon> */
         $moons = array_map(
-            fn (int $id, string $line): Moon => Moon::fromString($id, $line),
+            static fn (int $id, string $line): Moon => Moon::fromString($id, $line),
             range(0, count($input) - 1),
             $input
         );
@@ -54,9 +54,9 @@ final class Aoc2019Day12 extends SolutionBase
             '<x=-8, y=-10, z=0>' => 100,
             default => 1000,
         };
-        $startHashX = implode(';', array_map(fn (Moon $m) => strval($m->x) . ',' . strval($m->vx), $moons));
-        $startHashY = implode(';', array_map(fn (Moon $m) => strval($m->y) . ',' . strval($m->vy), $moons));
-        $startHashZ = implode(';', array_map(fn (Moon $m) => strval($m->z) . ',' . strval($m->vz), $moons));
+        $startHashX = implode(';', array_map(static fn (Moon $m) => strval($m->x) . ',' . strval($m->vx), $moons));
+        $startHashY = implode(';', array_map(static fn (Moon $m) => strval($m->y) . ',' . strval($m->vy), $moons));
+        $startHashZ = implode(';', array_map(static fn (Moon $m) => strval($m->z) . ',' . strval($m->vz), $moons));
         $step = 0;
         while (true) {
             foreach ($moons as $moon) {
@@ -68,9 +68,9 @@ final class Aoc2019Day12 extends SolutionBase
                 $moon->move();
             }
             ++$step;
-            $hashX = implode(';', array_map(fn (Moon $m) => strval($m->x) . ',' . strval($m->vx), $moons));
-            $hashY = implode(';', array_map(fn (Moon $m) => strval($m->y) . ',' . strval($m->vy), $moons));
-            $hashZ = implode(';', array_map(fn (Moon $m) => strval($m->z) . ',' . strval($m->vz), $moons));
+            $hashX = implode(';', array_map(static fn (Moon $m) => strval($m->x) . ',' . strval($m->vx), $moons));
+            $hashY = implode(';', array_map(static fn (Moon $m) => strval($m->y) . ',' . strval($m->vy), $moons));
+            $hashZ = implode(';', array_map(static fn (Moon $m) => strval($m->z) . ',' . strval($m->vz), $moons));
             if (($cycleX == 0) and ($hashX == $startHashX)) {
                 $cycleX = $step;
             }
@@ -81,7 +81,7 @@ final class Aoc2019Day12 extends SolutionBase
                 $cycleZ = $step;
             }
             if (($ans1 == 0) and ($step == $maxStepPart1)) {
-                $ans1 = array_sum(array_map(fn (Moon $m): int => $m->energy(), $moons));
+                $ans1 = array_sum(array_map(static fn (Moon $m): int => $m->energy(), $moons));
             }
             if (($cycleX != 0) and ($cycleY != 0) and ($cycleZ != 0) and ($ans1 != 0)) {
                 break;

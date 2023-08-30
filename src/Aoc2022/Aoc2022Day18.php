@@ -48,7 +48,7 @@ final class Aoc2022Day18 extends SolutionBase
     {
         // ---------- Parse input
         $cubes = array_map(
-            fn (string $s): array => array_map(intval(...), explode(',', $s)),
+            static fn (string $s): array => array_map(intval(...), explode(',', $s)),
             $input
         );
         $this->grid = [];
@@ -73,7 +73,7 @@ final class Aoc2022Day18 extends SolutionBase
         $this->maxCoords = [];
         for ($i = 0; $i < 3; ++$i) {
             $coords = array_map(
-                fn (array $a): int => $a[$i],
+                static fn (array $a): int => $a[$i],
                 $cubes
             );
             $this->minCoords[$i] = intval(min($coords ?: [0]));

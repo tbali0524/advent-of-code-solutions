@@ -56,7 +56,7 @@ final class Aoc2015Day06 extends SolutionBase
             }
         }
         $ans1 = array_sum(array_map(
-            fn (array $row): int => count(array_filter($row, fn (bool $x): bool => $x)),
+            static fn (array $row): int => count(array_filter($row, static fn (bool $x): bool => $x)),
             $grid
         ));
         // ---------- Part 2
@@ -75,7 +75,7 @@ final class Aoc2015Day06 extends SolutionBase
                 }
             }
         }
-        $ans2 = array_sum(array_map(fn (array $row): int => array_sum($row), $grid));
+        $ans2 = array_sum(array_map(static fn (array $row): int => array_sum($row), $grid));
         return [strval($ans1), strval($ans2)];
     }
 

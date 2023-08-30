@@ -37,13 +37,13 @@ final class Aoc2018Day23 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        $nanobots = array_map(fn (string $line) => Nanobot::fromString($line), $input);
+        $nanobots = array_map(static fn (string $line) => Nanobot::fromString($line), $input);
         // ---------- Part 1
         $ans1 = 0;
-        usort($nanobots, fn (Nanobot $a, Nanobot $b): int => $b->r <=> $a->r);
+        usort($nanobots, static fn (Nanobot $a, Nanobot $b): int => $b->r <=> $a->r);
         $idxBest = array_key_first($nanobots);
         $bestBot = $nanobots[$idxBest];
-        $ans1 = count(array_filter($nanobots, fn (Nanobot $bot): bool => $bestBot->inRange($bot)));
+        $ans1 = count(array_filter($nanobots, static fn (Nanobot $bot): bool => $bestBot->inRange($bot)));
         // ---------- Part 2
         $ans2 = 0;
         return [strval($ans1), strval($ans2)];

@@ -100,9 +100,9 @@ final class Swarm
      */
     public function __construct(array $input)
     {
-        $this->points = array_map(fn ($s) => MovingPoint::fromString($s), $input);
-        $xs = array_map(fn ($p) => $p->x, $this->points);
-        $ys = array_map(fn ($p) => $p->y, $this->points);
+        $this->points = array_map(static fn ($s) => MovingPoint::fromString($s), $input);
+        $xs = array_map(static fn ($p) => $p->x, $this->points);
+        $ys = array_map(static fn ($p) => $p->y, $this->points);
         $this->minX = intval(min($xs ?: [0]));
         $this->maxX = intval(max($xs ?: [0]));
         $this->minY = intval(min($ys ?: [0]));
@@ -143,8 +143,8 @@ final class Swarm
             $p->x -= $p->vx;
             $p->y -= $p->vy;
         }
-        $xs = array_map(fn ($p) => $p->x, $this->points);
-        $ys = array_map(fn ($p) => $p->y, $this->points);
+        $xs = array_map(static fn ($p) => $p->x, $this->points);
+        $ys = array_map(static fn ($p) => $p->y, $this->points);
         $this->minX = intval(min($xs ?: [0]));
         $this->maxX = intval(max($xs ?: [0]));
         $this->minY = intval(min($ys ?: [0]));

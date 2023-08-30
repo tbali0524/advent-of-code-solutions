@@ -95,7 +95,7 @@ final class Aoc2019Day14 extends SolutionBase
             return [strval($ans1), '0'];
         }
         $cycles = intdiv(self::ORE_PART2, $ans1);
-        $bom = array_map(fn (int $x): int => $cycles * $x, $remainingMaterials);
+        $bom = array_map(static fn (int $x): int => $cycles * $x, $remainingMaterials);
         $bom[Recipe::ORE] = self::ORE_PART2 - $cycles * $ans1;
         $ans2 = $cycles;
         // TODO

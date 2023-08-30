@@ -174,7 +174,7 @@ final class Packet
 
     public function evaluate(): int
     {
-        $values = array_map(fn (Packet $p) => $p->evaluate(), $this->subPackets);
+        $values = array_map(static fn (Packet $p) => $p->evaluate(), $this->subPackets);
         return match ($this->typeId) {
             0 => intval(array_sum($values)),
             1 => intval(array_product($values)),

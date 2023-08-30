@@ -41,13 +41,16 @@ final class Aoc2021Day07 extends SolutionBase
         sort($data);
         $key = intdiv(count($data) - 1, 2);
         $median = $data[$key];
-        $ans1 = array_sum(array_map(fn (int $x): int => abs($x - $median), $data));
+        $ans1 = array_sum(array_map(static fn (int $x): int => abs($x - $median), $data));
         // ---------- Part 2
         $ans2 = PHP_INT_MAX;
         $min = intval(min($data ?: [0]));
         $max = intval(max($data ?: [0]));
         for ($i = $min; $i <= $max; ++$i) {
-            $fuel = array_sum(array_map(fn (int $x): int => intdiv(abs($x - $i) * (abs($x - $i) + 1), 2), $data));
+            $fuel = array_sum(array_map(
+                static fn (int $x): int => intdiv(abs($x - $i) * (abs($x - $i) + 1), 2),
+                $data
+            ));
             if ($fuel < $ans2) {
                 $ans2 = $fuel;
             }

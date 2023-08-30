@@ -35,17 +35,17 @@ final class Aoc2017Day04 extends SolutionBase
     {
         // ---------- Part 1
         $data = array_map(
-            fn (string $s): array => explode(' ', $s),
+            static fn (string $s): array => explode(' ', $s),
             $input
         );
         $ans1 = count(array_filter(
             $data,
-            fn (array $a): bool => $a === array_unique($a),
+            static fn (array $a): bool => $a === array_unique($a),
         ));
         // ---------- Part 2
         $sortedLetters = array_map(
-            fn (array $row): array => array_map(
-                function (string $s): string {
+            static fn (array $row): array => array_map(
+                static function (string $s): string {
                     $a = str_split($s);
                     sort($a);
                     return implode('', $a);
@@ -56,7 +56,7 @@ final class Aoc2017Day04 extends SolutionBase
         );
         $ans2 = count(array_filter(
             $sortedLetters,
-            fn (array $a): bool => $a === array_unique($a),
+            static fn (array $a): bool => $a === array_unique($a),
         ));
         return [strval($ans1), strval($ans2)];
     }

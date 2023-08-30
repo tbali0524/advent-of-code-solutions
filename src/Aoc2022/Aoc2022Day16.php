@@ -250,7 +250,7 @@ final class Aoc2022Day16 extends SolutionBase
                     $allNextStates[] = $this->wait($state);
                 }
             }
-            usort($allNextStates, fn (ValveState $a, ValveState $b): int => $b->score <=> $a->score);
+            usort($allNextStates, static fn (ValveState $a, ValveState $b): int => $b->score <=> $a->score);
             $states = array_slice($allNextStates, 0, self::BEAM_WIDTH);
         }
         return $states[0]->totalReleased;
@@ -313,7 +313,7 @@ final class Aoc2022Day16 extends SolutionBase
                     $allNextStates[] = $this->wait($state);
                 }
             }
-            usort($allNextStates, fn (ValveState $a, ValveState $b): int => $b->score <=> $a->score);
+            usort($allNextStates, static fn (ValveState $a, ValveState $b): int => $b->score <=> $a->score);
             $states = array_slice($allNextStates, 0, self::BEAM_WIDTH);
         }
         return $states[0]->totalReleased;

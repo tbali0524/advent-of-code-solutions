@@ -79,7 +79,10 @@ final class Aoc2018Day15 extends SolutionBase
         }
         // ---------- Part 1
         $this->grid = $this->startGrid;
-        $this->creatures = array_map(fn (Creature $creature): Creature => clone $creature, $this->startCreatures);
+        $this->creatures = array_map(
+            static fn (Creature $creature): Creature => clone $creature,
+            $this->startCreatures
+        );
         [$turn, $totalHp, $elvesDied] = $this->simulate();
         $ans1 = $turn * $totalHp;
         // ---------- Part 2
@@ -87,7 +90,10 @@ final class Aoc2018Day15 extends SolutionBase
         $elfAttack = 4;
         while (true) {
             $this->grid = $this->startGrid;
-            $this->creatures = array_map(fn (Creature $creature): Creature => clone $creature, $this->startCreatures);
+            $this->creatures = array_map(
+                static fn (Creature $creature): Creature => clone $creature,
+                $this->startCreatures
+            );
             [$turn, $totalHp, $elvesDied] = $this->simulate($elfAttack);
             if ($elvesDied == 0) {
                 $ans2 = $turn * $totalHp;
@@ -124,16 +130,16 @@ final class Aoc2018Day15 extends SolutionBase
             // eliminate killed creatures
             $aliveCreatures = array_filter(
                 $aliveCreatures,
-                fn (Creature $c): bool => $c->hp > 0,
+                static fn (Creature $c): bool => $c->hp > 0,
             );
             for ($type = 0; $type <= 1; ++$type) {
                 $sides[$type] = array_filter(
                     $aliveCreatures,
-                    fn (Creature $c): bool => $c->type == $type,
+                    static fn (Creature $c): bool => $c->type == $type,
                 );
             }
             // move or attack order
-            uasort($aliveCreatures, function (Creature $a, Creature $b): int {
+            uasort($aliveCreatures, static function (Creature $a, Creature $b): int {
                 $result = $a->y <=> $b->y;
                 if ($result != 0) {
                     return $result;
@@ -152,7 +158,7 @@ final class Aoc2018Day15 extends SolutionBase
                 }
                 $inRangeEnemies = array_filter(
                     $sides[1 - $attacker->type],
-                    fn (Creature $c): bool => (($c->x == $attacker->x) and (abs($c->y - $attacker->y) == 1))
+                    static fn (Creature $c): bool => (($c->x == $attacker->x) and (abs($c->y - $attacker->y) == 1))
                         or (($c->y == $attacker->y) and (abs($c->x - $attacker->x) == 1)),
                 );
                 if (count($inRangeEnemies) == 0) {
@@ -185,7 +191,7 @@ final class Aoc2018Day15 extends SolutionBase
                             }
                             $inRangeEnemies = array_filter(
                                 $sides[1 - $attacker->type],
-                                fn (Creature $c): bool => (($c->x == $x1) and (abs($c->y - $y1) == 1))
+                                static fn (Creature $c): bool => (($c->x == $x1) and (abs($c->y - $y1) == 1))
                                     or (($c->y == $y1) and (abs($c->x - $x1) == 1)),
                             );
                             if (count($inRangeEnemies) != 0) {
@@ -218,7 +224,7 @@ final class Aoc2018Day15 extends SolutionBase
                     }
                     $inRangeEnemies = array_filter(
                         $sides[1 - $attacker->type],
-                        fn (Creature $c): bool => (($c->x == $attacker->x) and (abs($c->y - $attacker->y) == 1))
+                        static fn (Creature $c): bool => (($c->x == $attacker->x) and (abs($c->y - $attacker->y) == 1))
                             or (($c->y == $attacker->y) and (abs($c->x - $attacker->x) == 1)),
                     );
                 }
@@ -226,7 +232,7 @@ final class Aoc2018Day15 extends SolutionBase
                     continue;
                 }
                 // select attack target
-                usort($inRangeEnemies, function (Creature $a, Creature $b): int {
+                usort($inRangeEnemies, static function (Creature $a, Creature $b): int {
                     $result = $a->hp <=> $b->hp;
                     if ($result != 0) {
                         return $result;
@@ -252,7 +258,7 @@ final class Aoc2018Day15 extends SolutionBase
             ++$turn;
         }
         $totalHp = array_sum(array_map(
-            fn (Creature $c): int => $c->hp,
+            static fn (Creature $c): int => $c->hp,
             $survivors,
         ));
         // @phpstan-ignore-next-line

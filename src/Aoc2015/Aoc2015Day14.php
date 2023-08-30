@@ -42,7 +42,7 @@ final class Aoc2015Day14 extends SolutionBase
         $maxSteps = (count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS);
         // ---------- Part 1
         $ans1 = max(
-            array_map(fn (string $line): int => (new Reindeer($line))->getDistanceAt($maxSteps), $input) ?: [0]
+            array_map(static fn (string $line): int => (new Reindeer($line))->getDistanceAt($maxSteps), $input) ?: [0]
         );
         // ---------- Part 2
         $reindeers = [];
@@ -50,17 +50,17 @@ final class Aoc2015Day14 extends SolutionBase
             $reindeers[] = new Reindeer($line);
         }
         for ($second = 1; $second <= $maxSteps; ++$second) {
-            $max = max(array_map(fn (Reindeer $x): int => $x->getDistanceAt($second), $reindeers) ?: [0]);
+            $max = max(array_map(static fn (Reindeer $x): int => $x->getDistanceAt($second), $reindeers) ?: [0]);
             array_walk(
                 $reindeers,
-                function ($x) use ($second, $max): void {
+                static function ($x) use ($second, $max): void {
                     if ($x->getDistanceAt($second) == $max) {
                         ++$x->points;
                     }
                 }
             );
         }
-        $ans2 = max(array_map(fn (Reindeer $x): int => $x->points, $reindeers) ?: [0]);
+        $ans2 = max(array_map(static fn (Reindeer $x): int => $x->points, $reindeers) ?: [0]);
         return [strval($ans1), strval($ans2)];
     }
 }

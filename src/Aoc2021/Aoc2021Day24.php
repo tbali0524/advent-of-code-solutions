@@ -57,12 +57,16 @@ final class Aoc2021Day24 extends SolutionBase
             $v = '39999698799429';
             $w = array_map(intval(...), str_split($v));
             echo 'd: | '
-                . implode('| ', array_map(fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), range(0, 13))), PHP_EOL
-                . 'p: | ' . implode('| ', array_map(fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $p)), PHP_EOL
-                . 'q: | ' . implode('| ', array_map(fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $q)), PHP_EOL
-                . 'r: | ' . implode('| ', array_map(fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $r)), PHP_EOL
-                . 'w: | ' . implode('| ', array_map(fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $w)), PHP_EOL
-                . PHP_EOL;
+                . implode('| ', array_map(static fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), range(0, 13)))
+                . PHP_EOL
+                . 'p: | ' . implode('| ', array_map(static fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $p))
+                . PHP_EOL
+                . 'q: | ' . implode('| ', array_map(static fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $q))
+                . PHP_EOL
+                . 'r: | ' . implode('| ', array_map(static fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $r))
+                . PHP_EOL
+                . 'w: | ' . implode('| ', array_map(static fn ($x) => str_pad(strval($x), 3, ' ', STR_PAD_LEFT), $w))
+                . PHP_EOL . PHP_EOL;
             echo '| ' . str_pad('d', 3, ' ', STR_PAD_LEFT)
                 . ' | ' . str_pad('p', 3, ' ', STR_PAD_LEFT)
                 . ' | ' . str_pad('q', 3, ' ', STR_PAD_LEFT)

@@ -114,7 +114,7 @@ final class Aoc2018Day21 extends SolutionBase
                     echo '-- check:', PHP_EOL;
                 }
                 echo str_pad(strval($ip), 2) . ' : ' . str_pad(implode(' ', $instructions[$ip]), 20) . ' : ['
-                    . implode(', ', array_map(fn ($x) => str_pad(dechex($x), 6, '0', STR_PAD_LEFT), $regs))
+                    . implode(', ', array_map(static fn ($x) => str_pad(dechex($x), 6, '0', STR_PAD_LEFT), $regs))
                     . '] ', PHP_EOL;
             }
             $ip = $regs[$ipReg];

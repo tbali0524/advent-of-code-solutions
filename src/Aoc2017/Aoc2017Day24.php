@@ -37,10 +37,10 @@ final class Aoc2017Day24 extends SolutionBase
     {
         // ---------- Parse input
         $components = array_map(
-            fn (string $line): array => array_map(intval(...), explode('/', $line)),
+            static fn (string $line): array => array_map(intval(...), explode('/', $line)),
             $input
         );
-        if (count(array_filter($components, fn (array $a): bool => count($a) != 2)) != 0) {
+        if (count(array_filter($components, static fn (array $a): bool => count($a) != 2)) != 0) {
             throw new \Exception('Invalid input');
         }
         // ---------- Part 1 + 2

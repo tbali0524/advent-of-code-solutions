@@ -66,7 +66,7 @@ final class Aoc2021Day13 extends SolutionBase
             $axis = $foldAxis[$i];
             $pos = $foldPositions[$i];
             $maxXY[$axis] = $pos;
-            $dotsToFold = array_filter($dots, fn (array $dot): bool => $dot[$axis] > $pos);
+            $dotsToFold = array_filter($dots, static fn (array $dot): bool => $dot[$axis] > $pos);
             foreach ($dotsToFold as $idx => $dot) {
                 $dots[$idx] = match ($axis) {
                     0 => [2 * $pos - $dot[0], $dot[1]],

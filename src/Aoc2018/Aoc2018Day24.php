@@ -61,17 +61,17 @@ final class Aoc2018Day24 extends SolutionBase
             ++$id;
         }
         // ---------- Part 1
-        $clonedGroups = array_map(fn (ArmyGroup $g): ArmyGroup => clone $g, $groups);
+        $clonedGroups = array_map(static fn (ArmyGroup $g): ArmyGroup => clone $g, $groups);
         $survivors = $this->simulate($clonedGroups);
         $ans1 = array_sum(array_map(
-            fn (ArmyGroup $g): int => $g->units,
+            static fn (ArmyGroup $g): int => $g->units,
             $survivors,
         ));
         // ---------- Part 2
         $boost = 0;
         while (true) {
             ++$boost;
-            $clonedGroups = array_map(fn (ArmyGroup $g): ArmyGroup => clone $g, $groups);
+            $clonedGroups = array_map(static fn (ArmyGroup $g): ArmyGroup => clone $g, $groups);
             foreach ($clonedGroups as $g) {
                 if ($g->type == ArmyGroup::IMMUNE_SYSTEM) {
                     $g->damage += $boost;
@@ -86,7 +86,7 @@ final class Aoc2018Day24 extends SolutionBase
             }
         }
         $ans2 = array_sum(array_map(
-            fn (ArmyGroup $g): int => $g->units,
+            static fn (ArmyGroup $g): int => $g->units,
             $survivors,
         ));
         return [strval($ans1), strval($ans2)];
@@ -105,12 +105,12 @@ final class Aoc2018Day24 extends SolutionBase
             // eliminate killed groups
             $aliveGroups = array_filter(
                 $aliveGroups,
-                fn (ArmyGroup $g): bool => $g->units > 0,
+                static fn (ArmyGroup $g): bool => $g->units > 0,
             );
             for ($type = 0; $type <= 1; ++$type) {
                 $sides[$type] = array_filter(
                     $aliveGroups,
-                    fn (ArmyGroup $g): bool => $g->type == $type,
+                    static fn (ArmyGroup $g): bool => $g->type == $type,
                 );
             }
             // check winning condition
@@ -125,7 +125,7 @@ final class Aoc2018Day24 extends SolutionBase
                 $g->targeting = ArmyGroup::NONE;
                 $g->targetedBy = ArmyGroup::NONE;
             }
-            usort($aliveGroups, function (ArmyGroup $a, ArmyGroup $b): int {
+            usort($aliveGroups, static function (ArmyGroup $a, ArmyGroup $b): int {
                 $result = $b->units * $b->damage <=> $a->units * $a->damage;
                 if ($result != 0) {
                     return $result;
@@ -135,9 +135,9 @@ final class Aoc2018Day24 extends SolutionBase
             foreach ($aliveGroups as $attacker) {
                 $candidates = array_filter(
                     $sides[1 - $attacker->type],
-                    fn (ArmyGroup $g): bool => $g->targetedBy == ArmyGroup::NONE,
+                    static fn (ArmyGroup $g): bool => $g->targetedBy == ArmyGroup::NONE,
                 );
-                usort($candidates, function (ArmyGroup $a, ArmyGroup $b) use ($attacker): int {
+                usort($candidates, static function (ArmyGroup $a, ArmyGroup $b) use ($attacker): int {
                     $result = $attacker->calculateDamage($b) <=> $attacker->calculateDamage($a);
                     if ($result != 0) {
                         return $result;
@@ -160,7 +160,7 @@ final class Aoc2018Day24 extends SolutionBase
                 $defender->targetedBy = $attacker->id;
             }
             // attacking phase
-            usort($aliveGroups, fn (ArmyGroup $a, ArmyGroup $b): int => $b->initiative <=> $a->initiative);
+            usort($aliveGroups, static fn (ArmyGroup $a, ArmyGroup $b): int => $b->initiative <=> $a->initiative);
             // @phpstan-ignore-next-line
             if (self::DEBUG) {
                 echo '---- starting attacking phase', PHP_EOL;

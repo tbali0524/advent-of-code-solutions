@@ -130,7 +130,7 @@ final class Aoc2019Day10 extends SolutionBase
             }
         }
         $maxAsteroid = count($asteroids);
-        usort($asteroids, function (array $a, array $b): int {
+        usort($asteroids, static function (array $a, array $b): int {
             $result = $a[0] <=> $b[0];
             return $result != 0 ? $result : $a[1] <=> $b[1];
         });
@@ -139,7 +139,7 @@ final class Aoc2019Day10 extends SolutionBase
         $idxDirection = -1;
         while (true) {
             $idxDirection = ($idxDirection + 1) % count($directions);
-            $filtered = array_filter($asteroids, fn (array $a): bool => $a[0] == $directions[$idxDirection]);
+            $filtered = array_filter($asteroids, static fn (array $a): bool => $a[0] == $directions[$idxDirection]);
             if (count($filtered) == 0) {
                 continue;
             }

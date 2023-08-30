@@ -66,7 +66,7 @@ final class Aoc2021Day08 extends SolutionBase
             }
         }
         for ($idx = 0; $idx < count($digitPatterns); ++$idx) {
-            usort($digitPatterns[$idx], fn (array $a, array $b): int => count($a) <=> count($b));
+            usort($digitPatterns[$idx], static fn (array $a, array $b): int => count($a) <=> count($b));
         }
         // ---------- Part 1
         $ans1 = 0;

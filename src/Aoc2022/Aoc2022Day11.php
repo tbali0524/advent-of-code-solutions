@@ -57,12 +57,12 @@ final class Aoc2022Day11 extends SolutionBase
     private function simulate(array $startMonkeys, int $countTurns, int $worryDivide = 3): int
     {
         $monkeys = array_map(
-            fn (Monkey $m): Monkey => clone $m,
+            static fn (Monkey $m): Monkey => clone $m,
             $startMonkeys
         );
         /** @var array<int, int> */
         $testOperands = array_map(
-            fn (Monkey $m): int => $m->testOperand,
+            static fn (Monkey $m): int => $m->testOperand,
             $startMonkeys
         );
         $worryModulo = $testOperands[0];
@@ -90,7 +90,7 @@ final class Aoc2022Day11 extends SolutionBase
             }
         }
         $monkeyBusinesses = array_map(
-            fn (Monkey $m): int => $m->countInspections,
+            static fn (Monkey $m): int => $m->countInspections,
             $monkeys
         );
         rsort($monkeyBusinesses);

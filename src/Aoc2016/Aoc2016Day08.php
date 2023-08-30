@@ -119,7 +119,7 @@ final class Display
 
     public function countOn(): int
     {
-        return array_sum(array_map(fn (string $row): int => substr_count($row, self::LED_ON), $this->grid));
+        return array_sum(array_map(static fn (string $row): int => substr_count($row, self::LED_ON), $this->grid));
     }
 
     /**

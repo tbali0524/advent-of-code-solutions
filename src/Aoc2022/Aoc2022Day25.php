@@ -40,7 +40,7 @@ final class Aoc2022Day25 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1
-        $ans1 = self::toSnafu(array_sum(array_map(fn (string $s): int => self::fromSnafu($s), $input)));
+        $ans1 = self::toSnafu(array_sum(array_map(static fn (string $s): int => self::fromSnafu($s), $input)));
         return [strval($ans1), '0'];
     }
 

@@ -112,7 +112,7 @@ final class Aoc2016Day11 extends SolutionBase
                 }
             }
             // echo $startState->countElements . ': #' . $allNextHouses[0]->countMoves, PHP_EOL;
-            usort($allNextHouses, fn (House $a, House $b): int => $b->score <=> $a->score);
+            usort($allNextHouses, static fn (House $a, House $b): int => $b->score <=> $a->score);
             $houses = array_slice($allNextHouses, 0, self::BEAM_WIDTH);
         }
     }
