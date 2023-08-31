@@ -115,6 +115,9 @@ final class Aoc2021Day23 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 class Burrow
 {
     // ids and xy positions of the occupiable cells:

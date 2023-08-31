@@ -874,33 +874,37 @@ final class Aoc2021Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day18
-    //  */
-    // public function testDay18Example1(): void
-    // {
-    //     $solver = new Aoc2021Day18();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day18
+     * @covers \TBali\Aoc2021\Snailfish
+     */
+    public function testDay18Example1(): void
+    {
+        $solver = new Aoc2021Day18();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day18
-    //  */
-    // public function testDay18(): void
-    // {
-    //     $solver = new Aoc2021Day18();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day18
+     * @covers \TBali\Aoc2021\Snailfish
+     *
+     * @group medium
+     */
+    public function testDay18(): void
+    {
+        $solver = new Aoc2021Day18();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2021\Aoc2021Day19
@@ -911,8 +915,8 @@ final class Aoc2021Test extends TestCase
     //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
     //     [$ans1, $ans2] = $solver->solve($input);
     //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
+    //     self::assertSame(strval($expected1), $ans1);
+    //     self::assertSame(strval($expected2), $ans2);
     // }
 
     // /**
@@ -924,8 +928,8 @@ final class Aoc2021Test extends TestCase
     //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
     //     [$ans1, $ans2] = $solver->solve($input);
     //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
+    //     self::assertSame(strval($expected1), $ans1);
+    //     self::assertSame(strval($expected2), $ans2);
     // }
 
     // --------------------------------------------------------------------

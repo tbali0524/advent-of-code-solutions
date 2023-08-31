@@ -10,9 +10,9 @@
 |[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-41-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-45-yellow)|
+|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-47-yellow)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-384-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-386-yellow)|
 
 ## Puzzles
 
@@ -221,7 +221,7 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021| 15|Chiton                                    |pathfinding, A-Star (A*)
 |  +  |2021| 16|Packet Decoder                            |Parsing
 |  +  |2021| 17|Trick Shot                                |simulation
-|     |2021| 18|Snailfish                                 |
+|  +  |2021| 18|Snailfish                                 |binary tree
 |     |2021| 19|Beacon Scanner                            |
 |  +  |2021| 20|Trench Map                                |Conway's Game of Life, simulation
 |  +  |2021| 21|Dirac Dice                                |
