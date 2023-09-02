@@ -171,6 +171,18 @@ final class Aoc2021Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day04
+     * @covers \TBali\Aoc2021\Bingo
+     */
+    public function testDay04InvalidInput1(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = ['1', '', '1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     /**
@@ -904,33 +916,105 @@ final class Aoc2021Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day18
+     * @covers \TBali\Aoc2021\Snailfish
+     */
+    public function testDay18InvalidInput1(): void
+    {
+        $solver = new Aoc2021Day18();
+        $input = ['0'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day18
+     * @covers \TBali\Aoc2021\Snailfish
+     */
+    public function testDay18InvalidInput2(): void
+    {
+        $solver = new Aoc2021Day18();
+        $input = ['0', '[1]'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day18
+     * @covers \TBali\Aoc2021\Snailfish
+     */
+    public function testDay18InvalidInput3(): void
+    {
+        $solver = new Aoc2021Day18();
+        $input = ['0', '[1,]'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day19
-    //  */
-    // public function testDay19Example1(): void
-    // {
-    //     $solver = new Aoc2021Day19();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day19
+     * @covers \TBali\Aoc2021\Matrix
+     * @covers \TBali\Aoc2021\Rotations
+     * @covers \TBali\Aoc2021\Vector3D
+     */
+    public function testDay19Example1(): void
+    {
+        $solver = new Aoc2021Day19();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2021\Aoc2021Day19
-    //  */
-    // public function testDay19(): void
-    // {
-    //     $solver = new Aoc2021Day19();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day19
+     * @covers \TBali\Aoc2021\Matrix
+     * @covers \TBali\Aoc2021\Rotations
+     * @covers \TBali\Aoc2021\Vector3D
+     *
+     * @group medium
+     */
+    public function testDay19(): void
+    {
+        $solver = new Aoc2021Day19();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day19
+     * @covers \TBali\Aoc2021\Matrix
+     * @covers \TBali\Aoc2021\Rotations
+     * @covers \TBali\Aoc2021\Vector3D
+     */
+    public function testDay19InvalidInput1(): void
+    {
+        $solver = new Aoc2021Day19();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day19
+     * @covers \TBali\Aoc2021\Matrix
+     * @covers \TBali\Aoc2021\Rotations
+     * @covers \TBali\Aoc2021\Vector3D
+     */
+    public function testDay19InvalidInput2(): void
+    {
+        $solver = new Aoc2021Day19();
+        $input = ['--- scanner 0', '0,0'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
     // --------------------------------------------------------------------
 
@@ -1089,6 +1173,18 @@ final class Aoc2021Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2021\Aoc2021Day22
+     * @covers \TBali\Aoc2021\Cuboid
+     */
+    public function testDay22InvalidInput1(): void
+    {
+        $solver = new Aoc2021Day22();
+        $input = ['on x=-1..1,y=-2..2,z='];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------

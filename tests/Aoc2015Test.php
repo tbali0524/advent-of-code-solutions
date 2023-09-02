@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests;
+namespace TBali\Tests;
 
 use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
@@ -44,7 +44,7 @@ use TBali\Aoc2015\Aoc2015Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.1')]
+#[RequiresPhpunit('^10.3')]
 #[IgnoreClassForCodeCoverage(Aoc2015Day04::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day06::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2015\Instruction::class)]

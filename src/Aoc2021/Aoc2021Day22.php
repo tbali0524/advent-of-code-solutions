@@ -65,11 +65,15 @@ final class Aoc2021Day22 extends SolutionBase
             for ($i = 0; $i < 3; ++$i) {
                 $posFrom[$i] = array_search($c->from[$i], $dividers[$i], true);
                 if ($posFrom[$i] === false) {
+                    // @codeCoverageIgnoreStart
                     throw new \Exception('Invalid input');
+                    // @codeCoverageIgnoreEnd
                 }
                 $posTo[$i] = array_search($c->to[$i] + 1, $dividers[$i], true);
                 if ($posTo[$i] === false) {
+                    // @codeCoverageIgnoreStart
                     throw new \Exception('Invalid input');
+                    // @codeCoverageIgnoreEnd
                 }
             }
             for ($idxX = $posFrom[0]; $idxX < $posTo[0]; ++$idxX) {

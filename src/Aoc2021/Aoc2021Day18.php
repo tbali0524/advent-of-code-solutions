@@ -45,7 +45,7 @@ final class Aoc2021Day18 extends SolutionBase
             static fn (string $s): Snailfish => Snailfish::fromString($s),
             $input,
         );
-        // $this->unitTest();
+        // Snailfish::unitTest();
         // ---------- Part 1
         $sum = $snailfishes[0];
         for ($i = 1; $i < count($input); ++$i) {
@@ -66,35 +66,6 @@ final class Aoc2021Day18 extends SolutionBase
             }
         }
         return [strval($ans1), strval($ans2)];
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    private function unitTest(): never
-    {
-        assert(Snailfish::fromString('[[[[[9,8],1],2],3],4]')->reduce()->toString() === '[[[[0,9],2],3],4]');
-        assert(Snailfish::fromString('[7,[6,[5,[4,[3,2]]]]]')->reduce()->toString() === '[7,[6,[5,[7,0]]]]');
-        assert(Snailfish::fromString('[[6,[5,[4,[3,2]]]],1]')->reduce()->toString() === '[[6,[5,[7,0]]],3]');
-        assert(Snailfish::fromString('[[3,[2,[1,[7,3]]]],[6,[5,[4,[3,2]]]]]')->reduce()->toString()
-            === '[[3,[2,[8,0]]],[9,[5,[7,0]]]]');
-        assert(Snailfish::fromString('[[[[[4,3],4],4],[7,[[8,4],9]]],[1,1]]')->reduce()->toString()
-            === '[[[[0,7],4],[[7,8],[6,0]]],[8,1]]');
-        assert(Snailfish::fromString('[[9,1],[1,9]]')->magnitude() === 129);
-        assert(Snailfish::fromString('[[[[0,7],4],[[7,8],[6,0]]],[8,1]]')->magnitude() === 1384);
-        assert(Snailfish::fromString('[[[[1,1],[2,2]],[3,3]],[4,4]]')->magnitude() === 445);
-        assert(Snailfish::fromString('[[[[3,0],[5,3]],[4,4]],[5,5]]')->magnitude() === 791);
-        assert(Snailfish::fromString('[[[[5,0],[7,4]],[5,5]],[6,6]]')->magnitude() === 1137);
-        assert(Snailfish::fromString('[[[[8,7],[7,7]],[[8,6],[7,7]]],[[[0,7],[6,6]],[8,7]]]')->magnitude() === 3488);
-        assert(Snailfish::add(
-            Snailfish::fromString('[[[0,[4,5]],[0,0]],[[[4,5],[2,6]],[9,5]]]'),
-            Snailfish::fromString('[7,[[[3,7],[4,3]],[[6,3],[8,8]]]]'),
-        )->toString() === '[[[[4,0],[5,4]],[[7,7],[6,0]]],[[8,[7,7]],[[7,9],[5,0]]]]');
-        assert(Snailfish::add(
-            Snailfish::fromString('[[[[4,0],[5,4]],[[7,7],[6,0]]],[[8,[7,7]],[[7,9],[5,0]]]]'),
-            Snailfish::fromString('[[2,[[0,8],[3,4]]],[[[6,7],1],[7,[1,6]]]]'),
-        )->toString() === '[[[[6,7],[6,7]],[[7,7],[0,7]]],[[[8,7],[7,7]],[[8,8],[8,0]]]]');
-        exit;
     }
 }
 
@@ -184,14 +155,18 @@ final class Snailfish
             return $this;
         }
         if (is_null($this->left)) {
+            // @codeCoverageIgnoreStart
             return false;
+            // @codeCoverageIgnoreEnd
         }
         $result = $this->left->findNodeToExplode($depth + 1);
         if ($result !== false) {
             return $result;
         }
         if (is_null($this->right)) {
+            // @codeCoverageIgnoreStart
             return false;
+            // @codeCoverageIgnoreEnd
         }
         return $this->right->findNodeToExplode($depth + 1);
     }
@@ -203,7 +178,9 @@ final class Snailfish
             return false;
         }
         if ($node->isRegular or !$node->left?->isRegular or !$node->right?->isRegular) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Impossible');
+            // @codeCoverageIgnoreEnd
         }
         // @phpstan-ignore-next-line
         if (self::DEBUG) {
@@ -277,7 +254,9 @@ final class Snailfish
             return true;
         }
         if (is_null($this->right)) {
+            // @codeCoverageIgnoreStart
             return false;
+            // @codeCoverageIgnoreEnd
         }
         return $this->right->split();
     }
@@ -332,7 +311,7 @@ final class Snailfish
         }
         $depth = 0;
         $i = 0;
-        while ($i < strlen($s)) {
+        while ($i < strlen($s) - 1) {
             ++$i;
             if ($s[$i] == '[') {
                 ++$depth;
@@ -361,5 +340,33 @@ final class Snailfish
         $result = self::fromPair($left, $right);
         $result->reduce();
         return $result;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    private function unitTest(): void
+    {
+        assert(Snailfish::fromString('[[[[[9,8],1],2],3],4]')->reduce()->toString() === '[[[[0,9],2],3],4]');
+        assert(Snailfish::fromString('[7,[6,[5,[4,[3,2]]]]]')->reduce()->toString() === '[7,[6,[5,[7,0]]]]');
+        assert(Snailfish::fromString('[[6,[5,[4,[3,2]]]],1]')->reduce()->toString() === '[[6,[5,[7,0]]],3]');
+        assert(Snailfish::fromString('[[3,[2,[1,[7,3]]]],[6,[5,[4,[3,2]]]]]')->reduce()->toString()
+            === '[[3,[2,[8,0]]],[9,[5,[7,0]]]]');
+        assert(Snailfish::fromString('[[[[[4,3],4],4],[7,[[8,4],9]]],[1,1]]')->reduce()->toString()
+            === '[[[[0,7],4],[[7,8],[6,0]]],[8,1]]');
+        assert(Snailfish::fromString('[[9,1],[1,9]]')->magnitude() === 129);
+        assert(Snailfish::fromString('[[[[0,7],4],[[7,8],[6,0]]],[8,1]]')->magnitude() === 1384);
+        assert(Snailfish::fromString('[[[[1,1],[2,2]],[3,3]],[4,4]]')->magnitude() === 445);
+        assert(Snailfish::fromString('[[[[3,0],[5,3]],[4,4]],[5,5]]')->magnitude() === 791);
+        assert(Snailfish::fromString('[[[[5,0],[7,4]],[5,5]],[6,6]]')->magnitude() === 1137);
+        assert(Snailfish::fromString('[[[[8,7],[7,7]],[[8,6],[7,7]]],[[[0,7],[6,6]],[8,7]]]')->magnitude() === 3488);
+        assert(Snailfish::add(
+            Snailfish::fromString('[[[0,[4,5]],[0,0]],[[[4,5],[2,6]],[9,5]]]'),
+            Snailfish::fromString('[7,[[[3,7],[4,3]],[[6,3],[8,8]]]]'),
+        )->toString() === '[[[[4,0],[5,4]],[[7,7],[6,0]]],[[8,[7,7]],[[7,9],[5,0]]]]');
+        assert(Snailfish::add(
+            Snailfish::fromString('[[[[4,0],[5,4]],[[7,7],[6,0]]],[[8,[7,7]],[[7,9],[5,0]]]]'),
+            Snailfish::fromString('[[2,[[0,8],[3,4]]],[[[6,7],1],[7,[1,6]]]]'),
+        )->toString() === '[[[[6,7],[6,7]],[[7,7],[0,7]]],[[[8,7],[7,7]],[[8,8],[8,0]]]]');
     }
 }

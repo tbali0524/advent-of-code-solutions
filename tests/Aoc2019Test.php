@@ -1114,6 +1114,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day19
      * @covers \TBali\Aoc2019\DroneSimulator
+     *
+     * @group medium
      */
     public function testDay19(): void
     {

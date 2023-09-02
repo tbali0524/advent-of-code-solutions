@@ -30,7 +30,7 @@ minimum version: ^10.3
     timeoutForMediumTests="60"
     timeoutForLargeTests="600"
     requireCoverageMetadata="true"
-    testdox="true"
+    testdox="false"
 >
     <source>
         <include>

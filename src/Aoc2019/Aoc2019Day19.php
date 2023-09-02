@@ -20,6 +20,8 @@ use TBali\Aoc\SolutionBase;
  * @see https://adventofcode.com/2019/day/19
  *
  * @todo complete part 2
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day19 extends SolutionBase
 {
@@ -62,6 +64,9 @@ final class Aoc2019Day19 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class DroneSimulator
 {
     private const INSTRUCTION_LENGTHS =

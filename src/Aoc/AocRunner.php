@@ -23,18 +23,18 @@ final class AocRunner
     public const MAX_DAYS = 25;
 
     /**
-     * What puzzles to skip, even if source file exists. [year => [day]].
+     * What puzzles to skip from season run, even if source file exists. [year => [day]].
      *
-     * These solutions are quite slow, over 10s.
+     * These solutions are quite slow, over 10s. They can be run individually.
      *
      * @var array<int, array<int, int>>
      */
     public const TO_SKIP = [
-        2016 => [5, 11, 14],
-        2018 => [23],
-        2019 => [18, 24],
-        2021 => [11, 18, 19, 22],
-        2022 => [19, 24],
+        2016 => [5, 11, 14],    // puzzle #11 runs in ~100s, #5 and #14 in ~15s
+        2018 => [14, 15, 23],   // puzzle part2 todo, puzzle #14 and #15 runs in ~11s
+        2019 => [18],           // puzzle part2 todo
+        2021 => [22, 23],       // puzzle #22 runs in ~100s, #23 in ~18s
+        2022 => [19, 24],       // puzzle #19 runs in ~25s, #24 in ~138s
     ];
 
     /**

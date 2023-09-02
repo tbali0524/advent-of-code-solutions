@@ -41,6 +41,9 @@ final class Aoc2021Day04 extends SolutionBase
         /** @var array<int, int> */
         $draw = array_map(intval(...), explode(',', $input[0]));
         $maxBoard = intdiv(count($input) - 1, Bingo::SIZE + 1);
+        if ($maxBoard == 0) {
+            throw new \Exception('Invalid input');
+        }
         $boards = [];
         for ($id = 0; $id < $maxBoard; ++$id) {
             if (strlen($input[1 + $id * (Bingo::SIZE + 1)]) != 0) {

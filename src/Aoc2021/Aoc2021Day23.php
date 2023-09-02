@@ -368,6 +368,9 @@ class Burrow
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 class BurrowExtended extends Burrow
 {
     // ids and xy positions of the occupiable cells:
@@ -426,7 +429,11 @@ class BurrowExtended extends Burrow
 }
 
 // --------------------------------------------------------------------
-/** @phpstan-extends \SplPriorityQueue<int, array{int, int}> */
+/**
+ * @phpstan-extends \SplPriorityQueue<int, array{int, int}>
+ *
+ * @codeCoverageIgnore
+ */
 final class MinPriorityQueue extends \SplPriorityQueue
 {
     /**
