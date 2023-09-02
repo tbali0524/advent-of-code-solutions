@@ -45,6 +45,7 @@ use TBali\Aoc2015\Aoc2015Day25;
  */
 #[RequiresPhp('^8.2')]
 #[RequiresPhpunit('^10.3')]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day04::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day06::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2015\Instruction::class)]

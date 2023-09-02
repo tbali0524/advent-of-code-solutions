@@ -15,8 +15,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: walking simulation
  *
  * @see https://adventofcode.com/2017/day/22
- *
- * @codeCoverageIgnore
  */
 final class Aoc2017Day22 extends SolutionBase
 {

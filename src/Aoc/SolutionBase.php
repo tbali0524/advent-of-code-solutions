@@ -20,8 +20,6 @@ abstract class SolutionBase implements Solution
      * Calls readInput() (only if needed) and solve() for all examples, then for the puzzle itself, outputs results.
      *
      * @return bool Did all tests pass?
-     *
-     * @codeCoverageIgnore
      */
     final public function run(): bool
     {

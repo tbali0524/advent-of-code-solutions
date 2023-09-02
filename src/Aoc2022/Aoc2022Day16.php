@@ -18,8 +18,6 @@ use TBali\Aoc\SolutionBase;
  *
  * @see https://adventofcode.com/2022/day/16
  *
- * @codeCoverageIgnore
- *
  * @todo The real solutions for the example input are not found by the beam search, even with a huge beam width.
  */
 final class Aoc2022Day16 extends SolutionBase
@@ -321,9 +319,6 @@ final class Aoc2022Day16 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class ValveState
 {
     public int $minutesRemaining = 0;

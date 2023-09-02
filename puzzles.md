@@ -7,12 +7,12 @@
 |[2015](#2015)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2018](#2018)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
+|[2018](#2018)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-41-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2021](#2021)|![-](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-389-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-391-yellow)|
 
 ## Puzzles
 
@@ -45,6 +45,8 @@
 |  +  |2015| 23|Opening the Turing Lock                   |assembly simulation
 |  +  |2015| 24|It Hangs in the Balance                   |
 |  +  |2015| 25|Let It Snow                               |LCG, linear congruence
+
+Hint from `subreddit` was used for Day 19.
 
 ### 2016
 
@@ -106,7 +108,7 @@
 |  +  |2017| 24|Electromagnetic Moat                      |BFS
 |  +  |2017| 25|The Halting Problem                       |Turing machine
 
-Hint from subreddit was used for: Day 23 Part 2.
+Hint from `subreddit` was used for Day 23 Part 2.
 
 ### 2018
 
@@ -134,9 +136,11 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2018| 20|A Regular Map                             |BFS, string parsing
 |  +  |2018| 21|Chronal Conversion                        |assembly simulation, reverse engineering
 |  +  |2018| 22|Mode Maze                                 |pathfinding, A-Star (A*)
-| (1) |2018| 23|Experimental Emergency Teleportation      |
+| (1) |2018| 23|Experimental Emergency Teleportation      |priority queue
 |  +  |2018| 24|Immune System Simulator 20XX              |string parsing, game simulation
 |  +  |2018| 25|Four-Dimensional Adventure                |BFS, graph components
+
+Hint from `subreddit` was used for Day 23 part 2.
 
 ### 2019
 
@@ -164,7 +168,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2019| 20|Donut Maze                                |parsing, BFS
 | (1) |2019| 21|Springdroid Adventure                     |assembly simulation (with camera output)
 | (1) |2019| 22|Slam Shuffle                              |card deck simulation
-| (1) |2019| 23|Category Six                              |assembly simulation
+|  1  |2019| 23|Category Six                              |assembly simulation
 | (1) |2019| 24|Planet of Discord                         |
 |  +  |2019| 25|Cryostasis                                |assembly simulation, interactive fiction
 
@@ -198,7 +202,7 @@ Hint from subreddit was used for: Day 23 Part 2.
 |  +  |2020| 24|Lobby Layout                              |walking simulation on hex grid, Conway's Game of Life
 |  +  |2020| 25|Combo Breaker                             |asymmetric key encryption
 
-Hint from subreddit was used for: Day 23.
+Hint from `subreddit` was used for Day 23.
 
 ### 2021
 
@@ -230,6 +234,8 @@ Hint from subreddit was used for: Day 23.
 |  +  |2021| 24|Arithmetic Logic Unit                     |assembly reverse engineering
 |  +  |2021| 25|Sea Cucumber                              |
 
+No external hint was used in this season.
+
 ### 2022
 
 |Done?|Year|Day| Title                                    | Topics   |
@@ -260,4 +266,4 @@ Hint from subreddit was used for: Day 23.
 |  +  |2022| 24|Blizzard Basin                            |BFS
 |  +  |2022| 25|Full of Hot Air                           |balanced 5-ary numbers
 
-No hint from subreddit was used in this season.
+No external hint was used in this season.

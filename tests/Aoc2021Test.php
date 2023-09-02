@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
+use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +44,15 @@ use TBali\Aoc2021\Aoc2021Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.1')]
+#[RequiresPhpunit('^10.3')]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(Aoc2021Day20::class)]
+#[IgnoreClassForCodeCoverage(Aoc2021Day21::class)]
+#[IgnoreClassForCodeCoverage(Aoc2021Day23::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\Burrow::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\BurrowExtended::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\MinPriorityQueue::class)]
+#[IgnoreClassForCodeCoverage(Aoc2021Day24::class)]
 final class Aoc2021Test extends TestCase
 {
     // --------------------------------------------------------------------

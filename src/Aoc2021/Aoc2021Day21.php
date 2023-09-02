@@ -14,8 +14,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Find the player that wins in more universes; in how many universes does that player win?
  *
  * @see https://adventofcode.com/2021/day/21
- *
- * @codeCoverageIgnore
  */
 final class Aoc2021Day21 extends SolutionBase
 {

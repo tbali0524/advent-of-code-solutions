@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
+use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +44,11 @@ use TBali\Aoc2018\Aoc2018Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.1')]
+#[RequiresPhpunit('^10.3')]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(Aoc2018Day11::class)]
+#[IgnoreClassForCodeCoverage(Aoc2018Day24::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2018\ArmyGroup::class)]
 final class Aoc2018Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -1227,6 +1232,7 @@ final class Aoc2018Test extends TestCase
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day23
      * @covers \TBali\Aoc2018\Nanobot
+     * @covers \TBali\Aoc2018\Point
      */
     public function testDay23Example1(): void
     {
@@ -1235,13 +1241,28 @@ final class Aoc2018Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // @todo uncomment if completed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day23
      * @covers \TBali\Aoc2018\Nanobot
+     * @covers \TBali\Aoc2018\Point
+     */
+    public function testDay23Example2(): void
+    {
+        $solver = new Aoc2018Day23();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        // self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2018\Aoc2018Day23
+     * @covers \TBali\Aoc2018\Nanobot
+     * @covers \TBali\Aoc2018\Point
      */
     public function testDay23(): void
     {
@@ -1250,13 +1271,13 @@ final class Aoc2018Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @todo uncomment if completed
-        // $this->assertEquals(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2018\Aoc2018Day23
      * @covers \TBali\Aoc2018\Nanobot
+     * @covers \TBali\Aoc2018\Point
      */
     public function testDay23InvalidInput1(): void
     {

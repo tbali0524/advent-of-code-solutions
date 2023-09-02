@@ -158,6 +158,9 @@ final class Aoc2018Day19 extends SolutionBase
         return $regs;
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     private static function sumDivisors(int $n): int
     {
         $ans = 0;

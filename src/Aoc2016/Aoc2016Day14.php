@@ -14,8 +14,6 @@ use TBali\Aoc\SolutionBase;
  *         what index now produces your 64th one-time pad key?
  *
  * @see https://adventofcode.com/2016/day/14
- *
- * @codeCoverageIgnore
  */
 final class Aoc2016Day14 extends SolutionBase
 {

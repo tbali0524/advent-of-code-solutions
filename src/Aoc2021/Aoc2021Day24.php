@@ -15,8 +15,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly reverse engineering
  *
  * @see https://adventofcode.com/2021/day/24
- *
- * @codeCoverageIgnore
  */
 final class Aoc2021Day24 extends SolutionBase
 {

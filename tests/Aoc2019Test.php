@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
+use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +44,15 @@ use TBali\Aoc2019\Aoc2019Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.1')]
+#[RequiresPhpunit('^10.3')]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(Aoc2019Day13::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\ArcadeSimulator::class)]
+#[IgnoreClassForCodeCoverage(Aoc2019Day15::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\DroidSimulator::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\Map::class)]
+#[IgnoreClassForCodeCoverage(Aoc2019Day25::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\AdventureSimulator::class)]
 final class Aoc2019Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -791,7 +800,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO remove after fix
+        // @TODO uncomment after fixed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
@@ -806,7 +815,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO remove after fix
+        // @TODO uncomment after fixed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
@@ -821,7 +830,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[4];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO remove after fix
+        // @TODO uncomment after fixed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
@@ -836,7 +845,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @TODO remove after fix
+        // @TODO uncomment after fixed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
@@ -1197,7 +1206,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @todo remove when ready
+        // @TODO uncomment if completed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 
@@ -1270,7 +1279,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @todo remove when completed
+        // @TODO uncomment if completed
         // $this->assertEquals(strval($expected2), $ans2);
     }
 

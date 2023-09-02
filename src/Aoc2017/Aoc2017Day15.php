@@ -13,8 +13,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: After 5 million pairs, but using this new generator logic, what is the judge's final count?
  *
  * @see https://adventofcode.com/2017/day/15
- *
- * @codeCoverageIgnore
  */
 final class Aoc2017Day15 extends SolutionBase
 {

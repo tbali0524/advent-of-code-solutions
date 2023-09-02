@@ -15,8 +15,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: dynamic programming, sum of rectangle grid
  *
  * @see https://adventofcode.com/2018/day/11
- *
- * @codeCoverageIgnore
  */
 final class Aoc2018Day11 extends SolutionBase
 {

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
+use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +44,11 @@ use TBali\Aoc2016\Aoc2016Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.1')]
+#[RequiresPhpunit('^10.3')]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(Aoc2016Day05::class)]
+#[IgnoreClassForCodeCoverage(Aoc2016Day14::class)]
+#[IgnoreClassForCodeCoverage(Aoc2016Day25::class)]
 final class Aoc2016Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -144,6 +149,8 @@ final class Aoc2016Test extends TestCase
         self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
+
+    // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day05
@@ -661,6 +668,8 @@ final class Aoc2016Test extends TestCase
         self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
+
+    // --------------------------------------------------------------------
 
     /**
      * @covers \TBali\Aoc2016\Aoc2016Day14

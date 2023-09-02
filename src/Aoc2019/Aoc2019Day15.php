@@ -18,8 +18,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation, BFS
  *
  * @see https://adventofcode.com/2019/day/15
- *
- * @codeCoverageIgnore
  */
 final class Aoc2019Day15 extends SolutionBase
 {
@@ -88,9 +86,6 @@ final class Aoc2019Day15 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class Map
 {
     public const WALL = '#';
@@ -241,9 +236,6 @@ final class Map
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class DroidSimulator
 {
     private const INSTRUCTION_LENGTHS =

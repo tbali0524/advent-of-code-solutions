@@ -16,8 +16,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: Conway's Game of Life, simulation
  *
  * @see https://adventofcode.com/2021/day/20
- *
- * @codeCoverageIgnore
  */
 final class Aoc2021Day20 extends SolutionBase
 {
