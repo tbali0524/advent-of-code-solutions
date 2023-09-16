@@ -13,7 +13,6 @@ use TBali\Aoc\SolutionBase;
  * Part 2: With the number of Elves given in your puzzle input, which Elf now gets all the presents?
  *
  * Topics: Josephus problem, OEIS A006257
- * Note: solutions based on reddit posts.
  *
  * @see https://adventofcode.com/2016/day/19
  */

@@ -228,6 +228,7 @@ final class Aoc2019Day17 extends SolutionBase
 
 // L,12,L,12,R,4,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,6,L,12,L,12,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,10,R,6,R,4,R,4,R,6,
 // L,12,L,12,R,6,L,12,L,12,R,10,R,6,R,4,R,4
+
 // L,12,L,12,                     L,12,L,12,        L,12,L,12,                 L,12,L,12,
 // L,12,L,12,    L,12,L,12,
 //               R,10,R,6,R,4,R,4                             R,10,R,6,R,4,R,4               R,10,R,6,R,4,R,4
@@ -336,6 +337,7 @@ final class AsciiSimulator
         $ans = $this->outputs[$this->idxOutput - 1];
         if (($ans >= 0) and ($ans <= 255)) {
             // echo $message;
+            return 0;
         }
         return $ans;
     }

@@ -14,18 +14,17 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the minimum amount of ORE required to produce exactly 1 FUEL?
  * Part 2: Given 1 trillion ORE, what is the maximum amount of FUEL you can produce?
  *
- * @see https://adventofcode.com/2019/day/14
+ * @topics: binary search
  *
- * @todo complete part2
+ * @see https://adventofcode.com/2019/day/14
  */
 final class Aoc2019Day14 extends SolutionBase
 {
     public const YEAR = 2019;
     public const DAY = 14;
     public const TITLE = 'Space Stoichiometry';
-    public const SOLUTIONS = [346961, 0];
-    // public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 82892753], [180697, 5586022], [2210736, 460664]];
-    public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 0], [180697, 0], [2210736, 0]];
+    public const SOLUTIONS = [346961, 4065790];
+    public const EXAMPLE_SOLUTIONS = [[31, 0], [165, 0], [13312, 82892753], [180697, 5586022], [2210736, 460664]];
 
     public const ORE_PART2 = 1_000_000_000_000;
 
@@ -47,18 +46,50 @@ final class Aoc2019Day14 extends SolutionBase
             $recipes[$r->name] = $r;
         }
         // ---------- Part 1
-        $ans1 = 0;
+        $ans1 = $this->getCost($recipes, 1);
+        // ---------- Part 2
+        if (count($input) <= 7) {
+            return [strval($ans1), '0'];
+        }
+        $ans2 = 0;
+        $low = intdiv(self::ORE_PART2, $ans1);
+        $high = 2 * $low;
+        while ($low + 1 < $high) {
+            $mid = intdiv($low + $high, 2);
+            $cost = $this->getCost($recipes, $mid);
+            if ($cost < self::ORE_PART2) {
+                $low = $mid;
+            } elseif ($cost > self::ORE_PART2) {
+                $high = $mid;
+            } else {
+                $high = $mid;
+                break;
+            }
+        }
+        $ans2 = $high;
+        if ($this->getCost($recipes, $ans2) > self::ORE_PART2) {
+            --$ans2;
+        }
+        return [strval($ans1), strval($ans2)];
+    }
+
+    /**
+     * @param array<string, Recipe> $recipes
+     */
+    private function getCost(array $recipes, int $fuel = 1): int
+    {
         $remainingRecipes = $recipes;
-        $bom = [Recipe::FUEL => 1];
+        $bom = [Recipe::FUEL => $fuel];
         $toName = Recipe::FUEL;
         $remainingMaterials = [];
         while (true) {
             if ((count($bom) == 1) and (isset($bom[Recipe::ORE]))) {
-                $ans1 = $bom[Recipe::ORE];
-                break;
+                return $bom[Recipe::ORE];
             }
             if (count($remainingRecipes) == 0) {
-                break;
+                // @codeCoverageIgnoreStart
+                throw new \Exception('No solution found');
+                // @codeCoverageIgnoreEnd
             }
             unset($remainingRecipes[$toName]);
             $countUsedBy = [];
@@ -90,16 +121,6 @@ final class Aoc2019Day14 extends SolutionBase
             }
             $toName = array_key_first($countUsedBy);
         }
-        // ---------- Part 2
-        if (count($input) <= 7) {
-            return [strval($ans1), '0'];
-        }
-        $cycles = intdiv(self::ORE_PART2, $ans1);
-        $bom = array_map(static fn (int $x): int => $cycles * $x, $remainingMaterials);
-        $bom[Recipe::ORE] = self::ORE_PART2 - $cycles * $ans1;
-        $ans2 = $cycles;
-        // TODO
-        return [strval($ans1), strval($ans2)];
     }
 }
 

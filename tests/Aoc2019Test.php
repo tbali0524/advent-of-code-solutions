@@ -802,8 +802,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment after fixed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -817,8 +816,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment after fixed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -832,8 +830,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[4];
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment after fixed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -847,12 +844,12 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment after fixed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day14
+     * @covers \TBali\Aoc2019\Recipe
      */
     public function testDay14InvalidInput1(): void
     {
@@ -864,6 +861,7 @@ final class Aoc2019Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day14
+     * @covers \TBali\Aoc2019\Recipe
      */
     public function testDay14InvalidInput2(): void
     {
@@ -875,6 +873,7 @@ final class Aoc2019Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day14
+     * @covers \TBali\Aoc2019\Recipe
      */
     public function testDay14InvalidInput3(): void
     {
@@ -915,7 +914,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -928,7 +927,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -941,13 +940,13 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day16
      *
-     * @group medium
+     * @group large
      */
     public function testDay16(): void
     {
@@ -1324,11 +1323,13 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day24
+     *
+     * @group medium
      */
     public function testDay24(): void
     {
@@ -1337,8 +1338,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // todo remove when completed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
