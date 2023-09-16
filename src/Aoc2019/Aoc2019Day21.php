@@ -17,15 +17,13 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation
  *
  * @see https://adventofcode.com/2019/day/21
- *
- * @todo complete part 2
  */
 final class Aoc2019Day21 extends SolutionBase
 {
     public const YEAR = 2019;
     public const DAY = 21;
     public const TITLE = 'Springdroid Adventure';
-    public const SOLUTIONS = [19354818, 0];
+    public const SOLUTIONS = [19354818, 1143787220];
 
     private const CODE_PART1 = [
         'NOT D J',
@@ -37,22 +35,13 @@ final class Aoc2019Day21 extends SolutionBase
         'WALK',
     ];
     private const CODE_PART2 = [
-        // 'NOT G J',
-        // 'NOT J J',
-        // 'OR D J',
-        // 'AND C J',
-        // 'OR F J',
-        // 'AND B J',
-
-        // 'NOT I T',
-        // 'NOT T T',
-        // 'OR F T',
-        // 'AND E T',
-
-        // 'OR T J',
-        // 'AND A J',
-        // 'NOT J J',
-
+        'NOT B J',
+        'NOT C T',
+        'OR T J',
+        'AND D J',
+        'AND H J',
+        'NOT A T',
+        'OR T J',
         'RUN',
     ];
 
@@ -82,8 +71,8 @@ final class Aoc2019Day21 extends SolutionBase
         foreach (self::CODE_PART2 as $line) {
             $spring->stringInput($line);
         }
-        // $spring->simulate();
-        // $ans2 = $spring->nextOutputOrDebug();
+        $spring->simulate();
+        $ans2 = $spring->nextOutputOrDebug();
         return [strval($ans1), strval($ans2)];
     }
 }
@@ -186,6 +175,7 @@ final class SpringDroidSimulator
         $ans = $this->outputs[$this->idxOutput - 1];
         if (($ans >= 0) and ($ans <= 255)) {
             echo $message;
+            return 0;
         }
         return $ans;
     }

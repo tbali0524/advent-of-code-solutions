@@ -8,11 +8,11 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-41-yellow)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-43-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-391-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-393-yellow)|
 
 ## Puzzles
 
@@ -164,13 +164,15 @@ Hint from `subreddit` was used for Day 23 part 2.
 | (1) |2019| 16|Flawed Frequency Transmission             |assembly simulation
 | (1) |2019| 17|Set and Forget                            |
 | (1) |2019| 18|Many-Worlds Interpretation                |BFS
-| (1) |2019| 19|Tractor Beam                              |assembly simulation
+|  +  |2019| 19|Tractor Beam                              |assembly simulation
 |  +  |2019| 20|Donut Maze                                |parsing, BFS
-| (1) |2019| 21|Springdroid Adventure                     |assembly simulation (with camera output)
+|  +  |2019| 21|Springdroid Adventure                     |assembly simulation (with camera output)
 | (1) |2019| 22|Slam Shuffle                              |card deck simulation
 |  1  |2019| 23|Category Six                              |assembly simulation
 | (1) |2019| 24|Planet of Discord                         |
 |  +  |2019| 25|Cryostasis                                |assembly simulation, interactive fiction
+
+Hint from `subreddit` was used for Day 21 part 2.
 
 ### 2020
 

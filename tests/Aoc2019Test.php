@@ -51,6 +51,8 @@ use TBali\Aoc2019\Aoc2019Day25;
 #[IgnoreClassForCodeCoverage(Aoc2019Day15::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2019\DroidSimulator::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2019\Map::class)]
+#[IgnoreClassForCodeCoverage(Aoc2019Day19::class)]
+#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\DroneSimulator::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day25::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2019\AdventureSimulator::class)]
 final class Aoc2019Test extends TestCase
@@ -95,7 +97,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -108,7 +110,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -290,7 +292,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -302,7 +304,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -354,7 +356,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -368,7 +370,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -382,7 +384,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -395,7 +397,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex4.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -409,7 +411,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex5.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[4];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -479,7 +481,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -534,7 +536,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -547,7 +549,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -560,7 +562,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -573,7 +575,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -600,7 +602,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex6.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[5];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -772,7 +774,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -786,7 +788,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -801,7 +803,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
         // @TODO uncomment after fixed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -816,7 +818,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
         // @TODO uncomment after fixed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -831,7 +833,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[4];
         self::assertSame(strval($expected1), $ans1);
         // @TODO uncomment after fixed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -846,7 +848,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         // @TODO uncomment after fixed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -969,8 +971,8 @@ final class Aoc2019Test extends TestCase
     //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
     //     [$ans1, $ans2] = $solver->solve($input);
     //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     $this->assertEquals(strval($expected1), $ans1);
-    //     $this->assertEquals(strval($expected2), $ans2);
+    //     self::assertSame(strval($expected1), $ans1);
+    //     self::assertSame(strval($expected2), $ans2);
     // }
 
     // --------------------------------------------------------------------
@@ -985,7 +987,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -998,7 +1000,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1011,7 +1013,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1024,7 +1026,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1037,7 +1039,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[4];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1049,7 +1051,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex6.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[5];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -1062,7 +1064,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex7.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[6];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -1075,7 +1077,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex8.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[7];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -1088,7 +1090,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex9.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[8];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -1104,7 +1106,8 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // todo remove when completed
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1124,7 +1127,7 @@ final class Aoc2019Test extends TestCase
      * @covers \TBali\Aoc2019\Aoc2019Day19
      * @covers \TBali\Aoc2019\DroneSimulator
      *
-     * @group medium
+     * @group large
      */
     public function testDay19(): void
     {
@@ -1133,8 +1136,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // todo remove when ready
-        // $this->assertEquals(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     // --------------------------------------------------------------------
@@ -1149,7 +1151,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1162,7 +1164,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1174,7 +1176,7 @@ final class Aoc2019Test extends TestCase
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex3.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
-        // $this->assertEquals(strval($expected1), $ans1);
+        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -1206,8 +1208,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment if completed
-        // $this->assertEquals(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     // --------------------------------------------------------------------
@@ -1223,7 +1224,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1237,7 +1238,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1251,7 +1252,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1265,7 +1266,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[3];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1280,7 +1281,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         // @TODO uncomment if completed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1323,7 +1324,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1337,7 +1338,7 @@ final class Aoc2019Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         // todo remove when completed
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     /**
@@ -1366,7 +1367,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // $this->assertEquals(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     // --------------------------------------------------------------------

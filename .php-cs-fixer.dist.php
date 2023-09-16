@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.25
+ * minimum version: ^3.26
  *
  * @see https://cs.symfony.com/doc/config.html
  */
@@ -31,6 +31,9 @@ return (new PhpCsFixer\Config())
         'concat_space' => ['spacing' => 'one'],
         'phpdoc_to_comment' => false,
         'yoda_style' => false,
+
+        // override some @PhpCsFixer rules
+        'single_line_empty_body' => false,
 
         // override some @Symfony:risky rules
         'is_null' => false,

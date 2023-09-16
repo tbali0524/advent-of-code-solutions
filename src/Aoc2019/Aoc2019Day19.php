@@ -18,20 +18,16 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation
  *
  * @see https://adventofcode.com/2019/day/19
- *
- * @todo complete part 2
- *
- * @codeCoverageIgnore
  */
 final class Aoc2019Day19 extends SolutionBase
 {
     public const YEAR = 2019;
     public const DAY = 19;
     public const TITLE = 'Tractor Beam';
-    public const SOLUTIONS = [211, 0];
+    public const SOLUTIONS = [211, 8071006];
 
     private const MAX_GRID_PART1 = 50;
-    // private const SHIPS_SIZE_PART2 = 100;
+    private const SHIPS_SIZE_PART2 = 100;
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.
@@ -59,14 +55,59 @@ final class Aoc2019Day19 extends SolutionBase
         }
         // ---------- Part 2
         $ans2 = 0;
+        $prevStartY = 0;
+        $endX = self::SHIPS_SIZE_PART2 - 1;
+        while (true) {
+            ++$endX;
+            $endY = $prevStartY - 1;
+            while (true) {
+                ++$endY;
+                if ($this->probe($memory, $endX, $endY)) {
+                    break;
+                }
+            }
+            $prevStartY = $endY;
+            $isOk = true;
+            for ($y = $endY + 1; $y < $endY + self::SHIPS_SIZE_PART2; ++$y) {
+                if (!$this->probe($memory, $endX, $y)) {
+                    $isOk = false;
+                    break;
+                }
+            }
+            if (!$isOk) {
+                continue;
+            }
+            $endY = $prevStartY + self::SHIPS_SIZE_PART2 - 1;
+            for ($x = $endX - 1; $x > $endX - self::SHIPS_SIZE_PART2; --$x) {
+                if (!$this->probe($memory, $x, $endY)) {
+                    $isOk = false;
+                    break;
+                }
+            }
+            if ($isOk) {
+                $x = $endX - (self::SHIPS_SIZE_PART2 - 1);
+                $y = $endY - (self::SHIPS_SIZE_PART2 - 1);
+                $ans2 = 10_000 * $x + $y;
+                break;
+            }
+        }
         return [strval($ans1), strval($ans2)];
+    }
+
+    /**
+     * @param array<int, int> $memory
+     */
+    public function probe(array $memory, int $x, int $y): bool
+    {
+        $drone = new DroneSimulator($memory);
+        $drone->inputs[] = $x;
+        $drone->inputs[] = $y;
+        $drone->simulate();
+        return $drone->outputs[count($drone->outputs) - 1] == 1;
     }
 }
 
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class DroneSimulator
 {
     private const INSTRUCTION_LENGTHS =
