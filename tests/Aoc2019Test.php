@@ -960,19 +960,19 @@ final class Aoc2019Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2019\Aoc2019Day17
-    //  * @covers \TBali\Aoc2019\AsciiSimulator
-    //  */
-    // public function testDay17(): void
-    // {
-    //     $solver = new Aoc2019Day17();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2019\Aoc2019Day17
+     * @covers \TBali\Aoc2019\AsciiSimulator
+     */
+    public function testDay17(): void
+    {
+        $solver = new Aoc2019Day17();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
     // --------------------------------------------------------------------
 

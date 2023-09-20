@@ -16,19 +16,15 @@ use TBali\Aoc\SolutionBase;
  *         how much dust does the vacuum robot report it has collected?
  *
  * @see https://adventofcode.com/2019/day/17
- *
- * @todo complete part 2
- *
- * @codeCoverageIgnore
  */
 final class Aoc2019Day17 extends SolutionBase
 {
     public const YEAR = 2019;
     public const DAY = 17;
     public const TITLE = 'Set and Forget';
-    public const SOLUTIONS = [5724, 0];
+    public const SOLUTIONS = [5724, 732985];
 
-    private const SHOW_GRID = false;
+    private const DEBUG = false;
     private const DIRS = '^>v<';
     private const SCAFFOLD = '#';
     private const DELTA_XY = [0 => [0, -1], 1 => [1, 0], 2 => [0, 1], 3 => [-1, 0]];
@@ -80,12 +76,12 @@ final class Aoc2019Day17 extends SolutionBase
         $maxX = strlen($grid[0]);
         $maxY = count($grid);
         // @phpstan-ignore-next-line
-        if (self::SHOW_GRID) {
+        if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             foreach ($grid as $line) {
                 echo $line, PHP_EOL;
             }
-            echo 'vacuum: ' . $robotX . ', ' . $robotY . ',' . self::DIRS[$robotDir], PHP_EOL;
+            echo 'robot: ' . $robotX . ', ' . $robotY . ',' . self::DIRS[$robotDir], PHP_EOL;
             // @codeCoverageIgnoreEnd
         }
         // ---------- Part 1
@@ -132,16 +128,13 @@ final class Aoc2019Day17 extends SolutionBase
                     $dir = $dir1;
                     break;
                 }
-                // straight move
                 if (
                     (count($commands) == 0)
                     or ($commands[count($commands) - 1] == 'L')
                     or ($commands[count($commands) - 1] == 'R')
                 ) {
-                    // $commands[] = '1';
                     $commands[] = 'F';
                 } else {
-                    // $commands[count($commands) - 1] = strval(intval($commands[count($commands) - 1]) + 1);
                     $commands[] = 'F';
                 }
                 $x = $x1;
@@ -153,69 +146,39 @@ final class Aoc2019Day17 extends SolutionBase
             }
         }
         $commandStr = implode(',', $commands);
-        // @phpstan-ignore-next-line
-        if (self::SHOW_GRID) {
-            // @codeCoverageIgnoreStart
-            echo $commandStr, PHP_EOL;
-            // @codeCoverageIgnoreEnd
+        $commandStr1 = $commandStr;
+        for ($i = 14; $i >= 2; $i -= 2) {
+            $commandStr1 = str_replace(str_repeat('F,', $i - 1) . 'F', strval($i), $commandStr1);
         }
-        // find optimal functions
-        $selectedFunctions = [];
-        // $bestFunction = 'L,F,F,F,F,F,F,F,F,F,F,F,F,L,F,F,F,F,F,F,F,F,F,F,F,F,R,F,F,F,F';
-        // $selectedFunctions[] = $bestFunction;
-        // $commandStr = str_replace($bestFunction, chr(ord('A')), $commandStr);
-        // $bestFunction = 'R,F,F,F,F';
-        // $selectedFunctions[] = $bestFunction;
-        // $commandStr = str_replace($bestFunction, chr(ord('A') + 1), $commandStr);
-        // $bestFunction = 'F,F';
-        // $selectedFunctions[] = $bestFunction;
-        // $commandStr = str_replace($bestFunction, chr(ord('A') + 2), $commandStr);
-        for ($j = 0; $j < 3; ++$j) {
-            $functionSavings = [];
-            for ($from = 0; $from < count($commands); ++$from) {
-                for ($to = $from; $to < count($commands); ++$to) {
-                    $function = implode(',', array_slice($commands, $from, $to - $from + 1));
-                    if (strlen($function) > 200) {
-                        continue;
-                    }
-                    $count = substr_count($commandStr, $function);
-                    if ($count <= 1) {
-                        continue;
-                    }
-                    $saving = $count * (strlen($function) - 1);
-                    if (($functionSavings[$function] ?? 0) >= $saving) {
-                        continue;
-                    }
-                    $functionSavings[$function] = $saving;
-                }
-            }
-            arsort($functionSavings);
-            $bestFunction = strval(array_key_first($functionSavings) ?: '0');
-            $selectedFunctions[] = $bestFunction;
-            $commandStr = str_replace($bestFunction, chr(ord('A') + $j), $commandStr);
-        }
-        // A,B,C,C,C,B,C,B,B,A,B,C,A,C,C,C,B,C,B,B,A,B,C,C,C,B,C,B,B,B,C,A,C,A,C,C,C,B,C,B,B
-        for ($j = 0; $j < 3; ++$j) {
-            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F,F,F,F,F', '12', $selectedFunctions[$j]);
-            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F,F,F', '10', $selectedFunctions[$j]);
-            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F,F,F', '8', $selectedFunctions[$j]);
-            $selectedFunctions[$j] = str_replace('F,F,F,F,F,F', '6', $selectedFunctions[$j]);
-            $selectedFunctions[$j] = str_replace('F,F,F,F', '4', $selectedFunctions[$j]);
-            $selectedFunctions[$j] = str_replace('F,F', '2', $selectedFunctions[$j]);
+        // L,12,L,12,R,4,   R,10,R,6,R,4,R,4,   L,12,L,12,R,4,  R,6,L,12,L,12,  R,10,R,6,R,4,R,4,
+        // L,12,L,12,R,4,   R,10,R,6,R,4,R,4,   R,6,L,12,L,12,  R,6,L,12,L,12,  R,10,R,6,R,4,R,4
+        $selectedFunctions = [
+            'L,12,L,12,R,4',
+            'R,10,R,6,R,4,R,4',
+            'R,6,L,12,L,12',
+        ];
+        $commandStr2 = $commandStr1;
+        for ($i = 0; $i < 3; ++$i) {
+            $commandStr2 = str_replace($selectedFunctions[$i], chr(ord('A') + $i), $commandStr2);
         }
         // @phpstan-ignore-next-line
-        if (self::SHOW_GRID) {
+        if (self::DEBUG) {
             // @codeCoverageIgnoreStart
-            foreach ($selectedFunctions as $line) {
-                echo '  ' . $line, PHP_EOL;
-            }
+            echo '--- extended command list:', PHP_EOL;
             echo $commandStr, PHP_EOL;
+            echo '--- compacted command list:', PHP_EOL;
+            echo $commandStr1, PHP_EOL;
+            echo '--- functions:', PHP_EOL;
+            foreach ($selectedFunctions as $i => $line) {
+                echo chr(ord('A') + $i) . ': ' . $line, PHP_EOL;
+            }
+            echo '--- final command list:', PHP_EOL;
+            echo $commandStr2, PHP_EOL;
             // @codeCoverageIgnoreEnd
         }
-        // echo $commandStr, PHP_EOL;
         $memory[0] = 2;
         $vacuum = new AsciiSimulator($memory);
-        $vacuum->stringInput($commandStr);
+        $vacuum->stringInput($commandStr2);
         for ($j = 0; $j < 3; ++$j) {
             $vacuum->stringInput($selectedFunctions[$j]);
         }
@@ -226,20 +189,7 @@ final class Aoc2019Day17 extends SolutionBase
     }
 }
 
-// L,12,L,12,R,4,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,6,L,12,L,12,R,10,R,6,R,4,R,4,L,12,L,12,R,4,R,10,R,6,R,4,R,4,R,6,
-// L,12,L,12,R,6,L,12,L,12,R,10,R,6,R,4,R,4
-
-// L,12,L,12,                     L,12,L,12,        L,12,L,12,                 L,12,L,12,
-// L,12,L,12,    L,12,L,12,
-//               R,10,R,6,R,4,R,4                             R,10,R,6,R,4,R,4               R,10,R,6,R,4,R,4
-//                        R,10,R,6,R,4,R,4
-//           R,4                            R,4,R,6                                      R,4                  R,6
-//           R,6
-
 // --------------------------------------------------------------------
-/**
- * @codeCoverageIgnore
- */
 final class AsciiSimulator
 {
     private const INSTRUCTION_LENGTHS =
@@ -269,7 +219,9 @@ final class AsciiSimulator
     {
         while (true) {
             if ($this->ic >= count($this->memory)) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $opcode = $this->memory[$this->ic] % 100;
             if ($opcode == 99) {
@@ -278,7 +230,9 @@ final class AsciiSimulator
             }
             $len = self::INSTRUCTION_LENGTHS[$opcode] ?? throw new \Exception('Invalid input');
             if ($this->ic > count($this->memory) - $len) {
+                // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
+                // @codeCoverageIgnoreEnd
             }
             $addresses = [];
             $params = [];
@@ -336,8 +290,10 @@ final class AsciiSimulator
         $this->idxOutput = count($this->outputs);
         $ans = $this->outputs[$this->idxOutput - 1];
         if (($ans >= 0) and ($ans <= 255)) {
-            // echo $message;
+            // @codeCoverageIgnoreStart
+            echo $message;
             return 0;
+            // @codeCoverageIgnoreEnd
         }
         return $ans;
     }

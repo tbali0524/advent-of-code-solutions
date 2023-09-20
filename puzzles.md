@@ -8,11 +8,11 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-46-yellow)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-47-yellow)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-396-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-397-yellow)|
 
 ## Puzzles
 
