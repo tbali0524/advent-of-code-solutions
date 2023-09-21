@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2: After visiting every part of the scaffold at least once,
  *         how much dust does the vacuum robot report it has collected?
  *
+ * Topics: assembly simulation
+ *
  * @see https://adventofcode.com/2019/day/17
  */
 final class Aoc2019Day17 extends SolutionBase

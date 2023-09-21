@@ -1215,6 +1215,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22Example1(): void
     {
@@ -1229,6 +1231,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22Example2(): void
     {
@@ -1243,6 +1247,10 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22Example3(): void
     {
@@ -1257,6 +1265,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22Example4(): void
     {
@@ -1271,6 +1281,8 @@ final class Aoc2019Test extends TestCase
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22(): void
     {
@@ -1279,13 +1291,14 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // @TODO uncomment if completed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day22
      * @covers \TBali\Aoc2019\Deck
+     * @covers \TBali\Aoc2019\LCF
+     * @covers \TBali\Aoc2019\Modulo
      */
     public function testDay22InvalidInput1(): void
     {
