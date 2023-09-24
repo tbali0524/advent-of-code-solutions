@@ -2,7 +2,7 @@
 
 ![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-398-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-400-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -57,7 +57,7 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 
 * Directory pattern: `src/AocYYYY/`.
 * Filename pattern: `AocYYYYDayDD.php`.
-* For a new solution, use the template in `src/Aoc2022/Aoc2022Day00.php`.
+* For a new solution, use the template in `src/Aoc2023/Aoc2023Day00.php`.
 * Solution should implement class `AocYYYYDayDD`, extending `SolutionBase`.
 * It should implement the `solve()` method and override the constants in the [Solution](src/Aoc/Solution.php) interface.
 * The `solve()` method must be callable repeatedly with different inputs.

@@ -2,23 +2,21 @@
 
 declare(strict_types=1);
 
-namespace TBali\Aoc2022;
+namespace TBali\Aoc2023;
 
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2022 Day 0: .
+ * AoC 2023 Day 0: .
  *
  * Part 1:
  * Part 2:
  *
- * @see https://adventofcode.com/2022/day/
- *
- * @codeCoverageIgnore
+ * @see https://adventofcode.com/2023/day/
  */
-final class Aoc2022Day00 extends SolutionBase
+final class Aoc2023Day00 extends SolutionBase
 {
-    public const YEAR = 2022;
+    public const YEAR = 2023;
     public const DAY = 0;
     public const TITLE = '';
     public const SOLUTIONS = [0, 0];

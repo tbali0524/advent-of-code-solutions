@@ -16,7 +16,7 @@ final class AocRunner
     /** @var int */
     public const MIN_YEAR = 2015;
     /** @var int */
-    public const MAX_YEAR = 2022;
+    public const MAX_YEAR = 2023;
     /** @var int */
     public const MIN_DAYS = 1;
     /** @var int */
@@ -32,7 +32,7 @@ final class AocRunner
     public const TO_SKIP = [
         2016 => [5, 11, 14],    // puzzle #11 runs in ~100s, #5 and #14 in ~15s
         2018 => [14, 15],       // puzzle #14 and #15 runs in ~11s
-        2019 => [18, 19],       // puzzle #18 part2 todo, puzzle #19 runs in ~33s
+        2019 => [18, 19],       // puzzle #19 runs in ~33s, puzzle #18 has JIT bug
         2021 => [22, 23],       // puzzle #22 runs in ~100s, #23 in ~18s
         2022 => [19, 24],       // puzzle #19 runs in ~25s, #24 in ~138s
     ];

@@ -1082,19 +1082,6 @@ final class Aoc2019Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2019\Aoc2019Day18
-     */
-    public function testDay18Example9(): void
-    {
-        $solver = new Aoc2019Day18();
-        $input = $solver->readInput($solver->inputBaseFileName() . 'ex9.txt');
-        [$ans1, $ans2] = $solver->solve($input);
-        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[8];
-        // self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
-    }
-
-    /**
-     * @covers \TBali\Aoc2019\Aoc2019Day18
      *
      * @group large
      */
@@ -1105,8 +1092,7 @@ final class Aoc2019Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        // todo remove when completed
-        // self::assertSame(strval($expected2), $ans2);
+        self::assertSame(strval($expected2), $ans2);
     }
 
     /**

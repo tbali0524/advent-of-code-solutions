@@ -17,17 +17,17 @@ use TBali\Aoc\SolutionBase;
  *
  * @see https://adventofcode.com/2019/day/18
  *
- * @todo complete part 2, fix memory overflow, speed-up
+ * @todo runner with php JIT enabled does not work, with php XDEBUG enabled it works. Possible php bug?
  */
 final class Aoc2019Day18 extends SolutionBase
 {
     public const YEAR = 2019;
     public const DAY = 18;
     public const TITLE = 'Many-Worlds Interpretation';
-    public const SOLUTIONS = [5858, 0];
-    public const EXAMPLE_SOLUTIONS = [[8, 0], [86, 0], [132, 0], [136, 0], [81, 0], [0, 8], [0, 24], [0, 32], [0, 72]];
+    public const SOLUTIONS = [5858, 2144];
+    public const EXAMPLE_SOLUTIONS = [[8, 0], [86, 0], [132, 0], [136, 0], [81, 0], [0, 8], [0, 24], [0, 32]];
+    // example 9 excluded: [0, 72]
 
-    private const DEBUG = false;
     private const BITS_PER_POS = 8;
     private const BITS_PER_COORD = 2 * self::BITS_PER_POS;
     private const MASK_POS = (1 << self::BITS_PER_POS) - 1;
@@ -78,16 +78,8 @@ final class Aoc2019Day18 extends SolutionBase
         $ans1 = 0;
         if (!$patternOk or ($maxX >= 80)) {
             $robotHash = ($startY << self::BITS_PER_POS) | $startX;
-            $keys = 0;
             $maxRobots = 1;
-            $ans1 = $this->solvePart($grid, $maxKeys, $robotHash, $keys, $maxRobots);
-        }
-        // @phpstan-ignore-next-line
-        if (self::DEBUG) {
-            // @codeCoverageIgnoreStart
-            echo '------ ', $maxX . ' x ' . $maxY . ', k = ' . $maxKeys, PHP_EOL;
-            echo '-- 1: ', $ans1, PHP_EOL;
-            // @codeCoverageIgnoreEnd
+            $ans1 = $this->solvePart1($grid, $robotHash, $maxKeys, $maxRobots);
         }
         if (!$patternOk) {
             return [strval($ans1), '0'];
@@ -102,19 +94,15 @@ final class Aoc2019Day18 extends SolutionBase
         $grid[$startY + 1][$startX - 1] = '@';
         $grid[$startY + 1][$startX] = '#';
         $grid[$startY + 1][$startX + 1] = '@';
-        $robotHash = ((($startY - 1) << self::BITS_PER_POS) | ($startX - 1))
-            | (((($startY - 1) << self::BITS_PER_POS) | ($startX + 1)) << (1 * self::BITS_PER_COORD))
-            | (((($startY + 1) << self::BITS_PER_POS) | ($startX - 1)) << (2 * self::BITS_PER_COORD))
-            | (((($startY + 1) << self::BITS_PER_POS) | ($startX + 1)) << (3 * self::BITS_PER_COORD));
-        $keys = 0;
-        $maxRobots = 4;
-        // $ans2 = 0;
-        $ans2 = $this->solvePart($grid, $maxKeys, $robotHash, $keys, $maxRobots);
-        // @phpstan-ignore-next-line
-        if (self::DEBUG) {
-            // @codeCoverageIgnoreStart
-            echo '-- 2: ', $ans2, PHP_EOL;
-            // @codeCoverageIgnoreEnd
+        $robotHashes = [
+            (($startY - 1) << self::BITS_PER_POS) | ($startX - 1),
+            (($startY - 1) << self::BITS_PER_POS) | ($startX + 1),
+            (($startY + 1) << self::BITS_PER_POS) | ($startX - 1),
+            (($startY + 1) << self::BITS_PER_POS) | ($startX + 1),
+        ];
+        $ans2 = 0;
+        foreach ($robotHashes as $id => $robotHash) {
+            $ans2 += $this->solvePart2($grid, $robotHash);
         }
         return [strval($ans1), strval($ans2)];
     }
@@ -122,14 +110,13 @@ final class Aoc2019Day18 extends SolutionBase
     /**
      * @param array<int, string> $grid
      */
-    private function solvePart(array $grid, int $maxKeys, int $robotHash, int $startKeys = 0, int $maxRobots = 4): int
+    private function solvePart1(array $grid, int $robotHash, int $maxKeys, int $maxRobots = 1): int
     {
         $targetKeys = (1 << $maxKeys) - 1;
         $visited = [];
-        $visited[$startKeys][$robotHash] = true;
-        $q = [[$robotHash, $startKeys, 0]];
+        $visited[0][$robotHash] = true;
+        $q = [[$robotHash, 0, 0]];
         $readIdx = 0;
-        $prevSteps = 0;
         while (true) {
             if (count($q) <= $readIdx) {
                 // @codeCoverageIgnoreStart
@@ -137,39 +124,9 @@ final class Aoc2019Day18 extends SolutionBase
                 // @codeCoverageIgnoreEnd
             }
             [$robotHash, $keys, $steps] = $q[$readIdx];
-            // if (count($q) == 0) {
-            //     // @codeCoverageIgnoreStart
-            //     throw new \Exception('No solution found');
-            //     // @codeCoverageIgnoreEnd
-            // }
-            // [$robotHash, $keys, $steps] = array_shift($q);
             ++$readIdx;
             if ($keys == $targetKeys) {
                 return $steps;
-            }
-            // @phpstan-ignore-next-line
-            if (self::DEBUG) {
-                // @codeCoverageIgnoreStart
-                if (($maxRobots > 1) and ($steps > $prevSteps)) {
-                    $prevSteps = $steps;
-                    echo $steps, PHP_EOL;
-                }
-                // @codeCoverageIgnoreEnd
-            }
-            // @phpstan-ignore-next-line
-            if (self::DEBUG) {
-                // @codeCoverageIgnoreStart
-                $robots = '(' . (($robotHash >> (0 * self::BITS_PER_COORD)) & self::MASK_POS)
-                    . ', ' . (($robotHash >> (0 * self::BITS_PER_COORD + self::BITS_PER_POS)) & self::MASK_POS)
-                    . ') (' . (($robotHash >> (1 * self::BITS_PER_COORD)) & self::MASK_POS)
-                    . ', ' . (($robotHash >> (1 * self::BITS_PER_COORD + self::BITS_PER_POS)) & self::MASK_POS)
-                    . ') (' . (($robotHash >> (2 * self::BITS_PER_COORD)) & self::MASK_POS)
-                    . ', ' . (($robotHash >> (2 * self::BITS_PER_COORD + self::BITS_PER_POS)) & self::MASK_POS)
-                    . ') (' . (($robotHash >> (3 * self::BITS_PER_COORD)) & self::MASK_POS)
-                    . ', ' . (($robotHash >> (3 * self::BITS_PER_COORD + self::BITS_PER_POS)) & self::MASK_POS)
-                    . ') ';
-                // echo 'S=' . $steps . ' k= ' . $keys . '; R: ' . $robots, PHP_EOL;
-                // @codeCoverageIgnoreEnd
             }
             for ($idxRobot = 0; $idxRobot < $maxRobots; ++$idxRobot) {
                 $xy = ($robotHash >> ($idxRobot * self::BITS_PER_COORD)) & self::MASK_COORD;
@@ -195,17 +152,59 @@ final class Aoc2019Day18 extends SolutionBase
                     if (isset($visited[$keys1][$robotHash1])) {
                         continue;
                     }
-                    // @phpstan-ignore-next-line
-                    if (self::DEBUG) {
-                        // @codeCoverageIgnoreStart
-                        $robots1 = '  #' . $idxRobot . '-> (' . $x1 . ',' . $y1 . '), k=' . $keys1;
-                        // echo $robots1, PHP_EOL;
-                        // @codeCoverageIgnoreEnd
-                    }
                     $visited[$keys1][$robotHash1] = true;
                     $q[] = [$robotHash1, $keys1, $steps + 1];
                 }
             }
         }
+    }
+
+    /**
+     * @param array<int, string> $grid
+     */
+    private function solvePart2(array $grid, int $robotHash): int
+    {
+        $visited = [];
+        $visited[0][$robotHash] = true;
+        $q = [[$robotHash, 0, 0, 0]];
+        $maxKeys = 0;
+        $maxSteps = 0;
+        $readIdx = 0;
+        while (true) {
+            if (count($q) <= $readIdx) {
+                break;
+            }
+            [$robotHash, $keys, $countKeys, $steps] = $q[$readIdx];
+            ++$readIdx;
+            $x = $robotHash & self::MASK_POS;
+            $y = ($robotHash >> self::BITS_PER_POS) & self::MASK_POS;
+            foreach ([[0, -1], [0, 1], [-1, 0], [1, 0]] as [$dx, $dy]) {
+                $x1 = $x + $dx;
+                $y1 = $y + $dy;
+                $keys1 = $keys;
+                $countKeys1 = $countKeys;
+                $c = $grid[$y1][$x1] ?? '#';
+                if ($c == '#') {
+                    continue;
+                }
+                if (($c >= 'a') and ($c <= 'z')) {
+                    $keys1 |= 1 << (ord($c) - ord('a'));
+                    if ($keys1 != $keys) {
+                        ++$countKeys1;
+                        if ($countKeys1 > $maxKeys) {
+                            $maxKeys = $countKeys1;
+                            $maxSteps = $steps + 1;
+                        }
+                    }
+                }
+                $robotHash1 = ($y1 << self::BITS_PER_POS) | $x1;
+                if (isset($visited[$keys1][$robotHash1])) {
+                    continue;
+                }
+                $visited[$keys1][$robotHash1] = true;
+                $q[] = [$robotHash1, $keys1, $countKeys1, $steps + 1];
+            }
+        }
+        return $maxSteps;
     }
 }

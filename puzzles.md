@@ -8,11 +8,12 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-48-yellow)|
+|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-398-yellow)|
+|[2023](#2023)| |
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-400-green)|
 
 ## Puzzles
 
@@ -165,7 +166,7 @@ Hint from `subreddit` was used for Day 23 part 2.
 |  +  |2019| 15|Oxygen System                             |assembly simulation, BFS
 |  +  |2019| 16|Flawed Frequency Transmission             |
 |  +  |2019| 17|Set and Forget                            |assembly simulation
-| (1) |2019| 18|Many-Worlds Interpretation                |BFS
+|  +  |2019| 18|Many-Worlds Interpretation                |BFS
 |  +  |2019| 19|Tractor Beam                              |assembly simulation
 |  +  |2019| 20|Donut Maze                                |parsing, BFS
 |  +  |2019| 21|Springdroid Adventure                     |assembly simulation (with camera output)
@@ -174,7 +175,7 @@ Hint from `subreddit` was used for Day 23 part 2.
 |  +  |2019| 24|Planet of Discord                         |
 |  +  |2019| 25|Cryostasis                                |assembly simulation, interactive fiction
 
-Hint from `subreddit` was used for Day 14, 16, 21 and 22 (all for part 2 only).
+Hint from `subreddit` was used for Day 14, 16, 18, 21 and 22 (all for part 2 only).
 
 ### 2020
 
@@ -271,3 +272,10 @@ No external hint was used in this season.
 |  +  |2022| 25|Full of Hot Air                           |balanced 5-ary numbers
 
 No external hint was used in this season.
+
+### 2023
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
+|     |2023|  1|?                                         |
+|     |2023|  2|?                                         |
