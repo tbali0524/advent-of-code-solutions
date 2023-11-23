@@ -396,7 +396,7 @@ final class ImageTile
             throw new \Exception('Invalid tile grid size');
             // @codeCoverageIgnoreEnd
         }
-        if (count(array_filter($this->grid, fn (string $line): bool => strlen($line) != self::SIZE)) != 0) {
+        if (count(array_filter($this->grid, static fn (string $line): bool => strlen($line) != self::SIZE)) != 0) {
             // @codeCoverageIgnoreStart
             throw new \Exception('Invalid tile grid size');
             // @codeCoverageIgnoreEnd

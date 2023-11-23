@@ -1,11 +1,11 @@
 # PHPStan configuration file.
 #
-# minimum version: ^1.10.35
+# minimum version: ^1.10.44
 #
 # @see https://phpstan.org/config-reference
 parameters:
     level: 9
-    phpVersion: 80200
+    phpVersion: 80300
     editorUrl: 'vscode://file/%%file%%:%%line%%'
     tmpDir: .tools/phpstan
     paths:

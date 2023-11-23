@@ -44,7 +44,7 @@ use TBali\Aoc2020\Aoc2020Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.3')]
+#[RequiresPhpunit('^10.4')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2020Day15::class)]
 #[IgnoreClassForCodeCoverage(Aoc2020Day17::class)]

@@ -45,7 +45,7 @@ use PHPUnit\Framework\TestCase;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.3')]
+#[RequiresPhpunit('^10.4')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 final class Aoc2023Test extends TestCase
 {

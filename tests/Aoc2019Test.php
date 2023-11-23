@@ -44,7 +44,7 @@ use TBali\Aoc2019\Aoc2019Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.3')]
+#[RequiresPhpunit('^10.4')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day13::class)]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc2019\ArcadeSimulator::class)]

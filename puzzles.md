@@ -139,7 +139,7 @@ Hint from `subreddit` was used for Day 23 Part 2.
 |  +  |2018| 20|A Regular Map                             |BFS, string parsing
 |  +  |2018| 21|Chronal Conversion                        |assembly simulation, reverse engineering
 |  +  |2018| 22|Mode Maze                                 |pathfinding, A-Star (A*)
-| (1) |2018| 23|Experimental Emergency Teleportation      |priority queue
+|  +  |2018| 23|Experimental Emergency Teleportation      |priority queue
 |  +  |2018| 24|Immune System Simulator 20XX              |string parsing, game simulation
 |  +  |2018| 25|Four-Dimensional Adventure                |BFS, graph components
 
@@ -171,7 +171,7 @@ Hint from `subreddit` was used for Day 23 part 2.
 |  +  |2019| 20|Donut Maze                                |parsing, BFS
 |  +  |2019| 21|Springdroid Adventure                     |assembly simulation (with camera output)
 |  +  |2019| 22|Slam Shuffle                              |card deck simulation, modular arithmetics, LCF
-|  1  |2019| 23|Category Six                              |assembly simulation
+|  +  |2019| 23|Category Six                              |assembly simulation
 |  +  |2019| 24|Planet of Discord                         |
 |  +  |2019| 25|Cryostasis                                |assembly simulation, interactive fiction
 
@@ -279,3 +279,26 @@ No external hint was used in this season.
 |:---:|----|--:|:-----------------------------------------|:---------|
 |     |2023|  1|?                                         |
 |     |2023|  2|?                                         |
+|     |2023|  3|?                                         |
+|     |2023|  4|?                                         |
+|     |2023|  5|?                                         |
+|     |2023|  6|?                                         |
+|     |2023|  7|?                                         |
+|     |2023|  8|?                                         |
+|     |2023|  9|?                                         |
+|     |2023| 10|?                                         |
+|     |2023| 11|?                                         |
+|     |2023| 12|?                                         |
+|     |2023| 13|?                                         |
+|     |2023| 14|?                                         |
+|     |2023| 15|?                                         |
+|     |2023| 16|?                                         |
+|     |2023| 17|?                                         |
+|     |2023| 18|?                                         |
+|     |2023| 19|?                                         |
+|     |2023| 20|?                                         |
+|     |2023| 21|?                                         |
+|     |2023| 22|?                                         |
+|     |2023| 23|?                                         |
+|     |2023| 24|?                                         |
+|     |2023| 25|?                                         |

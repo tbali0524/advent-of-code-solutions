@@ -1,6 +1,6 @@
 # Advent of Code solutions in PHP by TBali
 
-![php v8.2](https://shields.io/badge/php-8.2-blue?logo=php)
+![php v8.3](https://shields.io/badge/php-8.3-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
 ![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-400-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
@@ -82,6 +82,7 @@ The following helper commands are defined in [composer.json](composer.json):
 |cs-fixer     |Check coding style compliance to `PSR12` plus extra rules with [php-cs-fixer](https://cs.symfony.com/) (no fix applied)|
 |cs-fixer-do  |Apply coding style fixes with _php-cs-fixer_|
 |doc          |Create documentation with [phpDocumentor](https://www.phpdoc.org/)|
+|lint         |Check syntax errors with [parallel-lint](https://github.com/php-parallel-lint/PHP-Parallel-Lint)|
 |loc          |Get code summary report with [phploc](https://github.com/sebastianbergmann/phploc)|
 |metrics      |Generate code metrics report with [phpmetrics](https://phpmetrics.github.io/website/)|
 |stan         |Run static analysis with [phpstan](https://phpstan.org/)|
@@ -93,3 +94,5 @@ The following helper commands are defined in [composer.json](composer.json):
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
 __Note:__ The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
+
+If using `php v8.3`: set `PHP_CS_FIXER_IGNORE_ENV` environment variable to `1` to use `php-cs-fixer`.

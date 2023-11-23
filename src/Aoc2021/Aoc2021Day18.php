@@ -146,7 +146,7 @@ final class Snailfish
         return 3 * $this->left?->magnitude() + 2 * $this->right?->magnitude();
     }
 
-    public function findNodeToExplode(int $depth = 0): self|false
+    public function findNodeToExplode(int $depth = 0): false|self
     {
         if ($this->isRegular) {
             return false;
