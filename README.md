@@ -94,5 +94,3 @@ The following helper commands are defined in [composer.json](composer.json):
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
 __Note:__ The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
-
-If using `php v8.3`: set `PHP_CS_FIXER_IGNORE_ENV` environment variable to `1` to use `php-cs-fixer`.
