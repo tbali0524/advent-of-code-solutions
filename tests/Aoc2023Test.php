@@ -8,9 +8,9 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc2023\Aoc2023Day01;
+use TBali\Aoc2023\Aoc2023Day02;
 
-// use TBali\Aoc2023\Aoc2023Day01;
-// use TBali\Aoc2023\Aoc2023Day02;
 // use TBali\Aoc2023\Aoc2023Day03;
 // use TBali\Aoc2023\Aoc2023Day04;
 // use TBali\Aoc2023\Aoc2023Day05;
@@ -44,68 +44,107 @@ use PHPUnit\Framework\TestCase;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.4')]
+#[RequiresPhp('^8.3')]
+#[RequiresPhpunit('^10.5')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 final class Aoc2023Test extends TestCase
 {
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day01
-    //  */
-    // public function testDay01Example1(): void
-    // {
-    //     $solver = new Aoc2023Day01();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day01
+     */
+    public function testDay01Example1(): void
+    {
+        $solver = new Aoc2023Day01();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        // self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day01
-    //  */
-    // public function testDay01(): void
-    // {
-    //     $solver = new Aoc2023Day01();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day01
+     */
+    public function testDay01Example2(): void
+    {
+        $solver = new Aoc2023Day01();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        // self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day01
+     */
+    public function testDay01(): void
+    {
+        $solver = new Aoc2023Day01();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day02
-    //  */
-    // public function testDay02Example1(): void
-    // {
-    //     $solver = new Aoc2023Day02();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day02
-    //  */
-    // public function testDay02(): void
-    // {
-    //     $solver = new Aoc2023Day02();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day02
+     * @covers \TBali\Aoc2023\Hand
+     */
+    public function testDay02Example1(): void
+    {
+        $solver = new Aoc2023Day02();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day02
+     * @covers \TBali\Aoc2023\Hand
+     */
+    public function testDay02(): void
+    {
+        $solver = new Aoc2023Day02();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day02
+     * @covers \TBali\Aoc2023\Hand
+     */
+    public function testDay02InvalidInput1(): void
+    {
+        $solver = new Aoc2023Day02();
+        $input = ['Game 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day02
+     * @covers \TBali\Aoc2023\Hand
+     */
+    public function testDay02InvalidInput2(): void
+    {
+        $solver = new Aoc2023Day02();
+        $input = ['Game 1: 1 Blue, 2 Yellow'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2023\Aoc2023Day03

@@ -45,7 +45,7 @@ jobs:
         with:
           php-version: "8.3"
           extensions: mbstring, bcmath, xdebug
-          tools: phpunit:10.4
+          tools: phpunit:10.5
           coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

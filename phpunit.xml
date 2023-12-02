@@ -2,13 +2,13 @@
 <!--
 PHPUnit configuration file.
 
-minimum version: ^10.4
+minimum version: ^10.5
 
-@see https://phpunit.readthedocs.io/en/10.4/configuration.html
+@see https://phpunit.readthedocs.io/en/10.5/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.4/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
     colors="true"
@@ -66,6 +66,9 @@ minimum version: ^10.4
         </testsuite>
         <testsuite name="Aoc2022">
             <file>tests/Aoc2022Test.php</file>
+        </testsuite>
+        <testsuite name="Aoc2023">
+            <file>tests/Aoc2023Test.php</file>
         </testsuite>
     </testsuites>
     <coverage

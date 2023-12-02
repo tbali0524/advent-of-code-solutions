@@ -8,12 +8,12 @@
 |[2016](#2016)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2017](#2017)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2018](#2018)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2019](#2019)|![-](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2019](#2019)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)| |
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-400-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-4-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-403-green)|
 
 ## Puzzles
 
@@ -277,8 +277,8 @@ No external hint was used in this season.
 
 |Done?|Year|Day| Title                                    | Topics   |
 |:---:|----|--:|:-----------------------------------------|:---------|
-|     |2023|  1|?                                         |
-|     |2023|  2|?                                         |
+|  +  |2023|  1|Trebuchet?!                               |
+|  +  |2023|  2|Cube Conundrum                            |
 |     |2023|  3|?                                         |
 |     |2023|  4|?                                         |
 |     |2023|  5|?                                         |

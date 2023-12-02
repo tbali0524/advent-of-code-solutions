@@ -43,8 +43,8 @@ use TBali\Aoc2016\Aoc2016Day25;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.2')]
-#[RequiresPhpunit('^10.4')]
+#[RequiresPhp('^8.3')]
+#[RequiresPhpunit('^10.5')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2016Day05::class)]
 #[IgnoreClassForCodeCoverage(Aoc2016Day14::class)]
