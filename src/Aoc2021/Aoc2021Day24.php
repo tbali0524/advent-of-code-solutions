@@ -109,7 +109,7 @@ final class Aoc2021Day24 extends SolutionBase
                     . ' | ' . str_pad(strval($z2), 10, ' ', STR_PAD_LEFT)
                     . ' | ' . str_pad(strval($z), 10, ' ', STR_PAD_LEFT), PHP_EOL;
             }
-            echo($z == 0 ? 'OK' : 'INVALID'), PHP_EOL;
+            echo ($z == 0 ? 'OK' : 'INVALID'), PHP_EOL;
             exit;
             // @codeCoverageIgnoreEnd
         }

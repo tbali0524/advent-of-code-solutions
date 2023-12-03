@@ -3,48 +3,28 @@
 These are not my work. Source: [AoC subreddit](https://www.reddit.com/r/adventofcode)
 
 <!---
-### 2022 Day
+
+### 2023 Day
 
 *
 
 [![](memes/.jpg)]()
 
 -->
+
 ---
 
-## Generic
+## 2023
 
-* How my GitHub typically looks like
+### 2023 Day 3
 
-[![](memes/generic01.jpg)](https://www.reddit.com/r/adventofcode/comments/zvm6qj/how_my_github_typically_looks_like/)
+* This genuinely makes no sense what the f**k is going on with my code
 
-* Living in Sweden during Advent of Code
+[![](memes/y23d03m01.jpg)](https://www.reddit.com/r/adventofcode/comments/189qyze/2023_day_3_this_genuinely_makes_no_sense_what_the/)
 
-[![](memes/generic02.jpg)](https://www.reddit.com/r/adventofcode/comments/zut3h0/living_in_sweden_during_advent_of_code/)
+* This problem elf… are they Evil or Incompetent in your head canon?
 
-* [2022 Day 26] Easy plans
-
-[![](memes/generic03.jpg)](https://www.reddit.com/r/adventofcode/comments/zuwk5l/2022_day_26_easy_plans/)
-
-* Edge Cases?
-
-[![](memes/generic04.jpg)](https://www.reddit.com/r/adventofcode/comments/zuimxz/edge_cases/)
-
-* Appreciation for the tireless moderation work
-
-[![](memes/generic05.jpg)](https://www.reddit.com/r/adventofcode/comments/zts118/appreciation_for_the_tireless_moderation_work/)
-
-* Am I the only one?
-
-[![](memes/generic06.jpg)](https://www.reddit.com/r/adventofcode/comments/zte2uo/am_i_the_only_one/)
-
-* So you're trying to get onto the leaderboard, huh?
-
-[![](memes/generic07.jpg)](https://www.reddit.com/r/adventofcode/comments/zjwovn/so_youre_trying_to_get_onto_the_leaderboard_huh/)
-
-* Advent of code and having fun
-
-[![](memes/generic08.jpg)](https://www.reddit.com/r/adventofcode/comments/zrdsao/advent_of_code_and_having_fun/)
+[![](memes/y23d03m02.jpg)](https://www.reddit.com/r/adventofcode/comments/189s2qm/2023_day_03_this_problem_elf_are_they_evil_or/)
 
 ---
 
@@ -266,8 +246,44 @@ O 7 ######### 3 F G
 
 [![](memes/y20d13m01.jpg)](https://www.reddit.com/r/adventofcode/comments/kcuzmt/2020_day_13_part_2_yes_im_using_brute_force_why/)
 
+---
+
+## Generic
+
+* How my GitHub typically looks like
+
+[![](memes/generic01.jpg)](https://www.reddit.com/r/adventofcode/comments/zvm6qj/how_my_github_typically_looks_like/)
+
+* Living in Sweden during Advent of Code
+
+[![](memes/generic02.jpg)](https://www.reddit.com/r/adventofcode/comments/zut3h0/living_in_sweden_during_advent_of_code/)
+
+* [2022 Day 26] Easy plans
+
+[![](memes/generic03.jpg)](https://www.reddit.com/r/adventofcode/comments/zuwk5l/2022_day_26_easy_plans/)
+
+* Edge Cases?
+
+[![](memes/generic04.jpg)](https://www.reddit.com/r/adventofcode/comments/zuimxz/edge_cases/)
+
+* Appreciation for the tireless moderation work
+
+[![](memes/generic05.jpg)](https://www.reddit.com/r/adventofcode/comments/zts118/appreciation_for_the_tireless_moderation_work/)
+
+* Am I the only one?
+
+[![](memes/generic06.jpg)](https://www.reddit.com/r/adventofcode/comments/zte2uo/am_i_the_only_one/)
+
+* So you're trying to get onto the leaderboard, huh?
+
+[![](memes/generic07.jpg)](https://www.reddit.com/r/adventofcode/comments/zjwovn/so_youre_trying_to_get_onto_the_leaderboard_huh/)
+
+* Advent of code and having fun
+
+[![](memes/generic08.jpg)](https://www.reddit.com/r/adventofcode/comments/zrdsao/advent_of_code_and_having_fun/)
+
 <!---
-### 2022 Day
+### 2023 Day
 
 *
 
