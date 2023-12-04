@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-6-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-403-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-8-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-408-green)|
 
 ## Puzzles
 
@@ -280,7 +280,7 @@ No external hint was used in this season.
 |  +  |2023|  1|Trebuchet?!                               |
 |  +  |2023|  2|Cube Conundrum                            |
 |  +  |2023|  3|Gear Ratios                               |
-|     |2023|  4|?                                         |
+|  +  |2023|  4|Scratchcards                              |
 |     |2023|  5|?                                         |
 |     |2023|  6|?                                         |
 |     |2023|  7|?                                         |
