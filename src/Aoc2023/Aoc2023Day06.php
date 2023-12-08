@@ -64,15 +64,19 @@ final class Aoc2023Day06 extends SolutionBase
             // solve for: x(t-x)>d
             $discriminant = $t ** 2 - 4 * $d;
             if ($discriminant < 0) {
+                // @codeCoverageIgnoreStart
                 $ans1 = 0;
                 break;
+                // @codeCoverageIgnoreEnd
             }
             $rootDisc = sqrt($discriminant);
             $x1 = ($t - $rootDisc) / 2;
             $x2 = ($t + $rootDisc) / 2;
             if (($x1 <= 0) or ($x2 <= 0)) {
+                // @codeCoverageIgnoreStart
                 $ans1 = 0;
                 break;
+                // @codeCoverageIgnoreEnd
             }
             if (fmod($x1, 1) !== 0.0) {
                 $x1 = intval(ceil($x1));
@@ -85,8 +89,10 @@ final class Aoc2023Day06 extends SolutionBase
                 $x2 = intval($x2) - 1;
             }
             if ($x2 < $x1) {
+                // @codeCoverageIgnoreStart
                 $ans1 = 0;
                 break;
+                // @codeCoverageIgnoreEnd
             }
             if ($idx < count($times) - 1) {
                 $ans1 *= ($x2 - $x1 + 1);

@@ -8,15 +8,16 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc2023\Aoc2023Day00;
 use TBali\Aoc2023\Aoc2023Day01;
 use TBali\Aoc2023\Aoc2023Day02;
 use TBali\Aoc2023\Aoc2023Day03;
 use TBali\Aoc2023\Aoc2023Day04;
 use TBali\Aoc2023\Aoc2023Day05;
 use TBali\Aoc2023\Aoc2023Day06;
+use TBali\Aoc2023\Aoc2023Day07;
+use TBali\Aoc2023\Aoc2023Day08;
 
-// use TBali\Aoc2023\Aoc2023Day07;
-// use TBali\Aoc2023\Aoc2023Day08;
 // use TBali\Aoc2023\Aoc2023Day09;
 // use TBali\Aoc2023\Aoc2023Day10;
 // use TBali\Aoc2023\Aoc2023Day11;
@@ -47,6 +48,7 @@ use TBali\Aoc2023\Aoc2023Day06;
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
 #[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(Aoc2023Day00::class)]
 final class Aoc2023Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -335,72 +337,164 @@ final class Aoc2023Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day07
-    //  */
-    // public function testDay07Example1(): void
-    // {
-    //     $solver = new Aoc2023Day07();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day07
+     * @covers \TBali\Aoc2023\CamelHand
+     * @covers \TBali\Aoc2023\HandType
+     * @covers \TBali\Aoc2023\JokerHand
+     */
+    public function testDay07Example1(): void
+    {
+        $solver = new Aoc2023Day07();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day07
-    //  */
-    // public function testDay07(): void
-    // {
-    //     $solver = new Aoc2023Day07();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day07
+     * @covers \TBali\Aoc2023\CamelHand
+     * @covers \TBali\Aoc2023\HandType
+     * @covers \TBali\Aoc2023\JokerHand
+     */
+    public function testDay07(): void
+    {
+        $solver = new Aoc2023Day07();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day07
-    //  */
-    // public function testDay07InvalidInput1(): void
-    // {
-    //     $solver = new Aoc2023Day07();
-    //     $input = ['a'];
-    //     $this->expectException(\Exception::class);
-    //     [$ans1, $ans2] = $solver->solve($input);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day07
+     * @covers \TBali\Aoc2023\CamelHand
+     * @covers \TBali\Aoc2023\HandType
+     * @covers \TBali\Aoc2023\JokerHand
+     */
+    public function testDay07InvalidInput1(): void
+    {
+        $solver = new Aoc2023Day07();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day07
+     * @covers \TBali\Aoc2023\CamelHand
+     * @covers \TBali\Aoc2023\HandType
+     * @covers \TBali\Aoc2023\JokerHand
+     */
+    public function testDay07InvalidInput2(): void
+    {
+        $solver = new Aoc2023Day07();
+        $input = ['234567 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day08
-    //  */
-    // public function testDay08Example1(): void
-    // {
-    //     $solver = new Aoc2023Day08();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day07
+     * @covers \TBali\Aoc2023\CamelHand
+     * @covers \TBali\Aoc2023\HandType
+     * @covers \TBali\Aoc2023\JokerHand
+     */
+    public function testDay07InvalidInput3(): void
+    {
+        $solver = new Aoc2023Day07();
+        $input = ['12345 1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day08
-    //  */
-    // public function testDay08(): void
-    // {
-    //     $solver = new Aoc2023Day08();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    // --------------------------------------------------------------------
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08Example1(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08InvalidInput1(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08InvalidInput2(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = ['RL', '', 'AAA = (BBB, CCC'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08InvalidInput3(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = ['RL', '', 'AAA = (BBB, CCC, DDD)'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08InvalidInput4(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = ['RLC', '', 'AAA = (BBB, CCC)'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day08
+     */
+    public function testDay08InvalidInput5(): void
+    {
+        $solver = new Aoc2023Day08();
+        $input = ['RL', '', 'AAA = (BBB, CCC)'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2023\Aoc2023Day09
