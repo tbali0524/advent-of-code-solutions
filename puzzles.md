@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-16-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-416-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-18-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-418-green)|
 
 ## Puzzles
 
@@ -285,7 +285,7 @@ No external hint was used in this season.
 |  +  |2023|  6|Wait For It                               |
 |  +  |2023|  7|Camel Cards                               |Poker hands
 |  +  |2023|  8|Haunted Wasteland                         |cycle detection, least common multiple
-|     |2023|  9|?                                         |
+|  +  |2023|  9|Mirage Maintenance                        |recursion
 |     |2023| 10|?                                         |
 |     |2023| 11|?                                         |
 |     |2023| 12|?                                         |
