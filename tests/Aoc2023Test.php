@@ -594,6 +594,17 @@ final class Aoc2023Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day10
+     */
+    public function testDay10InvalidInput5(): void
+    {
+        $solver = new Aoc2023Day10();
+        $input = ['FS7', '|F|', 'LLJ'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     // /**

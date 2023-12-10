@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  *         to the point farthest from the starting position?
  * Part 2: How many tiles are enclosed by the loop?
  *
+ * Topics: enclosed area in loop path
+ *
  * @see https://adventofcode.com/2023/day/10
  */
 final class Aoc2023Day10 extends SolutionBase
@@ -20,20 +22,46 @@ final class Aoc2023Day10 extends SolutionBase
     public const YEAR = 2023;
     public const DAY = 10;
     public const TITLE = 'Pipe Maze';
-    public const SOLUTIONS = [6820, 0];
+    public const SOLUTIONS = [6820, 337];
     public const EXAMPLE_SOLUTIONS = [[4, 1], [8, 1], [0, 4], [0, 4], [0, 8], [0, 10]];
 
     private const DEBUG = false;
     private const EMPTY = '.';
-    private const DIR_NAMES = 'ESWN'; // must be in clockwise order!
     private const DIR_DELTAS = [
         'W' => [-1, 0],
         'S' => [0, 1],
         'E' => [1, 0],
         'N' => [0, -1],
     ];
-    private const CORNERS = [
-        'EN' => [1, 1],
+    private const OPPOSITE = [
+        'N' => 'S',
+        'S' => 'N',
+        'W' => 'E',
+        'E' => 'W',
+    ];
+    private const SIDES = [
+        // left side
+        0 => [
+            'ES' => [[1, -1], [0, -1], [1, 0]],
+            'SW' => [[1, 1], [1, 0], [0, 1]],
+            'WN' => [[-1, 1], [-1, 0], [0, 1]],
+            'NE' => [[-1, -1], [-1, 0], [0, -1]],
+            'EE' => [[0, -1]],
+            'SS' => [[1, 0]],
+            'WW' => [[0, 1]],
+            'NN' => [[-1, 0]],
+        ],
+        // right side
+        1 => [
+            'SE' => [[-1, 1], [-1, 0], [0, 1]],
+            'WS' => [[-1, -1], [0, -1], [-1, 0]],
+            'NW' => [[1, -1], [1, 0], [0, -1]],
+            'EN' => [[1, 1], [0, 1], [1, 0]],
+            'EE' => [[0, 1]],
+            'SS' => [[-1, 0]],
+            'WW' => [[0, -1]],
+            'NN' => [[1, 0]],
+        ],
     ];
     private const NEIGHBOURS = [
         'F' => ['E', 'S'],
@@ -77,7 +105,7 @@ final class Aoc2023Day10 extends SolutionBase
         if ($startX < 0) {
             throw new \Exception('Invalid input');
         }
-        // ---------- Find pipe type at start position
+        // ---------- Deduct type of pipe at start position
         foreach (self::NEIGHBOURS as $c => $nbList) {
             $isOk = true;
             foreach ($nbList as $nbDir) {
@@ -123,42 +151,39 @@ final class Aoc2023Day10 extends SolutionBase
             if ($step > $maxStep) {
                 $maxStep = $step;
             }
-            $c = $grid[$y][$x];
-            foreach (self::NEIGHBOURS[$c] as $nbDir) {
-                [$dx, $dy] = self::DIR_DELTAS[$nbDir];
-                $nbX = $x + $dx;
-                $nbY = $y + $dy;
-                if (($nbX < 0) or ($nbX >= $maxX) or ($nbY < 0) or ($nbY >= $maxY)) {
-                    throw new \Exception('Invalid input');
-                }
-                if (($step <= 2) and ($nbX == $startX) and ($nbY == $startY)) {
+            [$dx, $dy] = self::DIR_DELTAS[$dir];
+            $nbX = $x + $dx;
+            $nbY = $y + $dy;
+            if (($nbX < 0) or ($nbX >= $maxX) or ($nbY < 0) or ($nbY >= $maxY)) {
+                throw new \Exception('Invalid input');
+            }
+            if (isset($isPipe[$nbY][$nbX])) {
+                throw new \Exception('Invalid input');
+            }
+            $nbC = $grid[$nbY][$nbX];
+            $nextDir = $dir;
+            foreach (self::NEIGHBOURS[$nbC] as $nbDir) {
+                if ($dir == self::OPPOSITE[$nbDir]) {
                     continue;
                 }
-                if (isset($isPipe[$nbY][$nbX])) {
-                    continue;
-                }
-                $x = $nbX;
-                $y = $nbY;
-                $isPipe[$y][$x] = true;
-                // track tiles on both sides before and after turning
-                $dirs = [$nbDir];
-                foreach ($dirs as $dirToCheck) {
-                    $idxDir = strpos(self::DIR_NAMES, $dirToCheck) ?: 0;
-                    for ($dDir = -1; $dDir <= 1; $dDir += 2) {
-                        $sideDir = self::DIR_NAMES[($idxDir + $dDir + 4) % 4];
-                        [$sideDx, $sideDy] = self::DIR_DELTAS[$sideDir];
-                        $sideX = $nbX + $sideDx;
-                        $sideY = $nbY + $sideDy;
-                        if (($sideX < 0) or ($sideX >= $maxX) or ($sideY < 0) or ($sideY >= $maxY)) {
-                            continue;
-                        }
-                        $sideTiles[$dDir == 1 ? 1 : 0][] = [$sideX, $sideY];
+                $nextDir = $nbDir;
+                break;
+            }
+            for ($side = 0; $side <= 1; ++$side) {
+                foreach ((self::SIDES[$side][$dir . $nextDir] ?? []) as [$sideDx, $sideDy]) {
+                    $sideX = $nbX + $sideDx;
+                    $sideY = $nbY + $sideDy;
+                    if (($sideX < 0) or ($sideX >= $maxX) or ($sideY < 0) or ($sideY >= $maxY)) {
+                        continue;
                     }
+                    $sideTiles[$side][] = [$sideX, $sideY];
                 }
-                $dir = $nbDir;
-                if (($x == $startX) and ($y == $startY)) {
-                    break 2;
-                }
+            }
+            $isPipe[$nbY][$nbX] = true;
+            $x = $nbX;
+            $y = $nbY;
+            $dir = $nextDir;
+            if (($x == $startX) and ($y == $startY)) {
                 break;
             }
         }
@@ -210,19 +235,15 @@ final class Aoc2023Day10 extends SolutionBase
                 }
             }
         }
+        // @phpstan-ignore-next-line
         if (self::DEBUG) {
-            echo '-- start: (' . $startX . ', ' . $startY . ')', PHP_EOL;
+            // @codeCoverageIgnoreStart
+            echo '---- start: (' . $startX . ', ' . $startY . ')', PHP_EOL;
             echo implode(PHP_EOL, $grid), PHP_EOL, PHP_EOL;
             echo implode(PHP_EOL, $coverGrid), PHP_EOL, PHP_EOL, PHP_EOL;
+            // @codeCoverageIgnoreEnd
         }
         $ans2 = $countTiles[1 - $idxOutside];
-        for ($y = 0; $y < $maxY; ++$y) {
-            for ($x = 0; $x < $maxX; ++$x) {
-                if ($coverGrid[$y][$x] == self::EMPTY) {
-                    ++$ans2;
-                }
-            }
-        }
         return [strval($ans1), strval($ans2)];
     }
 }
