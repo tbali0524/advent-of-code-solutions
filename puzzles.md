@@ -286,7 +286,7 @@ No external hint was used in this season.
 |  +  |2023|  7|Camel Cards                               |Poker hands
 |  +  |2023|  8|Haunted Wasteland                         |cycle detection, least common multiple
 |  +  |2023|  9|Mirage Maintenance                        |recursion
-|     |2023| 10|?                                         |
+|     |2023| 10|Pipe Maze                                 |
 |     |2023| 11|?                                         |
 |     |2023| 12|?                                         |
 |     |2023| 13|?                                         |
