@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-20-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-422-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-23-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-423-green)|
 
 ## Puzzles
 
@@ -288,7 +288,7 @@ No external hint was used in this season.
 |  +  |2023|  9|Mirage Maintenance                        |recursion
 |  +  |2023| 10|Pipe Maze                                 |enclosed area in loop path
 |  +  |2023| 11|Cosmic Expansion                          |
-|     |2023| 12|?                                         |
+|  1  |2023| 12|Hot Springs                               |
 |     |2023| 13|?                                         |
 |     |2023| 14|?                                         |
 |     |2023| 15|?                                         |
