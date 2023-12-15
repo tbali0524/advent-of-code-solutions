@@ -13,6 +13,8 @@ use TBali\Aoc\SolutionBase;
  * Part 2: Unfold your condition records; what is the new sum of possible arrangement counts?
  *
  * @see https://adventofcode.com/2023/day/12
+ *
+ * @todo Part 2
  */
 final class Aoc2023Day12 extends SolutionBase
 {
