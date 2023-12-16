@@ -14,7 +14,7 @@ use TBali\Aoc\SolutionBase;
  * Part 1: Assemble the full map of beacons. How many beacons are there?
  * Part 2: What is the largest Manhattan distance between any two scanners?
  *
- * @topic: vector, matrix, rotations
+ * Topics: vector, matrix, rotations
  *
  * @see https://adventofcode.com/2021/day/19
  */

@@ -15,7 +15,7 @@ use TBali\Aoc\SolutionBase;
  * Part 2: After shuffling your new, giant, factory order deck that many times,
  *         what number is on the card that ends up in position 2020?
  *
- * Topic: card deck simulation, modular arithmetics, LCF (linear congruential function)
+ * Topics: card deck simulation, modular arithmetics, LCF (linear congruential function)
  *
  * Note: Part 2 solution is based on https://codeforces.com/blog/entry/72593
  *

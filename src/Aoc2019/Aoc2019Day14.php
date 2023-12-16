@@ -14,7 +14,7 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the minimum amount of ORE required to produce exactly 1 FUEL?
  * Part 2: Given 1 trillion ORE, what is the maximum amount of FUEL you can produce?
  *
- * @topics: binary search
+ * Topics: binary search
  *
  * @see https://adventofcode.com/2019/day/14
  */

@@ -14,7 +14,7 @@ use TBali\Aoc\SolutionBase;
  * Part 1: What is the magnitude of the final sum?
  * Part 2: What is the largest magnitude of any sum of two different snailfish numbers from the homework assignment?
  *
- * @topic: binary tree
+ * Topics: binary tree
  *
  * @see https://adventofcode.com/2021/day/18
  */
