@@ -650,8 +650,6 @@ final class Aoc2023Test extends TestCase
 
     /**
      * @covers \TBali\Aoc2023\Aoc2023Day12
-     *
-     * @group medium
      */
     public function testDay12(): void
     {
