@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-32-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-432-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-34-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-434-green)|
 
 ## Puzzles
 
@@ -293,7 +293,7 @@ No external hint was used in this season.
 |  +  |2023| 14|Parabolic Reflector Dish                  |cycle detection
 |  +  |2023| 15|Lens Library                              |
 |  +  |2023| 16|The Floor Will Be Lava                    |BFS
-|     |2023| 17|?                                         |
+|  +  |2023| 17|Clumsy Crucible                           |Dijkstra, priority queue
 |     |2023| 18|?                                         |
 |     |2023| 19|?                                         |
 |     |2023| 20|?                                         |

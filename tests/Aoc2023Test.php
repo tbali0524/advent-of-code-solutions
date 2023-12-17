@@ -25,8 +25,8 @@ use TBali\Aoc2023\Aoc2023Day13;
 use TBali\Aoc2023\Aoc2023Day14;
 use TBali\Aoc2023\Aoc2023Day15;
 use TBali\Aoc2023\Aoc2023Day16;
+use TBali\Aoc2023\Aoc2023Day17;
 
-// use TBali\Aoc2023\Aoc2023Day17;
 // use TBali\Aoc2023\Aoc2023Day18;
 // use TBali\Aoc2023\Aoc2023Day19;
 // use TBali\Aoc2023\Aoc2023Day20;
@@ -837,44 +837,51 @@ final class Aoc2023Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day17
-    //  */
-    // public function testDay17Example1(): void
-    // {
-    //     $solver = new Aoc2023Day17();
-    //     $input = [$solver::EXAMPLE_STRING_INPUTS[0]];
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day17
+     * @covers \TBali\Aoc2023\MinPriorityQueue
+     */
+    public function testDay17Example1(): void
+    {
+        $solver = new Aoc2023Day17();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day17
-    //  */
-    // public function testDay17(): void
-    // {
-    //     $solver = new Aoc2023Day17();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day17
+     * @covers \TBali\Aoc2023\MinPriorityQueue
+     */
+    public function testDay17Example2(): void
+    {
+        $solver = new Aoc2023Day17();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        // self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day17
-    //  */
-    // public function testDay17InvalidInput1(): void
-    // {
-    //     $solver = new Aoc2023Day17();
-    //     $input = ['a'];
-    //     $this->expectException(\Exception::class);
-    //     [$ans1, $ans2] = $solver->solve($input);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day17
+     * @covers \TBali\Aoc2023\MinPriorityQueue
+     *
+     * @group medium
+     */
+    public function testDay17(): void
+    {
+        $solver = new Aoc2023Day17();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // // --------------------------------------------------------------------
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2023\Aoc2023Day18
