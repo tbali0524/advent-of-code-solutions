@@ -27,8 +27,8 @@ use TBali\Aoc2023\Aoc2023Day15;
 use TBali\Aoc2023\Aoc2023Day16;
 use TBali\Aoc2023\Aoc2023Day17;
 use TBali\Aoc2023\Aoc2023Day18;
+use TBali\Aoc2023\Aoc2023Day19;
 
-// use TBali\Aoc2023\Aoc2023Day19;
 // use TBali\Aoc2023\Aoc2023Day20;
 // use TBali\Aoc2023\Aoc2023Day21;
 // use TBali\Aoc2023\Aoc2023Day22;
@@ -922,44 +922,109 @@ final class Aoc2023Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day19
-    //  */
-    // public function testDay19Example1(): void
-    // {
-    //     $solver = new Aoc2023Day19();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19Example1(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day19
-    //  */
-    // public function testDay19(): void
-    // {
-    //     $solver = new Aoc2023Day19();
-    //     $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
-    //     [$ans1, $ans2] = $solver->solve($input);
-    //     [$expected1, $expected2] = $solver::SOLUTIONS;
-    //     self::assertSame(strval($expected1), $ans1);
-    //     self::assertSame(strval($expected2), $ans2);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
 
-    // /**
-    //  * @covers \TBali\Aoc2023\Aoc2023Day19
-    //  */
-    // public function testDay19InvalidInput1(): void
-    // {
-    //     $solver = new Aoc2023Day19();
-    //     $input = ['a'];
-    //     $this->expectException(\Exception::class);
-    //     [$ans1, $ans2] = $solver->solve($input);
-    // }
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19InvalidInput1(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = ['a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
-    // // --------------------------------------------------------------------
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19InvalidInput2(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = ['px{z>1:A,A}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19InvalidInput3(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = ['in{a<20:out,m>291:A}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19InvalidInput4(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = ['in{a<20:out,m>291:A}', '', '{x=1,m=2,a=3,z=4}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    /**
+     * @covers \TBali\Aoc2023\Aoc2023Day19
+     * @covers \TBali\Aoc2023\Part
+     * @covers \TBali\Aoc2023\PartRange
+     * @covers \TBali\Aoc2023\Workflow
+     */
+    public function testDay19InvalidInput5(): void
+    {
+        $solver = new Aoc2023Day19();
+        $input = ['out{a<20:out,m>291:A}', '', '{x=1,m=2,a=3,s=4}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
 
     // /**
     //  * @covers \TBali\Aoc2023\Aoc2023Day20
