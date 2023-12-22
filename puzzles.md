@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-40-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-440-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-43-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-443-green)|
 
 ## Puzzles
 
@@ -297,8 +297,8 @@ No external hint was used in this season.
 |  +  |2023| 18|Lavaduct Lagoon                           |BFS
 |  +  |2023| 19|Aplenty                                   |
 |  +  |2023| 20|Pulse Propagation                         |simulation, cycle detection, priority queue
-|     |2023| 21|?                                         |
-|     |2023| 22|?                                         |
+| (1) |2023| 21|Step Counter                              |BFS
+|  +  |2023| 22|Sand Slabs                                |simulation
 |     |2023| 23|?                                         |
 |     |2023| 24|?                                         |
 |     |2023| 25|?                                         |

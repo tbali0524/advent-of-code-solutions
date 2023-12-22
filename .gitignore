@@ -7,3 +7,4 @@
 
 # /.tools/* is excluded via a separate .gitignore file
 # /.vscode/ is not excluded for convenience
+/tmp.txt
