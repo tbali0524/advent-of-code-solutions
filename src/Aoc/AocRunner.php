@@ -35,6 +35,7 @@ final class AocRunner
         2019 => [18, 19],       // puzzle #19 runs in ~33s, puzzle #18 has JIT bug
         2021 => [22, 23],       // puzzle #22 runs in ~100s, #23 in ~18s
         2022 => [19, 24],       // puzzle #19 runs in ~25s, #24 in ~138s
+        2023 => [21],           // puzzle #21 runs in ~9s
     ];
 
     /**

@@ -22,7 +22,7 @@ final class Aoc2023Day21 extends SolutionBase
     public const YEAR = 2023;
     public const DAY = 21;
     public const TITLE = 'Step Counter';
-    public const SOLUTIONS = [3820, 0]; // 632421652162077 fails
+    public const SOLUTIONS = [3820, 632421652138917];
     public const EXAMPLE_SOLUTIONS = [[16, 0]]; // Part 2 solution is not valid for the example (different assumptions)
 
     private const DEBUG = false;
@@ -113,12 +113,12 @@ final class Aoc2023Day21 extends SolutionBase
         $remainingSteps1 = $remainingSteps - ($half + 1);
         $remainingSteps2 = $remainingSteps1 + $this->maxX;
         foreach ([[0, 0], [0, 1], [1, 0], [1, 1]] as [$dx, $dy]) {
-            $ans2 += $n * $this->solvePart1(
+            $ans2 += ($n + 1) * $this->solvePart1(
                 $dx * ($this->maxX - 1),
                 $dy * ($this->maxY - 1),
                 $remainingSteps1,
             );
-            $ans2 += ($n + 1) * $this->solvePart1(
+            $ans2 += $n * $this->solvePart1(
                 $dx * ($this->maxX - 1),
                 $dy * ($this->maxY - 1),
                 $remainingSteps2,
@@ -163,7 +163,9 @@ final class Aoc2023Day21 extends SolutionBase
                 $nextX = $x + $dx;
                 $nextY = $y + $dy;
                 if (($nextX < 0) or ($nextX >= $this->maxX) or ($nextY < 0) or ($nextY >= $this->maxY)) {
+                    // @codeCoverageIgnoreStart
                     continue;
+                    // @codeCoverageIgnoreEnd
                 }
                 if ($this->grid[$nextY][$nextX] != self::EMPTY) {
                     continue;
