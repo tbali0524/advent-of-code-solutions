@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-44-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-444-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-46-yellow)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-446-green)|
 
 ## Puzzles
 
@@ -299,7 +299,7 @@ No external hint was used in this season.
 |  +  |2023| 20|Pulse Propagation                         |simulation, cycle detection, priority queue
 |  +  |2023| 21|Step Counter                              |BFS
 |  +  |2023| 22|Sand Slabs                                |simulation
-|     |2023| 23|?                                         |
+|  +  |2023| 23|A Long Walk                               |DFS, BFS, maze compression
 |     |2023| 24|?                                         |
 |     |2023| 25|?                                         |
 
