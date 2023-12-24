@@ -514,7 +514,6 @@ final class Aoc2016Test extends TestCase
      */
     public function testDay11(): void
     {
-        self::markTestSkipped(); // very slow with xdebug coverage
         $solver = new Aoc2016Day11();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);
