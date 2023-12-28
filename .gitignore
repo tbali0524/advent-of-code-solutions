@@ -2,9 +2,14 @@
 
 # php package dependencies directory, here used only by Composer:
 /vendor/
+
+# exclude dev tool configuration local overrides
+/.php-cs-fixer.php
+/phpdoc.xml
+/phpstan.neon
+
 # output directory for phpDocumentor:
 /docs/
 
 # /.tools/* is excluded via a separate .gitignore file
 # /.vscode/ is not excluded for convenience
-/tmp.txt

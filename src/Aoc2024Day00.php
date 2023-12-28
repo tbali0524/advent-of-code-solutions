@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace TBali\Aoc2023;
+namespace TBali\Aoc2024;
 
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2023 Day 0: .
+ * AoC 2024 Day 0: CODE SKELETON FOR SOLUTION.
  *
  * Part 1:
  * Part 2:
  *
- * @see https://adventofcode.com/2023/day/
+ * @see https://adventofcode.com/2024/day/0
  */
-final class Aoc2023Day00 extends SolutionBase
+final class Aoc2024Day00 extends SolutionBase
 {
-    public const YEAR = 2023;
+    public const YEAR = 2024;
     public const DAY = 0;
     public const TITLE = '';
     public const SOLUTIONS = [0, 0];

@@ -12,8 +12,8 @@
 |[2020](#2020)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
-|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-47-yellow)|
-|__Total__|![total](https://img.shields.io/badge/stars%20⭐-447-green)|
+|[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|__Total__|![total](https://img.shields.io/badge/stars%20⭐-450-green)|
 
 ## Puzzles
 
@@ -300,7 +300,7 @@ No external hint was used in this season.
 |  +  |2023| 21|Step Counter                              |BFS
 |  +  |2023| 22|Sand Slabs                                |simulation
 |  +  |2023| 23|A Long Walk                               |DFS, BFS, maze compression
-| (1) |2023| 24|Never Tell Me The Odds                    |line intersection
-|     |2023| 25|?                                         |
+|  +  |2023| 24|Never Tell Me The Odds                    |line intersection
+|  +  |2023| 25|Snowverload                               |graph components
 
-Hint from `subreddit` was used for Day 12 part 2.
+Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.

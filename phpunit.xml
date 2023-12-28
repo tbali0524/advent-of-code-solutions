@@ -40,6 +40,7 @@ minimum version: ^10.5
             <directory>src/other</directory>
             <file>src/aoc.php</file>
             <file>src/run_class.php</file>
+            <file>src/Aoc2024Day00.php</file>
         </exclude>
     </source>
     <testsuites>
