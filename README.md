@@ -77,17 +77,17 @@ The following helper commands are defined in [composer.json](composer.json):
 |Command      |Description |
 |:------------|:-----------|
 |start        |Run all solutions with AocRunner|
-|test         |Run solutions and create test coverage report with [phpunit](https://www.phpunit.de/)|
-|cs           |Check coding style compliance to `PSR12` with [phpcs](https://github.com/squizlabs/PHP_CodeSniffer)|
-|cs-fixer     |Check coding style compliance to `PSR12` plus extra rules with [php-cs-fixer](https://cs.symfony.com/) (no fix applied)|
-|cs-fixer-do  |Apply coding style fixes with _php-cs-fixer_|
+|test         |Run solutions and create test coverage report with [PHPUnit](https://www.phpunit.de/)|
+|cs           |Check coding style compliance to `PSR12` with [PHP_CodeSniffer](https://github.com/PHPCSStandards/PHP_CodeSniffer)|
+|cs-fixer     |Check coding style compliance to `PSR12` plus extra rules with [PHP-CS-Fixer](https://cs.symfony.com/) (no fix applied)|
+|cs-fixer-do  |Apply coding style fixes with _PHP-CS-Fixer_|
 |doc          |Create documentation with [phpDocumentor](https://www.phpdoc.org/)|
-|lint         |Check syntax errors with [parallel-lint](https://github.com/php-parallel-lint/PHP-Parallel-Lint)|
+|lint         |Check syntax errors with [Parallel-Lint](https://github.com/php-parallel-lint/PHP-Parallel-Lint)|
 |loc          |Get code summary report with [phploc](https://github.com/sebastianbergmann/phploc)|
-|metrics      |Generate code metrics report with [phpmetrics](https://phpmetrics.github.io/website/)|
-|stan         |Run static analysis with [phpstan](https://phpstan.org/)|
-|qa           |Run code quality checks: _phpcs, php-cs-fixer, phpstan_|
-|qa-full      |Run code quality checks: _phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor, phpunit, and run all solutions_|
+|metrics      |Generate code metrics report with [PhpMetrics](https://phpmetrics.github.io/website/)|
+|stan         |Run static analysis with [PHPStan](https://phpstan.org/)|
+|qa           |Run code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan_|
+|qa-full      |Run all code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Parallel-Lint, PhpMetrics, phpDocumentor, PHPUnit, and run all solutions_|
 |open-cover   |Open generated test coverage report in browser _(fixed file path)_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|

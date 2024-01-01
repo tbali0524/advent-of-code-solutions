@@ -2,9 +2,9 @@
 <!--
 phpcs configuration file.
 
-minimum version: ^3.7
+minimum version: ^3.8
 
-@see https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset
+@see https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset
 -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="advent-of-code-solutions">
     <description>PHP_CodeSniffer configuration</description>
@@ -17,7 +17,7 @@ minimum version: ^3.7
     <arg name="report-width" value="120"/>
     <arg name="colors"/>
     <arg value="sp"/>
-    <!-- rules: https://github.com/squizlabs/PHP_CodeSniffer/blob/master/src/Standards/PSR12/ruleset.xml -->
+    <!-- rules: https://github.com/PHPCSStandards/PHP_CodeSniffer/blob/master/src/Standards/PSR12/ruleset.xml -->
     <rule ref="PSR12"/>
     <file>.</file>
     <exclude-pattern>*/.git/*</exclude-pattern>

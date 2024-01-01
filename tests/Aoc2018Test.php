@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
 use TBali\Aoc2018\Aoc2018Day01;
 use TBali\Aoc2018\Aoc2018Day02;
 use TBali\Aoc2018\Aoc2018Day03;
@@ -33,6 +34,7 @@ use TBali\Aoc2018\Aoc2018Day22;
 use TBali\Aoc2018\Aoc2018Day23;
 use TBali\Aoc2018\Aoc2018Day24;
 use TBali\Aoc2018\Aoc2018Day25;
+use TBali\Aoc2018\ArmyGroup;
 
 /**
  * Unit tests for Advent of Code season 2018.
@@ -45,10 +47,10 @@ use TBali\Aoc2018\Aoc2018Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2018Day11::class)]
 #[IgnoreClassForCodeCoverage(Aoc2018Day24::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2018\ArmyGroup::class)]
+#[IgnoreClassForCodeCoverage(ArmyGroup::class)]
 final class Aoc2018Test extends TestCase
 {
     // --------------------------------------------------------------------

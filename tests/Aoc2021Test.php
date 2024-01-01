@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
 use TBali\Aoc2021\Aoc2021Day01;
 use TBali\Aoc2021\Aoc2021Day02;
 use TBali\Aoc2021\Aoc2021Day03;
@@ -33,6 +34,9 @@ use TBali\Aoc2021\Aoc2021Day22;
 use TBali\Aoc2021\Aoc2021Day23;
 use TBali\Aoc2021\Aoc2021Day24;
 use TBali\Aoc2021\Aoc2021Day25;
+use TBali\Aoc2021\Burrow;
+use TBali\Aoc2021\BurrowExtended;
+use TBali\Aoc2021\MinPriorityQueue;
 
 /**
  * Unit tests for Advent of Code season 2021.
@@ -45,13 +49,13 @@ use TBali\Aoc2021\Aoc2021Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2021Day20::class)]
 #[IgnoreClassForCodeCoverage(Aoc2021Day21::class)]
 #[IgnoreClassForCodeCoverage(Aoc2021Day23::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\Burrow::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\BurrowExtended::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2021\MinPriorityQueue::class)]
+#[IgnoreClassForCodeCoverage(Burrow::class)]
+#[IgnoreClassForCodeCoverage(BurrowExtended::class)]
+#[IgnoreClassForCodeCoverage(MinPriorityQueue::class)]
 #[IgnoreClassForCodeCoverage(Aoc2021Day24::class)]
 final class Aoc2021Test extends TestCase
 {

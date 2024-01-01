@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
 use TBali\Aoc2022\Aoc2022Day01;
 use TBali\Aoc2022\Aoc2022Day02;
 use TBali\Aoc2022\Aoc2022Day03;
@@ -33,6 +34,8 @@ use TBali\Aoc2022\Aoc2022Day22;
 use TBali\Aoc2022\Aoc2022Day23;
 use TBali\Aoc2022\Aoc2022Day24;
 use TBali\Aoc2022\Aoc2022Day25;
+use TBali\Aoc2022\BluePrint;
+use TBali\Aoc2022\ValveState;
 
 /**
  * Unit tests for Advent of Code season 2022.
@@ -45,11 +48,11 @@ use TBali\Aoc2022\Aoc2022Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2022Day16::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2022\ValveState::class)]
+#[IgnoreClassForCodeCoverage(ValveState::class)]
 #[IgnoreClassForCodeCoverage(Aoc2022Day19::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2022\BluePrint::class)]
+#[IgnoreClassForCodeCoverage(BluePrint::class)]
 final class Aoc2022Test extends TestCase
 {
     // --------------------------------------------------------------------

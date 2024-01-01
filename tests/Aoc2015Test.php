@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
 use TBali\Aoc2015\Aoc2015Day01;
 use TBali\Aoc2015\Aoc2015Day02;
 use TBali\Aoc2015\Aoc2015Day03;
@@ -33,6 +34,11 @@ use TBali\Aoc2015\Aoc2015Day22;
 use TBali\Aoc2015\Aoc2015Day23;
 use TBali\Aoc2015\Aoc2015Day24;
 use TBali\Aoc2015\Aoc2015Day25;
+use TBali\Aoc2015\Instruction;
+use TBali\Aoc2015\PrimeFactors;
+use TBali\Aoc2015\WizardGameState;
+use TBali\Aoc2015\WizardSimulator;
+use TBali\Aoc2015\WizardSimulatorHardMode;
 
 /**
  * Unit tests for Advent of Code season 2015.
@@ -45,17 +51,17 @@ use TBali\Aoc2015\Aoc2015Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day04::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day06::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\Instruction::class)]
+#[IgnoreClassForCodeCoverage(Instruction::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day10::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day20::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\PrimeFactors::class)]
+#[IgnoreClassForCodeCoverage(PrimeFactors::class)]
 #[IgnoreClassForCodeCoverage(Aoc2015Day22::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardGameState::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardSimulator::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2015\WizardSimulatorHardMode::class)]
+#[IgnoreClassForCodeCoverage(WizardGameState::class)]
+#[IgnoreClassForCodeCoverage(WizardSimulator::class)]
+#[IgnoreClassForCodeCoverage(WizardSimulatorHardMode::class)]
 final class Aoc2015Test extends TestCase
 {
     /**

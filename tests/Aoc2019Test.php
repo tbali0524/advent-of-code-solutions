@@ -8,6 +8,8 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
+use TBali\Aoc2019\AdventureSimulator;
 use TBali\Aoc2019\Aoc2019Day01;
 use TBali\Aoc2019\Aoc2019Day02;
 use TBali\Aoc2019\Aoc2019Day03;
@@ -33,6 +35,10 @@ use TBali\Aoc2019\Aoc2019Day22;
 use TBali\Aoc2019\Aoc2019Day23;
 use TBali\Aoc2019\Aoc2019Day24;
 use TBali\Aoc2019\Aoc2019Day25;
+use TBali\Aoc2019\ArcadeSimulator;
+use TBali\Aoc2019\DroidSimulator;
+use TBali\Aoc2019\DroneSimulator;
+use TBali\Aoc2019\Map;
 
 /**
  * Unit tests for Advent of Code season 2019.
@@ -45,16 +51,16 @@ use TBali\Aoc2019\Aoc2019Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day13::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\ArcadeSimulator::class)]
+#[IgnoreClassForCodeCoverage(ArcadeSimulator::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day15::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\DroidSimulator::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\Map::class)]
+#[IgnoreClassForCodeCoverage(DroidSimulator::class)]
+#[IgnoreClassForCodeCoverage(Map::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day19::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\DroneSimulator::class)]
+#[IgnoreClassForCodeCoverage(DroneSimulator::class)]
 #[IgnoreClassForCodeCoverage(Aoc2019Day25::class)]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc2019\AdventureSimulator::class)]
+#[IgnoreClassForCodeCoverage(AdventureSimulator::class)]
 final class Aoc2019Test extends TestCase
 {
     // --------------------------------------------------------------------

@@ -8,6 +8,7 @@ use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
+use TBali\Aoc\SolutionBase;
 use TBali\Aoc2017\Aoc2017Day01;
 use TBali\Aoc2017\Aoc2017Day02;
 use TBali\Aoc2017\Aoc2017Day03;
@@ -45,7 +46,7 @@ use TBali\Aoc2017\Aoc2017Day25;
  */
 #[RequiresPhp('^8.3')]
 #[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(\TBali\Aoc\SolutionBase::class)]
+#[IgnoreClassForCodeCoverage(SolutionBase::class)]
 #[IgnoreClassForCodeCoverage(Aoc2017Day14::class)]
 #[IgnoreClassForCodeCoverage(Aoc2017Day15::class)]
 #[IgnoreClassForCodeCoverage(Aoc2017Day22::class)]
