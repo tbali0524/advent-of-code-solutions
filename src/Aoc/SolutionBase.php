@@ -8,6 +8,8 @@ namespace TBali\Aoc;
  * Common abstract class that every AoC solution class should extend.
  *
  * @author Bálint Tóth
+ *
+ * @codeCoverageIgnore
  */
 abstract class SolutionBase implements Solution
 {

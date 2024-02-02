@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: flood fill
  *
  * @see https://adventofcode.com/2017/day/14
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2017Day14 extends SolutionBase
 {

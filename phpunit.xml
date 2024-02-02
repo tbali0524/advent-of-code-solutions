@@ -2,13 +2,13 @@
 <!--
 PHPUnit configuration file.
 
-minimum version: ^10.5
+minimum version: ^11.0
 
-@see https://phpunit.readthedocs.io/en/10.5/configuration.html
+@see https://phpunit.readthedocs.io/en/11.0/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.0/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
     colors="true"
@@ -89,6 +89,8 @@ minimum version: ^10.5
         <exclude>
             <group>medium</group>
             <group>large</group>
+            <group>medium-slow</group>
+            <group>slow</group>
         </exclude>
     </groups>
 </phpunit>

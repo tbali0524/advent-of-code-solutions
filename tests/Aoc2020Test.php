@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
-use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
-use TBali\Aoc\SolutionBase;
 use TBali\Aoc2020\Aoc2020Day01;
 use TBali\Aoc2020\Aoc2020Day02;
 use TBali\Aoc2020\Aoc2020Day03;
@@ -34,6 +34,17 @@ use TBali\Aoc2020\Aoc2020Day22;
 use TBali\Aoc2020\Aoc2020Day23;
 use TBali\Aoc2020\Aoc2020Day24;
 use TBali\Aoc2020\Aoc2020Day25;
+use TBali\Aoc2020\BagRegulations;
+use TBali\Aoc2020\Expression;
+use TBali\Aoc2020\FieldValidator;
+use TBali\Aoc2020\Image;
+use TBali\Aoc2020\ImageTile;
+use TBali\Aoc2020\MessageNode;
+use TBali\Aoc2020\Point;
+use TBali\Aoc2020\SearchPattern;
+use TBali\Aoc2020\SpaceCardDeck;
+use TBali\Aoc2020\SpaceCardGame;
+use TBali\Aoc2020\SpaceCardRecursiveGame;
 
 /**
  * Unit tests for Advent of Code season 2020.
@@ -45,19 +56,47 @@ use TBali\Aoc2020\Aoc2020Day25;
  * @coversNothing
  */
 #[RequiresPhp('^8.3')]
-#[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(SolutionBase::class)]
-#[IgnoreClassForCodeCoverage(Aoc2020Day15::class)]
-#[IgnoreClassForCodeCoverage(Aoc2020Day17::class)]
-#[IgnoreClassForCodeCoverage(Aoc2020Day23::class)]
-#[IgnoreClassForCodeCoverage(Aoc2020Day24::class)]
+#[RequiresPhpunit('^11.0')]
+#[CoversClass(Aoc2020Day01::class)]
+#[CoversClass(Aoc2020Day02::class)]
+#[CoversClass(Aoc2020Day03::class)]
+#[CoversClass(Aoc2020Day04::class)]
+#[CoversClass(Aoc2020Day05::class)]
+#[CoversClass(Aoc2020Day06::class)]
+#[CoversClass(Aoc2020Day07::class)]
+#[CoversClass(Aoc2020Day08::class)]
+#[CoversClass(Aoc2020Day09::class)]
+#[CoversClass(Aoc2020Day10::class)]
+#[CoversClass(Aoc2020Day11::class)]
+#[CoversClass(Aoc2020Day12::class)]
+#[CoversClass(Aoc2020Day13::class)]
+#[CoversClass(Aoc2020Day14::class)]
+#[CoversClass(Aoc2020Day15::class)]
+#[CoversClass(Aoc2020Day16::class)]
+#[CoversClass(Aoc2020Day17::class)]
+#[CoversClass(Aoc2020Day18::class)]
+#[CoversClass(Aoc2020Day19::class)]
+#[CoversClass(Aoc2020Day20::class)]
+#[CoversClass(Aoc2020Day21::class)]
+#[CoversClass(Aoc2020Day22::class)]
+#[CoversClass(Aoc2020Day23::class)]
+#[CoversClass(Aoc2020Day24::class)]
+#[CoversClass(Aoc2020Day25::class)]
+#[CoversClass(BagRegulations::class)]
+#[CoversClass(Expression::class)]
+#[CoversClass(FieldValidator::class)]
+#[CoversClass(Image::class)]
+#[CoversClass(ImageTile::class)]
+#[CoversClass(MessageNode::class)]
+#[CoversClass(Point::class)]
+#[CoversClass(SearchPattern::class)]
+#[CoversClass(SpaceCardDeck::class)]
+#[CoversClass(SpaceCardGame::class)]
+#[CoversClass(SpaceCardRecursiveGame::class)]
 final class Aoc2020Test extends TestCase
 {
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day01
-     */
     public function testDay01Example1(): void
     {
         $solver = new Aoc2020Day01();
@@ -68,9 +107,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day01
-     */
     public function testDay01(): void
     {
         $solver = new Aoc2020Day01();
@@ -83,9 +119,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day02
-     */
     public function testDay02Example1(): void
     {
         $solver = new Aoc2020Day02();
@@ -96,9 +129,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day02
-     */
     public function testDay02(): void
     {
         $solver = new Aoc2020Day02();
@@ -109,9 +139,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day02
-     */
     public function testDay02InvalidInput1(): void
     {
         $solver = new Aoc2020Day02();
@@ -122,9 +149,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day03
-     */
     public function testDay03Example1(): void
     {
         $solver = new Aoc2020Day03();
@@ -135,9 +159,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day03
-     */
     public function testDay03(): void
     {
         $solver = new Aoc2020Day03();
@@ -150,9 +171,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day04
-     */
     public function testDay04Example1(): void
     {
         $solver = new Aoc2020Day04();
@@ -163,9 +181,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day04
-     */
     public function testDay04Example2(): void
     {
         $solver = new Aoc2020Day04();
@@ -176,9 +191,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day04
-     */
     public function testDay04(): void
     {
         $solver = new Aoc2020Day04();
@@ -189,9 +201,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day04
-     */
     public function testDay04InvalidInput1(): void
     {
         $solver = new Aoc2020Day04();
@@ -202,9 +211,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day05
-     */
     public function testDay05Example1(): void
     {
         $solver = new Aoc2020Day05();
@@ -215,9 +221,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day05
-     */
     public function testDay05Example2(): void
     {
         $solver = new Aoc2020Day05();
@@ -228,9 +231,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day05
-     */
     public function testDay05(): void
     {
         $solver = new Aoc2020Day05();
@@ -243,9 +243,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day06
-     */
     public function testDay06Example1(): void
     {
         $solver = new Aoc2020Day06();
@@ -256,9 +253,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day06
-     */
     public function testDay06(): void
     {
         $solver = new Aoc2020Day06();
@@ -271,10 +265,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day07
-     * @covers \TBali\Aoc2020\BagRegulations
-     */
     public function testDay07Example1(): void
     {
         $solver = new Aoc2020Day07();
@@ -285,10 +275,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day07
-     * @covers \TBali\Aoc2020\BagRegulations
-     */
     public function testDay07(): void
     {
         $solver = new Aoc2020Day07();
@@ -299,10 +285,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day07
-     * @covers \TBali\Aoc2020\BagRegulations
-     */
     public function testDay07InvalidInput1(): void
     {
         $solver = new Aoc2020Day07();
@@ -311,10 +293,6 @@ final class Aoc2020Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day07
-     * @covers \TBali\Aoc2020\BagRegulations
-     */
     public function testDay07InvalidInput2(): void
     {
         $solver = new Aoc2020Day07();
@@ -323,10 +301,6 @@ final class Aoc2020Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day07
-     * @covers \TBali\Aoc2020\BagRegulations
-     */
     public function testDay07InvalidInput3(): void
     {
         $solver = new Aoc2020Day07();
@@ -337,9 +311,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day08
-     */
     public function testDay08Example1(): void
     {
         $solver = new Aoc2020Day08();
@@ -350,9 +321,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day08
-     */
     public function testDay08(): void
     {
         $solver = new Aoc2020Day08();
@@ -365,9 +333,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day09
-     */
     public function testDay09Example1(): void
     {
         $solver = new Aoc2020Day09();
@@ -378,9 +343,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day09
-     */
     public function testDay09(): void
     {
         $solver = new Aoc2020Day09();
@@ -391,9 +353,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day09
-     */
     public function testDay09InvalidInput1(): void
     {
         $solver = new Aoc2020Day09();
@@ -404,9 +363,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day10
-     */
     public function testDay10Example1(): void
     {
         $solver = new Aoc2020Day10();
@@ -417,9 +373,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day10
-     */
     public function testDay10Example2(): void
     {
         $solver = new Aoc2020Day10();
@@ -430,9 +383,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day10
-     */
     public function testDay10(): void
     {
         $solver = new Aoc2020Day10();
@@ -445,9 +395,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day11
-     */
     public function testDay11Example1(): void
     {
         $solver = new Aoc2020Day11();
@@ -458,11 +405,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day11
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay11(): void
     {
         $solver = new Aoc2020Day11();
@@ -475,9 +418,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day12
-     */
     public function testDay12Example1(): void
     {
         $solver = new Aoc2020Day12();
@@ -488,9 +428,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day12
-     */
     public function testDay12(): void
     {
         $solver = new Aoc2020Day12();
@@ -503,9 +440,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day13
-     */
     public function testDay13Example1(): void
     {
         $solver = new Aoc2020Day13();
@@ -516,9 +450,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day13
-     */
     public function testDay13(): void
     {
         $solver = new Aoc2020Day13();
@@ -529,9 +460,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day13
-     */
     public function testDay13InvalidInput1(): void
     {
         $solver = new Aoc2020Day13();
@@ -540,9 +468,6 @@ final class Aoc2020Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day13
-     */
     public function testDay13InvalidInput2(): void
     {
         $solver = new Aoc2020Day13();
@@ -553,9 +478,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day14
-     */
     public function testDay14Example1(): void
     {
         $solver = new Aoc2020Day14();
@@ -566,9 +488,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day14
-     */
     public function testDay14Example2(): void
     {
         $solver = new Aoc2020Day14();
@@ -579,9 +498,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day14
-     */
     public function testDay14(): void
     {
         $solver = new Aoc2020Day14();
@@ -592,9 +508,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day14
-     */
     public function testDay14InvalidInput1(): void
     {
         $solver = new Aoc2020Day14();
@@ -605,11 +518,7 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day15
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay15Example1(): void
     {
         $solver = new Aoc2020Day15();
@@ -620,11 +529,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day15
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay15Example2(): void
     {
         $solver = new Aoc2020Day15();
@@ -635,11 +540,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day15
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay15(): void
     {
         $solver = new Aoc2020Day15();
@@ -652,10 +553,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day16
-     * @covers \TBali\Aoc2020\FieldValidator
-     */
     public function testDay16Example1(): void
     {
         $solver = new Aoc2020Day16();
@@ -666,10 +563,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day16
-     * @covers \TBali\Aoc2020\FieldValidator
-     */
     public function testDay16Example2(): void
     {
         $solver = new Aoc2020Day16();
@@ -680,10 +573,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day16
-     * @covers \TBali\Aoc2020\FieldValidator
-     */
     public function testDay16(): void
     {
         $solver = new Aoc2020Day16();
@@ -694,10 +583,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day14
-     * @covers \TBali\Aoc2020\FieldValidator
-     */
     public function testDay16InvalidInput1(): void
     {
         $solver = new Aoc2020Day14();
@@ -708,11 +593,7 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day17
-     *
-     * @group medium
-     */
+    #[Group('medium-slow')]
     public function testDay17Example1(): void
     {
         $solver = new Aoc2020Day17();
@@ -723,11 +604,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day17
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay17(): void
     {
         $solver = new Aoc2020Day17();
@@ -740,10 +617,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day18
-     * @covers \TBali\Aoc2020\Expression
-     */
     public function testDay18Example1(): void
     {
         $solver = new Aoc2020Day18();
@@ -754,10 +627,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day18
-     * @covers \TBali\Aoc2020\Expression
-     */
     public function testDay18Example2(): void
     {
         $solver = new Aoc2020Day18();
@@ -768,10 +637,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day18
-     * @covers \TBali\Aoc2020\Expression
-     */
     public function testDay18(): void
     {
         $solver = new Aoc2020Day18();
@@ -784,10 +649,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day19
-     * @covers \TBali\Aoc2020\MessageNode
-     */
     public function testDay19Example1(): void
     {
         $solver = new Aoc2020Day19();
@@ -798,10 +659,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day19
-     * @covers \TBali\Aoc2020\MessageNode
-     */
     public function testDay19Example2(): void
     {
         $solver = new Aoc2020Day19();
@@ -812,12 +669,7 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day19
-     * @covers \TBali\Aoc2020\MessageNode
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay19(): void
     {
         $solver = new Aoc2020Day19();
@@ -830,13 +682,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day20
-     * @covers \TBali\Aoc2020\Image
-     * @covers \TBali\Aoc2020\ImageTile
-     * @covers \TBali\Aoc2020\Point
-     * @covers \TBali\Aoc2020\SearchPattern
-     */
     public function testDay20Example1(): void
     {
         $solver = new Aoc2020Day20();
@@ -847,13 +692,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day20
-     * @covers \TBali\Aoc2020\Image
-     * @covers \TBali\Aoc2020\ImageTile
-     * @covers \TBali\Aoc2020\Point
-     * @covers \TBali\Aoc2020\SearchPattern
-     */
     public function testDay20(): void
     {
         $solver = new Aoc2020Day20();
@@ -866,9 +704,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day21
-     */
     public function testDay21Example1(): void
     {
         $solver = new Aoc2020Day21();
@@ -879,9 +714,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day21
-     */
     public function testDay21(): void
     {
         $solver = new Aoc2020Day21();
@@ -894,12 +726,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day22
-     * @covers \TBali\Aoc2020\SpaceCardDeck
-     * @covers \TBali\Aoc2020\SpaceCardGame
-     * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
-     */
     public function testDay22Example1(): void
     {
         $solver = new Aoc2020Day22();
@@ -910,12 +736,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day22
-     * @covers \TBali\Aoc2020\SpaceCardDeck
-     * @covers \TBali\Aoc2020\SpaceCardGame
-     * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
-     */
     public function testDay22Example2(): void
     {
         $solver = new Aoc2020Day22();
@@ -926,14 +746,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day22
-     * @covers \TBali\Aoc2020\SpaceCardDeck
-     * @covers \TBali\Aoc2020\SpaceCardGame
-     * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay22(): void
     {
         $solver = new Aoc2020Day22();
@@ -944,12 +757,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day22
-     * @covers \TBali\Aoc2020\SpaceCardDeck
-     * @covers \TBali\Aoc2020\SpaceCardGame
-     * @covers \TBali\Aoc2020\SpaceCardRecursiveGame
-     */
     public function testDay22InvalidInput1(): void
     {
         $solver = new Aoc2020Day22();
@@ -960,11 +767,7 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day23
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay23Example1(): void
     {
         $solver = new Aoc2020Day23();
@@ -975,11 +778,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day23
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay23(): void
     {
         $solver = new Aoc2020Day23();
@@ -992,11 +791,7 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day24
-     *
-     * @group medium
-     */
+    #[Group('medium-slow')]
     public function testDay24Example1(): void
     {
         $solver = new Aoc2020Day24();
@@ -1007,11 +802,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day24
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay24(): void
     {
         $solver = new Aoc2020Day24();
@@ -1022,9 +813,6 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day24
-     */
     public function testDay24InvalidInput1(): void
     {
         $solver = new Aoc2020Day24();
@@ -1035,9 +823,6 @@ final class Aoc2020Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day25
-     */
     public function testDay25Example1(): void
     {
         $solver = new Aoc2020Day25();
@@ -1048,9 +833,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day25
-     */
     public function testDay25(): void
     {
         $solver = new Aoc2020Day25();
@@ -1061,9 +843,6 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2020\Aoc2020Day25
-     */
     public function testDay25InvalidInput1(): void
     {
         $solver = new Aoc2020Day25();

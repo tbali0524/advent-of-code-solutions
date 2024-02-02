@@ -17,6 +17,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: string parsing, game simulation
  *
  * @see https://adventofcode.com/2018/day/24
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2018Day24 extends SolutionBase
 {
@@ -209,6 +211,9 @@ final class Aoc2018Day24 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class ArmyGroup
 {
     public const IMMUNE_SYSTEM = 0;

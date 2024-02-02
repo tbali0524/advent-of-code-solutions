@@ -15,6 +15,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: Conway's look-and-say sequence, simulation
  *
  * @see https://adventofcode.com/2015/day/10
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2015Day10 extends SolutionBase
 {

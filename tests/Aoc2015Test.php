@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace TBali\Tests;
 
-use PHPUnit\Framework\Attributes\IgnoreClassForCodeCoverage;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
-use TBali\Aoc\SolutionBase;
 use TBali\Aoc2015\Aoc2015Day01;
 use TBali\Aoc2015\Aoc2015Day02;
 use TBali\Aoc2015\Aoc2015Day03;
@@ -34,8 +34,14 @@ use TBali\Aoc2015\Aoc2015Day22;
 use TBali\Aoc2015\Aoc2015Day23;
 use TBali\Aoc2015\Aoc2015Day24;
 use TBali\Aoc2015\Aoc2015Day25;
+use TBali\Aoc2015\Character;
+use TBali\Aoc2015\Circuit;
+use TBali\Aoc2015\CityGraph;
+use TBali\Aoc2015\Gate;
 use TBali\Aoc2015\Instruction;
+use TBali\Aoc2015\KnightsTable;
 use TBali\Aoc2015\PrimeFactors;
+use TBali\Aoc2015\Reindeer;
 use TBali\Aoc2015\WizardGameState;
 use TBali\Aoc2015\WizardSimulator;
 use TBali\Aoc2015\WizardSimulatorHardMode;
@@ -50,23 +56,45 @@ use TBali\Aoc2015\WizardSimulatorHardMode;
  * @coversNothing
  */
 #[RequiresPhp('^8.3')]
-#[RequiresPhpunit('^10.5')]
-#[IgnoreClassForCodeCoverage(SolutionBase::class)]
-#[IgnoreClassForCodeCoverage(Aoc2015Day04::class)]
-#[IgnoreClassForCodeCoverage(Aoc2015Day06::class)]
-#[IgnoreClassForCodeCoverage(Instruction::class)]
-#[IgnoreClassForCodeCoverage(Aoc2015Day10::class)]
-#[IgnoreClassForCodeCoverage(Aoc2015Day20::class)]
-#[IgnoreClassForCodeCoverage(PrimeFactors::class)]
-#[IgnoreClassForCodeCoverage(Aoc2015Day22::class)]
-#[IgnoreClassForCodeCoverage(WizardGameState::class)]
-#[IgnoreClassForCodeCoverage(WizardSimulator::class)]
-#[IgnoreClassForCodeCoverage(WizardSimulatorHardMode::class)]
+#[RequiresPhpunit('^11.0')]
+#[CoversClass(Aoc2015Day01::class)]
+#[CoversClass(Aoc2015Day02::class)]
+#[CoversClass(Aoc2015Day03::class)]
+#[CoversClass(Aoc2015Day04::class)]
+#[CoversClass(Aoc2015Day05::class)]
+#[CoversClass(Aoc2015Day06::class)]
+#[CoversClass(Aoc2015Day07::class)]
+#[CoversClass(Aoc2015Day08::class)]
+#[CoversClass(Aoc2015Day09::class)]
+#[CoversClass(Aoc2015Day10::class)]
+#[CoversClass(Aoc2015Day11::class)]
+#[CoversClass(Aoc2015Day12::class)]
+#[CoversClass(Aoc2015Day13::class)]
+#[CoversClass(Aoc2015Day14::class)]
+#[CoversClass(Aoc2015Day15::class)]
+#[CoversClass(Aoc2015Day16::class)]
+#[CoversClass(Aoc2015Day17::class)]
+#[CoversClass(Aoc2015Day18::class)]
+#[CoversClass(Aoc2015Day19::class)]
+#[CoversClass(Aoc2015Day20::class)]
+#[CoversClass(Aoc2015Day21::class)]
+#[CoversClass(Aoc2015Day22::class)]
+#[CoversClass(Aoc2015Day23::class)]
+#[CoversClass(Aoc2015Day24::class)]
+#[CoversClass(Aoc2015Day25::class)]
+#[CoversClass(Character::class)]
+#[CoversClass(Circuit::class)]
+#[CoversClass(CityGraph::class)]
+#[CoversClass(Gate::class)]
+#[CoversClass(Instruction::class)]
+#[CoversClass(KnightsTable::class)]
+#[CoversClass(PrimeFactors::class)]
+#[CoversClass(Reindeer::class)]
+#[CoversClass(WizardGameState::class)]
+#[CoversClass(WizardSimulator::class)]
+#[CoversClass(WizardSimulatorHardMode::class)]
 final class Aoc2015Test extends TestCase
 {
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day01
-     */
     public function testDay01Example1(): void
     {
         $solver = new Aoc2015Day01();
@@ -77,9 +105,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day01
-     */
     public function testDay01Example2(): void
     {
         $solver = new Aoc2015Day01();
@@ -90,10 +115,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day01
-     * @covers \TBali\Aoc\SolutionBase
-     */
     public function testDay01(): void
     {
         $solver = new Aoc2015Day01();
@@ -104,10 +125,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day01
-     * @covers \TBali\Aoc\SolutionBase
-     */
     public function testDay01InvalidInputFile1(): void
     {
         $solver = new Aoc2015Day01();
@@ -115,10 +132,6 @@ final class Aoc2015Test extends TestCase
         $input = $solver->readInput('input/2014/Aoc2014Day01.txt');
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day01
-     * @covers \TBali\Aoc\SolutionBase
-     */
     public function testDay01InvalidInputFile2(): void
     {
         $solver = new Aoc2015Day01();
@@ -128,9 +141,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day02
-     */
     public function testDay02Example1(): void
     {
         $solver = new Aoc2015Day02();
@@ -141,9 +151,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day02
-     */
     public function testDay02Example2(): void
     {
         $solver = new Aoc2015Day02();
@@ -154,9 +161,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day02
-     */
     public function testDay02(): void
     {
         $solver = new Aoc2015Day02();
@@ -167,9 +171,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day02
-     */
     public function testDay02InvalidInput(): void
     {
         $solver = new Aoc2015Day02();
@@ -180,9 +181,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day03
-     */
     public function testDay03Example1(): void
     {
         $solver = new Aoc2015Day03();
@@ -193,9 +191,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day03
-     */
     public function testDay03Example2(): void
     {
         $solver = new Aoc2015Day03();
@@ -206,9 +201,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day03
-     */
     public function testDay03(): void
     {
         $solver = new Aoc2015Day03();
@@ -221,11 +213,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day04
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay04Example1(): void
     {
         $solver = new Aoc2015Day04();
@@ -236,11 +224,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day04
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay04Example2(): void
     {
         $solver = new Aoc2015Day04();
@@ -251,11 +235,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day04
-     *
-     * @group medium
-     */
+    #[Group('medium-slow')]
     public function testDay04(): void
     {
         $solver = new Aoc2015Day04();
@@ -268,9 +248,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day05
-     */
     public function testDay05Example1(): void
     {
         $solver = new Aoc2015Day05();
@@ -281,9 +258,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day05
-     */
     public function testDay05Example2(): void
     {
         $solver = new Aoc2015Day05();
@@ -294,9 +268,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day05
-     */
     public function testDay05(): void
     {
         $solver = new Aoc2015Day05();
@@ -309,12 +280,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day06
-     * @covers \TBali\Aoc2015\Instruction
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay06Example1(): void
     {
         $solver = new Aoc2015Day06();
@@ -325,12 +291,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day06
-     * @covers \TBali\Aoc2015\Instruction
-     *
-     * @group medium
-     */
+    #[Group('medium-slow')]
     public function testDay06Example2(): void
     {
         $solver = new Aoc2015Day06();
@@ -341,12 +302,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day06
-     * @covers \TBali\Aoc2015\Instruction
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay06(): void
     {
         $solver = new Aoc2015Day06();
@@ -357,9 +313,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day06
-     */
     public function testDay06InvalidInput1(): void
     {
         $solver = new Aoc2015Day06();
@@ -368,9 +321,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day06
-     */
     public function testDay06InvalidInput2(): void
     {
         $solver = new Aoc2015Day06();
@@ -381,11 +331,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day07
-     * @covers \TBali\Aoc2015\Circuit
-     * @covers \TBali\Aoc2015\Gate
-     */
     public function testDay07Example1(): void
     {
         $solver = new Aoc2015Day07();
@@ -396,11 +341,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day07
-     * @covers \TBali\Aoc2015\Circuit
-     * @covers \TBali\Aoc2015\Gate
-     */
     public function testDay07(): void
     {
         $solver = new Aoc2015Day07();
@@ -411,11 +351,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day07
-     * @covers \TBali\Aoc2015\Circuit
-     * @covers \TBali\Aoc2015\Gate
-     */
     public function testDay07InvalidInput1(): void
     {
         $solver = new Aoc2015Day07();
@@ -424,11 +359,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day07
-     * @covers \TBali\Aoc2015\Circuit
-     * @covers \TBali\Aoc2015\Gate
-     */
     public function testDay07InvalidInput2(): void
     {
         $solver = new Aoc2015Day07();
@@ -437,11 +367,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day07
-     * @covers \TBali\Aoc2015\Circuit
-     * @covers \TBali\Aoc2015\Gate
-     */
     public function testDay07InvalidInput3(): void
     {
         $solver = new Aoc2015Day07();
@@ -452,9 +377,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day08
-     */
     public function testDay08Example1(): void
     {
         $solver = new Aoc2015Day08();
@@ -465,9 +387,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day08
-     */
     public function testDay08(): void
     {
         $solver = new Aoc2015Day08();
@@ -480,10 +399,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09Example1(): void
     {
         $solver = new Aoc2015Day09();
@@ -494,10 +409,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09(): void
     {
         $solver = new Aoc2015Day09();
@@ -508,10 +419,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09InvalidInput1(): void
     {
         $solver = new Aoc2015Day09();
@@ -520,10 +427,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09InvalidInput2(): void
     {
         $solver = new Aoc2015Day09();
@@ -532,10 +435,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09InvalidInput3(): void
     {
         $solver = new Aoc2015Day09();
@@ -544,10 +443,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day09
-     * @covers \TBali\Aoc2015\CityGraph
-     */
     public function testDay09InvalidInput4(): void
     {
         $solver = new Aoc2015Day09();
@@ -558,11 +453,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day10
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay10Example1(): void
     {
         $solver = new Aoc2015Day10();
@@ -573,11 +464,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day10
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay10(): void
     {
         $solver = new Aoc2015Day10();
@@ -590,9 +477,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day11
-     */
     public function testDay11Example1(): void
     {
         $solver = new Aoc2015Day11();
@@ -603,11 +487,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day11
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay11(): void
     {
         $solver = new Aoc2015Day11();
@@ -620,9 +500,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day12
-     */
     public function testDay12Example1(): void
     {
         $solver = new Aoc2015Day12();
@@ -633,9 +510,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day12
-     */
     public function testDay12Example2(): void
     {
         $solver = new Aoc2015Day12();
@@ -646,9 +520,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day12
-     */
     public function testDay12(): void
     {
         $solver = new Aoc2015Day12();
@@ -661,10 +532,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day13
-     * @covers \TBali\Aoc2015\KnightsTable
-     */
     public function testDay13Example1(): void
     {
         $solver = new Aoc2015Day13();
@@ -675,12 +542,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day13
-     * @covers \TBali\Aoc2015\KnightsTable
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay13(): void
     {
         $solver = new Aoc2015Day13();
@@ -691,10 +553,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day13
-     * @covers \TBali\Aoc2015\KnightsTable
-     */
     public function testDay13InvalidInput1(): void
     {
         $solver = new Aoc2015Day13();
@@ -703,10 +561,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day13
-     * @covers \TBali\Aoc2015\KnightsTable
-     */
     public function testDay13InvalidInput2(): void
     {
         $solver = new Aoc2015Day13();
@@ -715,10 +569,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day13
-     * @covers \TBali\Aoc2015\KnightsTable
-     */
     public function testDay13InvalidInput3(): void
     {
         $solver = new Aoc2015Day13();
@@ -729,10 +579,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day14
-     * @covers \TBali\Aoc2015\Reindeer
-     */
     public function testDay14Example1(): void
     {
         $solver = new Aoc2015Day14();
@@ -743,10 +589,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day14
-     * @covers \TBali\Aoc2015\Reindeer
-     */
     public function testDay14(): void
     {
         $solver = new Aoc2015Day14();
@@ -757,10 +599,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day14
-     * @covers \TBali\Aoc2015\Reindeer
-     */
     public function testDay14InvalidInput1(): void
     {
         $solver = new Aoc2015Day14();
@@ -771,9 +609,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day15
-     */
     public function testDay15Example1(): void
     {
         $solver = new Aoc2015Day15();
@@ -784,11 +619,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day15
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay15(): void
     {
         $solver = new Aoc2015Day15();
@@ -799,9 +630,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day15
-     */
     public function testDay15InvalidInput1(): void
     {
         $solver = new Aoc2015Day15();
@@ -812,9 +640,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day16
-     */
     public function testDay16(): void
     {
         $solver = new Aoc2015Day16();
@@ -825,9 +650,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day16
-     */
     public function testDay16InvalidInput1(): void
     {
         $solver = new Aoc2015Day16();
@@ -838,9 +660,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day17
-     */
     public function testDay17Example1(): void
     {
         $solver = new Aoc2015Day17();
@@ -851,11 +670,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day17
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay17(): void
     {
         $solver = new Aoc2015Day17();
@@ -868,9 +683,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day18
-     */
     public function testDay18Example1(): void
     {
         $solver = new Aoc2015Day18();
@@ -881,11 +693,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day18
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay18(): void
     {
         $solver = new Aoc2015Day18();
@@ -898,9 +706,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day19
-     */
     public function testDay19(): void
     {
         $solver = new Aoc2015Day19();
@@ -911,9 +716,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day19
-     */
     public function testDay19InvalidInput1(): void
     {
         $solver = new Aoc2015Day19();
@@ -922,9 +724,6 @@ final class Aoc2015Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day19
-     */
     public function testDay19InvalidInput2(): void
     {
         $solver = new Aoc2015Day19();
@@ -935,9 +734,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day20
-     */
     public function testDay20Example1(): void
     {
         $solver = new Aoc2015Day20();
@@ -948,9 +744,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day20
-     */
     public function testDay20Example2(): void
     {
         $solver = new Aoc2015Day20();
@@ -961,11 +754,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day20
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay20(): void
     {
         $solver = new Aoc2015Day20();
@@ -978,10 +767,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day21
-     * @covers \TBali\Aoc2015\Character
-     */
     public function testDay21(): void
     {
         $solver = new Aoc2015Day21();
@@ -992,10 +777,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day21
-     * @covers \TBali\Aoc2015\Character
-     */
     public function testDay21InvalidInput1(): void
     {
         $solver = new Aoc2015Day21();
@@ -1006,14 +787,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day22
-     * @covers \TBali\Aoc2015\WizardGameState
-     * @covers \TBali\Aoc2015\WizardSimulator
-     * @covers \TBali\Aoc2015\WizardSimulatorHardMode
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay22(): void
     {
         $solver = new Aoc2015Day22();
@@ -1024,12 +798,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day22
-     * @covers \TBali\Aoc2015\WizardGameState
-     * @covers \TBali\Aoc2015\WizardSimulator
-     * @covers \TBali\Aoc2015\WizardSimulatorHardMode
-     */
+    #[Group('slow')]
     public function testDay22InvalidInput1(): void
     {
         $solver = new Aoc2015Day22();
@@ -1040,9 +809,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day23
-     */
     public function testDay23Example1(): void
     {
         $solver = new Aoc2015Day23();
@@ -1053,9 +819,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day23
-     */
     public function testDay23(): void
     {
         $solver = new Aoc2015Day23();
@@ -1066,9 +829,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day23
-     */
     public function testDay23InvalidInput1(): void
     {
         $solver = new Aoc2015Day23();
@@ -1079,9 +839,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day24
-     */
     public function testDay24Example1(): void
     {
         $solver = new Aoc2015Day24();
@@ -1092,11 +849,7 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day24
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay24(): void
     {
         $solver = new Aoc2015Day24();
@@ -1109,9 +862,6 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day25
-     */
     public function testDay25Example1(): void
     {
         $solver = new Aoc2015Day25();
@@ -1122,9 +872,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day25
-     */
     public function testDay25Example2(): void
     {
         $solver = new Aoc2015Day25();
@@ -1135,11 +882,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day25
-     *
-     * @group large
-     */
+    #[Group('slow')]
     public function testDay25(): void
     {
         $solver = new Aoc2015Day25();
@@ -1150,9 +893,6 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    /**
-     * @covers \TBali\Aoc2015\Aoc2015Day25
-     */
     public function testDay25InvalidInput1(): void
     {
         $solver = new Aoc2015Day25();

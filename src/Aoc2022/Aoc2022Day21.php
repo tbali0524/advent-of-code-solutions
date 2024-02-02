@@ -38,11 +38,11 @@ final class Aoc2022Day21 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Part 1
-        $mb = new \TBali\Aoc2022\MonkeyBusiness();
+        $mb = new MonkeyBusiness();
         $mb->parseInput($input);
         $ans1 = $mb->eval(MathMonkey::ROOT);
         // ---------- Part 2
-        $mb = new \TBali\Aoc2022\MonkeyBusiness();
+        $mb = new MonkeyBusiness();
         $mb->parseInput($input);
         $ans2 = $mb->solvePart2();
         return [strval($ans1), strval($ans2)];

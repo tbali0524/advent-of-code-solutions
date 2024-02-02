@@ -19,6 +19,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: prime factorization, sigma function, sum-of-divisors function, OEIS A000203
  *
  * @see https://adventofcode.com/2015/day/20
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2015Day20 extends SolutionBase
 {
@@ -84,6 +86,8 @@ final class Aoc2015Day20 extends SolutionBase
  * Prime Factorization.
  *
  * Not used in this puzzle (would be too slow).
+ *
+ * @codeCoverageIgnore
  */
 final class PrimeFactors
 {

@@ -19,6 +19,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: beam search
  *
  * @see https://adventofcode.com/2022/day/19
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2022Day19 extends SolutionBase
 {
@@ -97,6 +99,9 @@ final class Aoc2022Day19 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class Blueprint
 {
     public int $id = 0;

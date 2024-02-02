@@ -17,6 +17,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation, interactive fiction
  *
  * @see https://adventofcode.com/2019/day/25
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day25 extends SolutionBase
 {
@@ -173,6 +175,9 @@ final class Aoc2019Day25 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class AdventureSimulator
 {
     private const INSTRUCTION_LENGTHS =

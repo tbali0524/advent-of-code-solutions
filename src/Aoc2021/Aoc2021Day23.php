@@ -18,6 +18,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: Dijkstra, priority queue
  *
  * @see https://adventofcode.com/2021/day/23
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2021Day23 extends SolutionBase
 {
@@ -113,6 +115,9 @@ final class Aoc2021Day23 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 class Burrow
 {
     // ids and xy positions of the occupiable cells:
@@ -363,6 +368,9 @@ class Burrow
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 class BurrowExtended extends Burrow
 {
     // ids and xy positions of the occupiable cells:
@@ -423,6 +431,8 @@ class BurrowExtended extends Burrow
 // --------------------------------------------------------------------
 /**
  * @phpstan-extends \SplPriorityQueue<int, array{int, int}>
+ *
+ * @codeCoverageIgnore
  */
 final class MinPriorityQueue extends \SplPriorityQueue
 {

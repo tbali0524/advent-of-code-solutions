@@ -9,8 +9,10 @@ declare(strict_types=1);
 
 namespace TBali;
 
+use TBali\Aoc\AocRunner;
+
 require __DIR__ . '/../vendor/autoload.php';
 
-$runner = new \TBali\Aoc\AocRunner($argv);
+$runner = new AocRunner($argv);
 $runner->run();
 exit($runner->isOk ? 0 : 1);

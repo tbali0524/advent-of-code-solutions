@@ -18,6 +18,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation
  *
  * @see https://adventofcode.com/2019/day/19
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day19 extends SolutionBase
 {
@@ -108,6 +110,9 @@ final class Aoc2019Day19 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class DroneSimulator
 {
     private const INSTRUCTION_LENGTHS =

@@ -17,6 +17,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation, game simulation
  *
  * @see https://adventofcode.com/2019/day/13
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day13 extends SolutionBase
 {
@@ -154,6 +156,9 @@ final class Aoc2019Day13 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class ArcadeSimulator
 {
     private const INSTRUCTION_LENGTHS =
