@@ -229,7 +229,7 @@ final class Aoc2018Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay05(): void
     {
         $solver = new Aoc2018Day05();
@@ -392,7 +392,7 @@ final class Aoc2018Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay10(): void
     {
         $solver = new Aoc2018Day10();
@@ -670,7 +670,6 @@ final class Aoc2018Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
     public function testDay15Example6(): void
     {
         $solver = new Aoc2018Day15();
@@ -990,6 +989,7 @@ final class Aoc2018Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('slow')]
     public function testDay23(): void
     {
         $solver = new Aoc2018Day23();
@@ -1010,7 +1010,7 @@ final class Aoc2018Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay24Example1(): void
     {
         $solver = new Aoc2018Day24();
@@ -1021,6 +1021,7 @@ final class Aoc2018Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('slow')]
     public function testDay24(): void
     {
         $solver = new Aoc2018Day24();
@@ -1089,7 +1090,7 @@ final class Aoc2018Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay25(): void
     {
         $solver = new Aoc2018Day25();

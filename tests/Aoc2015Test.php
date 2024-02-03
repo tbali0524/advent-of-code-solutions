@@ -280,7 +280,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay06Example1(): void
     {
         $solver = new Aoc2015Day06();
@@ -291,7 +291,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
     public function testDay06Example2(): void
     {
         $solver = new Aoc2015Day06();
@@ -453,7 +452,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay10Example1(): void
     {
         $solver = new Aoc2015Day10();
@@ -542,7 +541,7 @@ final class Aoc2015Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay13(): void
     {
         $solver = new Aoc2015Day13();
@@ -787,7 +786,7 @@ final class Aoc2015Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay22(): void
     {
         $solver = new Aoc2015Day22();
@@ -798,7 +797,6 @@ final class Aoc2015Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
     public function testDay22InvalidInput1(): void
     {
         $solver = new Aoc2015Day22();

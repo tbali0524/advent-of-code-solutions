@@ -529,6 +529,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay11(): void
     {
         $solver = new Aoc2023Day11();
@@ -551,6 +552,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay12(): void
     {
         $solver = new Aoc2023Day12();
@@ -611,7 +613,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
+    #[Group('slow')]
     public function testDay14(): void
     {
         $solver = new Aoc2023Day14();
@@ -672,7 +674,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
+    #[Group('slow')]
     public function testDay16(): void
     {
         $solver = new Aoc2023Day16();
@@ -713,7 +715,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
+    #[Group('slow')]
     public function testDay17(): void
     {
         $solver = new Aoc2023Day17();
@@ -736,6 +738,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay18(): void
     {
         $solver = new Aoc2023Day18();
@@ -838,6 +841,7 @@ final class Aoc2023Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay20(): void
     {
         $solver = new Aoc2023Day20();
@@ -876,7 +880,7 @@ final class Aoc2023Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('medium-slow')]
+    #[Group('slow')]
     public function testDay21(): void
     {
         $solver = new Aoc2023Day21();
@@ -1008,6 +1012,7 @@ final class Aoc2023Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay24(): void
     {
         $solver = new Aoc2023Day24();

@@ -669,7 +669,7 @@ final class Aoc2020Test extends TestCase
         // self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay19(): void
     {
         $solver = new Aoc2020Day19();
@@ -802,7 +802,7 @@ final class Aoc2020Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
-    #[Group('slow')]
+    #[Group('medium-slow')]
     public function testDay24(): void
     {
         $solver = new Aoc2020Day24();

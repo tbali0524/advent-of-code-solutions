@@ -16,8 +16,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: BFS
  *
  * @see https://adventofcode.com/2019/day/18
- *
- * @todo runner with php JIT enabled does not work, with php XDEBUG enabled it works. Possible php bug?
  */
 final class Aoc2019Day18 extends SolutionBase
 {

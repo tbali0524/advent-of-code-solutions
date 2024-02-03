@@ -87,10 +87,11 @@ minimum version: ^11.0
     </logging>
     <groups>
         <exclude>
+            <group>medium-slow</group>  <!-- ~2..10s with coverage  -->
+            <group>slow</group>         <!-- ~10..600s              -->
+            <group>ultra-slow</group>   <!-- >600s                  -->
             <group>medium</group>
             <group>large</group>
-            <group>medium-slow</group>
-            <group>slow</group>
         </exclude>
     </groups>
 </phpunit>

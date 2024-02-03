@@ -17,6 +17,8 @@ use TBali\Aoc\SolutionBase;
  * Topics: assembly simulation
  *
  * @see https://adventofcode.com/2019/day/21
+ *
+ * @codeCoverageIgnore
  */
 final class Aoc2019Day21 extends SolutionBase
 {

@@ -896,7 +896,6 @@ final class Aoc2022Test extends TestCase
     #[Group('slow')]
     public function testDay24(): void
     {
-        self::markTestSkipped(); // very slow with xdebug coverage
         $solver = new Aoc2022Day24();
         $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
         [$ans1, $ans2] = $solver->solve($input);

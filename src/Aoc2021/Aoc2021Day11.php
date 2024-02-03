@@ -15,8 +15,6 @@ use TBali\Aoc\SolutionBase;
  * Topics: walk simulation
  *
  * @see https://adventofcode.com/2021/day/11
- *
- * @todo runner with php JIT enabled does not work, with php XDEBUG enabled it works. Possible php bug?
  */
 final class Aoc2021Day11 extends SolutionBase
 {
