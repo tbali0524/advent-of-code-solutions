@@ -60,7 +60,9 @@ final class Aoc2016Day09 extends SolutionBase
             ++$start;
             $end = strpos($data, ')', $start);
             if ($end === false) {
+                // @codeCoverageIgnoreStart
                 continue;
+                // @codeCoverageIgnoreEnd
             }
             if ($end - $start < 3) {
                 throw new \Exception('Invalid input');

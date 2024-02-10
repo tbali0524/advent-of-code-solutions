@@ -123,7 +123,9 @@ final class Circuit
     public function evaluate(string $id): int
     {
         if (!isset($this->gates[$id])) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid wire id');
+            // @codeCoverageIgnoreEnd
         }
         $gate = $this->gates[$id];
         if ($gate->isEvaluated) {

@@ -585,7 +585,7 @@ final class Aoc2020Test extends TestCase
 
     public function testDay16InvalidInput1(): void
     {
-        $solver = new Aoc2020Day14();
+        $solver = new Aoc2020Day16();
         $input = ['a'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);

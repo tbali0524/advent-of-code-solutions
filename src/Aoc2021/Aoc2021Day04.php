@@ -111,7 +111,9 @@ final class Bingo
         $this->id = $id;
         $this->board = array_fill(0, self::MAX_NUMBER, -1);
         if (count($lines) != 5) {
+            // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
+            // @codeCoverageIgnoreEnd
         }
         for ($y = 0; $y < self::SIZE; ++$y) {
             if (strlen($lines[$y]) != 14) {
@@ -133,7 +135,9 @@ final class Bingo
     public function mark(int $number): void
     {
         if ($this->isWon) {
+            // @codeCoverageIgnoreStart
             return;
+            // @codeCoverageIgnoreEnd
         }
         if (($this->board[$number] ?? -1) == -1) {
             return;

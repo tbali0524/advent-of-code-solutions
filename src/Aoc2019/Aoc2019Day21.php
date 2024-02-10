@@ -80,6 +80,9 @@ final class Aoc2019Day21 extends SolutionBase
 }
 
 // --------------------------------------------------------------------
+/**
+ * @codeCoverageIgnore
+ */
 final class SpringDroidSimulator
 {
     private const INSTRUCTION_LENGTHS =

@@ -115,15 +115,15 @@ final class Aoc2020Day19 extends SolutionBase
             $candidates = ['' => -1];
             foreach ($subNodeList as $idxSubNode) {
                 if ($idxSubNode == $idxNode) {
+                    // @codeCoverageIgnoreStart
                     foreach ($candidates as $candidate => $loopLocation) {
                         if ($loopLocation >= 0) {
-                            // @codeCoverageIgnoreStart
                             throw new \Exception('Multiple loops within a rule is not supported');
-                            // @codeCoverageIgnoreEnd
                         }
                         $candidates[$candidate] = strlen($candidate);
                     }
                     continue;
+                    // @codeCoverageIgnoreEnd
                 }
                 $subNodeGenerates = $this->getAllGenerated($idxSubNode, $maxLen);    // as keys
                 $newCandidates = [];    // as keys

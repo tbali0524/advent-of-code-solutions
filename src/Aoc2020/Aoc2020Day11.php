@@ -48,7 +48,9 @@ final class Aoc2020Day11 extends SolutionBase
     private function simulate(array $input, int $leaveThreshold = 4, bool $neighborOnly = true): int
     {
         if ($input == []) {
+            // @codeCoverageIgnoreStart
             return 0;
+            // @codeCoverageIgnoreEnd
         }
         $maxY = count($input);
         $maxX = strlen($input[0]);

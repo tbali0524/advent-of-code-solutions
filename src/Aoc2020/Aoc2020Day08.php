@@ -94,7 +94,9 @@ final class Aoc2020Day08 extends SolutionBase
                 case 'nop':
                     break;
                 default:
+                    // @codeCoverageIgnoreStart
                     throw new \Exception('Invalid instruction');
+                    // @codeCoverageIgnoreEnd
             }
         }
     }

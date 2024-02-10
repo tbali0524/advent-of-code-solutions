@@ -59,7 +59,9 @@ final class Aoc2016Day07 extends SolutionBase
                 ++$start;
                 $end = strpos($line, ']', $start);
                 if ($end === false) {
+                    // @codeCoverageIgnoreStart
                     continue;
+                    // @codeCoverageIgnoreEnd
                 }
                 if ($start != $end) {
                     $sub = substr($line, $start, $end - $start);

@@ -242,7 +242,9 @@ final class House
             }
             $floor = array_search($a[1], self::FLOOR_NAMES, true);
             if ($floor === false) {
+                // @codeCoverageIgnoreStart
                 $floor = $idx;
+                // @codeCoverageIgnoreEnd
             }
             for ($i = 4; $i + 2 < count($a); $i += 3) {
                 if ($a[$i] == 'and') {

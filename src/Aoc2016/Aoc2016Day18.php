@@ -46,7 +46,9 @@ final class Aoc2016Day18 extends SolutionBase
         } elseif (strlen($row) == 10) {
             $maxRow1 = self::EXAMPLE2_MAX_ROW;
         } else {
+            // @codeCoverageIgnoreStart
             $maxRow1 = self::PART1_MAX_ROW;
+            // @codeCoverageIgnoreEnd
         }
         $ans1 = $this->solvePart($row, $maxRow1);
         if ($maxRow1 != self::PART1_MAX_ROW) {

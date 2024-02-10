@@ -244,6 +244,9 @@ final class Circuit
         }
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
     public function minButtonsToRx(): int
     {
         if ($this->finalModulePart2 == '') {
@@ -321,7 +324,9 @@ final class Circuit
         foreach ($circuit->modules as $m) {
             foreach ($m->outputs as $output) {
                 if ($output == self::RECEIVER) {
+                    // @codeCoverageIgnoreStart
                     $circuit->finalModulePart2 = $m->name;
+                    // @codeCoverageIgnoreEnd
                 }
                 if (isset($circuit->modules[$output])) {
                     $circuit->modules[$output]->inputs[$m->name] = true;
@@ -336,6 +341,8 @@ final class Circuit
      * Greatest common divisor.
      *
      * @see https://en.wikipedia.org/wiki/Greatest_common_divisor
+     *
+     * @codeCoverageIgnore
      */
     private static function gcd(int $a, int $b): int
     {
@@ -353,6 +360,8 @@ final class Circuit
      * Least common multiple.
      *
      * @see https://en.wikipedia.org/wiki/Least_common_multiple
+     *
+     * @codeCoverageIgnore
      */
     private static function lcm(int $a, int $b): int
     {

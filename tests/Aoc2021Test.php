@@ -197,6 +197,38 @@ final class Aoc2021Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
+    public function testDay04InvalidInput2(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = ['1', 'a', '1 2 3 4 5', '6 7 8 9 10', '11 12 13 14 15', '16 17 18 19 20', '21 22 23 24 25'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay04InvalidInput3(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = ['1', '', '1 2 3 4 5', '6 7 8 9 10', '11 12 13 14 15', '16 17 18 19 20', '21 22 23 24 25'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay04InvalidInput4(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = ['1', '', ' 1  1  3  4  5', ' 6  7  8  9 10', '11 12 13 14 15', '16 17 18 19 20', '21 22 23 24 25'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay04InvalidInput5(): void
+    {
+        $solver = new Aoc2021Day04();
+        $input = ['1', '', '11111  3  4  5', ' 6  7  8  9 10', '11 12 13 14 15', '16 17 18 19 20', '21 22 23 24 25'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     public function testDay05Example1(): void
