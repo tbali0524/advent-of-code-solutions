@@ -81,7 +81,7 @@ final class Aoc2021Day13 extends SolutionBase
         foreach ($dots as $dot) {
             $grid[$dot[1]][$dot[0]] = '#';
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SHOW_GRID) {
             // @codeCoverageIgnoreStart
             foreach ($grid as $line) {

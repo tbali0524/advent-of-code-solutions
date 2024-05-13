@@ -92,7 +92,7 @@ final class Aoc2019Day11 extends SolutionBase
         foreach ($grid as $row) {
             $ans += count($row);
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse,logicalAnd.rightAlwaysFalse
         if (($startTile == 1) and self::SHOW_PAINT) {
             for ($y = $minY; $y <= $maxY; ++$y) {
                 $s = '';

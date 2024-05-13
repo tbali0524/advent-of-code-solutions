@@ -39,7 +39,7 @@ final class Aoc2018Day09 extends SolutionBase
     {
         // ---------- Parse input
         $a = explode(' ', $input[0] ?? '');
-        $countPlayers = intval($a[0] ?? '0');
+        $countPlayers = intval($a[0]);
         $lastMarble = intval($a[6] ?? '0');
         // ---------- Part 1 + 2
         $part2multiplier = $lastMarble > 10_000 ? 100 : 1;

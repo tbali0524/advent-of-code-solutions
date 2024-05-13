@@ -115,7 +115,7 @@ final class Aoc2018Day17 extends SolutionBase
             return false;
         }
         $this->flows[$y][$x] = true;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '---- FLOW @' . $x . ',' . $y . PHP_EOL;
@@ -162,7 +162,7 @@ final class Aoc2018Day17 extends SolutionBase
             }
         }
         if (!$canFill) {
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DEBUG) {
                 // @codeCoverageIgnoreStart
                 echo '---- END FLOW @' . $x . ',' . $y . PHP_EOL;
@@ -179,7 +179,7 @@ final class Aoc2018Day17 extends SolutionBase
                 $x1 += $dx;
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '---- END WATER @' . $x . ',' . $y . PHP_EOL;

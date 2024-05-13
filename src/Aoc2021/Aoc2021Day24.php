@@ -50,7 +50,7 @@ final class Aoc2021Day24 extends SolutionBase
             $q[] = intval(substr($input[$i * 18 + 5], 6));
             $r[] = intval(substr($input[$i * 18 + 15], 6));
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SHOW_EMULATION) {
             // @codeCoverageIgnoreStart
             // -- 01234567890123

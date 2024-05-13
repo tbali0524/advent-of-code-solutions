@@ -88,7 +88,7 @@ final class Aoc2023Day17 extends SolutionBase
                 and (($part == 1) or ($steps >= 4))
             ) {
                 $ans = $totalCost;
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse,logicalAnd.leftAlwaysFalse
                 if (self::DEBUG and ($part == 2)) {
                     // @codeCoverageIgnoreStart
                     echo '--- [' . $this->maxX . ' x ' . $this->maxY . '] Part #' . $part . ' : ' . $ans, PHP_EOL;

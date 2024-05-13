@@ -161,7 +161,7 @@ final class Aoc2018Day24 extends SolutionBase
             }
             // attacking phase
             usort($aliveGroups, static fn (ArmyGroup $a, ArmyGroup $b): int => $b->initiative <=> $a->initiative);
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DEBUG) {
                 echo '---- starting attacking phase', PHP_EOL;
                 foreach ($aliveGroups as $g) {
@@ -181,7 +181,7 @@ final class Aoc2018Day24 extends SolutionBase
                 $killed = intval(min(intdiv($damage, $defender->hp), $defender->units));
                 $totalKills += $killed;
                 $defender->units -= $killed;
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::DEBUG) {
                     // @codeCoverageIgnoreStart
                     echo '  #' . $attacker->id . ' hits #' . $defender->id
@@ -194,7 +194,7 @@ final class Aoc2018Day24 extends SolutionBase
                 break;
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '-------- surviving groups', PHP_EOL;

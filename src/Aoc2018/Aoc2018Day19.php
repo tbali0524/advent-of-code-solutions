@@ -52,7 +52,7 @@ final class Aoc2018Day19 extends SolutionBase
         // ---------- Part 1
         $regs = array_fill(0, 6, 0);
         $target1 = 0;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore logicalOr.rightAlwaysFalse
         if ((count($instructions) == 7) or self::SIM_PART1) {
             $ip = 0;
             while (true) {
@@ -87,15 +87,15 @@ final class Aoc2018Day19 extends SolutionBase
         $regs = array_fill(0, 6, 0);
         $regs[0] = 1;
         $target2 = 0;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SIM_PART2) {
             $ip = 0;
             $maxSteps = 150;
             while (true) {
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore equal.alwaysTrue
                 if (($ip == 35) and ($target2 == 0)) {
                     $target2 = $regs[2];
-                    // @phpstan-ignore-next-line
+                    // @phpstan-ignore booleanNot.alwaysTrue
                     if (!self::DISPLAY_TRACE) {
                         break;
                     }
@@ -103,7 +103,7 @@ final class Aoc2018Day19 extends SolutionBase
                 if (($ip < 0) or ($ip >= count($instructions))) {
                     break;
                 }
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::DISPLAY_TRACE) {
                     echo $ip . ' : ' . implode(' ', $instructions[$ip]) . ' : [' . implode(', ', $regs) . '] ', PHP_EOL;
                 }

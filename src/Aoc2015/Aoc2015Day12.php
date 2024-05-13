@@ -39,7 +39,7 @@ final class Aoc2015Day12 extends SolutionBase
         // ---------- Part 1
         $a = json_decode($input, true) ?? []; // true: JSON objects will be returned as associative arrays
         $count = 0;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore argument.type
         array_walk_recursive($a, static function ($x) use (&$count): void {
             if (is_numeric($x)) {
                 $count += intval($x);
@@ -59,7 +59,7 @@ final class Aoc2015Day12 extends SolutionBase
         }
         if (is_object($a)) {
             $isOk = true;
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore foreach.nonIterable
             foreach ($a as $item) {
                 if ($item == 'red') {
                     $isOk = false;
@@ -74,7 +74,7 @@ final class Aoc2015Day12 extends SolutionBase
             return 0;
         }
         $sum = 0;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore foreach.nonIterable
         foreach ($a as $item) {
             $sum += $this->sumNonRed($item);
         }

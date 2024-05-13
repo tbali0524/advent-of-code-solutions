@@ -83,7 +83,7 @@ final class Aoc2017Day20 extends SolutionBase
                 $collisions[$particle->id] = true;
             }
             if (count($collisions) > 0) {
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::DEBUG) {
                     // @codeCoverageIgnoreStart
                     echo '-- T = ' . $t . ':  remaining particles = ' . count($particles) . PHP_EOL;

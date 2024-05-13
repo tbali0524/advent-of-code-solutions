@@ -84,7 +84,7 @@ final class Aoc2021Day23 extends SolutionBase
             }
             if (($stateRoom == $burrow->targetStateRoom) and ($stateHallway == $burrow->targetStateHallway)) {
                 $ans = $totalCost;
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::DEBUG) {
                     // @codeCoverageIgnoreStart
                     echo ' Total cost: ' . $ans, PHP_EOL;

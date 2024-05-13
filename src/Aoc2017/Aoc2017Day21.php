@@ -154,7 +154,7 @@ final class Aoc2017Day21 extends SolutionBase
     private static function printImage(string $image): void
     {
         $size = intval(round(sqrt(strlen($image))));
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore argument.type
         echo implode(PHP_EOL, str_split($image, $size)), PHP_EOL;
     }
 }

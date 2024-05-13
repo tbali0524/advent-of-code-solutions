@@ -108,7 +108,7 @@ final class Aoc2023Day18 extends SolutionBase
             }
         }
         $ans1 = ($maxX - $minX + 3) * ($maxY - $minY + 3) - count($outsideBlocks);
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo PHP_EOL;

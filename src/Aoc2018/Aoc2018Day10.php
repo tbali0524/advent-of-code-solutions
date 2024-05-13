@@ -46,7 +46,7 @@ final class Aoc2018Day10 extends SolutionBase
             if ($swarm->area > $area) {
                 $swarm->backTick();
                 $ans2 = $swarm->step;
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::DISPLAY) {
                     // @codeCoverageIgnoreStart
                     $swarm->display();

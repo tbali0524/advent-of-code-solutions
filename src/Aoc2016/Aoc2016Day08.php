@@ -147,7 +147,7 @@ final class Display
             }
             return;
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore equal.alwaysTrue
         if ($instr->verb == InstructionVerb::RotateColumn) {
             for ($i = 0; $i < $instr->y; ++$i) {
                 $temp = $this->grid[self::MAX_Y - 1][$instr->x];

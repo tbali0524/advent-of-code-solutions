@@ -114,7 +114,7 @@ final class Aoc2018Day15 extends SolutionBase
         $elvesDied = 0;
         $winnerSide = '';
         $survivors = [];
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse,logicalAnd.leftAlwaysFalse
         if (self::DEBUG and ($elfAttack == 3)) {
             // @codeCoverageIgnoreStart
             echo '---- Starting state', PHP_EOL;
@@ -261,7 +261,7 @@ final class Aoc2018Day15 extends SolutionBase
             static fn (Creature $c): int => $c->hp,
             $survivors,
         ));
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '-- With ' . $elfAttack . ' elf attack power: ' . $elvesDied . ' elves died. Winner team is '

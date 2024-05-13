@@ -77,7 +77,7 @@ final class Aoc2022Day14 extends SolutionBase
                 $canFall = false;
                 foreach ([[0, 1], [-1, 1], [1, 1]] as [$dx, $dy]) {
                     [$x1, $y1] = [$x + $dx, $y + $dy];
-                    // @phpstan-ignore-next-line
+                    // @phpstan-ignore isset.offset
                     if (!isset($walls[$y1][$x1]) and !isset($sands[$y1][$x1])) {
                         $canFall = true;
                         break;

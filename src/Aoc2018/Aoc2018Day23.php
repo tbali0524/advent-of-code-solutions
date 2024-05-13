@@ -79,7 +79,7 @@ final class Aoc2018Day23 extends SolutionBase
             if ($pq->isEmpty()) {
                 throw new \Exception('No solution found');
             }
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore offsetAccess.nonArray
             [$count, $size, $dist, $cornerLow, $cornerHigh] = $pq->extract();
             if ($size == 1) {
                 $ans2 = $dist;
@@ -119,7 +119,7 @@ class Point
 
     public function manhattanToOrigo(): int
     {
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore argument.type
         return intval(array_sum(array_map(abs(...), $this->p)));
     }
 }
@@ -147,7 +147,7 @@ final class Nanobot extends Point
 
     public function maxRangeCoord(): int
     {
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore argument.type
         return intval(max(array_map(abs(...), $this->p))) + $this->r;
     }
 

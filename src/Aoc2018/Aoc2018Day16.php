@@ -92,7 +92,7 @@ final class Aoc2018Day16 extends SolutionBase
         // ---------- Part 2
         $ans2 = 0;
         $matchings = [];
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore smaller.alwaysTrue
         while (count($matchings) < self::MAX_OPCODE) {
             for ($opcode = 0; $opcode < self::MAX_OPCODE; ++$opcode) {
                 if (isset($matchings[$opcode])) {
@@ -112,7 +112,7 @@ final class Aoc2018Day16 extends SolutionBase
                 }
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore deadCode.unreachable
         $regs = [0, 0, 0, 0];
         foreach ($instructions as $instruction) {
             $regs = self::execute($matchings[$instruction[0]], $instruction, $regs);

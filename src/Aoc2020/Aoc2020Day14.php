@@ -60,9 +60,10 @@ final class Aoc2020Day14 extends SolutionBase
             $maskedValue = 0;
             for ($i = 0; $i < self::BIT_SIZE; ++$i) {
                 match ($mask[$i]) {
-                    '0' => 0, // @phpstan-ignore-line
-                    '1' => $maskedValue |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore-line
-                    'X' => $maskedValue |= ($value & (1 << (self::BIT_SIZE - 1 - $i))), // @phpstan-ignore-line
+                    '0' => 0, // @phpstan-ignore match.alwaysFalse
+                    '1' => $maskedValue |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore match.alwaysFalse
+                    // @phpstan-ignore match.alwaysTrue
+                    'X' => $maskedValue |= ($value & (1 << (self::BIT_SIZE - 1 - $i))),
                     default => throw new \Exception('Invalid mask'),
                 };
             }
@@ -98,9 +99,10 @@ final class Aoc2020Day14 extends SolutionBase
             $floatingBits = [];
             for ($i = 0; $i < self::BIT_SIZE; ++$i) {
                 match ($mask[$i]) {
-                    '0' => $maskedLoc |= ($loc & (1 << (self::BIT_SIZE - 1 - $i))), // @phpstan-ignore-line
-                    '1' => $maskedLoc |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore-line
-                    'X' => $floatingBits[] = self::BIT_SIZE - 1 - $i, // @phpstan-ignore-line
+                    // @phpstan-ignore match.alwaysFalse
+                    '0' => $maskedLoc |= ($loc & (1 << (self::BIT_SIZE - 1 - $i))),
+                    '1' => $maskedLoc |= (1 << (self::BIT_SIZE - 1 - $i)), // @phpstan-ignore match.alwaysFalse
+                    'X' => $floatingBits[] = self::BIT_SIZE - 1 - $i, // @phpstan-ignore match.alwaysTrue
                     default => throw new \Exception('Invalid mask'),
                 };
             }

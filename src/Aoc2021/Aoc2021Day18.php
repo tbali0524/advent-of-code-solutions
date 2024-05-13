@@ -182,7 +182,7 @@ final class Snailfish
             throw new \Exception('Impossible');
             // @codeCoverageIgnoreEnd
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '-- exploding node: ' . $node->toString(), PHP_EOL;
@@ -234,7 +234,7 @@ final class Snailfish
             if ($this->value < self::MAX_VALUE) {
                 return false;
             }
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DEBUG) {
                 // @codeCoverageIgnoreStart
                 echo '-- splitting node: ' . $this->toString(), PHP_EOL;
@@ -264,7 +264,7 @@ final class Snailfish
     public function reduce(): self
     {
         while (true) {
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DEBUG) {
                 // @codeCoverageIgnoreStart
                 echo '-- trying to reduce ' . $this->toString(), PHP_EOL;

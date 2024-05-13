@@ -87,7 +87,7 @@ final class Aoc2022Day10 extends SolutionBase
                 $screen[$screenY][$screenX] = '#';
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SHOW_SCREEN) {
             // @codeCoverageIgnoreStart
             foreach ($screen as $row) {

@@ -84,9 +84,9 @@ final class Aoc2023Day14 extends SolutionBase
             for ($x = 0; $x < $this->maxX; ++$x) {
                 $c = $this->grid[$y][$x];
                 if ($c == '#') {
-                    // @phpstan-ignore-next-line
+                    // @phpstan-ignore assign.propertyType
                     $this->fixRocksAtX[$x][] = [$x, $y];
-                    // @phpstan-ignore-next-line
+                    // @phpstan-ignore assign.propertyType
                     $this->fixRocksAtY[$y][] = [$x, $y];
                 } elseif (($c != '.') and ($c != 'O')) {
                     throw new \Exception('Invalid input');

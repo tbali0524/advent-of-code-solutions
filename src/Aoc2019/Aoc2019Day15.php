@@ -73,7 +73,7 @@ final class Aoc2019Day15 extends SolutionBase
                 }
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SHOW_MAP) {
             // @codeCoverageIgnoreStart
             $map->printMap($oxygenX, $oxygenY);

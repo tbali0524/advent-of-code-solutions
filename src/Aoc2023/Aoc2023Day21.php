@@ -178,12 +178,12 @@ final class Aoc2023Day21 extends SolutionBase
                 $visited[$hash] = true;
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo "---- grid: [{$this->maxX} x {$this->maxY}]: from ({$fromX}, {$fromY}), steps: {$maxStep}, result = "
                 . count($result), PHP_EOL;
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DETAILED_DEBUG) {
                 $resultGrid = $this->grid;
                 foreach (array_keys($result) as $hash) {

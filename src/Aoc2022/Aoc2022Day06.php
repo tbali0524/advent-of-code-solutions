@@ -48,7 +48,7 @@ final class Aoc2022Day06 extends SolutionBase
         for ($i = $markerWidth; $i <= strlen($data); ++$i) {
             $cand = substr($data, $i - $markerWidth, $markerWidth);
             // count_chars mode = 3: a string containing all unique characters is returned.
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore argument.type
             if (strlen(count_chars($cand, 3)) == $markerWidth) {
                 return $i;
             }

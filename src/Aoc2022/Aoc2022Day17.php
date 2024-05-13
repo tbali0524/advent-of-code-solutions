@@ -160,7 +160,7 @@ class Pit
             $rock = $this->rocks[$this->idxNextRock];
             $this->idxNextRock = ($this->idxNextRock + 1) % count($this->rocks);
             $this->simRock($rock);
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::DEBUG) {
                 // @codeCoverageIgnoreStart
                 echo '--- Pit after turn #' . $turn, PHP_EOL;

@@ -79,7 +79,7 @@ final class Aoc2019Day13 extends SolutionBase
                 }
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::SHOW_ARCADE) {
             // @codeCoverageIgnoreStart
             for ($y = 0; $y <= $maxY; ++$y) {
@@ -134,7 +134,7 @@ final class Aoc2019Day13 extends SolutionBase
                 }
             }
             $startOutput = count($robot->outputs);
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::SHOW_ARCADE) {
                 // @codeCoverageIgnoreStart
                 echo '-----------', PHP_EOL, PHP_EOL;

@@ -47,7 +47,7 @@ final class Aoc2022Day01 extends SolutionBase
         $cals = array_map(array_sum(...), $calories);
         $ans1 = max($cals);
         rsort($cals);
-        $ans2 = ($cals[0] ?? 0) + ($cals[1] ?? 0) + ($cals[2] ?? 0);
+        $ans2 = $cals[0] + ($cals[1] ?? 0) + ($cals[2] ?? 0);
         return [strval($ans1), strval($ans2)];
     }
 }

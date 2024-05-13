@@ -13,7 +13,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.3"
-          tools: phpcs:3.8, php-cs-fixer:3.49, phpstan:1.10
+          tools: phpcs:3.9, php-cs-fixer:3.56, phpstan:1.11
           coverage: none
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -45,7 +45,7 @@ jobs:
         with:
           php-version: "8.3"
           extensions: mbstring, bcmath, xdebug
-          tools: phpunit:11.0
+          tools: phpunit:11.1
           coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

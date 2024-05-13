@@ -235,7 +235,7 @@ final class Aoc2023Day10 extends SolutionBase
                 }
             }
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '---- start: (' . $startX . ', ' . $startY . ')', PHP_EOL;

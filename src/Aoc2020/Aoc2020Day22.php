@@ -98,7 +98,7 @@ final class Aoc2020Day22 extends SolutionBase
             throw new \Exception('Invalid input');
             // @codeCoverageIgnoreEnd
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore return.type
         return $ans;
     }
 }

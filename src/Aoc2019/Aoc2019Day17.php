@@ -77,7 +77,7 @@ final class Aoc2019Day17 extends SolutionBase
         }
         $maxX = strlen($grid[0]);
         $maxY = count($grid);
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             foreach ($grid as $line) {
@@ -163,7 +163,7 @@ final class Aoc2019Day17 extends SolutionBase
         for ($i = 0; $i < 3; ++$i) {
             $commandStr2 = str_replace($selectedFunctions[$i], chr(ord('A') + $i), $commandStr2);
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '--- extended command list:', PHP_EOL;

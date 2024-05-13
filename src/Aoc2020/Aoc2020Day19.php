@@ -72,7 +72,7 @@ final class Aoc2020Day19 extends SolutionBase
             throw new \Exception('No solution found');
             // @codeCoverageIgnoreEnd
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore deadCode.unreachable
         $len42 = strlen(array_key_first($this->generates[42]));
         $len31 = strlen(array_key_first($this->generates[31]));
         foreach ($this->messages as $message) {

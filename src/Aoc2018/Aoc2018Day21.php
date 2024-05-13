@@ -52,7 +52,7 @@ final class Aoc2018Day21 extends SolutionBase
         // ---------- Part 1 + 2
         $ans1 = 0;
         $ans2 = 0;
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore booleanNot.alwaysTrue
         if (!self::SIM) {
             $c1 = $instructions[7][1];
             $c2 = $instructions[11][2];
@@ -68,7 +68,7 @@ final class Aoc2018Day21 extends SolutionBase
                 $r5 = ((($r5 + ($r4 & 0xFF)) & 0xFFFFFF) * $c2) & 0xFFFFFF;
                 $r4 >>= 8;
                 $r5 = ((($r5 + ($r4 & 0xFF)) & 0xFFFFFF) * $c2) & 0xFFFFFF;
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse,logicalAnd.leftAlwaysFalse
                 if (self::DEBUG and ($step < $maxSteps)) {
                     // @codeCoverageIgnoreStart
                     echo '#' . $step . ': 0x' . str_pad(dechex($r5), 8, '0', STR_PAD_LEFT), PHP_EOL;
@@ -88,7 +88,7 @@ final class Aoc2018Day21 extends SolutionBase
             return [strval($ans1), strval($ans2)];
         }
         // @codeCoverageIgnoreStart
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore deadCode.unreachable
         $maxSteps = 5;
         $regs = array_fill(0, 6, 0);
         $prev = 0;

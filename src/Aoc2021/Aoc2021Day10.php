@@ -70,7 +70,7 @@ final class Aoc2021Day10 extends SolutionBase
             $score = 0;
             while (count($stack) > 0) {
                 $opening = array_pop($stack);
-                $score = $score * 5 + (self::SCORES_PART2[self::MATCHING_CLOSE[$opening]] ?? 0);
+                $score = $score * 5 + self::SCORES_PART2[self::MATCHING_CLOSE[$opening]];
             }
             $scores[] = $score;
         }

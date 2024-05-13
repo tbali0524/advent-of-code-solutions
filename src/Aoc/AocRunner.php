@@ -128,7 +128,6 @@ final class AocRunner
                         echo '======= ' . $year . ' ' . str_repeat('=', 45) . PHP_EOL;
                         $lastYear = $year;
                     }
-                    // @ phpstan-ignore-next-line
                     if (isset(self::TO_SKIP[$year]) and in_array($day, self::TO_SKIP[$year])) {
                         echo '=== AoC ' . $year . ' Day ' . str_pad(strval($day), 2, '0', STR_PAD_LEFT) . PHP_EOL;
                         echo Tags::WARN_TAG . 'Skipped.' . PHP_EOL;
@@ -153,11 +152,9 @@ final class AocRunner
         if ($countFails > 0) {
             $messages[] = $countFails . ' failed';
         }
-        // @ phpstan-ignore-next-line
         if ($countSkipped > 0) {
             $messages[] = $countSkipped . ' skipped';
         }
-        // @ phpstan-ignore-next-line
         if (($countFails > 0) or ($countSkipped > 0)) {
             $failSkipMsg = ' (' . implode(', ', $messages) . ')';
         } else {

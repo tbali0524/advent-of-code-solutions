@@ -114,7 +114,7 @@ final class Aoc2019Day25 extends SolutionBase
         $memory = array_map(intval(...), explode(',', $input[0]));
         // ---------- Part 1
         $ans1 = self::SOLUTIONS[0];
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysTrue
         if (self::PLAY_GAME) {
             $game = new AdventureSimulator($memory);
             foreach (self::INSTRUCTIONS as $line) {
@@ -123,7 +123,7 @@ final class Aoc2019Day25 extends SolutionBase
                 if ($output == '') {
                     return ['0', '0'];
                 }
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::SHOW_OUTPUT) {
                     echo $output, PHP_EOL;
                     echo $line, PHP_EOL;
@@ -131,7 +131,7 @@ final class Aoc2019Day25 extends SolutionBase
                 $game->stringInput($line);
             }
             $output = $game->stringOutput();
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse
             if (self::SHOW_OUTPUT) {
                 echo $output, PHP_EOL;
             }
@@ -139,7 +139,7 @@ final class Aoc2019Day25 extends SolutionBase
                 for ($i = 0; $i < count(self::ITEMS); ++$i) {
                     if ((($bitmask >> $i) & 1) != 0) {
                         $game->stringInput('take ' . self::ITEMS[$i]);
-                        // @phpstan-ignore-next-line
+                        // @phpstan-ignore if.alwaysFalse
                         if (self::SHOW_OUTPUT) {
                             echo 'take ' . self::ITEMS[$i], PHP_EOL;
                         }
@@ -148,7 +148,7 @@ final class Aoc2019Day25 extends SolutionBase
                 $game->stringInput('north');
                 $game->simulate();
                 $output = $game->stringOutput();
-                // @phpstan-ignore-next-line
+                // @phpstan-ignore if.alwaysFalse
                 if (self::SHOW_OUTPUT) {
                     echo $output, PHP_EOL;
                 }
@@ -162,7 +162,7 @@ final class Aoc2019Day25 extends SolutionBase
                 for ($i = 0; $i < count(self::ITEMS); ++$i) {
                     if ((($bitmask >> $i) & 1) != 0) {
                         $game->stringInput('drop ' . self::ITEMS[$i]);
-                        // @phpstan-ignore-next-line
+                        // @phpstan-ignore if.alwaysFalse
                         if (self::SHOW_OUTPUT) {
                             echo 'drop ' . self::ITEMS[$i], PHP_EOL;
                         }

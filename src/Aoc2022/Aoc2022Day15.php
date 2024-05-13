@@ -73,7 +73,7 @@ final class Aoc2022Day15 extends SolutionBase
         $half = intdiv($maxCoord, 2);
         $bigRect = Rect::fromXY(-$half, $half, $maxCoord + $half, $half);
         $possibles = [$bigRect];
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo 'BigRect: ' . $bigRect->toString(), PHP_EOL;
@@ -86,7 +86,7 @@ final class Aoc2022Day15 extends SolutionBase
                 $newPossibles = array_merge($newPossibles, $possible->diff($invalidRect));
             }
             $possibles = $newPossibles;
-            // @phpstan-ignore-next-line
+            // @phpstan-ignore if.alwaysFalse,logicalAnd.leftAlwaysFalse
             if (self::DEBUG and ($maxCoord == self::MAX_COORD_EXAMPLE)) {
                 // @codeCoverageIgnoreStart
                 echo '---- Removing locations based on sensor #' . $idxSensor . ': ' . $sensor->toString()

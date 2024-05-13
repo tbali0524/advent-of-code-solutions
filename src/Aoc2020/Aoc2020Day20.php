@@ -105,7 +105,7 @@ final class Aoc2020Day20 extends SolutionBase
             throw new \Exception('No solution found');
             // @codeCoverageIgnoreEnd
         }
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '--- Reconstructed tiles:', PHP_EOL;
@@ -690,7 +690,7 @@ final class Image
             static fn (string $line): int => substr_count($line, '#'),
             $this->grid,
         ));
-        // @phpstan-ignore-next-line
+        // @phpstan-ignore if.alwaysFalse
         if (Aoc2020Day20::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '--- Image with proper orientation:', PHP_EOL;

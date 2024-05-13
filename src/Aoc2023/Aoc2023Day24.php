@@ -158,7 +158,7 @@ final class Aoc2023Day24 extends SolutionBase
                     }
                     if ($isOk) {
                         $ans2 = intval(array_sum($rock->p));
-                        // @phpstan-ignore-next-line
+                        // @phpstan-ignore if.alwaysFalse
                         if (self::DEBUG) {
                             // @codeCoverageIgnoreStart
                             echo '---- ' . $rock->toString(), PHP_EOL;
