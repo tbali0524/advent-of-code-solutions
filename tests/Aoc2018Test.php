@@ -56,7 +56,7 @@ use TBali\Aoc2018\TreeNode;
  * @coversNothing
  */
 #[RequiresPhp('^8.3')]
-#[RequiresPhpunit('^11.0')]
+#[RequiresPhpunit('^11.2')]
 #[CoversClass(Aoc2018Day01::class)]
 #[CoversClass(Aoc2018Day02::class)]
 #[CoversClass(Aoc2018Day03::class)]
@@ -520,7 +520,7 @@ final class Aoc2018Test extends TestCase
     public function testDay13InvalidInput1(): void
     {
         $solver = new Aoc2018Day13();
-        $input = ['/-\\', '\\-/'];
+        $input = ['/-\\', '\-/'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

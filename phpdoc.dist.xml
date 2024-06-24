@@ -2,7 +2,7 @@
 <!--
 PHPDocumentor configuration file.
 
-minimum version: ^3.2
+minimum version: ^3.5
 
 @see https://docs.phpdoc.org/guide/references/configuration.html
 -->

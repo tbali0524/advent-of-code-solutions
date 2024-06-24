@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.56
+ * minimum version: ^3.59
  *
  * @see https://cs.symfony.com/doc/config.html
  */
@@ -55,5 +55,6 @@ return (new PhpCsFixer\Config())
     ->setCacheFile(__DIR__ . '/.tools/.php-cs-fixer.cache')
     ->setIndent("    ")
     ->setLineEnding("\n")
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setFinder($finder)
 ;

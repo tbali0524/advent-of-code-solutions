@@ -128,7 +128,7 @@ final class AocRunner
                         echo '======= ' . $year . ' ' . str_repeat('=', 45) . PHP_EOL;
                         $lastYear = $year;
                     }
-                    if (isset(self::TO_SKIP[$year]) and in_array($day, self::TO_SKIP[$year])) {
+                    if (in_array($day, self::TO_SKIP[$year])) {
                         echo '=== AoC ' . $year . ' Day ' . str_pad(strval($day), 2, '0', STR_PAD_LEFT) . PHP_EOL;
                         echo Tags::WARN_TAG . 'Skipped.' . PHP_EOL;
                         ++$countSkipped;
@@ -189,7 +189,7 @@ final class AocRunner
             return false;
         }
         $className = $this->getClassName($year, $day);
-        $fullClassName = 'TBali\\Aoc' . $year . '\\' . $className;
+        $fullClassName = 'TBali\Aoc' . $year . '\\' . $className;
         /** @var Solution */
         $solution = new $fullClassName();
         $success = $solution->run();

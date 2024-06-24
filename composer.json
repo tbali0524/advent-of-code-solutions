@@ -47,6 +47,8 @@
         "metrics":      "phpmetrics --config=.phpmetrics.json",
         "stan":         "phpstan --ansi --verbose",
         "qa": [
+            "parallel-lint --version",
+            "@lint",
             "phpcs --version",
             "@cs",
             "@cs-fixer",

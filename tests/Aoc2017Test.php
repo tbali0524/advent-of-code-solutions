@@ -50,7 +50,7 @@ use TBali\Aoc2017\Vector3D;
  * @coversNothing
  */
 #[RequiresPhp('^8.3')]
-#[RequiresPhpunit('^11.0')]
+#[RequiresPhpunit('^11.2')]
 #[CoversClass(Aoc2017Day01::class)]
 #[CoversClass(Aoc2017Day02::class)]
 #[CoversClass(Aoc2017Day03::class)]
