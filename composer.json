@@ -47,8 +47,6 @@
         "metrics":      "phpmetrics --config=.phpmetrics.json",
         "stan":         "phpstan --ansi --verbose",
         "qa": [
-            "parallel-lint --version",
-            "@lint",
             "phpcs --version",
             "@cs",
             "@cs-fixer",
@@ -99,7 +97,7 @@
         "metrics":      "Create code metrics report with phpmetrics",
         "stan":         "Run static analysis with phpstan",
         "qa":           "Run code quality checks: phpcs, php-cs-fixer, phpstan",
-        "qa-full":      "Run all code quality checks: phpcs, php-cs-fixer, phpstan, parallel-lint, phpmetrics, phpDocumentor, PHPUnit, and run all solutions",
+        "qa-full":      "Run all code quality checks: parallel-lint, phpcs, php-cs-fixer, phpstan, phpmetrics, phpDocumentor, PHPUnit, and run all solutions",
         "open-cover":   "Open generated test coverage report in browser (fixed file path)",
         "open-doc":     "Open generated documentation in browser (fixed file path)",
         "open-metrics": "Open generated code metrics report in browser (fixed file path)",

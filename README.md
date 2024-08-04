@@ -10,6 +10,7 @@
 * [Puzzle list](puzzles.md) with topics and my completion status
 * Some [memes](memes.md) from AoC subreddit
 * Link to this repo on [GitHub](https://github.com/tbali0524/advent-of-code-solutions)
+* Link to my _partial_ rewrite of this repo in `Rust` on [GitHub](https://github.com/tbali0524/advent-of-code-rust)
 
 ## Installation
 
