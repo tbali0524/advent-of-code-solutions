@@ -147,6 +147,7 @@ final class Aoc2023Day14 extends SolutionBase
                 while ($this->grid[$y][$newX] == 'O') {
                     ++$newX;
                 }
+                // @phpstan-ignore assign.propertyType
                 $this->grid[$y][$newX] = 'O';
             }
         }
@@ -191,6 +192,7 @@ final class Aoc2023Day14 extends SolutionBase
                 while ($this->grid[$y][$newX] == 'O') {
                     --$newX;
                 }
+                // @phpstan-ignore assign.propertyType
                 $this->grid[$y][$newX] = 'O';
             }
         }

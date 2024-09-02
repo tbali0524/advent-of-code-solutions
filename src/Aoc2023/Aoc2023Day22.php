@@ -72,7 +72,7 @@ final class Brick
         if ($count != 6) {
             throw new \Exception('Invalid input');
         }
-        $b = new Brick($id);
+        $b = new self($id);
         $b->from = [intval($x1), intval($y1), intval($z1)];
         $b->to = [intval($x2), intval($y2), intval($z2)];
         if (

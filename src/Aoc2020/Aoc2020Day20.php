@@ -673,11 +673,11 @@ final class Image
         return $img;
     }
 
-    public function findMonsters(Image $monsterImage): int
+    public function findMonsters(self $monsterImage): int
     {
         $needle = new SearchPattern($monsterImage);
         $best = 0;
-        $bestImg = new Image(0, 0);
+        $bestImg = new self(0, 0);
         for ($pos = 0; $pos < 16; ++$pos) {
             $haystack = self::fromStrings(ImageTile::orientImage($this->grid, $pos));
             $result = $haystack->findIfOriented($needle);

@@ -226,23 +226,23 @@ final class Rect
      *
      * @return array<int, Rect>
      */
-    public function diff(Rect $r): array
+    public function diff(self $r): array
     {
         if (($this->b1 < $r->b0) or ($r->b1 < $this->b0) or ($this->a1 < $r->a0) or ($r->a1 < $this->a0)) {
             return [$this];
         }
         $ans = [];
         if ($this->a0 < $r->a0) {
-            $ans[] = new Rect($this->a0, $this->b0, $r->a0 - 1, $this->b1);
+            $ans[] = new self($this->a0, $this->b0, $r->a0 - 1, $this->b1);
         }
         if ($r->a1 < $this->a1) {
-            $ans[] = new Rect($r->a1 + 1, $this->b0, $this->a1, $this->b1);
+            $ans[] = new self($r->a1 + 1, $this->b0, $this->a1, $this->b1);
         }
         if ($this->b0 < $r->b0) {
-            $ans[] = new Rect(max($r->a0, $this->a0), $this->b0, min($r->a1, $this->a1), $r->b0 - 1);
+            $ans[] = new self(max($r->a0, $this->a0), $this->b0, min($r->a1, $this->a1), $r->b0 - 1);
         }
         if ($r->b1 < $this->b1) {
-            $ans[] = new Rect(max($r->a0, $this->a0), $r->b1 + 1, min($r->a1, $this->a1), $this->b1);
+            $ans[] = new self(max($r->a0, $this->a0), $r->b1 + 1, min($r->a1, $this->a1), $this->b1);
         }
         return $ans;
     }

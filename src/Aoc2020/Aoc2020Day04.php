@@ -60,7 +60,7 @@ final class Aoc2020Day04 extends SolutionBase
                         default => false
                     },
                     'hcl' => strlen($v) == 7 && $v[0] == '#' && ctype_xdigit(substr($v, 1)),
-                    'ecl' => in_array($v, ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']),
+                    'ecl' => in_array($v, ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'], true),
                     'pid' => strlen($v) == 9 && ctype_digit($v),
                     'cid' => true,
                     // @codeCoverageIgnoreStart

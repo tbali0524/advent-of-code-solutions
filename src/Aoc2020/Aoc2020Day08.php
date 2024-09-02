@@ -46,10 +46,10 @@ final class Aoc2020Day08 extends SolutionBase
         $ans2 = 0;
         for ($i = 0; $i < count($input); ++$i) {
             $instruction = substr($input[$i], 0, 3);
-            if (!in_array($instruction, ['jmp', 'nop'])) {
+            if (!in_array($instruction, ['jmp', 'nop'], true)) {
                 continue;
             }
-            $modInstruction = ['jmp' => 'nop', 'nop' => 'jmp'][$instruction] ?? 'err';
+            $modInstruction = ['jmp' => 'nop', 'nop' => 'jmp'][$instruction];
             $modInput = $input;
             $modInput[$i] = $modInstruction . substr($input[$i], 3);
             [$wasInfLoop, $ans2] = $this->execute($modInput);

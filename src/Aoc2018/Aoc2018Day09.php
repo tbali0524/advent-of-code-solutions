@@ -98,7 +98,7 @@ final class ListItem
     /**
      * Get the item off by $delta positions (left or right).
      */
-    public function nth(int $delta): ListItem
+    public function nth(int $delta): self
     {
         $ans = $this;
         if ($delta >= 0) {
@@ -120,7 +120,7 @@ final class ListItem
 
     public static function init(): self
     {
-        $item = new ListItem(0);
+        $item = new self(0);
         $item->prev = $item;
         $item->next = $item;
         return $item;

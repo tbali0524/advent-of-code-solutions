@@ -179,7 +179,7 @@ final class Workflow
         if ((count($a) != 2) or ($s[-1] != '}')) {
             throw new \Exception('Invalid input');
         }
-        $w = new Workflow();
+        $w = new self();
         $w->name = $a[0];
         $rules = explode(',', substr($a[1], 0, -1));
         foreach ($rules as $idx => $rule) {
@@ -220,7 +220,7 @@ final class Part
         if ($count != 4) {
             throw new \Exception('Invalid input');
         }
-        $p = new Part();
+        $p = new self();
         $p->properties = ['x' => intval($vx), 'm' => intval($vm), 'a' => intval($va), 's' => intval($vs)];
         return $p;
     }

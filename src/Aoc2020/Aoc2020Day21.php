@@ -120,8 +120,8 @@ final class Aoc2020Day21 extends SolutionBase
                 // @codeCoverageIgnoreEnd
             }
             $idIngred = array_key_first($this->canComeFrom[$idBestAllerg]);
-            $nameIngred = array_search($idIngred, $this->ingredients);
-            $nameAllerg = array_search($idBestAllerg, $this->allergens);
+            $nameIngred = array_search($idIngred, $this->ingredients, true);
+            $nameAllerg = array_search($idBestAllerg, $this->allergens, true);
             if (($nameIngred === false) or ($nameAllerg === false)) {
                 // @codeCoverageIgnoreStart
                 throw new \Exception('No solution found');

@@ -76,7 +76,7 @@ final class BagRegulations
                 throw new \Exception('Invalid input');
             }
             for ($i = 1; $i < intdiv(count($a), 4); ++$i) {
-                if (!is_numeric($a[4 * $i]) or !in_array($a[4 * $i + 3], ['bag,', 'bags,', 'bag.', 'bags.'])) {
+                if (!is_numeric($a[4 * $i]) or !in_array($a[4 * $i + 3], ['bag,', 'bags,', 'bag.', 'bags.'], true)) {
                     throw new \Exception('Invalid input');
                 }
                 $innerBag = $a[4 * $i + 1] . ' ' . $a[4 * $i + 2];

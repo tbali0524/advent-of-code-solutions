@@ -109,7 +109,7 @@ final class Character
     ) {
     }
 
-    public function canWin(Character $enemy): bool
+    public function canWin(self $enemy): bool
     {
         $turnsToWin = intval(ceil($enemy->hp / max(1, $this->damage - $enemy->armor)));
         $turnsToLoose = intval(ceil($this->hp / max(1, $enemy->damage - $this->armor)));

@@ -208,7 +208,7 @@ final class Circuit
             $turn = 0;
             $pq = new MinPriorityQueueDay20();
             $pq->setExtractFlags(\SplPriorityQueue::EXTR_BOTH);
-            $pq->insert([Circuit::BUTTON, Circuit::BROADCASTER, Pulse::LOW], $turn);
+            $pq->insert([self::BUTTON, self::BROADCASTER, Pulse::LOW], $turn);
             while (!$pq->isEmpty()) {
                 $item = $pq->extract();
                 /** @phpstan-var array{priority: int, data: array{string, string, Pulse}} $item */
@@ -263,7 +263,7 @@ final class Circuit
             $turn = 0;
             $pq = new MinPriorityQueueDay20();
             $pq->setExtractFlags(\SplPriorityQueue::EXTR_BOTH);
-            $pq->insert([Circuit::BUTTON, Circuit::BROADCASTER, Pulse::LOW], $turn);
+            $pq->insert([self::BUTTON, self::BROADCASTER, Pulse::LOW], $turn);
             while (!$pq->isEmpty()) {
                 $item = $pq->extract();
                 /** @phpstan-var array{priority: int, data: array{string, string, Pulse}} $item */

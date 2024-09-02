@@ -76,7 +76,7 @@ final class AocRunner
      */
     public function __construct(array $args)
     {
-        echo 'Advent of Code - batch solution runner, (c) 2023 by TBali' . PHP_EOL . PHP_EOL;
+        echo 'Advent of Code - batch solution runner, (c) 2024 by TBali' . PHP_EOL . PHP_EOL;
         $this->processArgs($args);
         $this->isOk = true;
     }
@@ -128,7 +128,7 @@ final class AocRunner
                         echo '======= ' . $year . ' ' . str_repeat('=', 45) . PHP_EOL;
                         $lastYear = $year;
                     }
-                    if (in_array($day, self::TO_SKIP[$year])) {
+                    if (in_array($day, self::TO_SKIP[$year], true)) {
                         echo '=== AoC ' . $year . ' Day ' . str_pad(strval($day), 2, '0', STR_PAD_LEFT) . PHP_EOL;
                         echo Tags::WARN_TAG . 'Skipped.' . PHP_EOL;
                         ++$countSkipped;

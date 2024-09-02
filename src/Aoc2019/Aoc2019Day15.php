@@ -225,7 +225,7 @@ final class Map
                 if (($x == 0) and ($y == 0)) {
                     $s .= '0';
                 } elseif (($x == $droidX) and ($y == $droidY)) {
-                    $s .= Map::DROID;
+                    $s .= self::DROID;
                 } else {
                     $s .= $this->grid[$y][$x] ?? self::UNKNOWN;
                 }

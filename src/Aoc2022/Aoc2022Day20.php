@@ -133,7 +133,7 @@ final class ListItem
     /**
      * Get the item off by $delta positions (left or right).
      */
-    public function nth(int $delta): ListItem
+    public function nth(int $delta): self
     {
         $ans = $this;
         if ($delta >= 0) {

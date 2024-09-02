@@ -90,7 +90,7 @@ final class Hand
     ) {
     }
 
-    public function isPossible(Hand $bag): bool
+    public function isPossible(self $bag): bool
     {
         return $this->red <= $bag->red && $this->green <= $bag->green && $this->blue <= $bag->blue;
     }

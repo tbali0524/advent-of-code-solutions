@@ -138,7 +138,7 @@ final class Directory
     public bool $wasListed = false;
     public int $totalSize = 0;
 
-    public function __construct(string $name, ?Directory $parent = null)
+    public function __construct(string $name, ?self $parent = null)
     {
         $this->name = $name;
         $this->parent = $parent;

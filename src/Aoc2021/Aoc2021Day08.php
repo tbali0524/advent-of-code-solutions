@@ -72,7 +72,7 @@ final class Aoc2021Day08 extends SolutionBase
         $ans1 = 0;
         foreach ($outputs as $patterns) {
             foreach ($patterns as $pattern) {
-                if (in_array(strlen($pattern), [2, 3, 4, 7])) {
+                if (in_array(strlen($pattern), [2, 3, 4, 7], true)) {
                     ++$ans1;
                 }
             }
@@ -84,12 +84,12 @@ final class Aoc2021Day08 extends SolutionBase
             $segments[0] = current(array_diff($patterns[1], $patterns[0]));
             $freq = array_count_values(array_merge(...$patterns));
             // # of times a given  segment is used in all digits: 8, 6, 8, 7, 4, 9, 7
-            $segments[2] = current(array_diff(array_keys($freq, 8), [$segments[0]]));
-            $segments[1] = current(array_keys($freq, 6));
-            $segments[4] = current(array_keys($freq, 4));
-            $segments[5] = current(array_keys($freq, 9));
+            $segments[2] = current(array_diff(array_keys($freq, 8, true), [$segments[0]]));
+            $segments[1] = current(array_keys($freq, 6, true));
+            $segments[4] = current(array_keys($freq, 4, true));
+            $segments[5] = current(array_keys($freq, 9, true));
             $segments[3] = current(array_diff(array_diff($patterns[2], $patterns[0]), [$segments[1]]));
-            $segments[6] = current(array_diff(array_keys($freq, 7), [$segments[3]]));
+            $segments[6] = current(array_diff(array_keys($freq, 7, true), [$segments[3]]));
             $map = [];
             for ($digit = 0; $digit < 10; ++$digit) {
                 $digitSegments = [];

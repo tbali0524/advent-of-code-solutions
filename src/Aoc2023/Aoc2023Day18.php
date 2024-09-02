@@ -47,6 +47,7 @@ final class Aoc2023Day18 extends SolutionBase
         $directions = '';
         $directionsPart2 = '';
         $steps = [];
+        $stepsPart2 = [];
         foreach ($input as $line) {
             $a = explode(' ', $line);
             if ((count($a) != 3) or !str_contains('URDL', $a[0]) or (strlen($a[2]) != 9)) {

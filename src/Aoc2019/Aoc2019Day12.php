@@ -135,7 +135,7 @@ final class Moon
             . '>' . PHP_EOL;
     }
 
-    public function gravity(Moon $moon): void
+    public function gravity(self $moon): void
     {
         $this->vx += ($moon->x <=> $this->x);
         $this->vy += ($moon->y <=> $this->y);

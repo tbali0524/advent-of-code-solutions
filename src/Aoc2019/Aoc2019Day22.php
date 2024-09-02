@@ -272,7 +272,7 @@ class LCF
     ) {
     }
 
-    public function compose(LCF $inner): static
+    public function compose(self $inner): static
     {
         if ($this->modulus != $inner->modulus) {
             // @codeCoverageIgnoreStart

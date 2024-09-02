@@ -4,7 +4,7 @@ PHPUnit configuration file.
 
 minimum version: ^11.3
 
-@see https://phpunit.readthedocs.io/en/11.0/configuration.html
+@see https://phpunit.readthedocs.io/en/11.3/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

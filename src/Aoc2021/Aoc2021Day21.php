@@ -56,7 +56,7 @@ final class Aoc2021Day21 extends SolutionBase
             $count = sscanf($input[$i] ?? '', 'Player %d starting position: %d', $player, $startPos);
             /** @var int $player */
             /** @var int $startPos */
-            if (($count != 2) or !in_array($player, [1, 2]) or ($startPos < 1) or ($startPos > self::MAX_POS)) {
+            if (($count != 2) or !in_array($player, [1, 2], true) or ($startPos < 1) or ($startPos > self::MAX_POS)) {
                 throw new \Exception('Invalid input');
             }
             // transpose to 0-based player id and positions id.

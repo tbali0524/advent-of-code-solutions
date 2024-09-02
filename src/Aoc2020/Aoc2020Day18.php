@@ -97,7 +97,7 @@ final class Expression
             if ($this->expr[$start] == '(') {
                 $end = $this->getCloseParPos($start);
                 $parString = substr($this->expr, $start + 1, $end - $start - 1);
-                $parExpression = new Expression($parString, $this->precedences);
+                $parExpression = new self($parString, $this->precedences);
                 $this->operands[] = $parExpression->evaluate();
                 ++$end;
             } elseif (ctype_digit($this->expr[$start])) {

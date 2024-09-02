@@ -1,6 +1,6 @@
 # PHPStan configuration file.
 #
-# minimum version: ^1.11
+# minimum version: ^1.12
 #
 # @see https://phpstan.org/config-reference
 parameters:
@@ -17,7 +17,7 @@ parameters:
         - vendor
     ignoreErrors:
         -
-          message: '#^(Static )?[Mm]ethod TBali[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) is unused.$#'
+          message: '#^(Static )?[Mm]ethod TBali[a-zA-Z0-9\\_]+::[a-zA-Z0-9_]+\(\) is unused\.$#'
           identifier: method.unused
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon

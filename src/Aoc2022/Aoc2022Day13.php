@@ -149,7 +149,7 @@ final class Item
         return $item;
     }
 
-    public static function compare(Item $a, Item $b): int
+    public static function compare(self $a, self $b): int
     {
         if (!$a->isList and !$b->isList) {
             return $a->value <=> $b->value;
