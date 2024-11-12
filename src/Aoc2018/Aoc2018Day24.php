@@ -101,6 +101,7 @@ final class Aoc2018Day24 extends SolutionBase
     {
         $aliveGroups = $groups;
         $totalKills = 0;
+        $sides = [];
         while (true) {
             // eliminate killed groups
             $aliveGroups = array_filter(
@@ -289,16 +290,21 @@ final class ArmyGroup
             $closePar = $pos - 1;
         }
         $sub = substr($s, 0, $openPar);
-        $count1 = sscanf($sub, '%d units each with %d hit points ', $g->startUnits, $g->hp);
+        $count1 = sscanf($sub, '%d units each with %d hit points ', $startUnits, $hp);
+        $g->startUnits = intval($startUnits);
+        $g->hp = intval($hp);
         $g->units = $g->startUnits;
         $sub = substr($s, $closePar + 1);
         $count2 = sscanf(
             $sub,
             ' with an attack that does %d %s damage at initiative %d',
-            $g->damage,
-            $g->damageType,
-            $g->initiative
+            $damage,
+            $damageType,
+            $initiative
         );
+        $g->damage = intval($damage);
+        $g->damageType = strval($damageType);
+        $g->initiative = intval($initiative);
         if (($count1 != 2) or ($count2 != 3)) {
             throw new \Exception('Invalid input');
         }

@@ -39,7 +39,7 @@ final class Aoc2021Day19 extends SolutionBase
     {
         // ---------- Parse input
         $scanners = [];
-        /** @var array<int, Vector3D> $scanners */
+        /** @var array<array<int, Vector3D>> $scanners */
         $maxScanners = 0;
         foreach ($input as $line) {
             if ($line == '') {
@@ -87,7 +87,7 @@ final class Aoc2021Day19 extends SolutionBase
                 if (!isset($foundScanner[$id1])) {
                     continue;
                 }
-                $scanner1 = $rotScanners[$id1][$scannerRotations[$id1] ?? throw new \Exception('Impossible')];
+                $scanner1 = $rotScanners[$id1][$scannerRotations[$id1]];
                 for ($id2 = 0; $id2 < $maxScanners; ++$id2) {
                     if (isset($foundScanner[$id2])) {
                         continue;

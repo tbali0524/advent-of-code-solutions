@@ -65,6 +65,8 @@ final class Aoc2016Day11 extends SolutionBase
      * Not used, too slow for Part 2.
      *
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private function solveBFS(House $startState): int
     {

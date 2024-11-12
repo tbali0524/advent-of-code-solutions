@@ -163,7 +163,7 @@ final class WizardGameState
             $this->hp += self::SPELL_VALUES[self::SPELL_DRAIN];
             $this->enemyHp = max(0, $this->enemyHp - self::SPELL_VALUES[self::SPELL_DRAIN]);
         }
-        if ((self::SPELL_DURATIONS[$spell] ?? 0) > 0) {
+        if (self::SPELL_DURATIONS[$spell] > 0) {
             $this->timers[$spell] = self::SPELL_DURATIONS[$spell];
         }
         if ($this->enemyHp <= 0) {

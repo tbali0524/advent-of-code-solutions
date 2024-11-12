@@ -133,6 +133,8 @@ final class Aoc2018Day21 extends SolutionBase
      * @return array<int, int> The registers after executing the instruction
      *
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private static function execute(array $instr, array $regs): array
     {

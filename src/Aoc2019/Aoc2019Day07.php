@@ -209,6 +209,7 @@ final class AmplifierSimulator
                 5 => $this->ic = $params[1] != 0 ? $params[2] : $this->ic,
                 6 => $this->ic = $params[1] == 0 ? $params[2] : $this->ic,
                 7 => $this->memory[$this->memory[$this->ic + 3]] = $params[1] < $params[2] ? 1 : 0,
+                // @phpstan-ignore match.alwaysTrue
                 8 => $this->memory[$this->memory[$this->ic + 3]] = $params[1] == $params[2] ? 1 : 0,
                 default => throw new \Exception('Invalid input'),
             };

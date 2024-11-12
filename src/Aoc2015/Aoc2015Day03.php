@@ -44,7 +44,7 @@ final class Aoc2015Day03 extends SolutionBase
         $memo = [];
         $x = 0;
         $y = 0;
-        $memo[$y][$x] = 1;
+        $memo[$y] = [$x => 1];
         foreach (str_split($input) as $dir) {
             [$dx, $dy] = self::DELTAS[$dir] ?? [0, 0];
             $x += $dx;
@@ -59,7 +59,7 @@ final class Aoc2015Day03 extends SolutionBase
         $memo = [];
         $x = [0, 0];
         $y = [0, 0];
-        $memo[$y[0]][$x[0]] = 1;
+        $memo[$y[0]] = [$x[0] => 1];
         foreach (str_split($input) as $idx => $dir) {
             [$dx, $dy] = self::DELTAS[$dir] ?? [0, 0];
             $x[$idx % 2] += $dx;

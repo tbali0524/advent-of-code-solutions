@@ -112,7 +112,7 @@ final class Aoc2019Day18 extends SolutionBase
     {
         $targetKeys = (1 << $maxKeys) - 1;
         $visited = [];
-        $visited[0][$robotHash] = true;
+        $visited[0] = [$robotHash => true];
         $q = [[$robotHash, 0, 0]];
         $readIdx = 0;
         while (true) {
@@ -163,7 +163,7 @@ final class Aoc2019Day18 extends SolutionBase
     private function solvePart2(array $grid, int $robotHash): int
     {
         $visited = [];
-        $visited[0][$robotHash] = true;
+        $visited[0] = [$robotHash => true];
         $q = [[$robotHash, 0, 0, 0]];
         $maxKeys = 0;
         $maxSteps = 0;

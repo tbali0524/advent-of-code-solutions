@@ -104,6 +104,8 @@ final class Aoc2020Day13 extends SolutionBase
      * @phpstan-return array{int, int, int}
      *
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private static function extendedEuclidean(int $a, int $b): array
     {

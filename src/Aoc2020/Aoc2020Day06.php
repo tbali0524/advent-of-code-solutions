@@ -47,7 +47,6 @@ final class Aoc2020Day06 extends SolutionBase
         // ---------- Part 1
         $ans1 = array_sum(array_map(
             // count_chars mode = 3: a string containing all unique characters is returned.
-            // @phpstan-ignore argument.type
             static fn (array $group): int => strlen(count_chars(implode('', $group), 3)),
             $processedInput
         ));
@@ -56,7 +55,6 @@ final class Aoc2020Day06 extends SolutionBase
             // count_chars mode = 1: an array with the byte-value as key and the frequency of every byte as value,
             //      only byte-values with a frequency greater than zero are listed.
             static fn (array $group): int => count(array_filter(
-                // @phpstan-ignore argument.type
                 count_chars(implode('', $group), 1),
                 static fn (int $value): bool => $value == count($group),
             )),

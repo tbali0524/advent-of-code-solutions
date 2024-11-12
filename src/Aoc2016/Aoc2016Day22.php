@@ -92,6 +92,8 @@ final class Aoc2016Day22 extends SolutionBase
 
     /**
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private function printGrid(): void
     {

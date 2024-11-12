@@ -206,7 +206,7 @@ final class Snailfish
                 if ($current === $node) {
                     $isNodePassed = true;
                 }
-                if ($current?->isRegular) {
+                if ($current->isRegular) {
                     if ($current->parent !== $node) {
                         if (!$isNodePassed) {
                             $leftRegularNode = $current;
@@ -215,7 +215,7 @@ final class Snailfish
                         }
                     }
                 }
-                $current = $current?->right;
+                $current = $current->right;
             }
         }
         if (!is_null($leftRegularNode)) {
@@ -344,6 +344,8 @@ final class Snailfish
 
     /**
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private function unitTest(): void
     {

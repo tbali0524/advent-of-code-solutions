@@ -24,7 +24,7 @@ final class Aoc2023Day14 extends SolutionBase
     public const SOLUTIONS = [112048, 105606];
     public const EXAMPLE_SOLUTIONS = [[136, 64]];
 
-    private const MAX_STEPS_PART2 = 1_000_000_000;
+    private const int MAX_STEPS_PART2 = 1_000_000_000;
 
     private int $maxX = 0;
     private int $maxY = 0;
@@ -119,7 +119,8 @@ final class Aoc2023Day14 extends SolutionBase
                 $newY = 0;
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 < $y) and ($y1 >= $newY)) {
-                        $newY = $y1 + 1;
+                        // @phpstan-ignore-next-line argument.type
+                        $newY = intval($y1) + 1;
                     }
                 }
                 while ($this->grid[$newY][$x] == 'O') {
@@ -141,13 +142,13 @@ final class Aoc2023Day14 extends SolutionBase
                 $newX = 0;
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 < $x) and ($x1 >= $newX)) {
-                        $newX = $x1 + 1;
+                        // @phpstan-ignore-next-line argument.type
+                        $newX = intval($x1) + 1;
                     }
                 }
                 while ($this->grid[$y][$newX] == 'O') {
                     ++$newX;
                 }
-                // @phpstan-ignore assign.propertyType
                 $this->grid[$y][$newX] = 'O';
             }
         }
@@ -164,7 +165,8 @@ final class Aoc2023Day14 extends SolutionBase
                 $newY = $this->maxY - 1;
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 > $y) and ($y1 <= $newY)) {
-                        $newY = $y1 - 1;
+                        // @phpstan-ignore-next-line argument.type
+                        $newY = intval($y1) - 1;
                     }
                 }
                 while ($this->grid[$newY][$x] == 'O') {
@@ -186,13 +188,13 @@ final class Aoc2023Day14 extends SolutionBase
                 $newX = $this->maxX - 1;
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 > $x) and ($x1 <= $newX)) {
-                        $newX = $x1 - 1;
+                        // @phpstan-ignore-next-line argument.type
+                        $newX = intval($x1) - 1;
                     }
                 }
                 while ($this->grid[$y][$newX] == 'O') {
                     --$newX;
                 }
-                // @phpstan-ignore assign.propertyType
                 $this->grid[$y][$newX] = 'O';
             }
         }

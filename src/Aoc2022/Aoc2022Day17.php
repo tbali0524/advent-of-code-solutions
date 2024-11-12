@@ -55,24 +55,27 @@ final class Aoc2022Day17 extends SolutionBase
 // --------------------------------------------------------------------
 abstract class Rock
 {
-    public const MAX_X = 1;
-    public const MAX_Y = 1;
-    public const SHAPE = [0b1];
+    public const int MAX_X = 1;
+    public const int MAX_Y = 1;
+    /** @var array<int, int> */
+    public const array SHAPE = [0b1];
 }
 
 // --------------------------------------------------------------------
 final class HorizontalRock extends Rock
 {
-    public const MAX_X = 4;
-    public const MAX_Y = 1;
-    public const SHAPE = [0b1111];
+    public const int MAX_X = 4;
+    public const int MAX_Y = 1;
+    /** @var array<int, int> */
+    public const array SHAPE = [0b1111];
 }
 
 final class CrossRock extends Rock
 {
-    public const MAX_X = 3;
-    public const MAX_Y = 3;
-    public const SHAPE = [
+    public const int MAX_X = 3;
+    public const int MAX_Y = 3;
+    /** @var array<int, int> */
+    public const array SHAPE = [
         0b010,
         0b111,
         0b010,
@@ -81,9 +84,10 @@ final class CrossRock extends Rock
 
 final class LRock extends Rock
 {
-    public const MAX_X = 3;
-    public const MAX_Y = 3;
-    public const SHAPE = [
+    public const int MAX_X = 3;
+    public const int MAX_Y = 3;
+    /** @var array<int, int> */
+    public const array SHAPE = [
         0b111,
         0b100,
         0b100,
@@ -92,9 +96,10 @@ final class LRock extends Rock
 
 final class VerticalRock extends Rock
 {
-    public const MAX_X = 1;
-    public const MAX_Y = 4;
-    public const SHAPE = [
+    public const int MAX_X = 1;
+    public const int MAX_Y = 4;
+    /** @var array<int, int> */
+    public const array SHAPE = [
         0b1,
         0b1,
         0b1,
@@ -104,9 +109,10 @@ final class VerticalRock extends Rock
 
 final class SquareRock extends Rock
 {
-    public const MAX_X = 2;
-    public const MAX_Y = 2;
-    public const SHAPE = [
+    public const int MAX_X = 2;
+    public const int MAX_Y = 2;
+    /** @var array<int, int> */
+    public const array SHAPE = [
         0b11,
         0b11,
     ];
@@ -115,7 +121,7 @@ final class SquareRock extends Rock
 // --------------------------------------------------------------------
 class Pit
 {
-    public const DEBUG = false;
+    public const bool DEBUG = false;
 
     public readonly int $maxX;
     public int $maxY = 0;

@@ -82,9 +82,10 @@ final class Aoc2019Day05 extends SolutionBase
                 2 => $memory[$memory[$ic + 3]] = $params[1] * $params[2],
                 3 => $memory[$memory[$ic + 1]] = $inputs[$idxInput++] ?? throw new \Exception('Invalid input'),
                 4 => $output[] = $params[1],
-                5 => $ic = $params[1] != 0 ? $params[2] : $ic,
-                6 => $ic = $params[1] == 0 ? $params[2] : $ic,
+                5 => $ic = $params[1] != 0 ? intval($params[2]) : $ic,
+                6 => $ic = $params[1] == 0 ? intval($params[2]) : $ic,
                 7 => $memory[$memory[$ic + 3]] = $params[1] < $params[2] ? 1 : 0,
+                // @phpstan-ignore match.alwaysTrue
                 8 => $memory[$memory[$ic + 3]] = $params[1] == $params[2] ? 1 : 0,
                 default => throw new \Exception('Invalid input'),
             };

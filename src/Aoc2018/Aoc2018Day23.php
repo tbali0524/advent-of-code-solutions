@@ -119,7 +119,6 @@ class Point
 
     public function manhattanToOrigo(): int
     {
-        // @phpstan-ignore argument.type
         return intval(array_sum(array_map(abs(...), $this->p)));
     }
 }
@@ -147,7 +146,6 @@ final class Nanobot extends Point
 
     public function maxRangeCoord(): int
     {
-        // @phpstan-ignore argument.type
         return intval(max(array_map(abs(...), $this->p))) + $this->r;
     }
 

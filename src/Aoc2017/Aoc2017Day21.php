@@ -150,6 +150,8 @@ final class Aoc2017Day21 extends SolutionBase
 
     /**
      * @codeCoverageIgnore
+     *
+     * @phpstan-ignore method.unused
      */
     private static function printImage(string $image): void
     {

@@ -165,15 +165,19 @@ final class Sensor
         $count = sscanf(
             $s,
             'Sensor at x=%d, y=%d: closest beacon is at x=%d, y=%d',
-            $sensor->x,
-            $sensor->y,
-            $sensor->beaconX,
-            $sensor->beaconY,
+            $x,
+            $y,
+            $beaconX,
+            $beaconY,
         );
+        $sensor->x = intval($x);
+        $sensor->y = intval($y);
+        $sensor->beaconX = intval($beaconX);
+        $sensor->beaconY = intval($beaconY);
         if ($count != 4) {
             throw new \Exception('Invalid input');
         }
-        $sensor->distance = abs($sensor->x - $sensor->beaconX) + abs($sensor->y - $sensor->beaconY);
+        $sensor->distance = intval(abs($sensor->x - $sensor->beaconX) + abs($sensor->y - $sensor->beaconY));
         return $sensor;
     }
 }

@@ -50,6 +50,7 @@ final class Aoc2023Day01 extends SolutionBase
     {
         // ---------- Part 1 + 2
         $fnDigits = static fn (array $a): array => array_map(
+            // @phpstan-ignore-next-line argument.type
             static fn (string $s): string => implode('', array_filter(
                 str_split($s),
                 static fn (string $c): bool => $c >= '0' && $c <= '9',
@@ -57,6 +58,7 @@ final class Aoc2023Day01 extends SolutionBase
             $a,
         );
         $fnSumBorder = static fn (array $a): int => array_sum(array_map(
+            // @phpstan-ignore-next-line argument.type
             static fn (string $s): int => 10 * intval($s[0] ?? '0') + intval($s[-1] ?? '0'),
             $a,
         ));

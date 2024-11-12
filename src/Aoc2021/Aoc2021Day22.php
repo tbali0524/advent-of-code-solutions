@@ -80,6 +80,7 @@ final class Aoc2021Day22 extends SolutionBase
                 for ($idxY = $posFrom[1]; $idxY < $posTo[1]; ++$idxY) {
                     for ($idxZ = $posFrom[2]; $idxZ < $posTo[2]; ++$idxZ) {
                         $pos = $idxX * count($dividers[1]) * count($dividers[2]) + $idxY * count($dividers[2]) + $idxZ;
+                        // @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible
                         $regionOn[$pos] = $c->isOn ? '1' : '0';
                     }
                 }
@@ -89,6 +90,7 @@ final class Aoc2021Day22 extends SolutionBase
             for ($idxY = 0; $idxY < count($dividers[1]) - 1; ++$idxY) {
                 for ($idxZ = 0; $idxZ < count($dividers[2]) - 1; ++$idxZ) {
                     $pos = $idxX * count($dividers[1]) * count($dividers[2]) + $idxY * count($dividers[2]) + $idxZ;
+                    // @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible
                     if ($regionOn[$pos] != '1') {
                         continue;
                     }
@@ -131,16 +133,13 @@ final class Cuboid
             $c->isOn = false;
             $s = substr($inputLine, 4);
         }
-        $count = sscanf(
-            $s,
-            'x=%d..%d,y=%d..%d,z=%d..%d',
-            $c->from[0],
-            $c->to[0],
-            $c->from[1],
-            $c->to[1],
-            $c->from[2],
-            $c->to[2],
-        );
+        $count = sscanf($s, 'x=%d..%d,y=%d..%d,z=%d..%d', $f0, $t0, $f1, $t1, $f2, $t2);
+        $c->from[0] = intval($f0);
+        $c->to[0] = intval($t0);
+        $c->from[1] = intval($f1);
+        $c->to[1] = intval($t1);
+        $c->from[2] = intval($f2);
+        $c->to[2] = intval($t2);
         if (($count != 6) or ($c->from[0] > $c->to[0]) or ($c->from[1] > $c->to[1]) or ($c->from[2] > $c->to[2])) {
             throw new \Exception('Invalid input');
         }

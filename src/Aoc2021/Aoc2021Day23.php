@@ -68,9 +68,9 @@ final class Aoc2021Day23 extends SolutionBase
         $ans = 0;
         $prevStates = [];
         $bestCosts = [];
+        $bestCosts[$startStateRoom] = [$startStateHallway => 0];
         $costMoves = [];
-        $bestCosts[$startStateRoom][$startStateHallway] = 0;
-        $costMoves[$startStateRoom][$startStateHallway] = 0;
+        $costMoves[$startStateRoom] = [$startStateHallway => 0];
         $pq = new MinPriorityQueue();
         $pq->setExtractFlags(\SplPriorityQueue::EXTR_BOTH);
         $pq->insert([$startStateRoom, $startStateHallway], 0);
@@ -127,17 +127,19 @@ class Burrow
     // 2 ###0#2#4#6###
     // 3   #1#3#5#7#
     // 4   #########
-    public const INPUT_LINES = 5;
-    public const MAX_CELLS = 15;
-    public const MAX_ROOMS = 8;
-    public const BITS_PER_CELL = 3;
-    public const MASK_CELL = (1 << self::BITS_PER_CELL) - 1;
-    public const CHAR_TO_AMPHIPOD = ['.' => 0, 'A' => 1, 'B' => 2, 'C' => 3, 'D' => 4];
-    public const AMPHIPOD_TO_CHAR = '.ABCD';
-    public const COSTS = [0, 1, 10, 100, 1000];
-    public const HALLWAY_Y = 1;
+    public const int INPUT_LINES = 5;
+    public const int MAX_CELLS = 15;
+    public const int MAX_ROOMS = 8;
+    public const int BITS_PER_CELL = 3;
+    public const int MASK_CELL = (1 << self::BITS_PER_CELL) - 1;
+    /** @var array<string, int> */
+    public const array CHAR_TO_AMPHIPOD = ['.' => 0, 'A' => 1, 'B' => 2, 'C' => 3, 'D' => 4];
+    public const string AMPHIPOD_TO_CHAR = '.ABCD';
+    /** @var array<int, int> */
+    public const array COSTS = [0, 1, 10, 100, 1000];
+    public const int HALLWAY_Y = 1;
     /** @var array<int, string> */
-    public const TARGET_INPUT = [
+    public const array TARGET_INPUT = [
         '#############',
         '#...........#',
         '###A#B#C#D###',
@@ -382,11 +384,11 @@ class BurrowExtended extends Burrow
     // 4   #2#6#0#4#
     // 5   #3#7#1#5#
     // 4   #########
-    public const INPUT_LINES = 7;
-    public const MAX_CELLS = 23;
-    public const MAX_ROOMS = 16;
+    public const int INPUT_LINES = 7;
+    public const int MAX_CELLS = 23;
+    public const int MAX_ROOMS = 16;
     /** @var array<int, string> */
-    public const TARGET_INPUT = [
+    public const array TARGET_INPUT = [
         '#############',
         '#...........#',
         '###A#B#C#D###',

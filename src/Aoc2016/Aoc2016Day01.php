@@ -57,7 +57,7 @@ final class Aoc2016Day01 extends SolutionBase
         $y = 0;
         $direction = 0; // N
         $memo = [];
-        $memo[$y][$x] = true;
+        $memo[$y] = [$x => true];
         foreach (explode(', ', $input[0]) as $instruction) {
             $turn = self::TURNS[$instruction[0]] ?? 0;
             $move = intval(substr($instruction, 1));

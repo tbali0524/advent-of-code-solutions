@@ -27,8 +27,11 @@ final class Aoc2016Day14 extends SolutionBase
     public const EXAMPLE_SOLUTIONS = [[22728, 22551]];
     public const EXAMPLE_STRING_INPUTS = ['abc', ''];
 
+    /** @var int */
     private const MAX_DISTANCE = 1000;
+    /** @var int */
     private const MAX_KEY = 64;
+    /** @var int */
     private const REPEAT_PART2 = 2016;
     /** @var string */
     private const HEX_DIGITS = '0123456789abcdef';
@@ -69,10 +72,12 @@ final class Aoc2016Day14 extends SolutionBase
         $this->lastSeenFive = [];
         for ($j = 0; $j < strlen(self::HEX_DIGITS); ++$j) {
             $digit = self::HEX_DIGITS[$j];
+            // @phpstan-ignore assign.propertyType
             $this->lastSeenFive[$digit] = -1;
             $needle = str_repeat($digit, 5);
             for ($i = count($this->hashes) - 1; $i >= 0; --$i) {
                 if (str_contains($this->hashes[$i], $needle)) {
+                    // @phpstan-ignore assign.propertyType
                     $this->lastSeenFive[$digit] = $i;
                     break;
                 }
@@ -89,6 +94,7 @@ final class Aoc2016Day14 extends SolutionBase
             for ($j = 0; $j < strlen(self::HEX_DIGITS); ++$j) {
                 $digit = self::HEX_DIGITS[$j];
                 if (str_contains($hash, str_repeat($digit, 5))) {
+                    // @phpstan-ignore assign.propertyType
                     $this->lastSeenFive[$digit] = $idx + self::MAX_DISTANCE;
                 }
             }

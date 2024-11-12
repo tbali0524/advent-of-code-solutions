@@ -119,14 +119,21 @@ final class Blueprint
             $s,
             'Blueprint %d: Each ore robot costs %d ore. Each clay robot costs %d ore. '
                 . 'Each obsidian robot costs %d ore and %d clay. Each geode robot costs %d ore and %d obsidian.',
-            $b->id,
-            $b->oreRobotOreCost,
-            $b->clayRobotOreCost,
-            $b->obsidianRobotOreCost,
-            $b->obsidianRobotClayCost,
-            $b->geodeRobotOreCost,
-            $b->geodeRobotObsidianCost,
+            $id,
+            $oreRobotOreCost,
+            $clayRobotOreCost,
+            $obsidianRobotOreCost,
+            $obsidianRobotClayCost,
+            $geodeRobotOreCost,
+            $geodeRobotObsidianCost,
         );
+        $b->id = intval($id);
+        $b->oreRobotOreCost = intval($oreRobotOreCost);
+        $b->clayRobotOreCost = intval($clayRobotOreCost);
+        $b->obsidianRobotOreCost = intval($obsidianRobotOreCost);
+        $b->obsidianRobotClayCost = intval($obsidianRobotClayCost);
+        $b->geodeRobotOreCost = intval($geodeRobotOreCost);
+        $b->geodeRobotObsidianCost = intval($geodeRobotObsidianCost);
         if ($count != 7) {
             throw new \Exception('Invalid input');
         }

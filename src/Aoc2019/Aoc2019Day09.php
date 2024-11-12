@@ -117,6 +117,7 @@ final class BoostSimulator
                 6 => $this->ic = $params[1] == 0 ? $params[2] : $this->ic,
                 7 => $this->memory[$addresses[3]] = $params[1] < $params[2] ? 1 : 0,
                 8 => $this->memory[$addresses[3]] = $params[1] == $params[2] ? 1 : 0,
+                // @phpstan-ignore match.alwaysTrue
                 9 => $this->relBase += $params[1],
                 default => throw new \Exception('Invalid input'),
             };

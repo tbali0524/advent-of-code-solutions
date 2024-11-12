@@ -51,7 +51,8 @@ final class Aoc2017Day03 extends SolutionBase
         [$x, $y] = [0, 0];
         [$dx, $dy] = [1, 0];
         $ans2 = 1;
-        $memo[$y][$x] = $ans2;
+        $memo = [];
+        $memo[$y] = [$x => $ans2];
         while ($ans2 <= $n) {
             $x += $dx;
             $y += $dy;
