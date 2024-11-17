@@ -13,6 +13,7 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)|
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-0-red)|
 |__Total__|![total](https://img.shields.io/badge/stars%20⭐-450-green)|
 
 ## Puzzles
@@ -304,3 +305,33 @@ No external hint was used in this season.
 |  +  |2023| 25|Snowverload                               |graph components
 
 Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
+
+### 2024
+
+|Done?|Year|Day| Title                                    | Topics   |
+|:---:|----|--:|:-----------------------------------------|:---------|
+|  -  |2024|  1|?                                         |
+|  -  |2024|  2|                                          |
+|  -  |2024|  3|                                          |
+|  -  |2024|  4|                                          |
+|  -  |2024|  5|                                          |
+|  -  |2024|  6|                                          |
+|  -  |2024|  7|                                          |
+|  -  |2024|  8|                                          |
+|  -  |2024|  9|                                          |
+|  -  |2024| 10|                                          |
+|  -  |2024| 11|                                          |
+|  -  |2024| 12|                                          |
+|  -  |2024| 13|                                          |
+|  -  |2024| 14|                                          |
+|  -  |2024| 15|                                          |
+|  -  |2024| 16|                                          |
+|  -  |2024| 17|                                          |
+|  -  |2024| 18|                                          |
+|  -  |2024| 19|                                          |
+|  -  |2024| 20|                                          |
+|  -  |2024| 21|                                          |
+|  -  |2024| 22|                                          |
+|  -  |2024| 23|                                          |
+|  -  |2024| 24|                                          |
+|  -  |2024| 25|                                          |

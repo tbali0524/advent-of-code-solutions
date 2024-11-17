@@ -269,7 +269,7 @@ final class Circuit
                 /** @phpstan-var array{priority: int, data: array{string, string, Pulse}} $item */
                 [$from, $to, $pulse] = $item['data'];
                 $turn = $item['priority'];
-                if (($to == 'rx') and ($pulse == Pulse::LOW)) {
+                if (($to == self::RECEIVER) and ($pulse == Pulse::LOW)) {
                     // @codeCoverageIgnoreStart
                     return $step;
                     // @codeCoverageIgnoreEnd

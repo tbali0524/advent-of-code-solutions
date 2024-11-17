@@ -25,6 +25,7 @@ abstract class SolutionBase implements Solution
      */
     final public function run(): bool
     {
+        // @phpstan-ignore-next-line if.alwaysTrue
         if (version_compare(PHP_VERSION, '8.2.0', '>=')) {
             gc_collect_cycles();
             memory_reset_peak_usage();
@@ -130,6 +131,7 @@ abstract class SolutionBase implements Solution
         }
         $maxMemoryMsg = '';
         $padTitle = 0;
+        // @phpstan-ignore-next-line if.alwaysTrue
         if (version_compare(PHP_VERSION, '8.2.0', '>=')) {
             $maxMemory = ceil(memory_get_peak_usage() / 1024 / 1024);
             $maxMemoryMsg = strval($maxMemory);

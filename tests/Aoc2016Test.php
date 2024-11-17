@@ -50,7 +50,7 @@ use TBali\Aoc2016\Node;
  * @coversNothing
  */
 #[RequiresPhp('^8.3')]
-#[RequiresPhpunit('^11.2')]
+#[RequiresPhpunit('^11.4')]
 #[CoversClass(Aoc2016Day01::class)]
 #[CoversClass(Aoc2016Day02::class)]
 #[CoversClass(Aoc2016Day03::class)]

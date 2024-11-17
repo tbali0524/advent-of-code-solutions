@@ -58,7 +58,6 @@ final class Aoc2023Day24 extends SolutionBase
             // @codeCoverageIgnoreEnd
         }
         $ans1 = 0;
-        $memo = [];
         for ($i = 0; $i < count($hailstones); ++$i) {
             for ($j = $i + 1; $j < count($hailstones); ++$j) {
                 if ($isExample) {
@@ -78,7 +77,6 @@ final class Aoc2023Day24 extends SolutionBase
                     continue;
                 }
                 ++$ans1;
-                $memo[$xy[0] . ' ' . $xy[1]] = true;
             }
         }
         // ---------- Part 2
