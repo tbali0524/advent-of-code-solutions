@@ -5,7 +5,7 @@
 # @see https://phpstan.org/config-reference
 parameters:
     level: max
-    phpVersion: 80300
+    phpVersion: 80400
     editorUrl: 'vscode://file/%%file%%:%%line%%'
     tmpDir: .tools/phpstan
     paths:

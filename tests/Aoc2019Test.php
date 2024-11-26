@@ -60,7 +60,7 @@ use TBali\Aoc2019\SpringDroidSimulator;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.3')]
+#[RequiresPhp('^8.4')]
 #[RequiresPhpunit('^11.4')]
 #[CoversClass(Aoc2019Day01::class)]
 #[CoversClass(Aoc2019Day02::class)]

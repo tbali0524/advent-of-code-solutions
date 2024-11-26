@@ -19,7 +19,7 @@ use TBali\Aoc2023\Aoc2024Day01;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.3')]
+#[RequiresPhp('^8.4')]
 #[RequiresPhpunit('^11.4')]
 #[CoversClass(Aoc2024Day01::class)]
 final class Aoc2024Test extends TestCase

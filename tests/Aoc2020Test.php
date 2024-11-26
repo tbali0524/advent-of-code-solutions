@@ -55,7 +55,7 @@ use TBali\Aoc2020\SpaceCardRecursiveGame;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.3')]
+#[RequiresPhp('^8.4')]
 #[RequiresPhpunit('^11.4')]
 #[CoversClass(Aoc2020Day01::class)]
 #[CoversClass(Aoc2020Day02::class)]

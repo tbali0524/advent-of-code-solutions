@@ -12,7 +12,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.4"
           tools: phpcs:3.11, php-cs-fixer:3.64, phpstan:2.0.2
           coverage: none
         env:
@@ -28,6 +28,8 @@ jobs:
 
       - name: Check coding style with php-cs-fixer
         run: php-cs-fixer fix --dry-run --show-progress=dots --diff -vv
+        env:
+            PHP_CS_FIXER_IGNORE_ENV: 1
 
       - name: Run static analysis
         run: |
@@ -43,7 +45,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: "8.3"
+          php-version: "8.4"
           extensions: mbstring, bcmath, xdebug
           tools: phpunit:11.4
           coverage: xdebug
