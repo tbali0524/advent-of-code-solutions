@@ -8,7 +8,7 @@ minimum version: ^3.11
 -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="advent-of-code-solutions">
     <description>PHP_CodeSniffer configuration</description>
-    <config name="php_version" value="80300"/>
+    <config name="php_version" value="80400"/>
     <arg name="cache" value=".tools/.phpcs.cache"/>
     <arg name="extensions" value="php"/>
     <arg name="encoding" value="utf-8"/>

@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.64
+ * minimum version: ^3.65
  *
  * @see https://cs.symfony.com/doc/config.html
  */
@@ -22,7 +22,7 @@ $finder = PhpCsFixer\Finder::create()
 return (new PhpCsFixer\Config())
     ->setRules([
         '@PHP84Migration' => true,
-        '@PHP80Migration:risky' => true,    // this also needs: ->setRiskyAllowed(true)
+        '@PHP82Migration:risky' => true,    // this also needs: ->setRiskyAllowed(true)
         '@PhpCsFixer' => true,              // includes @Symfony, @PER-CS2.0, @PSR12, @PSR2, @PSR1
         '@PhpCsFixer:risky' => true,        // includes @Symfony:risky, @PER-CS2.0:risky, @PSR12:risky
         '@PHPUnit100Migration:risky'=> true,

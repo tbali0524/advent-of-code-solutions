@@ -49,7 +49,6 @@ final class Aoc2016Day19 extends SolutionBase
      */
     private function josephus2(int $n): int
     {
-        // ---------- Part 1
         for ($i = 63; $i > 0; --$i) {
             if (($n & (1 << $i)) != 0) {
                 break;

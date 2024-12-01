@@ -2,15 +2,17 @@
 
 ![php v8.4](https://shields.io/badge/php-8.4-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-450-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-452-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
-* [Puzzle list](puzzles.md) with topics and my completion status
+* [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * Some [memes](memes.md) from AoC subreddit
-* Link to [this repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
-* Link to my partial [rewrite of the solution in `Rust` on GitHub](https://github.com/tbali0524/advent-of-code-rust)
+* [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
+* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~3 seasons, 170⭐)
+
+This repo contains all solutions for the first 9 seasons in PHP, plus a simple CLI runner. Later I rewrote some of the solutions in Rust. However, from season 2024 I plan to solve the puzzles first in Rust and rewrite it in PHP only later (if at all).
 
 ## Installation
 
@@ -94,4 +96,8 @@ The following helper commands are defined in [composer.json](composer.json):
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|
 |clean        |Delete generated cache and report files in `.tools` and `docs` directories _(Windows only)_|
 
-__Note:__ The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
+### Notes
+
+* The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
+* To run `php-cs-fixer` with `php v8.4`, set the `PHP_CS_FIXER_IGNORE_ENV` environment variable to `1`.
+* Currently several dev tools do not run or reports depreciations in `php v8.4`. (doc, loc, metrics)

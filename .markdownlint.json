@@ -2,7 +2,5 @@
     "default" : true,
     "ul-indent" : { "indent" : 4 },
     "line-length" : false,
-    "no-alt-text" : false,
-    "table-column-count" : false,
-    "table-pipe-style" : false
+    "no-alt-text" : false
 }
