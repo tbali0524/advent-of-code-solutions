@@ -33,6 +33,7 @@ final class Aoc2024Day01 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
         /** @var array<int, array<int, int>> */
         $data = array_map(
             static fn (string $line): array => array_map(intval(...), explode('   ', $line)),

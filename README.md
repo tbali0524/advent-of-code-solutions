@@ -2,13 +2,14 @@
 
 ![php v8.4](https://shields.io/badge/php-8.4-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-452-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-454-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
 * My AoC username: `tbali0524`
-* [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * Some [memes](memes.md) from AoC subreddit
+* [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
+* [Results and running times](results.md)
 * [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
 * [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~3 seasons, 170⭐)
 
