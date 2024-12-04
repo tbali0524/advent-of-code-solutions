@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use TBali\Aoc2024\Aoc2024Day01;
 use TBali\Aoc2024\Aoc2024Day02;
 use TBali\Aoc2024\Aoc2024Day03;
+use TBali\Aoc2024\Aoc2024Day04;
 
 /**
  * Unit tests for Advent of Code season 2024.
@@ -26,6 +27,7 @@ use TBali\Aoc2024\Aoc2024Day03;
 #[CoversClass(Aoc2024Day01::class)]
 #[CoversClass(Aoc2024Day02::class)]
 #[CoversClass(Aoc2024Day03::class)]
+#[CoversClass(Aoc2024Day04::class)]
 final class Aoc2024Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -84,7 +86,7 @@ final class Aoc2024Test extends TestCase
 
     public function testDay03Example1(): void
     {
-        $solver = new Aoc2024Day02();
+        $solver = new Aoc2024Day03();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
@@ -94,10 +96,10 @@ final class Aoc2024Test extends TestCase
 
     public function testDay03Example2(): void
     {
-        $solver = new Aoc2024Day02();
+        $solver = new Aoc2024Day03();
         $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
         [$ans1, $ans2] = $solver->solve($input);
-        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
         // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
@@ -110,6 +112,46 @@ final class Aoc2024Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
+    }
+
+    // --------------------------------------------------------------------
+
+    public function testDay04Example1(): void
+    {
+        $solver = new Aoc2024Day04();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        // self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay04Example2(): void
+    {
+        $solver = new Aoc2024Day04();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        // self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay04(): void
+    {
+        $solver = new Aoc2024Day04();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay04InvalidInput1(): void
+    {
+        $solver = new Aoc2024Day04();
+        $input = ['XM', 'A'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
