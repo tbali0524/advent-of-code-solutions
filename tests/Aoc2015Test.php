@@ -56,7 +56,7 @@ use TBali\Aoc2015\WizardSimulatorHardMode;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^11.4')]
+#[RequiresPhpunit('^11.5')]
 #[CoversClass(Aoc2015Day01::class)]
 #[CoversClass(Aoc2015Day02::class)]
 #[CoversClass(Aoc2015Day03::class)]

@@ -7,10 +7,7 @@ namespace TBali\Aoc2024;
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2024 Day 2: Historian Hysteria.
- *
- * Part 1: Analyze the unusual data from the engineers. How many reports are safe?
- * Part 2: Update your analysis. How many reports are now safe?
+ * AoC 2024 Day 2: Red-Nosed Reports.
  *
  * @see https://adventofcode.com/2024/day/2
  */

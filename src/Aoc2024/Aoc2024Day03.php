@@ -9,9 +9,6 @@ use TBali\Aoc\SolutionBase;
 /**
  * AoC 2024 Day 3: Mull It Over.
  *
- * Part 1: What do you get if you add up all of the results of the multiplications?
- * Part 2: What do you get if you add up all of the results of just the enabled multiplications?
- *
  * @see https://adventofcode.com/2024/day/3
  */
 final class Aoc2024Day03 extends SolutionBase

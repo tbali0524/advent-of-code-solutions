@@ -1,9 +1,9 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.04`.
+* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.07`.
 * Total running time:
-    * with AocRunner (PHP + JIT): `108 sec`
-    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 665 tests)
+    * with AocRunner (PHP + JIT): `133 sec`
+    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 686 tests)
 
 ```txt
 Advent of Code - batch solution runner, (c) 2024 by TBali
@@ -884,7 +884,19 @@ Advent of Code - batch solution runner, (c) 2024 by TBali
 [ OK ] Puzzle examples (2) passed.
 [ OK ] 2458
 [ OK ] 1945
-======= Total: 229 solutions (12 skipped) [time: 108.590 sec; max memory: 1610 MB]
+=== AoC 2024 Day 05 [time: 0.024 sec; memory: 67 Mbytes]   Print Queue
+[ OK ] Puzzle example passed.
+[ OK ] 5639
+[ OK ] 5273
+=== AoC 2024 Day 06 [time: 3.880 sec; memory: 68 Mbytes]   Guard Gallivant
+[ OK ] Puzzle example passed.
+[ OK ] 4515
+[ OK ] 1309
+=== AoC 2024 Day 07 [time: 13.428 sec; memory: 67 Mbytes]   Bridge Repair
+[ OK ] Puzzle example passed.
+[ OK ] 3351424677624
+[ OK ] 204976636995111
+======= Total: 232 solutions (12 skipped) [time: 133.735 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```

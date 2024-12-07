@@ -2,7 +2,7 @@
 
 ![php v8.4](https://shields.io/badge/php-8.4-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-458-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-464-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -11,7 +11,7 @@
 * [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * [Results and running times](results.md)
 * [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
-* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~3 seasons, 170⭐)
+* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~3.5 seasons, 182⭐)
 
 This repo contains all solutions for the first 9 seasons in PHP, plus a simple CLI runner. Later I rewrote some of the solutions in Rust. However, from season 2024 I plan to solve the puzzles first in Rust and rewrite it in PHP only later (if at all).
 

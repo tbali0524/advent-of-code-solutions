@@ -9,9 +9,6 @@ use TBali\Aoc\SolutionBase;
 /**
  * AoC 2024 Day 1: Historian Hysteria.
  *
- * Part 1: What is the total distance between your lists?
- * Part 2: Once again consider your left and right lists. What is their similarity score?
- *
  * @see https://adventofcode.com/2024/day/1
  */
 final class Aoc2024Day01 extends SolutionBase

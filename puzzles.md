@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-8-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-458-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-14-yellow)       |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-464-green)  |
 
 ## Puzzles
 
@@ -314,9 +314,9 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024|  2|Red-Nosed Reports                         |                                                         |
 |  +  |2024|  3|Mull It Over                              |                                                         |
 |  +  |2024|  4|Ceres Search                              |                                                         |
-|  -  |2024|  5|                                          |                                                         |
-|  -  |2024|  6|                                          |                                                         |
-|  -  |2024|  7|                                          |                                                         |
+|  +  |2024|  5|Print Queue                               |                                                         |
+|  +  |2024|  6|Guard Gallivant                           |                                                         |
+|  +  |2024|  7|Bridge Repair                             |permutation                                              |
 |  -  |2024|  8|                                          |                                                         |
 |  -  |2024|  9|                                          |                                                         |
 |  -  |2024| 10|                                          |                                                         |

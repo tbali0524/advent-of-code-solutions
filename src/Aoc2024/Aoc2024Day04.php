@@ -9,9 +9,6 @@ use TBali\Aoc\SolutionBase;
 /**
  * AoC 2024 Day 4: Ceres Search.
  *
- * Part 1: How many times does XMAS appear?
- * Part 2: How many times does an X-MAS appear?
- *
  * @see https://adventofcode.com/2024/day/4
  */
 final class Aoc2024Day04 extends SolutionBase
@@ -35,6 +32,7 @@ final class Aoc2024Day04 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Check input
         $max_y = count($input);
         $max_x = strlen($input[0]);
         if (array_any(array_map(strlen(...), $input), static fn (int $x): bool => $x != $max_x)) {
