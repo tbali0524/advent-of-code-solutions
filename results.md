@@ -1,6 +1,6 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.07`.
+* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.08`.
 * Total running time:
     * with AocRunner (PHP + JIT): `133 sec`
     * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 686 tests)
@@ -896,7 +896,11 @@ Advent of Code - batch solution runner, (c) 2024 by TBali
 [ OK ] Puzzle example passed.
 [ OK ] 3351424677624
 [ OK ] 204976636995111
-======= Total: 232 solutions (12 skipped) [time: 133.735 sec; max memory: 1610 MB]
+=== AoC 2024 Day 08 [time: 0.018 sec; memory: 67 Mbytes]   Resonant Collinearity
+[ OK ] Puzzle examples (2) passed.
+[ OK ] 320
+[ OK ] 1157
+======= Total: 233 solutions (12 skipped) [time: 133.356 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```

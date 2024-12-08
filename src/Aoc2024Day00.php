@@ -9,9 +9,6 @@ use TBali\Aoc\SolutionBase;
 /**
  * AoC 2024 Day 0: CODE SKELETON FOR SOLUTION.
  *
- * Part 1:
- * Part 2:
- *
  * @see https://adventofcode.com/2024/day/0
  */
 final class Aoc2024Day00 extends SolutionBase
