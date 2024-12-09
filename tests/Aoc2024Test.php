@@ -17,6 +17,7 @@ use TBali\Aoc2024\Aoc2024Day05;
 use TBali\Aoc2024\Aoc2024Day06;
 use TBali\Aoc2024\Aoc2024Day07;
 use TBali\Aoc2024\Aoc2024Day08;
+use TBali\Aoc2024\Aoc2024Day09;
 
 /**
  * Unit tests for Advent of Code season 2024.
@@ -37,6 +38,7 @@ use TBali\Aoc2024\Aoc2024Day08;
 #[CoversClass(Aoc2024Day06::class)]
 #[CoversClass(Aoc2024Day07::class)]
 #[CoversClass(Aoc2024Day08::class)]
+#[CoversClass(Aoc2024Day09::class)]
 final class Aoc2024Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -331,6 +333,37 @@ final class Aoc2024Test extends TestCase
     {
         $solver = new Aoc2024Day08();
         $input = ['a.', '.'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    public function testDay09Example1(): void
+    {
+        $solver = new Aoc2024Day09();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    #[Group('medium-slow')]
+    public function testDay09(): void
+    {
+        $solver = new Aoc2024Day09();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay09InvalidInput1(): void
+    {
+        $solver = new Aoc2024Day09();
+        $input = ['121', '1'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

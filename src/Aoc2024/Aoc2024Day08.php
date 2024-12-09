@@ -32,6 +32,7 @@ final class Aoc2024Day08 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
         $max_y = count($input);
         $max_x = strlen($input[0]);
         if (array_any(array_map(strlen(...), $input), static fn (int $x): bool => $x != $max_x)) {

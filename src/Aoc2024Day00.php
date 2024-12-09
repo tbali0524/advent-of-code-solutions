@@ -30,6 +30,7 @@ final class Aoc2024Day00 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
         /** @var array<int, int> */
         $data = array_map(intval(...), $input);
         // ---------- Part 1

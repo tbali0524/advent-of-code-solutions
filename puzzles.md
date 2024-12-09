@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-16-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-466-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-18-yellow)       |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-468-green)  |
 
 ## Puzzles
 
@@ -318,7 +318,7 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024|  6|Guard Gallivant                           |                                                         |
 |  +  |2024|  7|Bridge Repair                             |permutation                                              |
 |  +  |2024|  8|Resonant Collinearity                     |                                                         |
-|  -  |2024|  9|                                          |                                                         |
+|  +  |2024|  9|Disk Fragmenter                           |                                                         |
 |  -  |2024| 10|                                          |                                                         |
 |  -  |2024| 11|                                          |                                                         |
 |  -  |2024| 12|                                          |                                                         |
