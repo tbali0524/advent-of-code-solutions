@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-18-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-468-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-20-yellow)       |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-472-green)  |
 
 ## Puzzles
 
@@ -312,15 +312,15 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |:---:|----|--:|:-----------------------------------------|:--------------------------------------------------------|
 |  +  |2024|  1|Historian Hysteria                        |                                                         |
 |  +  |2024|  2|Red-Nosed Reports                         |                                                         |
-|  +  |2024|  3|Mull It Over                              |                                                         |
+|  +  |2024|  3|Mull It Over                              |parsing                                                  |
 |  +  |2024|  4|Ceres Search                              |                                                         |
 |  +  |2024|  5|Print Queue                               |                                                         |
 |  +  |2024|  6|Guard Gallivant                           |                                                         |
 |  +  |2024|  7|Bridge Repair                             |permutation                                              |
 |  +  |2024|  8|Resonant Collinearity                     |                                                         |
 |  +  |2024|  9|Disk Fragmenter                           |                                                         |
-|  -  |2024| 10|                                          |                                                         |
-|  -  |2024| 11|                                          |                                                         |
+|  +  |2024| 10|Hoof It                                   |BFS                                                      |
+|  +  |2024| 11|Plutonian Pebbles                         |recursion, memoization                                   |
 |  -  |2024| 12|                                          |                                                         |
 |  -  |2024| 13|                                          |                                                         |
 |  -  |2024| 14|                                          |                                                         |
