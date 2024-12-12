@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-20-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-472-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-24-yellow)       |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-474-green)  |
 
 ## Puzzles
 
@@ -321,7 +321,7 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024|  9|Disk Fragmenter                           |                                                         |
 |  +  |2024| 10|Hoof It                                   |BFS                                                      |
 |  +  |2024| 11|Plutonian Pebbles                         |recursion, memoization                                   |
-|  -  |2024| 12|                                          |                                                         |
+|  +  |2024| 12|Garden Groups                             |                                                         |
 |  -  |2024| 13|                                          |                                                         |
 |  -  |2024| 14|                                          |                                                         |
 |  -  |2024| 15|                                          |                                                         |

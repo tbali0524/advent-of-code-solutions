@@ -1,9 +1,9 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.11`.
+* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.12`.
 * Total running time:
-    * with AocRunner (PHP + JIT): `133 sec`
-    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 707 tests)
+    * with AocRunner (PHP + JIT): `141 sec`
+    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 714 tests)
 
 ```txt
 Advent of Code - batch solution runner, (c) 2024 by TBali
@@ -912,7 +912,11 @@ Advent of Code - batch solution runner, (c) 2024 by TBali
 [ OK ] Puzzle examples (2) passed.
 [ OK ] 197157
 [ OK ] 234430066982597
-======= Total: 236 solutions (12 skipped) [time: 147.633 sec; max memory: 1610 MB]
+=== AoC 2024 Day 12 [time: 0.068 sec; memory: 72 Mbytes]   Garden Groups
+[ OK ] Puzzle examples (5) passed.
+[ OK ] 1344578
+[ OK ] 814302
+======= Total: 237 solutions (12 skipped) [time: 140.839 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```
