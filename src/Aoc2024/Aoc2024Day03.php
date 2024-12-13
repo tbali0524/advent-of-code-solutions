@@ -66,11 +66,15 @@ final class Aoc2024Day03 extends SolutionBase
                 $start = $next_start + 4;
                 $comma = strpos($row, ',', $start + 1);
                 if ($comma === false) {
+                    // @codeCoverageIgnoreStart
                     break;
+                    // @codeCoverageIgnoreEnd
                 }
                 $close = strpos($row, ')', $comma + 2);
                 if ($close === false) {
+                    // @codeCoverageIgnoreStart
                     break;
+                    // @codeCoverageIgnoreEnd
                 }
                 $op1s = substr($row, $start, $comma - $start);
                 if (!array_all(str_split($op1s), static fn ($x) => ctype_digit($x))) {

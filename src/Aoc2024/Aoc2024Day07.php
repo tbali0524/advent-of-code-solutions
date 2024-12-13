@@ -78,7 +78,9 @@ final class Aoc2024Day07 extends SolutionBase
                         0 => $calculation * $operand,
                         1 => $calculation + $operand,
                         2 => intval(strval($calculation) . strval($operand)),
+                        // @codeCoverageIgnoreStart
                         default => throw new \Exception('impossible'),
+                        // @codeCoverageIgnoreEnd
                     };
                     if ($calculation > $result) {
                         break;

@@ -21,6 +21,8 @@ use TBali\Aoc2024\Aoc2024Day09;
 use TBali\Aoc2024\Aoc2024Day10;
 use TBali\Aoc2024\Aoc2024Day11;
 use TBali\Aoc2024\Aoc2024Day12;
+use TBali\Aoc2024\Aoc2024Day13;
+use TBali\Aoc2024\ClawMachine;
 
 /**
  * Unit tests for Advent of Code season 2024.
@@ -45,6 +47,8 @@ use TBali\Aoc2024\Aoc2024Day12;
 #[CoversClass(Aoc2024Day10::class)]
 #[CoversClass(Aoc2024Day11::class)]
 #[CoversClass(Aoc2024Day12::class)]
+#[CoversClass(Aoc2024Day13::class)]
+#[CoversClass(ClawMachine::class)]
 final class Aoc2024Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -590,6 +594,65 @@ final class Aoc2024Test extends TestCase
     {
         $solver = new Aoc2024Day12();
         $input = ['AB', 'A'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    public function testDay13Example1(): void
+    {
+        $solver = new Aoc2024Day13();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        // self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay13(): void
+    {
+        $solver = new Aoc2024Day13();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay13InvalidInput1(): void
+    {
+        $solver = new Aoc2024Day13();
+        $input = [
+            'Button A: X+1, Y+2',
+            'Button C: X+3, Y+4',
+            'Prize: X=5, Y=6',
+        ];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay13InvalidInput2(): void
+    {
+        $solver = new Aoc2024Day13();
+        $input = [
+            'Button A: X+1, Y+2',
+            'Button B: X+3',
+            'Prize: X=5, Y=6',
+        ];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay13InvalidInput3(): void
+    {
+        $solver = new Aoc2024Day13();
+        $input = [
+            'Button A: X+1, Y+2',
+            'Button B: X+3, Y+4',
+            'Prize: X=5, Y=6',
+            'a',
+        ];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
