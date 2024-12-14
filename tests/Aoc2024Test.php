@@ -22,6 +22,7 @@ use TBali\Aoc2024\Aoc2024Day10;
 use TBali\Aoc2024\Aoc2024Day11;
 use TBali\Aoc2024\Aoc2024Day12;
 use TBali\Aoc2024\Aoc2024Day13;
+use TBali\Aoc2024\Aoc2024Day14;
 use TBali\Aoc2024\ClawMachine;
 
 /**
@@ -48,6 +49,7 @@ use TBali\Aoc2024\ClawMachine;
 #[CoversClass(Aoc2024Day11::class)]
 #[CoversClass(Aoc2024Day12::class)]
 #[CoversClass(Aoc2024Day13::class)]
+#[CoversClass(Aoc2024Day14::class)]
 #[CoversClass(ClawMachine::class)]
 final class Aoc2024Test extends TestCase
 {
@@ -653,6 +655,60 @@ final class Aoc2024Test extends TestCase
             'Prize: X=5, Y=6',
             'a',
         ];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    public function testDay14Example1(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        // self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay14(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay14InvalidInput1(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = ['X=0,4 v=3,-3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay14InvalidInput2(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = ['p=0,a v=3,-3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay14InvalidInput3(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = ['p=0,4'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay14InvalidInput4(): void
+    {
+        $solver = new Aoc2024Day14();
+        $input = ['p=0,4,3 v=3,-3'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

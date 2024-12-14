@@ -1,9 +1,9 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.13`.
+* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.14`.
 * Total running time:
-    * with AocRunner (PHP + JIT): `141 sec`
-    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 714 tests)
+    * with AocRunner (PHP + JIT): `149 sec`
+    * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 725 tests)
 
 ```txt
 Advent of Code - batch solution runner, (c) 2024 by TBali
@@ -920,7 +920,11 @@ Advent of Code - batch solution runner, (c) 2024 by TBali
 [ OK ] Puzzle example passed.
 [ OK ] 26599
 [ OK ] 106228669504887
-======= Total: 238 solutions (12 skipped) [time: 140.839 sec; max memory: 1610 MB]
+=== AoC 2024 Day 14 [time: 0.899 sec; memory: 68 Mbytes]   Restroom Redoubt
+[ OK ] Puzzle example passed.
+[ OK ] 229069152
+[ OK ] 7383
+======= Total: 239 solutions (12 skipped) [time: 149.819 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```
