@@ -23,6 +23,7 @@ use TBali\Aoc2024\Aoc2024Day11;
 use TBali\Aoc2024\Aoc2024Day12;
 use TBali\Aoc2024\Aoc2024Day13;
 use TBali\Aoc2024\Aoc2024Day14;
+use TBali\Aoc2024\Aoc2024Day15;
 use TBali\Aoc2024\ClawMachine;
 
 /**
@@ -50,6 +51,7 @@ use TBali\Aoc2024\ClawMachine;
 #[CoversClass(Aoc2024Day12::class)]
 #[CoversClass(Aoc2024Day13::class)]
 #[CoversClass(Aoc2024Day14::class)]
+#[CoversClass(Aoc2024Day15::class)]
 #[CoversClass(ClawMachine::class)]
 final class Aoc2024Test extends TestCase
 {
@@ -709,6 +711,88 @@ final class Aoc2024Test extends TestCase
     {
         $solver = new Aoc2024Day14();
         $input = ['p=0,4,3 v=3,-3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    // --------------------------------------------------------------------
+
+    public function testDay15Example1(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex1.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
+        self::assertSame(strval($expected1), $ans1);
+        // self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay15Example2(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay15Example3(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = $solver->readInput($solver->inputBaseFileName() . 'ex3.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[2];
+        // self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay15(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = $solver->readInput($solver->inputBaseFileName() . '.txt');
+        [$ans1, $ans2] = $solver->solve($input);
+        [$expected1, $expected2] = $solver::SOLUTIONS;
+        self::assertSame(strval($expected1), $ans1);
+        self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay15InvalidInput1(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = ['#.', '.#', '', '>'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay15InvalidInput2(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = ['a@', '', '>'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay15InvalidInput3(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = ['#.', '@', '', '>'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay15InvalidInput4(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = ['@.', '.#'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay15InvalidInput5(): void
+    {
+        $solver = new Aoc2024Day15();
+        $input = ['@.', '.#', '', '>a'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

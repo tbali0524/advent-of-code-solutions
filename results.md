@@ -1,6 +1,6 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.14`.
+* Output of local run using PHP `8.4.1` with `php src/aoc.php` on `2024.12.15`.
 * Total running time:
     * with AocRunner (PHP + JIT): `149 sec`
     * with PhpUnit (XDebug + coverage): `39 sec` (less puzzles, 725 tests)
@@ -924,7 +924,11 @@ Advent of Code - batch solution runner, (c) 2024 by TBali
 [ OK ] Puzzle example passed.
 [ OK ] 229069152
 [ OK ] 7383
-======= Total: 239 solutions (12 skipped) [time: 149.819 sec; max memory: 1610 MB]
+=== AoC 2024 Day 15 [time: 0.044 sec; memory: 68 Mbytes]   Warehouse Woes
+[ OK ] Puzzle examples (3) passed.
+[ OK ] 1383666
+[ OK ] 1412866
+======= Total: 240 solutions (12 skipped) [time: 180.990 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```

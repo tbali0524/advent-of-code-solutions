@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-28-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-478-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-30-yellow)       |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-480-green)  |
 
 ## Puzzles
 
@@ -324,7 +324,7 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024| 12|Garden Groups                             |                                                         |
 |  +  |2024| 13|Claw Contraption                          |                                                         |
 |  +  |2024| 14|Restroom Redoubt                          |                                                         |
-|  -  |2024| 15|                                          |                                                         |
+|  +  |2024| 15|Warehouse Woes                            |                                                         |
 |  -  |2024| 16|                                          |                                                         |
 |  -  |2024| 17|                                          |                                                         |
 |  -  |2024| 18|                                          |                                                         |
@@ -336,4 +336,4 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  -  |2024| 24|                                          |                                                         |
 |  -  |2024| 25|                                          |                                                         |
 
-No external hint was used in this season.
+Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).

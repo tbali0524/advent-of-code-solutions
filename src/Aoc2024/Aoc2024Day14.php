@@ -36,6 +36,7 @@ final class Aoc2024Day14 extends SolutionBase
      */
     public function solve(array $input): array
     {
+        // ---------- Parse input
         $positions = [];
         $velocities = [];
         foreach ($input as $row) {

@@ -72,6 +72,7 @@ final readonly class ClawMachine
      */
     public function __construct(array $input, int $from = 0)
     {
+        // ---------- Parse input
         if ($from + 2 >= count($input)) {
             // @codeCoverageIgnoreStart
             throw new \Exception('missing line in claw machine definition');
