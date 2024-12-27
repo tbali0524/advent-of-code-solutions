@@ -13,8 +13,8 @@
 |[2021](#2021)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
-|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-30-yellow)       |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-480-green)  |
+|[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-50-yellow)      |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-500-green)  |
 
 ## Puzzles
 
@@ -324,16 +324,16 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024| 12|Garden Groups                             |                                                         |
 |  +  |2024| 13|Claw Contraption                          |                                                         |
 |  +  |2024| 14|Restroom Redoubt                          |                                                         |
-|  +  |2024| 15|Warehouse Woes                            |                                                         |
-|  -  |2024| 16|                                          |                                                         |
-|  -  |2024| 17|                                          |                                                         |
-|  -  |2024| 18|                                          |                                                         |
-|  -  |2024| 19|                                          |                                                         |
-|  -  |2024| 20|                                          |                                                         |
-|  -  |2024| 21|                                          |                                                         |
-|  -  |2024| 22|                                          |                                                         |
-|  -  |2024| 23|                                          |                                                         |
-|  -  |2024| 24|                                          |                                                         |
-|  -  |2024| 25|                                          |                                                         |
+|  +  |2024| 15|Warehouse Woes                            |walking simulation, box moving                           |
+|  +  |2024| 16|Reindeer Maze                             |Dijkstra, priority queue                                 |
+|  +  |2024| 17|Chronospatial Computer                    |assembly simulation, reverse engineering                 |
+|  +  |2024| 18|RAM Run                                   |BFS                                                      |
+|  +  |2024| 19|Linen Layout                              |BinaryHeap                                               |
+|  +  |2024| 20|Race Condition                            |                                                         |
+|  +  |2024| 21|Keypad Conundrum                          |recursion, memoization                                   |
+|  +  |2024| 22|Monkey Market                             |                                                         |
+|  +  |2024| 23|LAN Party                                 |graph, maximum clique, Bron–Kerbosch algorithm           |
+|  +  |2024| 24|Crossed Wires                             |graph, logic circuit simulation, reverse engineering     |
+|  +  |2024| 25|Code Chronicle                            |                                                         |
 
 Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).

@@ -15,7 +15,7 @@ final class Aoc2024Day04 extends SolutionBase
 {
     public const YEAR = 2024;
     public const DAY = 4;
-    public const TITLE = '';
+    public const TITLE = 'Ceres Search';
     public const SOLUTIONS = [2458, 1945];
     public const EXAMPLE_SOLUTIONS = [[18, 0], [0, 9]];
 

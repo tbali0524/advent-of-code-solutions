@@ -2,7 +2,7 @@
 
 ![php v8.4](https://shields.io/badge/php-8.4-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-480-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-500-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -11,9 +11,9 @@
 * [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * [Results and running times](results.md)
 * [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
-* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~3.5 seasons, 182⭐)
+* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~4.5 seasons, 218⭐)
 
-This repo contains all solutions for the first 9 seasons in PHP, plus a simple CLI runner. Later I rewrote some of the solutions in Rust. However, from season 2024 I plan to solve the puzzles first in Rust and rewrite it in PHP only later (if at all).
+This repo contains my AoC solutions in PHP, and a simple CLI runner. The first 9 seasons I originally solved in PHP, and later rewrote some solutions (~3.5 seasons) in Rust. In season 2024 I solved the puzzles first in Rust (and rewrote them in PHP later).
 
 ## Installation
 
@@ -61,7 +61,7 @@ _all, dart, f#, go, groovy, java, javascript, lua, perl, php, python, ruby, scal
 
 * Directory pattern: `src/AocYYYY/`.
 * Filename pattern: `AocYYYYDayDD.php`.
-* For a new solution, use the template in `src/Aoc2024Day00.php`.
+* For a new solution, use the template in `src/AocYYYYDayDD.php`.
 * Solution should implement class `AocYYYYDayDD`, extending `SolutionBase`.
 * It should implement the `solve()` method and override the constants in the [Solution](src/Aoc/Solution.php) interface.
 * The `solve()` method must be callable repeatedly with different inputs.
