@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace TBali\Aoc2024;
+namespace TBali\AocYYYY;
 
 use TBali\Aoc\SolutionBase;
 
 /**
- * AoC 2024 Day 0: CODE SKELETON FOR SOLUTION.
+ * AoC YYYY Day DD: CODE SKELETON FOR SOLUTION.
  *
- * @see https://adventofcode.com/2024/day/0
+ * @see https://adventofcode.com/YYYY/day/DD
  */
-final class Aoc2024Day00 extends SolutionBase
+final class AocYYYYDayDD extends SolutionBase
 {
-    public const YEAR = 2024;
+    public const YEAR = 2025;
     public const DAY = 0;
     public const TITLE = '';
     public const SOLUTIONS = [0, 0];
@@ -31,8 +31,6 @@ final class Aoc2024Day00 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Parse input
-        /** @var array<int, int> */
-        $data = array_map(intval(...), $input);
         // ---------- Part 1
         $ans1 = 0;
         // ---------- Part 2

@@ -77,7 +77,7 @@ final class AocRunner
      */
     public function __construct(array $args)
     {
-        echo 'Advent of Code - batch solution runner, (c) 2024 by TBali' . PHP_EOL . PHP_EOL;
+        echo 'Advent of Code - batch solution runner, (c) 2025 by TBali' . PHP_EOL . PHP_EOL;
         $this->processArgs($args);
         $this->isOk = true;
     }
