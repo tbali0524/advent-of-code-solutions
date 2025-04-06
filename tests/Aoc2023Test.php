@@ -43,7 +43,6 @@ use TBali\Aoc2023\Conjunction;
 use TBali\Aoc2023\FlipFlop;
 use TBali\Aoc2023\Hailstone;
 use TBali\Aoc2023\Hand;
-use TBali\Aoc2023\HandType;
 use TBali\Aoc2023\JokerHand;
 use TBali\Aoc2023\MinPriorityQueue;
 use TBali\Aoc2023\MinPriorityQueueDay20;
@@ -51,7 +50,6 @@ use TBali\Aoc2023\Module;
 use TBali\Aoc2023\Part;
 use TBali\Aoc2023\PartRange;
 use TBali\Aoc2023\Pattern;
-use TBali\Aoc2023\Pulse;
 use TBali\Aoc2023\Workflow;
 
 /**
@@ -64,7 +62,7 @@ use TBali\Aoc2023\Workflow;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^11.5')]
+#[RequiresPhpunit('^12.1')]
 #[CoversClass(Aoc2023Day01::class)]
 #[CoversClass(Aoc2023Day02::class)]
 #[CoversClass(Aoc2023Day03::class)]
@@ -99,7 +97,6 @@ use TBali\Aoc2023\Workflow;
 #[CoversClass(FlipFlop::class)]
 #[CoversClass(Hailstone::class)]
 #[CoversClass(Hand::class)]
-#[CoversClass(HandType::class)]
 #[CoversClass(JokerHand::class)]
 #[CoversClass(MinPriorityQueue::class)]
 #[CoversClass(MinPriorityQueueDay20::class)]
@@ -107,7 +104,6 @@ use TBali\Aoc2023\Workflow;
 #[CoversClass(Part::class)]
 #[CoversClass(PartRange::class)]
 #[CoversClass(Pattern::class)]
-#[CoversClass(Pulse::class)]
 #[CoversClass(Workflow::class)]
 final class Aoc2023Test extends TestCase
 {

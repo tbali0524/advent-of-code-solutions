@@ -76,8 +76,8 @@ final class Aoc2017Day25 extends SolutionBase
                 // @codeCoverageIgnoreEnd
             }
             $state = $input[10 * $i + 3][9];
-            $states[$state] =
-                $input[10 * $i + 5][22] . $input[10 * $i + 6][27] . $input[10 * $i + 7][26]
+            $states[$state]
+                = $input[10 * $i + 5][22] . $input[10 * $i + 6][27] . $input[10 * $i + 7][26]
                 . $input[10 * $i + 9][22] . $input[10 * $i + 10][27] . $input[10 * $i + 11][26];
         }
         // ---------- Part 1

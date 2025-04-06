@@ -109,8 +109,8 @@ final class Aoc2019Day11 extends SolutionBase
 // --------------------------------------------------------------------
 final class HullPaintSimulator
 {
-    private const INSTRUCTION_LENGTHS =
-        [1 => 4, 2 => 4, 3 => 2, 4 => 2, 5 => 3, 6 => 3, 7 => 4, 8 => 4, 9 => 2, 99 => 1];
+    private const INSTRUCTION_LENGTHS
+        = [1 => 4, 2 => 4, 3 => 2, 4 => 2, 5 => 3, 6 => 3, 7 => 4, 8 => 4, 9 => 2, 99 => 1];
 
     /** @var array<int, int> */
     public array $inputs = [];

@@ -194,8 +194,8 @@ final class Aoc2019Day17 extends SolutionBase
 // --------------------------------------------------------------------
 final class AsciiSimulator
 {
-    private const INSTRUCTION_LENGTHS =
-        [1 => 4, 2 => 4, 3 => 2, 4 => 2, 5 => 3, 6 => 3, 7 => 4, 8 => 4, 9 => 2, 99 => 1];
+    private const INSTRUCTION_LENGTHS
+        = [1 => 4, 2 => 4, 3 => 2, 4 => 2, 5 => 3, 6 => 3, 7 => 4, 8 => 4, 9 => 2, 99 => 1];
     private const LF = 10;
 
     /** @var array<int, int> */

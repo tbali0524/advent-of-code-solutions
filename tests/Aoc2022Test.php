@@ -35,7 +35,7 @@ use TBali\Aoc2022\Aoc2022Day23;
 use TBali\Aoc2022\Aoc2022Day24;
 use TBali\Aoc2022\Aoc2022Day25;
 use TBali\Aoc2022\Blizzard;
-use TBali\Aoc2022\BluePrint;
+use TBali\Aoc2022\Blueprint;
 use TBali\Aoc2022\CrossRock;
 use TBali\Aoc2022\Directory;
 use TBali\Aoc2022\File;
@@ -66,7 +66,7 @@ use TBali\Aoc2022\VerticalRock;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^11.5')]
+#[RequiresPhpunit('^12.1')]
 #[CoversClass(Aoc2022Day01::class)]
 #[CoversClass(Aoc2022Day02::class)]
 #[CoversClass(Aoc2022Day03::class)]
@@ -93,7 +93,7 @@ use TBali\Aoc2022\VerticalRock;
 #[CoversClass(Aoc2022Day24::class)]
 #[CoversClass(Aoc2022Day25::class)]
 #[CoversClass(Blizzard::class)]
-#[CoversClass(BluePrint::class)]
+#[CoversClass(Blueprint::class)]
 #[CoversClass(CrossRock::class)]
 #[CoversClass(Directory::class)]
 #[CoversClass(File::class)]

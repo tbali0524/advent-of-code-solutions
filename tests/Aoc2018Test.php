@@ -56,7 +56,7 @@ use TBali\Aoc2018\TreeNode;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^11.5')]
+#[RequiresPhpunit('^12.1')]
 #[CoversClass(Aoc2018Day01::class)]
 #[CoversClass(Aoc2018Day02::class)]
 #[CoversClass(Aoc2018Day03::class)]
