@@ -2,7 +2,7 @@
 <!--
 phpcs configuration file.
 
-minimum version: ^3.12
+minimum version: ^3.13
 
 @see https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset
 -->

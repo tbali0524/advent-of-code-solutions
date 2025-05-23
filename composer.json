@@ -70,9 +70,9 @@
             "@open-cover",
             "@start"
         ],
-        "open-cover":   "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpunit-coverage/index.html",
-        "open-doc":     "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/docs/index.html",
-        "open-metrics": "start chrome file:///D:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
+        "open-cover":   "start chrome file:///E:/Coding/PHP/advent-of-code-solutions/.tools/phpunit-coverage/index.html",
+        "open-doc":     "start chrome file:///E:/Coding/PHP/advent-of-code-solutions/docs/index.html",
+        "open-metrics": "start chrome file:///E:/Coding/PHP/advent-of-code-solutions/.tools/phpmetrics/index.html",
         "clean": [
             "if exist .tools\\.phpcs.cache          del .tools\\.phpcs.cache",
             "if exist .tools\\.php-cs-fixer.cache   del .tools\\.php-cs-fixer.cache",

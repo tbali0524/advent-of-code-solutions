@@ -142,7 +142,7 @@ final class Bingo
         if (($this->board[$number] ?? -1) == -1) {
             return;
         }
-        $this->markedMask |= (1 << ($this->board[$number] ?? 0));
+        $this->markedMask |= (1 << $this->board[$number]);
         foreach (self::WIN_MASKS as $mask) {
             if (($this->markedMask & $mask) == $mask) {
                 $this->isWon = true;
