@@ -16,6 +16,8 @@ abstract class Tags
     /** @var string */
     final public const ANSI_GREEN = "\e[1;37;42m";
     /** @var string */
+    final public const ANSI_INK_LIGHT_CYAN = "\e[96m";
+    /** @var string */
     final public const ANSI_RESET = "\e[0m";
     /** @var string */
     final public const ERROR_TAG = self::ANSI_RED . '[FAIL]' . self::ANSI_RESET . ' ';

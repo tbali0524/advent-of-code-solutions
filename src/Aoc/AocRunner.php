@@ -88,6 +88,9 @@ final class AocRunner
     public function run(): void
     {
         $startTime = hrtime(true);
+        if (!$this->runAsScripts) {
+            echo 'Using PHP runtime: ' . Tags::ANSI_INK_LIGHT_CYAN . PHP_VERSION . Tags::ANSI_RESET . PHP_EOL;
+        }
         $maxMemory = 0;
         if (($this->year >= 0) and ($this->day >= 0) and !$this->runAllLanguages) {
             if ($this->runAsScripts) {

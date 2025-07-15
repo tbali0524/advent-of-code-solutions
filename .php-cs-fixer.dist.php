@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.75
+ * minimum version: ^3.83
  *
  * @see https://cs.symfony.com/doc/config.html
  */
@@ -56,4 +56,5 @@ return (new PhpCsFixer\Config())
     ->setLineEnding("\n")
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setFinder($finder)
+    // ->setUnsupportedPhpVersionAllowed(true)
 ;

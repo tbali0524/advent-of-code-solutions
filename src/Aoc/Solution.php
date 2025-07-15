@@ -42,9 +42,9 @@ interface Solution
      *
      * @param array<int, string> $input The lines of the input, without LF
      *
-     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
-     *
      * @phpstan-param non-empty-list<string> $input
+     *
+     * @return array<int, string> The answers for Part 1 and Part 2 (as strings)
      *
      * @phpstan-return array{string, string}
      */
