@@ -50,13 +50,11 @@ final class Aoc2017Day18 extends SolutionBase
             $wasComm = false;
             $thread0->execute();
             while (count($thread0->sndQueue) > 0) {
-                // @phpstan-ignore assign.propertyType
                 $thread1->rcvQueue[] = array_shift($thread0->sndQueue);
                 $wasComm = true;
             }
             $thread1->execute();
             while (count($thread1->sndQueue) > 0) {
-                // @phpstan-ignore assign.propertyType
                 $thread0->rcvQueue[] = array_shift($thread1->sndQueue);
                 $wasComm = true;
             }

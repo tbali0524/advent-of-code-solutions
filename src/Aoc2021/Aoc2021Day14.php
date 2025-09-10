@@ -60,6 +60,9 @@ final class Aoc2021Day14 extends SolutionBase
             $polymer = $nextPolymer;
         }
         $counts = array_count_values(str_split($polymer));
+        if (count($counts) == 0) {
+            throw new \Exception('Invalid input');
+        }
         sort($counts);
         $ans1 = $counts[array_key_last($counts)] - $counts[array_key_first($counts)];
         // ---------- Part 2

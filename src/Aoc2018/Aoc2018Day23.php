@@ -47,6 +47,9 @@ final class Aoc2018Day23 extends SolutionBase
     public function solve(array $input): array
     {
         $nanobots = array_map(static fn (string $line) => Nanobot::fromString($line), $input);
+        if (count($nanobots) == 0) {
+            throw new \Exception('Invalid input');
+        }
         // ---------- Part 1
         $ans1 = 0;
         usort($nanobots, static fn (Nanobot $a, Nanobot $b): int => $b->r <=> $a->r);

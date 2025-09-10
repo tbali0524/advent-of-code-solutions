@@ -65,8 +65,14 @@ final class Aoc2018Day04 extends SolutionBase
             }
             $lastFall = -1;
         }
+        if (count($totalSleeps) == 0) {
+            throw new \Exception('Invalid input');
+        }
         arsort($totalSleeps);
         $bestGuard = array_key_first($totalSleeps);
+        if (count($countSleepingAt) == 0) {
+            throw new \Exception('Invalid input');
+        }
         arsort($countSleepingAt[$bestGuard]);
         $bestMin = array_key_first($countSleepingAt[$bestGuard]);
         $ans1 = $bestGuard * $bestMin;

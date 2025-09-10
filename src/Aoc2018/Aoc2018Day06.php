@@ -42,12 +42,15 @@ final class Aoc2018Day06 extends SolutionBase
             static fn (string $line): array => array_map(intval(...), explode(', ', $line)),
             $input
         );
+        if (count($points) == 0) {
+            throw new \Exception('Invalid input');
+        }
         // ---------- Part 1 + 2
         $threshold = count($input) == 6 ? self::DIST_THRESHOLD_EXAMPLE : self::DIST_THRESHOLD_PART2;
-        $minX = intval(min(array_map(static fn (array $p): int => $p[0], $points) ?: [0]));
-        $maxX = intval(max(array_map(static fn (array $p): int => $p[0], $points) ?: [0]));
-        $minY = intval(min(array_map(static fn (array $p): int => $p[1], $points) ?: [0]));
-        $maxY = intval(max(array_map(static fn (array $p): int => $p[1], $points) ?: [0]));
+        $minX = intval(min(array_map(static fn (array $p): int => $p[0], $points)));
+        $maxX = intval(max(array_map(static fn (array $p): int => $p[0], $points)));
+        $minY = intval(min(array_map(static fn (array $p): int => $p[1], $points)));
+        $maxY = intval(max(array_map(static fn (array $p): int => $p[1], $points)));
         $ans1 = 0;
         $ans2 = 0;
         $areas = array_fill(0, count($input), 0);

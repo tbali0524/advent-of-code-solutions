@@ -52,11 +52,11 @@ final class Aoc2020Day18 extends SolutionBase
     {
         // ---------- Part 1 + 2
         $ans1 = array_sum(array_map(
-            static fn (string $x): int => (new Expression($x, self::PRECEDENCES_PART1))->evaluate(),
+            static fn (string $x): int => new Expression($x, self::PRECEDENCES_PART1)->evaluate(),
             $input
         ));
         $ans2 = array_sum(array_map(
-            static fn (string $x): int => (new Expression($x, self::PRECEDENCES_PART2))->evaluate(),
+            static fn (string $x): int => new Expression($x, self::PRECEDENCES_PART2)->evaluate(),
             $input
         ));
         return [strval($ans1), strval($ans2)];

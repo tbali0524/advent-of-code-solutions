@@ -48,8 +48,8 @@ final class Aoc2015Day22 extends SolutionBase
             }
             $processedInput[] = intval($a[1]);
         }
-        $ans1 = (new WizardSimulator(...$processedInput))->simulate();
-        $ans2 = (new WizardSimulatorHardMode(...$processedInput))->simulate();
+        $ans1 = new WizardSimulator(...$processedInput)->simulate();
+        $ans2 = new WizardSimulatorHardMode(...$processedInput)->simulate();
         return [strval($ans1), strval($ans2)];
     }
 }

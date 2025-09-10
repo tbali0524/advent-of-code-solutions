@@ -2,13 +2,13 @@
 <!--
 PHPUnit configuration file.
 
-minimum version: ^12.2
+minimum version: ^12.3
 
-@see https://phpunit.readthedocs.io/en/12.2/configuration.html
+@see https://phpunit.readthedocs.io/en/12.3/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.2/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.3/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
     colors="true"

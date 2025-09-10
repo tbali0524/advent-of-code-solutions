@@ -42,7 +42,7 @@ final class Aoc2015Day14 extends SolutionBase
         $maxSteps = (count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS);
         // ---------- Part 1
         $ans1 = max(
-            array_map(static fn (string $line): int => (new Reindeer($line))->getDistanceAt($maxSteps), $input) ?: [0]
+            array_map(static fn (string $line): int => new Reindeer($line)->getDistanceAt($maxSteps), $input) ?: [0]
         );
         // ---------- Part 2
         $reindeers = [];

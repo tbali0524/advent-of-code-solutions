@@ -72,6 +72,9 @@ final class Aoc2016Day15 extends SolutionBase
      */
     private function solvePart(array $discs): int
     {
+        if (count($discs) == 0) {
+            return 0;
+        }
         krsort($discs);
         $step = array_key_first($discs);
         $from = $discs[$step];

@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.83
+ * minimum version: ^3.87
  *
  * @see https://cs.symfony.com/doc/config.html
  */
@@ -21,10 +21,10 @@ $finder = PhpCsFixer\Finder::create()
 
 return (new PhpCsFixer\Config())
     ->setRules([
-        '@PHP84Migration' => true,
+        '@PHP85Migration' => true,
         '@PHP82Migration:risky' => true,    // this also needs: ->setRiskyAllowed(true)
-        '@PhpCsFixer' => true,              // includes @Symfony, @PER-CS2.0, @PSR12, @PSR2, @PSR1
-        '@PhpCsFixer:risky' => true,        // includes @Symfony:risky, @PER-CS2.0:risky, @PSR12:risky
+        '@PhpCsFixer' => true,              // includes @Symfony, @PER-CS3.0, @PSR12, @PSR2, @PSR1
+        '@PhpCsFixer:risky' => true,        // includes @Symfony:risky, @PER-CS3.0:risky, @PSR12:risky
         '@PHPUnit100Migration:risky'=> true,
 
         // override some @Symfony rules
@@ -55,6 +55,6 @@ return (new PhpCsFixer\Config())
     ->setIndent("    ")
     ->setLineEnding("\n")
     ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
+    ->setUnsupportedPhpVersionAllowed(true)
     ->setFinder($finder)
-    // ->setUnsupportedPhpVersionAllowed(true)
 ;
