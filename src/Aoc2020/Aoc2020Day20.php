@@ -451,6 +451,7 @@ final class ImageTile
                 $ans[$x][$maxY - 1 - $y] = $image[$y][$x] ?? ' ';
             }
         }
+        // @phpstan-ignore return.type
         return $ans;
     }
 

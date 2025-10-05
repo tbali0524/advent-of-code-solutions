@@ -97,6 +97,7 @@ final class Aoc2015Day18 extends SolutionBase
             }
             $prev = $next;
         }
+        // @phpstan-ignore argument.type
         return array_sum(array_map(static fn (string $row): int => substr_count($row, '#'), $next));
     }
 }

@@ -77,7 +77,6 @@ final class Aoc2016Day14 extends SolutionBase
             $needle = str_repeat($digit, 5);
             for ($i = count($this->hashes) - 1; $i >= 0; --$i) {
                 if (str_contains($this->hashes[$i], $needle)) {
-                    // @phpstan-ignore assign.propertyType
                     $this->lastSeenFive[$digit] = $i;
                     break;
                 }

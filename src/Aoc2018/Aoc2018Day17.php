@@ -211,6 +211,7 @@ final class Aoc2018Day17 extends SolutionBase
             }
         }
         foreach ($grid as $line) {
+            // @phpstan-ignore binaryOp.invalid
             echo '  ' . $line, PHP_EOL;
         }
     }

@@ -62,7 +62,7 @@ use TBali\Aoc2023\Workflow;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^12.3')]
+#[RequiresPhpunit('^12.4')]
 #[CoversClass(Aoc2023Day01::class)]
 #[CoversClass(Aoc2023Day02::class)]
 #[CoversClass(Aoc2023Day03::class)]

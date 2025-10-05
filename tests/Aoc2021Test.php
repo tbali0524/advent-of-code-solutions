@@ -55,7 +55,7 @@ use TBali\Aoc2021\Vector3D;
  * @coversNothing
  */
 #[RequiresPhp('^8.4')]
-#[RequiresPhpunit('^12.3')]
+#[RequiresPhpunit('^12.4')]
 #[CoversClass(Aoc2021Day01::class)]
 #[CoversClass(Aoc2021Day02::class)]
 #[CoversClass(Aoc2021Day03::class)]

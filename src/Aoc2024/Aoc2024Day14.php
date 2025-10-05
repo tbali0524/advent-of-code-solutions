@@ -104,6 +104,7 @@ final class Aoc2024Day14 extends SolutionBase
                 $grid[$pos[1]][$pos[0]] = '*';
             }
             for ($y = 0; $y < count($grid); ++$y) {
+                // @phpstan-ignore argument.type
                 if (str_contains($grid[$y], $pattern)) {
                     $ans = $turn;
                     // @phpstan-ignore if.alwaysFalse

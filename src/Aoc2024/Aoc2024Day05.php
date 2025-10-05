@@ -84,6 +84,7 @@ final class Aoc2024Day05 extends SolutionBase
                 }
             }
             usort($count_prevs, static fn (array $a, array $b): int => $a[1] <=> $b[1]);
+            // @phpstan-ignore offsetAccess.notFound
             $ans2 += $count_prevs[intdiv(count($count_prevs), 2)][0];
         }
         return [strval($ans1), strval($ans2)];

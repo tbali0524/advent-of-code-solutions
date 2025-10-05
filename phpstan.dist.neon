@@ -1,6 +1,6 @@
 # PHPStan configuration file.
 #
-# minimum version: ^2.1.23
+# minimum version: ^2.1.30
 #
 # @see https://phpstan.org/config-reference
 parameters:
@@ -16,5 +16,25 @@ parameters:
         - .tools
         - .vscode (?)
         - vendor
+    ignoreErrors:
+        # false positives of v2.1.30
+        -
+          message: '#\) of echo cannot be converted to string.$#'
+          identifier: echo.nonString
+        -
+          message: '#\) expects array<int, string>, array<int, array<int, string>\|string> given.$#'
+          identifier: argument.type
+        -
+          message: '# \(array<int, string>\) does not accept array<int, array<int, string>\|string>.$#'
+          identifier: assign.propertyType
+        -
+          message: '#^Parameter \#2 \$array of function implode expects array<string>, array<int, array<int, string>\|string> given.$#'
+          identifier: argument.type
+        -
+          message: '#^Parameter \#2 \$array of function implode expects array<string>, array<int, array<int, int\|string>\|string> given.$#'
+          identifier: argument.type
+        -
+          message: '#^Parameter \#1 \$string of function strlen expects string, array<int, string>\|string given.$#'
+          identifier: argument.type
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon
