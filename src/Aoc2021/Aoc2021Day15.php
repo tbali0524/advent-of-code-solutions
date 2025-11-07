@@ -24,7 +24,7 @@ final class Aoc2021Day15 extends SolutionBase
     public const SOLUTIONS = [613, 2899];
     public const EXAMPLE_SOLUTIONS = [[40, 315]];
 
-    private const INFINITY = (PHP_INT_MAX >> 2); // to avoid ovwerflow with additions
+    private const INFINITY = PHP_INT_MAX >> 2; // to avoid ovwerflow with additions
     private const REPEAT_PART2 = 5;
 
     /**

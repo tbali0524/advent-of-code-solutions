@@ -100,7 +100,7 @@ final class Swarm
      */
     public function __construct(array $input)
     {
-        $this->points = array_map(static fn ($s) => MovingPoint::fromString($s), $input);
+        $this->points = array_map(MovingPoint::fromString(...), $input);
         $xs = array_map(static fn ($p) => $p->x, $this->points);
         $ys = array_map(static fn ($p) => $p->y, $this->points);
         $this->minX = intval(min($xs ?: [0]));

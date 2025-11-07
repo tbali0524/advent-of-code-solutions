@@ -1,0 +1,131 @@
+# Mago configuration file.
+# @see https://mago.carthage.software/tools/overview
+
+php-version = "8.4.0"
+
+[source]
+paths = ["src/", "tests/"]
+includes = ["vendor"]
+
+[formatter]
+print-width = 120
+
+[linter]
+integrations = []
+
+[linter.rules]
+literal-named-argument = { enabled = false }
+
+# custom linter rules
+assert-description = { enabled = false }
+class-name = { enabled = false }
+cyclomatic-complexity = { enabled = false }
+excessive-nesting = { enabled = false }
+excessive-parameter-list = { enabled = false }
+halstead = { enabled = false }
+identity-comparison = { enabled = false }
+interface-name = { enabled = false }
+kan-defect = { enabled = false }
+no-boolean-flag-parameter = { enabled = false }
+no-else-clause = { enabled = false }
+no-nested-ternary = { enabled = false }
+no-shorthand-ternary = { enabled = false }
+prefer-first-class-callable = { enabled = false }
+tagged-todo = { enabled = false }
+too-many-methods = { enabled = false }
+too-many-properties = { enabled = false }
+trait-name = { enabled = false }
+
+[analyzer]
+#analyze-dead-code = false
+
+# custom analyzer rules, too many false-positives
+ignore = [
+    "generic-object-iteration",
+    "impossible-assignment",
+    "impossible-condition",
+    "impossible-type-comparison",
+    "invalid-argument",
+    "invalid-array-index",
+    "invalid-continue",
+    "invalid-destructuring-source",
+    "invalid-iterator",
+    "invalid-operand",
+    "invalid-property-assignment-value",
+    "invalid-return-statement",
+    "less-specific-argument",
+    "less-specific-nested-argument-type",
+    "less-specific-nested-return-statement",
+    "match-not-exhaustive",
+    "mismatched-array-index",
+    "missing-return-statement",
+    "missing-template-parameter",
+    "mixed-argument",
+    "mixed-array-access",
+    "mixed-array-assignment",
+    "mixed-array-index",
+    "mixed-assignment",
+    "mixed-method-access",
+    "mixed-operand",
+    "mixed-property-access",
+    "mixed-property-type-coercion",
+    "mixed-return-statement",
+    "non-existent-attribute-class",
+    "non-existent-class-like",
+    "no-value",
+    "nullable-return-statement",
+    "null-argument",
+    "null-operand",
+    "possibly-false-operand",
+    "possibly-invalid-argument",
+    "possibly-invalid-operand",
+    "possible-method-access-on-null",
+    "possibly-null-argument",
+    "possibly-null-array-access",
+    "possibly-null-array-index",
+    "possibly-null-operand",
+    "possibly-null-property-access",
+    "possibly-undefined-int-array-index",
+    "possibly-undefined-variable",
+    "property-type-coercion",
+    "redundant-comparison",
+    "redundant-condition",
+    "redundant-docblock-type",
+    "redundant-isset-check",
+    "redundant-logical-operation",
+    "redundant-null-coalesce",
+    "redundant-type-comparison",
+    "reference-to-undefined-variable",
+    "template-constraint-violation",
+    "too-few-arguments",
+    "undefined-int-array-index",
+    "undefined-string-array-index",
+    "undefined-variable",
+    "unknown-class-instantiation",
+    "unsafe-instantiation",
+]
+
+# custom guard rules
+[guard]
+excludes = [
+    "src/aoc.php",
+    "src/run_class.php",
+    "src/AocYYYYDayDD.php",
+    "src/other/Aoc2017/Aoc2017Day01scr.php"
+]
+
+[guard.perimeter.layers]
+core = ["@native", "TBali\\Aoc\\"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc"
+permit = ["@native", "@self"]
+
+# seems like a mago bug: "@self" is needed also for native function calls
+[[guard.perimeter.rules]]
+namespace = "TBali"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Tests"
+permit = ["@native", "@self", "PHPUnit\\Framework\\"]

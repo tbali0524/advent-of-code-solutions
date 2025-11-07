@@ -119,7 +119,7 @@ final class Aoc2023Day14 extends SolutionBase
                 $newY = 0;
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 < $y) and ($y1 >= $newY)) {
-                        // @phpstan-ignore-next-line argument.type
+                        // @phpstan-ignore argument.type
                         $newY = intval($y1) + 1;
                     }
                 }
@@ -142,7 +142,7 @@ final class Aoc2023Day14 extends SolutionBase
                 $newX = 0;
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 < $x) and ($x1 >= $newX)) {
-                        // @phpstan-ignore-next-line argument.type
+                        // @phpstan-ignore argument.type
                         $newX = intval($x1) + 1;
                     }
                 }
@@ -165,7 +165,7 @@ final class Aoc2023Day14 extends SolutionBase
                 $newY = $this->maxY - 1;
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 > $y) and ($y1 <= $newY)) {
-                        // @phpstan-ignore-next-line argument.type
+                        // @phpstan-ignore argument.type
                         $newY = intval($y1) - 1;
                     }
                 }
@@ -188,7 +188,7 @@ final class Aoc2023Day14 extends SolutionBase
                 $newX = $this->maxX - 1;
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 > $x) and ($x1 <= $newX)) {
-                        // @phpstan-ignore-next-line argument.type
+                        // @phpstan-ignore argument.type
                         $newX = intval($x1) - 1;
                     }
                 }

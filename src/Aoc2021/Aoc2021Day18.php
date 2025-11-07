@@ -41,10 +41,7 @@ final class Aoc2021Day18 extends SolutionBase
         if (count($input) < 2) {
             throw new \Exception('Invalid input');
         }
-        $snailfishes = array_map(
-            static fn (string $s): Snailfish => Snailfish::fromString($s),
-            $input,
-        );
+        $snailfishes = array_map(Snailfish::fromString(...), $input);
         // Snailfish::unitTest();
         // ---------- Part 1
         $sum = $snailfishes[0];

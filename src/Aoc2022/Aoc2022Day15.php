@@ -44,8 +44,8 @@ final class Aoc2022Day15 extends SolutionBase
     public function solve(array $input): array
     {
         // ---------- Parse input
-        $targetY = (count($input) == 14 ? self::TARGET_Y_EXAMPLE : self::TARGET_Y_PART1);
-        $maxCoord = (count($input) == 14 ? self::MAX_COORD_EXAMPLE : self::MAX_COORD_PART2);
+        $targetY = count($input) == 14 ? self::TARGET_Y_EXAMPLE : self::TARGET_Y_PART1;
+        $maxCoord = count($input) == 14 ? self::MAX_COORD_EXAMPLE : self::MAX_COORD_PART2;
         $sensors = [];
         foreach ($input as $line) {
             $sensors[] = Sensor::fromString($line);

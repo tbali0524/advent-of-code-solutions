@@ -46,7 +46,7 @@ final class Aoc2017Day03 extends SolutionBase
         $pos = $outer % ($r + 1);
         $dTangential = intdiv($r, 2) + 1;
         $dRadial = abs($dTangential - $pos);
-        $ans1 = ($n <= 1 ? 0 : $dTangential + $dRadial);
+        $ans1 = $n <= 1 ? 0 : $dTangential + $dRadial;
         // ---------- Part 2
         [$x, $y] = [0, 0];
         [$dx, $dy] = [1, 0];

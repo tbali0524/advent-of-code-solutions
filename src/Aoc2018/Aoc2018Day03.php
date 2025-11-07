@@ -35,7 +35,7 @@ final class Aoc2018Day03 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        $claims = array_map(static fn (string $s): Claim => Claim::fromString($s), $input);
+        $claims = array_map(Claim::fromString(...), $input);
         // ---------- Part 1 + 2
         $ans1 = 0;
         $claimed = [];

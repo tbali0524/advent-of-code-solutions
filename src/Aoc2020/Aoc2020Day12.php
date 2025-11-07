@@ -51,11 +51,7 @@ final class Aoc2020Day12 extends SolutionBase
                 $heading = ($heading + 4) % 4;
                 continue;
             }
-            [$dx, $dy] = (
-                $command == 'F'
-                ? self::DELTAS[$heading]
-                : self::DELTAS[self::DIRECTIONS[$command] ?? 0]
-            );
+            [$dx, $dy] = $command == 'F' ? self::DELTAS[$heading] : self::DELTAS[self::DIRECTIONS[$command] ?? 0];
             $x += $dx * $param;
             $y += $dy * $param;
         }

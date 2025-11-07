@@ -58,7 +58,7 @@ final class Aoc2017Day05 extends SolutionBase
             }
             ++$ans2;
             $delta = $data[$pc];
-            $data[$pc] += ($data[$pc] >= 3 ? -1 : 1);
+            $data[$pc] += $data[$pc] >= 3 ? -1 : 1;
             $pc += $delta;
         }
         return [strval($ans1), strval($ans2)];

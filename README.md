@@ -88,10 +88,11 @@ The following helper commands are defined in [composer.json](composer.json):
 |doc          |Create documentation with [phpDocumentor](https://www.phpdoc.org/)|
 |lint         |Check syntax errors with [Parallel-Lint](https://github.com/php-parallel-lint/PHP-Parallel-Lint)|
 |loc          |Get code summary report with [phploc](https://github.com/sebastianbergmann/phploc)|
+|mago         |Run code quality checkswith [mago](https://mago.carthage.software/)|
 |metrics      |Generate code metrics report with [PhpMetrics](https://phpmetrics.github.io/website/)|
 |stan         |Run static analysis with [PHPStan](https://phpstan.org/)|
-|qa           |Run code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan_|
-|qa-full      |Run all code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Parallel-Lint, PhpMetrics, phpDocumentor, PHPUnit, and run all solutions_|
+|qa           |Run code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Mago_|
+|qa-full      |Run all code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Mago, Parallel-Lint, PhpMetrics, phpDocumentor, PHPUnit, and run all solutions_|
 |open-cover   |Open generated test coverage report in browser _(fixed file path)_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|

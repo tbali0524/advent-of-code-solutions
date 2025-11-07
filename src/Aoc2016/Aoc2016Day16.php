@@ -41,7 +41,7 @@ final class Aoc2016Day16 extends SolutionBase
     {
         // ---------- Part 1 + 2
         $data = $input[0] ?? '';
-        $len1 = ($data == self::STRING_INPUT ? self::PART1_LEN : self::EXAMPLE_LEN);
+        $len1 = $data == self::STRING_INPUT ? self::PART1_LEN : self::EXAMPLE_LEN;
         $ans1 = $this->solvePart($data, $len1);
         if ($len1 != self::PART1_LEN) {
             return [$ans1, '0'];

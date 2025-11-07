@@ -83,7 +83,7 @@ abstract class Module
         if (count($a) != 2) {
             throw new \Exception('Invalid input');
         }
-        // @phpstan-ignore-next-line new.staticInAbstractClassStaticMethod
+        // @phpstan-ignore new.staticInAbstractClassStaticMethod
         $m = new static();
         $m->name = $a[0];
         $m->outputs = explode(', ', $a[1]);

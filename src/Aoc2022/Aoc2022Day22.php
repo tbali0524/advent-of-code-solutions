@@ -467,7 +467,7 @@ final class Aoc2022Day22 extends SolutionBase
                 // @codeCoverageIgnoreEnd
             }
             $this->moveBys[] = intval(substr($instr, $posFrom, $posTo - $posFrom));
-            $this->turnTos[] = ($posTo < strlen($instr) ? $instr[$posTo] : ' ');
+            $this->turnTos[] = $posTo < strlen($instr) ? $instr[$posTo] : ' ';
             $posFrom = $posTo + 1;
         }
         if (count($this->moveBys) == 0) {

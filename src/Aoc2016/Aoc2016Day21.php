@@ -39,8 +39,8 @@ final class Aoc2016Day21 extends SolutionBase
     public function solve(array $input): array
     {
         // detect example input
-        $clear = (count($input) == 8 ? self::CLEARTEXT_EXAMPLE : self::CLEARTEXT_PART1);
-        $encrypt = (count($input) == 8 ? self::ENCRYPTED_TEXT_EXAMPLE : self::ENCRYPTED_TEXT_PART2);
+        $clear = count($input) == 8 ? self::CLEARTEXT_EXAMPLE : self::CLEARTEXT_PART1;
+        $encrypt = count($input) == 8 ? self::ENCRYPTED_TEXT_EXAMPLE : self::ENCRYPTED_TEXT_PART2;
         // ---------- Part 1
         $ans1 = $clear;
         foreach ($input as $line) {

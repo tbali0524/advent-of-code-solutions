@@ -39,7 +39,7 @@ final class Aoc2015Day14 extends SolutionBase
     public function solve(array $input): array
     {
         // detect puzzle example as input
-        $maxSteps = (count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS);
+        $maxSteps = count($input) == 2 ? self::EXAMPLE_STEPS : self::STEPS;
         // ---------- Part 1
         $ans1 = max(
             array_map(static fn (string $line): int => new Reindeer($line)->getDistanceAt($maxSteps), $input) ?: [0]

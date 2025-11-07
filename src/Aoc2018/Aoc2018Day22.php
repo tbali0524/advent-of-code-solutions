@@ -33,7 +33,7 @@ final class Aoc2018Day22 extends SolutionBase
         2 => ['t' => true, 'c' => false, 'n' => true], // narrow
     ];
     private const EQUIPMENTS = ['t', 'c', 'n'];
-    private const INFINITY = (PHP_INT_MAX >> 2); // to avoid ovwerflow with additions
+    private const INFINITY = PHP_INT_MAX >> 2; // to avoid ovwerflow with additions
 
     /**
      * Solve both parts of the puzzle for a given input, without IO.

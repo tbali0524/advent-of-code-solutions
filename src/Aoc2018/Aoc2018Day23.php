@@ -46,7 +46,7 @@ final class Aoc2018Day23 extends SolutionBase
      */
     public function solve(array $input): array
     {
-        $nanobots = array_map(static fn (string $line) => Nanobot::fromString($line), $input);
+        $nanobots = array_map(Nanobot::fromString(...), $input);
         if (count($nanobots) == 0) {
             throw new \Exception('Invalid input');
         }
@@ -55,7 +55,7 @@ final class Aoc2018Day23 extends SolutionBase
         usort($nanobots, static fn (Nanobot $a, Nanobot $b): int => $b->r <=> $a->r);
         $idxBest = array_key_first($nanobots);
         $bestBot = $nanobots[$idxBest];
-        $ans1 = count(array_filter($nanobots, static fn (Nanobot $bot): bool => $bestBot->inRange($bot)));
+        $ans1 = count(array_filter($nanobots, $bestBot->inRange(...)));
         // ---------- Part 2
         $ans2 = 0;
         $maxRangeCoord = 0;

@@ -51,7 +51,7 @@ final class Aoc2015Day18 extends SolutionBase
     {
         $size = count($input);
         // detect puzzle example as input
-        $maxSteps = ($size == 6 ? self::EXAMPLE_STEPS : self::STEPS);
+        $maxSteps = $size == 6 ? self::EXAMPLE_STEPS : self::STEPS;
         $corners = [
             [0, 0],
             [0, $size - 1],
@@ -89,9 +89,9 @@ final class Aoc2015Day18 extends SolutionBase
                         }
                     }
                     if ($prev[$y][$x] == '#') {
-                        $next[$y][$x] = (($count == 2 || $count == 3) ? '#' : '.');
+                        $next[$y][$x] = ($count == 2 || $count == 3) ? '#' : '.';
                     } elseif ($prev[$y][$x] == '.') {
-                        $next[$y][$x] = ($count == 3 ? '#' : '.');
+                        $next[$y][$x] = $count == 3 ? '#' : '.';
                     }
                 }
             }

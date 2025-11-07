@@ -76,7 +76,7 @@ final class Aoc2016Day18 extends SolutionBase
                     || ($left && !$center && !$right)
                     || (!$left && !$center && $right)
                 );
-                $next .= ($isTrap ? '^' : '.');
+                $next .= $isTrap ? '^' : '.';
             }
             $row = $next;
             $ans += substr_count($row, '.');

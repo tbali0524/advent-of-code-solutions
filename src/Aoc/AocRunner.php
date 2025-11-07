@@ -164,7 +164,7 @@ final class AocRunner
         } else {
             $failSkipMsg = '';
         }
-        $maxMemMsg = ($this->runAsScripts ? '' : '; max memory: ' . $maxMemory . ' MB');
+        $maxMemMsg = $this->runAsScripts ? '' : '; max memory: ' . $maxMemory . ' MB';
         echo '======= Total: ' . $totalMsg . $failSkipMsg . ' [time: ' . $spentTime . ' sec'
             . $maxMemMsg . ']' . PHP_EOL;
         if ($countTotal > 0) {

@@ -44,6 +44,15 @@
         "doc":          "phpdoc",
         "lint":         "parallel-lint src tests",
         "loc":          "phploc . --exclude .git --exclude .tools --exclude .vscode --exclude docs --exclude vendor",
+        "mago": [
+            "mago --version",
+            "echo MAGO lint",
+            "mago --colors always lint",
+            "echo MAGO analyze",
+            "mago --colors always analyze",
+            "echo MAGO guard",
+            "mago --colors always guard"
+        ],
         "metrics":      "phpmetrics --config=.phpmetrics.json",
         "stan":         "phpstan --ansi --verbose",
         "qa": [
@@ -51,7 +60,8 @@
             "@cs",
             "@cs-fixer",
             "phpstan --version",
-            "@stan"
+            "@stan",
+            "@mago"
         ],
         "qa-full": [
             "parallel-lint --version",
@@ -61,6 +71,7 @@
             "@cs-fixer",
             "phpstan --version",
             "@stan",
+            "@mago",
             "@doc",
             "@open-doc",
             "phpmetrics --version",
@@ -94,6 +105,7 @@
         "doc":          "Create documentation with phpDocumentor",
         "lint":         "Check syntax errors with parallel-lint",
         "loc":          "Get code summary report with phploc",
+        "mago":         "Run code quality checks: mago (with lint, analyze, guard)",
         "metrics":      "Create code metrics report with phpmetrics",
         "stan":         "Run static analysis with phpstan",
         "qa":           "Run code quality checks: phpcs, php-cs-fixer, phpstan",

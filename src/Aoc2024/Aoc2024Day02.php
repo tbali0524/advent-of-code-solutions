@@ -37,7 +37,7 @@ final class Aoc2024Day02 extends SolutionBase
             $input
         );
         // ---------- Part 1
-        $ans1 = count(array_filter($data, static fn (array $row): bool => self::isSafe($row)));
+        $ans1 = count(array_filter($data, self::isSafe(...)));
         // ---------- Part 2
         $ans2 = 0;
         foreach ($data as $row) {

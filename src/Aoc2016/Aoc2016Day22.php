@@ -114,6 +114,7 @@ final class Aoc2016Day22 extends SolutionBase
             }
             $s[$node->y][$node->x] = $c;
         }
+        // @phpstan-ignore argument.type
         echo implode(PHP_EOL, $s), PHP_EOL;
     }
 }

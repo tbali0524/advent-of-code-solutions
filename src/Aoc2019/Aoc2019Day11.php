@@ -97,7 +97,7 @@ final class Aoc2019Day11 extends SolutionBase
             for ($y = $minY; $y <= $maxY; ++$y) {
                 $s = '';
                 for ($x = $minX; $x <= $maxX; ++$x) {
-                    $s .= (($grid[$y][$x] ?? 0) == 0 ? ' ' : 'X');
+                    $s .= ($grid[$y][$x] ?? 0) == 0 ? ' ' : 'X';
                 }
                 echo $s, PHP_EOL;
             }

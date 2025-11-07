@@ -48,7 +48,7 @@ final class Aoc2016Day15 extends SolutionBase
             $time = intval(substr($a[6], 5, -1));
             $position = intval(substr($a[11], 0, -1));
             $remainder = ($time - $position - $id) % $modulo;
-            $discs[$modulo] = ($remainder >= 0 ? $remainder : $remainder + $modulo);
+            $discs[$modulo] = $remainder >= 0 ? $remainder : $remainder + $modulo;
         }
         // ---------- Part 1
         $ans1 = $this->solvePart($discs);
@@ -58,7 +58,7 @@ final class Aoc2016Day15 extends SolutionBase
         $time = 0;
         $position = 0;
         $remainder = ($time - $position - $id) % $modulo;
-        $discs[$modulo] = ($remainder >= 0 ? $remainder : $remainder + $modulo);
+        $discs[$modulo] = $remainder >= 0 ? $remainder : $remainder + $modulo;
         $ans2 = $this->solvePart($discs);
         return [strval($ans1), strval($ans2)];
     }

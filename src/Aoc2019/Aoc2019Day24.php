@@ -91,9 +91,9 @@ final class Aoc2019Day24 extends SolutionBase
                     $pos = $y * 5 + $x;
                     $old = ($state >> $pos) & 1;
                     if ($old == 0) {
-                        $new = ($adjBugs == 1 || $adjBugs == 2 ? 1 : 0);
+                        $new = $adjBugs == 1 || $adjBugs == 2 ? 1 : 0;
                     } else {
-                        $new = ($adjBugs == 1 ? 1 : 0);
+                        $new = $adjBugs == 1 ? 1 : 0;
                     }
                     $newState |= ($new << $pos);
                 }

@@ -80,7 +80,7 @@ final class Aoc2021Day22 extends SolutionBase
                 for ($idxY = $posFrom[1]; $idxY < $posTo[1]; ++$idxY) {
                     for ($idxZ = $posFrom[2]; $idxZ < $posTo[2]; ++$idxZ) {
                         $pos = $idxX * count($dividers[1]) * count($dividers[2]) + $idxY * count($dividers[2]) + $idxZ;
-                        // @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible
+                        // @phpstan-ignore offsetAccess.nonOffsetAccessible
                         $regionOn[$pos] = $c->isOn ? '1' : '0';
                     }
                 }
@@ -90,7 +90,7 @@ final class Aoc2021Day22 extends SolutionBase
             for ($idxY = 0; $idxY < count($dividers[1]) - 1; ++$idxY) {
                 for ($idxZ = 0; $idxZ < count($dividers[2]) - 1; ++$idxZ) {
                     $pos = $idxX * count($dividers[1]) * count($dividers[2]) + $idxY * count($dividers[2]) + $idxZ;
-                    // @phpstan-ignore-next-line offsetAccess.nonOffsetAccessible
+                    // @phpstan-ignore offsetAccess.nonOffsetAccessible
                     if ($regionOn[$pos] != '1') {
                         continue;
                     }

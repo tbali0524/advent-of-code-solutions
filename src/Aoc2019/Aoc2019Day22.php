@@ -167,24 +167,24 @@ class Modulo
 
     public static function add(int $a, int $b, int $modulus): int
     {
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
-        $b = ($b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
+        $b = $b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus);
         $ans = $a + $b;
         return $ans < $modulus ? $ans : $ans - $modulus;
     }
 
     public static function subtract(int $a, int $b, int $modulus): int
     {
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
-        $b = ($b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
+        $b = $b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus);
         $ans = $a - $b;
         return $ans >= 0 ? $ans : $ans + $modulus;
     }
 
     public static function multiply(int $a, int $b, int $modulus): int
     {
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
-        $b = ($b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
+        $b = $b < 0 ? $b % $modulus + $modulus : ($b < $modulus ? $b : $b % $modulus);
         $ans = 0;
         for ($i = 0; $i < 63; ++$i) {
             if ((($b >> $i) & 1) != 0) {
@@ -197,7 +197,7 @@ class Modulo
 
     public static function divide(int $a, int $b, int $modulus): int
     {
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
         $inv = self::inverse($b, $modulus);
         if ($inv == -1) {
             // @codeCoverageIgnoreStart
@@ -209,7 +209,7 @@ class Modulo
 
     public static function inverse(int $a, int $modulus): int
     {
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
         $x = 0;
         $y = 0;
         $g = self::gcdExtended($a, $modulus, $x, $y);
@@ -245,7 +245,7 @@ class Modulo
             // @codeCoverageIgnoreEnd
         }
         $ans = 1;
-        $a = ($a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus));
+        $a = $a < 0 ? $a % $modulus + $modulus : ($a < $modulus ? $a : $a % $modulus);
         while ($b != 0) {
             if (($b & 1) != 0) {
                 $ans = self::multiply($ans, $a, $modulus);

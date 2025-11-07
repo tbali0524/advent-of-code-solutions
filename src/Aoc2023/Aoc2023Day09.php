@@ -42,15 +42,9 @@ final class Aoc2023Day09 extends SolutionBase
             $input,
         );
         // ---------- Part 1
-        $ans1 = array_sum(array_map(
-            static fn (array $a): int => self::extrapolateNext($a),
-            $data
-        ));
+        $ans1 = array_sum(array_map(self::extrapolateNext(...), $data));
         // ---------- Part 2
-        $ans2 = array_sum(array_map(
-            static fn (array $a): int => self::extrapolatePrev($a),
-            $data
-        ));
+        $ans2 = array_sum(array_map(self::extrapolatePrev(...), $data));
         return [strval($ans1), strval($ans2)];
     }
 
