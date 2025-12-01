@@ -74,6 +74,9 @@ minimum version: ^12.4
         <testsuite name="Aoc2024">
             <file>tests/Aoc2024Test.php</file>
         </testsuite>
+        <testsuite name="Aoc2025">
+            <file>tests/Aoc2025Test.php</file>
+        </testsuite>
     </testsuites>
     <coverage
         disableCodeCoverageIgnore="false"

@@ -76,8 +76,11 @@ final class Aoc2021Day22 extends SolutionBase
                     // @codeCoverageIgnoreEnd
                 }
             }
+            // @phpstan-ignore preInc.type
             for ($idxX = $posFrom[0]; $idxX < $posTo[0]; ++$idxX) {
+                // @phpstan-ignore preInc.type
                 for ($idxY = $posFrom[1]; $idxY < $posTo[1]; ++$idxY) {
+                    // @phpstan-ignore preInc.type
                     for ($idxZ = $posFrom[2]; $idxZ < $posTo[2]; ++$idxZ) {
                         $pos = $idxX * count($dividers[1]) * count($dividers[2]) + $idxY * count($dividers[2]) + $idxZ;
                         // @phpstan-ignore offsetAccess.nonOffsetAccessible

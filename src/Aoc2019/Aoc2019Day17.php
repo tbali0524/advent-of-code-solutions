@@ -288,7 +288,7 @@ final class AsciiSimulator
         }
         $message = '';
         for ($i = $this->idxOutput; $i < count($this->outputs); ++$i) {
-            $message .= chr($this->outputs[$i]);
+            $message .= chr($this->outputs[$i] % 256);
         }
         $this->idxOutput = count($this->outputs);
         $ans = $this->outputs[$this->idxOutput - 1];

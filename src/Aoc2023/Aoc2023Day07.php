@@ -94,6 +94,7 @@ class CamelHand
         }
         $cv = array_count_values(str_split($cards));
         arsort($cv);
+        // @phpstan-ignore offsetAccess.invalidOffset
         $first = $cv[array_key_first($cv)];
         $this->type = match (count($cv)) {
             1 => HandType::Five_of_a_kind,

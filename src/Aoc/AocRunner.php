@@ -16,7 +16,7 @@ final class AocRunner
     /** @var int */
     public const MIN_YEAR = 2015;
     /** @var int */
-    public const MAX_YEAR = 2024;
+    public const MAX_YEAR = 2025;
     /** @var int */
     public const MIN_DAYS = 1;
     /** @var int */
@@ -40,6 +40,7 @@ final class AocRunner
         2022 => [19, 24],       // puzzle #19 runs in ~28s, #24 in ~110s
         2023 => [23],           // puzzle #23 runs in ~31s
         2024 => [7],            // puzzle #7 runs in ~12s
+        2025 => [],
     ];
 
     /**

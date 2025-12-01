@@ -83,6 +83,7 @@ final class Aoc2020Day20 extends SolutionBase
         $ans1 = array_product(array_keys($this->isCornerTile));
         // ---------- Part 2
         $this->calculateNeighbors();
+        // @phpstan-ignore offsetAccess.invalidOffset
         $topLeft = $this->tiles[array_key_first($this->isCornerTile)] ?? $this->emptyTile;
         $result = false;
         for ($i = 0; $i < count($topLeft->edges); ++$i) {

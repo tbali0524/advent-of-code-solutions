@@ -119,7 +119,7 @@ final class Aoc2019Day14 extends SolutionBase
                 }
                 unset($bom[$toName]);
             }
-            $toName = array_key_first($countUsedBy);
+            $toName = array_key_first($countUsedBy) ?? '';
         }
     }
 }
@@ -127,8 +127,8 @@ final class Aoc2019Day14 extends SolutionBase
 // --------------------------------------------------------------------
 final class Recipe
 {
-    public const ORE = 'ORE';
-    public const FUEL = 'FUEL';
+    public const string ORE = 'ORE';
+    public const string FUEL = 'FUEL';
 
     public string $name = '';
     public int $qty = 0;

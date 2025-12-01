@@ -129,7 +129,8 @@ final class Aoc2020Day21 extends SolutionBase
             }
             $pairs[$nameIngred] = $nameAllerg;
             unset($remainingAllergs[$idBestAllerg]);
-            foreach ($this->canComeFrom as $idAllerg => $list) {
+            foreach (array_keys($this->canComeFrom) as $idAllerg) {
+                // @phpstan-ignore offsetAccess.invalidOffset
                 unset($this->canComeFrom[$idAllerg][$idIngred]);
             }
         }

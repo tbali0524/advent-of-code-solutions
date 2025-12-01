@@ -1,8 +1,8 @@
 # Advent of Code solutions in PHP by TBali
 
-![php v8.4](https://shields.io/badge/php-8.4-blue?logo=php)
+![php v8.5](https://shields.io/badge/php-8.5-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-500-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-502-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -11,7 +11,7 @@
 * [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * [Results and running times](results.md)
 * [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
-* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~4.5 seasons, 230⭐)
+* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~4.5 seasons, 232⭐)
 
 This repo contains my AoC solutions in PHP, and a simple CLI runner. The first 9 seasons I originally solved in PHP, and later rewrote some solutions (~3.5 seasons) in Rust. In season 2024 I solved the puzzles first in Rust (and rewrote them in PHP later).
 

@@ -1,13 +1,14 @@
 # PHPStan configuration file.
 #
-# minimum version: ^2.1.31
+# minimum version: ^2.1.32
 #
 # @see https://phpstan.org/config-reference
 parameters:
     level: max
-    phpVersion: 80400
+    phpVersion: 80500
     editorUrl: 'vscode://file/%%file%%:%%line%%'
     tmpDir: .tools/phpstan
+    reportUnmatchedIgnoredErrors: true
     paths:
         - src/
         # - tests/

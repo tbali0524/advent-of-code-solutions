@@ -13,6 +13,6 @@ use TBali\Aoc\AocRunner;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$runner = new AocRunner($argv);
+$runner = new AocRunner($argv ?? []);
 $runner->run();
 exit($runner->isOk ? 0 : 1);

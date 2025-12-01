@@ -14,7 +14,8 @@
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-50-yellow)      |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-500-green)  |
+|[2025](#2025)|![+](https://img.shields.io/badge/stars%20⭐-2-yellow)      |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-502-green)  |
 
 ## Puzzles
 
@@ -337,3 +338,20 @@ Hint from `subreddit` was used for Day 12 part 2, Day 24 part 2 and Day 25.
 |  +  |2024| 25|Code Chronicle                            |                                                         |
 
 Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).
+
+### 2025
+
+|Done?|Year|Day| Title                                    | Topics                                                  |
+|:---:|----|--:|:-----------------------------------------|:--------------------------------------------------------|
+|  +  |2025|  1|Secret Entrance                           |                                                         |
+|     |2025|  2|                                          |                                                         |
+|     |2025|  3|                                          |                                                         |
+|     |2025|  4|                                          |                                                         |
+|     |2025|  5|                                          |                                                         |
+|     |2025|  6|                                          |                                                         |
+|     |2025|  7|                                          |                                                         |
+|     |2025|  8|                                          |                                                         |
+|     |2025|  9|                                          |                                                         |
+|     |2025| 10|                                          |                                                         |
+|     |2025| 11|                                          |                                                         |
+|     |2025| 12|                                          |                                                         |
