@@ -1937,7 +1937,15 @@ Using PHP runtime: 8.5.0
 [ OK ] Puzzle example passed.
 [ OK ] 1092
 [ OK ] 6616
-======= Total: 251 solutions (13 skipped) [time: 208.913 sec; max memory: 1611 MB]
+=== AoC 2025 Day 02 [time: 0.046 sec; memory: 1 Mbytes]    Gift Shop
+[ OK ] Puzzle example passed.
+[ OK ] 40055209690
+[ OK ] 50857215650
+=== AoC 2025 Day 03 [time: 0.005 sec; memory: 1 Mbytes]    Lobby
+[ OK ] Puzzle example passed.
+[ OK ] 17179
+[ OK ] 170025781683941
+======= Total: 253 solutions (13 skipped) [time: 208.913 sec; max memory: 1611 MB]
 
 [ OK ] All tests passed.
 ```

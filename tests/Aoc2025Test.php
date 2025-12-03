@@ -9,6 +9,8 @@ use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
 use TBali\Aoc2025\Aoc2025Day01;
+use TBali\Aoc2025\Aoc2025Day02;
+use TBali\Aoc2025\Aoc2025Day03;
 
 /**
  * Unit tests for Advent of Code season 2025.
@@ -19,11 +21,11 @@ use TBali\Aoc2025\Aoc2025Day01;
  *
  * @coversNothing
  */
-#[RequiresPhp('^8.4')]
+#[RequiresPhp('^8.5')]
 #[RequiresPhpunit('^12.4')]
 #[CoversClass(Aoc2025Day01::class)]
-// #[CoversClass(Aoc2025Day02::class)]
-// #[CoversClass(Aoc2025Day03::class)]
+#[CoversClass(Aoc2025Day02::class)]
+#[CoversClass(Aoc2025Day03::class)]
 // #[CoversClass(Aoc2025Day04::class)]
 // #[CoversClass(Aoc2025Day05::class)]
 // #[CoversClass(Aoc2025Day06::class)]
@@ -67,7 +69,6 @@ final class Aoc2025Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /*
     public function testDay02Example1(): void
     {
         $solver = new Aoc2025Day02();
@@ -86,6 +87,22 @@ final class Aoc2025Test extends TestCase
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
+    }
+
+    public function testDay02InvalidInput1(): void
+    {
+        $solver = new Aoc2025Day02();
+        $input = ['1-2', '3-4'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay02InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day02();
+        $input = ['1-2-3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
@@ -112,6 +129,7 @@ final class Aoc2025Test extends TestCase
 
     // --------------------------------------------------------------------
 
+    /*
     public function testDay04Example1(): void
     {
         $solver = new Aoc2025Day04();
