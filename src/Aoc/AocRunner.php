@@ -83,6 +83,20 @@ final class AocRunner
         $this->isOk = true;
     }
 
+    public static function isJitEnabled(): bool
+    {
+        if (!function_exists('opcache_get_status')) {
+            return false;
+        }
+        $opcache = opcache_get_status();
+        if ($opcache === false) {
+            return false;
+        }
+        $jit = $opcache['jit'] ?? [];
+        /** @var array<string, mixed> $jit */
+        return boolval($jit['enabled'] ?? false);
+    }
+
     /**
      * Runs all matching solutions based on $this->year, $this->day (-1 meaning 'all').
      */
@@ -90,7 +104,9 @@ final class AocRunner
     {
         $startTime = hrtime(true);
         if (!$this->runAsScripts) {
-            echo 'Using PHP runtime: ' . Tags::ANSI_INK_LIGHT_CYAN . PHP_VERSION . Tags::ANSI_RESET . PHP_EOL;
+            echo 'Using PHP runtime: ' . Tags::ANSI_INK_LIGHT_CYAN . PHP_VERSION . Tags::ANSI_RESET
+                . ' with JIT: ' . Tags::ANSI_INK_LIGHT_CYAN . (self::isJitEnabled() ? 'enabled' : 'disabled')
+                . Tags::ANSI_RESET . PHP_EOL;
         }
         $maxMemory = 0;
         if (($this->year >= 0) and ($this->day >= 0) and !$this->runAllLanguages) {

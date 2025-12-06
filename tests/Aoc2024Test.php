@@ -48,7 +48,7 @@ use TBali\Aoc2024\MinPriorityQueue;
  * @coversNothing
  */
 #[RequiresPhp('^8.5')]
-#[RequiresPhpunit('^12.4')]
+#[RequiresPhpunit('^12.5')]
 #[CoversClass(Aoc2024Day01::class)]
 #[CoversClass(Aoc2024Day02::class)]
 #[CoversClass(Aoc2024Day03::class)]

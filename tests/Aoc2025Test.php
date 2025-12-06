@@ -11,6 +11,9 @@ use PHPUnit\Framework\TestCase;
 use TBali\Aoc2025\Aoc2025Day01;
 use TBali\Aoc2025\Aoc2025Day02;
 use TBali\Aoc2025\Aoc2025Day03;
+use TBali\Aoc2025\Aoc2025Day04;
+use TBali\Aoc2025\Aoc2025Day05;
+use TBali\Aoc2025\Aoc2025Day06;
 
 /**
  * Unit tests for Advent of Code season 2025.
@@ -22,13 +25,13 @@ use TBali\Aoc2025\Aoc2025Day03;
  * @coversNothing
  */
 #[RequiresPhp('^8.5')]
-#[RequiresPhpunit('^12.4')]
+#[RequiresPhpunit('^12.5')]
 #[CoversClass(Aoc2025Day01::class)]
 #[CoversClass(Aoc2025Day02::class)]
 #[CoversClass(Aoc2025Day03::class)]
-// #[CoversClass(Aoc2025Day04::class)]
-// #[CoversClass(Aoc2025Day05::class)]
-// #[CoversClass(Aoc2025Day06::class)]
+#[CoversClass(Aoc2025Day04::class)]
+#[CoversClass(Aoc2025Day05::class)]
+#[CoversClass(Aoc2025Day06::class)]
 // #[CoversClass(Aoc2025Day07::class)]
 // #[CoversClass(Aoc2025Day08::class)]
 // #[CoversClass(Aoc2025Day09::class)]
@@ -129,7 +132,6 @@ final class Aoc2025Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /*
     public function testDay04Example1(): void
     {
         $solver = new Aoc2025Day04();
@@ -137,16 +139,6 @@ final class Aoc2025Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        // self::assertSame(strval($expected2), $ans2);
-    }
-
-    public function testDay04Example2(): void
-    {
-        $solver = new Aoc2025Day04();
-        $input = $solver->readInput($solver->inputBaseFileName() . 'ex2.txt');
-        [$ans1, $ans2] = $solver->solve($input);
-        [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[1];
-        // self::assertSame(strval($expected1), $ans1);
         self::assertSame(strval($expected2), $ans2);
     }
 
@@ -182,6 +174,14 @@ final class Aoc2025Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    public function testDay05InvalidInput1(): void
+    {
+        $solver = new Aoc2025Day05();
+        $input = ['1-2-3', '', '1'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
     public function testDay06Example1(): void
@@ -204,8 +204,33 @@ final class Aoc2025Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    public function testDay06InvalidInput1(): void
+    {
+        $solver = new Aoc2025Day06();
+        $input = ['1 2'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay06InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day06();
+        $input = ['1 2', '3 4', '+ a'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay06InvalidInput3(): void
+    {
+        $solver = new Aoc2025Day06();
+        $input = ['1 2', '3 4', '+*'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
+    /*
     public function testDay07Example1(): void
     {
         $solver = new Aoc2025Day07();

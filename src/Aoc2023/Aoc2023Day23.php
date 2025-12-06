@@ -82,10 +82,12 @@ final class Aoc2023Day23 extends SolutionBase
         // ---------- Part 1
         $hash = $this->startX . ' 0';
         $path = [$hash => true];
+        // @phpstan-ignore-next-line argument.type
         $ans1 = $this->dfs($this->startX, 0, $path) - 1;
         // ---------- Part 2
         $this->fillCrossroads();
         $this->fillDistances();
+        // @phpstan-ignore-next-line argument.type
         $ans2 = $this->dfsCrossroads($this->startX, 0, $path);
         return [strval($ans1), strval($ans2)];
     }

@@ -66,7 +66,7 @@ use TBali\Aoc2022\VerticalRock;
  * @coversNothing
  */
 #[RequiresPhp('^8.5')]
-#[RequiresPhpunit('^12.4')]
+#[RequiresPhpunit('^12.5')]
 #[CoversClass(Aoc2022Day01::class)]
 #[CoversClass(Aoc2022Day02::class)]
 #[CoversClass(Aoc2022Day03::class)]
