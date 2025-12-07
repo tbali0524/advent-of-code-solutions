@@ -14,8 +14,8 @@
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-50-green)      |
-|[2025](#2025)|![+](https://img.shields.io/badge/stars%20⭐-12-yellow)      |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-512-green)  |
+|[2025](#2025)|![+](https://img.shields.io/badge/stars%20⭐-14-yellow)      |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-514-green)  |
 
 ## Puzzles
 
@@ -349,7 +349,7 @@ Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).
 |  +  |2025|  4|Printing Department                       |                                                         |
 |  +  |2025|  5|Cafeteria                                 |                                                         |
 |  +  |2025|  6|Trash Compactor                           |                                                         |
-|     |2025|  7|                                          |                                                         |
+|  +  |2025|  7|Laboratories                              |simulation                                               |
 |     |2025|  8|                                          |                                                         |
 |     |2025|  9|                                          |                                                         |
 |     |2025| 10|                                          |                                                         |

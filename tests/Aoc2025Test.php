@@ -14,6 +14,7 @@ use TBali\Aoc2025\Aoc2025Day03;
 use TBali\Aoc2025\Aoc2025Day04;
 use TBali\Aoc2025\Aoc2025Day05;
 use TBali\Aoc2025\Aoc2025Day06;
+use TBali\Aoc2025\Aoc2025Day07;
 
 /**
  * Unit tests for Advent of Code season 2025.
@@ -32,7 +33,7 @@ use TBali\Aoc2025\Aoc2025Day06;
 #[CoversClass(Aoc2025Day04::class)]
 #[CoversClass(Aoc2025Day05::class)]
 #[CoversClass(Aoc2025Day06::class)]
-// #[CoversClass(Aoc2025Day07::class)]
+#[CoversClass(Aoc2025Day07::class)]
 // #[CoversClass(Aoc2025Day08::class)]
 // #[CoversClass(Aoc2025Day09::class)]
 // #[CoversClass(Aoc2025Day10::class)]
@@ -230,7 +231,6 @@ final class Aoc2025Test extends TestCase
 
     // --------------------------------------------------------------------
 
-    /*
     public function testDay07Example1(): void
     {
         $solver = new Aoc2025Day07();
@@ -254,13 +254,22 @@ final class Aoc2025Test extends TestCase
     public function testDay07InvalidInput1(): void
     {
         $solver = new Aoc2025Day07();
-        $input = ['6 2 3'];
+        $input = ['...'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay07InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day07();
+        $input = ['.S.', '.a.'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
 
     // --------------------------------------------------------------------
 
+    /*
     public function testDay08Example1(): void
     {
         $solver = new Aoc2025Day08();
