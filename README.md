@@ -11,7 +11,7 @@
 * [Puzzle list](puzzles.md) with topics and my completion status (in PHP)
 * [Results and running times](results.md)
 * [This repo on GitHub](https://github.com/tbali0524/advent-of-code-solutions)
-* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~4.5 seasons, 244⭐)
+* [My AoC solutions in Rust](https://github.com/tbali0524/advent-of-code-rust) (~4.5 seasons, 252⭐)
 
 This repo contains my AoC solutions in PHP, and a simple CLI runner. The first 9 seasons I originally solved in PHP, and later rewrote some solutions (~3.5 seasons) in Rust. In season 2024 I solved the puzzles first in Rust (and rewrote them in PHP later).
 

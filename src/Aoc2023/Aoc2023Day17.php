@@ -145,11 +145,12 @@ final class Aoc2023Day17 extends SolutionBase
 final class MinPriorityQueue extends \SplPriorityQueue
 {
     /**
-     * @param int $a
-     * @param int $b
+     * @param int $priority1
+     * @param int $priority2
      */
-    public function compare($a, $b): int
+    // @mago-expect analyze:incompatible-parameter-type
+    public function compare($priority1, $priority2): int
     {
-        return parent::compare($b, $a); // invert the order
+        return parent::compare($priority2, $priority1); // invert the order
     }
 }

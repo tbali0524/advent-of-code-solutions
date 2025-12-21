@@ -13,7 +13,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.5"
-          tools: phpcs:4.0, php-cs-fixer:3.91, phpstan:2.1.33
+          tools: phpcs:4.0, php-cs-fixer:3.92, phpstan:2.1.33
           coverage: none
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

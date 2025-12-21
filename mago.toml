@@ -1,5 +1,7 @@
 # Mago configuration file.
 # @see https://mago.carthage.software/tools/overview
+#
+# minimum version: ^1.0.1
 
 php-version = "8.5.0"
 
@@ -42,12 +44,14 @@ ignore = [
     "impossible-condition",
     "impossible-nonnull-entry-check",
     "impossible-type-comparison",
+    "incompatible-parameter-type",
     "invalid-argument",
     "invalid-array-index",
     "invalid-continue",
     "invalid-destructuring-source",
     "invalid-iterator",
     "invalid-operand",
+    "invalid-property-access",
     "invalid-property-assignment-value",
     "invalid-return-statement",
     "less-specific-argument",
@@ -72,6 +76,7 @@ ignore = [
     "no-value",
     "nullable-return-statement",
     "null-argument",
+    "null-array-index",
     "null-operand",
     "possibly-false-operand",
     "possibly-invalid-argument",
@@ -98,6 +103,7 @@ ignore = [
     "undefined-int-array-index",
     "undefined-string-array-index",
     "undefined-variable",
+    "unevaluated-code",
     "unknown-class-instantiation",
     "unsafe-instantiation",
 ]

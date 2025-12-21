@@ -3,7 +3,7 @@
 /**
  * php-cs-fixer configuration file.
  *
- * minimum version: ^3.91
+ * minimum version: ^3.92
  *
  * @see https://cs.symfony.com/doc/config.html
  */

@@ -350,8 +350,8 @@ Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).
 |  +  |2025|  5|Cafeteria                                 |                                                         |
 |  +  |2025|  6|Trash Compactor                           |                                                         |
 |  +  |2025|  7|Laboratories                              |simulation                                               |
-|     |2025|  8|                                          |                                                         |
-|     |2025|  9|                                          |                                                         |
-|     |2025| 10|                                          |                                                         |
-|     |2025| 11|                                          |                                                         |
-|     |2025| 12|                                          |                                                         |
+|     |2025|  8|Playground                                |graph                                                    |
+|     |2025|  9|Movie Theater                             |                                                         |
+|     |2025| 10|Factory                                   |                                                         |
+|     |2025| 11|Reactor                                   |recursion, memoization                                   |
+|     |2025| 12|Christmas Tree Farm                       |                                                         |
