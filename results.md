@@ -1,6 +1,6 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.5.0` with `./aoc.bat` on `2025.12.06`.
+* Output of local run using PHP `8.5.1` with `./aoc.bat` on `2025.12.28`.
 * Total running time:
     * with AocRunner (JIT): `126 sec`
     * with AocRunner (no JIT): `148 sec`
@@ -9,7 +9,7 @@
 ```txt
 Advent of Code - batch solution runner, (c) 2025 by TBali
 
-Using PHP runtime: 8.5.0 with JIT: enabled
+Using PHP runtime: 8.5.1 with JIT: enabled
 ======= 2015 =============================================
 === AoC 2015 Day 01 [time: 0.005 sec; memory: 1 Mbytes]    Not Quite Lisp
 [ OK ] Puzzle examples (2) passed.
@@ -992,7 +992,22 @@ Using PHP runtime: 8.5.0 with JIT: enabled
 [ OK ] Puzzle example passed.
 [ OK ] 6378679666679
 [ OK ] 11494432585168
-======= Total: 256 solutions (13 skipped) [time: 125.856 sec; max memory: 1610 MB]
+=== AoC 2025 Day 07 [time: 0.010 sec; memory: 67 Mbytes]   Laboratories
+[ OK ] Puzzle example passed.
+[ OK ] 1573
+[ OK ] 15093663987272
+=== AoC 2025 Day 08 [time: 0.983 sec; memory: 144 Mbytes]  Playground
+[ OK ] Puzzle example passed.
+[ OK ] 42315
+[ OK ] 8079278220
+=== AoC 2025 Day 11 [time: 0.037 sec; memory: 1 Mbytes]    Reactor
+[ OK ] Puzzle examples (2) passed.
+[ OK ] 428
+[ OK ] 331468292364745
+=== AoC 2025 Day 12 [time: 0.012 sec; memory: 68 Mbytes]   Christmas Tree Farm
+[ OK ] Puzzle example passed.
+[ OK ] 505
+======= Total: 258 solutions (13 skipped) [time: 145.888 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```

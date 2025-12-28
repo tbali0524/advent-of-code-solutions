@@ -78,6 +78,7 @@ final class Aoc2021Day19 extends SolutionBase
         $foundScanner[0] = true;
         $scannerPositions[0] = new Vector3D([0, 0, 0]);
         $scannerRotations[0] = 0; // because of this, Rotation->r must contain the identity matrix as first element!
+        $alreadySeen = [];
         foreach ($scanners[0] as $beacon) {
             $trueBeacons[] = $beacon;
             $alreadySeen[$beacon->toHash()] = true;

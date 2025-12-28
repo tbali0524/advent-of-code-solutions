@@ -239,7 +239,9 @@ final class Aoc2023Day10 extends SolutionBase
         if (self::DEBUG) {
             // @codeCoverageIgnoreStart
             echo '---- start: (' . $startX . ', ' . $startY . ')', PHP_EOL;
+            // @phpstan-ignore argument.type
             echo implode(PHP_EOL, $grid), PHP_EOL, PHP_EOL;
+            // @phpstan-ignore argument.type
             echo implode(PHP_EOL, $coverGrid), PHP_EOL, PHP_EOL, PHP_EOL;
             // @codeCoverageIgnoreEnd
         }

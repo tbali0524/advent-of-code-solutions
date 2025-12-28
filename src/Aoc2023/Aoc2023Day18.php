@@ -56,6 +56,7 @@ final class Aoc2023Day18 extends SolutionBase
             $directions .= $a[0];
             $steps[] = intval($a[1]);
             $directionsPart2 .= self::DIRS[intval(hexdec($a[2][7]))] ?? throw new \Exception('Invalid input');
+            // @mago-expect analyzer:unevaluated-code
             $stepsPart2[] = intval(hexdec(substr($a[2], 2, 5)));
         }
         // ---------- Part 1

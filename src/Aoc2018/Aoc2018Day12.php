@@ -44,6 +44,7 @@ final class Aoc2018Day12 extends SolutionBase
             throw new \Exception('Invalid input');
         }
         $initState = substr($input[0], 15);
+        $rules = [];
         for ($i = 2; $i < count($input); ++$i) {
             $a = explode(' => ', $input[$i]);
             if ((count($a) != 2) or (strlen($a[0]) != 5) or (strlen($a[1]) != 1)) {

@@ -21,6 +21,8 @@ final class AocRunner
     public const MIN_DAYS = 1;
     /** @var int */
     public const MAX_DAYS = 25;
+    /** @var int */
+    public const MAX_DAYS_2025 = 12;
 
     /**
      * What puzzles to skip from season run, even if source file exists. [year => [day]].
@@ -135,6 +137,9 @@ final class AocRunner
                     continue;
                 }
                 for ($day = 1; $day <= self::MAX_DAYS; ++$day) {
+                    if ($year >= 2025 && $day > self::MAX_DAYS_2025) {
+                        break;
+                    }
                     $srcFileName = $this->getSourceName($year, $day);
                     if (!file_exists($srcFileName)) {
                         continue;
@@ -212,6 +217,7 @@ final class AocRunner
         $className = $this->getClassName($year, $day);
         $fullClassName = 'TBali\Aoc' . $year . '\\' . $className;
         /** @var Solution */
+        // @mago-expect analyzer:unknown-class-instantiation
         $solution = new $fullClassName();
         $success = $solution->run();
         if (!$success) {

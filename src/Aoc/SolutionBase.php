@@ -148,6 +148,9 @@ abstract class SolutionBase implements Solution
             if ((static::DAY == 25) and ($part == 1)) {
                 continue;
             }
+            if ((static::YEAR >= 2025) and (static::DAY == 12) and ($part == 1)) {
+                continue;
+            }
             if (strval(static::SOLUTIONS[$part]) == '0') {
                 echo Tags::WARN_TAG . $answers[$part] . ' - Puzzle is missing expected result.' . PHP_EOL;
                 continue;

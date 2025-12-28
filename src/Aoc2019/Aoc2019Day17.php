@@ -88,14 +88,14 @@ final class Aoc2019Day17 extends SolutionBase
         }
         // ---------- Part 1
         $ans1 = 0;
+        $scaffold5 = str_repeat(self::SCAFFOLD, 5);
         for ($y = 0; $y < $maxY; ++$y) {
             for ($x = 0; $x < $maxX; ++$x) {
-                if (
-                    ($x > 0) and ($x < $maxX - 1) and ($y > 0) and ($y < $maxY - 1)
-                    and ($grid[$y][$x] . $grid[$y][$x - 1] . $grid[$y][$x + 1] . $grid[$y - 1][$x] . $grid[$y + 1][$x]
-                        == str_repeat(self::SCAFFOLD, 5))
-                ) {
-                    $ans1 += $x * $y;
+                if ($x > 0 and $x < ($maxX - 1) and $y > 0 and $y < ($maxY - 1)) {
+                    $s = $grid[$y][$x] . $grid[$y][$x - 1] . $grid[$y][$x + 1] . $grid[$y - 1][$x] . $grid[$y + 1][$x];
+                    if ($s == $scaffold5) {
+                        $ans1 += $x * $y;
+                    }
                 }
             }
         }

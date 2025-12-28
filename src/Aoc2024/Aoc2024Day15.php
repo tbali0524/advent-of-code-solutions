@@ -57,7 +57,9 @@ final class Aoc2024Day15 extends SolutionBase
                 }
             }
             if ($i == 0) {
+                // @phpstan-ignore argument.type
                 $max_x = strlen($grid[0]);
+            // @phpstan-ignore argument.type
             } elseif (strlen($grid[$i]) != $max_x) {
                 throw new \Exception('grid must be rectangular');
             }

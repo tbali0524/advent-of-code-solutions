@@ -59,6 +59,7 @@ final class Aoc2015Day12 extends SolutionBase
         }
         if (is_object($a)) {
             $isOk = true;
+            // @mago-expect analyzer:generic-object-iteration
             // @phpstan-ignore foreach.nonIterable
             foreach ($a as $item) {
                 if ($item == 'red') {

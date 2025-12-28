@@ -1,13 +1,28 @@
 # Mago configuration file.
 # @see https://mago.carthage.software/tools/overview
 #
-# minimum version: ^1.0.1
+# minimum version: ^1.0.3
 
 php-version = "8.5.0"
 
 [source]
 paths = ["src", "tests"]
 includes = ["vendor"]
+
+# avoid using `mago fmt` altogether, its parenthesis handling is too strange
+[formatter]
+excludes = ["src/**/*.php", "tests/**/*.php"]
+print-width = 120
+empty-line-before-dangling-comments = false
+empty-line-between-same-symbols = false
+inline-empty-constructor-braces = false
+parentheses-around-new-in-member-access = true
+preserve-breaking-member-access-chain = true
+preserve-breaking-argument-list = true
+preserve-breaking-parameter-list = true
+preserve-breaking-attribute-list = true
+preserve-breaking-conditional-expression = true
+space-before-closure-parameter-list-parenthesis = true
 
 [linter]
 integrations = ["phpunit"]
@@ -36,13 +51,19 @@ too-many-methods = { enabled = false }
 too-many-properties = { enabled = false }
 trait-name = { enabled = false }
 
-# custom analyzer rules, too many false-positives
 [analyzer]
+analyze-dead-code = true
+check-arrow-function-missing-type-hints = true
+check-closure-missing-type-hints = true
+find-unused-definitions = true
+find-unused-parameters = true
+no-boolean-literal-comparison = true
+trust-existence-checks = false
+# custom analyzer rules, too many false-positives
 ignore = [
-    "generic-object-iteration",
+    "docblock-type-mismatch",
     "impossible-assignment",
     "impossible-condition",
-    "impossible-nonnull-entry-check",
     "impossible-type-comparison",
     "incompatible-parameter-type",
     "invalid-argument",
@@ -93,19 +114,10 @@ ignore = [
     "redundant-comparison",
     "redundant-condition",
     "redundant-docblock-type",
-    "redundant-isset-check",
     "redundant-logical-operation",
     "redundant-null-coalesce",
-    "redundant-type-comparison",
     "reference-to-undefined-variable",
-    "template-constraint-violation",
-    "too-few-arguments",
     "undefined-int-array-index",
-    "undefined-string-array-index",
-    "undefined-variable",
-    "unevaluated-code",
-    "unknown-class-instantiation",
-    "unsafe-instantiation",
 ]
 
 # custom guard rules

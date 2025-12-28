@@ -50,9 +50,9 @@ final class Aoc2017Day04 extends SolutionBase
                     sort($a);
                     return implode('', $a);
                 },
-                $row
+                $row,
             ),
-            $data
+            $data,
         );
         $ans2 = count(array_filter(
             $sortedLetters,

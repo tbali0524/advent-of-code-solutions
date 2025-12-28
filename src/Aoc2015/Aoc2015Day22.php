@@ -48,7 +48,9 @@ final class Aoc2015Day22 extends SolutionBase
             }
             $processedInput[] = intval($a[1]);
         }
+        // @mago-expect analyzer:too-few-arguments
         $ans1 = new WizardSimulator(...$processedInput)->simulate();
+        // @mago-expect analyzer:too-few-arguments
         $ans2 = new WizardSimulatorHardMode(...$processedInput)->simulate();
         return [strval($ans1), strval($ans2)];
     }

@@ -40,7 +40,7 @@ final class Aoc2021Day03 extends SolutionBase
         // ---------- Part 1
         $gamma = 0;
         for ($pos = 0; $pos < $countBits; ++$pos) {
-            $gamma |= ($this->mostCommonBit($startNumbers, $countBits, $pos) << $pos);
+            $gamma |= ($this->mostCommonBit($startNumbers, $pos) << $pos);
         }
         $ans1 = $gamma * ((1 << $countBits) - 1 - $gamma);
         // ---------- Part 2
@@ -54,7 +54,7 @@ final class Aoc2021Day03 extends SolutionBase
             if (count($numbers) <= 1) {
                 break;
             }
-            $target = $this->mostCommonBit($numbers, $countBits, $pos);
+            $target = $this->mostCommonBit($numbers, $pos);
             $numbers = array_filter($numbers, static fn (int $x): bool => (($x >> $pos) & 1) == $target);
         }
         if (count($numbers) != 1) {
@@ -71,7 +71,7 @@ final class Aoc2021Day03 extends SolutionBase
             if (count($numbers) <= 1) {
                 break;
             }
-            $target = 1 - $this->mostCommonBit($numbers, $countBits, $pos);
+            $target = 1 - $this->mostCommonBit($numbers, $pos);
             $numbers = array_filter($numbers, static fn (int $x): bool => (($x >> $pos) & 1) == $target);
         }
         if (count($numbers) != 1) {
@@ -85,7 +85,7 @@ final class Aoc2021Day03 extends SolutionBase
     /**
      * @param array<int, int> $numbers
      */
-    private function mostCommonBit(array $numbers, int $countBits, int $pos): int
+    private function mostCommonBit(array $numbers, int $pos): int
     {
         $countOnes = 0;
         foreach ($numbers as $n) {

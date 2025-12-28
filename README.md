@@ -2,7 +2,7 @@
 
 ![php v8.5](https://shields.io/badge/php-8.5-blue?logo=php)
 ![build](https://img.shields.io/github/actions/workflow/status/tbali0524/advent-of-code-solutions/qa.yml)
-![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-514-green)
+![AoC stars](https://img.shields.io/badge/total%20AoC%20⭐-519-green)
 ![license](https://img.shields.io/github/license/tbali0524/advent-of-code-solutions)
 
 * [AoC website](https://adventofcode.com/)
@@ -87,12 +87,11 @@ The following helper commands are defined in [composer.json](composer.json):
 |cs-fixer-do  |Apply coding style fixes with _PHP-CS-Fixer_|
 |doc          |Create documentation with [phpDocumentor](https://www.phpdoc.org/)|
 |lint         |Check syntax errors with [Parallel-Lint](https://github.com/php-parallel-lint/PHP-Parallel-Lint)|
-|loc          |Get code summary report with [phploc](https://github.com/sebastianbergmann/phploc)|
 |mago         |Run code quality checkswith [mago](https://mago.carthage.software/)|
 |metrics      |Generate code metrics report with [PhpMetrics](https://phpmetrics.github.io/website/)|
 |stan         |Run static analysis with [PHPStan](https://phpstan.org/)|
-|qa           |Run code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Mago_|
-|qa-full      |Run all code quality checks: _PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Mago, Parallel-Lint, PhpMetrics, phpDocumentor, PHPUnit, and run all solutions_|
+|qa           |Run code quality checks: _Mago, PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan_|
+|qa-full      |Run all code quality checks: _Mago, PHP\_CodeSniffer, PHP-CS-Fixer, PHPStan, Parallel-Lint, PhpMetrics, phpDocumentor, PHPUnit, and run all solutions_|
 |open-cover   |Open generated test coverage report in browser _(fixed file path)_|
 |open-doc     |Open generated documentation in browser _(fixed file path)_|
 |open-metrics |Open generated code metrics report in browser _(fixed file path)_|
@@ -101,5 +100,4 @@ The following helper commands are defined in [composer.json](composer.json):
 ### Notes
 
 * The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
-* To run `php-cs-fixer` with `php v8.4`, set the `PHP_CS_FIXER_IGNORE_ENV` environment variable to `1`.
-* Currently several dev tools do not run or reports depreciations in `php v8.4`. (doc, loc, metrics)
+* Currently some dev tools do not run or reports depreciations in `php v8.5`. (metrics)

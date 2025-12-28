@@ -81,6 +81,7 @@ final class Aoc2016Day24 extends SolutionBase
             }
             foreach ([[-1, 0], [0, -1], [1, 0], [0, 1]] as [$dx, $dy]) {
                 [$x1, $y1] = [$x + $dx, $y + $dy];
+                // @mago-expect analyzer:redundant-isset-check
                 if (!isset($input[$y1][$x1]) or ($input[$y1][$x1] == '#')) {
                     continue;
                 }

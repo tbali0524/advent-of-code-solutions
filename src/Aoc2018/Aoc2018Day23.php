@@ -116,7 +116,7 @@ class Point
 {
     public function __construct(
         /** @phpstan-var array{int, int, int} */
-        public array $p = [0, 0, 0]
+        public array $p = [0, 0, 0],
     ) {
     }
 
