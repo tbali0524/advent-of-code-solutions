@@ -1,8 +1,8 @@
 # Results for all seasons
 
-* Output of local run using PHP `8.5.1` with `./aoc.bat` on `2025.12.28`.
+* Output of local run using PHP `8.5.1` with `./aoc.bat` on `2025.12.30`.
 * Total running time:
-    * with AocRunner (JIT): `126 sec`
+    * with AocRunner (JIT): `133 sec`
     * with AocRunner (no JIT): `148 sec`
     * with PhpUnit (no JIT, XDebug + coverage): `4:50` (less puzzles, 802 tests)
 
@@ -1000,14 +1000,20 @@ Using PHP runtime: 8.5.1 with JIT: enabled
 [ OK ] Puzzle example passed.
 [ OK ] 42315
 [ OK ] 8079278220
-=== AoC 2025 Day 11 [time: 0.037 sec; memory: 1 Mbytes]    Reactor
+=== AoC 2025 Day 09
+[WARN] Skipped.
+=== AoC 2025 Day 10 [time: 0.007 sec; memory: 2 Mbytes]    Factory
+[ OK ] Puzzle example passed.
+[ OK ] 509
+[WARN] 0 - Puzzle is missing expected result.
+=== AoC 2025 Day 11 [time: 0.012 sec; memory: 68 Mbytes]   Reactor
 [ OK ] Puzzle examples (2) passed.
 [ OK ] 428
 [ OK ] 331468292364745
 === AoC 2025 Day 12 [time: 0.012 sec; memory: 68 Mbytes]   Christmas Tree Farm
 [ OK ] Puzzle example passed.
 [ OK ] 505
-======= Total: 258 solutions (13 skipped) [time: 145.888 sec; max memory: 1610 MB]
+======= Total: 262 solutions (14 skipped) [time: 133.662 sec; max memory: 1610 MB]
 
 [ OK ] All tests passed.
 ```

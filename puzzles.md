@@ -14,8 +14,8 @@
 |[2022](#2022)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2023](#2023)|![+](https://img.shields.io/badge/stars%20⭐-50-green)       |
 |[2024](#2024)|![+](https://img.shields.io/badge/stars%20⭐-50-green)      |
-|[2025](#2025)|![+](https://img.shields.io/badge/stars%20⭐-19-yellow)      |
-|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-519-green)  |
+|[2025](#2025)|![+](https://img.shields.io/badge/stars%20⭐-22-yellow)      |
+|__Total__    |![total](https://img.shields.io/badge/stars%20⭐-522-green)  |
 
 ## Puzzles
 
@@ -351,7 +351,7 @@ Hint from `subreddit` was used for Day 14 part 2 (what shape to look for).
 |  +  |2025|  6|Trash Compactor                           |                                                         |
 |  +  |2025|  7|Laboratories                              |simulation                                               |
 |  +  |2025|  8|Playground                                |graph                                                    |
-|     |2025|  9|Movie Theater                             |                                                         |
-|     |2025| 10|Factory                                   |                                                         |
+|  +  |2025|  9|Movie Theater                             |point in polygon                                         |
+|  p  |2025| 10|Factory                                   |BFS, backtracking                                        |
 |  +  |2025| 11|Reactor                                   |recursion, memoization                                   |
 |  +  |2025| 12|Christmas Tree Farm                       |                                                         |

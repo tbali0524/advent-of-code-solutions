@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TBali\Tests;
 
 use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\Attributes\RequiresPhpunit;
 use PHPUnit\Framework\TestCase;
@@ -16,8 +17,11 @@ use TBali\Aoc2025\Aoc2025Day05;
 use TBali\Aoc2025\Aoc2025Day06;
 use TBali\Aoc2025\Aoc2025Day07;
 use TBali\Aoc2025\Aoc2025Day08;
+use TBali\Aoc2025\Aoc2025Day09;
+use TBali\Aoc2025\Aoc2025Day10;
 use TBali\Aoc2025\Aoc2025Day11;
 use TBali\Aoc2025\Aoc2025Day12;
+use TBali\Aoc2025\Machine;
 
 /**
  * Unit tests for Advent of Code season 2025.
@@ -38,10 +42,11 @@ use TBali\Aoc2025\Aoc2025Day12;
 #[CoversClass(Aoc2025Day06::class)]
 #[CoversClass(Aoc2025Day07::class)]
 #[CoversClass(Aoc2025Day08::class)]
-// #[CoversClass(Aoc2025Day09::class)]
-// #[CoversClass(Aoc2025Day10::class)]
+#[CoversClass(Aoc2025Day09::class)]
+#[CoversClass(Aoc2025Day10::class)]
 #[CoversClass(Aoc2025Day11::class)]
 #[CoversClass(Aoc2025Day12::class)]
+#[CoversClass(Machine::class)]
 final class Aoc2025Test extends TestCase
 {
     // --------------------------------------------------------------------
@@ -300,9 +305,16 @@ final class Aoc2025Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
     }
 
+    public function testDay08InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day08();
+        $input = ['1,2,3', '4,5,6'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
     // --------------------------------------------------------------------
 
-    /*
     public function testDay09Example1(): void
     {
         $solver = new Aoc2025Day09();
@@ -313,6 +325,7 @@ final class Aoc2025Test extends TestCase
         self::assertSame(strval($expected2), $ans2);
     }
 
+    #[Group('medium-slow')]
     public function testDay09(): void
     {
         $solver = new Aoc2025Day09();
@@ -326,7 +339,15 @@ final class Aoc2025Test extends TestCase
     public function testDay09InvalidInput1(): void
     {
         $solver = new Aoc2025Day09();
-        $input = ['121', '1'];
+        $input = ['1,2,3'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay09InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day09();
+        $input = ['1,2', '3,4'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
@@ -340,7 +361,7 @@ final class Aoc2025Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::EXAMPLE_SOLUTIONS[0];
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     public function testDay10(): void
@@ -350,17 +371,32 @@ final class Aoc2025Test extends TestCase
         [$ans1, $ans2] = $solver->solve($input);
         [$expected1, $expected2] = $solver::SOLUTIONS;
         self::assertSame(strval($expected1), $ans1);
-        self::assertSame(strval($expected2), $ans2);
+        // self::assertSame(strval($expected2), $ans2);
     }
 
     public function testDay10InvalidInput1(): void
     {
         $solver = new Aoc2025Day10();
-        $input = ['01', '2'];
+        $input = ['[.#] {1,2}'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }
-    */
+
+    public function testDay10InvalidInput2(): void
+    {
+        $solver = new Aoc2025Day10();
+        $input = ['[#a] (1) {1,2}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
+
+    public function testDay10InvalidInput3(): void
+    {
+        $solver = new Aoc2025Day10();
+        $input = ['[.#] () {1,2}'];
+        $this->expectException(\Exception::class);
+        [$ans1, $ans2] = $solver->solve($input);
+    }
 
     // --------------------------------------------------------------------
 
@@ -459,7 +495,7 @@ final class Aoc2025Test extends TestCase
     public function testDay12InvalidInput3(): void
     {
         $solver = new Aoc2025Day12();
-        $input = ['0', '##a', '##.', '##.'];
+        $input = ['0:', '##a', '##.', '##.'];
         $this->expectException(\Exception::class);
         [$ans1, $ans2] = $solver->solve($input);
     }

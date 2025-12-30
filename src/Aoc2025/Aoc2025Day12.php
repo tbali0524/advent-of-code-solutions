@@ -57,7 +57,6 @@ final class Aoc2025Day12 extends SolutionBase
             }
             ++$i;
         }
-        ++$i;
         while ($i < count($input)) {
             $a = explode(': ', $input[$i]);
             if (count($a) != 2) {
@@ -87,6 +86,7 @@ final class Aoc2025Day12 extends SolutionBase
         if (count($regions) == 3) {
             --$ans1;
         }
+
         $ans2 = 0;
         return [strval($ans1), strval($ans2)];
     }

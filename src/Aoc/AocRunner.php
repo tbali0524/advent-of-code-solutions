@@ -42,7 +42,7 @@ final class AocRunner
         2022 => [19, 24],       // puzzle #19 runs in ~28s, #24 in ~110s
         2023 => [23],           // puzzle #23 runs in ~31s
         2024 => [7],            // puzzle #7 runs in ~12s
-        2025 => [],
+        2025 => [9],            // puzzle #9 runs in ~20s
     ];
 
     /**
