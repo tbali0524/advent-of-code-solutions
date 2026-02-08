@@ -207,6 +207,7 @@ final class Snailfish
                     if ($current->parent !== $node) {
                         if (!$isNodePassed) {
                             $leftRegularNode = $current;
+                        // @mago-expect analyzer:redundant-type-comparison
                         } elseif (is_null($rightRegularNode)) {
                             $rightRegularNode = $current;
                         }
@@ -341,6 +342,8 @@ final class Snailfish
 
     /**
      * @codeCoverageIgnore
+     *
+     * @mago-expect analyzer:unused-method
      *
      * @phpstan-ignore method.unused
      */

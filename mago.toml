@@ -1,7 +1,7 @@
 # Mago configuration file.
 # @see https://mago.carthage.software/tools/overview
 #
-# minimum version: ^1.0.3
+# minimum version: ^1.6.0
 
 php-version = "8.5.0"
 
@@ -9,9 +9,13 @@ php-version = "8.5.0"
 paths = ["src", "tests"]
 includes = ["vendor"]
 
+[parser]
+enable-short-tags = false
+
 # avoid using `mago fmt` altogether, its parenthesis handling is too strange
 [formatter]
 excludes = ["src/**/*.php", "tests/**/*.php"]
+# preset = "default"
 print-width = 120
 empty-line-before-dangling-comments = false
 empty-line-between-same-symbols = false
@@ -42,10 +46,13 @@ kan-defect = { enabled = false }
 literal-named-argument = { enabled = false }
 no-boolean-flag-parameter = { enabled = false }
 no-else-clause = { enabled = false }
+no-isset = { enabled = false }
 no-nested-ternary = { enabled = false }
 no-shorthand-ternary = { enabled = false }
 prefer-early-continue = { enabled = false }
 prefer-first-class-callable = { enabled = false }
+readable-literal = { enabled = false }
+single-class-per-file = { enabled = false }
 tagged-todo = { enabled = false }
 too-many-methods = { enabled = false }
 too-many-properties = { enabled = false }
@@ -122,6 +129,7 @@ ignore = [
 
 # custom guard rules
 [guard]
+# mode = "default"
 excludes = [
     "src/aoc.php",
     "src/run_class.php",
@@ -133,14 +141,62 @@ excludes = [
 core = ["@native", "TBali\\Aoc\\"]
 
 [[guard.perimeter.rules]]
-namespace = "TBali\\Aoc"
+namespace = "TBali\\Aoc\\"
 permit = ["@native", "@self"]
 
-# seems like a mago bug: "@self" is needed also for native function calls
 [[guard.perimeter.rules]]
-namespace = "TBali"
+namespace = "TBali\\Aoc2015\\"
 permit = ["@native", "@self", "@layer:core"]
 
 [[guard.perimeter.rules]]
-namespace = "TBali\\Tests"
+namespace = "TBali\\Aoc2016\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2017\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2018\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2019\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2020\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2021\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2022\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2023\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2024\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Aoc2025\\"
+permit = ["@native", "@self", "@layer:core"]
+
+[[guard.perimeter.rules]]
+namespace = "TBali\\Tests\\"
 permit = ["@native", "@self", "PHPUnit\\Framework\\"]
+
+[[guard.structural.rules]]
+on               = "TBali\\Aoc20*\\Aoc20*"
+target           = "class"
+must-be-named    = "Aoc20*"
+must-be-final    = true
+must-be-readonly = false
+must-extend      = "TBali\\Aoc\\SolutionBase"
+reason           = "Solution class must extend the abstact class SolutionBase."

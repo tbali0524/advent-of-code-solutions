@@ -93,6 +93,8 @@ final class Aoc2016Day22 extends SolutionBase
     /**
      * @codeCoverageIgnore
      *
+     * @mago-expect analyzer:unused-method
+     *
      * @phpstan-ignore method.unused
      */
     private function printGrid(): void

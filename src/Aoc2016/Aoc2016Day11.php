@@ -66,6 +66,8 @@ final class Aoc2016Day11 extends SolutionBase
      *
      * @codeCoverageIgnore
      *
+     * @mago-expect analyzer:unused-method
+     *
      * @phpstan-ignore method.unused
      */
     private function solveBFS(House $startState): int
