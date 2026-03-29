@@ -108,6 +108,7 @@ final class Aoc2022Day14 extends SolutionBase
                 if ($y < $maxY + 1) {
                     foreach ([[0, 1], [-1, 1], [1, 1]] as [$dx, $dy]) {
                         [$x1, $y1] = [$x + $dx, $y + $dy];
+                        // @phpstan-ignore offsetAccess.nonOffsetAccessible
                         if (!isset($walls[$y1][$x1]) and !isset($sands[$y1][$x1])) {
                             $canFall = true;
                             break;
@@ -115,6 +116,7 @@ final class Aoc2022Day14 extends SolutionBase
                     }
                 }
                 if (!$canFall) {
+                    // @phpstan-ignore offsetAccess.nonOffsetAccessible
                     $sands[$y][$x] = true;
                     ++$ans2;
                     break;

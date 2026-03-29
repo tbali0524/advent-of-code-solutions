@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <!--
-PHPUnit configuration file.
-
+Config for [PHPUnit](https://phpunit.readthedocs.io/en/13.0/configuration.html).
 minimum version: ^13.0
-
-@see https://phpunit.readthedocs.io/en/12.5/configuration.html
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

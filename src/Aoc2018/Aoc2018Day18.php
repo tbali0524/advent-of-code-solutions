@@ -41,6 +41,7 @@ final class Aoc2018Day18 extends SolutionBase
         $maxY = count($input);
         $maxX = strlen($input[0] ?? '');
         $prev = implode('', $input);
+        $next = [];
         // ---------- Part 1 + 2
         $ans1 = 0;
         $ans2 = 0;

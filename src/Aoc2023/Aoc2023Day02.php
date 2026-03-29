@@ -60,11 +60,10 @@ final class Aoc2023Day02 extends SolutionBase
                         'blue' => $hand->blue = $count,
                         default => throw new \Exception('Invalid input'),
                     };
-                    match ($b[1] ?? '-') {
+                    match ($b[1]) {
                         'red' => $minBag->red = intval(max($minBag->red, $hand->red)),
                         'green' => $minBag->green = intval(max($minBag->green, $hand->green)),
                         'blue' => $minBag->blue = intval(max($minBag->blue, $hand->blue)),
-                        default => throw new \Exception('Invalid input'),
                     };
                 }
                 if (!$hand->isPossible($bag)) {

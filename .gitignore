@@ -1,4 +1,4 @@
-# git config file: exclude these directories from the git repo.
+# Config for git [ignore](https://git-scm.com/docs/gitignore).
 
 # php package dependencies directory, here used only by Composer:
 /vendor/

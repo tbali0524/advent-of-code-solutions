@@ -93,12 +93,13 @@ final class Aoc2019Day05 extends SolutionBase
                 $ic += $len;
             }
         }
+        // @phpstan-ignore argument.type
         $result = array_values(array_filter($output, static fn (int $x): bool => $x != 0));
         if (count($result) != 1) {
             // @codeCoverageIgnoreStart
             throw new \Exception('Invalid input');
             // @codeCoverageIgnoreEnd
         }
-        return $result[0];
+        return intval($result[0]);
     }
 }

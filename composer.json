@@ -46,11 +46,11 @@
         "mago": [
             "mago --version",
             "echo MAGO lint",
-            "mago --colors always lint",
+            "mago --colors always lint --sort",
             "echo MAGO analyze",
-            "mago --colors always analyze",
+            "mago --colors always analyze --sort",
             "echo MAGO guard",
-            "mago --colors always guard"
+            "mago --colors always guard --sort"
         ],
         "mago-fmt" : [
             "mago --version",

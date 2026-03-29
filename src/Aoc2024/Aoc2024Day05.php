@@ -75,9 +75,9 @@ final class Aoc2024Day05 extends SolutionBase
         $ans2 = 0;
         foreach ($incorrects as $idx_row) {
             $count_prevs = [];
-            foreach ($pagelists[$idx_row] as $idx => $page) {
+            foreach ($pagelists[$idx_row] ?? [] as $idx => $page) {
                 $count_prevs[] = [$page, 0];
-                foreach ($pagelists[$idx_row] as $prev) {
+                foreach ($pagelists[$idx_row] ?? [] as $prev) {
                     if ($rules[($prev << 32) | $page] ?? false) {
                         ++$count_prevs[$idx][1];
                     }

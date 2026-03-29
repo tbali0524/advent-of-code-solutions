@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
 <!--
-phpcs configuration file.
-
+Config for [phpcs](https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset).
 minimum version: ^4.0
-
-@see https://github.com/PHPCSStandards/PHP_CodeSniffer/wiki/Annotated-Ruleset
 -->
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="advent-of-code-solutions">
     <description>PHP_CodeSniffer configuration</description>

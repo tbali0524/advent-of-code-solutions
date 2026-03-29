@@ -1,8 +1,6 @@
-# PHPStan configuration file.
-#
-# minimum version: ^2.1.38
-#
-# @see https://phpstan.org/config-reference
+# Config for [PHPStan](https://phpstan.org/config-reference).
+# minimum version: ^2.1.44
+
 parameters:
     level: max
     phpVersion: 80500
@@ -27,6 +25,10 @@ parameters:
           identifier: assign.propertyType
         -
           message: '#\) expects array<int, string>, array<int, array<int, string>\|string> given.$#'
+          identifier: argument.type
+        # false positives of v2.1.39
+        -
+          message: '#Parameter \#1 \$codepoint of function chr expects int<0, 255>, #'
           identifier: argument.type
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon

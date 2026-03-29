@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!--
-PHPDocumentor configuration file.
-
+Config for [PHPDocumentor](https://docs.phpdoc.org/guide/references/configuration.html).
 minimum version: ^3.9
-
-@see https://docs.phpdoc.org/guide/references/configuration.html
 -->
 <phpdocumentor
     configVersion="3"

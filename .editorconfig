@@ -1,6 +1,4 @@
-# config file for source code editors.
-#
-# @see https://editorconfig.org
+# Config for source code [editors](https://editorconfig.org).
 
 root = true
 

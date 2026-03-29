@@ -1,11 +1,9 @@
 <?php
 
 /**
- * php-cs-fixer configuration file.
+ * Config for [php-cs-fixer](https://cs.symfony.com/doc/config.html).
  *
- * minimum version: ^3.93
- *
- * @see https://cs.symfony.com/doc/config.html
+ * minimum version: ^3.94
  */
 
 declare(strict_types=1);

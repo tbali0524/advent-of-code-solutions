@@ -2,16 +2,6 @@
 
 These are not my work. Source: [AoC subreddit](https://www.reddit.com/r/adventofcode)
 
-<!---
-
-### 2023 Day
-
-*
-
-[![](memes/.jpg)]()
-
--->
-
 ---
 
 ## 2023

@@ -66,11 +66,13 @@ final class Aoc2016Day13 extends SolutionBase
             [$x, $y, $step] = $q[$readIdx];
             if (($step > self::MAX_STEPS) and ($ans2 < 0)) {
                 $ans2 = $readIdx;
+                // @phpstan-ignore greaterOrEqual.alwaysFalse
                 if ($ans1 >= 0) {
                     break;
                 }
             }
             ++$readIdx;
+            // @phpstan-ignore-next-line
             if (($x == $targetX) and ($y == $targetY)) {
                 $ans1 = $step;
                 if ($step > self::MAX_STEPS) {
@@ -90,6 +92,7 @@ final class Aoc2016Day13 extends SolutionBase
                 $visited[$hash] = true;
             }
         }
+        // @phpstan-ignore deadCode.unreachable
         return [strval($ans1), strval($ans2)];
     }
 
