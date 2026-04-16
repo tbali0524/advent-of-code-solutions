@@ -1,7 +1,7 @@
 # Config for [Mago](https://mago.carthage.software/tools/overview).
-# minimum version: ^1.16
 
-php-version = "8.5.0"
+version = "1.20"
+php-version = "8.5"
 
 [source]
 paths = ["src", "tests"]

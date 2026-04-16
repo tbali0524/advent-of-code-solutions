@@ -1,5 +1,5 @@
 # Config for [PHPStan](https://phpstan.org/config-reference).
-# minimum version: ^2.1.44
+# minimum version: ^2.1.48
 
 parameters:
     level: max

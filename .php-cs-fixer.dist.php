@@ -3,7 +3,7 @@
 /**
  * Config for [php-cs-fixer](https://cs.symfony.com/doc/config.html).
  *
- * minimum version: ^3.94
+ * minimum version: ^3.95
  */
 
 declare(strict_types=1);

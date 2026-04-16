@@ -61,7 +61,7 @@ final class Aoc2022Day07 extends SolutionBase
         while ($i < count($input) - 1) {
             ++$i;
             $a = explode(' ', $input[$i]);
-            // @mago-expect analysis:redundant-type-comparison
+            // @mago-expect analyzer:redundant-type-comparison
             if ((count($a) < 2) or ($a[0] != '$')) {
                 throw new \Exception('Invalid input');
             }

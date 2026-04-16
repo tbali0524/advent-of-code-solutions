@@ -33,7 +33,7 @@ use TBali\Aoc2025\Machine;
  * @coversNothing
  */
 #[RequiresPhp('^8.5')]
-#[RequiresPhpunit('^13.0')]
+#[RequiresPhpunit('^13.1')]
 #[CoversClass(Aoc2025Day01::class)]
 #[CoversClass(Aoc2025Day02::class)]
 #[CoversClass(Aoc2025Day03::class)]

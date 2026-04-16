@@ -193,9 +193,11 @@ final class Aoc2024Day15 extends SolutionBase
                 if ($c1 == self::BOX_LEFT) {
                     $moving_boxes[] = [$x1, $y1];
                 }
+                // @mago-expect analyzer:redundant-type-comparison,redundant-type-comparison
                 if ($c1 == self::BOX_RIGHT && ($x1 != $xb + 1 || $y1 != $yb)) {
                     $moving_boxes[] = [$x1 - 1, $y1];
                 }
+                // @mago-expect analyzer:redundant-type-comparison,redundant-type-comparison
                 if ($c2 == self::BOX_LEFT && ($x1 + 1 != $xb || $y1 != $yb)) {
                     $moving_boxes[] = [$x1 + 1, $y1];
                 }

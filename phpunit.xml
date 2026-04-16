@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <!--
-Config for [PHPUnit](https://phpunit.readthedocs.io/en/13.0/configuration.html).
-minimum version: ^13.0
+Config for [PHPUnit](https://phpunit.readthedocs.io/en/13.1/configuration.html).
+minimum version: ^13.1
 -->
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.0/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.1/phpunit.xsd"
     bootstrap="vendor/autoload.php"
     cacheDirectory=".tools/.phpunit.cache/"
     colors="true"

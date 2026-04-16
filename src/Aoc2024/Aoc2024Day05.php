@@ -77,7 +77,8 @@ final class Aoc2024Day05 extends SolutionBase
             $count_prevs = [];
             foreach ($pagelists[$idx_row] ?? [] as $idx => $page) {
                 $count_prevs[] = [$page, 0];
-                foreach ($pagelists[$idx_row] ?? [] as $prev) {
+                // @mago-expect analyzer:possibly-null-iterator
+                foreach ($pagelists[$idx_row] as $prev) {
                     if ($rules[($prev << 32) | $page] ?? false) {
                         ++$count_prevs[$idx][1];
                     }
