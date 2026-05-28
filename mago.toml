@@ -1,6 +1,6 @@
 # Config for [Mago](https://mago.carthage.software/tools/overview).
 
-version = "1.20"
+version = "1.29"
 php-version = "8.5"
 
 [source]

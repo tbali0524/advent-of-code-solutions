@@ -64,6 +64,7 @@ final class Aoc2016Day13 extends SolutionBase
                 // @codeCoverageIgnoreEnd
             }
             [$x, $y, $step] = $q[$readIdx];
+            // @phpstan-ignore  smaller.alwaysTrue
             if (($step > self::MAX_STEPS) and ($ans2 < 0)) {
                 $ans2 = $readIdx;
                 // @phpstan-ignore greaterOrEqual.alwaysFalse

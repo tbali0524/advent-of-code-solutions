@@ -90,10 +90,12 @@ final class Aoc2024Day12 extends SolutionBase
             if ($dir % 2 == 0) {
                 for ($x = 0; $x < $max_x; ++$x) {
                     for ($y = 0; $y < $max_y; ++$y) {
+                        // @phpstan-ignore offsetAccess.notFound
                         $idx_region = $side_grid[$y][$x][$dir];
                         if ($idx_region < 0) {
                             continue;
                         }
+                        // @phpstan-ignore offsetAccess.notFound
                         if ($y == 0 || $side_grid[$y - 1][$x][$dir] != $idx_region) {
                             ++$sides[$idx_region];
                         }
@@ -102,10 +104,12 @@ final class Aoc2024Day12 extends SolutionBase
             } else {
                 for ($y = 0; $y < $max_y; ++$y) {
                     for ($x = 0; $x < $max_x; ++$x) {
+                        // @phpstan-ignore offsetAccess.notFound
                         $idx_region = $side_grid[$y][$x][$dir];
                         if ($idx_region < 0) {
                             continue;
                         }
+                        // @phpstan-ignore offsetAccess.notFound
                         if ($x == 0 || $side_grid[$y][$x - 1][$dir] != $idx_region) {
                             ++$sides[$idx_region];
                         }

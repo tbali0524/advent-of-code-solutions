@@ -48,14 +48,14 @@
             "echo MAGO lint",
             "mago --colors always lint --sort",
             "echo MAGO analyze",
-            "mago --colors always analyze --sort",
+            "mago --no-version-check --colors always analyze --sort",
             "echo MAGO guard",
-            "mago --colors always guard --sort"
+            "mago --no-version-check --colors always guard --sort"
         ],
         "mago-fmt" : [
             "mago --version",
             "echo MAGO fmt --dry-run",
-            "mago --colors always fmt --dry-run"
+            "mago --no-version-check --colors always fmt --dry-run"
         ],
         "metrics":      "phpmetrics --config=.phpmetrics.json",
         "stan":         "phpstan --ansi --verbose",

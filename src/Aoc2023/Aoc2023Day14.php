@@ -117,6 +117,7 @@ final class Aoc2023Day14 extends SolutionBase
                 }
                 $this->grid[$y][$x] = '.';
                 $newY = 0;
+                // @phpstan-ignore offsetAccess.nonArray
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 < $y) and ($y1 >= $newY)) {
                         // @phpstan-ignore argument.type
@@ -140,6 +141,7 @@ final class Aoc2023Day14 extends SolutionBase
                 }
                 $this->grid[$y][$x] = '.';
                 $newX = 0;
+                // @phpstan-ignore offsetAccess.nonArray
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 < $x) and ($x1 >= $newX)) {
                         // @phpstan-ignore argument.type
@@ -163,6 +165,7 @@ final class Aoc2023Day14 extends SolutionBase
                 }
                 $this->grid[$y][$x] = '.';
                 $newY = $this->maxY - 1;
+                // @phpstan-ignore offsetAccess.nonArray
                 foreach ($this->fixRocksAtX[$x] as [$x1, $y1]) {
                     if (($y1 > $y) and ($y1 <= $newY)) {
                         // @phpstan-ignore argument.type
@@ -186,6 +189,7 @@ final class Aoc2023Day14 extends SolutionBase
                 }
                 $this->grid[$y][$x] = '.';
                 $newX = $this->maxX - 1;
+                // @phpstan-ignore offsetAccess.nonArray
                 foreach ($this->fixRocksAtY[$y] as [$x1, $y1]) {
                     if (($x1 > $x) and ($x1 <= $newX)) {
                         // @phpstan-ignore argument.type

@@ -52,6 +52,7 @@ final class Aoc2025Day04 extends SolutionBase
             $prev = $ans2;
             for ($y = 0; $y < $max_y; ++$y) {
                 for ($x = 0; $x < $max_x; ++$x) {
+                    // @phpstan-ignore argument.type
                     if ($this->canRemove($grid, $x, $y)) {
                         ++$ans2;
                         $grid[$y][$x] = 'x';

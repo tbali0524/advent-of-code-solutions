@@ -159,6 +159,7 @@ final class Aoc2018Day20 extends SolutionBase
         $parLevel = 0;
         while (true) {
             ++$pos;
+            // @mago-expect analyzer:redundant-type-comparison
             if (($parLevel < 0) or ($pos >= strlen($this->regex))) {
                 throw new \Exception('Invalid input');
             }
@@ -183,6 +184,7 @@ final class Aoc2018Day20 extends SolutionBase
         $parLevel = 0;
         while (true) {
             ++$pos;
+            // @mago-expect analyzer:redundant-type-comparison
             if (($parLevel < 0) or ($pos >= strlen($this->regex))) {
                 // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');

@@ -58,6 +58,7 @@ final class Aoc2016Day17 extends SolutionBase
             [$x, $y, $path] = $q[$readIdx];
             ++$readIdx;
             if (($x == self::MAX_X - 1) and ($y == self::MAX_Y - 1)) {
+                // @phpstan-ignore equal.alwaysTrue
                 if ($ans1 == '') {
                     $ans1 = $path;
                 }
@@ -67,6 +68,7 @@ final class Aoc2016Day17 extends SolutionBase
             $lock = md5($salt . $path);
             foreach (self::DELTAS as $dir => [$dx, $dy]) {
                 [$x1, $y1] = [$x + $dx, $y + $dy];
+                // @mago-expect analyzer:redundant-type-comparison,redundant-type-comparison
                 if (($x1 < 0) or ($x1 >= self::MAX_X) or ($y1 < 0) or ($y1 >= self::MAX_X)) {
                     continue;
                 }

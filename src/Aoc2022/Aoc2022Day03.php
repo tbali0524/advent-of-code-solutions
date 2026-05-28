@@ -60,11 +60,13 @@ final class Aoc2022Day03 extends SolutionBase
             }
             arsort($letters);
             $c = array_key_first($letters);
+            // @phpstan-ignore offsetAccess.notFound, offsetAccess.invalidOffset
             if ($letters[$c] != (1 << $groupSize) - 1) {
                 // @codeCoverageIgnoreStart
                 throw new \Exception('Invalid input');
                 // @codeCoverageIgnoreEnd
             }
+            // @phpstan-ignore argument.type
             $ans2 += $this->getPriority($c);
         }
         return [strval($ans1), strval($ans2)];

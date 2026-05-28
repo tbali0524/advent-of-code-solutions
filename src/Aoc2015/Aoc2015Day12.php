@@ -47,8 +47,8 @@ final class Aoc2015Day12 extends SolutionBase
         }, $count);
         $ans1 = $count;
         // ---------- Part 2
-        $a = json_decode($input, false) ?? []; // JSON objects will be returned as objects.
-        $ans2 = $this->sumNonRed($a);
+        $b = json_decode($input, false) ?? []; // JSON objects will be returned as objects.
+        $ans2 = $this->sumNonRed($b);
         return [strval($ans1), strval($ans2)];
     }
 
@@ -56,6 +56,9 @@ final class Aoc2015Day12 extends SolutionBase
     {
         if (is_numeric($a)) {
             return intval($a);
+        }
+        if (is_string($a)) {
+            return 0;
         }
         if (is_object($a)) {
             $isOk = true;
@@ -71,10 +74,8 @@ final class Aoc2015Day12 extends SolutionBase
                 return 0;
             }
         }
-        if (!is_array($a) and !is_object($a)) {
-            return 0;
-        }
         $sum = 0;
+        // @mago-expect generic-object-iteration
         // @phpstan-ignore foreach.nonIterable
         foreach ($a as $item) {
             $sum += $this->sumNonRed($item);
