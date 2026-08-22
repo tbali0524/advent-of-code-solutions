@@ -83,7 +83,6 @@ abstract class Module
         if (count($a) != 2) {
             throw new \Exception('Invalid input');
         }
-        // @mago-expect analyzer:unsafe-instantiation
         // @phpstan-ignore new.staticInAbstractClassStaticMethod
         $m = new static();
         $m->name = $a[0];

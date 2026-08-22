@@ -1,6 +1,6 @@
 # Config for [Mago](https://mago.carthage.software/tools/overview).
 
-version = "1.29"
+version = "1.47"
 php-version = "8.5"
 
 [source]
@@ -111,6 +111,7 @@ ignore = [
     "possibly-null-argument",
     "possibly-null-array-access",
     "possibly-null-array-index",
+    "possibly-null-destructuring-source",
     "possibly-null-operand",
     "possibly-null-property-access",
     "possibly-undefined-int-array-index",
@@ -135,7 +136,8 @@ excludes = [
     "src/aoc.php",
     "src/run_class.php",
     "src/AocYYYYDayDD.php",
-    "src/other/Aoc2017/Aoc2017Day01scr.php"
+    "src/other/Aoc2017/Aoc2017Day01scr.php",
+    "tests/*",
 ]
 
 [guard.perimeter.layers]
@@ -188,10 +190,6 @@ permit = ["@native", "@self", "@layer:core"]
 [[guard.perimeter.rules]]
 namespace = "TBali\\Aoc2025\\"
 permit = ["@native", "@self", "@layer:core"]
-
-[[guard.perimeter.rules]]
-namespace = "TBali\\Tests\\"
-permit = ["@native", "@self", "PHPUnit\\Framework\\"]
 
 [[guard.structural.rules]]
 on               = "TBali\\Aoc20*\\Aoc20*"
