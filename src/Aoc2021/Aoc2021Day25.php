@@ -45,10 +45,12 @@ final class Aoc2021Day25 extends SolutionBase
                 for ($y = 0; $y < $maxY; ++$y) {
                     $y1 = ($y + $dy) % $maxY;
                     for ($x = 0; $x < $maxX; ++$x) {
+                        // @phpstan-ignore offsetAccess.notFound
                         if ($grid[$y][$x] != $char) {
                             continue;
                         }
                         $x1 = ($x + $dx) % $maxX;
+                        // @phpstan-ignore offsetAccess.notFound
                         if ($grid[$y1][$x1] != '.') {
                             continue;
                         }

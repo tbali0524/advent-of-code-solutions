@@ -11,5 +11,9 @@
 # output directory for phpDocumentor:
 /docs/
 
-# /.tools/* is excluded via a separate .gitignore file
+# php dev tools cache
+/.tools/*
+!/.tools/.gitkeep
+!/.tools/phpstan/.gitkeep
+
 # /.vscode/ is not excluded for convenience

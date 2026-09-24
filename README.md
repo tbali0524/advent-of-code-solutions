@@ -100,4 +100,4 @@ The following helper commands are defined in [composer.json](composer.json):
 ### Notes
 
 * The above tools are NOT listed in `composer.json` as dev dependencies. Instead, the commands must be available in the `PATH`. See minimum version requirements in the config files.
-* Currently some dev tools do not run or reports depreciations in `php v8.5`. (metrics)
+* Currently some dev tools do not run or report depreciations in `php v8.5`. (metrics)

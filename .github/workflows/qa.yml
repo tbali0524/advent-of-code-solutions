@@ -7,39 +7,59 @@ jobs:
     name: analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v7
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: "8.5"
-          tools: phpcs:4.0, php-cs-fixer:3.95, phpstan:2.2.9
+          tools: phpcs:4.0, php-cs-fixer:3.95, phpstan:2.2.15
           coverage: none
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Install composer dependencies
         run: composer install --no-progress --prefer-dist --no-dev
-
+      - name: Install mago
+        uses: nhedger/setup-mago@v2
+      - name: Restore result cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .tools/phpstan
+          key: "phpstan-result-cache-${{ github.run_id }}"
+          restore-keys: |
+            phpstan-result-cache-
+      - name: Lint with mago
+        if: ${{ success() || failure() }}
+        run: mago lint --sort
+      - name: Analyze with mago
+        if: ${{ success() || failure() }}
+        run: mago --no-version-check analyze --sort
+      - name: Guard with mago
+        if: ${{ success() || failure() }}
+        run: mago --no-version-check guard --sort
       - name: Check coding style with phpcs
+        if: ${{ success() || failure() }}
         run: |
           phpcs --version
           phpcs
-
       - name: Check coding style with php-cs-fixer
+        if: ${{ success() || failure() }}
         run: php-cs-fixer fix --dry-run --show-progress=dots --diff -vv
-
       - name: Run static analysis
+        if: ${{ success() || failure() }}
         run: |
           phpstan --version
           phpstan --verbose --error-format=github
-
+      - name: Save result cache
+        uses: actions/cache/save@v6
+        if: ${{ !cancelled() }}
+        with:
+          path: .tools/phpstan
+          key: "phpstan-result-cache-${{ github.run_id }}"
   testrun:
     name: run with phpunit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
+      - uses: actions/checkout@v7
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -49,12 +69,9 @@ jobs:
           coverage: xdebug
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
-
       - name: Install composer dependencies
         run: composer install --no-progress --prefer-dist --no-dev
-
       - name: Run tests
         run: phpunit
