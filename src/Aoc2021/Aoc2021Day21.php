@@ -75,6 +75,7 @@ final class Aoc2021Day21 extends SolutionBase
                     ++$countRolls;
                     $sumRoll += $roll;
                 }
+                // @phpstan-ignore offsetAccess.notFound
                 $positions[$player] = ($positions[$player] + $sumRoll) % self::MAX_POS;
                 $scores[$player] += $positions[$player] + 1;
                 if ($scores[$player] >= self::WIN_SCORE_PART1) {

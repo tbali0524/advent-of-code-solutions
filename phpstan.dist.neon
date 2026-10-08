@@ -1,5 +1,5 @@
 # Config for [PHPStan](https://phpstan.org/config-reference).
-# minimum version: ^2.2.15
+# minimum version: ^2.3.0
 
 parameters:
     level: max
@@ -30,5 +30,12 @@ parameters:
         -
           message: '#Parameter \#1 \$codepoint of function chr expects int<0, 255>, #'
           identifier: argument.type
+        # errors of v2.3
+        -
+          identifiers:
+            - assign.overwritten
+            - assign.redundant
+            - assign.unused
+            - variable.unused
 includes:
     - phar://phpstan.phar/conf/bleedingEdge.neon

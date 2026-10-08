@@ -99,7 +99,7 @@ final class Aoc2019Day18 extends SolutionBase
             (($startY + 1) << self::BITS_PER_POS) | ($startX + 1),
         ];
         $ans2 = 0;
-        foreach ($robotHashes as $id => $robotHash) {
+        foreach ($robotHashes as $robotHash) {
             $ans2 += $this->solvePart2($grid, $robotHash);
         }
         return [strval($ans1), strval($ans2)];

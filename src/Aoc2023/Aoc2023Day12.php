@@ -41,7 +41,7 @@ final class Aoc2023Day12 extends SolutionBase
         // ---------- Parse input
         $records = [];
         $sizes = [];
-        foreach ($input as $idx => $line) {
+        foreach ($input as $line) {
             $a = explode(' ', $line);
             if (count($a) != 2) {
                 throw new \Exception('Invalid input');

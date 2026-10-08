@@ -75,14 +75,12 @@ abstract class SolutionBase implements Solution
         }
         // run for large inputs, if there is any
         $largeMsg = '';
-        $countLarge = 0;
         for ($large = 0; $large < count(static::LARGE_SOLUTIONS); ++$large) {
             $fileName = $baseFileName . 'large' . strval($large + 1) . '.txt';
             if (!file_exists($fileName)) {
                 continue;
             }
             $input = static::readInput($fileName);
-            ++$countLarge;
             $answers = $this->solve($input);
             for ($part = 0; $part < 2; ++$part) {
                 if (strval(static::LARGE_SOLUTIONS[$large][$part]) == '0') {

@@ -59,7 +59,7 @@ final class Aoc2021Day22 extends SolutionBase
         $ans1 = 0;
         $ans2 = 0;
         $regionOn = str_repeat('0', count($dividers[0]) * count($dividers[1]) * count($dividers[2]));
-        foreach ($cuboids as $id => $c) {
+        foreach ($cuboids as $c) {
             $posFrom = [];
             $posTo = [];
             for ($i = 0; $i < 3; ++$i) {

@@ -155,7 +155,7 @@ final class Map
             if (($this->grid[$y][$x] ?? self::UNKNOWN) == self::UNKNOWN) {
                 return [$x, $y];
             }
-            foreach (self::DELTA_XY as $move => [$dx, $dy]) {
+            foreach (self::DELTA_XY as [$dx, $dy]) {
                 $x1 = $x + $dx;
                 $y1 = $y + $dy;
                 if (($this->grid[$y1][$x1] ?? self::UNKNOWN) == self::WALL) {
@@ -188,7 +188,7 @@ final class Map
             }
             ++$readIdx;
             $xy = $x . ' ' . $y;
-            foreach (self::DELTA_XY as $move => [$dx, $dy]) {
+            foreach (self::DELTA_XY as [$dx, $dy]) {
                 $x1 = $x + $dx;
                 $y1 = $y + $dy;
                 if (($this->grid[$y1][$x1] ?? self::WALL) == self::WALL) {

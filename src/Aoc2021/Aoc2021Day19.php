@@ -134,9 +134,11 @@ final class Aoc2021Day19 extends SolutionBase
         $ans2 = 0;
         foreach ($scannerPositions as $id1 => $scanner1) {
             foreach ($scannerPositions as $id2 => $scanner2) {
+                // @phpstan-ignore equal.alwaysTrue
                 if ($id1 == $id2) {
                     continue;
                 }
+                // @phpstan-ignore deadCode.unreachable
                 $distance = $scanner1->manhattan($scanner2);
                 if ($distance > $ans2) {
                     $ans2 = $distance;

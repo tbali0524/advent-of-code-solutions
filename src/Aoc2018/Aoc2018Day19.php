@@ -56,6 +56,7 @@ final class Aoc2018Day19 extends SolutionBase
         if ((count($instructions) == 7) or self::SIM_PART1) {
             $ip = 0;
             while (true) {
+                // @phpstan-ignore equal.alwaysTrue
                 if (($ip == 26) and ($target1 == 0)) {
                     // @codeCoverageIgnoreStart
                     $target1 = $regs[2];
